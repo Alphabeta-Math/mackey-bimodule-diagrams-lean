@@ -34,7 +34,7 @@
   "finalLibraryAudit": {
     "sourceSha256": "fa1fd1fca7499786b40bfa21623be1b11f59cae5fd8399a377b22b6a46f61af8",
     "oleanSha256": "7c725e54ae3740e9052f605eb768fdbc588c08f80e2527224ed5a83a2a63a088",
-    "previousOleanSha256": "01589bf9e4b022ef951ba6febe2c5d1a367008207a80bf72f0fa68983ac55589",
+    "previousOleanSha256": "7c725e54ae3740e9052f605eb768fdbc588c08f80e2527224ed5a83a2a63a088",
     "command": [
       "bash",
       "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
@@ -44,6 +44,6 @@
       "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/prerequisites/evidence/final-library-axioms.lean"
     ],
     "log": "evidence/final-library-axioms.log",
-    "timestamp": "2026-11-27T21:51:49.714Z"
+    "timestamp": "2026-11-27T22:11:36.198Z"
   }
 }

@@ -4,60 +4,45 @@ All listed results compiled and passed the axiom audit.
 
 [Article](https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf) · [Alphabeta Math](https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf)
 
-## Dependency graph
+## Dependency overview
+
+20 landmark definitions and results. Arrows follow dependency paths, with intermediate items omitted. [Full dependency graph](DEPENDENCIES.md) · [Exact proof graph and suppliers](proof-graph.json).
 
 ```mermaid
 graph TD
-  FiniteBiproductUniversalProperties["FiniteBiproductUniversalProperties"]
-  BiproductMatrixCalculus["BiproductMatrixCalculus"]
-  AdditiveFunctorsAndBiproducts["AdditiveFunctorsAndBiproducts"]
-  CancellationAndZeroKernels["CancellationAndZeroKernels"]
-  NormalMorphismsInAbelianCategories["NormalMorphismsInAbelianCategories"]
-  ExactPresentationsAreCokernels["ExactPresentationsAreCokernels"]
-  ModuleQuotientUniversalProperty["ModuleQuotientUniversalProperty"]
-  ModuleKernelsCokernelsAndImages["ModuleKernelsCokernelsAndImages"]
-  ModuleCategoriesAreAbelian["ModuleCategoriesAreAbelian"]
-  ModuleProductsAndCoproducts["ModuleProductsAndCoproducts"]
-  FreeModulesAndPresentations["FreeModulesAndPresentations"]
-  RegularModuleSmallProjectiveGenerator["RegularModuleSmallProjectiveGenerator"]
-  BalancedTensorUniversalProperty["BalancedTensorUniversalProperty"]
-  BimoduleTensorFunctoriality["BimoduleTensorFunctoriality"]
-  RegularModuleTensorUnits["RegularModuleTensorUnits"]
-  BalancedTensorAssociativity["BalancedTensorAssociativity"]
-  TensorPreservesCoproducts["TensorPreservesCoproducts"]
-  TensorPreservesCokernels["TensorPreservesCokernels"]
-  ModuleKernelsCokernelsAndImages --> TensorPreservesCokernels
+  AdditiveFunctorsAndBiproducts["Addition and finite biproducts"]
+  CancellationAndZeroKernels["Cancellation and zero kernels"]
+  NormalMorphismsInAbelianCategories["Normal morphisms and cancellation<br/>in both directions"]
+  ExactPresentationsAreCokernels["Presentations are cokernels"]
+  ModuleKernelsCokernelsAndImages["Kernels, cokernels, and images"]
+  FreeModulesAndPresentations["Free modules and presentations"]
+  BimoduleTensorFunctoriality["Induced actions and functoriality"]
+  RegularModuleTensorUnits["Tensoring with the regular module"]
+  BalancedTensorAssociativity["Associativity with the correct<br/>sides"]
+  TensorPreservesCokernels["Tensoring preserves cokernels"]
+  GroupAlgebraInductionAdjunction["The induction bimodule"]
+  GeneratorHomExactnessAndDetection["Exactness, detection, and<br/>coproducts"]
+  GeneratorCokernelPresentations["Every object has a generator<br/>presentation"]
+  GeneratorHomFullyFaithful["Morphisms are determined by<br/>module maps"]
+  ReconstructionFromSmallProjectiveGenerator["Reconstruction from a small<br/>projective generator"]
+  BimoduleFunctorHomEquivalence["The equivalence of Hom categories"]
+  TensorDictionaryCompositionAndIdentities["The tensor dictionary preserves<br/>composition"]
+  HorizontalCompositionOfTransformations["Composition of transformations"]
+  AbelianEquivalencesPreserveFunctorHypotheses["Equivalences preserve the<br/>hypotheses on functors"]
+  CategoricalBimoduleDictionary["The complete dictionary"]
   ExactPresentationsAreCokernels --> TensorPreservesCokernels
-  GroupAlgebraRingLaws["GroupAlgebraRingLaws"]
-  RepresentationModuleCorrespondence["RepresentationModuleCorrespondence"]
-  GroupAlgebraInductionAdjunction["GroupAlgebraInductionAdjunction"]
+  ModuleKernelsCokernelsAndImages --> TensorPreservesCokernels
   BimoduleTensorFunctoriality --> GroupAlgebraInductionAdjunction
-  GeneratorHomExactnessAndDetection["GeneratorHomExactnessAndDetection"]
   CancellationAndZeroKernels --> GeneratorHomExactnessAndDetection
   NormalMorphismsInAbelianCategories --> GeneratorHomExactnessAndDetection
-  GeneratorCokernelPresentations["GeneratorCokernelPresentations"]
   NormalMorphismsInAbelianCategories --> GeneratorCokernelPresentations
-  GeneratorHomFullyFaithful["GeneratorHomFullyFaithful"]
-  GeneratorCokernelPresentations --> GeneratorHomFullyFaithful
-  GeneratorHomExactnessAndDetection --> GeneratorHomFullyFaithful
   FreeModulesAndPresentations --> GeneratorHomFullyFaithful
-  ReconstructionFromSmallProjectiveGenerator["ReconstructionFromSmallProjectiveGenerator"]
+  GeneratorHomExactnessAndDetection --> GeneratorHomFullyFaithful
+  GeneratorCokernelPresentations --> GeneratorHomFullyFaithful
   GeneratorHomFullyFaithful --> ReconstructionFromSmallProjectiveGenerator
-  GeneratorHomExactnessAndDetection --> ReconstructionFromSmallProjectiveGenerator
-  FreeModulesAndPresentations --> ReconstructionFromSmallProjectiveGenerator
-  RegularEvaluationRightAction["RegularEvaluationRightAction"]
-  CanonicalWattsNaturalTransformation["CanonicalWattsNaturalTransformation"]
-  EilenbergWatts["EilenbergWatts"]
-  NaturalTransformationsByRegularEvaluation["NaturalTransformationsByRegularEvaluation"]
-  BimoduleFunctorHomEquivalence["BimoduleFunctorHomEquivalence"]
-  TensorDictionaryCompositionAndIdentities["TensorDictionaryCompositionAndIdentities"]
   RegularModuleTensorUnits --> TensorDictionaryCompositionAndIdentities
-  TensorPentagonAndTriangle["TensorPentagonAndTriangle"]
-  HorizontalCompositionOfTransformations["HorizontalCompositionOfTransformations"]
   TensorDictionaryCompositionAndIdentities --> HorizontalCompositionOfTransformations
-  AbelianEquivalencesPreserveFunctorHypotheses["AbelianEquivalencesPreserveFunctorHypotheses"]
   AdditiveFunctorsAndBiproducts --> AbelianEquivalencesPreserveFunctorHypotheses
-  CategoricalBimoduleDictionary["CategoricalBimoduleDictionary"]
   ReconstructionFromSmallProjectiveGenerator --> CategoricalBimoduleDictionary
   BimoduleFunctorHomEquivalence --> CategoricalBimoduleDictionary
   AbelianEquivalencesPreserveFunctorHypotheses --> CategoricalBimoduleDictionary
