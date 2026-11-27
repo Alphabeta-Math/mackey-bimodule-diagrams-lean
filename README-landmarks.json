@@ -1,7 +1,7 @@
 [
   "Bimodule",
   "SmallProjectiveGenerator",
-  "RegularModuleRightAction",
+  "CupCapDotSlides",
   "ModuleTensorUniversalProperty",
   "BalancedTensorAssociativity",
   "BimoduleTensorBicategoryCoherence",
@@ -17,6 +17,6 @@
   "TrivalentBendIdentities",
   "ParallelReidemeisterTwoInduction",
   "ThreeInductionReidemeisterThree",
-  "MixedCrossingFiniteFiberConvention",
+  "CupCapStraightening",
   "FiniteParabolicBimoduleBicategory"
 ]

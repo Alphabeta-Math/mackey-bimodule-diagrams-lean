@@ -1,0 +1,14 @@
+{
+  "CUPCAP_DOTS": {
+    "src": "/assets/img/mackey-bimodules/cup-cap-dot-slides-125c50fbf24a.png",
+    "width": 657,
+    "height": 995,
+    "alt": "Four equalities sliding a finite complex-linear eligible dot through multiplication and trace caps and ordinary and finite-index reverse cups, with centralizer-coset labels alpha and beta."
+  },
+  "CUPCAP_SNAKES": {
+    "src": "/assets/img/mackey-bimodules/cup-cap-straightening-d1a90d30b293.png",
+    "width": 885,
+    "height": 509,
+    "alt": "The two upward zigzags straighten to the alpha-labelled strand and the two downward zigzags straighten to the beta-labelled strand; reverse-cup cases require finite index."
+  }
+}

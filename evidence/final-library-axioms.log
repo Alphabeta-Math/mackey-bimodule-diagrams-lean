@@ -151,3 +151,5 @@
 'CaseSixCounterexampleWithTrivialProjectedStabilizers' depends on axioms: [propext, Classical.choice, Quot.sound]
 'ParabolicCaseSixObstructionWithTrivialProjectedStabilizer' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CaseSixReplacementThroughOverlappingBlocks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CupCapDotSlides' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CupCapStraightening' depends on axioms: [propext, Classical.choice, Quot.sound]

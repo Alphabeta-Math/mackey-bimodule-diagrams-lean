@@ -927,6 +927,251 @@ We establish local rules for comparing diagrams, including how
 dots pass through curls or three-strand vertices, and when bending
 a strand at such a vertex preserves its map.
 
+\subsection{Moving dots through cups and caps}\label{sec:cup-cap-dots}
+
+Let \(U\) be an arbitrary group, and let \(H,G\le U\).
+Choose \(\alpha,\beta\in U\) with
+\(\cg{\alpha}{H},\cg{\beta}{H}\le G\). The strand labels are the
+centralizer cosets \(\bar\alpha=\alpha C_U(H)\) and
+\(\bar\beta=\beta C_U(H)\). Suppress the superscripts on
+\(\I_{\bar\alpha}^{G,H}\) and \(\D_{\bar\alpha}^{H,G}\), and similarly
+for \(\beta\).
+
+For an eligible linear label, put
+\[
+ z=\sum_{d\in S}c_d d,\qquad
+ z^\vee=\sum_{d\in S}c_d d^{-1},\qquad
+ S\subseteq G\cap\alpha C_U(H)\beta^{-1}\text{ finite}.
+\]
+Then \(z^\vee\) is eligible for the reversed pair of labels.
+This operation is complex-linear: it neither conjugates coefficients
+nor takes the multiplicative inverse of \(z\).
+Write \(r_z(x)=xz\) and \(\ell_z(x)=zx\). Thus
+\(r_z:\I_{\bar\alpha}\to\I_{\bar\beta}\) and
+\(\ell_{z^\vee}:\D_{\bar\alpha}\to\D_{\bar\beta}\), whereas
+\(r_{z^\vee}\) and \(\ell_z\) go in the reverse directions.
+
+\begin{proposition}[Dot slides through cups and caps]\label{prop:cup-cap-dots}
+With these labels, the four identities are
+\begin{align}
+ \ev_\beta\circ(r_z\otimes\id_{\D_{\bar\beta}})
+   &=\ev_\alpha\circ(\id_{\I_{\bar\alpha}}\otimes\ell_z),
+       \label{eq:dot-multiplication-cap}\\
+ \tv_\beta\circ(\ell_{z^\vee}\otimes\id_{\I_{\bar\beta}})
+   &=\tv_\alpha\circ(\id_{\D_{\bar\alpha}}\otimes r_{z^\vee}),
+       \label{eq:dot-trace-cap}\\
+ (\ell_{z^\vee}\otimes\id_{\I_{\bar\alpha}})\circ\eta_\alpha
+   &=(\id_{\D_{\bar\beta}}\otimes r_{z^\vee})\circ\eta_\beta,
+       \label{eq:dot-ordinary-cup}\\
+ (r_z\otimes\id_{\D_{\bar\alpha}})\circ\tu_\alpha
+   &=(\id_{\I_{\bar\beta}}\otimes\ell_z)\circ\tu_\beta.
+       \label{eq:dot-reverse-cup}
+\end{align}
+The first three hold at arbitrary index. For
+\eqref{eq:dot-reverse-cup}, assume
+\([G:\cg{\alpha}{H}]\) and \([G:\cg{\beta}{H}]\) are finite.
+\end{proposition}
+
+The diagrams have the same ordered boundary labels on both sides.
+A dot inscription on a downward leg denotes its left multiplier,
+as in Section~\ref{sec:diagram-category}. The equalities compare
+ evaluated bimodule maps.
+
+\begingroup
+\newcommand{\dotbendpanel}[9]{%
+ \begin{tikzpicture}[x=.83cm,y=.83cm,baseline=(current bounding box.center)]
+  \useasboundingbox (-1.85,-1.38) rectangle (1.85,1.42);
+  \begin{scope}[yscale=#1]
+   \draw[#2] (-1,-.78)
+     .. controls (-1,.15) and (-.55,.68) .. (0,.68)
+     .. controls (.55,.68) and (1,.15) .. (1,-.78);
+   \path (-1,-.78) .. controls (-1,.15) and (-.55,.68) .. (0,.68)
+     coordinate[pos=.48] (ldot);
+   \path (0,.68) .. controls (.55,.68) and (1,.15) .. (1,-.78)
+     coordinate[pos=.52] (rdot);
+   \ifnum#3=0
+    \fill (ldot) circle (2pt);
+    \node[strandlabel,anchor=east] at (-1.04,.17) {$#7$};
+   \else
+    \fill (rdot) circle (2pt);
+    \node[strandlabel,anchor=west] at (1.04,.17) {$#7$};
+   \fi
+   \node[strandlabel] at (-1,-1.08) {$#4$};
+   \node[strandlabel] at (1,-1.08) {$#5$};
+   \node[strandlabel] at (0,.98) {$#6$};
+   \node[region] at (-1.58,-.35) {$#8$};
+   \node[region] at (1.58,-.35) {$#8$};
+   \node[region] at (0,-.23) {$#9$};
+  \end{scope}
+ \end{tikzpicture}%
+}
+\newcommand{\dotbendequation}[6]{%
+ \dotbendpanel{#1}{#2}{0}{#3}{#4}{#5}{#6}{\outsidegroup}{\insidegroup}
+ \quad\(=\)\quad
+ \dotbendpanel{#1}{#2}{1}{#3}{#4}{\otherbendlabel}{#6}{\outsidegroup}{\insidegroup}%
+}
+\begin{center}
+\begin{minipage}{.98\linewidth}
+\centering
+\textbf{Multiplication cap}\par
+\def\outsidegroup{G}\def\insidegroup{H}\def\otherbendlabel{\bar\alpha}
+\dotbendequation{1}{arrowatend}{\bar\alpha}{\bar\beta}{\bar\beta}{z}\par\smallskip
+\textbf{Trace cap}\par
+\def\outsidegroup{H}\def\insidegroup{G}
+\dotbendequation{1}{arrowatstart}{\bar\alpha}{\bar\beta}{\bar\beta}{z^\vee}\par\smallskip
+\textbf{Ordinary cup}\par
+\def\otherbendlabel{\bar\beta}
+\dotbendequation{-1}{arrowatend}{\bar\beta}{\bar\alpha}{\bar\alpha}{z^\vee}\par\smallskip
+\textbf{Reverse cup (finite index)}\par
+\def\outsidegroup{G}\def\insidegroup{H}
+\dotbendequation{-1}{arrowatstart}{\bar\beta}{\bar\alpha}{\bar\alpha}{z}
+\end{minipage}
+\end{center}
+\endgroup
+
+\begin{proof}
+It suffices to take \(z=d\in S\), since all four expressions are
+linear in the dot label. Eligibility says
+\(\alpha_*(h)d=d\beta_*(h)\) for every \(h\in H\).
+For the multiplication cap, both maps send
+\(x\otimes y\) to \(xdy\).
+
+For the trace cap, we have
+\[
+ E_\beta(d^{-1}w)=E_\alpha(wd^{-1})\qquad(w\in\C[G]).
+\]
+On a basis element, both sides vanish unless
+\(wd^{-1}=\alpha_*(h)\) for some \(h\in H\); in that case
+\(d^{-1}w=\beta_*(h)\), and both sides are \(h\).
+Apply this with \(w=xy\).
+For the ordinary cup, the two values at \(h\in H\) are equal by
+\[
+ d^{-1}\alpha_*(h)\otimes1
+   =\beta_*(h)d^{-1}\otimes1
+   =\beta_*(h)\otimes d^{-1}
+ \quad\text{in }\D_{\bar\beta}\otimes_{\C[G]}\I_{\bar\alpha}.
+\]
+
+For the reverse cup, choose representatives \(T\) for
+\(\cg{\alpha}{H}\backslash G\). Since
+\(\cg{\beta}{H}=d^{-1}(\cg{\alpha}{H})d\), the set
+\(d^{-1}T\) represents \(\cg{\beta}{H}\backslash G\).
+The two maps at \(x\in G\) give, respectively,
+\[
+ \sum_{t\in T}xt^{-1}d\otimes t,
+ \qquad
+ \sum_{s\in d^{-1}T}xs^{-1}\otimes ds.
+\]
+These sums agree under \(s=d^{-1}t\).
+The reverse cup is independent of the chosen representatives, so
+this argument applies to each supported group element separately.
+Summing with coefficients \(c_d\) proves the proposition.
+\end{proof}
+
+\Needspace{12\baselineskip}
+\subsection{Straightening a bent strand}\label{sec:cup-cap-straightening}
+
+Keep \(U,H,G,\bar\alpha,\bar\beta\) as above. A bend does not change
+the label along its continuous string. Thus all parts of an upward
+string below carry \(\bar\alpha\), and all parts of a downward
+string carry \(\bar\beta\).
+
+\begin{proposition}[Cup--cap straightening]\label{prop:cup-cap-straightening}
+After the usual associativity and unit identifications, we have
+\begin{align}
+ (\ev_\alpha\otimes\id_{\I_{\bar\alpha}})
+   \circ(\id_{\I_{\bar\alpha}}\otimes\eta_\alpha)
+   &=\id_{\I_{\bar\alpha}},
+       \label{eq:straighten-ordinary-up}\\
+ (\id_{\D_{\bar\beta}}\otimes\ev_\beta)
+   \circ(\eta_\beta\otimes\id_{\D_{\bar\beta}})
+   &=\id_{\D_{\bar\beta}}.
+       \label{eq:straighten-ordinary-down}
+\end{align}
+These identities hold at arbitrary index. If
+\([G:\cg{\alpha}{H}]<\infty\), respectively
+\([G:\cg{\beta}{H}]<\infty\), the other two straightenings are
+\begin{align}
+ (\id_{\I_{\bar\alpha}}\otimes\tv_\alpha)
+   \circ(\tu_\alpha\otimes\id_{\I_{\bar\alpha}})
+   &=\id_{\I_{\bar\alpha}},
+       \label{eq:straighten-reverse-up}\\
+ (\tv_\beta\otimes\id_{\D_{\bar\beta}})
+   \circ(\id_{\D_{\bar\beta}}\otimes\tu_\beta)
+   &=\id_{\D_{\bar\beta}}.
+       \label{eq:straighten-reverse-down}
+\end{align}
+\end{proposition}
+
+\begingroup
+\newcommand{\snakepanel}[5]{%
+ \begin{tikzpicture}[x=.78cm,y=.78cm,baseline=(current bounding box.center)]
+  \useasboundingbox (-1.55,-1.65) rectangle (1.55,1.65);
+  \begin{scope}[xscale=#1]
+   \draw[#2] (-.92,1.10)
+     .. controls (-.92,.37) and (-.90,-.39) .. (-.48,-.39)
+     .. controls (-.13,-.39) and (.11,.39) .. (.48,.39)
+     .. controls (.90,.39) and (.92,-.37) .. (.92,-1.10);
+   \node[strandlabel] at (-.92,1.39) {$#3$};
+   \node[strandlabel] at (.92,-1.39) {$#3$};
+  \end{scope}
+  \node[region] at (-1.31,0) {$#4$};
+  \node[region] at (1.31,0) {$#5$};
+  \node[region] at (-.43,0) {$#5$};
+  \node[region] at (.43,0) {$#4$};
+ \end{tikzpicture}%
+}
+\newcommand{\straightpanel}[4]{%
+ \begin{tikzpicture}[x=.78cm,y=.78cm,baseline=(current bounding box.center)]
+  \useasboundingbox (-.85,-1.65) rectangle (.85,1.65);
+  \draw[#1] (0,-1.10)--(0,1.10);
+  \node[strandlabel] at (0,-1.39) {$#2$};
+  \node[strandlabel] at (0,1.39) {$#2$};
+  \node[region] at (-.60,0) {$#3$};
+  \node[region] at (.60,0) {$#4$};
+ \end{tikzpicture}%
+}
+\begin{center}
+\snakepanel{1}{arrowatstart}{\bar\alpha}{G}{H}
+\quad\(=\)\quad
+\straightpanel{arrowatend}{\bar\alpha}{G}{H}
+\quad\(=\)\quad
+\snakepanel{-1}{arrowatstart}{\bar\alpha}{G}{H}\par\smallskip
+\snakepanel{1}{arrowatend}{\bar\beta}{H}{G}
+\quad\(=\)\quad
+\straightpanel{arrowatstart}{\bar\beta}{H}{G}
+\quad\(=\)\quad
+\snakepanel{-1}{arrowatend}{\bar\beta}{H}{G}
+\end{center}
+\endgroup
+
+The left upward bend uses the reverse cup for \(\alpha\), and the
+right downward bend uses the reverse cup for \(\beta\); their
+finite-index hypotheses are therefore required.
+
+\begin{proof}
+For the ordinary identities, an elementary vector is sent through
+\(x\mapsto x\otimes1\otimes1\mapsto x\), respectively
+\(y\mapsto1\otimes1\otimes y\mapsto y\).
+The intervening tensor products and their rebracketings are over
+the indicated middle group algebras.
+
+For a reverse identity with label \(\bar\gamma\), choose
+\(T\subseteq G\) with
+\(G=\bigsqcup_{t\in T}(\cg{\gamma}{H})t\).
+The upward and downward bent strings act by
+\[
+ x\longmapsto\sum_{t\in T}t^{-1}\gamma_*\bigl(E_\gamma(tx)\bigr),
+ \qquad
+ y\longmapsto\sum_{t\in T}\gamma_*\bigl(E_\gamma(yt^{-1})\bigr)t.
+\]
+Both sums equal the original vector by the dual-basis identities
+in Section~\ref{sec:diagram-category}. On a group basis element
+exactly one coset term survives, and the surviving product is that
+basis element. Linearity gives the assertion on the whole bimodule.
+\end{proof}
+
+
 \subsection{Right curls and dots}
 
 The right curl on \(\I_{\bar\alpha}^{G,H}\) uses the

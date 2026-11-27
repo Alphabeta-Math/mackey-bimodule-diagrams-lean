@@ -27956,3 +27956,187 @@ Existing repository dependencies: none.
 Immediate external dependencies: MathlibSubtypeSwapExtension, MathlibSwapFixesOtherPoints (see [ledger](EXTERNAL_PROOFS.md)); mathlib is imported as the base library.
 
 Files: [reviewed translation](translations/CaseSixReplacementThroughOverlappingBlocks.json), [proof](Proofs/CaseSixReplacementThroughOverlappingBlocks.lean), [compilation evidence](evidence/CaseSixReplacementThroughOverlappingBlocks-compile.json).
+
+## CupCapDotSlides: Dot slides through cups and caps
+
+Main result; compiled and axiom-checked.
+
+### Article
+
+Let U be an arbitrary group, H,G subgroups of U, and α,β∈U with αHα⁻¹,βHβ⁻¹⊆G. Strings are labelled by the centralizer cosets ᾱ=α C_U(H) and β̄=β C_U(H). Write I_ᾱ, D_ᾱ for the induction and restriction bimodules and similarly for β. For a finite eligible dot z=Σ_d c_d d, with every d∈G satisfying α_*(h)d=dβ_*(h) for all h∈H (equivalently d∈G∩α C_U(H)β⁻¹), define z∨=Σ_d c_d d⁻¹. This reverses the pair of embedding labels linearly, without conjugating coefficients or assuming the entire sum invertible. Put r_z(x)=xz and ℓ_z(x)=zx. The following four identities are identities of actual typed string diagrams' evaluated bimodule maps, at fixed boundary words:
+(1) ε_β ∘ (r_z ⊗ id_Dβ) = ε_α ∘ (id_Iα ⊗ ℓ_z), on I_α⊗D_β → C[G].
+(2) ε̃_β ∘ (ℓ_z∨ ⊗ id_Iβ) = ε̃_α ∘ (id_Dα ⊗ r_z∨), on D_α⊗I_β → C[H].
+(3) (ℓ_z∨ ⊗ id_Iα) ∘ η_α = (id_Dβ ⊗ r_z∨) ∘ η_β, on C[H] → D_β⊗I_α.
+(4) (r_z ⊗ id_Dα) ∘ η̃_α = (id_Iβ ⊗ ℓ_z) ∘ η̃_β, on C[G] → I_β⊗D_α.
+The first three identities hold at arbitrary subgroup index. The fourth is required whenever both α_*(H) and β_*(H) have finite index in G, so both standalone reverse cups are defined. Ordinary cup η, multiplication cap ε, reverse cup η̃, and trace cap ε̃ have exactly the definitions in Section 1.2. Upward dots from α to β evaluate by right multiplication by z; the same abstract label on a downward string evaluates by left multiplication by z∨, and reversing the embedding pair uses the eligible reversed label. All finite linear labels including zero are allowed. Prove the four diagram evaluations, not an equality of shapes or arbitrary maps substituted for primitive diagrams.
+
+[Author-requested 28 November 2026 extension, §3.1, Proposition 3.1, page 10; local article-revision/mackey-bimodules.tex (draft; publish after verification).](https://getcurious.cc/downloads/mackey-bimodules.pdf#page=10)
+
+### Alphabeta Math
+
+No Alphabeta Math source recorded.
+
+### Lean statement
+
+Translation source: article. Ian Xiao, Bimodule String Diagrams and the Generalized Mackey Decomposition, author draft §3.1, Proposition 3.1 (prop:cup-cap-dots), equations (3.1)–(3.4) on p. 10 and the four rendered diagram pairs on p. 11. The 28 November 2026 owner extension in input.request selects this draft endpoint from article-revision/mackey-bimodules.tex. The extension is recorded in evidence/cup-cap-extension-20261128/append-results.json, which supplies no separate request ID. The archived and published PDFs predate this proposition.
+
+The 27 November 2026 owner clarification (translation recheck request f13b4bd8ba9fe139) applies the shared finite complex dot language, including the zero label. The reversed label moves each coefficient unchanged to the inverse eligible group element. Both sides of each equation retain their typed drawings and have the same ordered boundary. Only the reverse-cup equation requires finite index for both embedding images. The proposition elaborated through the shared Lean compilation slot.
+
+The designated defect-report URL returned HTTP 404 with and without a trailing slash. No statement correction for this endpoint could be verified. https://getcurious.cc/articles/math-bimodule-string-diagrams/prerequisite-omissions-and-potential-defects [Defect report](https://getcurious.cc/articles/math-bimodule-string-diagrams/prerequisite-omissions-and-potential-defects).
+
+```lean
+theorem CupCapDotSlides : ∀ {U : Type*} [Group U] (H G : Subgroup U) (α β : U)
+    (hα : ∀ h : H, α * (h : U) * α⁻¹ ∈ G)
+    (hβ : ∀ h : H, β * (h : U) * β⁻¹ ∈ G),
+  let a := MackeyDiagrams.ConjEmbedding.ofConjugator α hα
+  let b := MackeyDiagrams.ConjEmbedding.ofConjugator β hβ
+  ∀ z : MackeyDiagrams.DotLabel Complex a b,
+    let zDual : MackeyDiagrams.DotLabel Complex b a :=
+      Finsupp.mapDomain MackeyDiagrams.Dot.inverse z
+    let rightZ := MackeyDiagrams.DotLabel.upDrawing z
+    let leftZ := MackeyDiagrams.DotLabel.downDrawing zDual
+    let rightDual := MackeyDiagrams.DotLabel.upDrawing zDual
+    let leftDual := MackeyDiagrams.DotLabel.downDrawing z
+    let idUpA := MackeyDiagrams.LabelledDrawing.ordinary
+      (MackeyDiagrams.Diagram.id (R := Complex) (MackeyDiagrams.Word.up a))
+    let idUpB := MackeyDiagrams.LabelledDrawing.ordinary
+      (MackeyDiagrams.Diagram.id (R := Complex) (MackeyDiagrams.Word.up b))
+    let idDownA := MackeyDiagrams.LabelledDrawing.ordinary
+      (MackeyDiagrams.Diagram.id (R := Complex) (MackeyDiagrams.Word.down a))
+    let idDownB := MackeyDiagrams.LabelledDrawing.ordinary
+      (MackeyDiagrams.Diagram.id (R := Complex) (MackeyDiagrams.Word.down b))
+    let multiplicationLeft := MackeyDiagrams.LabelledDrawing.vertical
+      (MackeyDiagrams.LabelledDrawing.horizontal rightZ idDownB)
+      (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.multiplicationCap b))
+    let multiplicationRight := MackeyDiagrams.LabelledDrawing.vertical
+      (MackeyDiagrams.LabelledDrawing.horizontal idUpA leftZ)
+      (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.multiplicationCap a))
+    let traceLeft := MackeyDiagrams.LabelledDrawing.vertical
+      (MackeyDiagrams.LabelledDrawing.horizontal leftDual idUpB)
+      (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.traceCap b))
+    let traceRight := MackeyDiagrams.LabelledDrawing.vertical
+      (MackeyDiagrams.LabelledDrawing.horizontal idDownA rightDual)
+      (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.traceCap a))
+    let ordinaryLeft := MackeyDiagrams.LabelledDrawing.vertical
+      (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.ordinaryCup a))
+      (MackeyDiagrams.LabelledDrawing.horizontal leftDual idUpA)
+    let ordinaryRight := MackeyDiagrams.LabelledDrawing.vertical
+      (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.ordinaryCup b))
+      (MackeyDiagrams.LabelledDrawing.horizontal idDownB rightDual)
+    MackeyDiagrams.ScopedDiagram.eval (MackeyDiagrams.LabelledDrawing.interpret multiplicationLeft) =
+      MackeyDiagrams.ScopedDiagram.eval (MackeyDiagrams.LabelledDrawing.interpret multiplicationRight) ∧
+    MackeyDiagrams.ScopedDiagram.eval (MackeyDiagrams.LabelledDrawing.interpret traceLeft) =
+      MackeyDiagrams.ScopedDiagram.eval (MackeyDiagrams.LabelledDrawing.interpret traceRight) ∧
+    MackeyDiagrams.ScopedDiagram.eval (MackeyDiagrams.LabelledDrawing.interpret ordinaryLeft) =
+      MackeyDiagrams.ScopedDiagram.eval (MackeyDiagrams.LabelledDrawing.interpret ordinaryRight) ∧
+    (∀ (finiteA : Subgroup.FiniteIndex (MonoidHom.range (MackeyDiagrams.ConjEmbedding.toHom a)))
+       (finiteB : Subgroup.FiniteIndex (MonoidHom.range (MackeyDiagrams.ConjEmbedding.toHom b))),
+      let reverseLeft := MackeyDiagrams.LabelledDrawing.vertical
+        (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.reverseCup a finiteA))
+        (MackeyDiagrams.LabelledDrawing.horizontal rightZ idDownA)
+      let reverseRight := MackeyDiagrams.LabelledDrawing.vertical
+        (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.reverseCup b finiteB))
+        (MackeyDiagrams.LabelledDrawing.horizontal idUpB leftZ)
+      MackeyDiagrams.ScopedDiagram.eval (MackeyDiagrams.LabelledDrawing.interpret reverseLeft) =
+        MackeyDiagrams.ScopedDiagram.eval (MackeyDiagrams.LabelledDrawing.interpret reverseRight))
+```
+
+Immediate internal dependencies: InductionRestrictionBimoduleStrands, GroupElementDotCriterion, InductionRestrictionAdjunction, FiniteIndexReverseAdjunction, ModuleTensorUniversalProperty.
+
+Existing repository dependencies: none.
+
+Immediate external dependencies: MathlibFinsetSumBijInverse (see [ledger](EXTERNAL_PROOFS.md)); mathlib is imported as the base library.
+
+Files: [reviewed translation](translations/CupCapDotSlides.json), [proof](Proofs/CupCapDotSlides.lean), [compilation evidence](evidence/CupCapDotSlides-compile.json).
+
+## CupCapStraightening: Cup–cap straightening
+
+Main result; compiled and axiom-checked.
+
+### Article
+
+Let U be an arbitrary group and H,G≤U. Let α,β∈U induce embeddings of H into G and let the actual string labels be the centralizer cosets ᾱ=α C_U(H), β̄=β C_U(H). Use the actual typed cup, cap, associativity and unit diagrams of Section 1.2. All parts of a continuous undotted string carry its one fixed coset label. With I=I_ᾱ and D=D_β̄, the two ordinary cup–multiplication-cap straightening identities hold without any finite-index assumption:
+(1) (ε_α ⊗ id_Iα) ∘ (id_Iα ⊗ η_α) = id_Iα;
+(2) (id_Dβ ⊗ ε_β) ∘ (η_β ⊗ id_Dβ) = id_Dβ.
+The reverse-cup–trace-cap identities are:
+(3) (id_Iα ⊗ ε̃_α) ∘ (η̃_α ⊗ id_Iα) = id_Iα for every finite-index witness for α_*(H)≤G;
+(4) (ε̃_β ⊗ id_Dβ) ∘ (id_Dβ ⊗ η̃_β) = id_Dβ for every finite-index witness for β_*(H)≤G.
+All four compare the actual evaluated bimodule maps of these drawn zigzags, with necessary explicit unit insertions/removals and associators. They do not identify the raw diagram syntax or shape. The first two remain unconditional at arbitrary index; the last two have separate finite-index premises, not a global finiteness hypothesis. The figures are the reverse/ordinary upward straightenings labelled ᾱ, and ordinary/reverse downward straightenings labelled β̄.
+
+[Author-requested 28 November 2026 extension, §3.2, Proposition 3.2, page 12; local article-revision/mackey-bimodules.tex (draft; publish after verification).](https://getcurious.cc/downloads/mackey-bimodules.pdf#page=12)
+
+### Alphabeta Math
+
+No Alphabeta Math source recorded.
+
+### Lean statement
+
+Translation source: article. Ian Xiao, Bimodule String Diagrams and the Generalized Mackey Decomposition, §3.2, Proposition 3.2, equations (3.5)–(3.8) and the accompanying zigzags, p. 12 of the owner’s 28 November 2026 draft article-revision/mackey-bimodules.tex. Owner extension request 44f7ab753b13393c is recorded in evidence/article-extension-44f7ab753b13393c.json. The archived source and the currently published PDF predate this proposition. The owner’s fixed-coset convention is implemented by reusing the same ConjEmbedding label throughout each continuous undotted string. The four equalities compare the evaluations of the typed zigzags with the straight strands over ℂ. The ordinary pair holds at arbitrary index, and each reverse identity quantifies over its own finite-index witness. The Lean type elaborated through the shared compilation slot. The designated defect-report URL returned HTTP 404 both with and without a trailing slash. No correction to this statement was available. https://getcurious.cc/articles/math-bimodule-string-diagrams/prerequisite-omissions-and-potential-defects [Defect report](https://getcurious.cc/articles/math-bimodule-string-diagrams/prerequisite-omissions-and-potential-defects).
+
+```lean
+theorem CupCapStraightening : ∀ {U : Type u} [Group U] (H G : Subgroup U) (α β : U)
+    (hα : ∀ h : H, α * (h : U) * α⁻¹ ∈ G)
+    (hβ : ∀ h : H, β * (h : U) * β⁻¹ ∈ G),
+  let a := MackeyDiagrams.ConjEmbedding.ofConjugator α hα
+  let b := MackeyDiagrams.ConjEmbedding.ofConjugator β hβ
+  let upA := MackeyDiagrams.Word.up a
+  let downA := MackeyDiagrams.Word.down a
+  let upB := MackeyDiagrams.Word.up b
+  let downB := MackeyDiagrams.Word.down b
+  let idUp := MackeyDiagrams.Diagram.id (R := Complex) upA
+  let idDown := MackeyDiagrams.Diagram.id (R := Complex) downB
+  let ordinaryUp :=
+    MackeyDiagrams.Diagram.vertical
+      (MackeyDiagrams.Diagram.insertRightUnit upA)
+      (MackeyDiagrams.Diagram.vertical
+        (MackeyDiagrams.Diagram.horizontal idUp (MackeyDiagrams.Diagram.ordinaryCup a))
+        (MackeyDiagrams.Diagram.vertical
+          (MackeyDiagrams.Diagram.unassociate upA downA upA)
+          (MackeyDiagrams.Diagram.vertical
+            (MackeyDiagrams.Diagram.horizontal (MackeyDiagrams.Diagram.multiplicationCap a) idUp)
+            (MackeyDiagrams.Diagram.leftUnit upA))))
+  let ordinaryDown :=
+    MackeyDiagrams.Diagram.vertical
+      (MackeyDiagrams.Diagram.insertLeftUnit downB)
+      (MackeyDiagrams.Diagram.vertical
+        (MackeyDiagrams.Diagram.horizontal (MackeyDiagrams.Diagram.ordinaryCup b) idDown)
+        (MackeyDiagrams.Diagram.vertical
+          (MackeyDiagrams.Diagram.associate downB upB downB)
+          (MackeyDiagrams.Diagram.vertical
+            (MackeyDiagrams.Diagram.horizontal idDown (MackeyDiagrams.Diagram.multiplicationCap b))
+            (MackeyDiagrams.Diagram.rightUnit downB))))
+  MackeyDiagrams.Diagram.eval ordinaryUp = MackeyDiagrams.Diagram.eval idUp ∧
+  MackeyDiagrams.Diagram.eval ordinaryDown = MackeyDiagrams.Diagram.eval idDown ∧
+  (∀ finiteA : Subgroup.FiniteIndex (MonoidHom.range (MackeyDiagrams.ConjEmbedding.toHom a)),
+    let reverseUp :=
+      MackeyDiagrams.Diagram.vertical
+        (MackeyDiagrams.Diagram.insertLeftUnit upA)
+        (MackeyDiagrams.Diagram.vertical
+          (MackeyDiagrams.Diagram.horizontal (MackeyDiagrams.Diagram.reverseCup a finiteA) idUp)
+          (MackeyDiagrams.Diagram.vertical
+            (MackeyDiagrams.Diagram.associate upA downA upA)
+            (MackeyDiagrams.Diagram.vertical
+              (MackeyDiagrams.Diagram.horizontal idUp (MackeyDiagrams.Diagram.traceCap a))
+              (MackeyDiagrams.Diagram.rightUnit upA))))
+    MackeyDiagrams.Diagram.eval reverseUp = MackeyDiagrams.Diagram.eval idUp) ∧
+  (∀ finiteB : Subgroup.FiniteIndex (MonoidHom.range (MackeyDiagrams.ConjEmbedding.toHom b)),
+    let reverseDown :=
+      MackeyDiagrams.Diagram.vertical
+        (MackeyDiagrams.Diagram.insertRightUnit downB)
+        (MackeyDiagrams.Diagram.vertical
+          (MackeyDiagrams.Diagram.horizontal idDown (MackeyDiagrams.Diagram.reverseCup b finiteB))
+          (MackeyDiagrams.Diagram.vertical
+            (MackeyDiagrams.Diagram.unassociate downB upB downB)
+            (MackeyDiagrams.Diagram.vertical
+              (MackeyDiagrams.Diagram.horizontal (MackeyDiagrams.Diagram.traceCap b) idDown)
+              (MackeyDiagrams.Diagram.leftUnit downB))))
+    MackeyDiagrams.Diagram.eval reverseDown = MackeyDiagrams.Diagram.eval idDown)
+```
+
+Immediate internal dependencies: InductionRestrictionAdjunction, ReverseTriangleIdentities, BalancedTensorAssociativity, InductionRestrictionBimoduleStrands.
+
+Existing repository dependencies: none.
+
+Immediate external dependencies: none declared (see [ledger](EXTERNAL_PROOFS.md)); mathlib is imported as the base library.
+
+Files: [reviewed translation](translations/CupCapStraightening.json), [proof](Proofs/CupCapStraightening.lean), [compilation evidence](evidence/CupCapStraightening-compile.json).

@@ -339,6 +339,9 @@ graph TD
   CaseSixCounterexampleWithTrivialProjectedStabilizers --> ParabolicCaseSixObstructionWithTrivialProjectedStabilizer
   CaseSixReplacementThroughOverlappingBlocks["CaseSixReplacementThroughOverlappingBlocks"]
   EvaluationWithOneProjection --> CaseSixReplacementThroughOverlappingBlocks
+  CupCapDotSlides["CupCapDotSlides"]
+  CupCapStraightening["CupCapStraightening"]
+  ReverseTriangleIdentities --> CupCapStraightening
 ```
 
 Included prerequisite packages:

@@ -1,6 +1,6 @@
 Article revision build
 
-This directory contains the editable revision and its compiled 45-page PDF.
+This directory contains the editable revision and its compiled 48-page PDF.
 The checksummed source/ article evidence remains unchanged.
 
 With a complete TeX Live installation, run from this directory:
@@ -28,3 +28,17 @@ The successful local build command, from this directory, was:
 The final build resolved all references and had no LaTeX warnings, undefined
 references, overfull/underfull boxes, or errors. Build logs and auxiliary files
 are in /tmp/mackey-bilinearity-build-20261128, outside this revision.
+
+Cup/cap extension, 28 November 2026
+
+New subsections 3.1 and 3.2 state Propositions 3.1 and 3.2 with complete
+proofs and labelled TikZ diagrams. The ambient group U is arbitrary.
+Only the explicitly identified reverse-cup identities require finite index.
+
+From the repository root, the verified build was:
+  TEXINPUTS=/tmp/mackey-article-texdeps-20261127/root/usr/share/texlive/texmf-dist/tex/latex//:/tmp/mackey-article-texdeps-20261127/root/usr/share/texlive/texmf-dist/tex/generic//: latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=.lake/cup-cap-article-build article-revision/mackey-bimodules.tex
+
+The resulting 48-page PDF has no LaTeX warnings, undefined references,
+overfull boxes or underfull boxes. It is copied to article-revision/ and
+the author's Windows document directory. New web diagrams are rendered
+from this same PDF; their hashes are in evidence/cup-cap-extension-20261128/.

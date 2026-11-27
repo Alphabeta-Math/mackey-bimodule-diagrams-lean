@@ -1,0 +1,13 @@
+{
+  "siteRepository": "https://github.com/Alphabeta-Math/getcurious",
+  "siteCommit": "04660ad",
+  "cloudflarePagesCheck": "completed: success",
+  "pdfSha256": "926619ab317a3c21482eeefee80bd7471747ecfa8ade52e5b3bd1fa8c0c184fb",
+  "windowsPdf": "C:/Users/lazyi/Documents/ChatGPT/mackey-bimodules.pdf",
+  "pages": 48,
+  "webMathExpressionsValidated": 1659,
+  "webMathErrors": 0,
+  "directLiveDownload": "HTTP 200; live PDF SHA256 matches the Windows and repository copies.",
+  "liveHttpStatus": 200,
+  "livePdfSha256": "926619ab317a3c21482eeefee80bd7471747ecfa8ade52e5b3bd1fa8c0c184fb"
+}

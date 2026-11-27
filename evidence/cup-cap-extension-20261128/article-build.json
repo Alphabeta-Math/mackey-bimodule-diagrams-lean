@@ -1,0 +1,18 @@
+{
+  "sourceSha256": "6af80f62310cb0034ee8cb5223581ece4138e29053bd92be3a7263aa4ea48694",
+  "pdfSha256": "926619ab317a3c21482eeefee80bd7471747ecfa8ade52e5b3bd1fa8c0c184fb",
+  "pages": 48,
+  "windowsSource": "/mnt/c/Users/lazyi/Documents/ChatGPT/mackey-bimodules.tex",
+  "windowsPdf": "/mnt/c/Users/lazyi/Documents/ChatGPT/mackey-bimodules.pdf",
+  "nativeLeanStatus": "Both propositions compiled and axiom-audited; final coordinator accepted all 153 active endpoints with no repairs or blocker; complete-library closeout running.",
+  "sourceStatementLabels": [
+    "prop:cup-cap-dots",
+    "prop:cup-cap-straightening"
+  ],
+  "mathematicalConventions": "Arbitrary ambient group U, subgroup regions H,G, centralizer-coset strand labels alpha C_U(H), beta C_U(H), finite complex linear eligible dots, coefficient-preserving termwise inversion, finite-index premises only where reverse cups occur.",
+  "leanDeclarations": [
+    "CupCapDotSlides",
+    "CupCapStraightening"
+  ],
+  "finalDependencyReview": "evidence/proof-coordinator-fac50bfc-e1c2-402c-b6ca-d5bd5da4f4d4.json"
+}

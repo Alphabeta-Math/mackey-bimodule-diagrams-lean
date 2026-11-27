@@ -1,0 +1,44 @@
+{
+  "reason": "Owner explicitly asks to add two new Section 3 subsections stating and proving the two supplied families as propositions, and formalize them in Lean. Strings must carry centralizer cosets represented by α,β∈an arbitrary unspecified ambient group U. The exact draft source and diagrams are article-revision/mackey-bimodules.tex, SHA256 6af80f62310cb0034ee8cb5223581ece4138e29053bd92be3a7263aa4ea48694. Mathematical derivations are in the new subsections. The source is the owner's new draft, not the old archived/published PDF. Preserve existing 143 results and their proofs.",
+  "items": [
+    {
+      "id": "CupCapDotSlides",
+      "title": "Dot slides through cups and caps",
+      "kind": "theorem",
+      "main": true,
+      "article": {
+        "statement": "Let U be an arbitrary group, H,G subgroups of U, and α,β∈U with αHα⁻¹,βHβ⁻¹⊆G. Strings are labelled by the centralizer cosets ᾱ=α C_U(H) and β̄=β C_U(H). Write I_ᾱ, D_ᾱ for the induction and restriction bimodules and similarly for β. For a finite eligible dot z=Σ_d c_d d, with every d∈G satisfying α_*(h)d=dβ_*(h) for all h∈H (equivalently d∈G∩α C_U(H)β⁻¹), define z∨=Σ_d c_d d⁻¹. This reverses the pair of embedding labels linearly, without conjugating coefficients or assuming the entire sum invertible. Put r_z(x)=xz and ℓ_z(x)=zx. The following four identities are identities of actual typed string diagrams' evaluated bimodule maps, at fixed boundary words:\n(1) ε_β ∘ (r_z ⊗ id_Dβ) = ε_α ∘ (id_Iα ⊗ ℓ_z), on I_α⊗D_β → C[G].\n(2) ε̃_β ∘ (ℓ_z∨ ⊗ id_Iβ) = ε̃_α ∘ (id_Dα ⊗ r_z∨), on D_α⊗I_β → C[H].\n(3) (ℓ_z∨ ⊗ id_Iα) ∘ η_α = (id_Dβ ⊗ r_z∨) ∘ η_β, on C[H] → D_β⊗I_α.\n(4) (r_z ⊗ id_Dα) ∘ η̃_α = (id_Iβ ⊗ ℓ_z) ∘ η̃_β, on C[G] → I_β⊗D_α.\nThe first three identities hold at arbitrary subgroup index. The fourth is required whenever both α_*(H) and β_*(H) have finite index in G, so both standalone reverse cups are defined. Ordinary cup η, multiplication cap ε, reverse cup η̃, and trace cap ε̃ have exactly the definitions in Section 1.2. Upward dots from α to β evaluate by right multiplication by z; the same abstract label on a downward string evaluates by left multiplication by z∨, and reversing the embedding pair uses the eligible reversed label. All finite linear labels including zero are allowed. Prove the four diagram evaluations, not an equality of shapes or arbitrary maps substituted for primitive diagrams.",
+        "locator": "Author-requested 28 November 2026 extension, §3.1, Proposition 3.1, page 10; local article-revision/mackey-bimodules.tex (draft; publish after verification).",
+        "url": "https://getcurious.cc/downloads/mackey-bimodules.pdf#page=10"
+      },
+      "portal": null,
+      "deps": [
+        "InductionRestrictionBimoduleStrands",
+        "GroupElementDotCriterion",
+        "InductionRestrictionAdjunction",
+        "FiniteIndexReverseAdjunction",
+        "ModuleTensorUniversalProperty"
+      ],
+      "external": []
+    },
+    {
+      "id": "CupCapStraightening",
+      "title": "Cup–cap straightening",
+      "kind": "theorem",
+      "main": true,
+      "article": {
+        "statement": "Let U be an arbitrary group and H,G≤U. Let α,β∈U induce embeddings of H into G and let the actual string labels be the centralizer cosets ᾱ=α C_U(H), β̄=β C_U(H). Use the actual typed cup, cap, associativity and unit diagrams of Section 1.2. All parts of a continuous undotted string carry its one fixed coset label. With I=I_ᾱ and D=D_β̄, the two ordinary cup–multiplication-cap straightening identities hold without any finite-index assumption:\n(1) (ε_α ⊗ id_Iα) ∘ (id_Iα ⊗ η_α) = id_Iα;\n(2) (id_Dβ ⊗ ε_β) ∘ (η_β ⊗ id_Dβ) = id_Dβ.\nThe reverse-cup–trace-cap identities are:\n(3) (id_Iα ⊗ ε̃_α) ∘ (η̃_α ⊗ id_Iα) = id_Iα for every finite-index witness for α_*(H)≤G;\n(4) (ε̃_β ⊗ id_Dβ) ∘ (id_Dβ ⊗ η̃_β) = id_Dβ for every finite-index witness for β_*(H)≤G.\nAll four compare the actual evaluated bimodule maps of these drawn zigzags, with necessary explicit unit insertions/removals and associators. They do not identify the raw diagram syntax or shape. The first two remain unconditional at arbitrary index; the last two have separate finite-index premises, not a global finiteness hypothesis. The figures are the reverse/ordinary upward straightenings labelled ᾱ, and ordinary/reverse downward straightenings labelled β̄.",
+        "locator": "Author-requested 28 November 2026 extension, §3.2, Proposition 3.2, page 12; local article-revision/mackey-bimodules.tex (draft; publish after verification).",
+        "url": "https://getcurious.cc/downloads/mackey-bimodules.pdf#page=12"
+      },
+      "portal": null,
+      "deps": [
+        "InductionRestrictionAdjunction",
+        "ReverseTriangleIdentities",
+        "BalancedTensorAssociativity",
+        "InductionRestrictionBimoduleStrands"
+      ],
+      "external": []
+    }
+  ]
+}

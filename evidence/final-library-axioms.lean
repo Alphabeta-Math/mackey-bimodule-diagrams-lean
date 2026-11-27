@@ -150,3 +150,5 @@ import Proofs
 #print axioms CaseSixCounterexampleWithTrivialProjectedStabilizers
 #print axioms ParabolicCaseSixObstructionWithTrivialProjectedStabilizer
 #print axioms CaseSixReplacementThroughOverlappingBlocks
+#print axioms CupCapDotSlides
+#print axioms CupCapStraightening

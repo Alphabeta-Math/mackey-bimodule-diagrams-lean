@@ -1,0 +1,43 @@
+∀ {U : Type u_1} [inst : Group U] (H G : Subgroup U) (α β : U) (hα : ∀ (h : ↥H), α * ↑h * α⁻¹ ∈ G)
+  (hβ : ∀ (h : ↥H), β * ↑h * β⁻¹ ∈ G),
+  let a := MackeyDiagrams.ConjEmbedding.ofConjugator α hα;
+  let b := MackeyDiagrams.ConjEmbedding.ofConjugator β hβ;
+  ∀ (z : MackeyDiagrams.DotLabel ℂ a b),
+    let zDual := Finsupp.mapDomain MackeyDiagrams.Dot.inverse z;
+    let rightZ := z.upDrawing;
+    let leftZ := zDual.downDrawing;
+    let rightDual := zDual.upDrawing;
+    let leftDual := z.downDrawing;
+    let idUpA := MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.id (MackeyDiagrams.Word.up a));
+    let idUpB := MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.id (MackeyDiagrams.Word.up b));
+    let idDownA := MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.id (MackeyDiagrams.Word.down a));
+    let idDownB := MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.id (MackeyDiagrams.Word.down b));
+    let multiplicationLeft :=
+      (rightZ.horizontal idDownB).vertical
+        (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.multiplicationCap b));
+    let multiplicationRight :=
+      (idUpA.horizontal leftZ).vertical
+        (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.multiplicationCap a));
+    let traceLeft :=
+      (leftDual.horizontal idUpB).vertical
+        (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.traceCap b));
+    let traceRight :=
+      (idDownA.horizontal rightDual).vertical
+        (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.traceCap a));
+    let ordinaryLeft :=
+      (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.ordinaryCup a)).vertical
+        (leftDual.horizontal idUpA);
+    let ordinaryRight :=
+      (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.ordinaryCup b)).vertical
+        (idDownB.horizontal rightDual);
+    multiplicationLeft.interpret.eval = multiplicationRight.interpret.eval ∧
+      traceLeft.interpret.eval = traceRight.interpret.eval ∧
+        ordinaryLeft.interpret.eval = ordinaryRight.interpret.eval ∧
+          ∀ (finiteA : a.toHom.range.FiniteIndex) (finiteB : b.toHom.range.FiniteIndex),
+            let reverseLeft :=
+              (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.reverseCup a finiteA)).vertical
+                (rightZ.horizontal idDownA);
+            let reverseRight :=
+              (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.reverseCup b finiteB)).vertical
+                (idUpB.horizontal leftZ);
+            reverseLeft.interpret.eval = reverseRight.interpret.eval : Prop

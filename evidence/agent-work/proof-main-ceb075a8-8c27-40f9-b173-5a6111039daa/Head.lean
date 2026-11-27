@@ -1,0 +1,9 @@
+import MackeyDiagrams
+import Proofs.InductionRestrictionBimoduleStrands
+import Proofs.GroupElementDotCriterion
+import Proofs.InductionRestrictionAdjunction
+import Proofs.FiniteIndexReverseAdjunction
+import Proofs.ModuleTensorUniversalProperty
+
+set_option maxHeartbeats 2000000
+

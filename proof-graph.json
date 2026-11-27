@@ -1,5 +1,5 @@
 {
-  "inputHash": "10a89f8ac0db3e16364b9f460a4bcb298932fc6196a17b86bd714c291011ecc4",
+  "inputHash": "64825aa1ee287e8822b50c77c416976c2554455644cd46769205397e9f152268",
   "verified": true,
   "graph": {
     "routes": [
@@ -12513,21 +12513,362 @@
         ],
         "approach": "Uses the supported-left stabilizer and orbit multiplicity for each supported basis entry, then assembles the resulting unscaled orbit evaluations into the reviewed indexed sum. Direct proof dependencies are ParabolicCaseFiveCoefficientOneExpansion. The source and olean match the native receipt. The current compiled declaration audits to [propext, Classical.choice, Quot.sound]. file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/ParabolicCaseFiveUnscaledDiagramIdentity-compile.json",
         "proofHash": "2d083a72feba0ec320019fd2d9e2f1d552f8cb4f43a216da773c62196f2f6238"
+      },
+      {
+        "id": "CupCapStraightening",
+        "deps": [
+          "ReverseTriangleIdentities"
+        ],
+        "available": [
+          {
+            "module": "MackeyDiagrams.Embedding",
+            "declaration": "MackeyDiagrams.ConjEmbedding.ofConjugator",
+            "revision": "sha256:aa3743ef693b2ba53a39bf55f97adcb03f9fc8330dce5203bab49b1f4a4566d5",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Embedding.lean#L29",
+            "use": "Used in the statement and proof to form a and b from the reviewed containment witnesses. Each straightening uses one embedding throughout."
+          },
+          {
+            "module": "MackeyDiagrams.Diagram",
+            "declaration": "MackeyDiagrams.Diagram.eval",
+            "revision": "sha256:71e5520da9171f024692c5ac4cd6045b4d087785070a6781839d4addba66ba31",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Diagram.lean#L89",
+            "use": "The statement compares the evaluations of the actual typed zigzags and straight strands."
+          },
+          {
+            "module": "MackeyDiagrams.CupCapIdentities",
+            "declaration": "MackeyDiagrams.Diagram.eval_ext_on_generators",
+            "revision": "sha256:4ef56a10595e48b202f7f15ac9671a32b70cf6534c92cd17fac474db443f9109",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/CupCapIdentities.lean#L13",
+            "use": "Reduces each ordinary straightening to the coefficient-one singleton at an arbitrary group element."
+          },
+          {
+            "module": "MackeyDiagrams.OrdinaryCupTrace",
+            "declaration": "MackeyDiagrams.Diagram.eval_ordinaryCup_single",
+            "revision": "sha256:f1383f13b55f1831cdb2fad0885bc1e66b146683d3543dacd8b7e8303af539ac",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/OrdinaryCupTrace.lean#L12",
+            "use": "Computes the ordinary cup at 1 as the pair (1,1) on the two bent strands. Its hypotheses impose no finite index."
+          },
+          {
+            "module": "MackeyDiagrams.Unitors",
+            "declaration": "MackeyDiagrams.Biset.insertRightUnit",
+            "revision": "sha256:14a6e9d8aec3e8ccdbe852df20c74b351f5ca95dbf89a0d3092198f6049d4133",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Unitors.lean#L61",
+            "use": "Computes ordinary upward input insertion from its basis map x ↦ (x,1)."
+          },
+          {
+            "module": "MackeyDiagrams.Linear",
+            "declaration": "MackeyDiagrams.Biset.Hom.ofFunction_single",
+            "revision": "sha256:9f22b655ebe182c336bd978ab77b26f639f504dfbd0fb2cce8f9b52f5f11413b",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Linear.lean#L84",
+            "use": "Linearizes the underlying basis map of the right unit insertion on the given singleton."
+          },
+          {
+            "module": "MackeyDiagrams.StructuralBasis",
+            "declaration": "MackeyDiagrams.Diagram.eval_insertLeftUnit_single",
+            "revision": "sha256:f53bbb62a3d7bd7c5f9c9e03f813a336727759f5b6a39322a80a666585acaded",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/StructuralBasis.lean#L155",
+            "use": "Computes ordinary downward input insertion as (1,y)."
+          },
+          {
+            "module": "MackeyDiagrams.Identities",
+            "declaration": "MackeyDiagrams.Diagram.eval_horizontal_single",
+            "revision": "sha256:7796c8e3a56f678c6fdc1f578a029d8b7258ec724d2425ac6d6f17c847aa5302",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Identities.lean#L87",
+            "use": "Expands each tensor of evaluated pieces at a balanced-pair singleton."
+          },
+          {
+            "module": "MackeyDiagrams.Linear",
+            "declaration": "MackeyDiagrams.Biset.pairLinear_single",
+            "revision": "sha256:9f22b655ebe182c336bd978ab77b26f639f504dfbd0fb2cce8f9b52f5f11413b",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Linear.lean#L122",
+            "use": "Combines the two singleton factors into the corresponding singleton of the balanced pair."
+          },
+          {
+            "module": "MackeyDiagrams.StructuralBasis",
+            "declaration": "MackeyDiagrams.Diagram.eval_unassociate_single",
+            "revision": "sha256:f53bbb62a3d7bd7c5f9c9e03f813a336727759f5b6a39322a80a666585acaded",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/StructuralBasis.lean#L22",
+            "use": "Changes x ⊗ (1 ⊗ 1) into (x ⊗ 1) ⊗ 1 in ordinary up."
+          },
+          {
+            "module": "MackeyDiagrams.StructuralBasis",
+            "declaration": "MackeyDiagrams.Diagram.eval_associate_single",
+            "revision": "sha256:f53bbb62a3d7bd7c5f9c9e03f813a336727759f5b6a39322a80a666585acaded",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/StructuralBasis.lean#L13",
+            "use": "Changes (1 ⊗ 1) ⊗ y into 1 ⊗ (1 ⊗ y) in ordinary down."
+          },
+          {
+            "module": "MackeyDiagrams.StructuralBasis",
+            "declaration": "MackeyDiagrams.Diagram.eval_multiplicationCap_single",
+            "revision": "sha256:f53bbb62a3d7bd7c5f9c9e03f813a336727759f5b6a39322a80a666585acaded",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/StructuralBasis.lean#L161",
+            "use": "Evaluates the cap on the first two factors in ordinary up and on the final two in ordinary down."
+          },
+          {
+            "module": "MackeyDiagrams.StructuralBasis",
+            "declaration": "MackeyDiagrams.Diagram.eval_leftUnit_single",
+            "revision": "sha256:f53bbb62a3d7bd7c5f9c9e03f813a336727759f5b6a39322a80a666585acaded",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/StructuralBasis.lean#L31",
+            "use": "Removes the regular left factor of the up diagram by the left action."
+          },
+          {
+            "module": "MackeyDiagrams.StructuralBasis",
+            "declaration": "MackeyDiagrams.Diagram.eval_rightUnit_single",
+            "revision": "sha256:f53bbb62a3d7bd7c5f9c9e03f813a336727759f5b6a39322a80a666585acaded",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/StructuralBasis.lean#L147",
+            "use": "Removes the regular right factor of the down diagram by the right action."
+          },
+          {
+            "module": "MackeyDiagrams.Identities",
+            "declaration": "MackeyDiagrams.Diagram.eval_id_apply",
+            "revision": "sha256:7796c8e3a56f678c6fdc1f578a029d8b7258ec724d2425ac6d6f17c847aa5302",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Identities.lean#L84",
+            "use": "Computes the identity strand evaluator on its input."
+          },
+          {
+            "module": "Proofs.ReverseTriangleIdentities",
+            "declaration": "ReverseTriangleIdentities",
+            "revision": "sha256:b68f8cfdb9a7e8b3d0d2cbad1d7bb84cae827ac43c74c06cf120d6ab7b5a2780",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/ReverseTriangleIdentities.lean#L247",
+            "use": "Used directly in the proof for the reverse branches only. The reverse diagram pair after the finite-index argument supplies the up component at α with finiteA and the down component at β with finiteB."
+          }
+        ],
+        "approach": "The endpoint type uses the shared typed Diagram syntax and the two conjugator embeddings. The first two proof branches compute on a coefficient-one generator through ordinary cup at 1, the explicit associator, multiplication cap and unit removal. They hold at arbitrary subgroup index. The two reverse branches apply ReverseTriangleIdentities to the exact reviewed zigzags at α and β with their individual index witnesses. ReverseTriangleIdentities is a proof dependency only. InductionRestrictionAdjunction, BalancedTensorAssociativity and InductionRestrictionBimoduleStrands are scheduling imports here. The ordinary branches use the biset diagram evaluator and structural generator lemmas for the cup, cap, associators and units. The reverse branches use the existing diagram triangle theorem. The source and olean match the native receipt. A shared-slot import audits the compiled declaration to [propext, Classical.choice, Quot.sound]. file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/CupCapStraightening-compile.json",
+        "proofHash": "7690d7c5703e787c1de7e143863a0816fe55580c42cf93fb54c13dcf5b610a13"
+      },
+      {
+        "id": "CupCapDotSlides",
+        "deps": [],
+        "available": [
+          {
+            "module": "MackeyDiagrams.Embedding",
+            "declaration": "MackeyDiagrams.ConjEmbedding.ofConjugator",
+            "revision": "sha256:aa3743ef693b2ba53a39bf55f97adcb03f9fc8330dce5203bab49b1f4a4566d5",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Embedding.lean#L29",
+            "use": "The endpoint obtains the two typed embedding labels from α and β and their reviewed containment hypotheses."
+          },
+          {
+            "module": "MackeyDiagrams.DotLabels",
+            "declaration": "MackeyDiagrams.DotLabel",
+            "revision": "sha256:582ad650cad815bc5aa04a5381bebabafad1adc6806deeea1581370e0fe10e60",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/DotLabels.lean#L14",
+            "use": "The statement and local helpers use finitely supported Complex coefficient functions on eligible typed Dot terms."
+          },
+          {
+            "module": "MackeyDiagrams.Dot",
+            "declaration": "MackeyDiagrams.Dot.inverse",
+            "revision": "sha256:c19f7d943afc8d4129fc03858864eb976a4beae4b5f9552b418d0804bf9508c7",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Dot.lean#L51",
+            "use": "Used in the statement and in proof helpers. It reverses the embedding pair and inverts the group element, with its eligible intertwining witness."
+          },
+          {
+            "module": "Mathlib.Data.Finsupp.Basic",
+            "declaration": "Finsupp.mapDomain_single",
+            "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+            "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Data/Finsupp/Basic.lean#L308",
+            "use": "In lift_dual it pushes a singleton label to the reversed dot with the same scalar."
+          },
+          {
+            "module": "Mathlib.LinearAlgebra.Finsupp.Defs",
+            "declaration": "Finsupp.lmapDomain",
+            "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+            "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Finsupp/Defs.lean#L148",
+            "use": "Supplies the linear map used in lift_dual to compose freeLift with label reversal. The proof checks that composition on singleton labels."
+          },
+          {
+            "module": "MackeyDiagrams.DrawingShape",
+            "declaration": "MackeyDiagrams.LabelledDrawing.interpret",
+            "revision": "sha256:551876dfe50a2f3c871d6d2230c2c919d30a4de71cf683ce1a0c1f2c3d5151dd",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/DrawingShape.lean#L205",
+            "use": "Used in the statement and in the bridge from typed labelled syntax to the corresponding evaluated maps."
+          },
+          {
+            "module": "MackeyDiagrams.ScopedCup",
+            "declaration": "MackeyDiagrams.ScopedDiagram.eval",
+            "revision": "sha256:1089b5d24184f922dd7723d5a20b4a8b881918e23bf34634f73c1fb10a0d88e3",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/ScopedCup.lean#L111",
+            "use": "Evaluates the reviewed weighted-dot, cup and cap compositions as typed bimodule maps."
+          },
+          {
+            "module": "MackeyDiagrams.DotLabels",
+            "declaration": "MackeyDiagrams.DotLabel.eval_upDrawing",
+            "revision": "sha256:582ad650cad815bc5aa04a5381bebabafad1adc6806deeea1581370e0fe10e60",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/DotLabels.lean#L41",
+            "use": "Converts the evaluated up mark in the label proof to Diagram.linearUpDot."
+          },
+          {
+            "module": "MackeyDiagrams.DotLabels",
+            "declaration": "MackeyDiagrams.DotLabel.eval_downDrawing",
+            "revision": "sha256:582ad650cad815bc5aa04a5381bebabafad1adc6806deeea1581370e0fe10e60",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/DotLabels.lean#L47",
+            "use": "Converts the evaluated down mark in the label proof to Diagram.linearDownDot."
+          },
+          {
+            "module": "MackeyDiagrams.LinearDotComposition",
+            "declaration": "MackeyDiagrams.Diagram.eval_linearUpDot_apply",
+            "revision": "sha256:8a2f2ab811886e1551011499fecf62754b0df0ce30435e43025bc4e656545eac",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/LinearDotComposition.lean#L34",
+            "use": "Rewrites the up evaluation at a fixed vector as freeLift over the label coefficients."
+          },
+          {
+            "module": "MackeyDiagrams.LinearDotComposition",
+            "declaration": "MackeyDiagrams.Diagram.eval_linearDownDot_apply",
+            "revision": "sha256:8a2f2ab811886e1551011499fecf62754b0df0ce30435e43025bc4e656545eac",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/LinearDotComposition.lean#L40",
+            "use": "Rewrites the down evaluation at a fixed vector as freeLift over the label coefficients."
+          },
+          {
+            "module": "MackeyDiagrams.Linear",
+            "declaration": "MackeyDiagrams.freeLift",
+            "revision": "sha256:9f22b655ebe182c336bd978ab77b26f639f504dfbd0fb2cce8f9b52f5f11413b",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Linear.lean#L21",
+            "use": "Extends group-element evaluations linearly in the finite label, including zero."
+          },
+          {
+            "module": "MackeyDiagrams.Linear",
+            "declaration": "MackeyDiagrams.freeLift_single",
+            "revision": "sha256:9f22b655ebe182c336bd978ab77b26f639f504dfbd0fb2cce8f9b52f5f11413b",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Linear.lean#L25",
+            "use": "Computes the lifted map on a singleton, preserving its coefficient. Used in the local composition and reversal bridges."
+          },
+          {
+            "module": "Mathlib.LinearAlgebra.Finsupp.Defs",
+            "declaration": "Finsupp.lhom_ext",
+            "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+            "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Finsupp/Defs.lean#L91",
+            "use": "Checks equality of linear maps on singleton inputs. The local extOnBasis reduces arbitrary coefficients to scaling the coefficient-one generator."
+          },
+          {
+            "module": "MackeyDiagrams.Linear",
+            "declaration": "MackeyDiagrams.Biset.Hom.ext",
+            "revision": "sha256:9f22b655ebe182c336bd978ab77b26f639f504dfbd0fb2cce8f9b52f5f11413b",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Linear.lean#L56",
+            "use": "Lifts equality of the underlying linear maps to equality of the bundled bimodule evaluations."
+          },
+          {
+            "module": "MackeyDiagrams.Linear",
+            "declaration": "MackeyDiagrams.Biset.Hom.horizontal_single",
+            "revision": "sha256:9f22b655ebe182c336bd978ab77b26f639f504dfbd0fb2cce8f9b52f5f11413b",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Linear.lean#L186",
+            "use": "Computes horizontal evaluation on a balanced-pair singleton inside the two label-linearity lemmas."
+          },
+          {
+            "module": "MackeyDiagrams.Identities",
+            "declaration": "MackeyDiagrams.Diagram.eval_horizontal_single",
+            "revision": "sha256:7796c8e3a56f678c6fdc1f578a029d8b7258ec724d2425ac6d6f17c847aa5302",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Identities.lean#L87",
+            "use": "Evaluates the two factors on singleton generators in the four one-dot comparisons."
+          },
+          {
+            "module": "MackeyDiagrams.Identities",
+            "declaration": "MackeyDiagrams.Diagram.eval_upDot_single",
+            "revision": "sha256:7796c8e3a56f678c6fdc1f578a029d8b7258ec724d2425ac6d6f17c847aa5302",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Identities.lean#L34",
+            "use": "Evaluates the up dot using x*d on a basis vector."
+          },
+          {
+            "module": "MackeyDiagrams.Identities",
+            "declaration": "MackeyDiagrams.Diagram.eval_downDot_single",
+            "revision": "sha256:7796c8e3a56f678c6fdc1f578a029d8b7258ec724d2425ac6d6f17c847aa5302",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Identities.lean#L42",
+            "use": "Evaluates the down dot using d⁻¹*x, including the inverse-of-inverse for a reversed dot."
+          },
+          {
+            "module": "MackeyDiagrams.StructuralBasis",
+            "declaration": "MackeyDiagrams.Diagram.eval_multiplicationCap_single",
+            "revision": "sha256:f53bbb62a3d7bd7c5f9c9e03f813a336727759f5b6a39322a80a666585acaded",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/StructuralBasis.lean#L161",
+            "use": "Computes the cap by multiplying the two basis factors, so the two paths give x*d*y."
+          },
+          {
+            "module": "MackeyDiagrams.StructuralBasis",
+            "declaration": "MackeyDiagrams.Diagram.eval_traceCap_single",
+            "revision": "sha256:f53bbb62a3d7bd7c5f9c9e03f813a336727759f5b6a39322a80a666585acaded",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/StructuralBasis.lean#L39",
+            "use": "Computes the trace on a product in the balanced input pair, for either embedding."
+          },
+          {
+            "module": "MackeyDiagrams.Trace",
+            "declaration": "MackeyDiagrams.Generator.traceBasis_image",
+            "revision": "sha256:477d2b80f0dfcde88984396e9c3ac984033edb279581c6d91cc12df523796527",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Trace.lean#L23",
+            "use": "Both trace tests take the same subgroup preimage h in the hit case."
+          },
+          {
+            "module": "MackeyDiagrams.Trace",
+            "declaration": "MackeyDiagrams.Generator.traceBasis_outside",
+            "revision": "sha256:477d2b80f0dfcde88984396e9c3ac984033edb279581c6d91cc12df523796527",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Trace.lean#L30",
+            "use": "Both traces vanish when their respective subgroup tests fail. The intertwiner proves equivalence of the tests."
+          },
+          {
+            "module": "MackeyDiagrams.OrdinaryCupTrace",
+            "declaration": "MackeyDiagrams.Diagram.eval_ordinaryCup_single",
+            "revision": "sha256:f1383f13b55f1831cdb2fad0885bc1e66b146683d3543dacd8b7e8303af539ac",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/OrdinaryCupTrace.lean#L12",
+            "use": "Computes each ordinary cup input h by the indicated embedded factor and 1."
+          },
+          {
+            "module": "MackeyDiagrams.Biset",
+            "declaration": "MackeyDiagrams.Biset.pair_balance",
+            "revision": "sha256:0e1469df7139a937f649a741281d0891588ec589df0b46bd122cb390b5f6b252",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Biset.lean#L117",
+            "use": "Moves d⁻¹ to the other leg across the middle G action in the ordinary cup comparison."
+          },
+          {
+            "module": "MackeyDiagrams.Transfer",
+            "declaration": "MackeyDiagrams.Generator.reverseCup",
+            "revision": "sha256:61db06af9cf58c5006e39a66df497eabd06a5456c310f10bcf1df4edc83ad5eb",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Transfer.lean#L143",
+            "use": "Implements the reverse cup as transfer along the multiplication-cap basis map."
+          },
+          {
+            "module": "MackeyDiagrams.Transfer",
+            "declaration": "MackeyDiagrams.Generator.multiplicationCap_finiteFiber",
+            "revision": "sha256:61db06af9cf58c5006e39a66df497eabd06a5456c310f10bcf1df4edc83ad5eb",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Transfer.lean#L134",
+            "use": "Keeps track of the two individual finite-index witnesses in their actual fibers over g."
+          },
+          {
+            "module": "MackeyDiagrams.MixedIdentities",
+            "declaration": "MackeyDiagrams.Biset.Hom.transfer_single",
+            "revision": "sha256:c739722827ee60ea5b7fc6c7ed0aa51bba24a6c551728259f89aeaf1cb4f0975",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/MixedIdentities.lean#L29",
+            "use": "Expresses reverse-cup evaluation of the singleton at g as the transfer basis vector."
+          },
+          {
+            "module": "MackeyDiagrams.MixedIdentities",
+            "declaration": "MackeyDiagrams.Biset.Hom.transferBasis_sum",
+            "revision": "sha256:c739722827ee60ea5b7fc6c7ed0aa51bba24a6c551728259f89aeaf1cb4f0975",
+            "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/MixedIdentities.lean#L15",
+            "use": "Expands the transfer basis vector into the sum over the product fiber."
+          },
+          {
+            "module": "Mathlib.Algebra.BigOperators.Group.Finset.Defs",
+            "declaration": "Finset.sum_bij'",
+            "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+            "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/BigOperators/Group/Finset/Defs.lean#L471",
+            "use": "Matches the finite fiber sums using capShift and the inverse dot's capShift for the inverse."
+          }
+        ],
+        "approach": "The statement uses the finite label, its coefficient-preserving reversal, and the four primitive cup and cap diagrams. The singleton proof compares x*d*y in the multiplication branch, transports the trace subgroup test by the intertwiner, and uses balancing over G for the ordinary cup. For the reverse cup the product-fiber maps are capShift and its inverse. They preserve the product g, and each matched term evaluates to the same balanced pair [x*d,y]. Each transfer uses its own image-index witness. The local lift_dual lemma identifies the reversed label evaluation by linear pushforward. The two lift_horizontal lemmas move freeLift through the fixed horizontal factors, and lift_map handles vertical composition. This extends the four singleton identities to all coefficients, including zero. The endpoint body pairs those four local labelled results. InductionRestrictionBimoduleStrands, GroupElementDotCriterion, InductionRestrictionAdjunction, FiniteIndexReverseAdjunction and ModuleTensorUniversalProperty are scheduling imports here. The local proof instead uses the existing typed biset and dot evaluators, with the direct balance and transfer calculations for the two cups. The source and olean match the native receipt. A shared-slot import audits the compiled declaration to [propext, Classical.choice, Quot.sound]. file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/CupCapDotSlides-compile.json",
+        "proofHash": "9cf2a1b7636fa3c47d1915a00958bcd247326002d430e305ec5281d181550084"
       }
     ],
     "repairs": [],
     "artifacts": [
-      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-38d4c2f5-2d61-4b88-b712-3197b9097590/inspection/Connections.lean",
-      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-38d4c2f5-2d61-4b88-b712-3197b9097590/inspection/Inspect0.lean",
-      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-38d4c2f5-2d61-4b88-b712-3197b9097590/inspection/Inspect1.lean",
-      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-38d4c2f5-2d61-4b88-b712-3197b9097590/inspection/Inspect2.lean",
-      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-38d4c2f5-2d61-4b88-b712-3197b9097590/inspection/Inspect3.lean",
-      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-38d4c2f5-2d61-4b88-b712-3197b9097590/inspection/Inspect4.lean",
-      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-38d4c2f5-2d61-4b88-b712-3197b9097590/inspection/Inspect5.lean",
-      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-38d4c2f5-2d61-4b88-b712-3197b9097590/inspection/Isolated-CaseFiveRequiresInfiniteExpansion.lean",
-      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-38d4c2f5-2d61-4b88-b712-3197b9097590/inspection/Isolated-CaseOneNoFiniteRightReplacement.lean",
-      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-38d4c2f5-2d61-4b88-b712-3197b9097590/inspection/Isolated-CaseTwoRequiresSum.lean",
-      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-38d4c2f5-2d61-4b88-b712-3197b9097590/proposal.json"
+      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-a3939e62-5829-4280-baa2-d6c7de739ba8/CupCapAudit.lean",
+      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-a3939e62-5829-4280-baa2-d6c7de739ba8/proposal.json",
+      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-a3939e62-5829-4280-baa2-d6c7de739ba8/retained-inspection/Connections.lean",
+      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-a3939e62-5829-4280-baa2-d6c7de739ba8/retained-inspection/Inspect0.lean",
+      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-a3939e62-5829-4280-baa2-d6c7de739ba8/retained-inspection/Inspect1.lean",
+      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-a3939e62-5829-4280-baa2-d6c7de739ba8/retained-inspection/Inspect2.lean",
+      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-a3939e62-5829-4280-baa2-d6c7de739ba8/retained-inspection/Inspect3.lean",
+      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-a3939e62-5829-4280-baa2-d6c7de739ba8/retained-inspection/Inspect4.lean",
+      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-a3939e62-5829-4280-baa2-d6c7de739ba8/retained-inspection/Inspect5.lean",
+      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-a3939e62-5829-4280-baa2-d6c7de739ba8/retained-inspection/Isolated-CaseFiveRequiresInfiniteExpansion.lean",
+      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-a3939e62-5829-4280-baa2-d6c7de739ba8/retained-inspection/Isolated-CaseOneNoFiniteRightReplacement.lean",
+      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-a3939e62-5829-4280-baa2-d6c7de739ba8/retained-inspection/Isolated-CaseTwoRequiresSum.lean"
     ]
   }
 }

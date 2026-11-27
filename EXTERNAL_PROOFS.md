@@ -525,6 +525,8 @@ Compute the kernel of reduction on each integral orbit coordinate. The ULift wit
   Used by: DiagrammaticFunctorCorrespondence.
 - **MathlibRestrictScalarsExact**: [ModuleCat.restrictScalars_map_exact](https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/ChangeOfRingsExact.lean#L33-L42);  [repository](https://github.com/leanprover-community/mathlib4); revision `65d730f7150f21fdfa32f3e73a3f549c1f96a0e9`; license: Apache-2.0. The finite-limit preservation instance from this exactness theorem applies to the reviewed restriction functor along the group-algebra map between possibly noncommutative rings.
   Used by: DiagrammaticFunctorCorrespondence.
+- **MathlibFinsetSumBijInverse**: [Finset.sum_bij'](https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/BigOperators/Group/Finset/Defs.lean#L471-L484);  [repository](https://github.com/leanprover-community/mathlib4); revision `65d730f7150f21fdfa32f3e73a3f549c1f96a0e9`; license: Apache-2.0. Reindexes the reverse-cup transfer sums over the two actual finite multiplication-cap fibers. The proof checks both membership conditions, both inverse laws, and equality of the matched terms.
+  Used by: CupCapDotSlides.
 
 ## Upstream Lean verification
 
