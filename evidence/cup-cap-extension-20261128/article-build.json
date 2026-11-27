@@ -4,7 +4,7 @@
   "pages": 48,
   "windowsSource": "/mnt/c/Users/lazyi/Documents/ChatGPT/mackey-bimodules.tex",
   "windowsPdf": "/mnt/c/Users/lazyi/Documents/ChatGPT/mackey-bimodules.pdf",
-  "nativeLeanStatus": "Both propositions compiled and axiom-audited; final coordinator accepted all 153 active endpoints with no repairs or blocker; complete-library closeout running.",
+  "nativeLeanStatus": "Complete: all 153 active endpoints, including both new propositions, passed compilation, allowed-axiom auditing, final dependency review, the complete-library build, and the final built-artifact audit.",
   "sourceStatementLabels": [
     "prop:cup-cap-dots",
     "prop:cup-cap-straightening"
@@ -14,5 +14,6 @@
     "CupCapDotSlides",
     "CupCapStraightening"
   ],
-  "finalDependencyReview": "evidence/proof-coordinator-fac50bfc-e1c2-402c-b6ca-d5bd5da4f4d4.json"
+  "finalDependencyReview": "evidence/proof-coordinator-fac50bfc-e1c2-402c-b6ca-d5bd5da4f4d4.json",
+  "nativeLeanCloseoutCommit": "7d8b2e3"
 }
