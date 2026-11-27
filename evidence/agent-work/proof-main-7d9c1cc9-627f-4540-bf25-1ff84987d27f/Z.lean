@@ -1,0 +1,11 @@
+import MackeyDiagrams
+#check ZMod.intCast_surjective
+#check ZMod.intCast_zmod_eq_zero_iff_dvd
+#check Int.castAddHom
+#check AddMonoidHom.pi
+#check AddSubgroup.toAddSubmonoid
+#check Submodule.toAddSubgroup
+#check LinearEquiv.coe_toLinearMap
+#check Submodule.closure_eq_toAddSubgroup_span
+#check AddSubgroup.eq_iff_iff
+#check Finsupp.lhom_ext

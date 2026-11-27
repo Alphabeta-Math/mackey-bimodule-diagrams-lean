@@ -1,0 +1,37 @@
+
+private theorem sigmaCoords_action {ι : Type} (X : ι → Biset K H)
+    (g : K × H) (x : (sumBasis X).carrier →₀ Complex) (i : ι) :
+    (sigmaFinsuppLequivDFinsupp Complex ((sumBasis X).actLinear Complex g x)) i =
+      (X i).actLinear Complex g ((sigmaFinsuppLequivDFinsupp Complex x) i) := by
+  classical
+  let c := (sigmaFinsuppLequivDFinsupp Complex :
+    ((sumBasis X).carrier →₀ Complex) ≃ₗ[Complex] (Π₀ i, (X i).carrier →₀ Complex))
+  let p := (DFinsupp.lapply i).comp c.toLinearMap
+  apply LinearMap.congr_fun
+    (f := p.comp ((sumBasis X).actLinear Complex g))
+    (g := ((X i).actLinear Complex g).comp p)
+  apply Finsupp.lhom_ext
+  rintro ⟨j, z⟩ t
+  change c ((sumBasis X).actLinear Complex g (Finsupp.single ⟨j, z⟩ t)) i =
+    (X i).actLinear Complex g (c (Finsupp.single ⟨j, z⟩ t) i)
+  rw [Biset.actLinear_single]
+  change sigmaFinsuppEquivDFinsupp (Finsupp.single ⟨j, (X j).act g z⟩ t) i =
+    (X i).actLinear Complex g (sigmaFinsuppEquivDFinsupp (Finsupp.single ⟨j, z⟩ t) i)
+  rw [sigmaFinsuppEquivDFinsupp_single, sigmaFinsuppEquivDFinsupp_single]
+  by_cases h : j = i
+  · subst j
+    simp
+  · simp [DFinsupp.single_eq_of_ne h]
+
+private def mackeyBisetIso {ι : Type} (X : Biset K H) (Y : ι → Biset K H)
+    (e : (X.carrier →₀ Complex) ≃ₗ[Complex] (Π₀ i, (Y i).carrier →₀ Complex))
+    (he : ∀ (g : K × H) x i, e (X.actLinear Complex g x) i =
+      (Y i).actLinear Complex g (e x i)) :
+    linearize.{u} X ≅ linearize.{u} (sumBasis Y) :=
+  liftBisetEquiv (e.trans (sigmaFinsuppLequivDFinsupp Complex).symm) (by
+    intro g x
+    apply (sigmaFinsuppLequivDFinsupp Complex).injective
+    ext i
+    change (sigmaFinsuppLequivDFinsupp Complex
+      ((sigmaFinsuppLequivDFinsupp Complex).symm (e (X.actLinear Complex g x)))) i = _
+    rw [LinearEquiv.apply_symm_apply, sigmaCoords_action, LinearEquiv.apply_symm_apply, he])

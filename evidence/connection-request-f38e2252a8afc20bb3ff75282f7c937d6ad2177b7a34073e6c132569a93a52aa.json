@@ -1,0 +1,16 @@
+{
+  "accepted": false,
+  "request": {
+    "endpoint": "7808f60a1ed69d1f82188661d37c6ef46fb6d475bba6b9ec8ec70380769a75ba",
+    "decision": {
+      "id": "LeftDownReidemeisterCurl",
+      "reason": "Exact index-valued curl. Use merge-split cancellation and the structural isomorphisms, then evaluate the reverse cup followed by the multiplication cap as the subgroup-index scalar.",
+      "mathlibImports": [
+        "Mathlib.Basic.Complex.Basic"
+      ],
+      "proof": "by\n  intro U inst K H G δ α hδ hα d a S finite down loopUp loopDown straight cup middle cap curl\n  have hmid :\n      (MackeyDiagrams.Generator.mergeDown Complex a d).vertical\n        (MackeyDiagrams.Generator.splitDown Complex a d) =\n      MackeyDiagrams.Biset.Hom.id ((MackeyDiagrams.Biset.restriction d).tensor (MackeyDiagrams.Biset.restriction a)) :=\n    MackeyDiagrams.Diagram.mergeDown_splitDown a d\n  have hcup :\n      (MackeyDiagrams.Generator.reverseCup Complex d finite).vertical\n        (MackeyDiagrams.Generator.multiplicationCap Complex d) =\n      (MackeyDiagrams.Biset.Hom.id (MackeyDiagrams.Biset.regular H)).scale\n        (S.index : Complex) :=\n    MackeyDiagrams.Diagram.reverseCup_multiplicationCap d finite\n  simp only [curl, middle, cup, cap, straight, down, loopDown, loopUp,\n    MackeyDiagrams.Diagram.eval, hmid, MackeyDiagrams.Word.basis,\n    MackeyDiagrams.Biset.Hom.horizontal_id]\n  rw [← MackeyDiagrams.Biset.Hom.vertical_assoc (MackeyDiagrams.Biset.associate (MackeyDiagrams.Biset.induction d)\n        (MackeyDiagrams.Biset.restriction d) (MackeyDiagrams.Biset.restriction a) Complex),\n    MackeyDiagrams.Biset.Hom.vertical_id, ← MackeyDiagrams.Biset.Hom.vertical_assoc (MackeyDiagrams.Biset.associate (MackeyDiagrams.Biset.induction d)\n        (MackeyDiagrams.Biset.restriction d) (MackeyDiagrams.Biset.restriction a) Complex),\n    MackeyDiagrams.Biset.associate_unassociate, MackeyDiagrams.Biset.Hom.id_vertical]\n  rw [← MackeyDiagrams.Biset.Hom.vertical_assoc ((MackeyDiagrams.Generator.reverseCup Complex d finite).horizontal\n        (MackeyDiagrams.Biset.Hom.id (MackeyDiagrams.Biset.restriction a))),\n    MackeyDiagrams.Biset.Hom.horizontal_vertical,\n    MackeyDiagrams.Biset.Hom.id_vertical, hcup,\n    MackeyDiagrams.Biset.Hom.horizontal_scale_left, MackeyDiagrams.Biset.Hom.horizontal_id,\n    MackeyDiagrams.Biset.Hom.vertical_scale_left, MackeyDiagrams.Biset.Hom.id_vertical,\n    MackeyDiagrams.Biset.Hom.vertical_scale_right, MackeyDiagrams.Biset.insertLeftUnit_leftUnit]",
+      "support": "universe u"
+    }
+  },
+  "reason": "Error: The approved endpoint or its dependencies changed after submission"
+}

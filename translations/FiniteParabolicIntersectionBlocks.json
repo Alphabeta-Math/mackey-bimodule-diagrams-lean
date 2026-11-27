@@ -1,0 +1,6 @@
+{
+  "type": "∀ {ι κ : Type*} [Finite ι] [Finite κ] (X : Finset Nat)\n    (A : ι → Finset Nat) (B : κ → Finset Nat),\n  (∀ i, Finset.Nonempty (A i)) →\n  (∀ j, Finset.Nonempty (B j)) →\n  Pairwise (fun i i' => Disjoint (A i) (A i')) →\n  Pairwise (fun j j' => Disjoint (B j) (B j')) →\n  (∀ n : Nat, n ∈ X ↔ ∃ i, n ∈ A i) →\n  (∀ n : Nat, n ∈ X ↔ ∃ j, n ∈ B j) →\n  let blockSym : Finset Nat → Subgroup (Equiv.Perm Nat) :=\n    fun S => MonoidHom.range (Equiv.Perm.ofSubtype (p := fun n : Nat => n ∈ S))\n  (iSup (fun i => blockSym (A i))) ⊓ (iSup (fun j => blockSym (B j))) =\n    iSup (fun i => iSup (fun j => blockSym (A i ∩ B j)))",
+  "value": null,
+  "source": "article",
+  "sourceReason": "Ian Xiao, § 7, Proposition 7.1, Intersection, pp. 28–29. The published PDF matched the project copy byte for byte, and the article webpage reproduced the formula. The supplied defect-report URL returned HTTP 404, and the task context supplied no correction for this endpoint. Each block permutation is extended by the identity on its complement in Nat. The subgroup supremum represents the product of the disjoint block factors, with empty intersections contributing trivial subgroups."
+}

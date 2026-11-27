@@ -1,0 +1,2 @@
+import Proofs.ReplacementForTwoProjections
+#print axioms ReplacementForTwoProjections

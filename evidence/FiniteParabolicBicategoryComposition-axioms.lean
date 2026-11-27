@@ -1,0 +1,2 @@
+import Proofs.FiniteParabolicBicategoryComposition
+#print axioms FiniteParabolicBicategoryComposition

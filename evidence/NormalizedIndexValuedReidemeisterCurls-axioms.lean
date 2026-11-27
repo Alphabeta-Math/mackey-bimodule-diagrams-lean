@@ -1,0 +1,2 @@
+import Proofs.NormalizedIndexValuedReidemeisterCurls
+#print axioms NormalizedIndexValuedReidemeisterCurls

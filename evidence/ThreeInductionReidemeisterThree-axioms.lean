@@ -1,0 +1,2 @@
+import Proofs.ThreeInductionReidemeisterThree
+#print axioms ThreeInductionReidemeisterThree

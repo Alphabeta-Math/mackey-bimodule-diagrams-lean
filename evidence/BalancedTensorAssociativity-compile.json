@@ -1,0 +1,34 @@
+{
+  "source_sha256": "2069082f489690ee0a881df7f2f5ebad33d114cdd97398518f7d740ef23f279e",
+  "commands": [
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "-o",
+      ".lake/build/lib/lean/Proofs/BalancedTensorAssociativity.olean",
+      "Proofs/BalancedTensorAssociativity.lean"
+    ],
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "evidence/BalancedTensorAssociativity-axioms.lean"
+    ]
+  ],
+  "build": {
+    "code": 0,
+    "output": "Proofs/BalancedTensorAssociativity.lean:275:8: warning: automatically included section variable(s) unused in theorem `_private.Proofs.BalancedTensorAssociativity.0.BalancedTensorAssoc.leftLift_pure`:\n  [Module R (Tensor S N P)]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Module R (Tensor S N P)] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nProofs/BalancedTensorAssociativity.lean:306:8: warning: automatically included section variable(s) unused in theorem `_private.Proofs.BalancedTensorAssociativity.0.BalancedTensorAssoc.rightLift_pure`:\n  [Module Sᵐᵒᵖ (Tensor R M N)]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Module Sᵐᵒᵖ (Tensor R M N)] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n"
+  },
+  "axioms": {
+    "code": 0,
+    "output": "'BalancedTensorAssociativity' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "ok": true,
+  "workspace_sha256": "0b8923f32a923e0fc946dfe2b389ab92d02b9e01e481b4de6755e55d083f7b65",
+  "olean_sha256": "3439f37b38f4b52d21cf017d92a84c8cf446c882ea98a2cbe4f7646a67f12eed"
+}

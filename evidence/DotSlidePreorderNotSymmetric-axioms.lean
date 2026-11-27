@@ -1,0 +1,2 @@
+import Proofs.DotSlidePreorderNotSymmetric
+#print axioms DotSlidePreorderNotSymmetric

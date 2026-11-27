@@ -1,0 +1,3 @@
+import WattsFoundation.GeneratorRegularActions
+#print axioms SmallGeneratorBridge.regularToHom
+#print axioms SmallGeneratorBridge.regularToHom_right

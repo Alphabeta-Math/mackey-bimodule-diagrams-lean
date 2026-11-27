@@ -1,0 +1,49 @@
+{
+  "id": "FiniteParabolicConjugateBlocks",
+  "lean": "leanprover/lean4:v4.36.0-rc2",
+  "leanRevision": "b35cb10cf2ced51a2fd1880cfdbf75c71ab7a35a",
+  "mathlib": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+  "workspace": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean",
+  "manifestSha256": "8902ec05c32c92c98e90ebb36796aacc426e0353d1ce2f8f3240b5ee8c4ce7fa",
+  "imports": [
+    {
+      "module": "MackeyDiagrams",
+      "files": [
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/build/lib/lean/MackeyDiagrams.olean",
+          "sha256": "0611ce379ff521033831e5a162661c50f04975da2d1f565c32fdb090391e90b1"
+        }
+      ]
+    },
+    {
+      "module": "Mathlib.GroupTheory.Perm.Support",
+      "files": [
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/GroupTheory/Perm/Support.olean",
+          "sha256": "087cd25d62a869a8ff48efd95ecebea0786a1d225d36217a4e1d8460827e3d26"
+        },
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/GroupTheory/Perm/Support.olean.private",
+          "sha256": "f138fc7a6bf3b4e120aa1332f32e9652aa555429d4732417fd423c4b86e5f674"
+        },
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/GroupTheory/Perm/Support.olean.server",
+          "sha256": "c9bf55a91bd011470450ecb39bb485c8ec97716018a4da03af43986f8dfb3f36"
+        }
+      ]
+    }
+  ],
+  "searchPaths": [],
+  "statementSha256": "6363f20e9391097d63b7be7b959636a087870da8843bad84a89d642d6ca69044",
+  "sourceSha256": "c5bc98310ca17ec3c701f9fb8055a59a6e42f06e9e2ab859c275a9f0c976bb4c",
+  "oleanSha256": "0e020ea089507f61c5fb10eba0ba93438f57e574fe470fcea8a64a4afabfc7b9",
+  "build": {
+    "code": 0,
+    "output": ""
+  },
+  "audit": {
+    "code": 0,
+    "output": "'LeanWorkflowCheckedConnection' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "scope": "The exact supplied statement was checked in this workspace. Importability and interpretation in another workspace are separate obligations."
+}

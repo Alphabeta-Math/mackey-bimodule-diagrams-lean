@@ -1,0 +1,222 @@
+import Proofs.FiniteIndexReverseAdjunction
+import MackeyDiagrams
+universe u v
+namespace ReverseTriangleIdentitiesSupport
+
+open MackeyDiagrams
+open MackeyDiagrams.Diagram
+
+noncomputable section
+
+variable {U : Type u} [Group U] {H G : Subgroup U} (a : ConjEmbedding H G)
+
+local notation "A" => MonoidAlgebra Complex H
+local notation "B" => MonoidAlgebra Complex G
+local notation "S" => a.toHom.range
+local notation "φ" => MonoidAlgebra.mapDomainAlgHom Complex Complex a.toHom
+local notation "bG" => fun g : G => MonoidAlgebra.single g (1 : Complex)
+
+private abbrev Trace : B →ₗ[Complex] A :=
+  LinearMap.comp (MonoidAlgebra.coeffLinearEquiv Complex).symm.toLinearMap
+    (LinearMap.comp (freeLift Complex (Generator.traceBasis Complex a))
+      (MonoidAlgebra.coeffLinearEquiv Complex).toLinearMap)
+
+private theorem trace_basis (g : G) :
+    Trace a (bG g) = MonoidAlgebra.ofCoeff (Generator.traceBasis Complex a g) := by
+  change MonoidAlgebra.ofCoeff (freeLift Complex (Generator.traceBasis Complex a)
+    (Finsupp.single g 1)) = _
+  rw [freeLift_single, one_smul]
+
+private theorem trace_mapped_in (g : G) (hg : g ∈ S) :
+    φ (Trace a (bG g)) = bG g := by
+  obtain ⟨h, rfl⟩ := hg
+  rw [trace_basis, Generator.traceBasis_image]
+  change MonoidAlgebra.mapDomain a.toHom (MonoidAlgebra.single h (1 : Complex)) = _
+  rw [MonoidAlgebra.mapDomain_single]
+
+private theorem trace_mapped_out (g : G) (hg : g ∉ S) :
+    φ (Trace a (bG g)) = 0 := by
+  rw [trace_basis, Generator.traceBasis_outside _ _ _ hg]
+  change φ 0 = 0
+  rw [map_zero]
+
+private abbrev IsTransversal (T : Finset G) :=
+  ∀ g : G, ∃! t : {t : G // t ∈ T}, g * t.val⁻¹ ∈ S
+
+-- Inverting the subgroup membership condition for g⁻¹ gives t * g ∈ (S).
+private theorem inverse_transversal (T : Finset G) (hT : IsTransversal a T) (g : G) :
+    ∃! t : {t : G // t ∈ T}, t.val * g ∈ S := by
+  have h (t : G) : g⁻¹ * t⁻¹ ∈ S ↔ t * g ∈ S := by
+    rw [← mul_inv_rev, Subgroup.inv_mem_iff]
+  obtain ⟨t, ht, huniq⟩ := hT g⁻¹
+  exact ⟨t, (h t).mp ht, fun r hr => huniq r ((h r).mpr hr)⟩
+
+private theorem sum_survivor {M : Type*} [AddCommMonoid M] (T : Finset G)
+    (p : G → Prop) (f : G → M) (b : M)
+    (h : ∃! t : {t : G // t ∈ T}, p t.val)
+    (hin : ∀ t, p t → f t = b) (hout : ∀ t, ¬ p t → f t = 0) :
+    ∑ t ∈ T, f t = b := by
+  classical
+  obtain ⟨t, ht, huniq⟩ := h
+  rw [Finset.sum_eq_single_of_mem t.val t.property, hin t ht]
+  intro r hr hrt
+  exact hout r fun hp => hrt (congrArg Subtype.val (huniq ⟨r, hr⟩ hp))
+
+private theorem nonzero_survivor {M : Type*} [Zero M] (T : Finset G)
+    (p : G → Prop) (f : G → M) (b : M) (hb : b ≠ 0)
+    (h : ∃! t : {t : G // t ∈ T}, p t.val)
+    (hin : ∀ t, p t → f t = b) (hout : ∀ t, ¬ p t → f t = 0) :
+    ∃! t : {t : G // t ∈ T}, f t.val ≠ 0 := by
+  classical
+  obtain ⟨t, ht, huniq⟩ := h
+  refine ⟨t, fun hz => hb ((hin t ht).symm.trans hz), fun r hr => huniq r ?_⟩
+  by_contra hp
+  exact hr (hout r hp)
+
+private def leftTerm (t : G) (x : B) : B :=
+  bG t⁻¹ * φ (Trace a (bG t * x))
+
+private def rightTerm (t : G) (x : B) : B :=
+  φ (Trace a (x * bG t⁻¹)) * bG t
+
+private theorem left_in (t g : G) (h : t * g ∈ S) :
+    leftTerm a t (bG g) = bG g := by
+  simp only [leftTerm, MonoidAlgebra.single_mul_single, mul_one, trace_mapped_in a _ h,
+    inv_mul_cancel_left]
+
+private theorem left_out (t g : G) (h : t * g ∉ S) :
+    leftTerm a t (bG g) = 0 := by
+  simp only [leftTerm, MonoidAlgebra.single_mul_single, mul_one, trace_mapped_out a _ h,
+    mul_zero]
+
+private theorem right_in (t g : G) (h : g * t⁻¹ ∈ S) :
+    rightTerm a t (bG g) = bG g := by
+  simp only [rightTerm, MonoidAlgebra.single_mul_single, mul_one, trace_mapped_in a _ h,
+    inv_mul_cancel_right]
+
+private theorem right_out (t g : G) (h : g * t⁻¹ ∉ S) :
+    rightTerm a t (bG g) = 0 := by
+  simp only [rightTerm, MonoidAlgebra.single_mul_single, mul_one, trace_mapped_out a _ h,
+    zero_mul]
+
+private theorem dual_basis (T : Finset G) (hT : IsTransversal a T) :
+    (∀ x : B, (∑ t ∈ T, leftTerm a t x) = x ∧ (∑ t ∈ T, rightTerm a t x) = x) ∧
+      (∀ g : G, (∃! t : {t : G // t ∈ T}, leftTerm a t.val (bG g) ≠ 0) ∧
+        (∃! t : {t : G // t ∈ T}, rightTerm a t.val (bG g) ≠ 0)) := by
+  have leftSum (g : G) := sum_survivor T (fun t => t * g ∈ S)
+    (fun t => leftTerm a t (bG g)) (bG g) (inverse_transversal a T hT g)
+    (fun t => left_in a t g) (fun t => left_out a t g)
+  have rightSum (g : G) := sum_survivor T (fun t => g * t⁻¹ ∈ S)
+    (fun t => rightTerm a t (bG g)) (bG g) (hT g)
+    (fun t => right_in a t g) (fun t => right_out a t g)
+  constructor
+  · intro x
+    induction x using MonoidAlgebra.induction_on with
+    | of g => simpa only [MonoidAlgebra.of_apply] using And.intro (leftSum g) (rightSum g)
+    | add x y hx hy =>
+        simp only [leftTerm, rightTerm, mul_add, add_mul, map_add] at hx hy ⊢
+        rw [Finset.sum_add_distrib, Finset.sum_add_distrib, hx.1, hy.1, hx.2, hy.2]
+        exact ⟨rfl, rfl⟩
+    | smul c x hx =>
+        simp only [leftTerm, rightTerm, mul_smul_comm, smul_mul_assoc, map_smul] at hx ⊢
+        rw [← Finset.smul_sum, ← Finset.smul_sum, hx.1, hx.2]
+        exact ⟨rfl, rfl⟩
+  · intro g
+    have hb : bG g ≠ 0 := by simp
+    exact ⟨nonzero_survivor T (fun t => t * g ∈ S) _ _ hb
+      (inverse_transversal a T hT g) (fun t => left_in a t g) (fun t => left_out a t g),
+      nonzero_survivor T (fun t => g * t⁻¹ ∈ S) _ _ hb
+        (hT g) (fun t => right_in a t g) (fun t => right_out a t g)⟩
+
+local notation "D" => Word.down a
+local notation "I" => Word.up a
+local notation "idD" => Diagram.id (R := Complex) D
+local notation "idI" => Diagram.id (R := Complex) I
+local notation "cap" => traceCap (R := Complex) a
+
+private abbrev CupFormula (finite : (S).FiniteIndex) (T : Finset G) :=
+  (reverseCup (R := Complex) a finite).eval.toLinearMap (Finsupp.single (1 : G) 1) =
+    ∑ t ∈ T, Finsupp.single ((I).basis.pair (D).basis t⁻¹ t) 1
+
+private theorem insertRightUnit_single (g : G) :
+    (insertRightUnit (R := Complex) D).eval.toLinearMap (Finsupp.single g 1) =
+      Finsupp.single ((D).basis.pair (Biset.regular G) g 1) 1 := by
+  change (Biset.insertRightUnit (D).basis Complex).toLinearMap _ = _
+  rw [Biset.insertRightUnit, Biset.Hom.ofFunction_single]
+
+private theorem triangle_down (finite : (S).FiniteIndex) (T : Finset G)
+    (hT : IsTransversal a T) (hCup : CupFormula a finite T) :
+    ((insertRightUnit D).vertical
+      (((idD).horizontal (reverseCup (R := Complex) a finite)).vertical
+        ((unassociate D I D).vertical
+          (((cap).horizontal idD).vertical (leftUnit D))))).eval = (idD).eval := by
+  apply eval_ext_on_generators
+  intro g
+  change G at g
+  rw [eval_vertical_apply, eval_vertical_apply, eval_vertical_apply, eval_vertical_apply,
+    insertRightUnit_single a g, eval_horizontal_single idD (reverseCup a finite) g 1 1,
+    one_smul, eval_id_apply, hCup]
+  simp only [map_sum, Biset.pairLinear_single, mul_one, eval_unassociate_single]
+  let f (t : G) :=
+    (leftUnit (R := Complex) D).eval.toLinearMap
+      (((cap).horizontal idD).eval.toLinearMap
+        (Finsupp.single (((D).basis.tensor (I).basis).pair (D).basis
+          ((D).basis.pair (I).basis g t⁻¹) t) 1))
+  change ∑ t ∈ T, f t = Finsupp.single g (1 : Complex)
+  have hin (t : G) (ht : g * t⁻¹ ∈ S) : f t = Finsupp.single g 1 := by
+    obtain ⟨h, hh⟩ := ht
+    simp only [f, eval_horizontal_single, one_smul, eval_id_apply,
+      eval_traceCap_single, ← hh, Generator.traceBasis_image, Biset.pairLinear_single,
+      mul_one, eval_leftUnit_single]
+    have he : (D).basis.act (h, 1) t = g := by
+      change a.toHom h * t * (1 : G)⁻¹ = g
+      rw [hh]
+      simp
+    rw [he]
+  have hout (t : G) (ht : g * t⁻¹ ∉ S) : f t = 0 := by
+    simp only [f, eval_horizontal_single, one_smul, eval_id_apply, eval_traceCap_single,
+      Generator.traceBasis_outside Complex a _ ht, map_zero, LinearMap.zero_apply]
+  exact sum_survivor T (fun t => g * t⁻¹ ∈ S) f _ (hT g) hin hout
+
+private theorem triangle_up (finite : (S).FiniteIndex) (T : Finset G)
+    (hT : IsTransversal a T) (hCup : CupFormula a finite T) :
+    ((insertLeftUnit I).vertical
+      (((reverseCup (R := Complex) a finite).horizontal idI).vertical
+        ((associate I D I).vertical
+          (((idI).horizontal cap).vertical (rightUnit I))))).eval = (idI).eval := by
+  apply eval_ext_on_generators
+  intro g
+  change G at g
+  rw [eval_vertical_apply, eval_vertical_apply, eval_vertical_apply, eval_vertical_apply,
+    eval_insertLeftUnit_single I g, eval_horizontal_single (reverseCup a finite) idI 1 g 1,
+    one_smul, eval_id_apply, hCup]
+  let pair := (Biset.pairLinear Complex ((I).basis.tensor (D).basis) (I).basis).flip
+    (Finsupp.single g 1)
+  change (rightUnit (R := Complex) I).eval.toLinearMap
+    (((idI).horizontal cap).eval.toLinearMap ((associate (R := Complex) I D I).eval.toLinearMap
+      (pair (∑ t ∈ T, Finsupp.single ((I).basis.pair (D).basis t⁻¹ t) 1)))) = _
+  simp only [map_sum, pair, LinearMap.flip_apply, Biset.pairLinear_single, mul_one,
+    eval_associate_single]
+  let f (t : G) :=
+    (rightUnit (R := Complex) I).eval.toLinearMap
+      (((idI).horizontal cap).eval.toLinearMap
+        (Finsupp.single ((I).basis.pair ((D).basis.tensor (I).basis) t⁻¹
+          ((D).basis.pair (I).basis t g)) 1))
+  change ∑ t ∈ T, f t = Finsupp.single g (1 : Complex)
+  have hin (t : G) (ht : t * g ∈ S) : f t = Finsupp.single g 1 := by
+    obtain ⟨h, hh⟩ := ht
+    simp only [f, eval_horizontal_single, one_smul, eval_id_apply,
+      eval_traceCap_single, ← hh, Generator.traceBasis_image, Biset.pairLinear_single,
+      mul_one, eval_rightUnit_single]
+    have he : (I).basis.act (1, h⁻¹) t⁻¹ = g := by
+      change (1 : G) * t⁻¹ * (a.toHom h⁻¹)⁻¹ = g
+      rw [map_inv, inv_inv, hh]
+      simp
+    rw [he]
+  have hout (t : G) (ht : t * g ∉ S) : f t = 0 := by
+    simp only [f, eval_horizontal_single, one_smul, eval_id_apply, eval_traceCap_single,
+      Generator.traceBasis_outside Complex a _ ht, map_zero]
+  exact sum_survivor T (fun t => t * g ∈ S) f _ (inverse_transversal a T hT g) hin hout
+
+end
+end ReverseTriangleIdentitiesSupport

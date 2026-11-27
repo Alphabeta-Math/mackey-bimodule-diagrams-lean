@@ -1,0 +1,3 @@
+import ParabolicMackeyIntersectionBlocks
+
+#print axioms ParabolicMackeyIntersectionBlocks

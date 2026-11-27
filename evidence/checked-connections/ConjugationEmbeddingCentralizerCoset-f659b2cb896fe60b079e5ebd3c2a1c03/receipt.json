@@ -1,0 +1,83 @@
+{
+  "id": "ConjugationEmbeddingCentralizerCoset",
+  "lean": "leanprover/lean4:v4.36.0-rc2",
+  "leanRevision": "b35cb10cf2ced51a2fd1880cfdbf75c71ab7a35a",
+  "mathlib": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+  "workspace": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean",
+  "manifestSha256": "8902ec05c32c92c98e90ebb36796aacc426e0353d1ce2f8f3240b5ee8c4ce7fa",
+  "imports": [
+    {
+      "module": "MackeyDiagrams",
+      "files": [
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/build/lib/lean/MackeyDiagrams.olean",
+          "sha256": "e33e0c8578aa9961064b37908f5c65de398dcaa9090828d90bef3932c28027be"
+        }
+      ]
+    },
+    {
+      "module": "Mathlib.Algebra.MonoidAlgebra.Basic",
+      "files": [
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/MonoidAlgebra/Basic.olean",
+          "sha256": "a1a05b749f4b5a3d3ddb892c5908690da4466376e3939c6738ee17d7f813e484"
+        },
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/MonoidAlgebra/Basic.olean.private",
+          "sha256": "2da0a0698b5f61b5f0f1a054cae6063e677a5484812294007d69779628411b1d"
+        },
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/MonoidAlgebra/Basic.olean.server",
+          "sha256": "a8c2416822d3d5cedd8f23f2ca70e3cc905aaee4cefc2904d5148e4ea5cd992f"
+        }
+      ]
+    },
+    {
+      "module": "Mathlib.Basic.Complex.Basic",
+      "files": [
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Basic/Complex/Basic.olean",
+          "sha256": "8c8be579b7bb8987f2725023814b5b331117a44254240ed48dbfda2808906227"
+        },
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Basic/Complex/Basic.olean.private",
+          "sha256": "5a1f10f9d3c47d8f34696dfd2761fe4392eca017ababe291d4a51feec83c4841"
+        },
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Basic/Complex/Basic.olean.server",
+          "sha256": "5165ed129ae8726a826aec69fa5a2ad91a46ed02c5820098173bc765e6e0160f"
+        }
+      ]
+    },
+    {
+      "module": "Mathlib.GroupTheory.Coset.Basic",
+      "files": [
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/GroupTheory/Coset/Basic.olean",
+          "sha256": "c95b38bb5e5bb651a9eb5621c51a0b981f2fc9841eecfce9d47b76c6a2bfe9de"
+        },
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/GroupTheory/Coset/Basic.olean.private",
+          "sha256": "59006b71b031c5a4d2feb126d57d85e658bdb5fc95ab5870102323bf1fd5c2d0"
+        },
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/GroupTheory/Coset/Basic.olean.server",
+          "sha256": "df145401aa00702079b46221ab9c6a54f8930067729c93c85b12fabfdf864aed"
+        }
+      ]
+    }
+  ],
+  "searchPaths": [],
+  "statementSha256": "8fd41aee22f599d9691e088adcbbe52b9cb25917e2a7b4111c328834188a015f",
+  "sourceSha256": "7c3b4ea5c49210333ef20a97e82e12433b4a07340ef4fdb2121adf1a196ada56",
+  "oleanSha256": "101d56d3edf2c1ad8eab5a39a4364324d9ffd70d15ee110ec37fc1a91ea406d7",
+  "build": {
+    "code": 0,
+    "output": ""
+  },
+  "audit": {
+    "code": 0,
+    "output": "'LeanWorkflowCheckedConnection' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "scope": "The exact supplied statement was checked in this workspace. Importability and interpretation in another workspace are separate obligations."
+}

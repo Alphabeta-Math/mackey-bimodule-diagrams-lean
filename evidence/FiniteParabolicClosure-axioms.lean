@@ -1,0 +1,2 @@
+import Proofs.FiniteParabolicClosure
+#print axioms FiniteParabolicClosure

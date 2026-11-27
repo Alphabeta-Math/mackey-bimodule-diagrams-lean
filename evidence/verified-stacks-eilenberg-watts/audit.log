@@ -1,0 +1,12 @@
+Stacks.EilenbergWatts.iso.{u} {R : Type u} [CommRing R] (F : CategoryTheory.Functor (ModuleCat R) (ModuleCat R))
+  [F.Additive] [CategoryTheory.Functor.Linear R F]
+  [∀ (ι : Type u), CategoryTheory.Limits.PreservesColimitsOfShape (CategoryTheory.Discrete ι) F]
+  [CategoryTheory.Limits.PreservesFiniteColimits F] : CategoryTheory.MonoidalCategory.tensorLeft (F.obj ↧R) ≅ F
+CategoryTheory.NatTrans.isIso_app_of_isColimit_cofan.{u_1, u_2, u_3, u_4, u_5} {C : Type u_1}
+  [CategoryTheory.Category.{u_5, u_1} C] {D : Type u_2} [CategoryTheory.Category.{u_4, u_2} D]
+  {G H : CategoryTheory.Functor C D} (τ : G ⟶ H) {ι : Type u_3} {f : ι → C} (c : CategoryTheory.Limits.Cofan f)
+  (hG : CategoryTheory.Limits.IsColimit (G.mapCocone c)) (hH : CategoryTheory.Limits.IsColimit (H.mapCocone c))
+  (h : ∀ (i : ι), CategoryTheory.IsIso (τ.app (f i))) : CategoryTheory.IsIso (τ.app c.pt)
+'Stacks.EilenbergWatts.iso' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Stacks.EilenbergWatts.isIso_trans' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CategoryTheory.NatTrans.isIso_app_of_isColimit_cofan' depends on axioms: [propext, Classical.choice, Quot.sound]

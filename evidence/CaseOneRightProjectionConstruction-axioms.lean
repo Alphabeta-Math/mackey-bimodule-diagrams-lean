@@ -1,0 +1,2 @@
+import Proofs.CaseOneRightProjectionConstruction
+#print axioms CaseOneRightProjectionConstruction

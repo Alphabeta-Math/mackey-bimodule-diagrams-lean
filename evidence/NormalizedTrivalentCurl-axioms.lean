@@ -1,0 +1,2 @@
+import Proofs.NormalizedTrivalentCurl
+#print axioms NormalizedTrivalentCurl

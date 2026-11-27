@@ -1,0 +1,11 @@
+{
+  "accepted": true,
+  "request": {
+    "endpoint": "3951027f14a6915169aac472fee16504089854579d67da6c548dddbe1a98d1cc",
+    "decision": {
+      "id": "EilenbergWatts",
+      "reason": "Exact native checked connection with ordinary choice; receipt and local import closure recorded in the dependency-repair evidence.",
+      "proof": "by exact ReviewedOriginalWattsConnection"
+    }
+  }
+}

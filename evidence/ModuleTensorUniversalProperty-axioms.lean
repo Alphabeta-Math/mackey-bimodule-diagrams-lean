@@ -1,0 +1,2 @@
+import Proofs.ModuleTensorUniversalProperty
+#print axioms ModuleTensorUniversalProperty

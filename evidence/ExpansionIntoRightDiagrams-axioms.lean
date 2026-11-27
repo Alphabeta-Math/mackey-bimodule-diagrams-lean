@@ -1,0 +1,2 @@
+import Proofs.ExpansionIntoRightDiagrams
+#print axioms ExpansionIntoRightDiagrams

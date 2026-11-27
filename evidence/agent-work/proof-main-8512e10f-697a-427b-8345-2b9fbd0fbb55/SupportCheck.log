@@ -1,0 +1,15 @@
+SupportCheck.lean:894:4: warning: Unused tactic linter: `all_goals` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+SupportCheck.lean:939:88: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+SupportCheck.lean:1120:16: warning: Unused tactic linter: `try` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+'CaseTwoAudit.cup_indices' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CaseTwoAudit.intersect_calc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CaseTwoAudit.unbounded_line_fiber' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CaseTwoAudit.checked_leftCode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CaseTwoAudit.left_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CaseTwoAudit.transfer_probe' depends on axioms: [propext, Classical.choice, Quot.sound]

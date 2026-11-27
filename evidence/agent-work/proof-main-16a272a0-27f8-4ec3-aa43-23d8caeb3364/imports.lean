@@ -1,0 +1,5 @@
+import MackeyDiagrams
+import Proofs.ConjugationEmbeddingCentralizerCoset
+import Proofs.SurvivingCosetRepresentative
+
+set_option maxHeartbeats 2000000

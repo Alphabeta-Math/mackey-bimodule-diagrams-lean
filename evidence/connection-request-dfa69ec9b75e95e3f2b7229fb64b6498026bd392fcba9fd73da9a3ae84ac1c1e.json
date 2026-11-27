@@ -1,0 +1,11 @@
+{
+  "accepted": true,
+  "request": {
+    "endpoint": "58b51e373d41eec2a92cd1c034a7f3eea04de917775320818e89c651bc945ccb",
+    "decision": {
+      "id": "SmallProjectiveGeneratorCorrespondence",
+      "reason": "Exact reviewed theorem checked in the original workspace with ordinary choice; the separate choice-free auxiliary remains open.",
+      "proof": "by exact ReviewedSmallGeneratorConnection"
+    }
+  }
+}

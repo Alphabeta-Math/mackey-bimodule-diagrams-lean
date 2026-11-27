@@ -1,0 +1,2 @@
+import Proofs.CaseFiveRequiresTwoTerms
+#print axioms CaseFiveRequiresTwoTerms

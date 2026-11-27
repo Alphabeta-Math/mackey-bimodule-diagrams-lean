@@ -1,0 +1,2 @@
+import Proofs.ProductParabolicsWithOneDoubleCoset
+#print axioms ProductParabolicsWithOneDoubleCoset

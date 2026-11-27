@@ -1,0 +1,5 @@
+import MackeyDiagrams
+import Proofs.RegularModuleRightAction
+import Proofs.ModuleTensorUniversalProperty
+
+#check ModuleCat.uliftFunctor

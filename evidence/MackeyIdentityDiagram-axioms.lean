@@ -1,0 +1,2 @@
+import Proofs.MackeyIdentityDiagram
+#print axioms MackeyIdentityDiagram

@@ -1,0 +1,1 @@
+'scope_definitional_iff' depends on axioms: [propext, Classical.choice, Quot.sound]

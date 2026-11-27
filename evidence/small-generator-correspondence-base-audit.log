@@ -1,0 +1,1 @@
+'SmallGeneratorBridge.exactEvaluationEquivalence_forget' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,2 @@
+import Proofs.ParabolicCaseSixObstructionAndReplacementFamily
+#print axioms ParabolicCaseSixObstructionAndReplacementFamily

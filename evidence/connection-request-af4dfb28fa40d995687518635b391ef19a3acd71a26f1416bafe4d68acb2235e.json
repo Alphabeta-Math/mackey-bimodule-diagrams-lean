@@ -1,0 +1,13 @@
+{
+  "accepted": false,
+  "request": {
+    "endpoint": "d8f77daba19dc126d1c5ca793c17a176a7ae9d7919ec0ccfe3e17536926493ca",
+    "decision": {
+      "id": "ParallelInductionProductDotAdmissibility",
+      "reason": "The product and inverse of typed group-element dots intertwine the required embeddings. Conjugate the intertwining equality by the chosen boundary representatives to obtain centralizer membership.",
+      "mathlibImports": [],
+      "proof": "by\n  intro U inst G K H B H' α β γ δ α' β' hα hβ hγ hδ hα' hβ' u v w bottom middle top C\n  have bottomFormula (k : K) : (bottom.toHom k : U) = u * (k : U) * u⁻¹ := by\n    simp only [bottom, u, MackeyDiagrams.ConjEmbedding.comp_apply,\n      MackeyDiagrams.ConjEmbedding.ofConjugator_apply]\n    group\n  have middleFormula (k : K) : (middle.toHom k : U) = v * (k : U) * v⁻¹ := by\n    simp only [middle, v, MackeyDiagrams.ConjEmbedding.comp_apply,\n      MackeyDiagrams.ConjEmbedding.ofConjugator_apply]\n    group\n  have topFormula (k : K) : (top.toHom k : U) = w * (k : U) * w⁻¹ := by\n    simp only [top, w, MackeyDiagrams.ConjEmbedding.comp_apply,\n      MackeyDiagrams.ConjEmbedding.ofConjugator_apply]\n    group\n  have centralizes {s t : MackeyDiagrams.ConjEmbedding K G} (x y : U)\n      (hs : ∀ k : K, (s.toHom k : U) = x * (k : U) * x⁻¹)\n      (ht : ∀ k : K, (t.toHom k : U) = y * (k : U) * y⁻¹) (d : MackeyDiagrams.Dot s t) :\n      x⁻¹ * (d.element : U) * y ∈ C := by\n    apply Subgroup.mem_centralizer_iff.mpr\n    intro k hk\n    let k₀ : K := ⟨k,hk⟩\n    have h := congrArg Subtype.val (d.intertwines k₀)\n    change (s.toHom k₀ : U) * (d.element : U) = (d.element : U) * (t.toHom k₀ : U) at h\n    rw [hs k₀, ht k₀] at h\n    change (x * k * x⁻¹) * (d.element : U) = (d.element : U) * (y * k * y⁻¹) at h\n    calc\n      k * (x⁻¹ * (d.element : U) * y) =\n          x⁻¹ * (((x * k * x⁻¹) * (d.element : U))) * y := by group\n      _ = x⁻¹ * ((d.element : U) * (y * k * y⁻¹)) * y := by rw [h]\n      _ = (x⁻¹ * (d.element : U) * y) * k := by group\n  constructor\n  · intro d e de\n    exact ⟨⟨d.vertical e, rfl⟩, centralizes u w bottomFormula topFormula (d.vertical e),\n      fun hd => (d.vertical e).sameEmbedding_of_unit hd⟩\n  · intro d\n    exact ⟨d.inverse, rfl, centralizes v u middleFormula bottomFormula d.inverse,\n      MackeyDiagrams.Dot.then_inverse d, MackeyDiagrams.Dot.inverse_then d⟩\n"
+    }
+  },
+  "reason": "Error: A connection to an existing unchecked endpoint and its provenance are required"
+}

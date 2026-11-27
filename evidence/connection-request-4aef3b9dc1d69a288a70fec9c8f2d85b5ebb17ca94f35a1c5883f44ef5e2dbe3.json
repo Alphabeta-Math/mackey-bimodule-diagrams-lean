@@ -1,0 +1,16 @@
+{
+  "accepted": false,
+  "request": {
+    "endpoint": "2f2de5d90c1baee986c5a11130a0b4a629a888ef333024fa82bdfcb61e187b41",
+    "decision": {
+      "id": "RightUpReidemeisterCurl",
+      "reason": "Exact index-valued curl. Use merge-split cancellation and the structural isomorphisms, then evaluate the reverse cup followed by the multiplication cap as the subgroup-index scalar.",
+      "mathlibImports": [
+        "Mathlib.Basic.Complex.Basic"
+      ],
+      "proof": "by\n  intro U inst K H G δ α hδ hα d a S finite up loopUp loopDown straight cup middle cap curl\n  have hmid :\n      (MackeyDiagrams.Generator.mergeUp Complex a d).vertical\n        (MackeyDiagrams.Generator.splitUp Complex a d) =\n      MackeyDiagrams.Biset.Hom.id ((MackeyDiagrams.Biset.induction a).tensor (MackeyDiagrams.Biset.induction d)) :=\n    MackeyDiagrams.Diagram.mergeUp_splitUp a d\n  have hcup :\n      (MackeyDiagrams.Generator.reverseCup Complex d finite).vertical\n        (MackeyDiagrams.Generator.multiplicationCap Complex d) =\n      (MackeyDiagrams.Biset.Hom.id (MackeyDiagrams.Biset.regular H)).scale\n        (S.index : Complex) :=\n    MackeyDiagrams.Diagram.reverseCup_multiplicationCap d finite\n  simp only [curl, middle, cup, cap, straight, up, loopDown, loopUp,\n    MackeyDiagrams.Diagram.eval, hmid, MackeyDiagrams.Word.basis,\n    MackeyDiagrams.Biset.Hom.horizontal_id]\n  rw [← MackeyDiagrams.Biset.Hom.vertical_assoc (MackeyDiagrams.Biset.unassociate (MackeyDiagrams.Biset.induction a)\n        (MackeyDiagrams.Biset.induction d) (MackeyDiagrams.Biset.restriction d) Complex),\n    MackeyDiagrams.Biset.Hom.vertical_id, ← MackeyDiagrams.Biset.Hom.vertical_assoc (MackeyDiagrams.Biset.unassociate (MackeyDiagrams.Biset.induction a)\n        (MackeyDiagrams.Biset.induction d) (MackeyDiagrams.Biset.restriction d) Complex),\n    MackeyDiagrams.Biset.unassociate_associate, MackeyDiagrams.Biset.Hom.id_vertical]\n  rw [← MackeyDiagrams.Biset.Hom.vertical_assoc ((MackeyDiagrams.Biset.Hom.id (MackeyDiagrams.Biset.induction a)).horizontal\n        (MackeyDiagrams.Generator.reverseCup Complex d finite)),\n    MackeyDiagrams.Biset.Hom.horizontal_vertical,\n    MackeyDiagrams.Biset.Hom.id_vertical, hcup,\n    MackeyDiagrams.Biset.Hom.horizontal_scale_right, MackeyDiagrams.Biset.Hom.horizontal_id,\n    MackeyDiagrams.Biset.Hom.vertical_scale_left, MackeyDiagrams.Biset.Hom.id_vertical,\n    MackeyDiagrams.Biset.Hom.vertical_scale_right, MackeyDiagrams.Biset.insertRightUnit_rightUnit]",
+      "support": "universe u"
+    }
+  },
+  "reason": "Error: The approved endpoint or its dependencies changed after submission"
+}

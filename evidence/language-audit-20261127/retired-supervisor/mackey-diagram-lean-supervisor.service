@@ -1,0 +1,10 @@
+[Unit]
+Description=Supervise the Mackey diagram Lean workflow
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/lazyinspirit/Projects/workflow-engines
+Environment=PATH=/home/lazyinspirit/.local/bin:/home/lazyinspirit/.elan/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=/usr/bin/bash /home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/lean-workflow-supervision/run-supervision.sh
+TimeoutStartSec=35min
+

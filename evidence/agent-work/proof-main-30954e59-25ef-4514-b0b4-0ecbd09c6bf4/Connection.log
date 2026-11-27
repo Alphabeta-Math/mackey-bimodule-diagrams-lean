@@ -1,0 +1,6 @@
+'ReconstructionCheck.cokernel_of_equiv' depends on axioms: [propext, Quot.sound]
+'ReconstructionCheck.unit_surjective' depends on axioms: [propext, Quot.sound]
+'ReconstructionCheck.exact_on_hom' depends on axioms: [propext]
+'ReconstructionCheck.unit_injective' depends on axioms: [propext, Quot.sound]
+'ReconstructionCheck.reflect_bijective' depends on axioms: [propext]
+'ReconstructionCheck.PointwiseReconstruction' depends on axioms: [propext, Quot.sound]

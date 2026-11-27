@@ -1,0 +1,2 @@
+import Proofs.InductionMergeDotSlide
+#print axioms InductionMergeDotSlide

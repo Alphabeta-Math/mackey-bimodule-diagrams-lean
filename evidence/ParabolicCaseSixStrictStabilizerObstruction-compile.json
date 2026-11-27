@@ -1,0 +1,34 @@
+{
+  "source_sha256": "af3158b04f200bf0bcff6b794ebd8a8b84cb21d09f40499d2db5445ab673e134",
+  "commands": [
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "-o",
+      ".lake/build/lib/lean/Proofs/ParabolicCaseSixStrictStabilizerObstruction.olean",
+      "Proofs/ParabolicCaseSixStrictStabilizerObstruction.lean"
+    ],
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "evidence/ParabolicCaseSixStrictStabilizerObstruction-axioms.lean"
+    ]
+  ],
+  "build": {
+    "code": 0,
+    "output": ""
+  },
+  "axioms": {
+    "code": 0,
+    "output": "'ParabolicCaseSixStrictStabilizerObstruction' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "ok": true,
+  "workspace_sha256": "0b8923f32a923e0fc946dfe2b389ab92d02b9e01e481b4de6755e55d083f7b65",
+  "olean_sha256": "9496c4e7ef0d99fdee843678a37d51974b1c64ee350459d4b0159811c5cbc678"
+}

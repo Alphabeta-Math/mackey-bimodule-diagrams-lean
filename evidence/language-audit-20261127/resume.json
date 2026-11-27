@@ -1,0 +1,16 @@
+{
+  "time": "2026-11-27T05:18:48.157341+00:00",
+  "controller": "mackey-diagram-lean.service",
+  "status": "active with twelve independent reviewers across four endpoints",
+  "supervisorTimer": "mackey-diagram-lean-supervisor.timer",
+  "rechecksQueued": 151,
+  "items": 153,
+  "articleInventoryPreserved": true,
+  "planPreserved": true,
+  "engineCommit": "015356d679",
+  "identityDotTheorems": [
+    "MackeyDiagrams.DotLabel.upDrawing_identity",
+    "MackeyDiagrams.DotLabel.downDrawing_identity"
+  ],
+  "proofCredit": "No article endpoint claimed proved by this library repair. Native independent rechecks and later proof compilation remain required."
+}

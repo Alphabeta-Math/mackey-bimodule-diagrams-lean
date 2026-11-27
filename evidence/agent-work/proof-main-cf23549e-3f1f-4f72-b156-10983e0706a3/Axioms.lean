@@ -1,0 +1,2 @@
+import DriverCheck
+#print axioms TwoMackeySummandsWithSameInternalLabels

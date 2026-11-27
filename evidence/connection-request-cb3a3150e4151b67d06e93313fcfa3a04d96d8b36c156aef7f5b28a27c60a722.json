@@ -1,0 +1,14 @@
+{
+  "accepted": true,
+  "request": {
+    "endpoint": "fa1599b85ab5ae28a7d34fe050ceb6c9bc6341fb608b13e5f14bfed1ea7a6a89",
+    "decision": {
+      "id": "Bimodule",
+      "reason": "The reviewed definition contains its complete construction and both compatibility obligations. Checked the exact generated declaration and separately audited its axioms against the pinned prebuilt imports.",
+      "support": "universe u v w",
+      "mathlibImports": [
+        "Mathlib.Algebra.Module.Opposite"
+      ]
+    }
+  }
+}

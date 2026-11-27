@@ -1,0 +1,9 @@
+import MackeyDiagrams
+import Proofs.EvaluationForTwoProjections
+#check MackeyDiagrams.Generator.mixedRange_eq_doubleCoset
+#check MackeyDiagrams.Biset.Hom.transfer_injective_single
+#check MackeyDiagrams.ConjEmbedding.injective
+#check Subgroup.relIndex_mul_relIndex
+#check Subgroup.relIndex_map_map_of_injective
+#check Subgroup.relIndex_le_of_le_right
+#print axioms EvaluationForTwoProjections

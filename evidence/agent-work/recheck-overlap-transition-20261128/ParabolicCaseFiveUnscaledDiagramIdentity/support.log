@@ -1,0 +1,109 @@
+SupportCheck.lean:387:68: error: unexpected token 'private'; expected ')', ',' or ':'
+SupportCheck.lean:407:6: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+SupportCheck.lean:422:6: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+SupportCheck.lean:484:55: error: unexpected token 'have'; expected ')', ',' or ':'
+SupportCheck.lean:483:67: error: A placeholder `_` cannot be used where a function is expected
+SupportCheck.lean:441:49: error: unsolved goals
+R : Type v
+inst✝¹ : CommSemiring R
+U : Type u
+inst✝ : Group U
+G A D F C E B : Subgroup U
+a : ConjEmbedding A G
+b : ConjEmbedding A D
+d : ConjEmbedding F D
+c : ConjEmbedding C G
+e : ConjEmbedding C E
+f : ConjEmbedding F E
+u : ConjEmbedding G B
+v : ConjEmbedding D B
+w : ConjEmbedding E B
+rs : DotLabel R (u.comp a) (v.comp b)
+ts : DotLabel R (v.comp d) (w.comp f)
+ss : DotLabel R (u.comp c) (w.comp e)
+fin :
+  ∀ (s : upperLabel c e u w) (z : ((Biset.restriction u).tensor (Biset.induction w)).carrier),
+    {p | Generator.mixedMultiplicationBasis u w c e s p = z}.Finite
+m : (caseWord a b d).basis.carrier →₀ R
+ga : Word G A := Word.up a
+ad : Word A D := Word.down b
+df : Word D F := Word.up d
+gc : Word G C := Word.up c
+ce : Word C E := Word.down e
+ef : Word E F := Word.up f
+du : Word G B := Word.down u
+uv : Word B D := Word.up v
+uw : Word B E := Word.up w
+pre : ((ga.tensor (ad.tensor df)).basis.carrier →₀ R) →ₗ[R] ((ga.tensor ad).tensor df).basis.carrier →₀ R :=
+  (Diagram.unassociate ga ad df).eval.toLinearMap
+mid₁ : (((du.tensor uv).tensor df).basis.carrier →₀ R) →ₗ[R] (du.tensor (uv.tensor df)).basis.carrier →₀ R :=
+  (Diagram.associate du uv df).eval.toLinearMap
+mid₂ : ((du.tensor (uw.tensor ef)).basis.carrier →₀ R) →ₗ[R] ((du.tensor uw).tensor ef).basis.carrier →₀ R :=
+  (Diagram.unassociate du uw ef).eval.toLinearMap
+post : (((gc.tensor ce).tensor ef).basis.carrier →₀ R) →ₗ[R] (gc.tensor (ce.tensor ef)).basis.carrier →₀ R :=
+  (Diagram.associate gc ce ef).eval.toLinearMap
+lower : lowerLabel a b u v → ScopedDiagram R ((Word.up a).tensor (Word.down b)) ((Word.down u).tensor (Word.up v)) :=
+  fun r => ScopedDiagram.ordinary (Diagram.mixedMultiplication u v a b r)
+center : middleLabel d f v w → ScopedDiagram R ((Word.up v).tensor (Word.up d)) ((Word.up w).tensor (Word.up f)) :=
+  fun t => ScopedDiagram.ordinary (Diagram.parallelUp v d w f t)
+upper : upperLabel c e u w → ScopedDiagram R ((Word.down u).tensor (Word.up w)) ((Word.up c).tensor (Word.down e)) :=
+  fun s => ScopedDiagram.ordinary (Diagram.mixedProjection u w c e s ⋯)
+terms : {ι : Type u} →
+  {K H : Subgroup U} → {p q : Word K H} → (ι →₀ R) → (ι → ScopedDiagram R p q) → ScopedDiagram R p q :=
+  fun {ι} {K H} {p q} l Dg => ScopedDiagram.linearCombination (List.map (fun i => (l i, Dg i)) l.support.toList)
+L : ((((Word.up a).tensor (Word.down b)).basis.tensor df.basis).carrier →₀ R) →ₗ[R]
+  (((Word.down u).tensor (Word.up v)).basis.tensor df.basis).carrier →₀ R :=
+  ((terms rs lower).eval.horizontal (Biset.Hom.id df.basis)).toLinearMap
+M : ((du.basis.tensor ((Word.up v).tensor (Word.up d)).basis).carrier →₀ R) →ₗ[R]
+  (du.basis.tensor ((Word.up w).tensor (Word.up f)).basis).carrier →₀ R :=
+  ((Biset.Hom.id du.basis).horizontal (terms ts center).eval).toLinearMap
+N : ((((Word.down u).tensor (Word.up w)).basis.tensor ef.basis).carrier →₀ R) →ₗ[R]
+  (((Word.up c).tensor (Word.down e)).basis.tensor ef.basis).carrier →₀ R :=
+  ((terms ss upper).eval.horizontal (Biset.Hom.id ef.basis)).toLinearMap
+Lr : lowerLabel a b u v →
+  ((((Word.up a).tensor (Word.down b)).basis.tensor df.basis).carrier →₀ R) →ₗ[R]
+    (((Word.down u).tensor (Word.up v)).basis.tensor df.basis).carrier →₀ R :=
+  fun r => ((lower r).eval.horizontal (Biset.Hom.id df.basis)).toLinearMap
+Mt : middleLabel d f v w →
+  ((du.basis.tensor ((Word.up v).tensor (Word.up d)).basis).carrier →₀ R) →ₗ[R]
+    (du.basis.tensor ((Word.up w).tensor (Word.up f)).basis).carrier →₀ R :=
+  fun t => ((Biset.Hom.id du.basis).horizontal (center t).eval).toLinearMap
+Ns : upperLabel c e u w →
+  ((((Word.down u).tensor (Word.up w)).basis.tensor ef.basis).carrier →₀ R) →ₗ[R]
+    (((Word.up c).tensor (Word.down e)).basis.tensor ef.basis).carrier →₀ R :=
+  fun s => ((upper s).eval.horizontal (Biset.Hom.id ef.basis)).toLinearMap
+hL :
+  ∀ (x : (((Word.up a).tensor (Word.down b)).basis.tensor df.basis).carrier →₀ R),
+    L x = Finsupp.sum rs fun r cr => cr • (Lr r) x
+hM :
+  ∀ (x : (du.basis.tensor ((Word.up v).tensor (Word.up d)).basis).carrier →₀ R),
+    M x = Finsupp.sum ts fun t ct => ct • (Mt t) x
+hN :
+  ∀ (x : (((Word.down u).tensor (Word.up w)).basis.tensor ef.basis).carrier →₀ R),
+    N x = Finsupp.sum ss fun s cs => cs • (Ns s) x
+singleton :
+  ∀ (r : lowerLabel a b u v) (t : middleLabel d f v w) (s : Dot (u.comp c) (w.comp e)),
+    (drawingEval (leftDrawing a b d c e f u v w [(1, r)] [(1, t)] [(1, { dot := s, finite := ⋯ })])).toLinearMap m =
+      post ((Ns s) (mid₂ ((Mt t) (mid₁ ((Lr r) (pre m))))))
+⊢ (drawingEval
+          (leftDrawing a b d c e f u v w rs.terms ts.terms
+            (List.map
+              (fun x =>
+                match x with
+                | (cs, s) => (cs, { dot := s, finite := ⋯ }))
+              ss.terms))).toLinearMap
+      m =
+    Finsupp.sum rs fun r cr =>
+      Finsupp.sum ts fun t ct =>
+        Finsupp.sum ss fun s cs =>
+          (cr * ct * cs) •
+            (drawingEval (leftDrawing a b d c e f u v w [(1, r)] [(1, t)] [(1, { dot := s, finite := ⋯ })])).toLinearMap
+              m

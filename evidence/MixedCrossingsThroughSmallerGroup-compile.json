@@ -1,0 +1,34 @@
+{
+  "source_sha256": "6ec2bfdb74aa9d89cb0fce4006f1dd0357f2c63282df1ea5af357c688e481115",
+  "commands": [
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "-o",
+      ".lake/build/lib/lean/Proofs/MixedCrossingsThroughSmallerGroup.olean",
+      "Proofs/MixedCrossingsThroughSmallerGroup.lean"
+    ],
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "evidence/MixedCrossingsThroughSmallerGroup-axioms.lean"
+    ]
+  ],
+  "build": {
+    "code": 0,
+    "output": ""
+  },
+  "axioms": {
+    "code": 0,
+    "output": "'MixedCrossingsThroughSmallerGroup' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "ok": true,
+  "workspace_sha256": "0b8923f32a923e0fc946dfe2b389ab92d02b9e01e481b4de6755e55d083f7b65",
+  "olean_sha256": "1167ee9a24c95fd057af0f97a3458bd1627d63c028e2ca27d14a8de18e020167"
+}

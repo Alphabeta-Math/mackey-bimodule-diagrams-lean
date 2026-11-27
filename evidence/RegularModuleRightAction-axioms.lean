@@ -1,0 +1,2 @@
+import Proofs.RegularModuleRightAction
+#print axioms RegularModuleRightAction

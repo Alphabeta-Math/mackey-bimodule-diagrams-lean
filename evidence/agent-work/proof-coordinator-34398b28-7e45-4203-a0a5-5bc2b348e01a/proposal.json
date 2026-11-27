@@ -1,0 +1,149 @@
+{
+  "routes": [
+    {
+      "id": "LargestCommonParabolicDependsOnRepresentatives",
+      "deps": [
+        "LargestCommonMixedCrossingParabolic",
+        "MackeyIdentityDiagram"
+      ],
+      "available": [
+        {
+          "module": "Proofs.LargestCommonMixedCrossingParabolic",
+          "declaration": "LargestCommonMixedCrossingParabolic",
+          "revision": "sha256:1fbd16bd71c1380f0183231593207361defdd0416ab8a11fd744ccaa0a1d447d",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/LargestCommonMixedCrossingParabolic.lean#L117",
+          "use": "For parabolic K,H,G, a valid conjugation embedding pair, a representative section and a selected nonempty subtype with reference, gives the greatest admissible swap closure, index monotonicity, and matching normalized and full indexed evaluations. Specialize to H=K and the two sections separately. The proof audits with propext, Classical.choice and Quot.sound."
+        },
+        {
+          "module": "Proofs.MackeyIdentityDiagram",
+          "declaration": "MackeyIdentityDiagram",
+          "revision": "sha256:65b8d87d96de63547927dc9398c3de79bc7817c4e7ff9c59a5cb32e74f3362bd",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/MackeyIdentityDiagram.lean#L10",
+          "use": "At the specified full Mackey groups for a section of the comap-subgroup quotient, supplies finite mixed fibers and the outer sum equal to straight, as a PointwiseIndexedDrawing. Use this direct supplier for identity of the full sum, after identifying the quotient presentations."
+        },
+        {
+          "module": "Mathlib.Order.Interval.Finset.Defs",
+          "declaration": "Finset.mem_Icc",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Order/Interval/Finset/Defs.lean#L294",
+          "use": "Use its symbolic membership bounds to show disjointness, invariance and complement fixation of the two point blocks."
+        },
+        {
+          "module": "Mathlib.Order.Interval.Finset.Nat",
+          "declaration": "Nat.card_Icc",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Order/Interval/Finset/Nat.lean#L86",
+          "use": "Computes the finite block cardinalities using the endpoints, without expanding the intervals in dependent terms."
+        },
+        {
+          "module": "Mathlib.Algebra.Group.End",
+          "declaration": "Equiv.Perm.subtypeEquivSubtypePerm",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Group/End.lean#L497",
+          "use": "Identifies permutations of a subtype with permutations fixing its complement. Use with membership in a finite block, and lift to the finitary ambient group via the subgroup inclusion."
+        },
+        {
+          "module": "Mathlib.GroupTheory.Perm.Support",
+          "declaration": "Equiv.Perm.Disjoint.commute",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/GroupTheory/Perm/Support.lean#L62",
+          "use": "Pointwise disjoint moved sets imply commutation for permutations even on Nat."
+        },
+        {
+          "module": "Mathlib.GroupTheory.Perm.Support",
+          "declaration": "Equiv.Perm.mem_support_iff_of_commute",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/GroupTheory/Perm/Support.lean#L280",
+          "use": "A commuting permutation preserves the cycle support. The declaration requires a finite point universe; use it on the restricted Icc 4 8 carrier."
+        },
+        {
+          "module": "Mathlib.GroupTheory.Perm.Support",
+          "declaration": "Equiv.Perm.support_swap",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/GroupTheory/Perm/Support.lean#L437",
+          "use": "On a finite carrier a nontrivial swap has two-point support. Use on the block carrier to identify the only possible transposition in the centralizer."
+        },
+        {
+          "module": "Mathlib.Algebra.Group.End",
+          "declaration": "Equiv.swap_apply_apply",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Group/End.lean#L538",
+          "use": "Conjugating a swap gives the swap of the two images. Shows conjugating (12) by (13) gives (23)."
+        },
+        {
+          "module": "Mathlib.GroupTheory.DoubleCoset",
+          "declaration": "DoubleCoset.eq",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/GroupTheory/DoubleCoset.lean#L124",
+          "use": "Class equality is equivalent to factoring the second element through the first with one left and one right subgroup factor."
+        },
+        {
+          "module": "Mathlib.Data.Fintype.Perm",
+          "declaration": "Fintype.card_perm",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Data/Fintype/Perm.lean#L155",
+          "use": "Cardinality of permutations of a finite type is the factorial of that type’s cardinality. Use on the block subtype."
+        },
+        {
+          "module": "Mathlib.Data.ZMod.QuotientGroup",
+          "declaration": "Nat.card_zpowers",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Data/ZMod/QuotientGroup.lean#L160",
+          "use": "Cardinality of a cyclic subgroup is the order of its generator; specialize to the verified nontrivial involutions."
+        },
+        {
+          "module": "Mathlib.GroupTheory.Index",
+          "declaration": "Subgroup.relIndex_mul_card",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/GroupTheory/Index.lean#L364",
+          "use": "Multiplies relative index by the cardinality of the intersection to get the upper group cardinality. Simplify the intersection after proving inclusion."
+        },
+        {
+          "module": "Mathlib.Algebra.BigOperators.Group.Finset.Defs",
+          "declaration": "Fintype.sum_equiv",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/BigOperators/Group/Finset/Defs.lean#L731",
+          "use": "Reindexes a sum of evaluated maps along a finite equivalence. Use the chosen two classes to pass to Fin 2 without changing the diagram geometry."
+        },
+        {
+          "module": "MackeyDiagrams.IndexedDrawing",
+          "declaration": "MackeyDiagrams.IndexedDrawing.eval_apply",
+          "revision": "sha256:81d91f9aceca3a90d9ac315298cd7988f57c0c22b3e6770d1ab1a5cb15afd0e6",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/IndexedDrawing.lean#L35",
+          "use": "Evaluates the exact retained finite sum at a vector and makes the two-term arithmetic comparison possible."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing.evalAt_def",
+          "revision": "sha256:533e75bc752c7bc1cdf9f37ac63a33dde70abf9f35d92496e985873d3f32913f",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedDrawing.lean#L40",
+          "use": "Computes the proper finite evaluated support of the full Mackey identity at x. Terms omitted from this support evaluate to zero."
+        },
+        {
+          "module": "Proofs.MackeyInclusionAndProjectionCrossings",
+          "declaration": "MackeyCrossingProof.compact_inclusion",
+          "revision": "sha256:6edc10a2f83cb423f0d4ebbc42c5392ff17be4950c2868817496a082c73a0a2c",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/MackeyInclusionAndProjectionCrossings.lean#L40",
+          "use": "Evaluated coefficient-one labelled inclusion equals the ordinary inclusion at the same dot and boundary."
+        },
+        {
+          "module": "Proofs.MackeyInclusionAndProjectionCrossings",
+          "declaration": "MackeyCrossingProof.compact_projection",
+          "revision": "sha256:6edc10a2f83cb423f0d4ebbc42c5392ff17be4950c2868817496a082c73a0a2c",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/MackeyInclusionAndProjectionCrossings.lean#L45",
+          "use": "Evaluated coefficient-one compact projection with the given finite-fiber certificate equals the ordinary projection."
+        },
+        {
+          "module": "MackeyDiagrams.Linear",
+          "declaration": "MackeyDiagrams.Biset.Hom.ext",
+          "revision": "sha256:9f22b655ebe182c336bd978ab77b26f639f504dfbd0fb2cce8f9b52f5f11413b",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Linear.lean#L56",
+          "use": "Recovers equality of evaluated equivariant maps from equality of the underlying linear maps as required by both diagramIdentity clauses."
+        }
+      ],
+      "approach": "Dispatch once the direct MackeyIdentityDiagram edge is recorded. Both planned suppliers are compiled and audited in this workspace. Use LargestCommonMixedCrossingParabolic for greatest admissibility and the two normalized-to-full comparisons. The corrected MackeyIdentityDiagram supplies the final identity of the sum of full Mackey stacks. The shared-slot declaration checks and axiom prints are in file:///tmp/lean-agent-lnUjPs/CheckRoute.log (sha256:7b4ef998727b5922e01bee50085f8716bf5b338249243df85c350ea369665501). Split the group calculation into small lemmas with named Icc 1 3 and Icc 4 8 parameters. Use Finset.mem_Icc with symbolic points. Identify each block group with permutations of its finite subtype by extension fixing the complement. Products of the disjointly supported factors commute. Show that multiplication of the two block groups has image their join and is injective by restricting to each block. The same argument applies with the first block factor restricted to ⟨(12)⟩ for K. Prove hKG, hσ and hτ through the individual blocks and supply the parabolic witnesses for G and K, using {1,2} for K's two-point block and Icc 4 8 for S₅. Keep subgroup finiteness and cardinal calculations in separate lemmas from drawing evaluation. Classify the first-factor double cosets by whether 3 is fixed. The fixed case is ⟨(12)⟩. In the moving case choose left and right factors in ⟨(12)⟩ from the images of 3 under the permutation and its inverse, so the result is in ⟨(12)⟩τ⟨(12)⟩. Check equality on the three points. The second factor lies in K and is absorbed. DoubleCoset.eq gives exactly two classes, and σ=τ·cycle yields q t = q s. Conjugation sends (12) to (23) for both sections, so the conjugate first-factor involution subgroups intersect trivially. In both sections the first full intersection is K and the second is S₅. For σ, cancel the commuting τ factor when testing the centralizer within S₅. Restrict first to the finite Icc 4 8 subtype before using the support lemmas. A permutation commuting with cycle preserves its support {4,5,6} and the remaining {7,8}. Its image of 4 determines a power of cycle on all three points by commutation, and its other restriction is either the identity or (78). Compare the resulting product with the permutation by extensionality and fixation outside the block. This gives the exact common-group equation. Nontrivial powers of the 3-cycle move all three of its points, so the only swap in the resulting subgroup is (78). For τ the centralizer condition on S₅ is automatic. Apply LargestCommonMixedCrossingParabolic with α=β=1, H=K and all quotient classes selected, taking the identity class as reference for each of the two explicit sections. Identify the supplier’s ratio set as {1,t⁻¹} for the chosen second representative t and discharge centralization of 1. Then its common group and pairwise greatest-admissible predicate reduce to the two-element endpoint definitions. In the σ section identify the swap closure as L. In the τ section S₅ itself is admissible and every admissible subgroup is contained in S₅, so identify the greatest subgroup by these inclusions. Use the product carriers and card_perm/card_zpowers to establish |K|=240, |S₅|=120 and |L|=2. Then use relIndex_mul_card after rewriting the intersections to obtain 120, 60, 2 and 1. Use a shared evaluated-map helper for the two diagram rows, parameterized by the section, greatest subgroup and already computed finite indices. Convert the embedding ranges in the normalized supplier to the comap subgroups in MackeyIdentityDiagram by extensionality; transfer the actual sections along that quotient identification. Align inclusion embeddings with conjugation by 1 and identify dot elements before invoking proof irrelevance for finite-fiber evidence. Apply the labelled compact adapters to match ordinary and reviewed stacks. The normalized sum in LargestCommonMixedCrossingParabolic uses both complete stacks under IndexedDrawing. The full sum from MackeyIdentityDiagram uses the evaluated support at x; extend it to the finite two-class univ by zero terms. Then evaluate the normalized sum using eval_apply and reindex its evaluations by Fin 2. The reviewed rows have literal binary plus, so keep LabelledDrawing.add of the two stacks in each row. Scale them as drawn, by 1/120 and 1/60 in the σ row, and only by 1/2 on the first stack in the τ row. In the τ row the second stack remains an unscaled drawing under Option.none; simplify the numerical coefficient 1 only in the evaluated equality. Finish the evaluated Biset.Hom equality by extensionality. The two rendered rows were checked separately in the archived PDF on p. 36 and the current published PDF on p. 38, with distinct hashes bound by file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/source-provenance-correction-20261128.json (sha256:68c3efbabca1117182f25486ee13bccf9cc51e2e4c4ebc013f665e4f5b500096). file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/source/mackey-bimodules.pdf#page=36 https://getcurious.cc/downloads/mackey-bimodules.pdf#page=38"
+    }
+  ],
+  "repairs": [],
+  "holds": []
+}

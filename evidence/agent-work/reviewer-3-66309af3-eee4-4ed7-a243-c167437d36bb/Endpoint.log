@@ -1,0 +1,54 @@
+Endpoint.lean:1:0: warning: 
+'Mathlib.Data.Complex.Basic' has been deprecated: please replace this import by
+
+import Mathlib.Basic.Complex.Basic
+have this :=
+  ∀ {U : Type u_1} [inst : Group U] (G A D F C E : Subgroup U) (a : MackeyDiagrams.ConjEmbedding A G)
+    (b : MackeyDiagrams.ConjEmbedding A D) (d : MackeyDiagrams.ConjEmbedding F D) (c : MackeyDiagrams.ConjEmbedding C G)
+    (e : MackeyDiagrams.ConjEmbedding C E) (f : MackeyDiagrams.ConjEmbedding F E),
+    let up := @MackeyDiagrams.Word.up U inst;
+    let down := @MackeyDiagrams.Word.down U inst;
+    let tensor := @MackeyDiagrams.Word.tensor U inst;
+    let comp := @MackeyDiagrams.ConjEmbedding.comp U inst;
+    let ga := up a;
+    let ad := down b;
+    let df := up d;
+    let gc := up c;
+    let ce := down e;
+    let ef := up f;
+    let bottom := tensor ga (tensor ad df);
+    let top := tensor gc (tensor ce ef);
+    let X := bottom.basis;
+    let Y := top.basis;
+    let Pair := X.carrier × Y.carrier;
+    let orbit := MulAction.orbit (↥G × ↥F);
+    let coefficient := fun M z => (M.toLinearMap (Finsupp.single z.1 1)) z.2;
+    let MiddleLabel := fun P i k => MackeyDiagrams.Dot (comp a i) (comp c k);
+    let UpperLabel := fun P j k => MackeyDiagrams.Dot (comp e k) (comp f j);
+    let ProjectionTerm := fun P i j => MackeyDiagrams.ProjectionDot.Mixed b d i j;
+    let drawId := fun {K H} p => MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.id p);
+    let rightDrawing := fun P i j k lower middle upper =>
+      let ai := up i;
+      let fj := down j;
+      let ck := up k;
+      ((drawId ga).horizontal (MackeyDiagrams.LabelledDrawing.compactProjection b d i j lower)).vertical
+        ((MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.unassociate ga ai fj)).vertical
+          (((MackeyDiagrams.LabelledDrawing.parallelUp a i c k middle).horizontal (drawId fj)).vertical
+            ((MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.associate gc ck fj)).vertical
+              ((drawId gc).horizontal (MackeyDiagrams.LabelledDrawing.mixedMultiplication e f k j upper)))));
+    let eval := fun drawing => drawing.interpret.eval;
+    let IsRightTerm := fun drawing => ∃ P i j k lower middle upper, drawing = rightDrawing P i j k lower middle upper;
+    ∀ (M : MackeyDiagrams.Biset.Hom ℂ X Y),
+      (∃ I weight diagram,
+          (∀ (i : ↑I), IsRightTerm (diagram i)) ∧
+            let term := fun i v => weight i • (eval (diagram i)).toLinearMap v;
+            ∃ (finite : ∀ (v : X.carrier →₀ ℂ), {i | term i v ≠ 0}.Finite),
+              ∀ (v : X.carrier →₀ ℂ), M.toLinearMap v = ∑ i ∈ ⋯.toFinset, term i v) ∧
+        ((∃ terms,
+            (∀ term ∈ terms, IsRightTerm term.2) ∧
+              let drawing :=
+                List.foldr (fun term rest => (MackeyDiagrams.LabelledDrawing.scale term.1 term.2).add rest)
+                  (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.zero bottom top)) terms;
+              M = eval drawing) ↔
+          {O | ∃ z, O = orbit z ∧ coefficient M z ≠ 0}.Finite);
+this : Prop

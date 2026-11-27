@@ -1,0 +1,66 @@
+{
+  "id": "InductionRestrictionMergesAndSplits",
+  "lean": "leanprover/lean4:v4.36.0-rc2",
+  "leanRevision": "b35cb10cf2ced51a2fd1880cfdbf75c71ab7a35a",
+  "mathlib": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+  "workspace": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean",
+  "manifestSha256": "8902ec05c32c92c98e90ebb36796aacc426e0353d1ce2f8f3240b5ee8c4ce7fa",
+  "imports": [
+    {
+      "module": "MackeyDiagrams",
+      "files": [
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/build/lib/lean/MackeyDiagrams.olean",
+          "sha256": "e33e0c8578aa9961064b37908f5c65de398dcaa9090828d90bef3932c28027be"
+        }
+      ]
+    },
+    {
+      "module": "Mathlib.Basic.Complex.Basic",
+      "files": [
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Basic/Complex/Basic.olean",
+          "sha256": "8c8be579b7bb8987f2725023814b5b331117a44254240ed48dbfda2808906227"
+        },
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Basic/Complex/Basic.olean.private",
+          "sha256": "5a1f10f9d3c47d8f34696dfd2761fe4392eca017ababe291d4a51feec83c4841"
+        },
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Basic/Complex/Basic.olean.server",
+          "sha256": "5165ed129ae8726a826aec69fa5a2ad91a46ed02c5820098173bc765e6e0160f"
+        }
+      ]
+    },
+    {
+      "module": "Mathlib.Algebra.MonoidAlgebra.Basic",
+      "files": [
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/MonoidAlgebra/Basic.olean",
+          "sha256": "a1a05b749f4b5a3d3ddb892c5908690da4466376e3939c6738ee17d7f813e484"
+        },
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/MonoidAlgebra/Basic.olean.private",
+          "sha256": "2da0a0698b5f61b5f0f1a054cae6063e677a5484812294007d69779628411b1d"
+        },
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/MonoidAlgebra/Basic.olean.server",
+          "sha256": "a8c2416822d3d5cedd8f23f2ca70e3cc905aaee4cefc2904d5148e4ea5cd992f"
+        }
+      ]
+    }
+  ],
+  "searchPaths": [],
+  "statementSha256": "04f0c8216cde1581c089fa4be709aa8a0ab1a8ae6d3f50bad5b2eb99a91f2cc6",
+  "sourceSha256": "c8eb17b7d8e4f42f7c7294a3fde26e5821d3063a0fa048b594e4db06110d4ebb",
+  "oleanSha256": "c7dda93b1a30be0ff465fd312f9ddce405792c6b02b24864507bfd1ac6516fdd",
+  "build": {
+    "code": 0,
+    "output": ""
+  },
+  "audit": {
+    "code": 0,
+    "output": "'LeanWorkflowCheckedConnection' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "scope": "The exact supplied statement was checked in this workspace. Importability and interpretation in another workspace are separate obligations."
+}

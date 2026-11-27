@@ -1,0 +1,3 @@
+import ParabolicOutsideMultiplicationDiagram
+
+#print axioms ParabolicOutsideMultiplicationDiagram

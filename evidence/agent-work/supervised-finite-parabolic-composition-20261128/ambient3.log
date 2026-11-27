@@ -1,0 +1,286 @@
+Ambient.lean:168:87: error: unsolved goals
+K H J : Type
+inst✝² : Group K
+inst✝¹ : Group H
+inst✝ : Group J
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+a : MonoidAlgebra ℂ K
+b : MonoidAlgebra ℂ J
+x : ↑X
+y : ↑Y
+⊢ ∑ x_1 ∈ b.coeff.support, b.coeff x_1 • ((pure X Y) x) ((Y.ρ (1, x_1⁻¹)) y) =
+    ∑ x_1 ∈ b.coeff.support, b.coeff x_1 • ((pure X Y) x) ((Y.ρ (1, x_1⁻¹)) y)
+Ambient.lean:167:73: error: unsolved goals
+K H J : Type
+inst✝² : Group K
+inst✝¹ : Group H
+inst✝ : Group J
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+a : MonoidAlgebra ℂ K
+b : MonoidAlgebra ℂ J
+x : ↑X
+y : ↑Y
+right : ((pure X Y) x) (rightAct Y b y) = rightAct (tensor X Y) b (((pure X Y) x) y)
+⊢ ∑ x_1 ∈ a.coeff.support, a.coeff x_1 • ((pure X Y) ((X.ρ (x_1, 1)) x)) (rightAct Y b y) =
+    ∑ x_1 ∈ a.coeff.support, a.coeff x_1 • ((pure X Y) ((X.ρ (x_1, 1)) x)) (rightAct Y b y)
+Ambient.lean:216:4: error: `simp` made no progress
+Ambient.lean:227:16: error: unsolved goals
+K H J F : Type
+inst✝³ : Group K
+inst✝² : Group H
+inst✝¹ : Group J
+inst✝ : Group F
+X X' : Rep ℂ (K × H)
+Y Y' : Rep ℂ (H × J)
+f : X ≅ X'
+g : Y ≅ Y'
+x : ↑X
+y : ↑Y
+⊢ ((Rep.Hom.hom (tensorMap f.inv g.inv)).comp (Rep.Hom.hom (tensorMap f.hom g.hom))) (((pure X Y) x) y) =
+    (IntertwiningMap.id (tensor X Y).ρ) (((pure X Y) x) y)
+Ambient.lean:232:16: error: unsolved goals
+K H J F : Type
+inst✝³ : Group K
+inst✝² : Group H
+inst✝¹ : Group J
+inst✝ : Group F
+X X' : Rep ℂ (K × H)
+Y Y' : Rep ℂ (H × J)
+f : X ≅ X'
+g : Y ≅ Y'
+x : ↑X'
+y : ↑Y'
+⊢ ((Rep.Hom.hom (tensorMap f.hom g.hom)).comp (Rep.Hom.hom (tensorMap f.inv g.inv))) (((pure X' Y') x) y) =
+    (IntertwiningMap.id (tensor X' Y').ρ) (((pure X' Y') x) y)
+Ambient.lean:230:29: warning: This simp argument is unused:
+  IntertwiningMap.comp_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Rep.hom_comp, tensorMap_pure, Rep.inv_hom_apply, Rep.hom_id, IntertwiningMap.id_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:230:57: warning: This simp argument is unused:
+  tensorMap_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Rep.hom_comp, IntertwiningMap.comp_apply, Rep.inv_hom_apply, Rep.hom_id, IntertwiningMap.id_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:230:73: warning: This simp argument is unused:
+  Rep.inv_hom_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Rep.hom_comp, IntertwiningMap.comp_apply, tensorMap_pure, Rep.hom_id, IntertwiningMap.id_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:231:18: warning: This simp argument is unused:
+  IntertwiningMap.id_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Rep.hom_comp, IntertwiningMap.comp_apply, tensorMap_pure, Rep.inv_hom_apply, Rep.hom_id]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:235:29: warning: This simp argument is unused:
+  IntertwiningMap.comp_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Rep.hom_comp, tensorMap_pure, Rep.hom_inv_apply, Rep.hom_id, IntertwiningMap.id_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:235:57: warning: This simp argument is unused:
+  tensorMap_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Rep.hom_comp, IntertwiningMap.comp_apply, Rep.hom_inv_apply, Rep.hom_id, IntertwiningMap.id_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:235:73: warning: This simp argument is unused:
+  Rep.hom_inv_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Rep.hom_comp, IntertwiningMap.comp_apply, tensorMap_pure, Rep.hom_id, IntertwiningMap.id_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:236:18: warning: This simp argument is unused:
+  IntertwiningMap.id_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Rep.hom_comp, IntertwiningMap.comp_apply, tensorMap_pure, Rep.hom_inv_apply, Rep.hom_id]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:263:85: error: unsolved goals
+K H J F : Type
+inst✝¹³ : Group K
+inst✝¹² : Group H
+inst✝¹¹ : Group J
+inst✝¹⁰ : Group F
+V₁ V₂ V₃ V₄ V₅ : Type u
+inst✝⁹ : AddCommGroup V₁
+inst✝⁸ : Module ℂ V₁
+inst✝⁷ : AddCommGroup V₂
+inst✝⁶ : Module ℂ V₂
+inst✝⁵ : AddCommGroup V₃
+inst✝⁴ : Module ℂ V₃
+inst✝³ : AddCommGroup V₄
+inst✝² : Module ℂ V₄
+inst✝¹ : AddCommGroup V₅
+inst✝ : Module ℂ V₅
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+h : H
+x : ↑X
+y : ↑Y
+z : ↑Z
+⊢ ((pure Y Z) ((Y.ρ (h, 1)) y)) z = ((pure Y Z) ((Y.ρ (h, 1)) y)) z
+Ambient.lean:267:24: warning: declaration uses `sorry`
+Ambient.lean:274:49: error: unsolved goals
+K H J F : Type
+inst✝¹³ : Group K
+inst✝¹² : Group H
+inst✝¹¹ : Group J
+inst✝¹⁰ : Group F
+V₁ V₂ V₃ V₄ V₅ : Type u
+inst✝⁹ : AddCommGroup V₁
+inst✝⁸ : Module ℂ V₁
+inst✝⁷ : AddCommGroup V₂
+inst✝⁶ : Module ℂ V₂
+inst✝⁵ : AddCommGroup V₃
+inst✝⁴ : Module ℂ V₃
+inst✝³ : AddCommGroup V₄
+inst✝² : Module ℂ V₄
+inst✝¹ : AddCommGroup V₅
+inst✝ : Module ℂ V₅
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+h : J
+p : ↑(tensor X Y)
+z : ↑Z
+x : ↑X
+y : ↑Y
+⊢ ((assocForwardInner X Y Z).flip ((Z.ρ (h, 1)) z) ∘ₗ (tensor X Y).ρ (1, h)) (((pure X Y) x) y) =
+    ((pure X (tensor Y Z)) x) (((pure Y Z) y) z)
+Ambient.lean:281:15: warning: This simp argument is unused:
+  LinearMap.comp_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [LinearMap.flip_apply, tensor_act_pure, prodOne, assocForwardInner_pure, pure_balanced Y Z h y z]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:281:59: warning: This simp argument is unused:
+  tensor_act_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [LinearMap.comp_apply, LinearMap.flip_apply, prodOne, assocForwardInner_pure,
+    pure_balanced Y Z h y z]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:281:76: warning: This simp argument is unused:
+  prodOne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [LinearMap.comp_apply, LinearMap.flip_apply, tensor_act_pure, assocForwardInner_pure,
+    pure_balanced Y Z h y z]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:282:30: warning: This simp argument is unused:
+  pure_balanced Y Z h y z
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [LinearMap.comp_apply, LinearMap.flip_apply, tensor_act_pure, prodOne, assocForwardInner_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:284:24: warning: declaration uses `sorry`
+Ambient.lean:288:2: warning: Unused tactic linter: `rw [lift_pure, assocForwardInner_pure]` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Ambient.lean:297:85: error: unsolved goals
+K H J F : Type
+inst✝¹³ : Group K
+inst✝¹² : Group H
+inst✝¹¹ : Group J
+inst✝¹⁰ : Group F
+V₁ V₂ V₃ V₄ V₅ : Type u
+inst✝⁹ : AddCommGroup V₁
+inst✝⁸ : Module ℂ V₁
+inst✝⁷ : AddCommGroup V₂
+inst✝⁶ : Module ℂ V₂
+inst✝⁵ : AddCommGroup V₃
+inst✝⁴ : Module ℂ V₃
+inst✝³ : AddCommGroup V₄
+inst✝² : Module ℂ V₄
+inst✝¹ : AddCommGroup V₅
+inst✝ : Module ℂ V₅
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+h : J
+y : ↑Y
+z : ↑Z
+x : ↑X
+⊢ ((pure X Y) x) ((Y.ρ (1, h)) y) = ((pure X Y) x) ((Y.ρ (1, h)) y)
+Ambient.lean:301:24: warning: declaration uses `sorry`
+Ambient.lean:308:55: error: unsolved goals
+K H J F : Type
+inst✝¹³ : Group K
+inst✝¹² : Group H
+inst✝¹¹ : Group J
+inst✝¹⁰ : Group F
+V₁ V₂ V₃ V₄ V₅ : Type u
+inst✝⁹ : AddCommGroup V₁
+inst✝⁸ : Module ℂ V₁
+inst✝⁷ : AddCommGroup V₂
+inst✝⁶ : Module ℂ V₂
+inst✝⁵ : AddCommGroup V₃
+inst✝⁴ : Module ℂ V₃
+inst✝³ : AddCommGroup V₄
+inst✝² : Module ℂ V₄
+inst✝¹ : AddCommGroup V₅
+inst✝ : Module ℂ V₅
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+h : H
+x : ↑X
+p : ↑(tensor Y Z)
+y : ↑Y
+z : ↑Z
+⊢ ((assocBackwardInner X Y Z).flip ((X.ρ (1, h)) x) ∘ₗ (tensor Y Z).ρ (h, 1)) (((pure Y Z) y) z) =
+    ((pure (tensor X Y) Z) (((pure X Y) x) y)) z
+Ambient.lean:315:15: warning: This simp argument is unused:
+  LinearMap.comp_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [LinearMap.flip_apply, tensor_act_pure, prodOne, assocBackwardInner_pure, pure_balanced X Y h x y]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:315:59: warning: This simp argument is unused:
+  tensor_act_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [LinearMap.comp_apply, LinearMap.flip_apply, prodOne, assocBackwardInner_pure,
+    pure_balanced X Y h x y]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:315:76: warning: This simp argument is unused:
+  prodOne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [LinearMap.comp_apply, LinearMap.flip_apply, tensor_act_pure, assocBackwardInner_pure,
+    pure_balanced X Y h x y]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:316:31: warning: This simp argument is unused:
+  pure_balanced X Y h x y
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [LinearMap.comp_apply, LinearMap.flip_apply, tensor_act_pure, prodOne, assocBackwardInner_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:318:24: warning: declaration uses `sorry`
+Ambient.lean:322:2: warning: Unused tactic linter: `rw [lift_pure, LinearMap.flip_apply, assocBackwardInner_pure]` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

@@ -1,0 +1,12 @@
+import MackeyDiagrams
+import Proofs.FiniteIndexReverseAdjunction
+import Proofs.InductionRestrictionMergesAndSplits
+open MackeyDiagrams
+#check Diagram.eval_splitDown_single
+#check Diagram.eval_rightUnit_single
+#check Diagram.eval_insertRightUnit_single
+#check Diagram.eval_insertLeftUnit_single
+#check Biset.Hom.horizontal_pairLinear
+#check Finset.sum_eq_single
+#check ExistsUnique.unique
+#check FiniteIndexReverseAdjunction

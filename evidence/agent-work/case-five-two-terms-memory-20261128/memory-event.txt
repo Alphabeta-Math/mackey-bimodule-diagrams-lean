@@ -1,0 +1,3 @@
+Final.lean reached the 12 GiB workflow cgroup limit and was OOM-killed on 2026-11-28 AEDT. Split typed helper declarations, reduce unfolding and imports, and retain the reviewed statement.
+A revised Final.lean was stopped separately after the workflow cgroup reached 12,554,391,552 bytes of its 12,884,901,888-byte cap; the process itself used 7,175,328 KiB RSS. This prevented a second OOM and released the shared compiler slot.
+An ExactCandidate.lean compilation was stopped after 73 seconds with 7,097,304 KiB RSS while the cgroup had 12,626,460,672 bytes of its 12,884,901,888-byte cap in use. Further full-endpoint elaboration should be broken into separately checked typed pieces.

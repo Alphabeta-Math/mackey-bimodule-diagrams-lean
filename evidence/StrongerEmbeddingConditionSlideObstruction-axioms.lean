@@ -1,0 +1,2 @@
+import Proofs.StrongerEmbeddingConditionSlideObstruction
+#print axioms StrongerEmbeddingConditionSlideObstruction

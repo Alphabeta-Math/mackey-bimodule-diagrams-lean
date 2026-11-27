@@ -1,0 +1,14 @@
+import MackeyDiagrams
+import Proofs.EvaluationForTwoProjections
+#check Finset.sum_map_toList
+#check Finset.sum_attach
+#check Finsupp.mem_supported
+#check Finsupp.supported
+#check Finsupp.linearCombination_single
+#check Submodule.mem_map
+#check Finsupp.support_single
+#check Finsupp.support_single_subset
+#check List.map_congr_left
+#check List.foldl_cons
+#check smul_zero
+#check Finsupp.linearCombination_mapDomain

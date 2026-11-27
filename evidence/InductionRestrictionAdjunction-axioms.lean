@@ -1,0 +1,2 @@
+import Proofs.InductionRestrictionAdjunction
+#print axioms InductionRestrictionAdjunction

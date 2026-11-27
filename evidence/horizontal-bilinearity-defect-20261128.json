@@ -1,0 +1,11 @@
+{
+  "location": "Revised article, section 1.2, Composition and the endomorphism algebra",
+  "quotedSentence": "Horizontal tensor product is also bilinear on maps, over the group algebra of the common region.",
+  "issue": "For a noncommutative common group algebra R, the bimodule-map hom-spaces generally have no natural R-module structures, so R-bilinearity on maps is not generally defined.",
+  "witness": "For the regular (R,R)-bimodule, the assignment m \u21a6 m r for a noncentral r is not right R-linear: at m=1, f(s)=s r while f(1)s=r s, for some s with sr\u2260rs. Thus right multiplication by r does not give an R-scalar action on bimodule maps.",
+  "correction": "Horizontal tensor product of bimodule maps is complex-bilinear; the underlying bimodules are tensored over the group algebra of the common region.",
+  "scope": "The wording concerns the ground ring of bilinearity on morphisms. It does not establish an error in the paper\u2019s evaluated diagram identities.",
+  "articleModified": true,
+  "correctedRevisionSha256": "e7712567f611d36713fb4dbf45f8b1aeefea022ea2e403462529850ebe290cc8",
+  "publishedCommit": "b6c4fdb6f8cec8ecded7d7bb55f7fc5edfbc6d22"
+}

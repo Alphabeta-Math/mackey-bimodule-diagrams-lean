@@ -1,0 +1,34 @@
+{
+  "source_sha256": "40d6444eaff2c138f7ec162f73fbfb1e7a5d459f60fefb6fb34ae2a48b91cb91",
+  "commands": [
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "-o",
+      ".lake/build/lib/lean/Proofs/ParabolicCaseSixReplacementThroughJoin.olean",
+      "Proofs/ParabolicCaseSixReplacementThroughJoin.lean"
+    ],
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "evidence/ParabolicCaseSixReplacementThroughJoin-axioms.lean"
+    ]
+  ],
+  "build": {
+    "code": 0,
+    "output": ""
+  },
+  "axioms": {
+    "code": 0,
+    "output": "'ParabolicCaseSixReplacementThroughJoin' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "ok": true,
+  "workspace_sha256": "0b8923f32a923e0fc946dfe2b389ab92d02b9e01e481b4de6755e55d083f7b65",
+  "olean_sha256": "c892aced476767a7c3c2c783497e7a7f42f651ac9385c51c1b6158389c50ccf0"
+}

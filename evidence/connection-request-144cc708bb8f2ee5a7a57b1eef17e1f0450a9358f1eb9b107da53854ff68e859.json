@@ -1,0 +1,16 @@
+{
+  "accepted": false,
+  "request": {
+    "endpoint": "5a51600d0a61dc9f1a8b80e3a273861bc64f8b91fc7c4530650ecec1e3d95d37",
+    "decision": {
+      "id": "NormalizedIndexValuedReidemeisterCurls",
+      "reason": "At finite index the index is nonzero in C. Apply the two checked index-valued curl identities and cancel the scalar against its inverse.",
+      "mathlibImports": [
+        "Mathlib.Basic.Complex.Basic"
+      ],
+      "support": "universe u",
+      "proof": "by\n  intro U inst K H G δ α hδ hα d a S finite inverseIndex\n  let _ : Subgroup.FiniteIndex S := finite\n  have hn : (S.index : Complex) ≠ 0 := Nat.cast_ne_zero.mpr Subgroup.index_ne_zero_of_finite\n  have hscale {A B : Type u} [Group A] [Group B] {X Y : MackeyDiagrams.Biset A B}\n      (f : MackeyDiagrams.Biset.Hom Complex X Y) :\n      (f.scale (S.index : Complex)).scale inverseIndex = f := by\n    apply MackeyDiagrams.Biset.Hom.ext\n    apply LinearMap.ext\n    intro x\n    change (S.index : Complex)⁻¹ • ((S.index : Complex) • f.toLinearMap x) = _\n    rw [smul_smul, inv_mul_cancel₀ hn, one_smul]\n  constructor\n  · intro up loopUp loopDown straight cup middle cap curl\n    have hc : curl.eval = (MackeyDiagrams.Diagram.scale (S.index : Complex) straight).eval :=\n      RightUpReidemeisterCurl K H G δ α hδ hα finite\n    change curl.eval.scale inverseIndex = _\n    rw [hc]\n    exact hscale straight.eval\n  · intro down loopUp loopDown straight cup middle cap curl\n    have hc : curl.eval = (MackeyDiagrams.Diagram.scale (S.index : Complex) straight).eval :=\n      LeftDownReidemeisterCurl K H G δ α hδ hα finite\n    change curl.eval.scale inverseIndex = _\n    rw [hc]\n    exact hscale straight.eval\n"
+    }
+  },
+  "reason": "Error: The approved endpoint or its dependencies changed after submission"
+}

@@ -1,0 +1,2 @@
+import Proofs.EqualTwoBlockSubgroups
+#print axioms EqualTwoBlockSubgroups

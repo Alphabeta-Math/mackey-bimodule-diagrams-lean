@@ -1,0 +1,13 @@
+import MackeyDiagrams
+import Proofs.ParabolicCaseFiveCoefficientOneExpansion
+open private OrbitMultiplicity.parabolic_finite OrbitMultiplicity.finite_word_of_groups
+  OrbitMultiplicity.projected_finite OrbitMultiplicity.point_surjective
+  from Proofs.ParabolicRightOrbitMultiplicity
+#check parabolic_finite
+#check finite_word_of_groups
+#check projected_finite
+#check point_surjective
+#check Subgroup.relIndex
+#check Set.finite_univ
+#check Set.toFinite
+#print axioms ParabolicCaseFiveCoefficientOneExpansion

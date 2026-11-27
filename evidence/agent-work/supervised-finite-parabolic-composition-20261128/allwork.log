@@ -1,0 +1,134 @@
+AllWork.lean:171:60: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+AllWork.lean:175:80: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+AllWork.lean:171:60: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+AllWork.lean:175:80: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+AllWork.lean:267:43: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+AllWork.lean:267:43: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+AllWork.lean:287:31: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+AllWork.lean:287:35: warning: Unused tactic linter: `rfl` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+AllWork.lean:287:35: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+AllWork.lean:303:43: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+AllWork.lean:303:43: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+AllWork.lean:323:31: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+AllWork.lean:323:35: warning: Unused tactic linter: `rfl` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+AllWork.lean:323:35: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+AllWork.lean:360:15: warning: This simp argument is unused:
+  tensor_act_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [prodOne, assocForward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+AllWork.lean:360:32: warning: This simp argument is unused:
+  prodOne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tensor_act_pure, assocForward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+AllWork.lean:370:15: warning: This simp argument is unused:
+  tensor_act_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [prodOne, assocBackward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+AllWork.lean:370:32: warning: This simp argument is unused:
+  prodOne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tensor_act_pure, assocBackward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+AllWork.lean:360:60: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+AllWork.lean:370:61: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+AllWork.lean:360:60: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+AllWork.lean:370:61: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+AllWork.lean:486:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+AllWork.lean:918:4: error: Type mismatch
+  (Biset.actLinear ℂ (X i) g) ?m.316
+has type
+  (X i).carrier →₀ ℂ
+but is expected to have type
+  ?m.283 i →₀ ℂ
+AllWork.lean:934:4: error: 'change' tactic failed, pattern
+  ((sigmaFinsuppLequivDFinsupp ℂ) ((sigmaFinsuppLequivDFinsupp ℂ).symm (e ((Biset.actLinear ℂ X g) x)))) i = ?m.216
+is not definitionally equal to target
+  (((sigmaFinsuppLequivDFinsupp ℂ) ((e ≪≫ₗ (sigmaFinsuppLequivDFinsupp ℂ).symm) ((Biset.actLinear ℂ X g) x))) i) a✝ =
+    (((sigmaFinsuppLequivDFinsupp ℂ)
+          ((Biset.actLinear ℂ (sumBasis Y) g) ((e ≪≫ₗ (sigmaFinsuppLequivDFinsupp ℂ).symm) x)))
+        i)
+      a✝
+AllWork.lean:1429:23: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+AllWork.lean:1437:23: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+AllWork.lean:1429:23: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+AllWork.lean:1437:23: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+AllWork.lean:1494:2: error: No goals to be solved
+AllWork.lean:1542:36: error: Tactic `rcases` failed: `naturality✝ : ∀ ⦃X Y : (fun S => ModuleCat (MonoidAlgebra ℂ ↥S)) B⦄ (f : X ⟶ Y),
+  ((fun {S T} f => (Rep.ofModuleMonoidAlgebra ⋙ Rep.indFunctor ℂ f.toHom) ⋙ Rep.toModuleMonoidAlgebra)
+              (ConjEmbedding.ofConjugator β ⋯) ⋙
+            (fun {S T} f => ModuleCat.restrictScalars (MonoidAlgebra.mapDomainAlgHom ℂ ℂ f.toHom).toRingHom)
+              (ConjEmbedding.ofConjugator α ⋯)).map
+        f ≫
+      e Y =
+    e X ≫
+      (∐ fun j =>
+            (fun {S T} f => ModuleCat.restrictScalars (MonoidAlgebra.mapDomainAlgHom ℂ ℂ f.toHom).toRingHom)
+                ((fun j =>
+                    let s := r j;
+                    ConjEmbedding.ofConjugator (β⁻¹ * (↑s)⁻¹) ⋯)
+                  j) ⋙
+              (fun {S T} f => (Rep.ofModuleMonoidAlgebra ⋙ Rep.indFunctor ℂ f.toHom) ⋙ Rep.toModuleMonoidAlgebra)
+                ((fun j => ConjEmbedding.ofConjugator α⁻¹ ⋯) j)).map
+        f` is not an inductive datatype

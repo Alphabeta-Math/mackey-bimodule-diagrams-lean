@@ -1,0 +1,124 @@
+private abbrev embed {S T : Subgroup P} (s : P) (h : conjugate s S ≤ T) : MackeyDiagrams.ConjEmbedding S T :=
+  MackeyDiagrams.ConjEmbedding.ofConjugator (H := S) (G := T) s
+    (fun x => h ⟨(x : P), x.property, rfl⟩)
+
+private abbrev inverseEmbed {S T : Subgroup P} (s : P) (h : T ≤ conjugate s S) : MackeyDiagrams.ConjEmbedding T S :=
+  MackeyDiagrams.ConjEmbedding.ofConjugator (H := T) (G := S) s⁻¹ (by
+    intro x
+    obtain ⟨y, hy, he⟩ := h x.property
+    change s * y * s⁻¹ = (x : P) at he
+    rw [← he]
+    have cancel : s⁻¹ * (s * y * s⁻¹) * (s⁻¹)⁻¹ = y := by group
+    rw [cancel]
+    exact hy)
+
+private abbrev Span (K H : Subgroup P) : Type :=
+  Σ L : {S : Subgroup P // Parabolic S},
+    {α : ↥Finitary // conjugate (α : P) L.val ≤ K} ×
+    {β : ↥Finitary // conjugate (β : P) L.val ≤ H}
+
+private abbrev pairWord {K H L : Subgroup P} (a : MackeyDiagrams.ConjEmbedding L K) (b : MackeyDiagrams.ConjEmbedding L H) : MackeyDiagrams.Word K H :=
+  MackeyDiagrams.Word.tensor (MackeyDiagrams.Word.up a) (MackeyDiagrams.Word.down b)
+
+private abbrev spanBasis {K H : Subgroup P} (S : Span K H) : MackeyDiagrams.Biset K H :=
+  MackeyDiagrams.Word.basis
+    (pairWord (embed (S.2.1.val : P) S.2.1.property) (embed (S.2.2.val : P) S.2.2.property))
+
+private abbrev middleLeft {K H : Subgroup P} (S : Span K H) :=
+  conjugate (S.2.2.val : P) S.1.val
+
+private abbrev middleRight {H J : Subgroup P} (T : Span H J) :=
+  conjugate (T.2.1.val : P) T.1.val
+
+private abbrev intersectionGroup {K H J : Subgroup P} (S : Span K H) (T : Span H J) (r : H) :=
+  middleLeft S ⊓ conjugate (r : P) (middleRight T)
+
+private abbrev outerLeft {K H J : Subgroup P} (S : Span K H) (T : Span H J) (r : H) :=
+  MackeyDiagrams.ConjEmbedding.comp
+    (embed (S.2.1.val : P) S.2.1.property)
+    (inverseEmbed (S.2.2.val : P) (show intersectionGroup S T r ≤ middleLeft S from inf_le_left))
+
+private abbrev outerRight {K H J : Subgroup P} (S : Span K H) (T : Span H J) (r : H) :=
+  MackeyDiagrams.ConjEmbedding.comp
+    (embed (T.2.2.val : P) T.2.2.property)
+    (MackeyDiagrams.ConjEmbedding.comp
+      (inverseEmbed (T.2.1.val : P) (show middleRight T ≤ middleRight T from le_rfl))
+      (inverseEmbed (r : P)
+        (show intersectionGroup S T r ≤ conjugate (r : P) (middleRight T) from inf_le_right)))
+
+private theorem intersectionParabolic {K H J : Subgroup P} (hH : Parabolic H)
+    (S : Span K H) (T : Span H J) (r : H) :
+    Parabolic (intersectionGroup S T r) :=
+  interParabolic (conjParabolic S.1.property S.2.2.val)
+    (conjParabolic (conjParabolic T.1.property T.2.1.val)
+      ⟨r.val, (parabolicData hH).1 r.property⟩)
+
+private noncomputable def composeSpan {K H J : Subgroup P} (hH : Parabolic H)
+    (S : Span K H) (T : Span H J) (r : H) : Span K J := by
+  let α := S.2.1.val * S.2.2.val⁻¹
+  let β := T.2.2.val * T.2.1.val⁻¹ * (⟨r.val, (parabolicData hH).1 r.property⟩ : ↥Finitary)⁻¹
+  refine ⟨⟨intersectionGroup S T r, intersectionParabolic hH S T r⟩,
+    ⟨α, ?_⟩, ⟨β, ?_⟩⟩
+  · rintro p ⟨x, hx, rfl⟩
+    have hp := ((outerLeft S T r).toHom ⟨x, hx⟩).property
+    change (S.2.1.val : P) * ((S.2.2.val : P)⁻¹ * x * ((S.2.2.val : P)⁻¹)⁻¹) *
+      ((S.2.1.val : P)⁻¹) ∈ K at hp
+    change (α : P) * x * (α : P)⁻¹ ∈ K
+    unfold α
+    push_cast
+    convert hp using 1 <;> group
+  · rintro p ⟨x, hx, rfl⟩
+    have hp := ((outerRight S T r).toHom ⟨x, hx⟩).property
+    change (T.2.2.val : P) * ((T.2.1.val : P)⁻¹ * ((r : P)⁻¹ * x * ((r : P)⁻¹)⁻¹) *
+      ((T.2.1.val : P)⁻¹)⁻¹) * (T.2.2.val : P)⁻¹ ∈ J at hp
+    change (β : P) * x * (β : P)⁻¹ ∈ J
+    unfold β
+    push_cast
+    convert hp using 1 <;> group
+
+private theorem composeSpan_basis {K H J : Subgroup P} (hH : Parabolic H)
+    (S : Span K H) (T : Span H J) (r : H) :
+    spanBasis (composeSpan hH S T r) = (pairWord (outerLeft S T r) (outerRight S T r)).basis := by
+  have hl : embed ((composeSpan hH S T r).2.1.val : P) (composeSpan hH S T r).2.1.property =
+      outerLeft S T r := by
+    apply MackeyDiagrams.ConjEmbedding.ext
+    apply MonoidHom.ext
+    intro x
+    apply Subtype.ext
+    change ((S.2.1.val : P) * (S.2.2.val : P)⁻¹) * (x : P) *
+      ((S.2.1.val : P) * (S.2.2.val : P)⁻¹)⁻¹ = _
+    change _ = (S.2.1.val : P) * ((S.2.2.val : P)⁻¹ * (x : P) * ((S.2.2.val : P)⁻¹)⁻¹) *
+      (S.2.1.val : P)⁻¹
+    group
+  have hr : embed ((composeSpan hH S T r).2.2.val : P) (composeSpan hH S T r).2.2.property =
+      outerRight S T r := by
+    apply MackeyDiagrams.ConjEmbedding.ext
+    apply MonoidHom.ext
+    intro x
+    apply Subtype.ext
+    change ((T.2.2.val : P) * (T.2.1.val : P)⁻¹ * (r : P)⁻¹) * (x : P) *
+      ((T.2.2.val : P) * (T.2.1.val : P)⁻¹ * (r : P)⁻¹)⁻¹ = _
+    change _ = (T.2.2.val : P) * ((T.2.1.val : P)⁻¹ * ((r : P)⁻¹ * (x : P) * ((r : P)⁻¹)⁻¹) *
+      ((T.2.1.val : P)⁻¹)⁻¹) * (T.2.2.val : P)⁻¹
+    group
+  exact congrArg MackeyDiagrams.Word.basis (congrArg₂ pairWord hl hr)
+
+private def regularSpan {H : Subgroup P} (hH : Parabolic H) : Span H H := by
+  have h1 : conjugate 1 H ≤ H := by
+    rintro _ ⟨x, hx, rfl⟩
+    change (1 : P) * x * (1 : P)⁻¹ ∈ H
+    simpa using hx
+  exact ⟨⟨H, hH⟩, ⟨1, h1⟩, ⟨1, h1⟩⟩
+
+private theorem regularSpan_basis {H : Subgroup P} (hH : Parabolic H) :
+    spanBasis (regularSpan hH) = (pairWord (MackeyDiagrams.ConjEmbedding.id H)
+      (MackeyDiagrams.ConjEmbedding.id H)).basis := by
+  have heq (h : conjugate 1 H ≤ H) :
+      embed 1 h = MackeyDiagrams.ConjEmbedding.id H := by
+    apply MackeyDiagrams.ConjEmbedding.ext
+    apply MonoidHom.ext
+    intro x
+    apply Subtype.ext
+    change (1 : P) * (x : P) * (1 : P)⁻¹ = (x : P)
+    simp
+  exact congrArg MackeyDiagrams.Word.basis (congrArg₂ pairWord (heq _) (heq _))

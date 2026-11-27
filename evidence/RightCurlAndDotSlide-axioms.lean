@@ -1,0 +1,2 @@
+import Proofs.RightCurlAndDotSlide
+#print axioms RightCurlAndDotSlide

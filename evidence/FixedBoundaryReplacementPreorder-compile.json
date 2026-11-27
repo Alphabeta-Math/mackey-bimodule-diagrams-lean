@@ -1,0 +1,34 @@
+{
+  "source_sha256": "515d351130813edcd976d8c9e6695c06275b48f5e7c039f0ada82aae5d7265b1",
+  "commands": [
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "-o",
+      ".lake/build/lib/lean/Proofs/FixedBoundaryReplacementPreorder.olean",
+      "Proofs/FixedBoundaryReplacementPreorder.lean"
+    ],
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "evidence/FixedBoundaryReplacementPreorder-axioms.lean"
+    ]
+  ],
+  "build": {
+    "code": 0,
+    "output": ""
+  },
+  "axioms": {
+    "code": 0,
+    "output": "'FixedBoundaryReplacementPreorder' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "ok": true,
+  "workspace_sha256": "0b8923f32a923e0fc946dfe2b389ab92d02b9e01e481b4de6755e55d083f7b65",
+  "olean_sha256": "1aa97215c987b11efea6a35c80b6256f6e5ce5fb01adb62f874b56fa7855791c"
+}

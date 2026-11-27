@@ -1,0 +1,87 @@
+EndpointCheck.lean:1:0: warning: 
+'Mathlib.Data.Complex.Basic' has been deprecated: please replace this import by
+
+import Mathlib.Basic.Complex.Basic
+have this :=
+  ∀ {U : Type u} [inst : Group U] {G A D F C E : Subgroup U} (a : MackeyDiagrams.ConjEmbedding G A)
+    (b : MackeyDiagrams.ConjEmbedding D A) (c : MackeyDiagrams.ConjEmbedding F D) (d : MackeyDiagrams.ConjEmbedding C G)
+    (e : MackeyDiagrams.ConjEmbedding E C) (f : MackeyDiagrams.ConjEmbedding E F),
+    let up := @MackeyDiagrams.Word.up U inst;
+    let down := @MackeyDiagrams.Word.down U inst;
+    let tensor := @MackeyDiagrams.Word.tensor U inst;
+    let comp := @MackeyDiagrams.ConjEmbedding.comp U inst;
+    let hom := @MackeyDiagrams.ConjEmbedding.toHom U inst;
+    let bc := comp b c;
+    let ad := comp a d;
+    let de := comp d e;
+    let ade := comp a de;
+    let bcf := comp bc f;
+    let bottom := tensor (tensor (down a) (up b)) (up c);
+    let top := tensor (tensor (up d) (up e)) (down f);
+    let mergedBottom := tensor (down a) (up bc);
+    let mergedTop := tensor (up de) (down f);
+    let Drawing := MackeyDiagrams.LabelledDrawing ℂ bottom top;
+    let drawId := fun {K H} p => MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.id p);
+    let splitBottom :=
+      ((drawId (down a)).horizontal
+            (MackeyDiagrams.LabelledDrawing.trivalent (MackeyDiagrams.TrivalentVertex.splitUp b c))).vertical
+        (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.unassociate (down a) (up b) (up c)));
+    let mergeTop :=
+      (MackeyDiagrams.LabelledDrawing.trivalent (MackeyDiagrams.TrivalentVertex.mergeUp d e)).horizontal
+        (drawId (down f));
+    let eval := fun drawing => (MackeyDiagrams.LabelledDrawing.interpret drawing).eval;
+    let mergedEval := fun drawing =>
+      (splitBottom.vertical (MackeyDiagrams.LabelledDrawing.vertical drawing mergeTop)).interpret.eval.toLinearMap;
+    let atRight := fun {K H J L J'} p {q} {r} {q'} {r'} crossing =>
+      (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.associate p q r)).vertical
+        (((drawId p).horizontal crossing).vertical
+          (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.unassociate p q' r')));
+    let ProjectionLabel := fun {K H P L} α β η θ => MackeyDiagrams.ProjectionDot.Mixed α β η θ;
+    let Parameter := ProjectionLabel a bc de f;
+    let Q := fun p w =>
+      MackeyDiagrams.Generator.mixedProduct a bc (MackeyDiagrams.Generator.mixedMultiplicationBasis a bc de f p w);
+    let Qstar := fun p => (MackeyDiagrams.Diagram.mixedProjection a bc de f p.dot ⋯).eval.toLinearMap;
+    let intersection := fun p =>
+      a.toHom.range ⊓ Subgroup.map (MulEquiv.toMonoidHom (MulAut.conj p.element)) bc.toHom.range;
+    let lower := ade.toHom.range;
+    let terms := fun {X} label => List.map (fun x => (label x, x)) label.support.toList;
+    let finiteFibers := fun {K H P L} α β η θ x =>
+      ∀ (z : ((MackeyDiagrams.Biset.restriction α).tensor (MackeyDiagrams.Biset.induction β)).carrier),
+        {w | MackeyDiagrams.Generator.mixedMultiplicationBasis α β η θ x w = z}.Finite;
+    let left := fun {B} r s t xs ys zs =>
+      ((MackeyDiagrams.LabelledDrawing.compactProjection a b r s xs).horizontal (drawId (up c))).vertical
+        ((atRight (up r) (MackeyDiagrams.LabelledDrawing.compactProjection s c t f ys)).vertical
+          ((MackeyDiagrams.LabelledDrawing.parallelUp r t d e zs).horizontal (drawId (down f))));
+    let right := fun {B'} j v w ells ms ns =>
+      (atRight (down a) (MackeyDiagrams.LabelledDrawing.parallelUp b c j w ells)).vertical
+        (((MackeyDiagrams.LabelledDrawing.compactProjection a j d v ms).horizontal (drawId (up w))).vertical
+          (atRight (up d) (MackeyDiagrams.LabelledDrawing.compactProjection v w e f ns)));
+    let Left :=
+      (B : Subgroup U) ×
+        (r : MackeyDiagrams.ConjEmbedding B G) ×
+          (s : MackeyDiagrams.ConjEmbedding B D) ×
+            (t : MackeyDiagrams.ConjEmbedding E B) ×
+              (ProjectionLabel a b r s →₀ ℂ) × (ProjectionLabel s c t f →₀ ℂ) × MackeyDiagrams.DotLabel ℂ (comp r t) de;
+    let Right :=
+      (B' : Subgroup U) ×
+        (j : MackeyDiagrams.ConjEmbedding B' A) ×
+          (v : MackeyDiagrams.ConjEmbedding C B') ×
+            (w : MackeyDiagrams.ConjEmbedding F B') ×
+              MackeyDiagrams.DotLabel ℂ bc (comp j w) × (ProjectionLabel a j d v →₀ ℂ) × (ProjectionLabel v w e f →₀ ℂ);
+    let leftDrawing := fun x =>
+      match x with
+      | ⟨fst, ⟨r, ⟨s, ⟨t, (xs, ⋯)⟩⟩⟩⟩ => left r s t (terms xs) (terms ys) zs.terms;
+    let rightDrawing := fun x =>
+      match x with
+      | ⟨fst, ⟨j, ⟨v, ⟨w, ⋯⟩⟩⟩⟩ => right j v w ells.terms (terms ms) (terms ns);
+    let sumDrawings := fun ds =>
+      match ds with
+      | [] => MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.zero bottom top)
+      | first :: rest => List.foldl MackeyDiagrams.LabelledDrawing.add first rest;
+    let conjugatedImage := fun p => Subgroup.map (MulEquiv.toMonoidHom (⋯ ⋯)) (hom bc).range;
+    let join := fun p => (hom ad).range ⊔ conjugatedImage p;
+    let middleFinite := fun p => ⋯.FiniteIndex;
+    let expansion := fun coeff => ⋯;
+    let leftEval := fun l => eval (leftDrawing l);
+    ⋯;
+this : Prop

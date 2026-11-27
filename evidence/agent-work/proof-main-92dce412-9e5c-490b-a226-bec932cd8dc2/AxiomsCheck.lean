@@ -1,0 +1,2 @@
+import ProposalCheck
+#print axioms FiniteParabolicBicategoryComposition

@@ -1,0 +1,35 @@
+{
+  "source_sha256": "d3db3b9b20436816fe633fef792070ff8a7dd6821802866b6b9f2d93dffdff98",
+  "commands": [
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "-o",
+      ".lake/build/lib/lean/Proofs/RegularModuleRightAction.olean",
+      "Proofs/RegularModuleRightAction.lean"
+    ],
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "evidence/RegularModuleRightAction-axioms.lean"
+    ]
+  ],
+  "build": {
+    "code": 0,
+    "output": ""
+  },
+  "axioms": {
+    "code": 0,
+    "output": "'RegularModuleRightAction' depends on axioms: [propext, Quot.sound]\n"
+  },
+  "axiomPolicy": "Classical.choice forbidden by source statement",
+  "ok": true,
+  "workspace_sha256": "0b8923f32a923e0fc946dfe2b389ab92d02b9e01e481b4de6755e55d083f7b65",
+  "olean_sha256": "1d7b3bbdef3b407d9500d844abcdc9064aec34d70fb201378ac414acc7c86105"
+}

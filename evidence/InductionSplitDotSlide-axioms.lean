@@ -1,0 +1,2 @@
+import Proofs.InductionSplitDotSlide
+#print axioms InductionSplitDotSlide

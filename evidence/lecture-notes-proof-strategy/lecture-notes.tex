@@ -1,0 +1,1859 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\DeclareMathAlphabet{\mathscr}{OMS}{cmsy}{m}{n}
+\usepackage[margin=28mm]{geometry}
+\usepackage{graphicx}
+\usepackage[hidelinks,pdfauthor={Ian X},pdftitle={Abelian Categories and Bimodules: Notes},pdfsubject={Categorical reconstruction, tensor functors, and Morita equivalence}]{hyperref}
+\newcommand{\mathheading}{}
+\theoremstyle{plain}
+\newtheorem*{plainstatement}{\mathheading}
+\theoremstyle{definition}
+\newtheorem*{definitionstatement}{\mathheading}
+\newenvironment{mathstatement}[3]{\renewcommand{\mathheading}{#1 #2}\begin{plainstatement}[#3]}{\end{plainstatement}}
+\newenvironment{mathdefinition}[3]{\renewcommand{\mathheading}{#1 #2}\begin{definitionstatement}[#3]}{\end{definitionstatement}}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks[1]
+\title{Abelian Categories and Bimodules\\[0.4em]\large Notes on categorical reconstruction,\\tensor functors, and Morita equivalence}
+\author{Ian X}
+\date{October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+A ten-chapter path from universal properties and additive categories to module reconstruction, Eilenberg--Watts, and Morita equivalence. The notes include explicit hypotheses, proofs, examples, and conventions for arbitrary unital rings.
+\end{abstract}
+\paragraph{Disclaimer and attribution.}
+ChatGPT assisted with organising the definitions and theorems in these notes, drawing on \href{https://alphabetamath.cc/}{alphabetamath.cc}, and with preparing the presentation, typography, and citation revision. The Alphabetamath source material includes AI-adapted statements and proofs. The mathematical ideas and results are discoveries of human mathematicians, whose scholarly sources are cited throughout. These notes present established mathematics; they do not claim that ChatGPT discovered the mathematics. The original article series and its expository arrangement remain credited to Get Curious and Alphabetamath.
+\tableofcontents
+\clearpage
+
+\section{Scope and a first example}
+\phantomsection\label{chapter-01}
+ 
+A category organizes objects and maps. A ring organizes addition and multiplication. Under explicit hypotheses, an abelian category can be recovered from one ring, and suitable functors can be recovered from bimodules. This series proves the correspondence at three levels: categories, functors, and natural transformations.
+
+ 
+\subsection{The objective}
+
+\begin{mathstatement}{Theorem}{1.1}{The correspondence to be proved}
+\phantomsection\label{env-1-1}
+
+Let \(\mathcal A\) be a locally small abelian category with every set-indexed coproduct and a small projective generator \(P\). Put \(R=\operatorname{End}_{\mathcal A}(P)^{\mathrm{op}}\). Then
+
+\[\mathcal A\simeq R\text{-}\mathrm{Mod},\qquad X\longmapsto\operatorname{Hom}_{\mathcal A}(P,X).\] 
+Here \(R\text{-}\mathrm{Mod}\) is the category of all unital left \(R\)-modules. For unital rings \(R,S\), the category of additive, right-exact functors \(R\text{-}\mathrm{Mod}\to S\text{-}\mathrm{Mod}\) that preserve all set-indexed coproducts is equivalent to the category of \(S\)-\(R\) bimodules:
+
+\[B\longmapsto (B\otimes_R-),\qquad \phi\longmapsto (\phi\otimes_R\mathrm{id}).\] 
+Its inverse sends a functor \(F\) to \(F(R)\), with the right action constructed in \hyperref[chapter-09]{chapter 9}, and a natural transformation \(\eta\) to \(\eta_R\). Composition corresponds to tensor product; identity functors correspond to regular bimodules.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.8 and 3.12]{crawley}, \cite[\S\S3.4 and 3.10]{crawley}, \cite{watts}.}\par
+
+\end{mathstatement}
+ 
+This is a statement of our destination. \hyperref[chapter-08]{Chapter 8} proves the first equivalence; \hyperref[chapter-09]{chapter 9} proves the second, including its assertion about natural transformations; \hyperref[chapter-10]{chapter 10} proves compatibility with composition and explains the equivalence criterion for rings. Chapters 2--7 define every additional term in the statement.
+
+ 
+The hypotheses specify the classes being compared. We do not assert that every abelian category is a category of all modules, or that every functor is tensoring. In particular, a tensor functor is required to preserve cokernels and coproducts, but need not preserve kernels.
+
+ 
+\subsection{A concrete example}
+
+\begin{mathdefinition}{Example}{1.2}{Reduction modulo two}
+\phantomsection\label{env-1-2}
+
+Let \(\mathrm{Ab}\) denote abelian groups with group homomorphisms, and let \(\mathbb F_2=\mathbb Z/2\mathbb Z\). For an abelian group \(M\), write \(2M=\{2m:m\in M\}\). The quotient \(M/2M\) consists of cosets \([m]=m+2M\), with \([m]+[n]=[m+n]\); equality means \(m-n\in2M\), which makes this addition well-defined. It is an \(\mathbb F_2\)-vector space: \(0\) acts by zero and \(1\) by the identity. A homomorphism \(f:M\to N\) induces \([m]\mapsto[f(m)]\), since \(f(2m)=2f(m)\). Thus
+
+\[F:\mathrm{Ab}\longrightarrow\mathbb F_2\text{-}\mathrm{Mod},\qquad F(M)=M/2M\] 
+is a functor: induced maps preserve identities and composition. For example,
+
+\[F(\mathbb Z)=\mathbb F_2,\quad F(\mathbb Z^2)=\mathbb F_2^2,\quad F(\mathbb Z/3\mathbb Z)=0,\quad F(\mathbb Z/4\mathbb Z)=\mathbb F_2.\] 
+For the third calculation, every residue class is twice another class; for the fourth, precisely the even classes lie in \(2M\). The bimodule describing \(F\) is \(\mathbb F_2\), with its left field action and right integer action \(b\cdot n=b\overline n\). \hyperref[chapter-06]{Chapter 6} proves the natural isomorphism
+
+\[\mathbb F_2\otimes_{\mathbb Z}M\cong M/2M,\qquad b\otimes m\longmapsto b[m].\] 
+The injection \(\mathbb Z\xrightarrow{\times2}\mathbb Z\) becomes the zero map \(\mathbb F_2\to\mathbb F_2\), so this functor does not preserve injections.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.4 and 3.10]{crawley}, \cite{watts}.}\par
+
+\end{mathdefinition}
+ 
+\begin{mathstatement}{Proposition}{1.3}{Two natural transformations}
+\phantomsection\label{env-1-3}
+
+The natural endomorphisms of \(F(M)=M/2M\) are precisely the zero transformation and the identity transformation. These correspond to multiplication by \(0\) and \(1\) on the bimodule \(\mathbb F_2\).
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.4 and 3.10]{crawley}, \cite{watts}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+Let \(\eta:F\Rightarrow F\). Since \(\eta_{\mathbb Z}\) is a linear endomorphism of the one-dimensional space \(\mathbb F_2\), it sends \(1\) to a scalar \(a\in\mathbb F_2\). For every \(m\in M\), the homomorphism \(u_m:\mathbb Z\to M\), \(n\mapsto nm\), gives by naturality \(\eta_M([m])=F(u_m)(a)=a[m]\). Thus every component is multiplication by the same scalar. Conversely these scalar maps are linear and commute with every induced map. A bimodule endomorphism of \(\mathbb F_2\) is also multiplication by its value at \(1\), and both scalar maps respect the right integer action.
+
+
+\end{proof}
+ 
+\subsection{Plan and conventions}
+
+\begin{enumerate}
+ 
+\item This chapter: objective and example.
+
+\item Limits and colimits: universal properties without elements of abstract objects.
+
+\item Addition and biproducts: the algebra of morphisms.
+
+\item Abelian categories: kernels, cokernels, exactness, and generators.
+
+\item Modules and bimodules: the concrete abelian categories.
+
+\item Tensor products: construction and the preservation properties we need.
+
+\item Group algebras: representations as modules.
+
+\item Generators: reconstruct an abelian category from a ring.
+
+\item Eilenberg--Watts: reconstruct functors and transformations from bimodules.
+
+\item Morita equivalence: composition and equivalences.
+
+\end{enumerate}
+ 
+We assume objects, morphisms, functors, natural transformations, terminal and zero objects, zero morphisms, and the basic definitions of groups, rings, fields, homomorphisms, and group representations. We work with ordinary sets and the usual axiom of choice. For constructions in categories whose objects form a proper class, \hyperref[chapter-08]{chapter 8} either uses supplied choices of coproducts, cokernels, and inverse images, or states the additional global choice convention explicitly. Rings have an identity, ring homomorphisms preserve it, and modules are unital. No commutativity is assumed unless stated.
+
+ 
+Composition \(gf\) means \(g\circ f\). An isomorphism has a two-sided inverse. An equivalence consists of functors in both directions whose composites are naturally isomorphic to the identity functors. In abstract categorical proofs we use morphisms and universal properties, never elements of an unnamed object. Elements appear only in concrete algebraic examples and constructions. No general theory of monoidal categories is needed: \hyperref[chapter-06]{chapter 6} proves the tensor identities used in \hyperref[chapter-10]{chapter 10} directly.
+
+ 
+\section{Limits and colimits}
+\phantomsection\label{chapter-02}
+ 
+A universal property specifies an object by the maps into or out of it. This chapter develops the constructions used later. Fix a category \(\mathcal C\). Write \(\operatorname{Hom}(X,Y)\) for its morphisms from \(X\) to \(Y\).
+
+
+\subsection{Diagrams and universal properties}
+
+\begin{mathdefinition}{Definition}{2.1}{Diagrams, cones, and limits}
+\phantomsection\label{env-2-1}
+
+A \emph{small category} has a set of objects and a set of morphisms. A small diagram in \(\mathcal C\) is a functor \(D:J\to\mathcal C\) from a small category \(J\): it assigns objects and arrows, preserving identities and composition. A \emph{cone} consists of an object \(T\) and arrows \(t_j:T\to D(j)\) such that \(D(\alpha)t_j=t_k\) for every \(\alpha:j\to k\). A \emph{limit} is a cone \((L,p_j)\) for which every cone \((T,t_j)\) factors through a unique arrow \(u:T\to L\): \(p_ju=t_j\) for all \(j\).
+
+ 
+A \emph{cocone} consists of \(t_j:D(j)\to T\) with \(t_kD(\alpha)=t_j\). A \emph{colimit} is a cocone \((L,i_j)\) through which every cocone factors uniquely: \(ui_j=t_j\). ``All small limits'' or ``all small colimits'' means these exist for every small diagram.
+
+
+\par\smallskip{\normalfont\small See \cite[Chs. III and V]{maclane}, \cite[\S1.6 and Exercises 3--B, 3--C]{freyd}.}\par
+
+\end{mathdefinition}
+ 
+\begin{mathstatement}{Proposition}{2.2}{Uniqueness with structure maps}
+\phantomsection\label{env-2-2}
+
+Two limits of the same diagram have a unique isomorphism commuting with their cone maps. The corresponding assertion holds for colimits.
+
+
+\par\smallskip{\normalfont\small See \cite[Chs. III and V]{maclane}, \cite[\S1.6 and Exercises 3--B, 3--C]{freyd}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+For limits \((L,p_j)\) and \((L',p'_j)\), universality gives unique \(u:L\to L'\), \(v:L'\to L\) with \(p'_ju=p_j\), \(p_jv=p'_j\). Both \(vu\) and \(\mathrm{id}_L\) have composites \(p_j\) with every cone map, so uniqueness gives \(vu=\mathrm{id}_L\); likewise \(uv=\mathrm{id}_{L'}\). For colimits, universality gives \(u i_j=i'_j\), \(v i'_j=i_j\). Equality after every injection gives the same inverse equations.
+
+
+\end{proof}
+ 
+Uniqueness is always relative to the specified maps. It permits us to identify two constructions once their universal properties agree.
+
+
+\subsection{Products and coproducts}
+
+\begin{mathdefinition}{Definition}{2.3}{Products and coproducts}
+\phantomsection\label{env-2-3}
+
+For a set-indexed family \((X_i)_{i\in I}\), a \emph{product} is an object \(\prod_iX_i\) with maps \(p_i:\prod_iX_i\to X_i\) such that any family \(t_i:T\to X_i\) has a unique simultaneous factorization \(p_i u=t_i\). A \emph{coproduct} is an object \(\coprod_iX_i\) with maps \(i_i:X_i\to\coprod_iX_i\) such that any family \(t_i:X_i\to T\) has a unique factorization \(u i_i=t_i\). These are the limit and colimit of a diagram with objects \(I\) and only identity arrows.
+
+
+The empty product is terminal: there is exactly one map from each \(T\) into it. The empty coproduct is \emph{initial}: there is exactly one map from it into each \(T\). A zero object is both initial and terminal.
+
+
+\par\smallskip{\normalfont\small See \cite[Chs. III and V]{maclane}, \cite[\S1.6 and Exercises 3--B, 3--C]{freyd}.}\par
+
+\end{mathdefinition}
+ 
+\begin{mathdefinition}{Example}{2.4}{Products and coproducts of abelian groups}
+\phantomsection\label{env-2-4}
+
+The product of abelian groups \((A_i)\) is the group of all tuples \((a_i)\), with coordinatewise addition. Its projection maps have the product property because \(u(t)=(t_i(t))_i\) is the unique possible homomorphism. The coproduct is the direct sum \(\bigoplus_i A_i\), consisting of the tuples with finite support. Maps \(t_i:A_i\to T\) extend uniquely by \((a_i)\mapsto\sum_i t_i(a_i)\); the sum is finite. For infinitely many nonzero groups the product and direct sum generally differ. In \(\prod_{n\geq1}\mathbb Z\), the tuple \((1,1,\ldots)\) is not in \(\bigoplus_{n\geq1}\mathbb Z\).
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S1.1--1.7, 3.7--3.8]{crawley}.}\par
+
+\end{mathdefinition}
+ 
+\subsection{Equalizers and coequalizers}
+
+\begin{mathdefinition}{Definition}{2.5}{Imposing equality of two arrows}
+\phantomsection\label{env-2-5}
+
+For parallel arrows \(f,g:X\to Y\), an \emph{equalizer} is \(e:E\to X\) with \(fe=ge\), universal among arrows satisfying that equation: whenever \(ft=gt\), there is a unique \(u:T\to E\) with \(eu=t\). A \emph{coequalizer} is \(q:Y\to Q\) with \(qf=qg\), universal among arrows \(t:Y\to T\) satisfying \(tf=tg\): there is a unique \(u:Q\to T\) with \(uq=t\).
+
+
+\par\smallskip{\normalfont\small See \cite[Chs. III and V]{maclane}, \cite[\S1.6 and Exercises 3--B, 3--C]{freyd}.}\par
+
+\end{mathdefinition}
+ 
+\begin{mathdefinition}{Definition}{2.6}{Monomorphisms and epimorphisms}
+\phantomsection\label{env-2-6}
+
+A morphism \(m:X\to Y\) is \emph{monic}, or a monomorphism, if \(ma=mb\) implies \(a=b\) for all pairs of arrows with codomain \(X\). A morphism \(q:X\to Y\) is \emph{epic}, or an epimorphism, if \(aq=bq\) implies \(a=b\) for all pairs with domain \(Y\). These are cancellation properties; they make sense without elements.
+
+
+\par\smallskip{\normalfont\small See \cite[Chs. III and V]{maclane}, \cite[\S1.6 and Exercises 3--B, 3--C]{freyd}.}\par
+
+\end{mathdefinition}
+ 
+\begin{mathstatement}{Proposition}{2.7}{Equalizers are monic; coequalizers are epic}
+\phantomsection\label{env-2-7}
+
+Every equalizer arrow is monic, and every coequalizer arrow is epic.
+
+
+\par\smallskip{\normalfont\small See \cite[Chs. III and V]{maclane}, \cite[\S1.6 and Exercises 3--B, 3--C]{freyd}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+If \(ea=eb=t\), then \(ft=gt\), and \(a,b\) are both factorizations of \(t\) through its equalizer. Uniqueness gives \(a=b\). If \(aq=bq=t\) for a coequalizer \(q\), then \(tf=tg\), and \(a,b\) are both factorizations of \(t\) through \(q\), hence equal.
+
+
+\end{proof}
+ 
+\begin{mathdefinition}{Example}{2.8}{An equation and a quotient}
+\phantomsection\label{env-2-8}
+
+For abelian-group homomorphisms \(f,g:A\to B\), the subgroup \(E=\{a:f(a)=g(a)\}\), with its inclusion, is the equalizer: a map on which \(f,g\) agree lands in that subgroup and therefore factors uniquely. The image \(U=\operatorname{im}(f-g)\) is a subgroup because \(f-g\) is additive. The coequalizer is the coset group \(B/U\), with its quotient map. Here \([b]=b+U\) equals \([b']\) exactly when \(b-b'\in U\). The operations \([b]+[c]=[b+c]\), \(-[b]=[-b]\), and zero \([0]\) are well defined: changing representatives changes a sum or negative by an element of \(U\). Their abelian-group laws follow from the laws in \(B\). A homomorphism \(t:B\to T\) equalizes \(f,g\) exactly when it vanishes on \(\operatorname{im}(f-g)\); its factorization is \([b]\mapsto t(b)\), well-defined and unique.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.6--3.8 and 3.12]{crawley}, \cite[\S\S2.1--2.2]{freyd}, \cite[Chs. III and V]{maclane}, \cite[\S1.6 and Exercises 3--B, 3--C]{freyd}.}\par
+
+\end{mathdefinition}
+ 
+\subsection{Constructing every small limit and colimit}
+
+\begin{mathstatement}{Theorem}{2.9}{Limits from products and equalizers}
+\phantomsection\label{env-2-9}
+
+If \(\mathcal C\) has all set-indexed products and equalizers, it has all small limits. For \(D:J\to\mathcal C\), form
+
+\[A=\prod_{j\in\operatorname{Ob}J}D(j),\qquad B=\prod_{\alpha:j\to k\text{ in }J}D(k).\] 
+Define \(s,t:A\to B\) by the components \(p_\alpha s=D(\alpha)p_j\) and \(p_\alpha t=p_k\). If \(e:L\to A\) equalizes \(s,t\), the maps \(p_je\) give a limit.
+
+
+\par\smallskip{\normalfont\small See \cite[Chs. III and V]{maclane}, \cite[\S1.6 and Exercises 3--B, 3--C]{freyd}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+For each \(\alpha:j\to k\), equality \(se=te\) gives \(D(\alpha)p_je=p_ke\), the cone condition. Any cone \((T,t_j)\) gives a unique \(a:T\to A\) with \(p_ja=t_j\). Its cone equations give \(sa=ta\), since all components in \(B\) agree. There is a unique \(u:T\to L\) with \(eu=a\). This implies \(p_jeu=t_j\). Conversely any such \(u\) must satisfy \(eu=a\) by the product property, so the equalizer property makes it unique. Both index collections are sets because \(J\) is small, including the empty case.
+
+
+\end{proof}
+ 
+\begin{mathstatement}{Theorem}{2.10}{Colimits from coproducts and coequalizers}
+\phantomsection\label{env-2-10}
+
+If \(\mathcal C\) has all set-indexed coproducts and coequalizers, it has all small colimits. For \(D:J\to\mathcal C\), form
+
+\[A=\coprod_{\alpha:j\to k\text{ in }J}D(j),\qquad B=\coprod_{j\in\operatorname{Ob}J}D(j).\] 
+Let \(s,t:A\to B\) satisfy \(s i_\alpha=i_kD(\alpha)\), \(t i_\alpha=i_j\). If \(q:B\to L\) coequalizes \(s,t\), the maps \(q i_j\) give a colimit.
+
+
+\par\smallskip{\normalfont\small See \cite[Chs. III and V]{maclane}, \cite[\S1.6 and Exercises 3--B, 3--C]{freyd}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+The coequalizer equation gives \(q i_kD(\alpha)=q i_j\), the cocone condition. A cocone \((t_j:D(j)\to T)\) gives a unique \(b:B\to T\) with \(bi_j=t_j\). Its equations give \(bs=bt\) on every summand of \(A\), hence as arrows. A unique \(u:L\to T\) satisfies \(uq=b\), and therefore \(uq i_j=t_j\). Conversely any arrow with those composites satisfies \(uq=b\) by the coproduct property and is thus unique.
+
+
+\end{proof}
+ 
+\begin{mathdefinition}{Definition}{2.11}{Preservation}
+\phantomsection\label{env-2-11}
+
+A functor \(F:\mathcal C\to\mathcal D\) \emph{preserves} a limit or colimit if applying \(F\) to its object and structure maps again gives the corresponding universal cone or cocone. For coproducts this says that the comparison arrow
+
+\[\coprod_iF(X_i)\longrightarrow F(\coprod_iX_i),\qquad i_i\longmapsto F(i_i),\] 
+defined by the coproduct property, is an isomorphism. Indeed, if it is an isomorphism it transfers the universal property; if the image cocone is universal, \hyperref[env-2-2]{Proposition 2.2} makes the comparison an isomorphism. Preserving all coproducts includes the empty coproduct.
+
+
+\par\smallskip{\normalfont\small See \cite[Chs. III and V]{maclane}, \cite[\S1.6 and Exercises 3--B, 3--C]{freyd}.}\par
+
+\end{mathdefinition}
+ 
+These constructions need no addition. The next chapter equips morphisms with addition; then equalizers and coequalizers become kernels and cokernels of differences.
+
+ 
+\section{Addition and biproducts}
+\phantomsection\label{chapter-03}
+ 
+In an additive category, morphisms can be added and finite products are also coproducts. This permits calculations with matrices without treating abstract objects as sets.
+
+
+\subsection{Adding morphisms}
+
+\begin{mathdefinition}{Definition}{3.1}{Preadditive categories}
+\phantomsection\label{env-3-1}
+
+A category is \emph{locally small} if each \(\operatorname{Hom}(X,Y)\) is a set. It is \emph{preadditive} if these sets are abelian groups and composition is bilinear:
+
+\[h(f+g)=hf+hg,\qquad (f+g)k=fk+gk.\] 
+The group identity is denoted \(0_{X,Y}\); negatives are denoted \(-f\). Associativity and identities still refer to the category's composition.
+
+
+\par\smallskip{\normalfont\small See \cite[\S3.6]{crawley}, \cite[\S\S2.3--2.4 and Exercise 2--A]{freyd}.}\par
+
+\end{mathdefinition}
+ 
+\begin{mathstatement}{Proposition}{3.2}{Zero and subtraction under composition}
+\phantomsection\label{env-3-2}
+
+In a preadditive category, \(h0=0\), \(0k=0\), \(h(-f)=-(hf)\), and \((-f)k=-(fk)\). If a zero object exists, group-zero morphisms agree with the maps factoring through it.
+
+
+\par\smallskip{\normalfont\small See \cite[\S3.6]{crawley}, \cite[\S\S2.3--2.4 and Exercise 2--A]{freyd}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+The equation \(h0=h(0+0)=h0+h0\) gives \(h0=0\) by cancellation in the morphism group. The other zero equation follows from \((0+0)k=0k+0k\). Next \(hf+h(-f)=h(f-f)=0\), giving the negative identity; the second follows in the same way from \((f-f)k=0\). A zero object has only one endomorphism, so its identity is its zero morphism. A map \(X\to0\to Y\) is therefore unchanged by inserting this identity and equals zero by the composition identities just proved.
+
+
+\end{proof}
+ 
+\begin{mathdefinition}{Example}{3.3}{Abelian groups and matrices}
+\phantomsection\label{env-3-3}
+
+In \(\mathrm{Ab}\), add homomorphisms pointwise: \((f+g)(a)=f(a)+g(a)\). Since the target group is abelian, \(f+g\) remains a homomorphism; pointwise inverses give negatives, and composition distributes. A second example is the category with objects nonnegative integers and maps \(n\to m\) the \(m\times n\) matrices over a unital ring \(R\). Entrywise addition gives morphism groups, matrix multiplication gives composition, and its finite-sum formula proves bilinearity. Identity matrices and associative multiplication make this a category, including empty matrices when an object is \(0\).
+
+
+\par\smallskip{\normalfont\small See \cite[\S3.6]{crawley}, \cite[\S\S2.3--2.4 and Exercise 2--A]{freyd}.}\par
+
+\end{mathdefinition}
+ 
+\subsection{Finite biproducts}
+
+\begin{mathdefinition}{Definition}{3.4}{Biproducts and additive categories}
+\phantomsection\label{env-3-4}
+
+A \emph{biproduct} of \(X_1,\ldots,X_n\) in a preadditive category is an object \(B\) with arrows \(i_j:X_j\to B\), \(p_j:B\to X_j\) satisfying
+
+\[p_j i_k=\begin{cases}\mathrm{id}_{X_j}&j=k,\\0&j\ne k,\end{cases}\qquad \sum_{j=1}^n i_jp_j=\mathrm{id}_B.\] 
+Write \(B=\bigoplus_jX_j\). The empty biproduct is a zero object. An \emph{additive category} is a preadditive category with a zero object and all finite biproducts.
+
+
+\par\smallskip{\normalfont\small See \cite[\S3.6]{crawley}, \cite[\S\S2.3--2.4 and Exercise 2--A]{freyd}.}\par
+
+\end{mathdefinition}
+ 
+\begin{mathstatement}{Proposition}{3.5}{The two universal properties}
+\phantomsection\label{env-3-5}
+
+A biproduct is both a product through \(p_j\) and a coproduct through \(i_j\). Conversely, any finite product in a preadditive category has canonical biproduct injections; any finite coproduct has canonical biproduct projections.
+
+
+\par\smallskip{\normalfont\small See \cite[\S3.6]{crawley}, \cite[\S\S2.3--2.4 and Exercise 2--A]{freyd}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+Given \(t_j:T\to X_j\), set \(u=\sum_j i_jt_j\). Then \(p_ku=t_k\). Any arrow with these composites satisfies \(u=(\sum_j i_jp_j)u=\sum_j i_jt_j\), proving uniqueness. Given \(t_j:X_j\to T\), set \(v=\sum_j t_jp_j\). Then \(v i_k=t_k\), and every arrow with these restrictions satisfies \(v=v\sum_j i_jp_j=\sum_j t_jp_j\).
+
+
+For a finite product, define \(i_k\) by components identity in position \(k\) and zero elsewhere. Its product property gives these arrows and \(p_j i_k=\delta_{jk}\). The maps \(\sum_k i_kp_k\) and identity have the same composites with every \(p_j\), so they agree. For a finite coproduct, define \(p_j\) by its restrictions identity on summand \(j\) and zero on every other summand. The arrows \(\sum_j i_jp_j\) and identity have the same restrictions to every summand, hence agree. For the empty product its identity is zero, since its endomorphism set has one map. Every map out of it is zero because \(u=u\mathrm{id}=u0=0\); group-zero maps provide existence. Thus it is also initial. The empty coproduct is terminal by the reversed argument.
+
+
+\end{proof}
+ 
+\begin{mathdefinition}{Example}{3.6}{A pair of abelian groups}
+\phantomsection\label{env-3-6}
+
+The direct sum \(A\oplus B\) has injections \(a\mapsto(a,0)\), \(b\mapsto(0,b)\), and coordinate projections. Their composites satisfy the displayed equations because \((a,b)=(a,0)+(0,b)\). Thus \(\mathrm{Ab}\) is additive. The matrix category in \hyperref[env-3-3]{Example 3.3} has biproduct \(n\oplus m=n+m\), with block inclusions and projections, and zero object \(0\).
+
+
+\par\smallskip{\normalfont\small See \cite[\S3.6]{crawley}, \cite[\S\S2.3--2.4 and Exercise 2--A]{freyd}.}\par
+
+\end{mathdefinition}
+ 
+\subsection{Matrix calculus}
+
+\begin{mathstatement}{Proposition}{3.7}{A morphism is its matrix}
+\phantomsection\label{env-3-7}
+
+For finite biproducts \(X=\bigoplus_jX_j\), \(Y=\bigoplus_kY_k\), every \(f:X\to Y\) is determined by entries \(f_{kj}=p^Y_k f i^X_j\), and
+
+\[f=\sum_{k,j}i^Y_k f_{kj}p^X_j.\] 
+For \(g:Y\to Z=\bigoplus_\ell Z_\ell\), composition has entries \((gf)_{\ell j}=\sum_k g_{\ell k}f_{kj}\). Addition is entrywise.
+
+
+\par\smallskip{\normalfont\small See \cite[\S3.6]{crawley}, \cite[\S\S2.3--2.4 and Exercise 2--A]{freyd}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+Insert the identity decompositions of \(Y\) and \(X\) on either side of \(f\) and distribute to obtain the reconstruction formula. Conversely any family of entries defines an arrow by that formula, and composing with \(p^Y_k\) and \(i^X_j\) recovers exactly the prescribed entry. For composition, insert \(\mathrm{id}_Y=\sum_k i^Y_kp^Y_k\) into \(p^Z_\ell gf i^X_j\); bilinearity gives the claimed sum. For addition, bilinearity gives \(p^Y_k(f+f')i^X_j=f_{kj}+f'_{kj}\).
+
+
+\end{proof}
+ 
+For instance, a map \(X\oplus Y\to Z\) is a row \([f\ g]\), and a map \(T\to X\oplus Y\) is a column \([a\ b]^t\); their composite is \(fa+gb\). These are statements about morphisms, regardless of whether the objects have elements.
+
+
+\subsection{Functors and addition}
+
+\begin{mathdefinition}{Definition}{3.8}{Additive, full, and faithful functors}
+\phantomsection\label{env-3-8}
+
+A functor between preadditive categories is \emph{additive} if each map \(\operatorname{Hom}(X,Y)\to\operatorname{Hom}(F X,F Y)\) is a group homomorphism, equivalently \(F(f+g)=F(f)+F(g)\). A functor is \emph{faithful} if each such map is injective, \emph{full} if each is surjective, and \emph{fully faithful} if each is bijective.
+
+
+\par\smallskip{\normalfont\small See \cite[\S3.6]{crawley}, \cite[\S\S2.3--2.4 and Exercise 2--A]{freyd}, \cite[\S3.5]{crawley}.}\par
+
+\end{mathdefinition}
+ 
+\begin{mathstatement}{Proposition}{3.9}{Addition and finite biproducts}
+\phantomsection\label{env-3-9}
+
+An additive functor between additive categories preserves finite biproducts. Conversely, a functor between additive categories that preserves zero objects and finite products and coproducts is additive.
+
+
+\par\smallskip{\normalfont\small See \cite[\S3.6]{crawley}, \cite[\S\S2.3--2.4 and Exercise 2--A]{freyd}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+An additive functor preserves zero morphisms and sums. Applying it to the biproduct equations gives the same equations for \(F(B),F(i_j),F(p_j)\), so \hyperref[env-3-5]{Proposition 3.5} applies. It preserves a zero object because \(\mathrm{id}_{F(0)}=F(\mathrm{id}_0)=F(0)=0\). An object whose identity is zero has only zero maps in or out, so is a zero object.
+
+
+For the converse, zero morphisms factor through zero objects, so their images are zero. Use the binary biproduct \(X\oplus X\) and \(Y\oplus Y\). Define the diagonal \(\Delta_X:X\to X\oplus X\) by both projection composites equal to identity, the codiagonal \(\nabla_Y:Y\oplus Y\to Y\) by both injection restrictions equal to identity, and \(f\oplus g\) by diagonal matrix entries \(f,g\) and off-diagonal zero. Matrix calculus gives
+
+\[f+g=\nabla_Y(f\oplus g)\Delta_X.\] 
+Preservation of the two universal properties identifies the images of the diagonal, codiagonal, and block map with those for \(F(X),F(Y)\): their defining composites are preserved, including the zero entries. Applying \(F\) to the displayed composite gives \(F(f)+F(g)\). Together with preservation of zero this is a group homomorphism; negatives follow from \(F(f)+F(-f)=F(0)=0\).
+
+
+\end{proof}
+ 
+There is no infinite identity decomposition \(\mathrm{id}=\sum_i i_ip_i\) here: morphism groups only admit finite sums. Infinite coproducts will be treated by their universal property, with the separate smallness condition of \hyperref[chapter-04]{chapter 4}.
+
+ 
+\section{Abelian categories and generators}
+\phantomsection\label{chapter-04}
+ 
+An abelian category is an additive category in which every morphism has a compatible kernel, quotient, and image. We formulate this entirely through arrows. The final section introduces the hypotheses that permit reconstruction from a ring.
+
+
+\subsection{Kernels and cokernels}
+
+\begin{mathdefinition}{Definition}{4.1}{Universal zero composites}
+\phantomsection\label{env-4-1}
+
+In an additive category, a \emph{kernel} of \(f:X\to Y\) is an arrow \(k:K\to X\) with \(fk=0\), such that every \(t:T\to X\) satisfying \(ft=0\) factors uniquely as \(t=ku\). A \emph{cokernel} is \(q:Y\to Q\) with \(qf=0\), such that every \(t:Y\to T\) satisfying \(tf=0\) factors uniquely as \(t=uq\). They are the equalizer and coequalizer of \(f,0\); their arrows are monic and epic by \hyperref[env-2-7]{Proposition 2.7}.
+
+
+We sometimes write \(\ker f\) or \(\operatorname{coker}f\) for the object, and sometimes for the structure arrow, making the domain and codomain explicit when needed.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.6--3.8 and 3.12]{crawley}, \cite[\S\S2.1--2.2]{freyd}.}\par
+
+\end{mathdefinition}
+ 
+\begin{mathstatement}{Proposition}{4.2}{Cancellation and zero kernels}
+\phantomsection\label{env-4-2}
+
+If kernels and cokernels exist, \(f\) is monic exactly when its kernel is a zero object, and epic exactly when its cokernel is a zero object. Equalizers of \(f,g\) are kernels of \(f-g\); coequalizers are cokernels of \(f-g\).
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.6--3.8 and 3.12]{crawley}, \cite[\S\S2.1--2.2]{freyd}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+If \(f\) is monic, \(fk=0=f0\) implies \(k=0\). Since \(k\) is monic, \(k\mathrm{id}_K=k0\) implies \(\mathrm{id}_K=0\), which makes \(K\) a zero object as in \hyperref[env-3-9]{Proposition 3.9}. Conversely, if the kernel object is zero and \(fa=fb\), then \(f(a-b)=0\). Factoring through the zero kernel gives \(a-b=0\), so \(a=b\). If \(f\) is epic, its cokernel arrow \(q\) is zero because \(qf=0f\), and epicness of \(q\) gives \(\mathrm{id}_Q=0\). Conversely, \(af=bf\) implies \((a-b)f=0\), so \(a-b\) factors through the zero cokernel and vanishes. Finally \(ft=gt\) is equivalent to \((f-g)t=0\), and \(tf=tg\) to \(t(f-g)=0\); their universal properties agree.
+
+
+\end{proof}
+ 
+\subsection{Image, coimage, and the abelian axiom}
+
+\begin{mathdefinition}{Definition}{4.3}{The canonical comparison}
+\phantomsection\label{env-4-3}
+
+Assume every morphism has a kernel and cokernel. For \(f:X\to Y\), choose
+
+\[k:K\to X=\ker f,\quad q:X\to C=\operatorname{coker}k,\quad c:Y\to Q=\operatorname{coker}f,\quad i:I\to Y=\ker c.\] 
+Call \(C\) the \emph{coimage} of \(f\) and \(i:I\to Y\) its \emph{image}. There is a unique arrow \(\bar f:C\to I\) with \(f=i\bar f q\), called the canonical coimage-to-image comparison.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.6--3.8 and 3.12]{crawley}, \cite[\S\S2.1--2.2]{freyd}.}\par
+
+\end{mathdefinition}
+ 
+\begin{proof}
+
+Since \(fk=0\), the cokernel property of \(q\) gives a unique \(g:C\to Y\) with \(gq=f\). Then \(cgq=cf=0\); \(q\) is epic, so \(cg=0\). The kernel property of \(i\) gives a unique \(\bar f\) with \(i\bar f=g\). If another comparison has the same composite with \(i\) and \(q\), cancellation first by the epic \(q\) and then by the monic \(i\) proves equality.
+
+
+\end{proof}
+ 
+\begin{mathdefinition}{Definition}{4.4}{Abelian categories}
+\phantomsection\label{env-4-4}
+
+An \emph{abelian category} is an additive category with a kernel and cokernel for every morphism, in which every canonical comparison \(\bar f:\operatorname{coim}f\to\operatorname{im}f\) is an isomorphism. Thus each \(f\) factors as an epimorphism \(q\), an isomorphism \(\bar f\), and a monomorphism \(i\).
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.6--3.8 and 3.12]{crawley}, \cite[\S\S2.1--2.2]{freyd}.}\par
+
+\end{mathdefinition}
+ 
+\begin{mathstatement}{Proposition}{4.5}{Normal morphisms and cancellation in both directions}
+\phantomsection\label{env-4-5}
+
+In an abelian category every monomorphism is a kernel of its cokernel, and every epimorphism is a cokernel of its kernel. Consequently a morphism which is both monic and epic is an isomorphism.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.6--3.8 and 3.12]{crawley}, \cite[\S\S2.1--2.2]{freyd}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+If \(f\) is monic, its kernel object is zero by \hyperref[env-4-2]{Proposition 4.2}. The identity of \(X\) is a cokernel of \(0\to X\), since every map from \(X\) factors uniquely through identity. Hence \(q:X\to C\) is an isomorphism by uniqueness. Since \(\bar f\) is an isomorphism, \(f=i(\bar f q)\) is the kernel \(i\) precomposed with an isomorphism. This preserves the kernel universal property: factor through \(i\), then compose with \((\bar f q)^{-1}\).
+
+
+If \(f\) is epic, its cokernel object is zero. The identity of \(Y\) is a kernel of \(Y\to0\), so \(i:I\to Y\) is an isomorphism. Then \(f=(i\bar f)q\) is the cokernel \(q\) postcomposed with an isomorphism, again with the same universal property. If \(f\) is both monic and epic, both \(q\) and \(i\), as well as \(\bar f\), are isomorphisms, so their composite is an isomorphism.
+
+
+\end{proof}
+ 
+\begin{mathstatement}{Proposition}{4.6}{A kernel is unchanged by taking its cokernel and kernel}
+\phantomsection\label{env-4-6}
+
+If \(k:K\to X\) is the kernel of some \(f:X\to Y\), then \(k\) is also a kernel of its cokernel. If \(q:Y\to Q\) is a cokernel, then it is also a cokernel of its kernel. These assertions already hold in any additive category with kernels and cokernels.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.6--3.8 and 3.12]{crawley}, \cite[\S\S2.1--2.2]{freyd}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+Write \(c=\operatorname{coker}k\). Since \(fk=0\), factor \(f=hc\). If \(ct=0\), then \(ft=hct=0\), so \(t\) factors uniquely through \(k\). Since \(ck=0\), this is exactly the kernel property for \(c\). For the second assertion, let \(q=\operatorname{coker}f\) and \(k=\ker q\). Because \(qf=0\), factor \(f=ku\). If \(tk=0\), then \(tf=tku=0\), so \(t\) factors uniquely through \(q\). Since \(qk=0\), this is exactly the cokernel property for \(k\).
+
+
+\end{proof}
+ 
+\begin{mathdefinition}{Example}{4.7}{The category of abelian groups}
+\phantomsection\label{env-4-7}
+
+For \(f:A\to B\), its kernel is the subgroup \(\{a:f(a)=0\}\) with inclusion, and its cokernel is \(B/f(A)\) with quotient map. The factorization arguments in \hyperref[env-2-8]{Example 2.8} verify both universal properties. Its coimage is \(A/\ker f\), and its image is the subgroup \(f(A)\), because \(\ker(B\to B/f(A))=f(A)\). The canonical map \([a]\mapsto f(a)\) is well-defined, surjective, and injective: \(f(a)=f(a')\) means \(a-a'\in\ker f\). Its inverse is a homomorphism because a bijective group homomorphism has homomorphic inverse, as follows by applying it to a sum and using injectivity. Thus \(\mathrm{Ab}\) is abelian. \hyperref[chapter-05]{Chapter 5} gives the same proof for modules over an arbitrary unital ring.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.6--3.8 and 3.12]{crawley}, \cite[\S\S2.1--2.2]{freyd}.}\par
+
+\end{mathdefinition}
+ 
+\subsection{Exactness and preservation}
+
+\begin{mathdefinition}{Definition}{4.8}{Exact sequences}
+\phantomsection\label{env-4-8}
+
+A pair \(X\xrightarrow{f}Y\xrightarrow{g}Z\) is \emph{exact at \(Y\)} when its image arrow \(i:\operatorname{im}f\to Y\) and kernel arrow \(k:\ker g\to Y\) represent the same subobject: there is an isomorphism \(u\) with \(ku=i\). In particular \(gf=0\), since \(f=i\bar f q\). A sequence is exact when this holds at every displayed intermediate object. A \emph{short exact sequence}
+
+\[0\longrightarrow K\xrightarrow{k}X\xrightarrow{q}Y\longrightarrow0\] 
+is equivalently a kernel-cokernel pair: \(k\) is a kernel of \(q\) and \(q\) a cokernel of \(k\).
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.6--3.8 and 3.12]{crawley}, \cite[\S\S2.1--2.2]{freyd}.}\par
+
+\end{mathdefinition}
+ 
+\begin{proof}
+
+Exactness at \(K\) says its outgoing map has zero kernel, so it is monic. Exactness at \(Y\) says the image of \(q\) is identity, since identity is the kernel of \(Y\to0\); its factorization makes \(q\) epic. For monic \(k\), its image is represented by \(k\) itself, by the proof of \hyperref[env-4-5]{Proposition 4.5}. Exactness at \(X\) therefore says \(k\) is a kernel of \(q\). Because \(q\) is epic, \hyperref[env-4-5]{Proposition 4.5} makes it a cokernel of that kernel. Conversely a kernel-cokernel pair has monic \(k\), epic \(q\), and \(\operatorname{im}k\) represented by \(k=\ker q\), proving all three exactness assertions.
+
+
+\end{proof}
+ 
+\begin{mathstatement}{Proposition}{4.9}{Presentations are cokernels}
+\phantomsection\label{env-4-9}
+
+A sequence \(A\xrightarrow{f}B\xrightarrow{q}C\to0\) is exact if and only if \(q\) is a cokernel of \(f\).
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.6--3.8 and 3.12]{crawley}, \cite[\S\S2.1--2.2]{freyd}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+If \(q=\operatorname{coker}f\), its kernel is the image of \(f\) by definition, and \(q\) is epic. Conversely exactness makes \(q\) epic and identifies \(\ker q\) with \(i=\operatorname{im}f\). By \hyperref[env-4-5]{Proposition 4.5}, \(q\) is a cokernel of \(i\). In \(f=i\bar f p\), the composite \(\bar f p\) is epic. Thus \(tf=0\) if and only if \(ti=0\), by cancellation of that epimorphism. The cokernel property for \(i\) is therefore exactly the cokernel property for \(f\).
+
+
+\end{proof}
+ 
+\begin{mathdefinition}{Definition}{4.10}{Right-exact and exact functors}
+\phantomsection\label{env-4-10}
+
+An additive functor between abelian categories is \emph{right exact} if it preserves cokernels, or equivalently, by \hyperref[env-4-9]{Proposition 4.9}, sends each exact \(A\to B\to C\to0\) to an exact sequence of the same form. It is \emph{left exact} if it preserves kernels. It is \emph{exact} if it preserves both kernels and cokernels. Such a functor preserves every exact pair, since it preserves \(\operatorname{im}f=\ker(\operatorname{coker}f)\) and \(\ker g\).
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.6--3.8 and 3.12]{crawley}, \cite[\S\S2.1--2.2]{freyd}.}\par
+
+\end{mathdefinition}
+ 
+Every abelian category has all finite limits and colimits. Finite products and coproducts come from biproducts, and equalizers and coequalizers from differences and \hyperref[env-4-2]{Proposition 4.2}; apply Theorems 2.9 and 2.10 to finite diagrams. If it also has all set-indexed coproducts, it has every small colimit. We impose this last hypothesis later; it does not follow just from being abelian.
+
+
+\subsection{Projective objects and generators}
+
+\begin{mathdefinition}{Definition}{4.11}{Projective, generator, and small}
+\phantomsection\label{env-4-11}
+
+Let \(\mathcal A\) be locally small and abelian. An object \(P\) is \emph{projective} if for every epimorphism \(e:X\to Y\) and every \(u:P\to Y\), there is \(v:P\to X\) with \(ev=u\). It is a \emph{generator} if the functor \(H=\operatorname{Hom}(P,-):\mathcal A\to\mathrm{Ab}\) is faithful: whenever \(a,b:X\to Y\) satisfy \(ah=bh\) for every \(h:P\to X\), then \(a=b\).
+
+ 
+Assume \(\mathcal A\) has all set-indexed coproducts. We call \(P\) \emph{small} if for every family \((X_i)\) the group homomorphism
+
+\[\bigoplus_i\operatorname{Hom}(P,X_i)\longrightarrow\operatorname{Hom}(P,\coprod_iX_i),\qquad (h_i)\longmapsto\sum_i i_i h_i\] 
+is an isomorphism. Its sum is finite because its input has finite support. Smallness thus says precisely that arrows from \(P\) into a coproduct are uniquely finite sums of arrows into its summands.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.8 and 3.12]{crawley}.}\par
+
+\end{mathdefinition}
+ 
+\begin{mathstatement}{Proposition}{4.12}{Hom from a projective object is exact}
+\phantomsection\label{env-4-12}
+
+The functor \(H=\operatorname{Hom}(P,-)\) is additive and preserves kernels for every \(P\). If \(P\) is projective, it also preserves cokernels, and sends every short exact sequence to a short exact sequence of abelian groups.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.6--3.8 and 3.12]{crawley}, \cite[\S\S2.1--2.2]{freyd}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+The map on morphisms is postcomposition, so bilinearity gives additivity. If \(k:K\to X\) is a kernel of \(f\), then \(H(k)\) is injective by monicity. For every arrow \(h:P\to X\) killed by \(f\), the kernel property gives a unique \(a:P\to K\) with \(ka=h\). Thus \(H(k)\) identifies \(H(K)\) with the kernel subgroup of \(H(f)\).
+
+
+Suppose now \(P\) is projective and \(q:Y\to Q\) is a cokernel of \(f:X\to Y\). The arrow \(q\) is epic, so projectivity says every \(P\to Q\) lifts through \(q\): \(H(q)\) is surjective. Write \(f=i e\), with \(i=\ker q\) and \(e:X\to\operatorname{im}f\) epic, using the abelian factorization. If \(h:P\to Y\) satisfies \(qh=0\), the kernel property gives \(h=i a\). Projectivity lifts \(a\) to \(b:P\to X\) through \(e\), so \(h=fb\). Conversely \(qfb=0\). Hence the kernel subgroup of \(H(q)\) is the image subgroup of \(H(f)\). A surjective group map with that kernel is a cokernel: a homomorphism vanishing on the subgroup descends uniquely to the quotient, and the induced quotient map to \(H(Q)\) is bijective. This proves cokernel preservation. Kernel preservation and projective lifting likewise give the short exact assertion.
+
+
+\end{proof}
+ 
+\begin{mathstatement}{Proposition}{4.13}{A generator detects zero objects; a projective generator detects isomorphisms}
+\phantomsection\label{env-4-13}
+
+If \(P\) is a generator and \(H(X)=0\), then \(X\) is a zero object. If \(P\) is also projective and \(H(f)\) is an isomorphism, then \(f\) is an isomorphism.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.8 and 3.12]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+If \(H(X)=0\), every arrow \(P\to X\) is zero. Thus \(\mathrm{id}_X\) and \(0:X\to X\) have equal composites with all such arrows. Faithfulness gives \(\mathrm{id}_X=0\), making \(X\) a zero object. If \(H(f)\) is an isomorphism, preservation of kernels and cokernels by \hyperref[env-4-12]{Proposition 4.12} gives \(H(\ker f)=0\) and \(H(\operatorname{coker}f)=0\). The first assertion makes both objects zero, so \hyperref[env-4-2]{Proposition 4.2} makes \(f\) monic and epic, and \hyperref[env-4-5]{Proposition 4.5} makes it an isomorphism.
+
+
+\end{proof}
+ 
+\begin{mathstatement}{Proposition}{4.14}{Every object has a presentation by copies of a generator}
+\phantomsection\label{env-4-14}
+
+Suppose \(P\) is a generator and all set-indexed coproducts exist. For each \(X\), put \(I=\operatorname{Hom}(P,X)\) and let \(e_X:P^{(I)}\to X\) have restriction \(h\) on the summand labelled by \(h\in I\), where \(P^{(I)}=\coprod_{I}P\). Then \(e_X\) is epic. If \(k:K\to P^{(I)}\) is its kernel and \(J=\operatorname{Hom}(P,K)\), the sequence
+
+\[P^{(J)}\xrightarrow{k e_K}P^{(I)}\xrightarrow{e_X}X\longrightarrow0\] 
+is exact. Projectivity and smallness are not needed for this assertion.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.8 and 3.12]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+If \(a e_X=b e_X\), restriction to the summand labelled \(h\) gives \(ah=bh\) for every \(h:P\to X\). The generator property gives \(a=b\), so \(e_X\) is epic. The same argument makes \(e_K\) epic. \hyperref[env-4-5]{Proposition 4.5} says \(e_X\) is a cokernel of \(k\). Since \(e_K\) is epic, \(t k e_K=0\) is equivalent to \(t k=0\), so \(e_X\) is also a cokernel of \(k e_K\). \hyperref[env-4-9]{Proposition 4.9} proves exactness. Local smallness makes \(I,J\) sets, so the required coproducts exist.
+
+
+\end{proof}
+ 
+\begin{mathdefinition}{Example}{4.15}{The integer group as a small projective generator}
+\phantomsection\label{env-4-15}
+
+In \(\mathrm{Ab}\), \(\operatorname{Hom}(\mathbb Z,M)\cong M\) by evaluating a homomorphism at \(1\); its inverse sends \(m\) to \(n\mapsto nm\). Thus it is faithful. Epimorphisms in \(\mathrm{Ab}\) are surjective: a cokernel is \(B/f(A)\), so \hyperref[env-4-2]{Proposition 4.2} gives exactly that criterion. For a surjection \(A\to B\), a homomorphism \(\mathbb Z\to B\) lifts by choosing a preimage of its value at \(1\). Thus \(\mathbb Z\) is projective. A homomorphism from \(\mathbb Z\) to a direct sum is determined by its value at \(1\), which has finite support, so the comparison in \hyperref[env-4-11]{Definition 4.11} is an isomorphism. Thus \(\mathbb Z\) is small. For \(M=\mathbb Z/2\mathbb Z\), the shorter presentation \(\mathbb Z\xrightarrow{\times2}\mathbb Z\to M\to0\) already suffices.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.8 and 3.12]{crawley}, \cite[\S\S1.1--1.7, 3.7--3.8]{crawley}.}\par
+
+\end{mathdefinition}
+ 
+\hyperref[chapter-05]{Chapter 5} supplies the corresponding facts for the regular module over a ring. \hyperref[chapter-08]{Chapter 8} turns these presentations into the first equivalence in \hyperref[env-1-1]{Theorem 1.1}.
+
+ 
+\section{Modules and presentations}
+\phantomsection\label{chapter-05}
+  
+The preceding chapters described abelian categories using morphisms and universal properties. Here we construct their main concrete example: modules over a ring. Elements are available in this example, so we use them to verify those universal properties.
+
+ 
+
+\paragraph{Conventions: rings and sets.}
+
+Every ring here is associative and has an identity \(1\); it need not be commutative. Ring homomorphisms preserve \(1\), and every module is unital. The zero ring is allowed; its only unital module is the zero module. Indexing collections are sets. We work in ordinary set theory with the axiom of choice; its uses in lifting families of generators are stated explicitly. An abelian group is a group with commutative addition.
+
+
+ 
+\subsection{Left, right, and two-sided actions}
+\phantomsection\label{modules}
+ 
+\begin{mathdefinition}{Definition}{5.1}{Modules and their morphisms}
+\phantomsection\label{env-5-1}
+
+A \emph{left \(R\)-module} is an abelian group \(M\) with a function \(R\times M\to M\), written \(rm\), satisfying
+
+ \[
+r(m+m')=rm+rm',\quad (r+r')m=rm+r'm,\quad (rr')m=r(r'm),\quad 1m=m.
+\] 
+A \emph{right \(R\)-module} has an action \(mr\), distributive in both variables, with \(m(rr')=(mr)r'\) and \(m1=m\). A left-module morphism \(f:M\to N\) is an additive function satisfying \(f(rm)=rf(m)\); the right-module version satisfies \(f(mr)=f(m)r\). Their categories are \(R\text{-}\mathrm{Mod}\) and \(\mathrm{Mod}\text{-}R\), respectively. Composition preserves these conditions, and identity functions satisfy them.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S1.1--1.7, 3.7--3.8]{crawley}.}\par
+
+\end{mathdefinition}
+ 
+The ring \(R\), with left multiplication, is its \emph{left regular module}. Over a field, modules are vector spaces. A left \(\mathbb Z\)-module is exactly an abelian group: \(nm\) is repeated addition for \(n\geq0\), and its negative for \(n<0\). Indeed, distributivity and \(1m=m\) force this formula; conversely, the formula satisfies all four module laws. Thus module theory already includes integer arithmetic and linear algebra.
+
+ 
+\begin{mathdefinition}{Definition}{5.2}{The opposite ring}
+\phantomsection\label{env-5-2}
+
+The \emph{opposite ring} \(R^{\mathrm{op}}\) has the same addition and identity as \(R\), with multiplication \(r\mathbin{*}r'=r'r\). A right \(R\)-module is therefore a left \(R^{\mathrm{op}}\)-module by \(r\cdot m=mr\).
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.5, 3.8 and 3.12]{crawley}.}\par
+
+\end{mathdefinition}
+ 
+\begin{proof}
+
+The opposite multiplication is associative because \((r*r')*r''=r''(r'r)=(r''r')r=r*(r'*r'')\). Its distributive laws and identity follow from those of \(R\). For the proposed left action, \((r*r')\cdot m=m(r'r)=(mr')r=r\cdot(r'\cdot m)\); the other module laws are unchanged. The construction reverses itself and preserves morphisms, so the two descriptions give the same category.
+
+
+\end{proof}
+ 
+\begin{mathdefinition}{Definition}{5.3}{Bimodules}
+\phantomsection\label{env-5-3}
+
+An \emph{\(S\)-\(R\) bimodule} \(B\) is an abelian group with a left \(S\)-module action and a right \(R\)-module action satisfying \((sb)r=s(br)\). A bimodule morphism \(u:B\to B'\) is additive and preserves both actions. Write \(S\text{-}\mathrm{Mod}\text{-}R\) for this category.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S1.1--1.7, 3.7--3.8]{crawley}.}\par
+
+\end{mathdefinition}
+ 
+The ring \(R\) is an \(R\)-\(R\) bimodule by multiplication; the compatibility is precisely associativity. More generally, a unital ring map \(\phi:R\to S\) makes \(S\) an \(S\)-\(R\) bimodule by \(s\cdot r=s\phi(r)\). The order \(S\)-\(R\) matters: in \hyperref[chapter-06]{Chapter 6}, such a bimodule takes left \(R\)-modules to left \(S\)-modules.
+
+ 
+\subsection{Submodules, quotients, and the abelian axioms}
+\phantomsection\label{quotients}
+ 
+\begin{mathstatement}{Proposition}{5.4}{Quotients and their universal property}
+\phantomsection\label{env-5-4}
+
+A \emph{submodule} \(U\subseteq M\) is an additive subgroup closed under the \(R\)-action. The cosets \(M/U\) form a module with \((m+U)+(n+U)=m+n+U\) and \(r(m+U)=rm+U\). The projection \(q:M\to M/U\) is surjective, and every module morphism \(f:M\to N\) with \(f(U)=0\) factors uniquely through \(q\).
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S1.1--1.7, 3.7--3.8]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+The relation \(m\sim n\iff m-n\in U\) is reflexive, symmetric, and transitive because \(U\) is a subgroup. Its classes are exactly the cosets. Replacing \(m,n\) by \(m+u,n+v\) changes their sum by \(u+v\in U\), and replacing \(m\) by \(m+u\) changes \(rm\) by \(ru\in U\). Thus the operations are well defined. The group and module laws follow by applying the corresponding laws to representatives. In particular, \(0+U\) is the zero and \(-m+U\) is the additive inverse of \(m+U\).
+
+
+If \(f(U)=0\), define \(\bar f(m+U)=f(m)\). Equal cosets have difference in \(U\), so this is well defined; the displayed operations show it is linear. It satisfies \(\bar f q=f\). Every coset is \(q(m)\), so this equation forces the formula and proves uniqueness.
+
+
+\end{proof}
+ 
+\begin{mathstatement}{Proposition}{5.5}{Kernels, cokernels, and images}
+\phantomsection\label{env-5-5}
+
+For \(f:M\to N\), the submodules \(\ker f=\{m:f(m)=0\}\) and \(\operatorname{im}f=\{f(m):m\in M\}\) give the categorical kernel \(\ker f\hookrightarrow M\) and cokernel \(N\twoheadrightarrow N/\operatorname{im}f\). The canonical map
+
+ \[M/\ker f\longrightarrow\operatorname{im}f,\qquad m+\ker f\longmapsto f(m)\] 
+is an isomorphism. Moreover, monomorphisms are exactly injective module maps, and epimorphisms are exactly surjective module maps.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S1.1--1.7, 3.7--3.8]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+The two subsets are closed under subtraction and scalar multiplication by linearity of \(f\). If \(fg=0\), then \(g\) takes values in \(\ker f\); regarding \(g\) as a map into this submodule is its unique factorization through the inclusion. A map \(h:N\to L\) satisfies \(hf=0\) precisely when it kills \(\operatorname{im}f\), so \hyperref[env-5-4]{Proposition 5.4} gives the cokernel property.
+
+
+The displayed map is well defined since \(f\) kills its kernel. It is surjective by the definition of image and injective because \(f(m)=0\) means \(m\in\ker f\). A bijective linear map has a linear inverse: write elements as images and apply its linearity to their sums and scalar multiples. This proves the isomorphism.
+
+
+Injective maps cancel on the left and surjective maps cancel on the right. Conversely, if \(f\) is not injective, choose \(0\ne m\in\ker f\). The map \(R\to M\), \(r\mapsto rm\), is nonzero but has zero composite with \(f\), so \(f\) is not monic. If \(f\) is not surjective, the quotient map \(N\to N/\operatorname{im}f\) is nonzero but becomes zero after \(f\), so \(f\) is not epic.
+
+
+\end{proof}
+ 
+\begin{mathstatement}{Theorem}{5.6}{Module categories are abelian}
+\phantomsection\label{env-5-6}
+
+\(R\text{-}\mathrm{Mod}\) is a locally small abelian category.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S1.1--1.7, 3.7--3.8]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+Morphisms \(M\to N\) form a set, being a subset of all functions between two sets. They form an abelian group under pointwise addition: a sum or negative of linear maps is linear. Composition distributes over addition by additivity of the outer map and by pointwise evaluation. The zero module is a zero object. For two modules, \(M\oplus N=M\times N\) with componentwise operations has inclusions \(m\mapsto(m,0)\), \(n\mapsto(0,n)\) and coordinate projections. A map into it is uniquely determined by its two components; a map out is uniquely \(h(m,n)=h_M(m)+h_N(n)\). Thus it is a binary biproduct. Iterating this construction gives every finite biproduct: the maps from, or to, a tuple of \(n+1\) modules are specified uniquely by those for the first \(n\) modules and the last module. The empty case is the zero module. Hence the category is additive.
+
+
+Kernels and cokernels exist by \hyperref[env-5-5]{Proposition 5.5}. The coimage is \(M/\ker f\). The image, defined categorically as the kernel of the cokernel, is exactly \(\operatorname{im}f\), since the quotient map kills exactly that submodule. \hyperref[env-5-5]{Proposition 5.5} identifies the canonical coimage-to-image map as an isomorphism. This is the abelian criterion of \hyperref[chapter-04]{Chapter 4}.
+
+
+\end{proof}
+ 
+For example, multiplication by \(2\) on \(\mathbb Z\) is injective and has cokernel \(\mathbb Z/2\mathbb Z\). The image \(2\mathbb Z\) differs as a subset from its domain \(\mathbb Z\), but \(n\mapsto2n\) is the coimage-to-image isomorphism.
+
+ 
+\subsection{Arbitrary direct sums and free presentations}
+\phantomsection\label{free}
+ 
+\begin{mathstatement}{Proposition}{5.7}{Products and coproducts of modules}
+\phantomsection\label{env-5-7}
+
+For a set-indexed family \((M_i)_{i\in I}\), the product is the set of all tuples \(\prod_i M_i\), with componentwise operations. The coproduct is the \emph{direct sum} \(\bigoplus_i M_i\subseteq\prod_i M_i\), consisting of tuples with only finitely many nonzero coordinates. Their structural maps are coordinate projections and coordinate inclusions, respectively.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S1.1--1.7, 3.7--3.8]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+Products satisfy the module laws coordinatewise. Finite support is preserved by sums, negatives, and scalar multiplication, so the direct sum is a submodule. Given maps \(g_i:X\to M_i\), the unique product map is \(x\mapsto(g_i(x))_i\); it is linear coordinatewise. Given maps \(f_i:M_i\to Y\), the unique coproduct map is \((m_i)_i\mapsto\sum_i f_i(m_i)\). The sum is finite, is linear, and has the required restrictions. Every finite-support tuple is a finite sum of coordinate inclusions, proving uniqueness. For the empty index set both constructions give the zero module.
+
+
+\end{proof}
+ 
+For infinitely many copies of \(\mathbb Z\), the tuple \((1,1,1,\ldots)\) belongs to the product but not the direct sum. This distinction will account for the finite support in the smallness hypothesis.
+
+ 
+\begin{mathstatement}{Theorem}{5.8}{Free modules and presentations}
+\phantomsection\label{env-5-8}
+
+Write \(R^{(I)}=\bigoplus_{i\in I}R\), and let \(e_i\) be the tuple with \(1\) at \(i\) and \(0\) elsewhere. Any family \((m_i)_{i\in I}\) in \(M\) determines a unique linear map \(R^{(I)}\to M\) taking \(e_i\) to \(m_i\). Every module has an exact sequence
+
+ \[R^{(J)}\xrightarrow{d}R^{(I)}\xrightarrow{q}M\longrightarrow0.\] 
+Exactness means \(\operatorname{im}d=\ker q\) and \(q\) is surjective; equivalently, \(q\) is a cokernel of \(d\). Such a sequence is a \emph{free presentation}.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S1.1--1.7, 3.7--3.8]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+A tuple \((r_i)\) equals the finite sum \(\sum_i r_i e_i\); thus the only possible map is \((r_i)\mapsto\sum_i r_i m_i\). This formula is linear, proving existence and uniqueness. Set \(I\) equal to the underlying set of \(M\), and send \(e_m\) to \(m\). The resulting \(q\) is surjective since \(q(e_m)=m\). Let \(K=\ker q\), let \(J\) be the underlying set of \(K\), and send \(e_k\in R^{(J)}\) to \(k\in R^{(I)}\). Its image is \(K\), so the sequence is exact. The quotient property gives its cokernel description. These choices use whole underlying sets, so no choice of a basis or generating subset is needed.
+
+
+\end{proof}
+ 
+For \(\mathbb Z/n\mathbb Z\), \(n\geq1\), a presentation is \(\mathbb Z\xrightarrow{n}\mathbb Z\twoheadrightarrow\mathbb Z/n\mathbb Z\). A presentation says which formal generators to use and which linear relations to impose.
+
+ 
+\subsection{Why the regular module remembers everything}
+\phantomsection\label{generator}
+ 
+\begin{mathstatement}{Theorem}{5.9}{The regular module is a small projective generator}
+\phantomsection\label{env-5-9}
+
+Evaluation at \(1\) gives a natural isomorphism of abelian groups \(\operatorname{Hom}_R(R,M)\cong M\). Consequently, \(R\) is projective, is a generator, and is small: the canonical map
+
+ \[\bigoplus_i\operatorname{Hom}_R(R,M_i)\longrightarrow\operatorname{Hom}_R\left(R,\bigoplus_i M_i\right)\] 
+is an isomorphism. Here \emph{projective} means every map from \(R\) through the target of an epimorphism lifts through that epimorphism; \emph{generator} means \(\operatorname{Hom}_R(R,-)\) distinguishes distinct morphisms; and \emph{small} means the displayed preservation of coproducts. Also \(\operatorname{End}_R(R)\cong R^{\mathrm{op}}\) as rings, with endomorphism multiplication given by composition.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S1.1--1.7, 3.7--3.8]{crawley}, \cite[\S\S3.5, 3.8 and 3.12]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+A linear \(h:R\to M\) satisfies \(h(r)=rh(1)\). Conversely, \(m\in M\) defines \(h_m(r)=rm\), which is linear. These constructions are inverse and additive; for \(f:M\to N\), \(fh_m=h_{f(m)}\), proving naturality.
+
+
+If \(p:X\twoheadrightarrow Y\) and \(h:R\to Y\), choose \(x\in X\) with \(p(x)=h(1)\). Then \(h_x\) lifts \(h\). If \(f,g:M\to N\) differ, choose \(m\) with \(f(m)\ne g(m)\); then \(fh_m\ne gh_m\), proving the generator property. Under evaluation, the smallness map is exactly the identity between finite-support tuples, hence an isomorphism.
+
+
+Finally, every endomorphism of the left regular module is \(\rho_a(r)=ra\) for its value \(a\) at \(1\). Addition corresponds to addition in \(R\), and \(\rho_a\circ\rho_b=\rho_{ba}\). The identity corresponds to \(1\). Thus \(a\mapsto\rho_a\) is a unital ring isomorphism from \(R^{\mathrm{op}}\).
+
+
+\end{proof}
+ 
+The next chapter constructs tensoring from explicit relations. Chapters 8 and 9 will use presentations and the regular module to recover an entire category and an entire functor from this small amount of data.
+
+ 
+\paragraph{Sources and further reading.}
+\cite[\S\S1.1--1.7, 3.7--3.8]{crawley}.
+
+\section{Tensor products}
+\phantomsection\label{chapter-06}
+  
+A tensor product replaces a function of two variables by an additive function of one variable. Its defining relation moves a scalar from the right-hand action of the first factor to the left-hand action of the second. This is the operation that will represent functors between module categories.
+
+ 
+\subsection{A construction from relations}
+\phantomsection\label{construction}
+ 
+\begin{mathdefinition}{Definition}{6.1}{Balanced maps}
+\phantomsection\label{env-6-1}
+
+Let \(B\) be a right \(R\)-module, \(M\) a left \(R\)-module, and \(A\) an abelian group. A function \(\beta:B\times M\to A\) is \emph{biadditive} if it is additive in each variable. It is \emph{\(R\)-balanced} if, in addition,
+
+ \[\beta(br,m)=\beta(b,rm)\quad(b\in B,\ r\in R,\ m\in M).\] 
+\par\smallskip{\normalfont\small See \cite[\S1.11]{crawley}.}\par
+
+\end{mathdefinition}
+ 
+For example, multiplication \(R\times R\to R\) is biadditive and balanced: \((br)m=b(rm)\). Over a noncommutative ring, one cannot interchange the two factors or move a scalar through the wrong side of an action.
+
+ 
+\begin{mathstatement}{Theorem}{6.2}{Construction and universal property}
+\phantomsection\label{env-6-2}
+
+There is an abelian group \(B\otimes_R M\), with a balanced map \((b,m)\mapsto b\otimes m\), such that for every abelian group \(A\), composition with this map gives a bijection
+
+ \[\operatorname{Hom}_{\mathbb Z}(B\otimes_R M,A)\cong\{R\text{-balanced maps }B\times M\to A\}.\] 
+Every element of \(B\otimes_R M\) is a finite sum of elements \(b\otimes m\), called \emph{pure tensors}. This universal property determines the tensor product up to a unique isomorphism preserving pure tensors.
+
+
+\par\smallskip{\normalfont\small See \cite[\S1.11]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+Form the free abelian group \(F=\mathbb Z^{(B\times M)}\) from \hyperref[env-5-8]{Theorem 5.8}, with generator \([b,m]\) for each pair. Let \(L\subseteq F\) be the subgroup generated by all elements
+
+ \[
+[b+b',m]-[b,m]-[b',m],\quad [b,m+m']-[b,m]-[b,m'],\quad [br,m]-[b,rm].
+\] 
+The generated subgroup consists of finite integer linear combinations of these relations: such combinations form a subgroup containing the relations and lie in every subgroup containing them. Set \(B\otimes_R M=F/L\), and write \(b\otimes m\) for the class of \([b,m]\). The quotient laws in \hyperref[chapter-05]{Chapter 5} make this an abelian group. The imposed relations give biadditivity and balancing. They also imply \(0\otimes m=b\otimes0=0\), \((-b)\otimes m=-(b\otimes m)\), and \(b\otimes(-m)=-(b\otimes m)\). Therefore the integer coefficients of a finite sum of generator classes can be absorbed into their first factors, proving the finite-sum assertion.
+
+
+A function \(\beta:B\times M\to A\) extends uniquely to a homomorphism \(F\to A\), by the free abelian group property. It kills \(L\) precisely when it satisfies the three displayed types of relation. The quotient property then gives a unique homomorphism \(B\otimes_R M\to A\). This proves the bijection. Given any other object with this property, applying the property in both directions produces maps preserving the defining pairs. Their composites preserve every pure tensor, and hence every finite sum, so both composites are identities.
+
+
+\end{proof}
+ 
+\subsection{Bimodules produce functors}
+\phantomsection\label{actions}
+ 
+\begin{mathstatement}{Proposition}{6.3}{Induced actions and functoriality}
+\phantomsection\label{env-6-3}
+
+If \(B\) is an \(S\)-\(R\) bimodule, then \(B\otimes_R M\) is a left \(S\)-module by \(s(b\otimes m)=(sb)\otimes m\). Bimodule maps \(u:B\to B'\) and left-module maps \(f:M\to M'\) induce left \(S\)-module maps
+
+ \[u\otimes f:B\otimes_R M\longrightarrow B'\otimes_R M',\qquad b\otimes m\longmapsto u(b)\otimes f(m).\] 
+These operations form a bifunctor \((S\text{-}\mathrm{Mod}\text{-}R)\times(R\text{-}\mathrm{Mod})\to S\text{-}\mathrm{Mod}\), additive separately on morphisms. In particular, \(B\otimes_R-\) is an additive functor.
+
+
+\par\smallskip{\normalfont\small See \cite[\S1.11]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+For fixed \(s\in S\), the map \((b,m)\mapsto(sb)\otimes m\) is biadditive. It is balanced since \(s(br)=(sb)r\), and \(((sb)r)\otimes m=(sb)\otimes rm\). The universal property gives an additive operator on the tensor product. Checking on pure tensors shows \(1x=x\), \((ss')x=s(s'x)\), and \((s+s')x=sx+s'x\). Each identity holds on finite sums by additivity, so these are all left-module laws.
+
+
+The formula involving \(u,f\) is biadditive and balanced because \(u(br)=u(b)r\) and \(f(rm)=rf(m)\). It therefore gives an additive map, and \(u(sb)=su(b)\) makes it \(S\)-linear. Identity maps and composites have the required formulas on pure tensors, so they agree everywhere. The same calculation gives \((u+v)\otimes f=(u\otimes f)+(v\otimes f)\) and \(u\otimes(f+g)=(u\otimes f)+(u\otimes g)\), proving separate additivity. Finally, if \(M\) is also an \(R\)-\(T\) bimodule, \( (b\otimes m)t=b\otimes(mt)\) is a well-defined right \(T\)-action by the same balanced-map check; it commutes with the left \(S\)-action on pure tensors and hence everywhere.
+
+
+\end{proof}
+ 
+Taking \(u:B\to B'\) and \(f=1_M\) gives a natural transformation \(u\otimes1:B\otimes_R-\Rightarrow B'\otimes_R-\): its naturality square commutes because both composites take \(b\otimes m\) to \(u(b)\otimes f(m)\). \hyperref[chapter-09]{Chapter 9} proves that every natural transformation between these functors arises this way.
+
+ 
+\subsection{Units and associativity}
+\phantomsection\label{units}
+ 
+\begin{mathstatement}{Theorem}{6.4}{Tensoring with the regular module}
+\phantomsection\label{env-6-4}
+
+There are natural isomorphisms \(R\otimes_R M\cong M\), \(r\otimes m\mapsto rm\), and \(B\otimes_R R\cong B\), \(b\otimes r\mapsto br\). If \(B\) is an \(S\)-\(R\) bimodule, the latter is an isomorphism of \(S\)-\(R\) bimodules.
+
+
+\par\smallskip{\normalfont\small See \cite[\S1.11]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+The two formulas are biadditive and balanced by the module associativity laws, so define additive maps. They preserve their stated actions by associativity and the bimodule compatibility law. Their inverses are \(m\mapsto1\otimes m\) and \(b\mapsto b\otimes1\). The first is \(R\)-linear because \(1\otimes rm=r\otimes m=r(1\otimes m)\); the second preserves both actions because \(sb\otimes1=s(b\otimes1)\) and \(br\otimes1=b\otimes r=(b\otimes1)r\). The composites are identities: \(1m=m\), \(b1=b\), \(1\otimes rm=r\otimes m\), and \(br\otimes1=b\otimes r\). These checks on pure tensors extend to finite sums. For maps of either factor the formulas commute directly with those maps, proving naturality.
+
+
+\end{proof}
+ 
+\begin{mathstatement}{Theorem}{6.5}{Associativity with the correct sides}
+\phantomsection\label{env-6-5}
+
+Let \(C\) be a \(T\)-\(S\) bimodule, \(B\) an \(S\)-\(R\) bimodule, and \(M\) a left \(R\)-module. Then \(C\otimes_S B\) is a \(T\)-\(R\) bimodule, and there is a natural \(T\)-linear isomorphism
+
+ \[(C\otimes_S B)\otimes_R M\cong C\otimes_S(B\otimes_R M),\qquad(c\otimes b)\otimes m\longmapsto c\otimes(b\otimes m).\] 
+\par\smallskip{\normalfont\small See \cite[\S1.11]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+The bimodule actions follow from \hyperref[env-6-3]{Proposition 6.3}. To justify the displayed map, fix \(m\). The function \((c,b)\mapsto c\otimes(b\otimes m)\) is biadditive and \(S\)-balanced, since
+
+ \[cs\otimes(b\otimes m)=c\otimes(sb\otimes m).\] 
+It extends to an additive function of \(x\in C\otimes_S B\). Its dependence on \(m\) is additive: both sides of the additivity identity agree on every \(x=c\otimes b\), hence on every \(x\). It is \(R\)-balanced in \(x,m\), since \((br)\otimes m=b\otimes rm\), again first on generators and then on sums. A second application of the universal property gives the desired map.
+
+
+For its inverse, fix \(c\) and use \((b,m)\mapsto(c\otimes b)\otimes m\). This is biadditive and \(R\)-balanced because \((c\otimes br)\otimes m=(c\otimes b)\otimes rm\). It extends to \(B\otimes_R M\), additively in \(c\), and is \(S\)-balanced because \(cs\otimes b=c\otimes sb\). The universal property supplies the inverse map. Both maps preserve the \(T\)-action by their formulas. Every element of either iterated tensor product is a finite sum of the displayed triple tensors, so the formulas prove their composites are identities. They commute with maps of \(C,B,M\) on those same generators, giving naturality.
+
+
+\end{proof}
+ 
+Thus composing \(B\otimes_R-\) with \(C\otimes_S-\) corresponds to the bimodule \(C\otimes_S B\). No monoidal-category terminology is needed for this statement.
+
+ 
+\subsection{The properties that characterize tensor functors}
+\phantomsection\label{exactness}
+ 
+\begin{mathstatement}{Theorem}{6.6}{Tensoring preserves arbitrary coproducts}
+\phantomsection\label{env-6-6}
+
+For every set-indexed family of left \(R\)-modules, the canonical \(S\)-linear map is an isomorphism:
+
+ \[\bigoplus_i(B\otimes_R M_i)\longrightarrow B\otimes_R\left(\bigoplus_i M_i\right),\qquad b\otimes m_i\longmapsto b\otimes\iota_i(m_i).\] 
+\par\smallskip{\normalfont\small See \cite[\S1.11]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+The structural maps \(1_B\otimes\iota_i\) combine to the displayed map by the coproduct property. Define its inverse on pairs by \((b,(m_i))\mapsto\sum_i j_i(b\otimes m_i)\), where \(j_i\) includes the \(i\)-th tensor factor into the direct sum. The finite support of \((m_i)\) makes this sum finite. The function is biadditive and \(R\)-balanced coordinatewise, so extends to the tensor product; it is \(S\)-linear by its formula. One composite fixes each \(j_i(b\otimes m_i)\); the other fixes \(b\otimes(m_i)\), since \((m_i)=\sum_i\iota_i(m_i)\). These elements generate the respective modules, proving both identity equations. The construction also covers the empty family, giving \(B\otimes_R0=0\).
+
+
+\end{proof}
+ 
+\begin{mathstatement}{Theorem}{6.7}{Tensoring preserves cokernels}
+\phantomsection\label{env-6-7}
+
+If \(M\xrightarrow{f}N\xrightarrow{q}Q\to0\) is exact, then
+
+ \[B\otimes_R M\xrightarrow{1\otimes f}B\otimes_R N\xrightarrow{1\otimes q}B\otimes_R Q\longrightarrow0\] 
+is exact in \(S\text{-}\mathrm{Mod}\). Equivalently, tensoring preserves cokernels. This property is called \emph{right exactness}.
+
+
+\par\smallskip{\normalfont\small See \cite[\S1.11]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+By \hyperref[env-5-5]{Proposition 5.5}, we may identify \(Q\) with \(N/\operatorname{im}f\). Put \(D=(B\otimes_R N)/\operatorname{im}(1\otimes f)\), a left \(S\)-module. The map
+
+ \[(b,n+\operatorname{im}f)\longmapsto(b\otimes n)+\operatorname{im}(1\otimes f)\] 
+is well defined: replacing \(n\) by \(n+f(m)\) changes its value by the class of \(b\otimes f(m)\), which is zero in \(D\). It is biadditive and \(R\)-balanced by the tensor relations, so gives an \(S\)-linear map \(B\otimes_R Q\to D\). Conversely, \(1\otimes q\) kills \(\operatorname{im}(1\otimes f)\), hence descends to an \(S\)-linear map \(D\to B\otimes_R Q\). Their formulas are inverse on the generating tensors, so they are inverse everywhere. Under this isomorphism \(1\otimes q\) is the quotient projection onto \(D\). Its kernel is therefore \(\operatorname{im}(1\otimes f)\) and it is surjective, proving exactness and the cokernel property. Any categorical cokernel is uniquely isomorphic to this quotient, so the conclusion applies without choosing a particular quotient model.
+
+
+\end{proof}
+ 
+\begin{mathstatement}{Proposition}{6.8}{Reduction modulo two is tensoring}
+\phantomsection\label{env-6-8}
+
+Write \(\mathbb F_2=\mathbb Z/2\mathbb Z\), viewed as an \(\mathbb F_2\)-\(\mathbb Z\) bimodule. For every abelian group \(M\), there is a natural \(\mathbb F_2\)-linear isomorphism
+
+ \[\mathbb F_2\otimes_{\mathbb Z}M\cong M/2M,\qquad \bar a\otimes m\longmapsto am+2M.\] 
+Here \(2M=\{2m:m\in M\}\) is a subgroup, and the quotient becomes an \(\mathbb F_2\)-module by \(\bar a(m+2M)=am+2M\).
+
+
+\par\smallskip{\normalfont\small See \cite[\S1.11]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+The subgroup \(2M\) is closed under subtraction since \(2m-2n=2(m-n)\). In the quotient action, changing \(a\) by an even integer changes \(am\) by an element of \(2M\), and changing \(m\) by \(2n\) changes \(am\) by \(2an\). Thus the action is well defined, and its module laws descend from the integer action.
+
+
+The displayed function on pairs is independent of the integer representative of \(\bar a\), is biadditive, and is balanced over \(\mathbb Z\) because \((ar)m=a(rm)\). It induces an \(\mathbb F_2\)-linear map from the tensor product. Define an inverse by \(m+2M\mapsto\bar1\otimes m\). This is well defined since \(\bar1\otimes2n=(\bar1\cdot2)\otimes n=0\); it is additive and \(\mathbb F_2\)-linear by balancing. One composite fixes every class \(m+2M\); the other takes \(\bar a\otimes m\) to \(\bar1\otimes am=\bar a\otimes m\). Pure tensors generate, so these are inverse maps. Every homomorphism \(f:M\to N\) satisfies \(f(2M)\subseteq2N\), and both maps commute with its induced quotient and tensor maps by their formulas, proving naturality.
+
+
+\end{proof}
+ 
+Tensoring can destroy an injection. For \(B=\mathbb Z/2\mathbb Z\), tensor the injective map \(\mathbb Z\xrightarrow{2}\mathbb Z\). Under \(B\otimes_{\mathbb Z}\mathbb Z\cong B\), the induced map sends \(b\) to \(2b=0\). The group \(B\) is nonzero, so this map is not injective. Right exactness, rather than preservation of all short exact sequences, is the hypothesis used in \hyperref[chapter-09]{Chapter 9}.
+
+ 
+A positive example is extension of scalars: a ring map \(R\to S\) gives the \(S\)-\(R\) bimodule of \hyperref[chapter-05]{Chapter 5} and the functor \(S\otimes_R-\). For \(\mathbb R\to\mathbb C\), this takes \(\mathbb R^n\) to \(\mathbb C^n\): tensor preservation of finite sums reduces the assertion to \(\mathbb C\otimes_{\mathbb R}\mathbb R\cong\mathbb C\), already proved above.
+
+ 
+\paragraph{Sources and further reading.}
+\cite[\S1.11]{crawley}.
+
+\section{Group algebras and representations}
+\phantomsection\label{chapter-07}
+  
+Group representations give a concrete reason to study module categories and bimodules. A group action by linear maps extends uniquely to a module action over a ring built from the group. A familiar operation on representations, induction, then becomes tensoring with a bimodule.
+
+ 
+
+\paragraph{Conventions: fields, groups, and dimension.}
+
+Fix a field \(k\), with \(0\ne1\), and a group \(G\), with identity \(e\). Neither \(G\) nor the dimension of a representation is assumed finite. A \(k\)-vector space means a left \(k\)-module. The group \(\mathrm{GL}_k(V)\) consists of invertible \(k\)-linear maps \(V\to V\), with composition as multiplication. A representation is a homomorphism \(\rho:G\to\mathrm{GL}_k(V)\).
+
+
+ 
+\subsection{Building the group algebra}
+\phantomsection\label{algebra}
+ 
+\begin{mathdefinition}{Definition}{7.1}{The group algebra}
+\phantomsection\label{env-7-1}
+
+The vector space \(k[G]=k^{(G)}\) consists of formal sums \(\sum_{g\in G}a_g[g]\) with coefficients in \(k\) and finite support. The symbols \([g]\) are its standard basis. Addition and scalar multiplication act on coefficients. Define multiplication by
+
+ \[\left(\sum_g a_g[g]\right)\left(\sum_h b_h[h]\right)=\sum_{g,h}a_gb_h[gh].\] 
+All sums here are finite; repeated basis symbols are combined by adding their coefficients. The proposed identity is \([e]\).
+
+
+\par\smallskip{\normalfont\small See \cite[\S2.12]{crawley}.}\par
+
+\end{mathdefinition}
+ 
+\begin{mathstatement}{Theorem}{7.2}{All ring laws}
+\phantomsection\label{env-7-2}
+
+This multiplication makes \(k[G]\) an associative unital ring. The map \(k\to k[G]\), \(a\mapsto a[e]\), is an injective unital ring map whose image is central. Thus \(k[G]\) is a \emph{\(k\)-algebra}, meaning a ring equipped with such a central scalar map. Each \([g]\) is a unit, with inverse \([g^{-1}]\). Moreover, \(k[G]\) is commutative exactly when \(G\) is abelian.
+
+
+\par\smallskip{\normalfont\small See \cite[\S2.12]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+The additive group is abelian by the direct-sum construction. If the factors have supports \(A,B\subseteq G\), their product has support inside \(AB=\{gh:g\in A,h\in B\}\), which is finite. For each \(u\in G\), its coefficient is the finite sum \(\sum_{gh=u}a_gb_h\), restricted to those supports. This defines a unique finite-support function, so multiplication is well defined.
+
+
+For three factors \(x=\sum_g a_g[g]\), \(y=\sum_h b_h[h]\), \(z=\sum_\ell c_\ell[\ell]\), expansion gives
+
+ \[(xy)z=\sum_{g,h,\ell}(a_gb_h)c_\ell[(gh)\ell],\qquad x(yz)=\sum_{g,h,\ell}a_g(b_hc_\ell)[g(h\ell)].\] 
+The group and field associativity laws identify corresponding summands; finiteness permits regrouping, proving associativity. Expanding \(x(y+z)\) and \((x+y)z\) and using the two field distributive laws proves both ring distributive laws. Multiplication by \([e]\) on either side leaves every basis symbol fixed, hence every sum fixed; it is the identity. Also \([g][g^{-1}]=[g^{-1}][g]=[e]\).
+
+
+The scalar map preserves addition, multiplication, and identities, and is injective because the coefficient at \(e\) of \(a[e]\) is \(a\). For every basis symbol, \((a[e])[g]=a[g]=[g](a[e])\), and bilinearity proves centrality for every sum. If \(G\) is abelian, the product formula is symmetric by commutativity of \(k\). Conversely, if \(k[G]\) is commutative, \([gh]=[g][h]=[h][g]=[hg]\). Distinct basis symbols are distinct functions, so \(gh=hg\) for every \(g,h\).
+
+
+\end{proof}
+ 
+If \(G=\{e\}\), the scalar map is an isomorphism \(k\cong k[G]\). The algebra of a nontrivial finite group can have zero divisors even though \(k\) is a field; an explicit instance appears below.
+
+ 
+\subsection{Representations are exactly modules}
+\phantomsection\label{representations}
+ 
+\begin{mathdefinition}{Definition}{7.3}{The representation category}
+\phantomsection\label{env-7-3}
+
+An object of \(\mathrm{Rep}_k(G)\) is a pair \((V,\rho)\), with \(V\) a \(k\)-vector space and \(\rho:G\to\mathrm{GL}_k(V)\) a representation. A morphism \(f:(V,\rho)\to(W,\sigma)\), called an \emph{intertwiner}, is a \(k\)-linear map satisfying \(f\rho(g)=\sigma(g)f\) for all \(g\in G\). Identity maps and composites satisfy the same equation.
+
+
+\par\smallskip{\normalfont\small See \cite[\S2.12]{crawley}.}\par
+
+\end{mathdefinition}
+ 
+\begin{mathstatement}{Theorem}{7.4}{The representation--module correspondence}
+\phantomsection\label{env-7-4}
+
+There are inverse functors between \(\mathrm{Rep}_k(G)\) and \(k[G]\text{-}\mathrm{Mod}\). The correspondence preserves the underlying abelian group and identifies intertwiners with module morphisms. It holds for arbitrary groups and arbitrary-dimensional representations.
+
+
+\par\smallskip{\normalfont\small See \cite[\S2.12]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+From a representation define the action
+
+ \[\left(\sum_g a_g[g]\right)v=\sum_g a_g\rho(g)v.\] 
+This is a finite sum. It is additive in the algebra argument and in \(v\) by linearity of each \(\rho(g)\). For \(x=\sum_g a_g[g]\) and \(y=\sum_h b_h[h]\),
+
+ \[x(yv)=\sum_{g,h}a_gb_h\rho(g)\rho(h)v=\sum_{g,h}a_gb_h\rho(gh)v=(xy)v.\] 
+The equality uses \(k\)-linearity and the homomorphism law. Also \([e]v=\rho(e)v=v\), so this is a unital left module action. Its restriction to \(a[e]\) is the original scalar multiplication. Any extending module action must satisfy this formula by additivity and the action of \(a[e][g]\), proving uniqueness.
+
+
+Conversely, a \(k[G]\)-module \(M\) becomes a \(k\)-vector space by \(a\cdot m=(a[e])m\). Define \(\rho(g)m=[g]m\). This map is additive, and centrality of \(a[e]\) gives \([g]((a[e])m)=(a[e])([g]m)\), so it is \(k\)-linear. Its inverse is the action of \([g^{-1}]\), and \(\rho(g)\rho(h)=\rho(gh)\), giving a representation. The two constructions restore the original actions: they agree on the scalar map and on each \([g]\), which together determine every finite sum.
+
+
+An intertwiner commutes with the action of each sum by linearity and the intertwining equation, so is a \(k[G]\)-module map. Conversely, a module map commutes with every \(a[e]\), so is \(k\)-linear, and with every \([g]\), so intertwines. Both functors keep the same underlying functions on morphisms; hence they preserve identities and composites and are inverse.
+
+
+\end{proof}
+ 
+The finite support in \(k[G]\), rather than finite dimension of \(V\), makes the formula meaningful. By \hyperref[env-5-6]{Theorem 5.6} this also makes \(\mathrm{Rep}_k(G)\) an abelian category: kernels and quotients of intertwining maps carry the induced group actions, as their corresponding submodules and quotient modules do.
+
+ 
+\subsection{The two-element group}
+\phantomsection\label{example}
+ 
+\begin{mathdefinition}{Example}{7.5}{An action is an involution}
+\phantomsection\label{env-7-5}
+
+Let \(C_2=\{e,t\}\), with \(t^2=e\), and write \(1=[e]\), \(u=[t]\). Every element of \(k[C_2]\) is uniquely \(a+bu\), with \(u^2=1\), and
+
+ \[(a+bu)(c+du)=(ac+bd)+(ad+bc)u.\] 
+A representation is exactly a vector space equipped with a linear map \(T\) satisfying \(T^2=1\): this condition makes \(T\) invertible and supplies all the group relations. The corresponding action is \((a+bu)v=av+bTv\).
+
+
+\end{mathdefinition}
+ 
+The field has \textbf{characteristic two} when \(1+1=0\). Otherwise \(2=1+1\) is nonzero and has an inverse, denoted \(1/2\). In this latter case, every \(v\in V\) has the decomposition
+
+ \[v=\frac{v+Tv}{2}+\frac{v-Tv}{2},\qquad T\left(\frac{v+Tv}{2}\right)=\frac{v+Tv}{2},\quad T\left(\frac{v-Tv}{2}\right)=-\frac{v-Tv}{2}.\] 
+The \textbf{eigenspaces} \(V_+=\{v:Tv=v\}\) and \(V_-=\{v:Tv=-v\}\) are subspaces by linearity of \(T\). They have zero intersection, since \(w=-w\) implies \(2w=0\), so this is a direct-sum decomposition in every dimension. It comes directly from the module action of \((1+u)/2\) and \((1-u)/2\).
+
+ 
+In characteristic \(2\), division by \(2\) is impossible. On \(k^2\), let \(N(x,y)=(y,0)\) and \(T=1+N\). Since \(N^2=0\) and \(2N=0\), \(T^2=1\), giving a representation even though \(T\ne1\). In the algebra, \(u-1\ne0\) by independence of the two basis symbols, but \((u-1)^2=u^2-2u+1=0\). This is a concrete nonzero element whose square is zero.
+
+ 
+\subsection{Induction is tensoring with a bimodule}
+\phantomsection\label{induction}
+ 
+\begin{mathstatement}{Proposition}{7.6}{The induction bimodule}
+\phantomsection\label{env-7-6}
+
+For a subgroup \(H\subseteq G\), extending finite-support functions by zero embeds \(k[H]\) into \(k[G]\) as a unital subring. Thus \(k[G]\) is a \(k[G]\)-\(k[H]\) bimodule by left and right multiplication. Define
+
+ \[\operatorname{Ind}_H^G(V)=k[G]\otimes_{k[H]}V.\] 
+This is a \(G\)-representation by \hyperref[env-7-4]{Theorem 7.4}. If \(W\) is a \(G\)-representation, let \(\operatorname{Res}_H^G(W)\) denote the same vector space with its action restricted to \(H\). There is a natural bijection
+
+ \[\operatorname{Hom}_{k[G]}(\operatorname{Ind}_H^G V,W)\cong\operatorname{Hom}_{k[H]}(V,\operatorname{Res}_H^G W).\] 
+\par\smallskip{\normalfont\small See \cite[\S1.11]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+Products of basis symbols from \(H\) stay in \(H\), so the embedding preserves multiplication; it preserves addition and the identity, and is injective by its coefficients. Associativity in \(k[G]\) verifies the bimodule compatibility. The tensor construction now supplies the left \(k[G]\)-action, with \([g](x\otimes v)=([g]x)\otimes v\), and therefore the group action.
+
+
+Given \(F:k[G]\otimes_{k[H]}V\to W\), define \(f(v)=F(1\otimes v)\). It is additive, and for \(a\in k[H]\), balancing and \(k[G]\)-linearity give \(f(av)=F(a\otimes v)=af(v)\), so it is \(k[H]\)-linear. Conversely, given such \(f\), the map \((x,v)\mapsto xf(v)\) is biadditive and \(k[H]\)-balanced because \((xa)f(v)=x f(av)\). The tensor property gives \(F(x\otimes v)=xf(v)\), which is \(k[G]\)-linear by associativity. The formulas are inverse: one recovers \(f\) at \(1\otimes v\), and every \(k[G]\)-linear \(F\) satisfies \(F(x\otimes v)=xF(1\otimes v)\). They commute with maps of \(V,W\) by these same formulas, proving naturality.
+
+
+\end{proof}
+ 
+For \(H=\{e\}\) and \(G=C_2\), induction takes a vector space \(V\) to \(V\oplus V\). Explicitly, \((a+bu)\otimes v\mapsto(av,bv)\) is balanced over \(k\); its inverse sends \((v,w)\) to \(1\otimes v+u\otimes w\). These formulas are inverse by additivity. The action of \(t\) exchanges the two coordinates, since \(u(1\otimes v+u\otimes w)=u\otimes v+1\otimes w\). For \(V=k\), this is the two-dimensional regular representation.
+
+ 
+This example realizes the series' functor--bimodule correspondence before its general proof. \hyperref[chapter-08]{Chapter 8} now identifies precisely which abelian categories are module categories, and \hyperref[chapter-09]{Chapter 9} identifies precisely which functors between them are tensor functors.
+
+ 
+\paragraph{Sources and further reading.}
+\cite[\S2.12]{crawley}.
+
+\section{A generator determines the category}
+\phantomsection\label{chapter-08}
+  
+A single object can determine an entire abelian category. Its endomorphisms supply the ring, and morphisms from that object supply the modules. We prove exactly which hypotheses make this work.
+
+ 
+\subsection{The hypotheses and the ring}
+\phantomsection\label{hypotheses}
+ 
+Throughout this chapter, \(\mathcal A\) is an abelian category with coproducts indexed by every set. It is \textbf{locally small}: every collection \(\operatorname{Hom}_{\mathcal A}(X,Y)\) is a set. Its objects may form a proper class. All module underlying collections and coproduct indices are sets. We use sets and classes with global choice to fix coproducts and cokernels once and for all; alternatively these chosen constructions may be supplied as part of the data. No choice of a presentation will be made when defining the inverse functor.
+
+ 
+Global choice here means a class assignment choosing a member of each nonempty set. Ordinary set choice alone does not silently choose constructions across a proper class of diagrams. None of the proofs of the Hom bijections below depends on the chosen representatives.
+
+ 
+\par\smallskip{\normalfont\small See \cite[\S\S3.5, 3.8 and 3.12]{crawley}.}\par
+ 
+\begin{mathdefinition}{Definition}{8.1}{Small projective generator}
+\phantomsection\label{env-8-1}
+
+An object \(P\) is \textbf{projective} if, for every epimorphism \(e:X\to Y\) and morphism \(f:P\to Y\), some \(g:P\to X\) satisfies \(eg=f\). It is a \textbf{generator} if \(u,v:X\to Y\) and \(uf=vf\) for every \(f:P\to X\) imply \(u=v\). It is \textbf{small} if the canonical homomorphism
+
+ \[\bigoplus_{i\in I}\operatorname{Hom}(P,X_i)\longrightarrow\operatorname{Hom}\!\left(P,\coprod_{i\in I}X_i\right),\qquad (f_i)\longmapsto\sum_i\iota_i f_i,\] 
+is bijective for every set-indexed family. The sum is finite because \((f_i)\) has finite support. ``Small'' is a property of this Hom functor; it does not mean that \(P\) has finitely many elements.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.8 and 3.12]{crawley}.}\par
+
+\end{mathdefinition}
+ 
+Put \(E=\operatorname{End}_{\mathcal A}(P)\), with addition from the additive category and multiplication \(ab=a\circ b\). Bilinearity of composition gives both distributive laws, associativity comes from composition, and \(1_P\) is the unit. Thus \(E\) is a ring. Set \(R=E^{\mathrm{op}}\), the same additive group with multiplication \(a^{\mathrm{op}}b^{\mathrm{op}}=(b\circ a)^{\mathrm{op}}\).
+
+ 
+\par\smallskip{\normalfont\small See \cite[\S\S3.5, 3.8 and 3.12]{crawley}.}\par
+ 
+\subsection{The Hom functor}
+\phantomsection\label{hom}
+ 
+\begin{mathdefinition}{Definition}{8.2}{The module attached to an object}
+\phantomsection\label{env-8-2}
+
+Define \(H:\mathcal A\to R\text{-Mod}\) by
+
+ \[H(X)=\operatorname{Hom}_{\mathcal A}(P,X),\qquad a^{\mathrm{op}}\cdot f=f\circ a,\qquad H(u)(f)=u\circ f.\] 
+The module addition is addition of morphisms. The two distributive laws follow from bilinear composition. Further,
+
+ \[a^{\mathrm{op}}\cdot(b^{\mathrm{op}}\cdot f)=f\circ b\circ a=(a^{\mathrm{op}}b^{\mathrm{op}})\cdot f.\] 
+The identity acts as the identity, so this is a unital left module. Associativity also shows that \(H(u)\) is \(R\)-linear and that \(H\) preserves composition and identities. Bilinearity makes \(H\) additive.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.8 and 3.12]{crawley}.}\par
+
+\end{mathdefinition}
+ 
+\begin{mathstatement}{Lemma}{8.3}{Exactness, detection, and coproducts}
+\phantomsection\label{env-8-3}
+
+If \(P\) is a small projective generator, then \(H\) preserves kernels and cokernels, preserves set-indexed coproducts, is faithful, and reflects isomorphisms. Here \textbf{faithful} means that its maps on Hom sets are injective, and \textbf{reflects isomorphisms} means \(H(u)\) invertible implies \(u\) invertible.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.8 and 3.12]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+For a kernel \(k:K\to X\) of \(u:X\to Y\), the kernel universal property says exactly that composition with \(k\) identifies \(H(K)\) with \(\ker H(u)\). If \(e:X\to Y\) is epic, projectivity says \(H(e)\) is surjective.
+
+ 
+For a cokernel \(c:Y\to Z\) of \(u:X\to Y\), \hyperref[chapter-04]{Chapter 4} gives a factorization \(u=j p\), where \(p:X\to I\) is epic and \(j:I\to Y\) is the kernel of \(c\). Kernel preservation gives \(\ker H(c)=\operatorname{im}H(j)\); surjectivity of \(H(p)\) gives \(\operatorname{im}H(u)=\operatorname{im}H(j)\). Also \(H(c)\) is surjective. Thus \(H(Z)\), with \(H(c)\), is the cokernel of \(H(u)\) in modules. These are precisely the needed exactness assertions. Smallness is coproduct preservation by definition.
+
+ 
+The generator condition is faithfulness of \(H\). If \(H(Z)=0\), every morphism \(P\to Z\) is zero, so the generator condition applied to \(1_Z\) and \(0\) gives \(1_Z=0\). Every morphism into or out of \(Z\) is then zero, so \(Z\) is a zero object. If \(H(u)\) is invertible, kernel and cokernel preservation show \(H(\ker u)=H(\operatorname{coker}u)=0\). Therefore \(\ker u\) and \(\operatorname{coker}u\) are zero. By \hyperref[chapter-04]{Chapter 4}, \(u\) is both monic and epic, hence invertible.
+
+
+\end{proof}
+ 
+\subsection{Presentations by copies of the generator}
+\phantomsection\label{presentations}
+
+\begin{mathstatement}{Lemma}{8.4}{Every object has a generator presentation}
+\phantomsection\label{env-8-4}
+
+For every \(X\), there are sets \(I,J\) and a diagram
+
+ \[P^{(J)}\xrightarrow{d}P^{(I)}\xrightarrow{q}X\longrightarrow0\] 
+in which \(q\) is the cokernel of \(d\). The notation \(P^{(I)}\) means the coproduct of \(I\) copies of \(P\).
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.8 and 3.12]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+Take the set \(I=H(X)\). Define \(q:P^{(I)}\to X\) by \(q\iota_f=f\) for each morphism \(f:P\to X\). If \(vq=wq\), then \(vf=wf\) for every \(f\), hence \(v=w\). Thus \(q\) is epic, using its cancellation definition. Let \(k:K\to P^{(I)}\) be its kernel. Apply the same construction to \(K\): with \(J=H(K)\), there is an epimorphism \(q_K:P^{(J)}\to K\). Put \(d=kq_K\). A morphism annihilates \(d\) exactly when it annihilates \(k\), because \(q_K\) is epic. Since an epimorphism in an abelian category is the cokernel of its kernel, \(q\) is the cokernel of \(d\).
+
+
+\end{proof}
+ 
+\begin{mathstatement}{Lemma}{8.5}{Morphisms are determined by module maps}
+\phantomsection\label{env-8-5}
+
+For every \(X,Y\), composition induces a bijection
+
+ \[\operatorname{Hom}_{\mathcal A}(X,Y)\longrightarrow\operatorname{Hom}_R(H(X),H(Y)),\qquad u\longmapsto H(u).\] 
+Thus \(H\) is \textbf{fully faithful}: its maps on Hom sets are bijections.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.8 and 3.12]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+First there is a left-module isomorphism \(R\to H(P)\), \(a^{\mathrm{op}}\mapsto a\): multiplication by \(b^{\mathrm{op}}\) corresponds to \(a\circ b\), exactly the prescribed action. Smallness therefore gives isomorphisms
+
+ \[\theta_I:R^{(I)}\xrightarrow{\sim}H(P^{(I)}),\qquad e_i\longmapsto\iota_i,\] 
+where \(e_i\) is the basis vector with coordinate \(1_R\). A morphism \(v:P^{(I)}\to Y\) is specified by its restrictions \(v\iota_i\), and an \(R\)-linear map \(R^{(I)}\to H(Y)\) is specified by its values on \(e_i\). Consequently these two types of maps correspond bijectively through \(H(v)\theta_I\).
+
+ 
+Now take a presentation \(P^{(J)}\xrightarrow dP^{(I)}\xrightarrow qX\to0\) from \hyperref[env-8-4]{Lemma 8.4} and an \(R\)-linear map \(t:H(X)\to H(Y)\). The preceding bijection supplies a unique \(v:P^{(I)}\to Y\) with \(H(v)=tH(q)\). Then \(H(vd)=tH(qd)=0\). Faithfulness implies \(vd=0\). The cokernel property gives a unique \(u:X\to Y\) with \(uq=v\). Since \(H(q)\) is surjective, \(H(u)H(q)=tH(q)\) implies \(H(u)=t\). Faithfulness already gives uniqueness. This proves the claimed bijection without choosing representatives of module elements inside abstract objects.
+
+
+\end{proof}
+ 
+\subsection{A functorial inverse}
+\phantomsection\label{equivalence}
+
+\begin{mathstatement}{Theorem}{8.6}{Reconstruction from a small projective generator}
+\phantomsection\label{env-8-6}
+
+With the hypotheses and chosen constructions of \S{}8.1,
+
+ \[\boxed{\mathcal A\simeq R\text{-Mod},\qquad R=\operatorname{End}_{\mathcal A}(P)^{\mathrm{op}}.}\] 
+An \textbf{equivalence} means functors \(H:\mathcal A\to R\text{-Mod}\), \(L:R\text{-Mod}\to\mathcal A\), and natural isomorphisms \(HL\cong1_{R\text{-Mod}}\), \(LH\cong1_{\mathcal A}\). The symbol \(\simeq\) does not assert equality or an isomorphism of categories.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.8 and 3.12]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+\textbf{The canonical presentation.} For a module \(M\), let \(I_M\) be its underlying set, let \(p_M:R^{(I_M)}\to M\) send \(e_m\) to \(m\), and let \(K_M=\ker p_M\), as a concrete submodule. Let \(J_M\) be the underlying set of \(K_M\), and let \(d_M:R^{(J_M)}\to R^{(I_M)}\) send \(e_k\) to \(k\). Then \(p_M\) is surjective, \(\operatorname{im}d_M=K_M\), and \(M\) is its cokernel. This includes zero modules and empty index sets.
+
+ 
+\textbf{The object \(L(M)\).} The coproduct bijection in \hyperref[env-8-5]{Lemma 8.5} supplies a unique morphism \(\widetilde d_M:P^{(J_M)}\to P^{(I_M)}\) satisfying
+
+ \[H(\widetilde d_M)\theta_{J_M}=\theta_{I_M}d_M.\] 
+Take the chosen cokernel \(c_M:P^{(I_M)}\to L(M)\). Exactness of \(H\) induces a unique isomorphism \(\nu_M:H(L(M))\to M\) with
+
+ \[\nu_M H(c_M)\theta_{I_M}=p_M.\] 
+Indeed both sides exhibit the cokernel of \(d_M\); the unique comparison maps in both directions compose to identities by the cokernel universal property. Every module is therefore isomorphic to a module of the form \(H(X)\), which is \textbf{essential surjectivity}.
+
+ 
+\textbf{The morphism \(L(u)\).} For \(u:M\to N\), define \(u_0:R^{(I_M)}\to R^{(I_N)}\) by \(e_m\mapsto e_{u(m)}\). The equality \(p_Nu_0=up_M\) sends \(K_M\) into \(K_N\). Define \(u_1:R^{(J_M)}\to R^{(J_N)}\) by \(e_k\mapsto e_{u_0(k)}\). Then \(u_0d_M=d_Nu_1\). Lift \(u_0,u_1\) uniquely to morphisms of the corresponding coproducts using \hyperref[env-8-5]{Lemma 8.5}. Faithfulness implies the lifted square commutes. The cokernel property defines a unique \(L(u)\) with
+
+ \[L(u)c_M=c_N\widetilde u_0.\] 
+Identity module maps produce identity lifts. For composable \(u,v\), the formula on basis vectors gives \((vu)_0=v_0u_0\); uniqueness of lifts and of the cokernel factorization gives \(L(vu)=L(v)L(u)\). Thus \(L\) is an actual functor. The displayed formulas also give \(\nu_NH(L(u))=u\nu_M\): precompose with the surjection \(H(c_M)\theta_{I_M}\) to verify it. Hence \(\nu:HL\Rightarrow1\) is a natural isomorphism.
+
+ 
+\textbf{The other comparison.} Full faithfulness gives a unique morphism \(\epsilon_X:L(H(X))\to X\) with \(H(\epsilon_X)=\nu_{H(X)}\). \hyperref[env-8-3]{Lemma 8.3} implies \(\epsilon_X\) is invertible. For \(f:X\to Y\), naturality of \(\nu\) gives
+
+ \[H(f\epsilon_X)=H(\epsilon_YL(H(f))).\] 
+Faithfulness gives \(f\epsilon_X=\epsilon_YL(H(f))\), so \(\epsilon:LH\Rightarrow1\) is natural. This proves the equivalence and closes the possible gap between constructing preimages separately and constructing a functor.
+
+
+\end{proof}
+ 
+\begin{mathdefinition}{Example}{8.7}{Abelian groups}
+\phantomsection\label{env-8-7}
+
+In the category of abelian groups take \(P=\mathbb Z\). A homomorphism \(\mathbb Z\to A\) is determined by the image of \(1\), so evaluation gives \(H(A)\cong A\). Integer multiplication identifies \(\operatorname{End}(\mathbb Z)\) with \(\mathbb Z\), which is commutative and thus equals its opposite. Projectivity follows by lifting the image of \(1\) through a surjection; the generator property follows by testing each group element; smallness follows because each element of a direct sum has finite support. Reconstruction here is the familiar identification of abelian groups with \(\mathbb Z\)-modules.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.8 and 3.12]{crawley}.}\par
+
+\end{mathdefinition}
+ 
+\paragraph{Sources and further reading.}
+\cite[\S\S3.5, 3.8 and 3.12]{crawley}.
+
+\section{Functors are tensor products}
+\phantomsection\label{chapter-09}
+  
+\hyperref[chapter-08]{Chapter 8} identifies the objects of our theory with module categories. This chapter identifies the permitted functors with bimodules and their natural transformations with bimodule morphisms. Rings remain unital and need not be commutative; modules remain left modules.
+
+ 
+\subsection{Which functors?}
+\phantomsection\label{hypotheses}
+ 
+\begin{mathdefinition}{Definition}{9.1}{The permitted functors}
+\phantomsection\label{env-9-1}
+
+Fix rings \(R,S\). A functor \(F:R\text{-Mod}\to S\text{-Mod}\) is \textbf{additive} if its maps on Hom groups preserve addition. It is \textbf{right exact} if it preserves cokernels. Equivalently, whenever
+
+ \[X\xrightarrow uY\xrightarrow qZ\longrightarrow0\] 
+is exact, so is the image diagram under \(F\). For additive functors these formulations agree: in modules such an exact diagram means precisely that \(q\) is a cokernel of \(u\), as proved in \hyperref[chapter-05]{Chapter 5}. We require also preservation of every set-indexed coproduct, including the empty coproduct.
+
+ 
+Write \(\mathscr F(R,S)\) for the permitted functors and their natural transformations, and \(\mathscr B(S,R)\) for \(S\)-\(R\) bimodules and their bimodule morphisms. The operations on transformations are componentwise identities and composition.
+
+ 
+There is a size convention in \(\mathscr F\): its objects may themselves be class functors, so this notation is a scheme of categorical assertions for fixed functors, rather than a claim that proper classes are elements of a set. \hyperref[env-9-5]{Theorem 9.5} will encode each transformation by the set-sized map \(\eta_R\). Thus the Hom collections in this scheme are sets. No category of all categories or of all classes is being assumed.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.4 and 3.10]{crawley}, \cite{watts}.}\par
+
+\end{mathdefinition}
+ 
+These are exactly the additive functors preserving all small colimits. To see this, a colimit of a small diagram \(D\) is the cokernel of the map
+
+ \[\bigoplus_{\alpha:i\to j}D(i)\longrightarrow\bigoplus_iD(i),\qquad \iota_\alpha x\longmapsto\iota_i x-\iota_j D(\alpha)(x).\] 
+A map from the second sum annihilates this map exactly when its components form a cocone; the cokernel universal property is therefore the colimit universal property. Additivity, coproduct preservation, and cokernel preservation carry this construction to the same construction for \(FD\). Conversely a cokernel is the coequalizer of \(u,0\), and a coproduct is a colimit, so colimit preservation implies both requirements. This formula also proves module categories have all small colimits.
+
+ 
+\par\smallskip{\normalfont\small See \cite[\S\S3.4 and 3.10]{crawley}, \cite{watts}.}\par
+ 
+For every \(S\)-\(R\) bimodule \(B\), \hyperref[chapter-06]{Chapter 6} proves that \(T_B(M)=B\otimes_R M\), \(T_B(u)=1_B\otimes u\), is additive, right exact, and coproduct-preserving. The task is the converse.
+
+ 
+\subsection{Extracting the bimodule}
+\phantomsection\label{kernel}
+ 
+\begin{mathstatement}{Lemma}{9.2}{The two actions on F(R)}
+\phantomsection\label{env-9-2}
+
+For an additive functor \(F\), the left \(S\)-module \(B=F({}_R R)\) becomes an \(S\)-\(R\) bimodule by
+
+ \[b r=F(\rho_r)(b),\qquad \rho_r:R\to R,\quad \rho_r(x)=xr.\] 
+Here \(\rho_r\) is a left \(R\)-module morphism, even when \(R\) is noncommutative.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.4 and 3.10]{crawley}, \cite{watts}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+Distributivity and associativity in \(R\) give \(\rho_r(x+y)=\rho_r(x)+\rho_r(y)\) and \(\rho_r(ax)=a\rho_r(x)\), so \(\rho_r\) is indeed \(R\)-linear. Also
+
+ \[\rho_{r+r'}=\rho_r+\rho_{r'},\qquad \rho_1=1_R,\qquad \rho_{rr'}=\rho_{r'}\circ\rho_r.\] 
+Additivity and functoriality give \(b(r+r')=br+br'\), \(b1=b\), and \((br)r'=b(rr')\). Since \(F(\rho_r)\) is an \(S\)-linear module map, \((b+b')r=br+b'r\) and \((sb)r=s(br)\). These are every right-module axiom and the commuting-action condition.
+
+
+\end{proof}
+ 
+\subsection{A comparison defined before presentations}
+\phantomsection\label{comparison}
+
+\begin{mathstatement}{Lemma}{9.3}{The canonical natural transformation}
+\phantomsection\label{env-9-3}
+
+For \(m\in M\), let \(\lambda_m:R\to M\) be the left-module map \(\lambda_m(x)=xm\). There is an \(S\)-linear natural transformation
+
+ \[\tau^F_M:B\otimes_R M\longrightarrow F(M),\qquad \tau^F_M(b\otimes m)=F(\lambda_m)(b).\]
+\par\smallskip{\normalfont\small See \cite[\S\S3.4 and 3.10]{crawley}, \cite{watts}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+For fixed \(m\), \(F(\lambda_m)\) is an additive \(S\)-linear map, giving additivity in \(b\) and the equation \(\tau^F_M(sb\otimes m)=s\tau^F_M(b\otimes m)\). For fixed \(b\), the identity \(\lambda_{m+m'}=\lambda_m+\lambda_{m'}\) and additivity of \(F\) give additivity in \(m\). The balancing relation follows from
+
+ \[\lambda_{rm}=\lambda_m\circ\rho_r,\] \[F(\lambda_m)(br)=F(\lambda_m)F(\rho_r)(b)=F(\lambda_{rm})(b).\] 
+The tensor universal property therefore gives a unique additive map \(\tau^F_M\), and the displayed \(S\)-linearity on generators makes it \(S\)-linear on all tensors.
+
+ 
+For \(u:M\to N\), \(u\lambda_m=\lambda_{u(m)}\). Consequently
+
+ \[F(u)\tau^F_M(b\otimes m)=F(\lambda_{u(m)})(b)=\tau^F_N(b\otimes u(m)).\] 
+Pure tensors generate, so this proves \(F(u)\tau^F_M=\tau^F_N(1_B\otimes u)\). This is naturality; no presentation has entered the definition.
+
+
+\end{proof}
+ 
+\begin{mathstatement}{Theorem}{9.4}{Eilenberg--Watts}
+\phantomsection\label{env-9-4}
+
+Every additive, right-exact, coproduct-preserving functor \(F:R\text{-Mod}\to S\text{-Mod}\) is naturally isomorphic to \(F(R)\otimes_R-\), through \(\tau^F\). Every \(S\)-\(R\) bimodule gives such a functor.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.4 and 3.10]{crawley}, \cite{watts}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+\textbf{The regular module.} For \(r\in R\), \(\lambda_r=\rho_r\), so \(\tau^F_R(b\otimes r)=br\). This is the unit isomorphism of \hyperref[chapter-06]{Chapter 6}, with inverse \(b\mapsto b\otimes1\).
+
+ 
+\textbf{Free modules.} Let \(Q=R^{(I)}\) with injections \(\iota_i:R\to Q\). Both \(T_B(Q)\), with the maps \(1_B\otimes\iota_i\), and \(F(Q)\), with the maps \(F(\iota_i)\), are coproducts of copies of \(B\), after the preceding unit identification. Naturality says \(\tau^F_Q\) agrees with that identification on each copy. The coproduct universal property supplies its inverse and verifies both composites are identities. This includes \(I=\varnothing\).
+
+ 
+\textbf{All modules.} \hyperref[chapter-05]{Chapter 5} gives a free presentation
+
+ \[R^{(J)}\xrightarrow dR^{(I)}\xrightarrow qM\longrightarrow0.\] 
+Right exactness of both functors makes \(T_B(q)\) and \(F(q)\) the cokernels of \(T_B(d)\) and \(F(d)\), respectively. Naturality gives a commuting square between the two maps \(d\), whose vertical maps are the free-module isomorphisms just proved. A commuting square of isomorphisms induces an isomorphism of cokernels: use its inverses to construct the reverse map, then cancel the epic cokernel maps to check the two composites. The induced map here is \(\tau^F_M\), by naturality at \(q\) and uniqueness of cokernel factorization. Therefore every component is invertible. The componentwise inverses are natural: rearrange \(F(u)\tau^F_M=\tau^F_NT_B(u)\) to get the inverse naturality equation. The converse was proved in \hyperref[chapter-06]{Chapter 6}.
+
+
+\end{proof}
+ 
+\subsection{Transformations are bimodule maps}
+\phantomsection\label{transformations}
+
+\begin{mathstatement}{Theorem}{9.5}{Evaluation at R classifies every transformation}
+\phantomsection\label{env-9-5}
+
+For permitted functors \(F,G\), the assignment \(\eta\mapsto\eta_R\) is a bijection
+
+ \[\operatorname{Nat}(F,G)\cong\operatorname{Hom}_{S\text{-}R}(F(R),G(R)).\] 
+In particular, for bimodules \(B,D\), every transformation \(T_B\Rightarrow T_D\) is uniquely \(\beta\otimes1\) for an \(S\)-\(R\) bimodule morphism \(\beta:B\to D\).
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.4 and 3.10]{crawley}, \cite{watts}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+If \(\eta:F\Rightarrow G\) is natural, then \(\eta_R\) is \(S\)-linear because it is a morphism in \(S\text{-Mod}\). Naturality at \(\rho_r\) gives
+
+ \[\eta_R(br)=\eta_RF(\rho_r)(b)=G(\rho_r)\eta_R(b)=\eta_R(b)r.\] 
+Thus \(\beta=\eta_R\) is a bimodule morphism. Naturality at \(\lambda_m\) gives
+
+ \[\eta_M\tau^F_M(b\otimes m)=\eta_MF(\lambda_m)(b)=G(\lambda_m)\beta(b)=\tau^G_M(\beta(b)\otimes m).\] 
+Pure tensors generate and \(\tau^F_M\) is invertible, so necessarily
+
+ \[\eta_M=\tau^G_M\circ(\beta\otimes1_M)\circ(\tau^F_M)^{-1}.\] 
+Conversely, for any bimodule morphism \(\beta:F(R)\to G(R)\), \hyperref[chapter-06]{Chapter 6} gives an \(S\)-linear map \(\beta\otimes1_M\) for each \(M\). On pure tensors it commutes with \(1\otimes u\); hence these maps form a natural transformation. Conjugating by the two natural isomorphisms \(\tau\) gives a natural \(\eta:F\Rightarrow G\) through the displayed formula. At \(R\), the unit identifications \(b\otimes1\mapsto b\) show \(\eta_R=\beta\). This proves both surjectivity and injectivity.
+
+ 
+For \(F=T_B\), evaluation at \(R\) identifies \(T_B(R)=B\otimes_RR\) with \(B\) as a bimodule, because the right action is induced by \(1_B\otimes\rho_r\). Indeed \(b\otimes x\) maps to \(bx\), and \(b\otimes xr\) maps to \((bx)r\). Under this identification naturality at \(\lambda_m\) reads directly \(\eta_M(b\otimes m)=\beta(b)\otimes m\). Identity transformations correspond to identity maps; vertical composites correspond to composites by taking their components at \(R\). An invertible transformation therefore corresponds exactly to an invertible bimodule map, with the inverse recovered in the same way.
+
+
+\end{proof}
+ 
+\begin{mathstatement}{Corollary}{9.6}{The equivalence of Hom categories}
+\phantomsection\label{env-9-6}
+
+The assignment
+
+ \[\mathscr B(S,R)\longrightarrow\mathscr F(R,S),\qquad B\longmapsto T_B,\qquad \beta\longmapsto\beta\otimes1,\] 
+is fully faithful and essentially surjective. It has the explicit inverse assignment \(F\mapsto F(R)\), \(\eta\mapsto\eta_R\), with comparisons \(T_{F(R)}\cong F\) and \(T_B(R)\cong B\). Thus it is an equivalence in the componentwise size convention of \hyperref[env-9-1]{Definition 9.1}.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.4 and 3.10]{crawley}, \cite{watts}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+Functoriality of the tensor assignment follows from \((\gamma\beta)\otimes1=(\gamma\otimes1)(\beta\otimes1)\) on pure generators. Functoriality of evaluation is componentwise. Full faithfulness is \hyperref[env-9-5]{Theorem 9.5}, and essential surjectivity is \hyperref[env-9-4]{Theorem 9.4}. The comparison \(\tau^F\) is natural also in \(F\) by the equation in \hyperref[env-9-5]{Theorem 9.5}. The comparison \(T_B(R)\to B\) is natural in \(B\), since it sends \(\beta(b)\otimes r\) to \(\beta(b)r=\beta(br)\). These are the two inverse-functor comparisons.
+
+
+\end{proof}
+ 
+\begin{mathdefinition}{Example}{9.7}{Reduction modulo 2 and its transformations}
+\phantomsection\label{env-9-7}
+
+Take \(R=\mathbb Z\), \(S=\mathbb F_2\), and \(B=\mathbb F_2\), with \(b n\) given by reducing \(n\) modulo \(2\). Then
+
+ \[\mathbb F_2\otimes_{\mathbb Z}M\cong M/2M.\] 
+\hyperref[env-6-8]{Proposition 6.8} proves this natural, \(\mathbb F_2\)-linear isomorphism, including the quotient action and both inverse maps. Thus this example satisfies every hypothesis of \hyperref[env-9-4]{Theorem 9.4} by Theorems 6.6 and 6.7.
+
+ 
+A bimodule endomorphism of \(\mathbb F_2\) is multiplication by its value at \(1\), hence either zero or identity; either map commutes with integers. \hyperref[env-9-5]{Theorem 9.5} says these are also the only natural endomorphisms of the functor \(M\mapsto M/2M\).
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S3.4 and 3.10]{crawley}, \cite{watts}.}\par
+
+\end{mathdefinition}
+ 
+\paragraph{Sources and further reading.}
+\cite[\S\S3.4 and 3.10]{crawley}, \cite{watts}.
+
+\section{Composition and Morita equivalence}
+\phantomsection\label{chapter-10}
+  
+We now assemble the objective. The construction has two levels: an abelian category becomes a module category, and the category of permitted functors between two such categories becomes a category of bimodules. Composition and identities agree through explicit natural isomorphisms.
+
+ 
+\subsection{Composition and identities}
+\phantomsection\label{composition}
+ 
+\begin{mathstatement}{Theorem}{10.1}{The tensor dictionary preserves composition}
+\phantomsection\label{env-10-1}
+
+Let \({}_S B_R\) and \({}_T C_S\) be bimodules. Their tensor product \(C\otimes_S B\) is a \(T\)-\(R\) bimodule, with
+
+ \[t(c\otimes b)=(tc)\otimes b,\qquad(c\otimes b)r=c\otimes(br).\] 
+There are natural isomorphisms
+
+ \[T_C\circ T_B\cong T_{C\otimes_S B},\qquad T_{{}_R R_R}\cong1_{R\text{-Mod}}.\] 
+They send \(c\otimes(b\otimes m)\) to \((c\otimes b)\otimes m\), and \(r\otimes m\) to \(rm\), respectively.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S1.11, 3.5 and 3.12]{crawley}, \cite[Ch. I]{morita}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+Both outer actions respect the additive and \(S\)-balancing relations defining \(C\otimes_SB\), since the original actions commute. The left and right actions commute with each other and satisfy their module axioms on pure generators, hence on every tensor. This establishes the asserted bimodule.
+
+ 
+The typed associativity and unit isomorphisms were constructed in \hyperref[env-6-5]{\hyperref[chapter-06]{Chapter 6}}. The balancing checks in this instance are
+
+ \[(cs\otimes b)\otimes m=(c\otimes sb)\otimes m,\qquad(c\otimes br)\otimes m=(c\otimes b)\otimes rm.\] 
+They are exactly the two relations in \(C\otimes_S(B\otimes_RM)\), so reassociating defines a map in both directions. These maps are inverse on pure tensors, which generate. They are \(T\)-linear and natural in \(M\) because a module morphism replaces only \(m\) by its image. The unit inverse is \(m\mapsto1\otimes m\); the relation \(r\otimes m=1\otimes rm\) verifies the other composite. Naturality is the equation \(u(rm)=ru(m)\).
+
+ 
+These comparisons are coherent: for four tensor factors, each route through repeated reassociation sends any pure tensor to the same rebracketing with the same four entries. Pure tensors generate every iterated tensor product, so the routes agree as maps. This verifies the associativity pentagon directly. Removing a middle regular-ring factor either by its action first or by reassociation first gives the same tensor by balancing; this verifies the unit triangle. No separate monoidal-category theorem is required.
+
+
+\end{proof}
+ 
+\begin{mathstatement}{Proposition}{10.2}{Composition of transformations}
+\phantomsection\label{env-10-2}
+
+For bimodule morphisms \(\beta:B\to B'\), \(\gamma:C\to C'\) with the same ring types, composition of their associated functor transformations is represented by
+
+ \[\gamma\otimes\beta:C\otimes_SB\to C'\otimes_SB',\qquad c\otimes b\longmapsto\gamma(c)\otimes\beta(b).\]
+\par\smallskip{\normalfont\small See \cite[\S\S1.11, 3.5 and 3.12]{crawley}, \cite[Ch. I]{morita}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+The map is additive and balanced, since
+
+ \[\gamma(cs)\otimes\beta(b)=\gamma(c)s\otimes\beta(b)=\gamma(c)\otimes s\beta(b)=\gamma(c)\otimes\beta(sb).\] 
+It respects both outer actions because \(\gamma\) is \(T\)-linear and \(\beta\) is right \(R\)-linear. At a module \(M\), the transformation of the composite functors is the map obtained by first applying \(1_C\otimes(\beta\otimes1_M)\), then \(\gamma\otimes1_{B'\otimes_RM}\). It sends \(c\otimes(b\otimes m)\) to \(\gamma(c)\otimes(\beta(b)\otimes m)\). After reassociation this is exactly \((\gamma\otimes\beta)\otimes1_M\). Changing the order of the two operations has the same effect on generators, hence the same effect everywhere. Identities and iterated compositions are respected for the same reason.
+
+
+\end{proof}
+ 
+\subsection{Returning to abstract abelian categories}
+\phantomsection\label{transport}
+
+\begin{mathstatement}{Lemma}{10.3}{Equivalences preserve the hypotheses on functors}
+\phantomsection\label{env-10-3}
+
+An equivalence between abelian categories is additive and preserves kernels, cokernels, and all existing set-indexed coproducts. In particular it is exact and carries small projective generators to small projective generators.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S1.11, 3.5 and 3.12]{crawley}, \cite[Ch. I]{morita}, \cite[\S3.5]{crawley}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+Let \(F:\mathcal A\to\mathcal D\) have quasi-inverse \(G\) and natural isomorphisms \(GF\cong1_{\mathcal A}\), \(FG\cong1_{\mathcal D}\). The first comparison shows \(F\) is faithful, and the second shows \(G\) is faithful, by applying the comparison to any equality of image morphisms. To see fullness of \(F\), write \(\zeta:GF\Rightarrow1\) and take \(t:F(X)\to F(Y)\). Set \(u=\zeta_YG(t)\zeta_X^{-1}\). Naturality of \(\zeta\) at \(u\) gives \(GF(u)=G(t)\), and faithfulness of \(G\) gives \(F(u)=t\). Thus \(F\) is fully faithful; the same argument applies to \(G\). Both are essentially surjective because of the comparisons.
+
+ 
+Suppose \(L\) is a colimit of a diagram \(D\) in \(\mathcal A\). A cocone from \(FD\) to any object of \(\mathcal D\) may be transported along an isomorphism to a target of the form \(F(X)\), by essential surjectivity. Full faithfulness identifies that cocone with a unique cocone from \(D\) to \(X\), including all its commutation equations. The colimit property gives a unique map \(L\to X\), hence a unique map \(F(L)\to F(X)\). This proves \(F(L)\) is the required colimit. Reversing arrows proves limit preservation. This includes zero objects, coproducts, products, kernels, and cokernels.
+
+ 
+Addition in an additive category has the categorical expression \(f+g=\nabla_Y(f\oplus g)\Delta_X\): the diagonal \(\Delta_X:X\to X\oplus X\) has both projections \(1_X\), and the codiagonal \(\nabla_Y:Y\oplus Y\to Y\) has both restrictions \(1_Y\). Preserving zero objects and biproduct diagrams preserves these defining maps and block maps, so it preserves this formula. Hence \(F\) is additive.
+
+ 
+For \(P\) a generator, test equality in \(\mathcal D\) after replacing its source by an isomorphic \(F(X)\); full faithfulness identifies the tests from \(F(P)\) with those from \(P\). Thus the generator property transfers. For projectivity, an epimorphism in \(\mathcal D\) can be transported to the image of an epimorphism in \(\mathcal A\); preservation and reflection of the cancellation property follow from full faithfulness and essential surjectivity. Lift a map from \(P\) there, then transport the lift back. For smallness, the canonical Hom-to-coproduct map for \(F(P)\) identifies through Hom bijections and coproduct preservation with that for \(P\), after replacing each family member by an isomorphic image. Set choice suffices to select these replacements for a set-indexed family. All three properties therefore transfer.
+
+
+\end{proof}
+ 
+\begin{mathstatement}{Theorem}{10.4}{The complete dictionary}
+\phantomsection\label{env-10-4}
+
+Let \(\mathcal A,\mathcal D\) be locally small abelian categories with all set-indexed coproducts and small projective generators \(P,Q\). Supply the chosen constructions of \hyperref[chapter-08]{Chapter 8}. Put
+
+ \[R=\operatorname{End}_{\mathcal A}(P)^{\mathrm{op}},\qquad S=\operatorname{End}_{\mathcal D}(Q)^{\mathrm{op}}.\] 
+The category of additive, right-exact, coproduct-preserving functors \(\mathcal A\to\mathcal D\), with natural transformations, is equivalent to \(\mathscr B(S,R)\), in the size convention of \hyperref[chapter-09]{Chapter 9}. Explicitly, if \(H_{\mathcal A},L_{\mathcal A}\) and \(H_{\mathcal D},L_{\mathcal D}\) are the equivalences of \hyperref[chapter-08]{Chapter 8}, then a functor \(F\) corresponds to
+
+ \[B_F=H_{\mathcal D}\bigl(F(L_{\mathcal A}(R))\bigr),\] 
+with its right \(R\)-action obtained by applying \(H_{\mathcal D}F L_{\mathcal A}\) to \(\rho_r\). A bimodule \(B\) corresponds to
+
+ \[L_{\mathcal D}\circ(B\otimes_R-)\circ H_{\mathcal A}.\]
+\par\smallskip{\normalfont\small See \cite[\S\S1.11, 3.5 and 3.12]{crawley}, \cite[Ch. I]{morita}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+Transport a functor by \(W(F)=H_{\mathcal D}F L_{\mathcal A}\), and transport a module functor by \(U(T)=L_{\mathcal D}T H_{\mathcal A}\). On transformations take the same composites: \(W(\eta)_M=H_{\mathcal D}(\eta_{L_{\mathcal A}(M)})\) and \(U(\theta)_X=L_{\mathcal D}(\theta_{H_{\mathcal A}(X)})\). Naturality and preservation of identities and composition follow from functoriality. \hyperref[env-10-3]{Lemma 10.3} ensures all these functors satisfy the three required hypotheses.
+
+ 
+Write \(\epsilon_{\mathcal A}:L_{\mathcal A}H_{\mathcal A}\Rightarrow1_{\mathcal A}\) and \(\nu_{\mathcal A}:H_{\mathcal A}L_{\mathcal A}\Rightarrow1_{R\text{-Mod}}\), with analogous notation for \(\mathcal D\). The comparisons
+
+ \[UW(F)=L_{\mathcal D}H_{\mathcal D}F L_{\mathcal A}H_{\mathcal A}\xrightarrow{\epsilon_{\mathcal D}}F L_{\mathcal A}H_{\mathcal A}\xrightarrow{F\epsilon_{\mathcal A}}F,\] \[WU(T)=H_{\mathcal D}L_{\mathcal D}T H_{\mathcal A}L_{\mathcal A}\xrightarrow{\nu_{\mathcal D}}T H_{\mathcal A}L_{\mathcal A}\xrightarrow{T\nu_{\mathcal A}}T\] 
+are invertible at every object, natural in their object arguments, and natural in \(F\) or \(T\). The last assertion is precisely naturality of a transformation at the comparison morphisms. Thus \(U,W\) are inverse up to natural isomorphism. Compose this equivalence with \hyperref[env-9-6]{Corollary 9.6}. Evaluation of \(W(F)\) at \(R\) gives exactly \(B_F\), proving the displayed formulas and the transformation correspondence.
+
+ 
+For composable \(F:\mathcal A\to\mathcal D\) and \(G:\mathcal D\to\mathcal E\), the comparison \(L_{\mathcal D}H_{\mathcal D}\cong1_{\mathcal D}\) gives \(W(G)W(F)\cong W(GF)\). \hyperref[chapter-09]{Chapter 9} and \hyperref[env-10-1]{Theorem 10.1} therefore identify \(B_{GF}\) with \(B_G\otimes_SB_F\) as an outer bimodule, using the transformation classification to obtain that bimodule isomorphism. For an identity functor, \(H_{\mathcal A}L_{\mathcal A}\cong1_{R\text{-Mod}}\) identifies its bimodule with the regular \(R\)-\(R\) bimodule. Composition and identities have now been checked at both levels.
+
+
+\end{proof}
+ 
+The distinction between the levels matters. The theorem does not identify abelian categories themselves with individual bimodules. It identifies suitable abelian categories with module categories; for each pair of them, it identifies their permitted functors with bimodules and their transformations with bimodule maps. Different choices of generators can produce different rings with equivalent module categories.
+
+ 
+\subsection{When is a tensor functor an equivalence?}
+\phantomsection\label{morita}
+ 
+\begin{mathstatement}{Theorem}{10.5}{Morita equivalence is a pair of inverse bimodules}
+\phantomsection\label{env-10-5}
+
+Rings \(R,S\) are \textbf{Morita equivalent} when \(R\text{-Mod}\) and \(S\text{-Mod}\) are equivalent. This holds exactly when there are bimodules \({}_SB_R\), \({}_RC_S\) and bimodule isomorphisms
+
+ \[\boxed{C\otimes_SB\cong{}_RR_R,\qquad B\otimes_RC\cong{}_SS_S.}\] 
+In that case \(T_B\) and \(T_C\) are quasi-inverse equivalences.
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S1.11, 3.5 and 3.12]{crawley}, \cite[Ch. I]{morita}.}\par
+
+\end{mathstatement}
+ 
+\begin{proof}
+
+If \(F:R\text{-Mod}\to S\text{-Mod}\) is an equivalence with quasi-inverse \(G\), \hyperref[env-10-3]{Lemma 10.3} says both are additive, right exact, and coproduct-preserving. \hyperref[env-9-4]{Theorem 9.4} gives \(F\cong T_B\), \(G\cong T_C\), where \(B=F(R)\) and \(C=G(S)\). Their inverse-functor comparisons and \hyperref[env-10-1]{Theorem 10.1} give natural isomorphisms
+
+ \[T_{C\otimes_SB}\cong T_C T_B\cong GF\cong1\cong T_R,\] \[T_{B\otimes_RC}\cong T_B T_C\cong FG\cong1\cong T_S.\] 
+\hyperref[env-9-5]{Theorem 9.5} identifies these with bimodule morphisms. Applying the same correspondence to each inverse natural transformation proves those bimodule morphisms are isomorphisms.
+
+ 
+Conversely, if the two displayed bimodule isomorphisms are given, tensoring them with each module, then applying associativity and the unit maps, gives natural isomorphisms \(T_C T_B\cong T_R\cong1\) and \(T_B T_C\cong T_S\cong1\). Thus these tensor functors are quasi-inverses by the definition of equivalence in \hyperref[chapter-08]{Chapter 8}. No compatibility beyond these two natural isomorphisms is required by that definition.
+
+
+\end{proof}
+ 
+\begin{mathdefinition}{Example}{10.6}{A field and its two-by-two matrix ring}
+\phantomsection\label{env-10-6}
+
+Let \(k\) be a field and \(S=M_2(k)\). Matrix addition is entrywise and \((AB)_{ij}=\sum_{\ell=1}^2A_{i\ell}B_{\ell j}\). Distributivity follows entrywise; associativity follows because both triple-product entries are \(\sum_{\ell,p}A_{i\ell}B_{\ell p}C_{pj}\); the identity matrix is a unit. Hence \(S\) is a ring.
+
+ 
+Take \(B=k^2\), columns with left matrix action and right scalar action, and \(C=k^{1\times2}\), the space of two-entry rows with left scalar action and right matrix action. The actions commute by matrix associativity. Column-row multiplication gives an \(S\)-\(S\) bimodule map
+
+ \[B\otimes_kC\longrightarrow S,\qquad b\otimes c\longmapsto bc.\] 
+For standard columns \(e_i\), standard rows \(e_j^*\), and matrix units \(E_{ij}\), this sends \(e_i\otimes e_j^*\) to \(E_{ij}\). Its inverse sends \(A\) to \(\sum_{i,j}A_{ij}e_i\otimes e_j^*\). Expanding any column and row in these two coordinates verifies both composites. Multiplication respects both outer matrix actions, so the isomorphism and its inverse are bimodule maps.
+
+ 
+Row-column multiplication is balanced over \(S\), since \((cA)b=c(Ab)\). It gives a \(k\)-\(k\) bimodule map \(C\otimes_SB\to k\), \(c\otimes b\mapsto cb\). Every tensor expands into sums of scalar multiples of \(e_i^*\otimes e_j\), and balancing gives
+
+ \[e_i^*\otimes e_j=e_1^*E_{1i}\otimes e_j=e_1^*\otimes E_{1i}e_j=\delta_{ij}e_1^*\otimes e_1.\] 
+Here \(\delta_{ij}\) is \(1\) for \(i=j\) and \(0\) otherwise. Thus the inverse is \(a\mapsto a e_1^*\otimes e_1\); the preceding equation and \(e_1^*e_1=1\) verify both composites. We have proved both inverse-bimodule identities, so \hyperref[env-10-5]{Theorem 10.5} gives \(k\text{-Mod}\simeq M_2(k)\text{-Mod}\).
+
+
+\par\smallskip{\normalfont\small See \cite[\S\S1.11, 3.5 and 3.12]{crawley}, \cite[Ch. I]{morita}.}\par
+
+\end{mathdefinition}
+ 
+\paragraph{Sources and further reading.}
+\cite[\S\S1.11, 3.5 and 3.12]{crawley}, \cite[Ch. I]{morita}.
+\clearpage
+\begin{thebibliography}{9}
+\bibitem{freyd} Peter J. Freyd, \emph{Abelian Categories}, Harper \& Row, New York, 1964. Reprinted in \emph{Reprints in Theory and Applications of Categories} 3 (2003). \url{https://tac.mta.ca/tac/reprints/articles/3/tr3abs.html}.
+\bibitem{maclane} Saunders Mac Lane, \emph{Categories for the Working Mathematician}, 2nd ed., Graduate Texts in Mathematics 5, Springer, New York, 1998. \href{https://doi.org/10.1007/978-1-4757-4721-8}{doi:10.1007/978-1-4757-4721-8}.
+\bibitem{crawley} William Crawley-Boevey, \emph{Noncommutative Algebra}, Bielefeld University notes, Winter Semester 2016/17. \url{https://www.math.uni-bielefeld.de/~wcrawley/1617noncommalg/Noncommutative\%20algebra.pdf}.
+\bibitem{watts} Charles E. Watts, Intrinsic characterizations of some additive functors, \emph{Proceedings of the American Mathematical Society} \textbf{11} (1960), no.~1, 5--8. \href{https://doi.org/10.1090/S0002-9939-1960-0118757-0}{doi:10.1090/S0002-9939-1960-0118757-0}.
+\bibitem{morita} Kiiti Morita, Duality for modules and its applications to the theory of rings with minimum condition, \emph{Science Reports of the Tokyo Kyoiku Daigaku, Section A} \textbf{6} (1958), no.~150, 83--142. \url{https://tsukuba.repo.nii.ac.jp/records/20226}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,380 @@
+{
+  "routes": [
+    {
+      "id": "CommonMackeyIntersectionSum",
+      "deps": [
+        "MixedCrossingsThroughSmallerGroup",
+        "MackeyIdentityDiagram"
+      ],
+      "available": [
+        {
+          "module": "Proofs.MixedCrossingsThroughSmallerGroup",
+          "declaration": "MixedCrossingsThroughSmallerGroup",
+          "revision": "sha256:6ec2bfdb74aa9d89cb0fce4006f1dd0357f2c63282df1ea5af357c688e481115",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/MixedCrossingsThroughSmallerGroup.lean#L24",
+          "use": "At a fixed representative, any S ≤ L_j of finite relative index has finite mixed fibers and outer composite equal to the relative index times the full outer composite."
+        },
+        {
+          "module": "Proofs.MackeyIdentityDiagram",
+          "declaration": "MackeyIdentityDiagram",
+          "revision": "sha256:066f03d08b179469a8583984d3264ccb1e2ce33c70cbef71a5bba328f5dd58ed",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/MackeyIdentityDiagram.lean#L10",
+          "use": "For the actual representative section with the comap-subgroup double cosets, supplies full intersection fibers, the ordinary outer projection sum equal to identity and the reverse composite formulas."
+        },
+        {
+          "module": "Mathlib.GroupTheory.Index",
+          "declaration": "Subgroup.relIndex_ne_zero",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/GroupTheory/Index.lean#L700",
+          "use": "A finite relative index is nonzero, so its Complex cast can be inverted."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "revision": "sha256:533e75bc752c7bc1cdf9f37ac63a33dde70abf9f35d92496e985873d3f32913f",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedDrawing.lean#L16",
+          "use": "Stores a full typed family on any index type with a proof that at each input only finitely many evaluations are nonzero."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing.shape",
+          "revision": "sha256:533e75bc752c7bc1cdf9f37ac63a33dde70abf9f35d92496e985873d3f32913f",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedDrawing.lean#L31",
+          "use": "Keeps the one scope and the full family of shapes, independently of which values vanish at an input."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing.evalAt_eq_finsum",
+          "revision": "sha256:533e75bc752c7bc1cdf9f37ac63a33dde70abf9f35d92496e985873d3f32913f",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedDrawing.lean#L45",
+          "use": "For the given stored finiteSupport, computes evalAt x as the pointwise finsum over the full index type."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing.eval_apply",
+          "revision": "sha256:533e75bc752c7bc1cdf9f37ac63a33dde70abf9f35d92496e985873d3f32913f",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedDrawing.lean#L64",
+          "use": "The linear evaluation at x is evalAt x. Its audit includes Classical.choice, as does IndexedDrawing.eval."
+        },
+        {
+          "module": "MackeyDiagrams.IndexedDrawing",
+          "declaration": "MackeyDiagrams.IndexedDrawing.shape",
+          "revision": "sha256:81d91f9aceca3a90d9ac315298cd7988f57c0c22b3e6770d1ab1a5cb15afd0e6",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/IndexedDrawing.lean#L27",
+          "use": "Records the original finite index set and typed complete summands, retaining one scope even for empty or singleton selections."
+        },
+        {
+          "module": "MackeyDiagrams.IndexedDrawing",
+          "declaration": "MackeyDiagrams.IndexedDrawing.eval_apply",
+          "revision": "sha256:81d91f9aceca3a90d9ac315298cd7988f57c0c22b3e6770d1ab1a5cb15afd0e6",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/IndexedDrawing.lean#L35",
+          "use": "Evaluates at x by summing each complete evaluated drawing over the same fixed Finset."
+        }
+      ],
+      "approach": "Keep the queued connection's existing dependencies. The installed statement matches the checked correction manifest exactly. Reviewed candidate file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/lean-workflow-supervision/common-indexed-correction/Candidate.lean (sha256:5c33fc82a483781051b27e4b61912b4efa968f201405e6004354b0e95c48676b). Declaration audit file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/lean-workflow-supervision/common-indexed-correction/audit.log (sha256:a2c04784e0418de4190cf5a48572c2d0cb6990593c8e1cdb4a175e879c150659). The engine has now written the corrected Proofs.CommonMackeyIntersectionSum module and its .olean. The receipt binds both hashes and records a successful axiom audit. file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/CommonMackeyIntersectionSum-compile.json (sha256:5aa34aac5c968a4832651d7969f1ace239450806704950c7743877e635560c43). The engine owns registration and audit, with no additional rerun needed. Carry forward the existing per-coset comparison (using MixedCrossingsThroughSmallerGroup) and the ordinary identity and support calculation. For nonempty J₀ the corrected theorem keeps the two normalized and usual scopes over the same full selected type with their own per-input finite support; the index can be infinite. The separate finite-set clause retains both cup hypotheses and the whole finite indexed drawings. Each scalar acts on the corresponding complete stack and the reverse off-diagonal clauses stay separate. The source rendering and the earlier fold comparisons are recorded at file:///tmp/lean-agent-20yiqV/indexed-scope-review.json (sha256:ce3baa5ebb2b2fe559a2f26ed19530a8844935b8158e84ebba1b709f3c4a6595). Archived p. 17 and published p. 19 were checked separately. file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/source/mackey-bimodules.pdf#page=17 https://getcurious.cc/downloads/mackey-bimodules.pdf#page=19"
+    },
+    {
+      "id": "CaseSixProjectionNoLeftReplacement",
+      "deps": [
+        "EvaluationWithOneProjection"
+      ],
+      "available": [
+        {
+          "module": "Proofs.EvaluationWithOneProjection",
+          "declaration": "EvaluationWithOneProjection",
+          "revision": "sha256:ad1d09a3ac2a6883f169cf66c763ca69d72581a5007103029bf7cd55098bf223",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/EvaluationWithOneProjection.lean#L7",
+          "use": "Both reviewed single-projection shapes have column formulas for singleton labels with finite fibers, plus finite label extension. Match the supplier’s native tensor bracketing and its fiber target before specialization."
+        },
+        {
+          "module": "MackeyDiagrams.Associator",
+          "declaration": "MackeyDiagrams.Biset.associateBasisEquiv",
+          "revision": "sha256:435ba63a12852052e15b4a0aa42800e77de61eb15d85a7ca8a36314603302403",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Associator.lean#L67",
+          "use": "Explicitly relates ((X⊗Y)⊗Z) and (X⊗(Y⊗Z)) basis points for aligning the column supplier to the endpoint."
+        },
+        {
+          "module": "MackeyDiagrams.MixedIdentities",
+          "declaration": "MackeyDiagrams.Biset.Hom.transferBasis_sum",
+          "revision": "sha256:c739722827ee60ea5b7fc6c7ed0aa51bba24a6c551728259f89aeaf1cb4f0975",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/MixedIdentities.lean#L15",
+          "use": "Write an equivariant finite-fiber transfer column as the sum of singleton preimages."
+        },
+        {
+          "module": "MackeyDiagrams.ScopedCup",
+          "declaration": "MackeyDiagrams.ScopedDiagram.eval_linearCombination_apply",
+          "revision": "sha256:1089b5d24184f922dd7723d5a20b4a8b881918e23bf34634f73c1fb10a0d88e3",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/ScopedCup.lean#L161",
+          "use": "Expand an evaluated finite linear combination on the selected generator."
+        },
+        {
+          "module": "MackeyDiagrams.IndexedDrawing",
+          "declaration": "MackeyDiagrams.IndexedDrawing.shape",
+          "revision": "sha256:81d91f9aceca3a90d9ac315298cd7988f57c0c22b3e6770d1ab1a5cb15afd0e6",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/IndexedDrawing.lean#L27",
+          "use": "Records the original finite index set and typed complete summands, retaining one scope even for empty or singleton selections."
+        },
+        {
+          "module": "MackeyDiagrams.IndexedDrawing",
+          "declaration": "MackeyDiagrams.IndexedDrawing.eval_apply",
+          "revision": "sha256:81d91f9aceca3a90d9ac315298cd7988f57c0c22b3e6770d1ab1a5cb15afd0e6",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/IndexedDrawing.lean#L35",
+          "use": "Evaluates at x by summing each complete evaluated drawing over the same fixed Finset."
+        }
+      ],
+      "approach": "The reviewed statement is the already elaborated indexed correction, and its prior geometry hold is absent from the current owner holds. Reviewed candidate file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/lean-workflow-supervision/case-six-indexed-correction/Candidate.lean (sha256:3a1ce34eeceb6972a447dd99aa947dd6619f8bfd329239381fe9d8625cc8ea6e). Declaration audit file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/lean-workflow-supervision/case-six-indexed-correction/audit.log (sha256:5f1a1385256ab5710e427074863a0ed5722f4d82bdeb6ebcb238302d2b83c2b6).. The audit is for the proposition. It leaves the theorem proof to this route. Keep the single right diagram and the left sum with index Fin terms.length, all coefficient positions and matching eligibility premises. Keep both positive cup-index bounds. From the embeddings of H into B in the C₂ group, prove B=H. Conjugation is trivial, so β and γ are identity on H. Specialize EvaluationWithOneProjection to the two singleton-label columns, matching native parentheses with the named associator and using the actual compact transfer certificate at every projection. Prove that each x gives the left column indexed by s⁻¹rxt; the right all-one triple retains 1 and kills g. Extend left commutation to arbitrary finite lists at the three vertices by multilinearity of their evaluated crossings, handling repeated and zero entries as sums. IsLeft quantifies over these lists, so a proof only for one triple does not complete the claim. Next apply IndexedDrawing.eval_apply on every list position, use List.get_mem to get eligibility at that position, and sum the commutation identities. The right map fails on input 1 after applying translation, since output g is distinct from zero. This proves the evaluated inequality in the figure with the indexed geometry already fixed. Archived p. 28 and published p. 30 were checked separately. file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/source/mackey-bimodules.pdf#page=28 https://getcurious.cc/downloads/mackey-bimodules.pdf#page=30"
+    },
+    {
+      "id": "CaseFivePointwiseFiniteDiagramIdentity",
+      "deps": [
+        "ExpansionIntoRightDiagrams",
+        "RightOrbitDiagramFromProjectedStabilizer"
+      ],
+      "available": [
+        {
+          "module": "Proofs.RightOrbitDiagramFromProjectedStabilizer",
+          "declaration": "RightOrbitDiagramFromProjectedStabilizer",
+          "revision": "sha256:ace0942b26c7892db84b291398fcda28a445b16be2005508a9fb87e9041f5960",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/RightOrbitDiagramFromProjectedStabilizer.lean#L787",
+          "use": "For an orbit representative normalized to (input 1 r, output t s) with nonzero coefficient, supplies the projected stabilizer, admissible dot labels, finite projection fibers, and coefficient-one orbit columns."
+        },
+        {
+          "module": "Proofs.ExpansionIntoRightDiagrams",
+          "declaration": "ExpansionIntoRightDiagrams",
+          "revision": "sha256:bebb49d1d6148e82a9778915291f31452ccdbc556194af165b217f1f947b2a33",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/ExpansionIntoRightDiagrams.lean#L156",
+          "use": "The installed theorem supplies the pointwise expansion and the finite evaluated-map criterion. Its finite list evaluation uses the former fold; compare its value with the new indexed evaluation."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "revision": "sha256:533e75bc752c7bc1cdf9f37ac63a33dde70abf9f35d92496e985873d3f32913f",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedDrawing.lean#L16",
+          "use": "Stores a full typed family on any index type with a proof that at each input only finitely many evaluations are nonzero."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing.shape",
+          "revision": "sha256:533e75bc752c7bc1cdf9f37ac63a33dde70abf9f35d92496e985873d3f32913f",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedDrawing.lean#L31",
+          "use": "Keeps the one scope and the full family of shapes, independently of which values vanish at an input."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing.evalAt_eq_finsum",
+          "revision": "sha256:533e75bc752c7bc1cdf9f37ac63a33dde70abf9f35d92496e985873d3f32913f",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedDrawing.lean#L45",
+          "use": "For the given stored finiteSupport, computes evalAt x as the pointwise finsum over the full index type."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing.eval_apply",
+          "revision": "sha256:533e75bc752c7bc1cdf9f37ac63a33dde70abf9f35d92496e985873d3f32913f",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedDrawing.lean#L64",
+          "use": "The linear evaluation at x is evalAt x. Its audit includes Classical.choice, as does IndexedDrawing.eval."
+        },
+        {
+          "module": "MackeyDiagrams.IndexedDrawing",
+          "declaration": "MackeyDiagrams.IndexedDrawing.shape",
+          "revision": "sha256:81d91f9aceca3a90d9ac315298cd7988f57c0c22b3e6770d1ab1a5cb15afd0e6",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/IndexedDrawing.lean#L27",
+          "use": "Records the original finite index set and typed complete summands, retaining one scope even for empty or singleton selections."
+        },
+        {
+          "module": "MackeyDiagrams.IndexedDrawing",
+          "declaration": "MackeyDiagrams.IndexedDrawing.eval_apply",
+          "revision": "sha256:81d91f9aceca3a90d9ac315298cd7988f57c0c22b3e6770d1ab1a5cb15afd0e6",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/IndexedDrawing.lean#L35",
+          "use": "Evaluates at x by summing each complete evaluated drawing over the same fixed Finset."
+        },
+        {
+          "module": "Mathlib.Algebra.BigOperators.Fin",
+          "declaration": "Fin.sum_univ_fun_getElem",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/BigOperators/Fin.lean#L93",
+          "use": "For an additive commutative monoid, a sum over all Fin list positions applied to list indexing equals the sum of the corresponding mapped list, keeping repeated positions."
+        }
+      ],
+      "approach": "The current installed type matches the reviewed candidate. Its earlier geometry hold has been cleared by the engine. Reviewed candidate file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/lean-workflow-supervision/case-five-indexed-correction/Candidate.lean (sha256:a624dd95c3b7240e3081587b01034d5b19494a566e98fc0d6a0a4fa7ffd5420a). Declaration audit file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/lean-workflow-supervision/case-five-indexed-correction/audit.log (sha256:2cf4ba38b7290f9386742dacc7981b7bd55e4c0cbedc1582a0029ba87ec49b92).. Normalize any supported pair by first writing the source and target points using the mixed basis, then act by the inverse of the source G coordinate so the representative has the specified form (input 1 r, output t s). Equivariance transports the coefficient to that representative. Apply RightOrbitDiagramFromProjectedStabilizer at the actual evaluated left map M to get the pointwise-finite coefficient-one orbit drawing and its finite-fiber witness. Package the full supported orbit family with each displayed weight on its complete right drawing. For each x only the finitely many source basis terms in x can contribute, and for each such basis point the possible output coordinates are in the finite support of its M column. The orbit coefficient condition bounds the nonzero scaled summands by that finite union. At a symbolic x compare coefficients via the unique input–output orbit and use the exact evalAt equality with the fixed PointwiseIndexedDrawing. The shape and coefficients remain stored even when the input makes every summand vanish. For the finite iff, use ExpansionIntoRightDiagrams and prove a local evaluated-map bridge between its list-fold expression and IndexedDrawing over Fin terms.length. Use IndexedDrawing.eval_apply, Fin.sum_univ_fun_getElem and linearity. This preserves all finite positions, including the empty and singleton cases. Establish existence of a finite diagram expression separately via the finite orbit criterion. Archived p. 27 and published p. 29 were checked separately. file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/source/mackey-bimodules.pdf#page=27 https://getcurious.cc/downloads/mackey-bimodules.pdf#page=29 Theorem 6.7 is on archived p. 26 and published p. 28."
+    },
+    {
+      "id": "TwoMackeySummandsWithSameInternalLabels",
+      "deps": [
+        "CommonMackeyIntersectionSum",
+        "MackeyIdentityDiagram"
+      ],
+      "available": [
+        {
+          "module": "Proofs.CommonMackeyIntersectionSum",
+          "declaration": "CommonMackeyIntersectionSum",
+          "revision": "sha256:fefcd91f7e528afa25c97c3cef8cf1ccbac5e8f959f4ab53c338826a9774914d",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/CommonMackeyIntersectionSum.lean#L203",
+          "use": "The exact corrected theorem is compiled in this workspace. Its first conjunct works at any S ≤ L_j of finite relative index. The selected-family conjunct fixes S to the full intersection and gives both pointwise normalized sums and finite cup sums with both cup hypotheses. The registered theorem audits with propext, Classical.choice and Quot.sound."
+        },
+        {
+          "module": "Proofs.MackeyIdentityDiagram",
+          "declaration": "MackeyIdentityDiagram",
+          "revision": "sha256:066f03d08b179469a8583984d3264ccb1e2ce33c70cbef71a5bba328f5dd58ed",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/MackeyIdentityDiagram.lean#L10",
+          "use": "For the actual representative section with the comap-subgroup double cosets, supplies full intersection fibers, the ordinary outer projection sum equal to identity and the reverse composite formulas."
+        },
+        {
+          "module": "Mathlib.GroupTheory.Index",
+          "declaration": "Subgroup.relIndex_ne_zero",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/GroupTheory/Index.lean#L700",
+          "use": "A finite relative index is nonzero, so its Complex cast can be inverted."
+        },
+        {
+          "module": "Mathlib.GroupTheory.DoubleCoset",
+          "declaration": "DoubleCoset.eq",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/GroupTheory/DoubleCoset.lean#L124",
+          "use": "Equality of quotient classes iff an element can be written as left and right subgroup factors around the other."
+        },
+        {
+          "module": "Mathlib.Algebra.Group.Subgroup.Lattice",
+          "declaration": "Subgroup.topEquiv",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Group/Subgroup/Lattice.lean#L126",
+          "use": "Identify the endpoint’s G=⊤ subtype with its product ambient group for transferring the quotient classifier."
+        },
+        {
+          "module": "Mathlib.Algebra.Group.End",
+          "declaration": "Equiv.swap_apply_apply",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Group/End.lean#L538",
+          "use": "Conjugating a swap gives the swap of the two images. Specialize on Fin 3 to identify the second Mackey subgroup."
+        },
+        {
+          "module": "Mathlib.Data.ZMod.QuotientGroup",
+          "declaration": "Nat.card_zpowers",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Data/ZMod/QuotientGroup.lean#L160",
+          "use": "Cardinality of the cyclic subgroup equals its generator’s order. Use the nontrivial involution in Fin 3."
+        },
+        {
+          "module": "Mathlib.SetTheory.Cardinal.Finite",
+          "declaration": "Nat.card_prod",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/SetTheory/Cardinal/Finite.lean#L227",
+          "use": "Cardinalities multiply for the subgroup product carrier after applying its component equivalence."
+        },
+        {
+          "module": "Mathlib.GroupTheory.Index",
+          "declaration": "Subgroup.relIndex_mul_card",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/GroupTheory/Index.lean#L364",
+          "use": "The relative index times cardinality of the intersection equals upper subgroup cardinality, giving 2 and 1 when L≤L_j."
+        },
+        {
+          "module": "MackeyDiagrams.HorizontalComposition",
+          "declaration": "MackeyDiagrams.Biset.Hom.horizontal_id",
+          "revision": "sha256:6f285aec79e47e8175326e915ce43e0bd6c2a2e4f9a3d15f28cc9847753551d2",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/HorizontalComposition.lean#L38",
+          "use": "The juxtaposed identity maps evaluate to identity on their tensor boundary."
+        }
+      ],
+      "approach": "Separate the finite group lemmas from evaluation. Write a=(01) and s=(02) in the endpoint’s zero-based Fin 3. Show the first-factor subgroup contains just 1 and a by involutivity. Classify a permutation by whether it fixes 2. The permutations fixing 2 lie in this subgroup; the remaining four are s, a*s, s*a, a*s*a. Prove this on the three point values by finite cases and permutation extensionality, without normalizing the diagram. The entire C₂ factor is in K, so DoubleCoset.eq yields exactly the two classes and their distinctness. Conjugation by s transports a to (21); the two first-factor involutions are distinct, so the two Mackey subgroups are K and L. Deduce their intersection is L, and use the source's centrality computation to reconcile the right embeddings with conjugators 1 and s⁻¹. L and K have cardinalities 2 and 4; use relIndex_mul_card to get the two reviewed indices. For evaluation instantiate CommonMackeyIntersectionSum at α=β=1, G=⊤ and the selection of both class representatives. Transfer the classifier via Subgroup.topEquiv so this supplier's ranges and MackeyIdentityDiagram's comaps describe the same quotient. Construct the prescribed two-valued section and compare the corresponding conjugation embeddings and dot elements. The common subgroup from the supplier is exactly L. Normalize its two restricted columns, then use MackeyIdentityDiagram for the identity of the full outer sum. At x, enlarge support to these two indices since outside the support every term is zero. Reindex only evaluations and check the reviewed drawing keeps the binary plus explicitly drawn in Example 5.1, with scale 1/2 on the first complete stack and the second complete stack unscaled. Coefficient 1 agrees after evaluation. The two standalone cup conditions are available here from the finite groups if using the finite-cup branch; the reviewed compact diagrams can use the finite mixed-fiber branch directly. The outdated publication identity sentence in the historical translation is superseded by file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/source-provenance-correction-20261128.json (sha256:68c3efbabca1117182f25486ee13bccf9cc51e2e4c4ebc013f665e4f5b500096). Archived p. 17 and published p. 19 were checked separately. file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/source/mackey-bimodules.pdf#page=17 https://getcurious.cc/downloads/mackey-bimodules.pdf#page=19"
+    },
+    {
+      "id": "LargestCommonMixedCrossingParabolic",
+      "deps": [
+        "CommonMackeyIntersectionSum",
+        "FiniteParabolicIntersectionBlocks",
+        "ExtremalParabolicsOfFiniteGroup",
+        "MixedCrossingsThroughSmallerGroup",
+        "MackeyInclusionAndProjectionCrossings"
+      ],
+      "available": [
+        {
+          "module": "Proofs.ExtremalParabolicsOfFiniteGroup",
+          "declaration": "ExtremalParabolicsOfFiniteGroup",
+          "revision": "sha256:bd3747339e5719bc68d76de86a0df15cb94618750c096df8bd137c7da55be06f",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/ExtremalParabolicsOfFiniteGroup.lean#L230",
+          "use": "For a finite subgroup of Perm Nat contained in the finitary subgroup, the closure of its swaps is its greatest parabolic subgroup."
+        },
+        {
+          "module": "MackeyDiagrams.Embedding",
+          "declaration": "MackeyDiagrams.ConjEmbedding.ext",
+          "revision": "sha256:aa3743ef693b2ba53a39bf55f97adcb03f9fc8330dce5203bab49b1f4a4566d5",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Embedding.lean#L23",
+          "use": "Evaluate the two conjugators on elements of S to reduce common labels to equality of the underlying homomorphisms."
+        },
+        {
+          "module": "Mathlib.Algebra.Group.Subgroup.Map",
+          "declaration": "MonoidHom.map_closure",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Group/Subgroup/Map.lean#L582",
+          "use": "Identify the closure in the finitary subgroup with the closure of the image swaps in Perm Nat."
+        },
+        {
+          "module": "Mathlib.Algebra.Group.Subgroup.Ker",
+          "declaration": "Subgroup.map_injective",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Group/Subgroup/Ker.lean#L566",
+          "use": "An injective monoid map detects equality of subgroups after mapping."
+        },
+        {
+          "module": "Mathlib.GroupTheory.Index",
+          "declaration": "Subgroup.relIndex_le_of_le_left",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/GroupTheory/Index.lean#L403",
+          "use": "If H ≤ K and H.relIndex L is nonzero then K.relIndex L ≤ H.relIndex L."
+        },
+        {
+          "module": "Mathlib.GroupTheory.Index",
+          "declaration": "Subgroup.relIndex_ne_zero",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/GroupTheory/Index.lean#L700",
+          "use": "A finite relative index is nonzero, so its Complex cast can be inverted."
+        },
+        {
+          "module": "Proofs.CommonMackeyIntersectionSum",
+          "declaration": "CommonMackeyIntersectionSum",
+          "revision": "sha256:fefcd91f7e528afa25c97c3cef8cf1ccbac5e8f959f4ab53c338826a9774914d",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/CommonMackeyIntersectionSum.lean#L203",
+          "use": "The exact corrected theorem is compiled in this workspace. Its first conjunct works at any S ≤ L_j of finite relative index. The selected-family conjunct fixes S to the full intersection and gives both pointwise normalized sums and finite cup sums with both cup hypotheses. The registered theorem audits with propext, Classical.choice and Quot.sound."
+        },
+        {
+          "module": "Proofs.MixedCrossingsThroughSmallerGroup",
+          "declaration": "MixedCrossingsThroughSmallerGroup",
+          "revision": "sha256:6ec2bfdb74aa9d89cb0fce4006f1dd0357f2c63282df1ea5af357c688e481115",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/MixedCrossingsThroughSmallerGroup.lean#L24",
+          "use": "At a fixed representative, any S ≤ L_j of finite relative index has finite mixed fibers and outer composite equal to the relative index times the full outer composite."
+        },
+        {
+          "module": "Proofs.MackeyInclusionAndProjectionCrossings",
+          "declaration": "MackeyCrossingProof.compact_inclusion",
+          "revision": "sha256:6edc10a2f83cb423f0d4ebbc42c5392ff17be4950c2868817496a082c73a0a2c",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/MackeyInclusionAndProjectionCrossings.lean#L40",
+          "use": "The coefficient-one labelled inclusion evaluates to the ordinary inclusion at the same dot and boundary."
+        },
+        {
+          "module": "Proofs.MackeyInclusionAndProjectionCrossings",
+          "declaration": "MackeyCrossingProof.compact_projection",
+          "revision": "sha256:6edc10a2f83cb423f0d4ebbc42c5392ff17be4950c2868817496a082c73a0a2c",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/MackeyInclusionAndProjectionCrossings.lean#L45",
+          "use": "The coefficient-one compact projection evaluates to the ordinary projection with the same dot and finite-fiber certificate."
+        },
+        {
+          "module": "MackeyDiagrams.IndexedDrawing",
+          "declaration": "MackeyDiagrams.IndexedDrawing.shape",
+          "revision": "sha256:81d91f9aceca3a90d9ac315298cd7988f57c0c22b3e6770d1ab1a5cb15afd0e6",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/IndexedDrawing.lean#L27",
+          "use": "Records the original finite index set and typed complete summands, retaining one scope even for empty or singleton selections."
+        },
+        {
+          "module": "MackeyDiagrams.IndexedDrawing",
+          "declaration": "MackeyDiagrams.IndexedDrawing.eval_apply",
+          "revision": "sha256:81d91f9aceca3a90d9ac315298cd7988f57c0c22b3e6770d1ab1a5cb15afd0e6",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/IndexedDrawing.lean#L35",
+          "use": "Evaluates at x by summing each complete evaluated drawing over the same fixed Finset."
+        }
+      ],
+      "approach": "Fix the actual σ and reference j₀. The left embeddings agree by extensionality. Right conjugation maps agree with the reference iff every σ j₀·(σ j)⁻¹ centralizes the subgroup; then all pairwise equalities follow. Hence admissible S is precisely parabolic S with S ≤ P in the reviewed definition. Prove G finite by restricting its block permutations to the union of its finite support blocks, then P finite by inclusion. Map P to Equiv.Perm Nat by the finitary inclusion. Apply ExtremalParabolicsOfFiniteGroup there and transport its greatest property back along the inclusion. Use MonoidHom.map_closure and injectivity, check swap membership in both directions, and match its parabolic predicate by taking the union of the finite partition blocks. Nonzero finite relative indices supply the monotonicity and the nonzero Complex denominators. For each j in the selected subtype use the newly compiled CommonMackeyIntersectionSum's arbitrary-S first conjunct with S equal to the constructed swap closure, or the direct MixedCrossingsThroughSmallerGroup theorem. This arbitrary-subgroup clause supplies both fiber certificates and the ordinary per-term normalization. Its separate selected-family normalization fixes S to the full intersection and can apply only if that subgroup agrees with this hull. Rewrite the ordinary comparisons to the exact coefficient-one labelled stacks with the compact adapters. At symbolic x compare the two finite IndexedDrawings over the same univ of the selected subtype, cancelling the finite nonzero index and using IndexedDrawing.eval_apply. Keep the separate outer scopes at singleton selection. Use the current source-provenance record for the published revision, which differs from the historical cited download. Archived p. 35 and published p. 37 were checked separately. file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/source/mackey-bimodules.pdf#page=35 https://getcurious.cc/downloads/mackey-bimodules.pdf#page=37"
+    }
+  ],
+  "repairs": [],
+  "holds": []
+}

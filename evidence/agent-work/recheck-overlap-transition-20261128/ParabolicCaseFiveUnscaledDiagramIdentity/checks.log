@@ -1,0 +1,241 @@
+ParabolicCaseFiveCoefficientOneExpansion :
+  have Sinf := Subgroup.closure {σ | σ.IsSwap};
+  let U := ↥Sinf;
+  have blockSym := fun X => Equiv.Perm.ofSubtype.range;
+  have parabolic := fun H =>
+    ∃ n blocks,
+      (∀ (l : Fin n), (blocks l).Nonempty) ∧
+        (Pairwise fun l m => Disjoint (blocks l) (blocks m)) ∧ Subgroup.map Sinf.subtype H = ⨆ l, blockSym (blocks l);
+  ∀ (G A D F C E : Subgroup U),
+    parabolic G →
+      parabolic A →
+        parabolic D →
+          parabolic F →
+            parabolic C →
+              parabolic E →
+                ∀ (a : MackeyDiagrams.ConjEmbedding A G) (b : MackeyDiagrams.ConjEmbedding A D)
+                  (d : MackeyDiagrams.ConjEmbedding F D) (c : MackeyDiagrams.ConjEmbedding C G)
+                  (e : MackeyDiagrams.ConjEmbedding C E) (f : MackeyDiagrams.ConjEmbedding F E),
+                  let up := @MackeyDiagrams.Word.up U Sinf.toGroup;
+                  let down := @MackeyDiagrams.Word.down U Sinf.toGroup;
+                  let tensor := @MackeyDiagrams.Word.tensor U Sinf.toGroup;
+                  let comp := @MackeyDiagrams.ConjEmbedding.comp U Sinf.toGroup;
+                  let ga := up a;
+                  let ad := down b;
+                  let df := up d;
+                  let gc := up c;
+                  let ce := down e;
+                  let ef := up f;
+                  let bottom := tensor ga (tensor ad df);
+                  let top := tensor gc (tensor ce ef);
+                  let X := bottom.basis;
+                  let Y := top.basis;
+                  let Pair := X.carrier × Y.carrier;
+                  have input := fun g x =>
+                    ga.basis.pair (tensor ad df).basis g (MackeyDiagrams.Generator.mixedPair b d x);
+                  have output := fun g y =>
+                    gc.basis.pair (tensor ce ef).basis g (MackeyDiagrams.Generator.mixedPair e f y);
+                  have pair := fun r t s => (input 1 r, output t s);
+                  have orbit := MulAction.orbit (↥G × ↥F);
+                  have stabilizer := MulAction.stabilizer (↥G × ↥F);
+                  have projected := fun z => Subgroup.map (F.subtype.comp (MonoidHom.snd ↥G ↥F)) (stabilizer z);
+                  have swaps := fun P => Subgroup.closure {σ | σ ∈ P ∧ (↑σ).IsSwap};
+                  have coefficient := fun M z => (M.toLinearMap (Finsupp.single z.1 1)) z.2;
+                  have matrix := fun O n z => if z ∈ O then ↑n else 0;
+                  let RightData := fun B' =>
+                    (i : MackeyDiagrams.ConjEmbedding B' A) ×
+                      (j : MackeyDiagrams.ConjEmbedding B' F) ×
+                        (k : MackeyDiagrams.ConjEmbedding B' C) ×
+                          MackeyDiagrams.Dot (comp b i) (comp d j) ×
+                            MackeyDiagrams.Dot (comp a i) (comp c k) × MackeyDiagrams.Dot (comp e k) (comp f j);
+                  have labels := fun {B'} x =>
+                    match x with
+                    | ⟨fst, ⟨fst_1, ⟨fst_2, (r, t, s)⟩⟩⟩ => (r.element, t.element, s.element);
+                  have representative := fun {B'} data =>
+                    match labels data with
+                    | (r, t, s) => pair r t s;
+                  have toF := fun {B'} x =>
+                    match x with
+                    | ⟨fst, ⟨j, ⟨fst_1, (fst_2, ⋯)⟩⟩⟩ => j.toHom;
+                  have isInclusion := fun {B'} data => ∀ (h : ↥B'), ↑((toF data) h) = ↑h;
+                  let Fiber := fun {B'} x =>
+                    match x with
+                    | ⟨i, ⟨j, ⋯⟩⟩ => (tensor (up i) (down j)).basis.carrier;
+                  let lowerMap := fun {B'} x =>
+                    match (motive := (x : RightData B') → ⋯) x with
+                    | ⟨i, ⋯⟩ => MackeyDiagrams.Generator.mixedMultiplicationBasis b d i j r;
+                  let finiteFibers := fun {B'} data => ∀ (z : ⋯), ⋯;
+                  have drawId := fun {K H} p => ⋯;
+                  have eval := ⋯;
+                  ⋯
+ParabolicRightOrbitMultiplicity :
+  have Sinf := Subgroup.closure {σ | σ.IsSwap};
+  let U := ↥Sinf;
+  have blockSym := fun X => Equiv.Perm.ofSubtype.range;
+  have parabolic := fun H =>
+    ∃ n blocks,
+      (∀ (l : Fin n), (blocks l).Nonempty) ∧
+        (Pairwise fun l m => Disjoint (blocks l) (blocks m)) ∧ Subgroup.map Sinf.subtype H = ⨆ l, blockSym (blocks l);
+  ∀ (G A D F C E : Subgroup U),
+    parabolic G →
+      parabolic A →
+        parabolic D →
+          parabolic F →
+            parabolic C →
+              parabolic E →
+                ∀ (a : MackeyDiagrams.ConjEmbedding A G) (b : MackeyDiagrams.ConjEmbedding A D)
+                  (d : MackeyDiagrams.ConjEmbedding F D) (c : MackeyDiagrams.ConjEmbedding C G)
+                  (e : MackeyDiagrams.ConjEmbedding C E) (f : MackeyDiagrams.ConjEmbedding F E),
+                  let up := @MackeyDiagrams.Word.up U Sinf.toGroup;
+                  let down := @MackeyDiagrams.Word.down U Sinf.toGroup;
+                  let tensor := @MackeyDiagrams.Word.tensor U Sinf.toGroup;
+                  let comp := @MackeyDiagrams.ConjEmbedding.comp U Sinf.toGroup;
+                  let ga := up a;
+                  let ad := down b;
+                  let df := up d;
+                  let gc := up c;
+                  let ce := down e;
+                  let ef := up f;
+                  let bottom := tensor ga (tensor ad df);
+                  let top := tensor gc (tensor ce ef);
+                  let X := bottom.basis;
+                  let Y := top.basis;
+                  let Pair := X.carrier × Y.carrier;
+                  have input := fun g x =>
+                    ga.basis.pair (tensor ad df).basis g (MackeyDiagrams.Generator.mixedPair b d x);
+                  have output := fun g y =>
+                    gc.basis.pair (tensor ce ef).basis g (MackeyDiagrams.Generator.mixedPair e f y);
+                  have pair := fun r t s => (input 1 r, output t s);
+                  have orbit := MulAction.orbit (↥G × ↥F);
+                  have stabilizer := MulAction.stabilizer (↥G × ↥F);
+                  have projected := fun z => Subgroup.map (F.subtype.comp (MonoidHom.snd ↥G ↥F)) (stabilizer z);
+                  have swaps := fun P => Subgroup.closure {σ | σ ∈ P ∧ (↑σ).IsSwap};
+                  have coefficient := fun M z => (M.toLinearMap (Finsupp.single z.1 1)) z.2;
+                  have matrix := fun O n z => if z ∈ O then ↑n else 0;
+                  let RightData := fun B' =>
+                    (i : MackeyDiagrams.ConjEmbedding B' A) ×
+                      (j : MackeyDiagrams.ConjEmbedding B' F) ×
+                        (k : MackeyDiagrams.ConjEmbedding B' C) ×
+                          MackeyDiagrams.Dot (comp b i) (comp d j) ×
+                            MackeyDiagrams.Dot (comp a i) (comp c k) × MackeyDiagrams.Dot (comp e k) (comp f j);
+                  have labels := fun {B'} x =>
+                    match x with
+                    | ⟨fst, ⟨fst_1, ⟨fst_2, (r, t, s)⟩⟩⟩ => (r.element, t.element, s.element);
+                  have representative := fun {B'} data =>
+                    match labels data with
+                    | (r, t, s) => pair r t s;
+                  have toA := fun {B'} x =>
+                    match x with
+                    | ⟨i, ⟨fst, ⟨fst_1, (fst_2, ⋯)⟩⟩⟩ => i.toHom;
+                  have toF := fun {B'} x =>
+                    match x with
+                    | ⟨fst, ⟨j, ⟨fst_1, ⋯⟩⟩⟩ => j.toHom;
+                  have toC := fun {B'} x =>
+                    match x with
+                    | ⟨fst, ⟨fst_1, ⋯⟩⟩ => k.toHom;
+                  have restricts := fun {P K} term full hK => labels term = labels full ∧ ⋯ ∧ ⋯;
+                  have image := fun {B'} data => ⋯.range;
+                  have isInclusion := fun {B'} data => ⋯;
+                  let Fiber := ⋯;
+                  ⋯
+SupportedLeftOrbitProjectedStabilizer :
+  have finitary := Subgroup.closure {σ | σ.IsSwap};
+  let U := ↥finitary;
+  have blockSym := fun S => Equiv.Perm.ofSubtype.range;
+  have parabolic := fun H =>
+    ∃ n blocks,
+      (∀ (i : Fin n), (blocks i).Nonempty) ∧
+        (Pairwise fun i j => Disjoint (blocks i) (blocks j)) ∧
+          Subgroup.map finitary.subtype H = ⨆ i, blockSym (blocks i);
+  ∀ {G A D F C E B : Subgroup U},
+    parabolic G →
+      parabolic A →
+        parabolic D →
+          parabolic F →
+            parabolic C →
+              parabolic E →
+                parabolic B →
+                  ∀ (a : MackeyDiagrams.ConjEmbedding A G) (b : MackeyDiagrams.ConjEmbedding A D)
+                    (d : MackeyDiagrams.ConjEmbedding F D) (c : MackeyDiagrams.ConjEmbedding C G)
+                    (e : MackeyDiagrams.ConjEmbedding C E) (f : MackeyDiagrams.ConjEmbedding F E)
+                    (u : MackeyDiagrams.ConjEmbedding G B) (v : MackeyDiagrams.ConjEmbedding D B)
+                    (w : MackeyDiagrams.ConjEmbedding E B),
+                    let up := @MackeyDiagrams.Word.up U finitary.toGroup;
+                    let down := @MackeyDiagrams.Word.down U finitary.toGroup;
+                    let tensor := @MackeyDiagrams.Word.tensor U finitary.toGroup;
+                    let comp := @MackeyDiagrams.ConjEmbedding.comp U finitary.toGroup;
+                    ∀ (r : MackeyDiagrams.Dot (comp u a) (comp v b)) (t : MackeyDiagrams.Dot (comp v d) (comp w f))
+                      (s : MackeyDiagrams.Dot (comp u c) (comp w e)),
+                      let upperProduct := MackeyDiagrams.Generator.mixedMultiplicationBasis u w c e s;
+                      ∃ (leftFinite :
+                        ∀
+                          (z :
+                            ((MackeyDiagrams.Biset.restriction u).tensor (MackeyDiagrams.Biset.induction w)).carrier),
+                          {p | upperProduct p = z}.Finite),
+                        let ga := up a;
+                        let ad := down b;
+                        let df := up d;
+                        let gc := up c;
+                        let ce := down e;
+                        let ef := up f;
+                        let du := down u;
+                        let uv := up v;
+                        let uw := up w;
+                        let bottom := tensor ga (tensor ad df);
+                        let top := tensor gc (tensor ce ef);
+                        let X := bottom.basis;
+                        let Y := top.basis;
+                        have input := fun g x =>
+                          (MackeyDiagrams.Biset.induction a).pair (tensor ad df).basis g
+                            (MackeyDiagrams.Generator.mixedPair b d x);
+                        have output := fun h y =>
+                          (MackeyDiagrams.Biset.induction c).pair (tensor ce ef).basis h
+                            (MackeyDiagrams.Generator.mixedPair e f y);
+                        have stack :=
+                          @MackeyDiagrams.LabelledDrawing.vertical U finitary.toGroup ℂ Complex.instCommSemiring;
+                        have juxtapose :=
+                          @MackeyDiagrams.LabelledDrawing.horizontal U finitary.toGroup ℂ Complex.instCommSemiring;
+                        have ordinary :=
+                          @MackeyDiagrams.LabelledDrawing.ordinary U finitary.toGroup ℂ Complex.instCommSemiring;
+                        have first :=
+                          juxtapose (MackeyDiagrams.LabelledDrawing.mixedMultiplication u v a b ⋯)
+                            (ordinary (MackeyDiagrams.Diagram.id df));
+                        have middle := MackeyDiagrams.LabelledDrawing.parallelUp v d w f ⋯;
+                        have last := ⋯;
+                        ⋯
+Finsupp.induction.{u_1, u_3} {ι : Type u_1} {M : Type u_3} [AddZeroClass M] {motive : (ι →₀ M) → Prop} (f : ι →₀ M)
+  (zero : motive 0)
+  (single_add : ∀ (a : ι) (b : M) (f : ι →₀ M), a ∉ f.support → b ≠ 0 → motive f → motive (Finsupp.single a b + f)) :
+  motive f
+Finsupp.induction_linear.{u_1, u_3} {ι : Type u_1} {M : Type u_3} [AddZeroClass M] {motive : (ι →₀ M) → Prop}
+  (f : ι →₀ M) (zero : motive 0) (add : ∀ (f g : ι →₀ M), motive f → motive g → motive (f + g))
+  (single : ∀ (a : ι) (b : M), motive (Finsupp.single a b)) : motive f
+Finsupp.mapRange.addMonoidHom.{u_1, u_3, u_4} {ι : Type u_1} {M : Type u_3} {N : Type u_4} [AddCommMonoid M]
+  [AddCommMonoid N] (f : M →+ N) : (ι →₀ M) →+ ι →₀ N
+Finsupp.mapRange.addMonoidHom_apply.{u_1, u_3, u_4} {ι : Type u_1} {M : Type u_3} {N : Type u_4} [AddCommMonoid M]
+  [AddCommMonoid N] (f : M →+ N) (g : ι →₀ M) : (Finsupp.mapRange.addMonoidHom f) g = Finsupp.mapRange ⇑f ⋯ g
+Finsupp.mapRange_apply.{u_1, u_4, u_5} {α : Type u_1} {M : Type u_4} {N : Type u_5} [Zero M] [Zero N] {f : M → N}
+  {hf : f 0 = 0} {g : α →₀ M} {a : α} : (Finsupp.mapRange f hf g) a = f (g a)
+Finsupp.mapRange_single.{u_1, u_4, u_5} {α : Type u_1} {M : Type u_4} {N : Type u_5} [Zero M] [Zero N] {f : M → N}
+  {hf : f 0 = 0} {a : α} {b : M} : Finsupp.mapRange f hf (Finsupp.single a b) = Finsupp.single a (f b)
+Nat.castAddMonoidHom.{u_3} (α : Type u_3) [AddMonoidWithOne α] : ℕ →+ α
+AddMonoidHom.map_list_sum.{u_4, u_5} {M : Type u_4} {N : Type u_5} [AddMonoid M] [AddMonoid N] (f : M →+ N)
+  (l : List M) : f l.sum = (List.map (⇑f) l).sum
+Finset.sum_toList.{u_7} {M : Type u_7} [AddCommMonoid M] (s : Finset M) : s.toList.sum = ∑ x ∈ s, x
+Check.lean:15:7: error(lean.unknownIdentifier): Unknown constant `Finset.sum_toList_map`
+List.sum_toFinset.{u_1, u_5} {ι : Type u_1} {M : Type u_5} [DecidableEq ι] [AddCommMonoid M] (f : ι → M) {l : List ι}
+  (_hl : l.Nodup) : l.toFinset.sum f = (List.map f l).sum
+List.sum_eq_foldr.{u} {α : Type u} [Add α] [Zero α] {l : List α} : l.sum = List.foldr (fun x1 x2 => x1 + x2) 0 l
+Finset.sum_apply'.{u_1, u_2, u_4} {α : Type u_1} {ι : Type u_2} {A : Type u_4} [AddCommMonoid A] {s : Finset α}
+  {f : α → ι →₀ A} (i : ι) : (∑ k ∈ s, f k) i = ∑ k ∈ s, (f k) i
+Set.Finite.of_finite_image.{u, v} {α : Type u} {β : Type v} {s : Set α} {f : α → β} (h : (f '' s).Finite)
+  (hi : Set.InjOn f s) : s.Finite
+Finite.of_surjective.{u_3, u_4} {α : Sort u_3} {β : Sort u_4} [Finite α] (f : α → β) (H : Function.Surjective f) :
+  Finite β
+Finsupp.smul_single_one.{u_1, u_6} {α : Type u_1} {R : Type u_6} [MulZeroOneClass R] (a : α) (b : R) :
+  b • Finsupp.single a 1 = Finsupp.single a b
+Nat.cast_injective.{u_1} {R : Type u_1} [AddMonoidWithOne R] [CharZero R] : Function.Injective Nat.cast
+Subgroup.relIndex_ne_zero.{u_1} {G : Type u_1} [Group G] {H K : Subgroup G} [H.IsFiniteRelIndex K] : H.relIndex K ≠ 0
+Subgroup.finiteIndex_of_finite.{u_1} {G : Type u_1} [Group G] {H : Subgroup G} [Finite G] : H.FiniteIndex
+Finite.of_injective.{u_3, u_4} {α : Sort u_3} {β : Sort u_4} [Finite β] (f : α → β) (H : Function.Injective f) :
+  Finite α

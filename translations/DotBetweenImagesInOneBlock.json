@@ -1,0 +1,6 @@
+{
+  "type": "let U := Equiv.Perm (Fin 4)\nlet B : Finset (Fin 4) := {0, 1}\nlet H : Subgroup U := iInf (fun x : {x : Fin 4 // x ∉ B} => MulAction.stabilizer U x.val)\nlet G : Subgroup U := ⊤\nlet α : U := 1\nlet β : U := Equiv.swap (1 : Fin 4) 2\nlet a : MackeyDiagrams.ConjEmbedding H G :=\n  MackeyDiagrams.ConjEmbedding.ofConjugator α (fun _ => Subgroup.mem_top _)\nlet b : MackeyDiagrams.ConjEmbedding H G :=\n  MackeyDiagrams.ConjEmbedding.ofConjugator β (fun _ => Subgroup.mem_top _)\nFinset.image (fun x => α x) B ≠ Finset.image (fun x => β x) B ∧\n  ∃ d : MackeyDiagrams.Dot a b, (MackeyDiagrams.Dot.element d : U) = β",
+  "value": null,
+  "source": "article",
+  "sourceReason": "Ian Xiao, Example 3.4 [ex:dot-in-one-block], p. 11. The published PDF matches the project copy byte for byte. Zero-based Fin 4 labels encode the paper’s {1,2} as {0,1} and its (2 3) as the swap of 1 and 2. The source subgroup fixes the complement of the block pointwise, and the target is all of S₄. https://getcurious.cc/downloads/mackey-bimodules.pdf\n\nThe supplied defect-report URL returned HTTP 404 with and without a trailing slash. The task context supplies no correction for this endpoint. https://getcurious.cc/articles/math-bimodule-string-diagrams/prerequisite-omissions-and-potential-defects"
+}

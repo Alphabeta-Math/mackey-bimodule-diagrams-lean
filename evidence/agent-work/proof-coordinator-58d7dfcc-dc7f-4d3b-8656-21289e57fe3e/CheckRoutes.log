@@ -1,0 +1,44 @@
+MackeyDiagrams.IndexedDrawing.shape.{u, v, w} {U : Type u} [Group U] {K H : Subgroup U} {R : Type v} [CommSemiring R]
+  {p q : MackeyDiagrams.Word K H} {ι : Type w} (d : MackeyDiagrams.IndexedDrawing R p q ι) :
+  MackeyDiagrams.IndexedDrawing.Shape ι
+MackeyDiagrams.IndexedDrawing.eval_apply.{u, v, w} {U : Type u} [Group U] {K H : Subgroup U} {R : Type v}
+  [CommSemiring R] {p q : MackeyDiagrams.Word K H} {ι : Type w} (d : MackeyDiagrams.IndexedDrawing R p q ι)
+  (x : p.basis.carrier →₀ R) : d.eval x = ∑ i ∈ d.indices, (d.summand i).interpret.eval.toLinearMap x
+'MackeyDiagrams.IndexedDrawing.eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+MackeyDiagrams.PointwiseIndexedDrawing.shape.{u, v, w} {U : Type u} [Group U] {K H : Subgroup U} {R : Type v}
+  [CommSemiring R] {p q : MackeyDiagrams.Word K H} {ι : Type w} (d : MackeyDiagrams.PointwiseIndexedDrawing R p q ι) :
+  MackeyDiagrams.PointwiseIndexedDrawing.Shape ι
+MackeyDiagrams.PointwiseIndexedDrawing.evalAt_eq_finsum.{u, v, w} {U : Type u} [Group U] {K H : Subgroup U} {R : Type v}
+  [CommSemiring R] {p q : MackeyDiagrams.Word K H} {ι : Type w} (d : MackeyDiagrams.PointwiseIndexedDrawing R p q ι)
+  (x : p.basis.carrier →₀ R) : d.evalAt x = ∑ᶠ (i : ι), (d.summand i).interpret.eval.toLinearMap x
+MackeyDiagrams.PointwiseIndexedDrawing.eval_apply.{u, v, w} {U : Type u} [Group U] {K H : Subgroup U} {R : Type v}
+  [CommSemiring R] {p q : MackeyDiagrams.Word K H} {ι : Type w} (d : MackeyDiagrams.PointwiseIndexedDrawing R p q ι)
+  (x : p.basis.carrier →₀ R) : d.eval x = d.evalAt x
+'MackeyDiagrams.PointwiseIndexedDrawing.eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CommonMackeyIntersectionSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+Fin.sum_univ_fun_getElem.{u_1, u_2} {ι : Type u_1} {M : Type u_2} [AddCommMonoid M] (l : List ι) (f : ι → M) :
+  ∑ i, f l[↑i] = (List.map f l).sum
+List.sum_ofFn.{u_2} {M : Type u_2} [AddCommMonoid M] {n : ℕ} {f : Fin n → M} : (List.ofFn f).sum = ∑ i, f i
+Nat.card_zpowers.{u_2} {α : Type u_2} [Group α] (a : α) : Nat.card ↥(Subgroup.zpowers a) = orderOf a
+Nat.card_prod.{u_3, u_4} (α : Type u_3) (β : Type u_4) : Nat.card (α × β) = Nat.card α * Nat.card β
+Subgroup.relIndex_mul_card.{u_1} {G : Type u_1} [Group G] (H K : Subgroup G) :
+  H.relIndex K * Nat.card ↥(H ⊓ K) = Nat.card ↥K
+Subgroup.relIndex_ne_zero.{u_1} {G : Type u_1} [Group G] {H K : Subgroup G} [H.IsFiniteRelIndex K] : H.relIndex K ≠ 0
+Subgroup.relIndex_le_of_le_left.{u_1} {G : Type u_1} [Group G] {H K L : Subgroup G} (hHK : H ≤ K)
+  (hHL : H.relIndex L ≠ 0) : K.relIndex L ≤ H.relIndex L
+Subgroup.topEquiv.{u_1} {G : Type u_1} [Group G] : ↥⊤ ≃* G
+Equiv.swap_apply_apply.{u_4} {α : Type u_4} [DecidableEq α] (f : Equiv.Perm α) (x y : α) :
+  Equiv.swap (f x) (f y) = f * Equiv.swap x y * f⁻¹
+MonoidHom.map_closure.{u_1, u_4} {G : Type u_1} [Group G] {N : Type u_4} [Group N] (f : G →* N) (s : Set G) :
+  Subgroup.map f (Subgroup.closure s) = Subgroup.closure (⇑f '' s)
+MackeyDiagrams.ConjEmbedding.ext.{u_1} {U : Type u_1} [Group U] {H G : Subgroup U}
+  {a b : MackeyDiagrams.ConjEmbedding H G} (h : a.toHom = b.toHom) : a = b
+Equiv.swap_mul_self.{u_4} {α : Type u_4} [DecidableEq α] (i j : α) : Equiv.swap i j * Equiv.swap i j = 1
+List.get_mem.{u_1} {α : Type u_1} (l : List α) (n : Fin l.length) : l.get n ∈ l
+List.getElem_mem.{u_1} {α : Type u_1} {l : List α} {n : ℕ} (h : n < l.length) : l[n] ∈ l
+MackeyDiagrams.Biset.associateBasisEquiv.{u} {K H J F : Type u} [Group K] [Group H] [Group J] [Group F]
+  (X : MackeyDiagrams.Biset K H) (Y : MackeyDiagrams.Biset H J) (Z : MackeyDiagrams.Biset J F) :
+  ((X.tensor Y).tensor Z).carrier ≃ (X.tensor (Y.tensor Z)).carrier
+MackeyDiagrams.Biset.Hom.horizontal_id.{u, v} {K H J : Type u} [Group K] [Group H] [Group J] {R : Type v}
+  [CommSemiring R] (X : MackeyDiagrams.Biset K H) (Y : MackeyDiagrams.Biset H J) :
+  (MackeyDiagrams.Biset.Hom.id X).horizontal (MackeyDiagrams.Biset.Hom.id Y) = MackeyDiagrams.Biset.Hom.id (X.tensor Y)

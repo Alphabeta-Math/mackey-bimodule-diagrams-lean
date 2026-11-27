@@ -1,0 +1,19 @@
+import Batteries.Tactic.OpenPrivate
+import MackeyDiagrams
+import Proofs.EvaluationForTwoProjections
+open MackeyDiagrams
+open private EvaluationForTwoProjectionsAux.index_formula EvaluationForTwoProjectionsAux.lower_le
+  EvaluationForTwoProjectionsAux.pulls_left EvaluationForTwoProjectionsAux.of_pulls
+  EvaluationForTwoProjectionsAux.leftDot EvaluationForTwoProjectionsAux.parameter_ext
+  EvaluationForTwoProjectionsAux.weighted_compact EvaluationForTwoProjectionsAux.weighted_atLeft
+  EvaluationForTwoProjectionsAux.map_weighted EvaluationForTwoProjectionsAux.composeAround
+  from Proofs.EvaluationForTwoProjections
+#check EvaluationForTwoProjectionsAux.index_formula
+#check EvaluationForTwoProjectionsAux.pulls_left
+#check EvaluationForTwoProjectionsAux.of_pulls
+#check EvaluationForTwoProjectionsAux.leftDot
+#check EvaluationForTwoProjectionsAux.parameter_ext
+#check EvaluationForTwoProjectionsAux.weighted_compact
+#check EvaluationForTwoProjectionsAux.weighted_atLeft
+#check EvaluationForTwoProjectionsAux.map_weighted
+#check EvaluationForTwoProjectionsAux.composeAround

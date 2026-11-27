@@ -1,0 +1,16 @@
+import MackeyDiagrams
+import Proofs.ParabolicExtremalOutsideRestrictionRegions
+import Proofs.ParabolicCaseTwoProjectionFiberIndices
+import Proofs.EvaluationForTwoProjections
+
+open MackeyDiagrams
+open private parabolic_region_bounds parabolic_finite left_project_eval
+  leftParameter lower_le_max leftBound inclusion inclusion_range lift_through
+  conjugated conjugated_range restrictTo finite_mixed conj conj_one OutsideRegionsAux.conj_mul
+  from Proofs.ParabolicExtremalOutsideRestrictionRegions
+#check parabolic_region_bounds
+#check left_project_eval
+#check lift_through
+#check conj_mul
+#print axioms ParabolicCaseTwoProjectionFiberIndices
+#print axioms OutsideRegionsAux.left_project_eval

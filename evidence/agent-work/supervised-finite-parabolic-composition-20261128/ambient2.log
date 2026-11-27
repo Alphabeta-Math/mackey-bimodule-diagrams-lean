@@ -1,0 +1,360 @@
+Ambient.lean:44:71: error(lean.unknownIdentifier): Unknown constant `Prod.one_def`
+Ambient.lean:42:49: error: unsolved goals
+K H J : Type
+inst✝⁴ : Group K
+inst✝³ : Group H
+inst✝² : Group J
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+W : Type u_1
+inst✝¹ : AddCommGroup W
+inst✝ : Module ℂ W
+b : ↑X →ₗ[ℂ] ↑Y →ₗ[ℂ] W
+hb : GroupBalanced X Y b
+h : H
+x : ↑X
+y : ↑Y
+he : (b ((X.ρ (1, 1)) x)) ((Y.ρ (h, 1)) y) = (b ((X.ρ (1, h⁻¹)) x)) y
+⊢ (b ((X.ρ (1, h⁻¹)) x)) y = (b x) ((Y.ρ (h, 1)) y)
+Ambient.lean:56:60: error(lean.unknownIdentifier): Unknown constant `Prod.one_def`
+Ambient.lean:56:4: error: Type mismatch: After simplification, term
+  hh
+ has type
+  (b ((X.ρ (1, 1)) x)) y = (b ((X.ρ (1, t)) x)) ((Y.ρ (t, 1)) y)
+but is expected to have type
+  (b x) y = (b ((X.ρ (1, t)) x)) ((Y.ρ (t, 1)) y)
+Ambient.lean:64:33: error(lean.invalidField): Invalid field `tprod`: The environment does not contain `MonoidHom.tprod`, so it is not possible to project the field `tprod` from an expression
+  MonoidHom.comp X.ρ (MonoidHom.inr K H)
+of type `H →* ↑X →ₗ[ℂ] ↑X`
+Ambient.lean:76:2: error: Type mismatch
+  TensorProduct.map_tmul ?m.73 ?m.74 ?m.75 ?m.76
+has type
+  (TensorProduct.map ?m.73 ?m.74) (?m.75 ⊗ₜ[?m.56] ?m.76) = ?m.73 ?m.75 ⊗ₜ[?m.57] ?m.74 ?m.76
+but is expected to have type
+  ((middle X Y) h) (x ⊗ₜ[ℂ] y) = (X.ρ (1, h)) x ⊗ₜ[ℂ] (Y.ρ (h, 1)) y
+Ambient.lean:116:8: error: Function expected at
+  TensorProduct.lift.tmul b x
+but this term has type
+  (TensorProduct.lift ?m.86) (b ⊗ₜ[?m.72] x) = (?m.86 b) x
+
+Note: Expected a function because this term is being applied to the argument
+  y
+Ambient.lean:142:16: error(lean.unknownIdentifier): Unknown constant `Prod.one_def`
+Ambient.lean:140:18: error: unsolved goals
+K H J F : Type
+inst✝³ : Group K
+inst✝² : Group H
+inst✝¹ : Group J
+inst✝ : Group F
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+⊢ ∀ (x : ↑X) (y : ↑Y), (exterior X Y 1) ((mk (middle X Y)) (x ⊗ₜ[ℂ] y)) = (mk (middle X Y)) (x ⊗ₜ[ℂ] y)
+Ambient.lean:143:18: error: unsolved goals
+K H J F : Type
+inst✝³ : Group K
+inst✝² : Group H
+inst✝¹ : Group J
+inst✝ : Group F
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+g h : K × J
+x : ↑X
+y : ↑Y
+⊢ (exterior X Y (g * h)) ((mk (middle X Y)) (x ⊗ₜ[ℂ] y)) =
+    (exterior X Y g) ((exterior X Y h) ((mk (middle X Y)) (x ⊗ₜ[ℂ] y)))
+Ambient.lean:149:14: warning: This simp argument is unused:
+  ← prodRep_mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Prod.mk_mul_mk]
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:149:35: warning: This simp argument is unused:
+  Prod.mk_mul_mk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [← prodRep_mul_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:162:35: error(lean.unknownIdentifier): Unknown constant `Prod.one_def`
+Ambient.lean:160:87: error: unsolved goals
+K H J : Type
+inst✝² : Group K
+inst✝¹ : Group H
+inst✝ : Group J
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+a : MonoidAlgebra ℂ K
+b : MonoidAlgebra ℂ J
+x : ↑X
+y : ↑Y
+⊢ ∑ x_1 ∈ b.coeff.support, b.coeff x_1 • (mk (middle X Y)) (x ⊗ₜ[ℂ] (Y.ρ (1, x_1⁻¹)) y) =
+    ∑ a ∈ b.coeff.support, b.coeff a • ((tensor X Y).ρ (1, a⁻¹)) ((mk (middle X Y)) (x ⊗ₜ[ℂ] y))
+Ambient.lean:165:32: error(lean.unknownIdentifier): Unknown constant `Prod.one_def`
+Ambient.lean:159:73: error: unsolved goals
+K H J : Type
+inst✝² : Group K
+inst✝¹ : Group H
+inst✝ : Group J
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+a : MonoidAlgebra ℂ K
+b : MonoidAlgebra ℂ J
+x : ↑X
+y : ↑Y
+right : ((pure X Y) x) (rightAct Y b y) = rightAct (tensor X Y) b (((pure X Y) x) y)
+⊢ ∑ x_1 ∈ a.coeff.support,
+      a.coeff x_1 • ∑ c ∈ b.coeff.support, b.coeff c • (mk (middle X Y)) ((X.ρ (x_1, 1)) x ⊗ₜ[ℂ] (Y.ρ (1, c⁻¹)) y) =
+    ∑ x_1 ∈ a.coeff.support,
+      a.coeff x_1 •
+        ((tensor X Y).ρ (x_1, 1))
+          (∑ x_2 ∈ b.coeff.support, b.coeff x_2 • (mk (middle X Y)) (x ⊗ₜ[ℂ] (Y.ρ (1, x_2⁻¹)) y))
+Ambient.lean:199:40: error: unsolved goals
+K H J F : Type
+inst✝³ : Group K
+inst✝² : Group H
+inst✝¹ : Group J
+inst✝ : Group F
+X X' : Rep ℂ (K × H)
+Y Y' : Rep ℂ (H × J)
+f : X ⟶ X'
+g : Y ⟶ Y'
+h : K × J
+x : ↑X
+y : ↑Y
+⊢ (tensorMapLinear f g ∘ₗ (tensor X Y).ρ h) ((mk (middle X Y)) (x ⊗ₜ[ℂ] y)) =
+    ((tensor X' Y').ρ h ∘ₗ tensorMapLinear f g) ((mk (middle X Y)) (x ⊗ₜ[ℂ] y))
+Ambient.lean:206:10: warning: This simp argument is unused:
+  Rep.hom_comm_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:217:16: error: unsolved goals
+K H J F : Type
+inst✝³ : Group K
+inst✝² : Group H
+inst✝¹ : Group J
+inst✝ : Group F
+X X' : Rep ℂ (K × H)
+Y Y' : Rep ℂ (H × J)
+f : X ≅ X'
+g : Y ≅ Y'
+x : ↑X
+y : ↑Y
+⊢ ((Rep.Hom.hom (tensorMap f.inv g.inv)).comp (Rep.Hom.hom (tensorMap f.hom g.hom))) ((mk (middle X Y)) (x ⊗ₜ[ℂ] y)) =
+    id ((mk (middle X Y)) (x ⊗ₜ[ℂ] y))
+Ambient.lean:221:16: error: unsolved goals
+K H J F : Type
+inst✝³ : Group K
+inst✝² : Group H
+inst✝¹ : Group J
+inst✝ : Group F
+X X' : Rep ℂ (K × H)
+Y Y' : Rep ℂ (H × J)
+f : X ≅ X'
+g : Y ≅ Y'
+x : ↑X'
+y : ↑Y'
+⊢ ((Rep.Hom.hom (tensorMap f.hom g.hom)).comp (Rep.Hom.hom (tensorMap f.inv g.inv))) ((mk (middle X' Y')) (x ⊗ₜ[ℂ] y)) =
+    id ((mk (middle X' Y')) (x ⊗ₜ[ℂ] y))
+Ambient.lean:252:14: error(lean.unknownIdentifier): Unknown constant `Prod.one_def`
+Ambient.lean:251:85: error: unsolved goals
+K H J F : Type
+inst✝¹³ : Group K
+inst✝¹² : Group H
+inst✝¹¹ : Group J
+inst✝¹⁰ : Group F
+V₁ V₂ V₃ V₄ V₅ : Type u
+inst✝⁹ : AddCommGroup V₁
+inst✝⁸ : Module ℂ V₁
+inst✝⁷ : AddCommGroup V₂
+inst✝⁶ : Module ℂ V₂
+inst✝⁵ : AddCommGroup V₃
+inst✝⁴ : Module ℂ V₃
+inst✝³ : AddCommGroup V₄
+inst✝² : Module ℂ V₄
+inst✝¹ : AddCommGroup V₅
+inst✝ : Module ℂ V₅
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+h : H
+x : ↑X
+y : ↑Y
+z : ↑Z
+⊢ ((tensor Y Z).ρ (h, 1)) ((mk (middle Y Z)) (y ⊗ₜ[ℂ] z)) = (mk (middle Y Z)) ((Y.ρ (h, 1)) y ⊗ₜ[ℂ] z)
+Ambient.lean:256:87: error: unsolved goals
+K H J F : Type
+inst✝³ : Group K
+inst✝² : Group H
+inst✝¹ : Group J
+inst✝ : Group F
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+x : ↑X
+y : ↑Y
+z : ↑Z
+⊢ ((lift X Y { toFun := fun x => (pure Y Z).compr₂ ((pure X (tensor Y Z)) x), map_add' := ⋯, map_smul' := ⋯ } ⋯)
+        ((mk (middle X Y)) (x ⊗ₜ[ℂ] y)))
+      z =
+    ((pure X (tensor Y Z)) x) ((mk (middle Y Z)) (y ⊗ₜ[ℂ] z))
+Ambient.lean:257:8: warning: declaration uses `sorry`
+Ambient.lean:267:12: error(lean.unknownIdentifier): Unknown constant `Prod.one_def`
+Ambient.lean:260:49: error: unsolved goals
+K H J F : Type
+inst✝¹³ : Group K
+inst✝¹² : Group H
+inst✝¹¹ : Group J
+inst✝¹⁰ : Group F
+V₁ V₂ V₃ V₄ V₅ : Type u
+inst✝⁹ : AddCommGroup V₁
+inst✝⁸ : Module ℂ V₁
+inst✝⁷ : AddCommGroup V₂
+inst✝⁶ : Module ℂ V₂
+inst✝⁵ : AddCommGroup V₃
+inst✝⁴ : Module ℂ V₃
+inst✝³ : AddCommGroup V₄
+inst✝² : Module ℂ V₄
+inst✝¹ : AddCommGroup V₅
+inst✝ : Module ℂ V₅
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+h : J
+p : ↑(tensor X Y)
+z : ↑Z
+x : ↑X
+y : ↑Y
+⊢ ((assocForwardInner X Y Z).flip ((Z.ρ (h, 1)) z) ∘ₗ (tensor X Y).ρ (1, h)) ((mk (middle X Y)) (x ⊗ₜ[ℂ] y)) =
+    ((assocForwardInner X Y Z) ((mk (middle X Y)) (x ⊗ₜ[ℂ] y))) z
+Ambient.lean:267:26: warning: This simp argument is unused:
+  pure_balanced Y Z h y z
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [← Prod.one_def]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:271:46: error: unsolved goals
+K H J F : Type
+inst✝³ : Group K
+inst✝² : Group H
+inst✝¹ : Group J
+inst✝ : Group F
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+x : ↑X
+y : ↑Y
+z : ↑Z
+⊢ (lift (tensor X Y) Z (assocForwardInner X Y Z) ⋯) (((pure (tensor X Y) Z) ((mk (middle X Y)) (x ⊗ₜ[ℂ] y))) z) =
+    ((pure X (tensor Y Z)) x) ((mk (middle Y Z)) (y ⊗ₜ[ℂ] z))
+Ambient.lean:272:8: warning: declaration uses `sorry`
+Ambient.lean:282:14: error(lean.unknownIdentifier): Unknown constant `Prod.one_def`
+Ambient.lean:281:85: error: unsolved goals
+K H J F : Type
+inst✝¹³ : Group K
+inst✝¹² : Group H
+inst✝¹¹ : Group J
+inst✝¹⁰ : Group F
+V₁ V₂ V₃ V₄ V₅ : Type u
+inst✝⁹ : AddCommGroup V₁
+inst✝⁸ : Module ℂ V₁
+inst✝⁷ : AddCommGroup V₂
+inst✝⁶ : Module ℂ V₂
+inst✝⁵ : AddCommGroup V₃
+inst✝⁴ : Module ℂ V₃
+inst✝³ : AddCommGroup V₄
+inst✝² : Module ℂ V₄
+inst✝¹ : AddCommGroup V₅
+inst✝ : Module ℂ V₅
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+h : J
+y : ↑Y
+z : ↑Z
+x : ↑X
+⊢ ((tensor X Y).ρ (1, h)) ((mk (middle X Y)) (x ⊗ₜ[ℂ] y)) = (mk (middle X Y)) (x ⊗ₜ[ℂ] (Y.ρ (1, h)) y)
+Ambient.lean:286:88: error: unsolved goals
+K H J F : Type
+inst✝³ : Group K
+inst✝² : Group H
+inst✝¹ : Group J
+inst✝ : Group F
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+x : ↑X
+y : ↑Y
+z : ↑Z
+⊢ ((lift Y Z
+          (↑LinearMap.lflip ∘ₗ
+              { toFun := fun x => (pure X Y).compr₂ ((pure (tensor X Y) Z).flip x), map_add' := ⋯,
+                map_smul' := ⋯ }).flip
+          ⋯)
+        ((mk (middle Y Z)) (y ⊗ₜ[ℂ] z)))
+      x =
+    ((pure (tensor X Y) Z) ((mk (middle X Y)) (x ⊗ₜ[ℂ] y))) z
+Ambient.lean:287:8: warning: declaration uses `sorry`
+Ambient.lean:287:44: warning: This simp argument is unused:
+  LinearMap.lflip_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [assocBackwardInner, nestedBilinear]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:297:12: error(lean.unknownIdentifier): Unknown constant `Prod.one_def`
+Ambient.lean:290:55: error: unsolved goals
+K H J F : Type
+inst✝¹³ : Group K
+inst✝¹² : Group H
+inst✝¹¹ : Group J
+inst✝¹⁰ : Group F
+V₁ V₂ V₃ V₄ V₅ : Type u
+inst✝⁹ : AddCommGroup V₁
+inst✝⁸ : Module ℂ V₁
+inst✝⁷ : AddCommGroup V₂
+inst✝⁶ : Module ℂ V₂
+inst✝⁵ : AddCommGroup V₃
+inst✝⁴ : Module ℂ V₃
+inst✝³ : AddCommGroup V₄
+inst✝² : Module ℂ V₄
+inst✝¹ : AddCommGroup V₅
+inst✝ : Module ℂ V₅
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+h : H
+x : ↑X
+p : ↑(tensor Y Z)
+y : ↑Y
+z : ↑Z
+⊢ ((assocBackwardInner X Y Z).flip ((X.ρ (1, h)) x) ∘ₗ (tensor Y Z).ρ (h, 1)) ((mk (middle Y Z)) (y ⊗ₜ[ℂ] z)) =
+    ((assocBackwardInner X Y Z) ((mk (middle Y Z)) (y ⊗ₜ[ℂ] z))) x
+Ambient.lean:297:26: warning: This simp argument is unused:
+  pure_balanced X Y h x y
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [← Prod.one_def]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:301:46: error: unsolved goals
+K H J F : Type
+inst✝³ : Group K
+inst✝² : Group H
+inst✝¹ : Group J
+inst✝ : Group F
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+x : ↑X
+y : ↑Y
+z : ↑Z
+⊢ (lift X (tensor Y Z) (assocBackwardInner X Y Z).flip ⋯) (((pure X (tensor Y Z)) x) ((mk (middle Y Z)) (y ⊗ₜ[ℂ] z))) =
+    ((pure (tensor X Y) Z) ((mk (middle X Y)) (x ⊗ₜ[ℂ] y))) z
+Ambient.lean:302:8: warning: declaration uses `sorry`

@@ -1,0 +1,2 @@
+import Proofs.TwoMackeySummandsWithSameInternalLabels
+#print axioms TwoMackeySummandsWithSameInternalLabels

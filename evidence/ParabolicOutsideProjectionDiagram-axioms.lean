@@ -1,0 +1,2 @@
+import Proofs.ParabolicOutsideProjectionDiagram
+#print axioms ParabolicOutsideProjectionDiagram

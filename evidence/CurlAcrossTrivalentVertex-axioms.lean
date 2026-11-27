@@ -1,0 +1,2 @@
+import Proofs.CurlAcrossTrivalentVertex
+#print axioms CurlAcrossTrivalentVertex

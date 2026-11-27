@@ -1,0 +1,2 @@
+import Proofs.FiniteParabolicJoinBlocks
+#print axioms FiniteParabolicJoinBlocks

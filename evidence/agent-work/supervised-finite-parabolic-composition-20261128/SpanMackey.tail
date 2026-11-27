@@ -1,0 +1,85 @@
+
+open MackeyDiagrams ParabolicTensorSupport
+
+private theorem conjugate_mul (p q : P) (L : Subgroup P) :
+    conjugate (p * q) L = conjugate p (conjugate q L) := by
+  change L.map (MulAut.conj (p * q)).toMonoidHom =
+    (L.map (MulAut.conj q).toMonoidHom).map (MulAut.conj p).toMonoidHom
+  rw [Subgroup.map_map]
+  congr 1
+  apply MonoidHom.ext
+  intro x
+  change (p * q) * x * (p * q)⁻¹ = p * (q * x * q⁻¹) * p⁻¹
+  group
+
+private theorem middleMackey {A B H : Subgroup P} (α β : P)
+    (hA : conjugate α A ≤ H) (hB : conjugate β B ≤ H)
+    (r : Cosets H (conjugate α A) (conjugate β B) → H)
+    (hr : ∀ j, classOf H (conjugate α A) (conjugate β B) (r j) = j)
+    (L : Cosets H (conjugate α A) (conjugate β B) → Subgroup P)
+    (hL : L = fun j => conjugate α A ⊓ conjugate (r j : P) (conjugate β B))
+    (l : ∀ j, ConjEmbedding (L j) A) (m : ∀ j, ConjEmbedding (L j) B)
+    (hl : ∀ j (t : L j), ((l j).toHom t : P) = α⁻¹ * (t : P) * (α⁻¹)⁻¹)
+    (hm : ∀ j (t : L j), ((m j).toHom t : P) = (β⁻¹ * (r j : P)⁻¹) * (t : P) *
+        (β⁻¹ * (r j : P)⁻¹)⁻¹) :
+    Nonempty (linearize.{u} ((Biset.restriction (embed α hA)).tensor (Biset.induction (embed β hB))) ≅
+      linearize.{u} (sumBasis (fun j => (pairWord (l j) (m j)).basis))) := by
+  classical
+  have hL' : L = fun j => conjugate α A ⊓ conjugate ((r j : P) * β) B := by
+    rw [hL]
+    funext j
+    rw [conjugate_mul]
+  clear hL
+  subst L
+  let l' (j : Cosets H (conjugate α A) (conjugate β B)) :=
+    inverseEmbed α (show (conjugate α A ⊓ conjugate ((r j : P) * β) B) ≤ _ from inf_le_left)
+  let m' (j : Cosets H (conjugate α A) (conjugate β B)) :=
+    inverseEmbed ((r j : P) * β) (show (conjugate α A ⊓ conjugate ((r j : P) * β) B) ≤ _ from inf_le_right)
+  have hleft : l = l' := by
+    funext j
+    apply ConjEmbedding.ext
+    apply MonoidHom.ext
+    intro x
+    apply Subtype.ext
+    exact hl j x
+  have hright : m = m' := by
+    funext j
+    apply ConjEmbedding.ext
+    apply MonoidHom.ext
+    intro x
+    apply Subtype.ext
+    refine (hm j x).trans ?_
+    rw [mul_inv_rev]
+    rfl
+  rw [hleft, hright]
+  -- Theorem 2.2 supplies the actual equivariant linear direct sum for
+  -- every quotient section. Theorem 7.4 was used above for existence of the
+  -- ordered section, while this clause also permits arbitrary sections.
+  obtain ⟨hcoord, _, _, _, _, _, _, ⟨e, _, he⟩, _⟩ :=
+    GeneralizedMackeyDecomposition.{0,0} A B H α β hA hB r hr
+  let W := (Biset.restriction (embed α hA)).tensor (Biset.induction (embed β hB))
+  let coords : (W.carrier →₀ Complex) ≃ₗ[Complex] MonoidAlgebra Complex H :=
+    (Finsupp.domLCongr (Generator.mixedEquiv (embed α hA) (embed β hB))).trans
+      (MonoidAlgebra.coeffLinearEquiv Complex).symm
+  let Y := fun j => (pairWord (l' j) (m' j)).basis
+  -- Identify each supplied right homomorphism with the inverse of rβ.
+  -- Both conjugate by the same permutation (rβ)⁻¹ = β⁻¹r⁻¹.
+  have bridge (j : Cosets H (conjugate α A) (conjugate β B))
+      (w : ∀ t : (conjugate α A ⊓ conjugate ((r j : P) * β) B),
+        (β⁻¹ * (r j : P)⁻¹) * (t : P) * (β⁻¹ * (r j : P)⁻¹)⁻¹ ∈ B) :
+      ConjEmbedding.ofConjugator (β⁻¹ * (r j : P)⁻¹) w = m' j := by
+    apply ConjEmbedding.ext
+    apply MonoidHom.ext
+    intro t
+    apply Subtype.ext
+    change (β⁻¹ * (r j : P)⁻¹) * (t : P) * (β⁻¹ * (r j : P)⁻¹)⁻¹ =
+      ((r j : P) * β)⁻¹ * (t : P) * (((r j : P) * β)⁻¹)⁻¹
+    rw [mul_inv_rev]
+  dsimp only at e he
+  simp only [bridge] at e he
+  let equiv : (W.carrier →₀ Complex) ≃ₗ[Complex] (Π₀ j, (Y j).carrier →₀ Complex) :=
+    coords.trans e
+  refine ⟨mackeyBisetIso W Y equiv ?_⟩
+  intro g x j
+  change e (coords (W.actLinear Complex g x)) j = (Y j).actLinear Complex g (e (coords x) j)
+  exact (congrArg (fun z => e z j) (hcoord g x)).trans (he g (coords x) j)

@@ -1,0 +1,2 @@
+import Proofs.MackeyOrthogonalityDiagram
+#print axioms MackeyOrthogonalityDiagram

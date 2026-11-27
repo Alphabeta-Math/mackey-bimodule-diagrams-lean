@@ -1,0 +1,2 @@
+import Proofs.FiniteParabolicBimoduleBicategory
+#print axioms FiniteParabolicBimoduleBicategory

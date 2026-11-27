@@ -1,0 +1,5 @@
+{
+  "id": "SmallProjectiveGeneratorCorrespondence",
+  "reason": "Exact reviewed theorem checked in the original workspace with ordinary choice; the separate choice-free auxiliary remains open.",
+  "proof": "by exact ReviewedSmallGeneratorConnection"
+}

@@ -1,0 +1,6 @@
+import MackeyDiagrams
+import Proofs.FiniteIndexReverseAdjunction
+import Proofs.RightCurlAndDotSlide
+
+set_option maxHeartbeats 2000000
+

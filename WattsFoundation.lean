@@ -1,0 +1,1 @@
+-- The exact Eilenberg–Watts proof is imported explicitly by its workflow endpoint.

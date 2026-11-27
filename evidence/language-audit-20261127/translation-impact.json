@@ -1,0 +1,1214 @@
+{
+  "total": 151,
+  "directlyReferencesChangedLanguageDeclarations": 0,
+  "rows": [
+    {
+      "id": "Bimodule",
+      "kind": "definition",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "RegularModuleRightAction",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "CanonicalWattsComparison",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "WattsFreePresentation",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "NaturalTransformationsOfTensorFunctors",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "SmallProjectiveGenerator",
+      "kind": "definition",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ProjectiveGeneratorModuleReconstruction",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ModuleTensorUniversalProperty",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "BalancedTensorAssociativity",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "BimoduleTensorBicategoryCoherence",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "EilenbergWatts",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ComplexEilenbergWatts",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "SmallProjectiveGeneratorCorrespondence",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ConjugationEmbeddingCentralizerCoset",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "InductionRestrictionBimoduleStrands",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "GroupElementDotCriterion",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "InductionRestrictionAdjunction",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "FiniteIndexReverseAdjunction",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ReverseTriangleIdentities",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "InductionRestrictionMergesAndSplits",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "DiagrammaticFunctorCorrespondence",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "SurvivingCosetRepresentative",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "MixedCrossingFiberMaps",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "MackeyInclusionAndProjectionCrossings",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "MackeyIdentityDiagram",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "MackeySummandProjection",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "MackeyOrthogonalityDiagram",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "GeneralizedMackeyDecomposition",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "OrdinaryMackeyDecomposition",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "RightUpReidemeisterCurl",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "RightCurlAndDotSlide",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "InductionMergeDotSlide",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "InductionSplitDotSlide",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "RestrictionMergeDotSlide",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "RestrictionSplitDotSlide",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "DotBelowInsideAboveRightCurl",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "CurlWithCentralizingDot",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "MovingMergeDotBackToBranch",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "MovingSplitDotToOutputBranch",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "CurlAcrossTrivalentVertex",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "DifferentCurlIndices",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "LeftDownReidemeisterCurl",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "NormalizedIndexValuedReidemeisterCurls",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "NormalizedTrivalentCurl",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "RightInputDotSlideObstruction",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "InductionBimoduleOrbitSumBasis",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "FiniteOrbitSumDiagram",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "FiniteParabolicConjugateBlocks",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "FiniteParabolicIntersectionBlocks",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "FiniteParabolicJoinBlocks",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "FiniteParabolicClosure",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ExtremalParabolicsOfFiniteGroup",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "BlockwiseGroupElementDotCriterion",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "BlockSwapOrbitSumWithoutGroupDot",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "DotBetweenImagesInOneBlock",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "StrongerEmbeddingConditionSlideObstruction",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "SupportBoundsUnderComposition",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "SupportBoundsForInverseProduct",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "MultiplicationCapBend",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "TraceCapBend",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "OrdinaryCupBend",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ReverseCupBend",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "TrivalentBendIdentities",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "StraightMixedTrivalentVertices",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "RightDownReidemeisterCurl",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "LeftUpReidemeisterCurl",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ReidemeisterOne",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "TransportToMackeyRepresentative",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "MixedCrossingComposites",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "MixedReidemeisterTwoMackeyCancellation",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "MixedCrossingsThroughSmallerGroup",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "CommonMackeyIntersectionSum",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "TwoMackeySummandsWithSameInternalLabels",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "SinglePairCannotProjectOntoSeveralDoubleCosets",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "SinglePairIdentityCriterion",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParallelInductionProductDotAdmissibility",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParallelReidemeisterTwoInduction",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": true,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParallelReidemeisterTwoRestriction",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": true,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "StandardSymmetricGroupBraidRelation",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ThreeInductionCrossingMultipliers",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": true,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "MultipliersUnderRelabelling",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": true,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ThreeInductionReidemeisterThree",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": true,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ThreeInductionLabelsChangeOnRoundTrip",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": true,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "AlternativeThreeInductionInternalGroups",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": true,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "MixedCrossingFiniteFiberConvention",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "EvaluationForTwoProjections",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "CaseOneRightProjectionConstruction",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "CaseTwoLeftProjectionConstruction",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ReplacementForTwoProjections",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "CaseOneNoFiniteRightReplacement",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "CaseTwoRequiresSum",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ReplacementForTwoMultiplications",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": true,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "MixedMultiplicationLabelsChangeOnRoundTrip",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": true,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "CaseFiveLeftShapeEvaluation",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "CaseSixRightShapeEvaluation",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "EvaluationWithOneProjection",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "RightOrbitDiagramFromProjectedStabilizer",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": true,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ExpansionIntoRightDiagrams",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": true,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "CaseFivePointwiseFiniteDiagramIdentity",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": true,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "CaseFiveRequiresTwoTerms",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "CaseFiveRequiresInfiniteExpansion",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": true,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "CaseSixProjectionNoLeftReplacement",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicBlockOperationExample",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicDoubleCosetRepresentatives",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicMackeyIntersectionBlocks",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "TableauDoubleCosetRepresentativeInS6",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "OneSidedTableauCosetRepresentatives",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "TwoBlockDoubleCosetMatrices",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "StandardTwoBlockRepresentatives",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "EqualTwoBlockSubgroups",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "MackeyConjugationExchangesFactors",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ProductParabolicDoubleCosets",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ProductParabolicsWithOneDoubleCoset",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ProductParabolicsWithThreeDoubleCosets",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "TwoBlockSplitGivesFourIntersections",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "MackeyDecompositionWithParabolicRepresentatives",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "FiniteParabolicBicategoryComposition",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "FiniteParabolicBimoduleBicategory",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "FiniteParabolicJoinOfFamily",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicCurlsFromBlockRefinements",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicCurlFactorization",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicCurlJoinIntersection",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "UnequalParabolicCurlProducts",
+      "kind": "theorem",
+      "usesGroupElementDot": false,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "LargestCommonMixedCrossingParabolic",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicFullMackeyCancellation",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicSmallerMackeyReverseComposite",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "LargestCommonParabolicDependsOnRepresentatives",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicSharedRegionParallelInduction",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": true,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicSharedRegionParallelRestriction",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": true,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "SharedParabolicForParallelCrossings",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": true,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "FiniteParabolicSingleDiagramReplacements",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": true,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicExtremalThreeInductionRegions",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicExtremalThreeInductionExample",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicExtremalOutsideRestrictionRegions",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicCaseTwoProjectionFiberIndices",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicOutsideProjectionDiagram",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicOutsideMultiplicationDiagram",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "SmallerParabolicReducesProjectionFiber",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicCommonRightRegionForLinearLabels",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "SupportedLeftOrbitProjectedStabilizer",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicRightOrbitMultiplicity",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicCaseFiveCoefficientOneExpansion",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicRightDiagramSpanOverCommutativeRings",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicCaseFiveUnscaledDiagramIdentity",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicCaseSixStrictStabilizerObstruction",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": true,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicCaseSixReplacementThroughJoin",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicCaseSixObstructionAndReplacementFamily",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": true,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicCaseSixOrbitCoefficientVanishesInCharacteristicThree",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "CaseSixCounterexampleWithTrivialProjectedStabilizers",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "ParabolicCaseSixObstructionWithTrivialProjectedStabilizer",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    },
+    {
+      "id": "CaseSixReplacementThroughOverlappingBlocks",
+      "kind": "theorem",
+      "usesGroupElementDot": true,
+      "usesLinearLabelSyntax": false,
+      "changedLanguageNames": [],
+      "review": "pending independent recheck under owner dot convention"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "time": "2026-11-27T05:17:18.310923+00:00",
+  "kind": "library-language-verification",
+  "articleProofCredit": false,
+  "originalArticle": {
+    "pdfSha256": "bc57d13777e7df145b6dfd84029e0e9539fedb33d22b2823e14c096e4c3c12f2",
+    "texSha256": "e0e33e0ffe41479d6efa97a326e56486d12554154e802db1fee41cd327496327",
+    "pages": 43,
+    "reading": "Read complete original stored TeX, including TikZ definitions, and inspected all 43 PDF pages in rendered contact sheets. Source SHA256SUMS verified. References cited by the paper were not separately read in this language audit."
+  },
+  "ownerClarifications": [
+    "Every dot is a finite complex linear combination of termwise eligible group elements.",
+    "All saved translations must be rechecked after the convention change.",
+    "Identity-dot insertion on induction and restriction is an evaluation theorem, retaining the marked syntax."
+  ],
+  "findings": [
+    {
+      "scope": "generated formalization",
+      "finding": "Repeated Step 3 failures came from privately reconstructed shape/label grammars: coefficient-permission bits split the same geometry, finite linear labels were restricted to one-mark frames, projection presentations discarded syntax, and untyped raw shape domains allowed malformed stacks.",
+      "disposition": "Shared uniform finite labels, all twelve typed trivalent junctions, ordered positioned wiring modulo disjoint interchange, and genuine shape witnesses at a common orientation boundary."
+    },
+    {
+      "scope": "original paper",
+      "finding": "No original-article mathematical error established in this audit. The owner clarified the general dot-label convention. The explicit whole-algebra centralizing curl hypothesis is retained separately and must not be silently narrowed.",
+      "disposition": "Preserve original source and attribution; exact endpoint applicability goes through independent reviews."
+    }
+  ],
+  "lean": "leanprover/lean4:v4.36.0-rc2",
+  "mathlib": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+  "build": "lake build MackeyDiagrams succeeded, including LanguageChecks.",
+  "axiomAudit": {
+    "accepted": true,
+    "declarations": 40,
+    "allowed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "translationImpact": {
+    "saved": 151,
+    "directReferencesToChangedAPIs": 0,
+    "status": "All saved endpoints queued for three fresh independent reviews; source correspondence is not inferred from compilation."
+  },
+  "sources": {
+    "MackeyDiagrams.lean": "dfc91448ae31c986147b5ddcc579331790b72577725d81ff4529133989812ecf",
+    "MackeyDiagrams/AlgebraDot.lean": "4be5488dedff5b8fec0b4385b805f92476a0d533124e4b15210f01b8512cf596",
+    "MackeyDiagrams/Associator.lean": "435ba63a12852052e15b4a0aa42800e77de61eb15d85a7ca8a36314603302403",
+    "MackeyDiagrams/Balanced.lean": "c9bc152a75161903bbd1e32f5145c4c58d11398ae806b1ac426fe30dd228beb3",
+    "MackeyDiagrams/BentVertices.lean": "6a05964d782a0700a5adc98fd158b8eab16a50931cc4e372a37feedfff6b820c",
+    "MackeyDiagrams/Biset.lean": "0e1469df7139a937f649a741281d0891588ec589df0b46bd122cb390b5f6b252",
+    "MackeyDiagrams/Boundary.lean": "e6f5f86fde88be5d72d39e4221e2543b2ad08186598f8bd4252eb2a746fb0f76",
+    "MackeyDiagrams/BoundaryEvaluation.lean": "0882d9b673ab860edda4bbbd4c7a04995aeec3949278fbf12415561874af39f2",
+    "MackeyDiagrams/CupCapIdentities.lean": "4ef56a10595e48b202f7f15ac9671a32b70cf6534c92cd17fac474db443f9109",
+    "MackeyDiagrams/Diagram.lean": "71e5520da9171f024692c5ac4cd6045b4d087785070a6781839d4addba66ba31",
+    "MackeyDiagrams/Dot.lean": "c19f7d943afc8d4129fc03858864eb976a4beae4b5f9552b418d0804bf9508c7",
+    "MackeyDiagrams/DotChain.lean": "76e11c0267eccb963b92c8ae58be5e223ab761071ccf42909ac4d1f26ac7b0ee",
+    "MackeyDiagrams/DotLabels.lean": "582ad650cad815bc5aa04a5381bebabafad1adc6806deeea1581370e0fe10e60",
+    "MackeyDiagrams/DotSlideObstruction.lean": "b36d6a91ed9d16a9bd7591a926410b8f78955fb8eb7888d5fb59cc3e041560f4",
+    "MackeyDiagrams/DrawingShape.lean": "551876dfe50a2f3c871d6d2230c2c919d30a4de71cf683ce1a0c1f2c3d5151dd",
+    "MackeyDiagrams/Embedding.lean": "aa3743ef693b2ba53a39bf55f97adcb03f9fc8330dce5203bab49b1f4a4566d5",
+    "MackeyDiagrams/Generators.lean": "309c9bf934e1b32d08a8c25107f66ddf7d7a5abc7601f3beeb58152a934fac98",
+    "MackeyDiagrams/HorizontalComposition.lean": "6f285aec79e47e8175326e915ce43e0bd6c2a2e4f9a3d15f28cc9847753551d2",
+    "MackeyDiagrams/Identities.lean": "7796c8e3a56f678c6fdc1f578a029d8b7258ec724d2425ac6d6f17c847aa5302",
+    "MackeyDiagrams/LanguageChecks.lean": "b5b543b5e2d6dc1e3e7f2feff82d6155e66defa697762b504d34c69d48c332b7",
+    "MackeyDiagrams/Linear.lean": "9f22b655ebe182c336bd978ab77b26f639f504dfbd0fb2cce8f9b52f5f11413b",
+    "MackeyDiagrams/LinearDotComposition.lean": "8a2f2ab811886e1551011499fecf62754b0df0ce30435e43025bc4e656545eac",
+    "MackeyDiagrams/LinearDots.lean": "2b1254eace998a72daf1d033a892815daea97191c45b2488479fa5d8ef8f6eb8",
+    "MackeyDiagrams/MackeyDirectSum.lean": "3f19b122455e121d1b330e1b88b9581a6c451843b19bb8a8d2dd1b4081f3153a",
+    "MackeyDiagrams/MackeyInclusionExpansion.lean": "bae8fbc2909de9587b58ebd17ff83509e3783800cc32fb1db40a7c0dcdc0f24b",
+    "MackeyDiagrams/MackeyOrthogonality.lean": "08004608d65ba56d85f8a5ec83737ebc5ad68314dce98ac8fb6888c5680c7f8c",
+    "MackeyDiagrams/MackeySummand.lean": "daadca418c06fa2a901ff571b252446e745c8d9d26dae0148282a28ed4bac788",
+    "MackeyDiagrams/Mixed.lean": "afcb7c755c84989ddc812d98557f501290469d6d9e1136839c3618aa55c73ce0",
+    "MackeyDiagrams/MixedIdentities.lean": "c739722827ee60ea5b7fc6c7ed0aa51bba24a6c551728259f89aeaf1cb4f0975",
+    "MackeyDiagrams/MixedProjectionExpansion.lean": "e1bfa09edeecb252601f00e384422f3b5d4d3706eaebb8b0cb2054ea38e0a04d",
+    "MackeyDiagrams/OrdinaryCupTrace.lean": "f1383f13b55f1831cdb2fad0885bc1e66b146683d3543dacd8b7e8303af539ac",
+    "MackeyDiagrams/Parallel.lean": "4e8dfd35bb3a16e343607f728e8c990fc0b5382067970420485afe11c3aa852a",
+    "MackeyDiagrams/ParallelComposition.lean": "ccb81b9b5539ea0df4f80f0313d4791dd30e2d2d3889951bc8c354d16c340021",
+    "MackeyDiagrams/ParallelDotChain.lean": "abab81255e317f87b753f12346d3e1450b7de324d804029325392d0869c872a1",
+    "MackeyDiagrams/ParallelDown.lean": "3ca8424907ecc9773d95c7dccc3127f0788650a61acf7a3a2dfc7c44dc107bc1",
+    "MackeyDiagrams/ParallelUnit.lean": "6559d4691cb906b95ee9d2153f4cab1178e2cd66aaa7101c71a34e1140742d57",
+    "MackeyDiagrams/PlanarShape.lean": "da276779707d995f477ed2a18a6cb12d20259649865f42bb583cbdac2cf147cd",
+    "MackeyDiagrams/ProjectionDotChain.lean": "3c83c33ef5c25d09230440fbf8b326418019eccf760e1466856306d3b912101d",
+    "MackeyDiagrams/ProjectionFiber.lean": "be139d4bbb1f557a41436ae45c6aed3128772c28c746e8df641a0bf7588e8f04",
+    "MackeyDiagrams/Replacement.lean": "f1ee53485b5f5e66e054be2da80ed8fe74f57291c9e4ed5b2a4e532b2345051b",
+    "MackeyDiagrams/RightCurlLabels.lean": "8d15bfa0e054f0220aac901a991b90986eccc51fc8a4037e96748099ffd2e573",
+    "MackeyDiagrams/ScopedCup.lean": "1089b5d24184f922dd7723d5a20b4a8b881918e23bf34634f73c1fb10a0d88e3",
+    "MackeyDiagrams/ScopedCupEquivariance.lean": "a5cf0830e88238eb62f8b0a4dd4b0d902f5b300176f63baab5f52a9101f6e8d6",
+    "MackeyDiagrams/ScopedCupFinite.lean": "d696603fc4cd38440e2961f545e99c1ac4f3cfb9b5b880fe3a3263fbea0d3746",
+    "MackeyDiagrams/StructuralBasis.lean": "f53bbb62a3d7bd7c5f9c9e03f813a336727759f5b6a39322a80a666585acaded",
+    "MackeyDiagrams/Trace.lean": "477d2b80f0dfcde88984396e9c3ac984033edb279581c6d91cc12df523796527",
+    "MackeyDiagrams/Transfer.lean": "61db06af9cf58c5006e39a66df497eabd06a5456c310f10bcf1df4edc83ad5eb",
+    "MackeyDiagrams/Trivalent.lean": "38ac3656939cb746d918084f4ebc302cf53ed089ae6c8539287452e17059a08a",
+    "MackeyDiagrams/Unitors.lean": "14a6e9d8aec3e8ccdbe852df20c74b351f5ca95dbf89a0d3092198f6049d4133"
+  },
+  "artifacts": {
+    ".lake/build/lib/lean/MackeyDiagrams/Trivalent.olean.hash": "1db910ba82df39fe9f4640848469bd2b28c65a887f65ba1c13ba62f68884a28d",
+    ".lake/build/lib/lean/MackeyDiagrams/Trivalent.olean": "64a0cfacb9f8930568e89007d9bde193c3a9ba4defdc1208017a32a4ad095c76",
+    ".lake/build/lib/lean/MackeyDiagrams/DrawingShape.olean": "37513dfd8e167af3d431ced4726282089a6c13de44933329f8d8f47c9686dc0d",
+    ".lake/build/lib/lean/MackeyDiagrams/DrawingShape.olean.hash": "4ffad116b49fd69467d067544558f69a0598aacb8f4e43bafd0e12c092428a50",
+    ".lake/build/lib/lean/MackeyDiagrams/DotLabels.olean": "9f962486ce22a47f2c31728767eb7dbb590cc6a561910cf0e6abd96c38520040",
+    ".lake/build/lib/lean/MackeyDiagrams/DotLabels.olean.hash": "d4d18fb44731fca0c27b606aebe26bd4b658054e1b5221245e5c45ffb3a5148b",
+    ".lake/build/lib/lean/MackeyDiagrams/PlanarShape.olean.hash": "0a8b85452f532801e918440be474efc6d7b49d86a9a25241bec070fd83cf1216",
+    ".lake/build/lib/lean/MackeyDiagrams/PlanarShape.olean": "ba8a3a3df6d537659f788bea403d9eb428bcf264cdf24ec176e060348aad8f6a",
+    ".lake/build/lib/lean/MackeyDiagrams/LanguageChecks.olean": "aa68ee83815205eb7b753f0bbcf880d0cee8b8ae86b20f4950ff91d9966a13a5",
+    ".lake/build/lib/lean/MackeyDiagrams/LanguageChecks.olean.hash": "17f26b602be190e61c5551918ea6d9467cff100acacf42f03252d27c645a53a1"
+  },
+  "limitations": [
+    "This establishes local language definitions and the checked source-to-syntax regression theorems, not completed formalization of all 153 article endpoints.",
+    "Arbitrary whole-algebra intertwiners need not be linear combinations of termwise eligible group elements. Their source statements require explicit treatment in the review.",
+    "Geometric shape equality uses the stated combinatorial wiring/interchange convention; evaluation identities are never inserted as shape equations."
+  ]
+}

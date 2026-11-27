@@ -1,0 +1,13 @@
+import WattsFoundation.GeneratorTransportNaturality
+import WattsFoundation.GeneratorTransportAction
+import Mathlib.Algebra.Module.TransferInstance
+
+#check SmallGeneratorBridge.regularRight
+#check SmallGeneratorBridge.evaluationTransportIso
+#check SmallGeneratorBridge.evaluationTransportIso_natural
+#check SmallGeneratorBridge.evaluationTransportIso_intertwines
+#print axioms SmallGeneratorBridge.evaluationTransportIso_natural
+#print axioms SmallGeneratorBridge.evaluationTransportIso_intertwines
+#check AddEquiv.module
+#check AddEquiv.linearEquiv
+#check ModuleCat.Iso.toLinearEquiv

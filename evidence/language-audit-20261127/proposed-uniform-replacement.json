@@ -1,0 +1,6 @@
+{
+  "type": "\u2200 {U : Type*} [Group U], \u2200 boundary : List Bool \u00d7 List Bool,\n  (\u2200 s t : MackeyDiagrams.LabelledDrawing.Shapes (U := U) Complex boundary,\n    MackeyDiagrams.LabelledDrawing.ShapeReplaces s t \u2194\n      \u2200 (A B : Subgroup U) (p q : MackeyDiagrams.Boundary A B),\n        MackeyDiagrams.ScopedDiagram.attainable\n          (fun v (label : MackeyDiagrams.LabelledDrawing.PlanarAtBoundary Complex p q v) => label.interpret) s.val \u2286\n        MackeyDiagrams.ScopedDiagram.attainable\n          (fun v (label : MackeyDiagrams.LabelledDrawing.PlanarAtBoundary Complex p q v) => label.interpret) t.val) \u2227\n  (\u2200 s : MackeyDiagrams.LabelledDrawing.Shapes (U := U) Complex boundary,\n    MackeyDiagrams.LabelledDrawing.ShapeReplaces s s) \u2227\n  (\u2200 s t z : MackeyDiagrams.LabelledDrawing.Shapes (U := U) Complex boundary,\n    MackeyDiagrams.LabelledDrawing.ShapeReplaces s t \u2192\n    MackeyDiagrams.LabelledDrawing.ShapeReplaces t z \u2192\n    MackeyDiagrams.LabelledDrawing.ShapeReplaces s z)",
+  "value": null,
+  "source": "article",
+  "sourceReason": "Article \u00a73.3 p.10 with the owner clarification of 27 November 2026: all dots are finite complex linear combinations of eligible group elements. Genuine shapes share a specified ordered orientation boundary; all typed labellings are admitted."
+}

@@ -1,0 +1,2 @@
+import Proofs.CurlWithCentralizingDot
+#print axioms CurlWithCentralizingDot

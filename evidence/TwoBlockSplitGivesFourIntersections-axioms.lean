@@ -1,0 +1,2 @@
+import Proofs.TwoBlockSplitGivesFourIntersections
+#print axioms TwoBlockSplitGivesFourIntersections

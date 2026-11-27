@@ -1,0 +1,3 @@
+import MackeySummandProjection
+
+#print axioms MackeySummandProjection

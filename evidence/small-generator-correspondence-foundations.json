@@ -1,0 +1,110 @@
+{
+  "scope": "Locally compiled supporting declarations and the exact reviewed article correspondence; the separately stated choice-free auxiliary remains unproved.",
+  "checked_at_utc": "2026-11-27T21:19:47.109069+00:00",
+  "sources": {
+    "SmallGeneratorBridge": {
+      "source_sha256": "ce62ef1dc565de2ec54b78ef2fb0c36b4c4623af44d80061d1f7a505be97f1a7",
+      "olean_sha256": "9cdb1a5c45b26abdc12ce83739a98633bd0485e6afa8718bca4295b4147f8bda"
+    },
+    "GeneratorRegularUnit": {
+      "source_sha256": "b5690bfba3cf7dcfc64ebb95028c01786e4b64fde7eb9f3f6ae01c93d54a6cdd",
+      "olean_sha256": "d1dc57fdcbb185d3990de3987ccac0d0557f52bbe717f8748536055f62140fdd"
+    },
+    "GeneratorRegularActions": {
+      "source_sha256": "5fe35abb01bd6f42753996f979e14e5a459234a7daa762b5873272146566de19",
+      "olean_sha256": "fc9d9466f39218b0cc6547bef5f6063f7808982aa268e39b6d53c12987b3525e"
+    },
+    "GeneratorTransport": {
+      "source_sha256": "9968ad0229fa1ef78e9ec34cded3ae3a758f406345db86b60d1d3c4e3f411f14",
+      "olean_sha256": "2c3a65a7ab6171c3b2390f14b113ff0bad244f68d5c5b86b39cf3293f4eead08"
+    },
+    "GeneratorTransportNaturality": {
+      "source_sha256": "8e295b20dc09479e6ea2342f06eb317f31d674ef1161fe6db071d3f9a67f5dd3",
+      "olean_sha256": "24652b072c750ca7adb7caae386b4de2a052b51d99f02cbd9a45b86de60bbaba"
+    },
+    "GeneratorRegularIntertwining": {
+      "source_sha256": "7a894929250b36bba77c08ae915a9cb4b4ddfc5105b7757a6adf5a42eaccc229",
+      "olean_sha256": "e20a7f065be8d7a7d1a3eefdd593d2967694dd2cf774f093f776f52eb43d6c39"
+    },
+    "GeneratorPreimageAction": {
+      "source_sha256": "bd0cc7ecaf8ebc7bcdb631d64714173dcf25a0995412275c4c6fdd360250a5b0",
+      "olean_sha256": "bf7c1b6ab83cae6c8b266ae5ba4f66214d8151fd183217e0d81def0437265f86"
+    },
+    "GeneratorTransportAction": {
+      "source_sha256": "c7d693f9d62e37cc7ec9d93f806af2d1cd92592fd10547f1bd5fa9e8ee6a92a7",
+      "olean_sha256": "e2aeb3bf2b00e2e2449236f79273fbe2b1e73858fc7bcfe78e78d05d5d36a368"
+    },
+    "General/OriginalBimoduleRepack": {
+      "source_sha256": "79dfdbbb9dc64f3a2b0ef926e2447c01e609be40a70c0f5abaa289f19addb900",
+      "olean_sha256": "3925b83de415c9e6d749313535c1278f27ffb4fad103e9a91c7345841c56f2c8"
+    },
+    "General/OriginalBimoduleRepackIso": {
+      "source_sha256": "2b3ab4db392fecdf613eb98115229745c047d4b580808ea1e36bfbbf5ef3fc12",
+      "olean_sha256": "2f14539d271aed4acedce2316079a9a4087e56781fde6cb7240c6e57a15af3f1"
+    },
+    "General/OriginalBimoduleRepackFunctor": {
+      "source_sha256": "20539f5086024b5a2133dd77117d4f2827d444bb314e525e1388f0e9f9c71d1d",
+      "olean_sha256": "1066b210b1492666f3dbfee10452c55b34d257e375f2e4f41f6ab92d558fdb90"
+    },
+    "GeneratorFunctorTransport": {
+      "source_sha256": "556b48e23760245f3e62d403cee32695feadb0bd727f5fb4fc11ee24dcef28f2",
+      "olean_sha256": "6245b568bd87fe9f4a2c4af34a17639a1006ec60e3e5a22589733598f578ec86"
+    },
+    "SmallGeneratorCorrespondenceBase": {
+      "source_sha256": "c2be993d191100d61230302543ac7a161190161d8c8e1920e11ae841a4765128",
+      "olean_sha256": "e41172e0e6d1a9b2aee913712a2df43b98ca3307d86d0831e239ce7ced38ee99"
+    },
+    "SmallGeneratorCorrespondenceRight": {
+      "source_sha256": "40a10a3b597541452871392fe692163df05c4120a660d1cdf05f94da92032dcc",
+      "olean_sha256": "78c332cc4c55f67e6c1d55f982a44e46f5aa36ecc583d6d59ad584048e03aa2a"
+    },
+    "ReviewedSmallGeneratorConnection": {
+      "source_sha256": "b277f555a257e38fb7ac15ea575c0c9ba3d42312cfa0797e3244cfae59bb4d23",
+      "olean_sha256": "d596c901d5445120b241680d7007db8b458a1096aece39c0d49fd848830bd0fc"
+    }
+  },
+  "audits": {
+    "small-generator-bridge-audit": {
+      "sha256": "978b4f5145a26be2df13e5a2637cb4fbea0f13fd8a813d77ceff84bb3d2de3e4",
+      "output": "'SmallGeneratorBridge.smallOfPreserves' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SmallGeneratorBridge.equivalenceOfSmallProjectiveGenerator' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    "generator-regular-actions-audit": {
+      "sha256": "c7e48861ab50562cd57f9c2513c7cc874d2c21c0ea13728d39c2e359d5c16bf5",
+      "output": "'SmallGeneratorBridge.regularToHom' depends on axioms: [propext, Quot.sound]\n'SmallGeneratorBridge.regularToHom_right' depends on axioms: [propext, Quot.sound]"
+    },
+    "generator-transport-audit": {
+      "sha256": "a029aa1eb44144b05855f0c74b9115f3dfaf375c678b2769b65c53a9e7826c3f",
+      "output": "'SmallGeneratorBridge.regularPreimageIso' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SmallGeneratorBridge.evaluationTransportIso' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    "generator-transport-naturality-audit": {
+      "sha256": "6e2c81ed8ae64c16be4ade7ee34dfa408518a7574efa5720bafe936e4fe7e060",
+      "output": "'SmallGeneratorBridge.evaluationTransportIso_natural' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    "generator-transport-action-audit": {
+      "sha256": "dfc39aaf1aea7bdbbef4f7731c03df6206330f2932dfdda0ebeaf52c20b58d8b",
+      "output": "'SmallGeneratorBridge.regularPreimageIso_intertwines' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SmallGeneratorBridge.evaluationTransportIso_intertwines' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    "original-bimodule-repack-iso-audit": {
+      "sha256": "a521f67a75c2c589a843930bc18a146806242a59da096965781caa2c889f6ff2",
+      "output": "'WattsFoundation.General.repackRight_hom' depends on axioms: [propext, Quot.sound]\n'WattsFoundation.General.repackIso' depends on axioms: [propext, Quot.sound]"
+    },
+    "original-bimodule-repack-functor-audit": {
+      "sha256": "960742e4262b3954f5598737ffd213f41786468302a1186c101b2603fc110d4d",
+      "output": "'WattsFoundation.General.repackedFunctorIso' depends on axioms: [propext, Classical.choice, Quot.sound]\n'WattsFoundation.General.repackedFunctor_forget' depends on axioms: [propext, Classical.choice, Quot.sound]\n'WattsFoundation.General.repackedEquivalence_forget' depends on axioms: [propext, Classical.choice, Quot.sound]\n'WattsFoundation.General.repackedEquivalence_right' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    "generator-functor-transport-audit": {
+      "sha256": "a2be3211c089e0ccaa6ad22a0c981d6927718acbd1cd4bccc890003cb47a1d83",
+      "output": "'SmallGeneratorBridge.functorTransport' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    "small-generator-correspondence-base-audit": {
+      "sha256": "6f5189b68ecea58ec9c075867323f4c4a64d3eba1465d6094163f338ab9326c5",
+      "output": "'SmallGeneratorBridge.exactEvaluationEquivalence_forget' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    "small-generator-correspondence-right-audit": {
+      "sha256": "bedbabdf8a45fe0511febfd02c3c22f23e84a604911e199d90987799cefcb626",
+      "output": "'SmallGeneratorBridge.exactEvaluation_left_right' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SmallGeneratorBridge.exactEvaluation_map' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    }
+  },
+  "exact_connection_receipt": "evidence/checked-connections/SmallProjectiveGeneratorCorrespondence-c4ebd489805e9ea174d8622bfe4f1414/receipt.json",
+  "native_proof_receipt": "evidence/SmallProjectiveGeneratorCorrespondence-compile.json"
+}

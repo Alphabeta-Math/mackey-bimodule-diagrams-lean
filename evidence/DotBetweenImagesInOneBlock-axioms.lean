@@ -1,0 +1,2 @@
+import Proofs.DotBetweenImagesInOneBlock
+#print axioms DotBetweenImagesInOneBlock

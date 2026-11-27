@@ -1,0 +1,229 @@
+by
+  classical
+  intro Sinf U blockSym parabolic G A D F C E hG hA hD hF hC hE a b d c e f
+    up down tensor comp ga ad df gc ce ef bottom top X Y Pair input output pair
+    orbit stabilizer projected swaps RightData labels representative toF isInclusion
+    Fiber lowerMap finiteFibers RightTerm rightRepresentative
+  letI : MulAction (G × F) Pair :=
+    { smul := fun q z => (Biset.act X q z.1, Biset.act Y q z.2)
+      one_smul := fun z => Prod.ext (Biset.one_act X z.1) (Biset.one_act Y z.2)
+      mul_smul := fun q q' z => Prod.ext (Biset.mul_act X q q' z.1) (Biset.mul_act Y q q' z.2) }
+  have hFiniteG : Finite G := parabolic_finite hG
+  have hFiniteD : Finite D := parabolic_finite hD
+  have hFiniteE : Finite E := parabolic_finite hE
+  have hFiniteF : Finite F := parabolic_finite hF
+  letI : Finite G := hFiniteG
+  letI : Finite D := hFiniteD
+  letI : Finite E := hFiniteE
+  letI : Finite F := hFiniteF
+  letI : Finite X.carrier := caseWord_finite a b d
+  letI : Finite Y.carrier := caseWord_finite c e f
+  letI : Finite Pair := inferInstanceAs (Finite (X.carrier × Y.carrier))
+  -- Xiao, Proposition 8.7 and the displayed identity following its proof,
+  -- archived PDF pp. 39–40 and published 28 November revision pp. 41–42.
+  -- The portal proof is in paragraphs. Steps 1–6 refer to the operations
+  -- numbered in the registered coefficient and multiplicity proofs.
+  -- Steps 1–3 and 6. Compare the group equality defining S with the
+  -- complex singleton coefficients, then choose the registered right data.
+  have expansion := ParabolicCaseFiveCoefficientOneExpansion G A D F C E hG hA hD hF hC hE a b d c e f
+  have multiplicity := ParabolicRightOrbitMultiplicity G A D F C E hG hA hD hF hC hE a b d c e f
+  constructor
+  · intro B hB u v w RLabel TLabel SLabel S
+    let upperCarrier := ((Word.up c).tensor (.down e)).basis.carrier
+    letI : Finite upperCarrier :=
+      Finite.of_surjective (fun p : G × E => (Biset.induction c).pair (Biset.restriction e) p.1 p.2)
+        (fun p => Quotient.inductionOn p (fun q => ⟨q, rfl⟩))
+    have leftFibers (s : SLabel) z :
+        Set.Finite {p | Generator.mixedMultiplicationBasis u w c e s p = z} :=
+      Set.toFinite _
+    have finiteOrbits (r : RLabel) (t : TLabel) (s : SLabel) :
+        (Set.univ : Set ↥(S r t s)).Finite := by
+      let rangeOrbit : Set (Set Pair) := Set.range orbit
+      have hS : S r t s ⊆ rangeOrbit := by
+        rintro O ⟨g, x, h, y, hO, _⟩
+        exact ⟨(input g x, output h y), hO.symm⟩
+      letI : Finite ↥(S r t s) := ((Set.finite_range orbit).subset hS).to_subtype
+      exact Set.finite_univ
+    let leftOne (r : RLabel) (t : TLabel) (s : SLabel) :=
+      leftDrawing (R := Complex) a b d c e f u v w [(1,r)] [(1,t)] [(1, ⟨s,leftFibers s⟩)]
+    let cL (r : RLabel) (t : TLabel) (s : SLabel) (z : Pair) :=
+      (drawingEval (leftOne r t s)).toLinearMap (Finsupp.single z.1 1) z.2
+    have leftSupport (r : RLabel) (t : TLabel) (s : SLabel) :
+        (∀ z : Pair, orbit z ∈ S r t s ↔ cL r t s z ≠ 0) ∧
+        (∀ z : Pair, cL r t s z ≠ 0 → cL r t s z = 1) := by
+      obtain ⟨fin, src, dst, hsrc, hdst, _, _, hsupport, hone, _⟩ :=
+        SupportedLeftOrbitProjectedStabilizer hG hA hD hF hC hE hB a b d c e f u v w r t s
+      have eqAt (g : G) (x : D) (h : G) (y : E) :
+          cL r t s (input g x, output h y) ≠ 0 ↔
+            u.toHom h * s.element * w.toHom y =
+              u.toHom g * r.element * v.toHom x * t.element := by
+        have hp := hsupport (input g x, output h y)
+        change (cL r t s (input g x, output h y) ≠ 0 ↔ src (input g x) = dst (output h y)) at hp
+        rw [hsrc, hdst] at hp
+        exact hp.trans eq_comm
+      refine ⟨?_, fun z hz => (hone z hz).2.2.2.2⟩
+      intro z
+      constructor
+      · rintro ⟨g, x, h, y, hO, he⟩
+        have hz : z ∈ orbit (input g x, output h y) := by
+          rw [← hO]
+          exact MulAction.mem_orbit_self z
+        have hc : cL r t s z = cL r t s (input g x, output h y) :=
+          multiplicity.1 (drawingEval (leftOne r t s)) _ z hz
+        rw [hc]
+        exact (eqAt g x h y).2 he
+      · intro hz
+        obtain ⟨g,x,hx⟩ := casePoint_surjective a b d z.1
+        obtain ⟨h,y,hy⟩ := casePoint_surjective c e f z.2
+        have he : (input g x, output h y) = z := Prod.ext hx hy
+        rw [← he] at hz
+        exact ⟨g,x,h,y,congrArg orbit he.symm,(eqAt g x h y).mp hz⟩
+    let rightAt (term : RightTerm) : LabelledDrawing Complex bottom top :=
+      match term with
+      | ⟨_, ⟨⟨i,j,k,r,t,s⟩, fin⟩⟩ => rightDrawing a b d c e f i j k ⟨r, fin⟩ t s
+    have chooseTerm (r : RLabel) (t : TLabel) (s : SLabel) (O : ↥(S r t s)) :
+        ∃ term : RightTerm,
+          orbit (rightRepresentative term) = O.val ∧
+          term.1 = projected (rightRepresentative term) ∧ parabolic term.1 ∧
+          isInclusion term.2.val ∧
+          ∀ z : Pair, (drawingEval (rightAt term)).toLinearMap (Finsupp.single z.1 1) z.2 =
+            @ite Complex (z ∈ O.val) (Classical.propDecidable _) 1 0 := by
+      let S₀ : Set (Set Pair) := {O' | ∃ z, O' = orbit z ∧ cL r t s z ≠ 0}
+      have hS : S r t s = S₀ := by
+        ext O'
+        constructor
+        · rintro ⟨g,x,h,y,eO,hEq⟩
+          refine ⟨(input g x, output h y), eO, (leftSupport r t s).1 _ |>.1 ?_⟩
+          rw [← eO]
+          exact ⟨g,x,h,y,eO,hEq⟩
+        · rintro ⟨z, eO, hz⟩
+          rw [eO]
+          exact (leftSupport r t s).1 z |>.2 hz
+      let O₀ : ↥S₀ := ⟨O.val, by rw [← hS]; exact O.property⟩
+      obtain ⟨sum, _, hterms, _⟩ := expansion.1 B hB u v w r t s (leftFibers s)
+      obtain ⟨r₀,t₀,s₀,ho,hP,data,fin,hl,hi,hd,he⟩ := hterms O₀
+      let z₀ := pair r₀ t₀ s₀
+      let term : RightTerm := ⟨projected z₀, ⟨data, fin⟩⟩
+      have hrep : rightRepresentative term = z₀ := by
+        change pair (labels data).1 (labels data).2.1 (labels data).2.2 = _
+        rw [hl]
+      refine ⟨term, ?_, ?_, hP, hi, ?_⟩
+      · rw [hrep]
+        exact ho.symm
+      · rw [hrep]
+      · intro z
+        rw [hd] at he
+        have he' := he z
+        change (drawingEval (rightAt term)).toLinearMap (Finsupp.single z.1 1) z.2 =
+          @ite Complex (z ∈ O.val) (Classical.propDecidable _) ((1 : Nat) : Complex) 0 at he'
+        simpa only [Nat.cast_one] using he'
+    choose rightTerm hterm using chooseTerm
+    refine ⟨leftFibers, finiteOrbits, rightTerm,
+      fun r t s O => ⟨(hterm r t s O).1, (hterm r t s O).2.1,
+        (hterm r t s O).2.2.1, (hterm r t s O).2.2.2.1⟩, ?_⟩
+    intro R inst drawId eval rightDiagramFromData rightDiagram coefficient T leftDiagram orbitSum
+    -- The source counts basis lifts. Transport the coefficient via Nat using
+    -- the same balanced representatives and the same finite projection fiber.
+    have rightEntry (r : RLabel) (t : TLabel) (s : SLabel) (O : ↥(S r t s)) (z : Pair) :
+        coefficient (rightDiagram (rightTerm r t s O)) z = T O.val 1 z := by
+      have he := (hterm r t s O).2.2.2.2 z
+      generalize hDg : rightTerm r t s O = term at he ⊢
+      obtain ⟨B', ⟨⟨i,j,k,r',t',s'⟩, fin⟩⟩ := term
+      let proj : ProjectionDot.Mixed b d i j := ⟨r',fin⟩
+      have hc := natural_right (R := Complex) a b d c e f i j k proj t' s'
+      have hr := natural_right (R := R) a b d c e f i j k proj t' s'
+      by_cases hz : z ∈ O.val
+      · change _ = @ite R (z ∈ O.val) (Classical.propDecidable _) 1 0
+        rw [ite_eq_left hz]
+        rw [ite_eq_left hz] at he
+        exact (coefficient_transport hc hr z.1 z.2 1 (by simpa only [Nat.cast_one] using he)).trans Nat.cast_one
+      · change _ = @ite R (z ∈ O.val) (Classical.propDecidable _) 1 0
+        rw [ite_eq_right hz]
+        rw [ite_eq_right hz] at he
+        exact (coefficient_transport hc hr z.1 z.2 0 (by simpa only [Nat.cast_zero] using he)).trans Nat.cast_zero
+    have leftEntry (r : RLabel) (t : TLabel) (s : SLabel) (z : Pair) :
+        coefficient (leftDiagram [(1,r)] [(1,t)] [(1,s)]) z =
+          @ite R (orbit z ∈ S r t s) (Classical.propDecidable _) 1 0 := by
+      let proj : ProjectionDot.Mixed u w c e := ⟨s, leftFibers s⟩
+      have hc := natural_left (R := Complex) a b d c e f u v w r t proj
+      have hr := natural_left (R := R) a b d c e f u v w r t proj
+      by_cases hz : orbit z ∈ S r t s
+      · have he : cL r t s z = 1 := (leftSupport r t s).2 _ ((leftSupport r t s).1 z |>.1 hz)
+        change _ = @ite R (orbit z ∈ S r t s) (Classical.propDecidable _) 1 0
+        rw [ite_eq_left hz]
+        exact (coefficient_transport hc hr z.1 z.2 1 (by simpa only [Nat.cast_one] using he)).trans Nat.cast_one
+      · have he : cL r t s z = 0 := by
+          by_contra hn
+          exact hz ((leftSupport r t s).1 z |>.2 hn)
+        change _ = @ite R (orbit z ∈ S r t s) (Classical.propDecidable _) 1 0
+        rw [ite_eq_right hz]
+        exact (coefficient_transport hc hr z.1 z.2 0 (by simpa only [Nat.cast_zero] using he)).trans Nat.cast_zero
+    have oneExpansion (r : RLabel) (t : TLabel) (s : SLabel) :
+        eval (leftDiagram [(1,r)] [(1,t)] [(1,s)]) = IndexedDrawing.eval (orbitSum r t s) := by
+      apply eq_of_columns
+      intro x y
+      let z : Pair := (x,y)
+      change coefficient (leftDiagram [(1,r)] [(1,t)] [(1,s)]) z =
+        (IndexedDrawing.eval (orbitSum r t s) (Finsupp.single z.1 1)) z.2
+      rw [leftEntry, IndexedDrawing.eval_apply, Finset.sum_apply']
+      change @ite R (orbit z ∈ S r t s) (Classical.propDecidable _) 1 0 =
+        ∑ O ∈ (finiteOrbits r t s).toFinset, coefficient (rightDiagram (rightTerm r t s O)) z
+      simp_rw [rightEntry]
+      exact (orbit_sum_entries (finiteOrbits r t s) z (fun _ ⟨g,x,h,y,he,_⟩ =>
+        ⟨(input g x, output h y), he⟩)).symm
+    refine ⟨rightEntry, oneExpansion, ?_⟩
+    -- The last source paragraph expands the three eligible labels before
+    -- applying the group-element identity. Do the expansion in evaluation
+    -- so each marked vertex retains its finite label in the syntax.
+    intro rs ts ss m
+    have hl := weighted_left a b d c e f u v w rs ts ss leftFibers m
+    change eval (leftDiagram rs.terms ts.terms ss.terms) m =
+      rs.sum (fun r cr => ts.sum (fun t ct => ss.sum (fun s cs => (cr * ct * cs) •
+        eval (leftDiagram [(1,r)] [(1,t)] [(1,s)]) m))) at hl
+    simpa only [oneExpansion] using hl
+  · intro drawId eval rightDiagramFromData rightDiagram coefficient T z
+    -- Steps 4–5. Use the registered least-index drawing for a normalized
+    -- representative. Its restriction data keep the same three dot elements.
+    obtain ⟨r,t,s,hz⟩ := multiplicity.2.1 z
+    let z₁ := pair r t s
+    let P₁ := projected z₁
+    let L₁ := swaps P₁
+    have hOrb : orbit z₁ = orbit z := (MulAction.orbit_eq_iff.mpr hz).symm
+    obtain ⟨_,full,hfull,_,_,_,hL,data,hpar,hrestrict,hinc,hreal⟩ :=
+      multiplicity.2.2.1 r t s
+    obtain ⟨_,fin,he⟩ := hreal
+    let term : RightTerm := ⟨L₁, ⟨data,fin⟩⟩
+    have hrep : rightRepresentative term = z₁ := by
+      have hlabels : labels data = (r,t,s) := hrestrict.1.trans hfull
+      change pair (labels data).1 (labels data).2.1 (labels data).2.2 = _
+      rw [hlabels]
+    have hP₁ : P₁ ≤ F := by
+      rintro p ⟨q, _, rfl⟩
+      exact q.2.property
+    letI : Finite P₁ := Finite.of_injective (Subgroup.inclusion hP₁)
+      (Subgroup.inclusion_injective hP₁)
+    let n := L₁.relIndex P₁
+    have hne : n ≠ 0 := by
+      change L₁.relIndex P₁ ≠ 0
+      rw [Subgroup.relIndex, Subgroup.index_eq_card]
+      exact Nat.card_ne_zero.mpr ⟨inferInstance, inferInstance⟩
+    have hNum : (n : Complex) ≠ 0 := Nat.cast_ne_zero.mpr hne
+    have he' (p : Pair) : coefficient (rightDiagram term) p = T (orbit z) (n : Complex) p := by
+      have hp := he p
+      change coefficient (rightDiagram term) p = T (orbit z₁) (n : Complex) p at hp
+      rwa [hOrb] at hp
+    refine ⟨term, ?_⟩
+    change orbit (rightRepresentative term) = orbit z ∧
+      term.1 = swaps (projected (rightRepresentative term)) ∧ parabolic term.1 ∧ isInclusion term.2.val ∧
+      Subgroup.relIndex (swaps (projected (rightRepresentative term))) (projected (rightRepresentative term)) ≠ 0 ∧ _ ∧ _
+    rw [hrep]
+    refine ⟨hOrb, rfl, hpar, hinc, hne, he', ?_⟩
+    intro p
+    have hscale : coefficient (LabelledDrawing.scale (n : Complex)⁻¹ (rightDiagram term)) p =
+        (n : Complex)⁻¹ * coefficient (rightDiagram term) p := by
+      change ((n : Complex)⁻¹ • (eval (rightDiagram term) (Finsupp.single p.1 1))) p.2 = _
+      exact Finsupp.smul_apply _ _ _
+    rw [hscale, he']
+    by_cases hp : p ∈ orbit z
+    · simp only [T, ite_eq_left hp, inv_mul_cancel₀ hNum]
+    · simp only [T, ite_eq_right hp, mul_zero]

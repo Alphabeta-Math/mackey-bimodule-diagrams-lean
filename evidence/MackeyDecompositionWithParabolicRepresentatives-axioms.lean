@@ -1,0 +1,2 @@
+import Proofs.MackeyDecompositionWithParabolicRepresentatives
+#print axioms MackeyDecompositionWithParabolicRepresentatives

@@ -1,0 +1,14 @@
+{
+  "id": "EilenbergWatts",
+  "workspace": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean",
+  "lean": "leanprover/lean4:v4.36.0-rc2",
+  "mathlib": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+  "imports": [
+    "NotesProofs.ReviewedOriginalWattsConnection"
+  ],
+  "proof": "by exact ReviewedOriginalWattsConnection",
+  "universes": [
+    "u",
+    "v"
+  ]
+}

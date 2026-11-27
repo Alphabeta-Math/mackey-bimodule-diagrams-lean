@@ -1,0 +1,32 @@
+{
+  "id": "ParallelInductionProductDotAdmissibility",
+  "lean": "leanprover/lean4:v4.36.0-rc2",
+  "leanRevision": "b35cb10cf2ced51a2fd1880cfdbf75c71ab7a35a",
+  "mathlib": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+  "workspace": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean",
+  "manifestSha256": "8902ec05c32c92c98e90ebb36796aacc426e0353d1ce2f8f3240b5ee8c4ce7fa",
+  "imports": [
+    {
+      "module": "MackeyDiagrams",
+      "files": [
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/build/lib/lean/MackeyDiagrams.olean",
+          "sha256": "631fbd8dec3d6a73487234ea61eab03ca931535f5637d8961e02b87304df4d96"
+        }
+      ]
+    }
+  ],
+  "searchPaths": [],
+  "statementSha256": "d84671cf4faefc7fc6052d1529215d19b99dd4b842ff218f320e37a7daa1d2ab",
+  "sourceSha256": "3713c44e4d6ec351a4363c75f7b72fcef4fb805e08093812e918af96d755d8f1",
+  "oleanSha256": "755d5cba3633c8326eb19e0101804aba3d04dfa1b74cf1280b988005a4474c35",
+  "build": {
+    "code": 0,
+    "output": ""
+  },
+  "audit": {
+    "code": 0,
+    "output": "'LeanWorkflowCheckedConnection' depends on axioms: [propext, Quot.sound]\n"
+  },
+  "scope": "The exact supplied statement was checked in this workspace. Importability and interpretation in another workspace are separate obligations."
+}

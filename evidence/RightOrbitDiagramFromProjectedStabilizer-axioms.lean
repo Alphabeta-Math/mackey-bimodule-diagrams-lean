@@ -1,0 +1,2 @@
+import Proofs.RightOrbitDiagramFromProjectedStabilizer
+#print axioms RightOrbitDiagramFromProjectedStabilizer

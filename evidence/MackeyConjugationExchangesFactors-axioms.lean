@@ -1,0 +1,2 @@
+import Proofs.MackeyConjugationExchangesFactors
+#print axioms MackeyConjugationExchangesFactors

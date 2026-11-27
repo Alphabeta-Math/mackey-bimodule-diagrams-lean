@@ -1,0 +1,2 @@
+import Proofs.ParabolicCaseSixReplacementThroughJoin
+#print axioms ParabolicCaseSixReplacementThroughJoin

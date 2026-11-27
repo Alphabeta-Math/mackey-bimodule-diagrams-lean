@@ -1,0 +1,10 @@
+import MackeyDiagrams
+import Proofs.ParabolicCaseFiveCoefficientOneExpansion
+import Proofs.ParabolicRightOrbitMultiplicity
+#check Subgroup.relIndex_mul_relIndex
+#check Ideal.mem_span_singleton
+#check ZMod.intCast_zmod_eq_zero_iff_dvd
+#check ZMod.intCast_surjective
+#check QuotientAddGroup.quotientKerEquivOfSurjective
+#check DirectSum.addEquivProd
+#check Int.cast_smul_eq_zsmul

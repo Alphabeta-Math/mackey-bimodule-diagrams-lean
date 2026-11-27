@@ -1,0 +1,49 @@
+{
+  "id": "ParallelReidemeisterTwoInduction",
+  "lean": "leanprover/lean4:v4.36.0-rc2",
+  "leanRevision": "b35cb10cf2ced51a2fd1880cfdbf75c71ab7a35a",
+  "mathlib": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+  "workspace": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean",
+  "manifestSha256": "8902ec05c32c92c98e90ebb36796aacc426e0353d1ce2f8f3240b5ee8c4ce7fa",
+  "imports": [
+    {
+      "module": "MackeyDiagrams",
+      "files": [
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/build/lib/lean/MackeyDiagrams.olean",
+          "sha256": "631fbd8dec3d6a73487234ea61eab03ca931535f5637d8961e02b87304df4d96"
+        }
+      ]
+    },
+    {
+      "module": "Mathlib.Basic.Complex.Basic",
+      "files": [
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Basic/Complex/Basic.olean",
+          "sha256": "8c8be579b7bb8987f2725023814b5b331117a44254240ed48dbfda2808906227"
+        },
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Basic/Complex/Basic.olean.private",
+          "sha256": "5a1f10f9d3c47d8f34696dfd2761fe4392eca017ababe291d4a51feec83c4841"
+        },
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Basic/Complex/Basic.olean.server",
+          "sha256": "5165ed129ae8726a826aec69fa5a2ad91a46ed02c5820098173bc765e6e0160f"
+        }
+      ]
+    }
+  ],
+  "searchPaths": [],
+  "statementSha256": "0034921fa938e986add7577a21165acb353cfef1913b670ea58865803bc39a4a",
+  "sourceSha256": "fd7e08edab76a5638caa46db6bfbebc60482fbe5380d10604dc486311e338049",
+  "oleanSha256": "af84c94d1d88811fa39ccb66f81f07b10b0df03eec4a7ef026ec257e6de5a460",
+  "build": {
+    "code": 0,
+    "output": ""
+  },
+  "audit": {
+    "code": 0,
+    "output": "'LeanWorkflowCheckedConnection' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "scope": "The exact supplied statement was checked in this workspace. Importability and interpretation in another workspace are separate obligations."
+}

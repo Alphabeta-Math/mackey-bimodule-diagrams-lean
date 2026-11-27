@@ -1,0 +1,27 @@
+{
+  "sourceRepository": "https://github.com/AxiomMath/Stacks",
+  "sourceCommit": "f56a316ddf7a930906d88b78d6f9a2668cffd0cf",
+  "sourcePath": "StacksFrontier/AlgebraicGeometry/TopDegreeBaseChange/EilenbergWatts.lean",
+  "license": "Apache-2.0",
+  "lean": "leanprover/lean4:v4.36.0-rc2",
+  "mathlib": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+  "sourceBodyUnchanged": true,
+  "files": [
+    {
+      "path": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/External/StacksEilenbergWatts.lean",
+      "sha256": "f3a8a4555077757610f45936fc4fb6cef589f0965a2add63be713a417f557529"
+    },
+    {
+      "path": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/build/lib/lean/MackeyDiagrams/External/StacksEilenbergWatts.olean",
+      "sha256": "29143e6a018921c17e93fac83146ad12de3cbed0df6ca6bae0d440c5719ed67c"
+    },
+    {
+      "path": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/verified-stacks-eilenberg-watts/Audit.lean",
+      "sha256": "20aee6e3e076a96f5660b4da44e458d4da6ae2120da1be2b9b781d27f1145e95"
+    },
+    {
+      "path": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/verified-stacks-eilenberg-watts/audit.log",
+      "sha256": "93305a49a6ab80e5f47f9478426cade22360f5bccebda62dac674507831fcd64"
+    }
+  ]
+}

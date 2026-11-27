@@ -1,0 +1,2 @@
+import Proofs.GeneralizedMackeyDecomposition
+#print axioms GeneralizedMackeyDecomposition

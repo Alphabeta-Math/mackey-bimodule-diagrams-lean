@@ -1,0 +1,16 @@
+import MackeyDiagrams
+import Proofs.GroupElementDotCriterion
+import Proofs.InductionRestrictionMergesAndSplits
+
+#check Complex
+#check GroupElementDotCriterion
+#check InductionRestrictionMergesAndSplits
+#check MackeyDiagrams.Diagram.mergeUp_slide_right
+#check MackeyDiagrams.Diagram.eval_mergeUp_single
+#check MackeyDiagrams.Diagram.eval_horizontal_single
+#check MackeyDiagrams.Diagram.eval_upDot_single
+#check MackeyDiagrams.DotLabel.eval_upDrawing
+#check MackeyDiagrams.Diagram.eval_linearUpDot_apply
+#check MackeyDiagrams.freeLift_single
+#print axioms MackeyDiagrams.Diagram.mergeUp_slide_right
+#print axioms MackeyDiagrams.DotLabel.eval_upDrawing

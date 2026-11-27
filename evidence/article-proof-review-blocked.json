@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-11-27T21:28:38.649482+00:00",
+  "status": "Resolved: original Step 4 coordinator accepted all 151 active endpoints",
+  "article_statements_proved": 143,
+  "registered_proofs": 151,
+  "coordinator_review_complete": false,
+  "reason": "The external Codex worker returned: You\u2019ve hit your usage limit. No coordinator verdict was accepted.",
+  "resume_command": "node tools/tsx-run.mjs tools/lean-workflow/cli.mts run /home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean",
+  "scope": "The two unused choice-free auxiliary claims remain open. Local deterministic audits do not replace the unfinished coordinator review.",
+  "mechanical_audit": "evidence/article-dependency-extraction/mechanical-audit.json",
+  "mechanical_audit_status": "passed: 143 article statements, 151 proof sources/artifacts/receipts and fresh axiom audits, 278 local source modules; no missing named suppliers, source-import cycles or open-auxiliary imports",
+  "historicalStatus": "blocked by external Codex usage limit",
+  "resolution": {
+    "timestamp": "2026-11-27T21:56:21.882936+00:00",
+    "coordinatorReviewComplete": true,
+    "graphInputHash": "10a89f8ac0db3e16364b9f460a4bcb298932fc6196a17b86bd714c291011ecc4",
+    "coordinatorSession": "01a21c16-9078-7320-bfcf-7b222f2818f8",
+    "evidence": "evidence/proof-coordinator-5ac69463-013b-4a11-9646-a377bb6e403c.json"
+  }
+}

@@ -1,0 +1,2 @@
+import Proofs.CaseSixProjectionNoLeftReplacement
+#print axioms CaseSixProjectionNoLeftReplacement

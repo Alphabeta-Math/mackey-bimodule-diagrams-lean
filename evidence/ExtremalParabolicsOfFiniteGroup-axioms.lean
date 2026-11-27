@@ -1,0 +1,2 @@
+import Proofs.ExtremalParabolicsOfFiniteGroup
+#print axioms ExtremalParabolicsOfFiniteGroup

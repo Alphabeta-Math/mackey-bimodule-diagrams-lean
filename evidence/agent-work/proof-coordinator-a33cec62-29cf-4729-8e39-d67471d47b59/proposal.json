@@ -1,0 +1,131 @@
+{
+  "routes": [
+    {
+      "id": "SmallProjectiveGeneratorCorrespondence",
+      "deps": [
+        "EilenbergWatts",
+        "SmallProjectiveGenerator",
+        "ProjectiveGeneratorModuleReconstruction"
+      ],
+      "available": [
+        {
+          "module": "Proofs.EilenbergWatts",
+          "declaration": "EilenbergWatts",
+          "revision": "sha256:f0e19bdb192ca7aeb94cec07b5d7b0b30c7f344776812852d5ad679b57e823f2",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/EilenbergWatts.lean#L12",
+          "use": "Registered article theorem over arbitrary unital rings and the reviewed common module-carrier universe. Its chosen equivalence supplies balanced pure tensors and the two map formulas, plus the inverse evaluation equality and right action formula."
+        },
+        {
+          "module": "WattsFoundation.ReconstructionFromSmallProjectiveGenerator",
+          "declaration": "ReconstructionFromSmallProjectiveGenerator",
+          "revision": "sha256:723c4d0bc2439af62dc2d41a43fb6154637272f0659d2b63e4d031cc8732dc0e",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/ReconstructionFromSmallProjectiveGenerator.lean#L12",
+          "use": "Native import in the consumer workspace on Lean v4.36.0-rc2 at the pinned mathlib revision. With a locally small abelian category, Type v coproducts, a projective separator, and bijectivity of DirectSum.toAddMonoid on the coproduct injections for every Type v family, provides L and both natural isomorphisms for exactly preadditiveCoyonedaObj. The source and olean hashes match the local receipt. Its audit reports propext, Classical.choice, and Quot.sound."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Yoneda.Basic",
+          "declaration": "CategoryTheory.preadditiveCoyonedaObj",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Yoneda/Basic.lean#L69",
+          "use": "The reviewed module-valued Hom functor over the opposite endomorphism ring. Its module action is precomposition, and its map on category morphisms is postcomposition."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Limits.Preserves.Basic",
+          "declaration": "CategoryTheory.Limits.isColimitOfPreserves",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Limits/Preserves/Basic.lean#L119",
+          "use": "Takes the supplied preservation at a discrete diagram and a colimiting cofan on that diagram to a colimit witness for its mapped cocone."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Limits.Shapes.Products",
+          "declaration": "CategoryTheory.Limits.Cofan.isColimitMapCoconeEquiv",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Limits/Shapes/Products.lean#L467",
+          "use": "Identifies colimiting mapped cocones with colimiting cofans formed by applying the functor to each injection."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Limits.Shapes.Products",
+          "declaration": "CategoryTheory.Limits.Cofan.IsColimit.mk",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Limits/Shapes/Products.lean#L95",
+          "use": "Constructs the direct-sum cofan colimit in AddCommGrpCat from the descending additive map, its values on summand injections, and uniqueness."
+        },
+        {
+          "module": "Mathlib.Algebra.DirectSum.Basic",
+          "declaration": "DirectSum.addHom_ext",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/DirectSum/Basic.lean#L197",
+          "use": "Proves equality of additive maps out of a dependent direct sum from their values on each summand."
+        },
+        {
+          "module": "Mathlib.Algebra.DirectSum.Basic",
+          "declaration": "DirectSum.toAddMonoid_of",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/DirectSum/Basic.lean#L225",
+          "use": "Computes the explicit direct-sum map on each injection. This identifies the coproduct comparison underlying reconstruction."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Equivalence",
+          "declaration": "CategoryTheory.Equivalence.mk",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Equivalence.lean#L340",
+          "use": "Packages H, the supplied L, the inverse of the H ⋙ L ≅ Id iso, and the L ⋙ H ≅ Id iso. The resulting forward functor is H."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Equivalence",
+          "declaration": "CategoryTheory.Equivalence.congrLeft",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Equivalence.lean#L404",
+          "use": "Transports functor categories by precomposition with the inverse of the supplied source equivalence."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Equivalence",
+          "declaration": "CategoryTheory.Equivalence.congrRight",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Equivalence.lean#L418",
+          "use": "Transports functor categories by postcomposition with the supplied target equivalence."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Adjunction.Limits",
+          "declaration": "CategoryTheory.Adjunction.isEquivalence_preservesColimits",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Adjunction/Limits.lean#L101",
+          "use": "Equivalence functors preserve colimits at the needed discrete and finite shapes. Apply to both directions of the module-category equivalences."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.AdditiveFunctor",
+          "declaration": "CategoryTheory.preservesFiniteColimits_le_additiveFunctor",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/AdditiveFunctor.lean#L323",
+          "use": "A finite-colimit-preserving functor between the supplied preadditive categories with zero objects and source binary biproducts is additive."
+        },
+        {
+          "module": "Mathlib.Algebra.Module.ULift",
+          "declaration": "ULift.moduleEquiv",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Module/ULift.lean#L145",
+          "use": "Identifies the lifted regular module with the regular module using the linear up and down maps."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Equivalence",
+          "declaration": "CategoryTheory.Equivalence.changeFunctor",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Equivalence.lean#L561",
+          "use": "Replaces the forward functor of an equivalence along an explicit natural isomorphism, allowing the chosen forward functor to have the exact evaluation object and map required by the endpoint."
+        }
+      ],
+      "approach": "The classical reconstruction supplier is now integrated. Import WattsFoundation.ReconstructionFromSmallProjectiveGenerator and Proofs.EilenbergWatts. A shared-slot check in the consumer environment, using only the project and its existing package build paths, elaborated the exact reviewed correspondence proposition and audited the reconstruction declaration. The checked declaration supplies the two Hom equivalences after the smallness conversion. The correspondence and its evaluation formulas still need proof. First check a local smallness lemma for a symbolic category C, generator P, index I : Type v and family X : I → C. Give the AddCommGrpCat direct-sum cofan injections DirectSum.of and construct its IsColimit with DirectSum.toAddMonoid, toAddMonoid_of, and addHom_ext. Apply the endpoint preservation premise to the cofan with legs Sigma.ι X. Use isColimitOfPreserves and Cofan.isColimitMapCoconeEquiv to get the mapped colimit. Identify the comparison from the direct sum to Hom(P, sigmaObj X) by its injections, then take bijectivity of its isomorphism. Install Projective from each reviewed premise and use the hom universe v for LocallySmall. Apply reconstruction separately at (A,P) and (E,Q). For each returned L use the inverse of H ⋙ L ≅ Id as unit and L ⋙ H ≅ Id as counit. Whisker by the source inverse and the target Hom equivalence. Lift both directions to Good using the finite-colimit and discrete preservation instances and additivity. Apply the registered article EilenbergWatts inverse to the opposite endomorphism rings in the reviewed module universe. Check the regular identification in its own lemma. Use ULift.down followed by unop and End.asHom to identify the lifted regular R with HP.obj P. Verify in this lemma that conjugated right multiplication by op p corresponds to HP.map (End.asHom p). Transport through the source equivalence unit to identify evaluation of the whiskered functor at the lifted regular with evaluation at P. Construct the direct bimodule functor with object HQ.obj (F.obj P), right action by postcomposition with F.obj.map (End.asHom p), and morphism map HQ.map (θ.app P). Precomposition by End.asHom q gives the left action, and associativity and naturality give the bimodule and naturality laws. Use the regular comparison to obtain the natural bimodule isomorphism to this direct functor, then use changeFunctor. Verify the actual functor equality after forgetting on both objects and morphisms, and compute the two formulas through the resulting cast. The planned ProjectiveGeneratorModuleReconstruction edge still refers to a separate choice-free endpoint and remains in deps. Once the exact article proof has compiled and passed the axiom audit with the local reconstruction module in its import closure, that receipt is evidence for an owner decision on removing the held edge for this article item alone. The pointwise choice-free reconstruction and the held portal endpoints retain their existing scope."
+    }
+  ],
+  "repairs": [],
+  "holds": [
+    {
+      "id": "WattsFreePresentation",
+      "reason": "Owner review is needed for the reviewed conclusion's data-valued natural inverse. The retained proofs give every forward clause and pointwise surjectivity. The diagnostics expose the small-target injectivity gap and a separate kernel restriction on extracting a family of actual inverse morphisms from pointwise ExistsUnique in Prop. Resume the full endpoint when an audited construction supplies this family from the existing assumptions or the owner resolves the representation through independent review. The diagnostics concern this Lean construction and do not establish a counterexample to the source."
+    },
+    {
+      "id": "ProjectiveGeneratorModuleReconstruction",
+      "reason": "Owner review is needed for the actual choice-free unit and counit inverse families. The checked pointwise statements remain evidence. Resume if an audited data-valued construction from the reviewed inputs is available or the owner resolves the representation through independent review."
+    }
+  ]
+}

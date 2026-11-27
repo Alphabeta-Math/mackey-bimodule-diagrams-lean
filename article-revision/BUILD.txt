@@ -1,0 +1,30 @@
+Article revision build
+
+This directory contains the editable revision and its compiled 45-page PDF.
+The checksummed source/ article evidence remains unchanged.
+
+With a complete TeX Live installation, run from this directory:
+  latexmk -pdf -interaction=nonstopmode -halt-on-error mackey-bimodules.tex
+
+Verified tools in this environment:
+  /usr/bin/latexmk (4.87)
+  /usr/bin/pdflatex (pdfTeX 1.40.28, TeX Live 2025/Debian)
+The original preamble was retained. It requires lmodern, microtype, TikZ,
+needspace, and the standard AMS, geometry, and hyperref packages.
+
+This environment initially lacked microtype.sty, tikz.sty, and needspace.sty.
+No system packages were installed. The Ubuntu packages texlive-latex-recommended,
+texlive-pictures, and texlive-latex-extra were downloaded with apt-get download
+and extracted with dpkg-deb -x into:
+  /tmp/mackey-article-texdeps-20261127/root
+These temporary files are not bundled and may disappear after this session.
+Install the corresponding standard TeX packages, or recreate that extraction,
+to rebuild in an environment with the same missing dependencies.
+
+The successful local build command, from this directory, was:
+  TEXINPUTS=/tmp/mackey-article-texdeps-20261127/root/usr/share/texlive/texmf-dist/tex/latex//:/tmp/mackey-article-texdeps-20261127/root/usr/share/texlive/texmf-dist/tex/generic//: latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=/tmp/mackey-bilinearity-build-20261128 mackey-bimodules.tex
+  cp /tmp/mackey-bilinearity-build-20261128/mackey-bimodules.pdf mackey-bimodules.pdf
+
+The final build resolved all references and had no LaTeX warnings, undefined
+references, overfull/underfull boxes, or errors. Build logs and auxiliary files
+are in /tmp/mackey-bilinearity-build-20261128, outside this revision.

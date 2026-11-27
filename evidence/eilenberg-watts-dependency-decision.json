@@ -1,0 +1,7 @@
+{
+  "id": "EilenbergWatts",
+  "remove": "WattsFreePresentation",
+  "receipt": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/checked-connections/EilenbergWatts-2a72adc1088d4a166c37cf51398d71eb/receipt.json",
+  "addImport": "WattsFoundation.ReviewedOriginalWattsConnection",
+  "reason": "The exact reviewed theorem has a locally checked alternative proof whose import closure excludes this separately held choice-free auxiliary. Ordinary choice is allowed for this endpoint; the auxiliary remains open."
+}

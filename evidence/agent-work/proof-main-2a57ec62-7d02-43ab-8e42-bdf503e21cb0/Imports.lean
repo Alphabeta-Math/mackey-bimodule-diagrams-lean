@@ -1,0 +1,11 @@
+import Mathlib.CategoryTheory.ObjectProperty.FunctorCategory.PreservesLimits
+import Mathlib.Data.Finsupp.ToDFinsupp
+import MackeyDiagrams
+import Proofs.ComplexEilenbergWatts
+import Proofs.InductionRestrictionBimoduleStrands
+import Proofs.GroupElementDotCriterion
+import Proofs.InductionRestrictionAdjunction
+import Proofs.FiniteIndexReverseAdjunction
+import Proofs.InductionRestrictionMergesAndSplits
+import Proofs.ModuleTensorUniversalProperty
+import Proofs.BalancedTensorAssociativity

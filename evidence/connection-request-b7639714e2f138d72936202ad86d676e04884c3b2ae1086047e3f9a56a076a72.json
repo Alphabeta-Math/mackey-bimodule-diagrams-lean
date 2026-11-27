@@ -1,0 +1,14 @@
+{
+  "accepted": true,
+  "request": {
+    "endpoint": "153d4d37da7a2dbc5e77c0905366222a3263904c5ff9aff73047ae17d3898e2d",
+    "decision": {
+      "id": "FiniteParabolicConjugateBlocks",
+      "proof": "by\n  intro ι finite X nonempty disjoint α\n  dsimp only\n  rw [Subgroup.map_iSup]\n  congr 1\n  funext i\n  let σ : Equiv.Perm Nat := α\n  let Y := (X i).image σ\n  have mem_image (n : Nat) : n ∈ X i ↔ σ n ∈ Y := by\n    simp [Y, Finset.mem_image]\n  let e : {n // n ∈ X i} ≃ {n // n ∈ Y} := σ.subtypeEquiv mem_image\n  have commute (f : Equiv.Perm {n // n ∈ X i}) :\n      MulAut.conj σ (Equiv.Perm.ofSubtype f) =\n        Equiv.Perm.ofSubtype (e.permCongr f) := by\n    apply Equiv.ext\n    intro n\n    obtain ⟨m, rfl⟩ := σ.surjective n\n    change σ (Equiv.Perm.ofSubtype f (σ.symm (σ m))) =\n      Equiv.Perm.ofSubtype (e.permCongr f) (σ m)\n    rw [σ.symm_apply_apply]\n    by_cases hm : m ∈ X i\n    · rw [Equiv.Perm.ofSubtype_apply_of_mem f hm,\n        Equiv.Perm.ofSubtype_apply_of_mem _ ((mem_image m).mp hm)]\n      change (e (f ⟨m, hm⟩) : Nat) = (e.permCongr f (e ⟨m, hm⟩) : Nat)\n      simp\n    · rw [Equiv.Perm.ofSubtype_apply_of_not_mem f hm,\n        Equiv.Perm.ofSubtype_apply_of_not_mem _ (fun h => hm ((mem_image m).mpr h))]\n  apply Subgroup.ext\n  intro τ\n  constructor\n  · rintro ⟨g, hg, rfl⟩\n    obtain ⟨f, rfl⟩ := hg\n    exact ⟨e.permCongr f, (commute f).symm⟩\n  · rintro ⟨g, rfl⟩\n    obtain ⟨f, rfl⟩ := e.permCongr.surjective g\n    exact ⟨Equiv.Perm.ofSubtype f, ⟨f, rfl⟩, commute f⟩\n",
+      "mathlibImports": [
+        "Mathlib.GroupTheory.Perm.Support"
+      ],
+      "reason": "Exact reviewed conjugation step of the article’s §7 closure proposition. Transport each block’s permutations along the conjugator restricted to the block, then distribute subgroup map over the supremum. Native check and axiom receipt: evidence/checked-connections/FiniteParabolicConjugateBlocks-5d62dd7387455c94ead63c59408d4b3b/receipt.json."
+    }
+  }
+}

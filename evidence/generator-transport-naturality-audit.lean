@@ -1,0 +1,2 @@
+import WattsFoundation.GeneratorTransportNaturality
+#print axioms SmallGeneratorBridge.evaluationTransportIso_natural

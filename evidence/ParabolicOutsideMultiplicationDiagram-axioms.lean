@@ -1,0 +1,2 @@
+import Proofs.ParabolicOutsideMultiplicationDiagram
+#print axioms ParabolicOutsideMultiplicationDiagram

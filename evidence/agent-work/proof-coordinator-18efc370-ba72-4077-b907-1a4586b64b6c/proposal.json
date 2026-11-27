@@ -1,0 +1,210 @@
+{
+  "routes": [
+    {
+      "id": "ExpansionIntoRightDiagrams",
+      "deps": [
+        "EvaluationWithOneProjection",
+        "RightOrbitDiagramFromProjectedStabilizer"
+      ],
+      "available": [
+        {
+          "module": "Proofs.RightOrbitDiagramFromProjectedStabilizer",
+          "declaration": "RightOrbitDiagramFromProjectedStabilizer",
+          "revision": "sha256:ace0942b26c7892db84b291398fcda28a445b16be2005508a9fb87e9041f5960",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/RightOrbitDiagramFromProjectedStabilizer.lean#L787",
+          "use": "For the same ordered boundary, gives invariance and normalization for the diagonal G × F action. A nonzero coefficient at a normalized pair yields finite fibers and the coefficient-one orbit indicator from its projected stabilizer. Its finite-label converse gives finite orbit support for evaluated finite combinations."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "revision": "sha256:533e75bc752c7bc1cdf9f37ac63a33dde70abf9f35d92496e985873d3f32913f",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedDrawing.lean#L16",
+          "use": "Stores the entire typed family with a proof of finite support of its evaluated summands for every input. The index type is independent of the input, including when infinite."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedBimodule",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing.evalHom",
+          "revision": "sha256:9b29da2ec5ef1232f0b1138f84316f0f4fb5afe3d5c069fac472b2571b45efb6",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedBimodule.lean#L12",
+          "use": "Turns a well-formed pointwise indexed drawing into a Biset.Hom at the same boundary. The shared-slot audit gives propext, Classical.choice, and Quot.sound."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedBimodule",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing.evalHom_apply",
+          "revision": "sha256:9b29da2ec5ef1232f0b1138f84316f0f4fb5afe3d5c069fac472b2571b45efb6",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedBimodule.lean#L24",
+          "use": "Reduces evaluation of the underlying Biset.Hom linear map to evalAt at the given vector."
+        },
+        {
+          "module": "MackeyDiagrams.Linear",
+          "declaration": "MackeyDiagrams.Biset.Hom.ext",
+          "revision": "sha256:9f22b655ebe182c336bd978ab77b26f639f504dfbd0fb2cce8f9b52f5f11413b",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Linear.lean#L56",
+          "use": "Turns equality of the underlying linear maps of two equivariant maps into equality of the bundled bimodule maps."
+        },
+        {
+          "module": "MackeyDiagrams.IndexedDrawing",
+          "declaration": "MackeyDiagrams.IndexedDrawing.eval_apply",
+          "revision": "sha256:81d91f9aceca3a90d9ac315298cd7988f57c0c22b3e6770d1ab1a5cb15afd0e6",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/IndexedDrawing.lean#L35",
+          "use": "Evaluates over the stored indices. Fin terms.length with Finset.univ counts every list position, including repeated terms, and covers empty and singleton families."
+        },
+        {
+          "module": "Mathlib.GroupTheory.GroupAction.Defs",
+          "declaration": "MulAction.orbit_eq_iff",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/GroupTheory/GroupAction/Defs.lean#L234",
+          "use": "For a group action, equality of orbit a and orbit b is equivalent to membership of a in orbit b. Instantiate with the reviewed diagonal action."
+        },
+        {
+          "module": "Mathlib.Algebra.Group.Finsupp",
+          "declaration": "Finsupp.induction_linear",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Group/Finsupp.lean#L283",
+          "use": "Extends pointwise finiteness from basis columns to every input using zero, addition, and arbitrary-coefficient singleton cases. Keep the candidate supports symbolic."
+        }
+      ],
+      "approach": "This supplier comes first in dependency order. The connected statement matches the latest translator candidate accepted by all three reviewers. Theorem 6.7, archived p. 26 and current published p. 28, quantifies over every bimodule map at the fixed boundary. Keep the existential index type and the separate finite-combination iff. The earlier reviewer objection about losing the drawn indexed scope applies to the displayed left-diagram instance. All three reviews of the intervening supported-orbit-only candidate rejected the extra index and weight constraints on the general theorem. The accepted candidate uses PointwiseIndexedDrawing for the existential sum and an IndexedDrawing evaluator for the finite list, with no required shape equality in the finite clause. Keep independent finite complex labels at the lower mixed projection, middle parallel induction crossing, and upper mixed multiplication, and finite fibers for each lower projection parameter. The horizontal map operations are complex-bilinear and the bimodules tensor over the common group algebra. Use the supported orbit subtype and its matrix coefficients as witnesses. The projected-stabilizer indicator supplies each summand, and orbit_columns extends the finite column supports to general inputs. For the finite iff, use indexed_fold only to compare evaluations with the installed finite-label converse. The engine registered the exact reviewed source after compilation and an audit reporting propext, Classical.choice, and Quot.sound."
+    },
+    {
+      "id": "CaseFivePointwiseFiniteDiagramIdentity",
+      "deps": [
+        "ExpansionIntoRightDiagrams",
+        "RightOrbitDiagramFromProjectedStabilizer"
+      ],
+      "available": [
+        {
+          "module": "Proofs.RightOrbitDiagramFromProjectedStabilizer",
+          "declaration": "RightOrbitDiagramFromProjectedStabilizer",
+          "revision": "sha256:ace0942b26c7892db84b291398fcda28a445b16be2005508a9fb87e9041f5960",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/RightOrbitDiagramFromProjectedStabilizer.lean#L787",
+          "use": "For the same ordered boundary, gives invariance and normalization for the diagonal G × F action. A nonzero coefficient at a normalized pair yields finite fibers and the coefficient-one orbit indicator from its projected stabilizer. Its finite-label converse gives finite orbit support for evaluated finite combinations."
+        },
+        {
+          "module": "Proofs.ExpansionIntoRightDiagrams",
+          "declaration": "ExpansionIntoRightDiagrams",
+          "revision": "sha256:8d23b095ebafffad055b79cc4156f28ce5b16842c9f759d81363bbae371a8a90",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/ExpansionIntoRightDiagrams.lean#L182",
+          "use": "Use its second conjunct at the evaluation of the displayed left drawing. It is the same IndexedDrawing finite-list criterion as the consumer's second conjunct."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "revision": "sha256:533e75bc752c7bc1cdf9f37ac63a33dde70abf9f35d92496e985873d3f32913f",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedDrawing.lean#L16",
+          "use": "Stores the entire typed family with a proof of finite support of its evaluated summands for every input. The index type is independent of the input, including when infinite."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing.shape",
+          "revision": "sha256:533e75bc752c7bc1cdf9f37ac63a33dde70abf9f35d92496e985873d3f32913f",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedDrawing.lean#L31",
+          "use": "Keeps one sum scope over the supported orbit subtype, with every summand's geometric shape."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing.evalAt_def",
+          "revision": "sha256:533e75bc752c7bc1cdf9f37ac63a33dde70abf9f35d92496e985873d3f32913f",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedDrawing.lean#L40",
+          "use": "Evaluates at a vector by summing over the finite support of values at that vector, preserving the stored family. The evaluation audit gives propext, Classical.choice, and Quot.sound."
+        },
+        {
+          "module": "MackeyDiagrams.IndexedDrawing",
+          "declaration": "MackeyDiagrams.IndexedDrawing.eval_apply",
+          "revision": "sha256:81d91f9aceca3a90d9ac315298cd7988f57c0c22b3e6770d1ab1a5cb15afd0e6",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/IndexedDrawing.lean#L35",
+          "use": "Evaluates over the stored indices. Fin terms.length with Finset.univ counts every list position, including repeated terms, and covers empty and singleton families."
+        },
+        {
+          "module": "Mathlib.GroupTheory.GroupAction.Defs",
+          "declaration": "MulAction.orbit_eq_iff",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/GroupTheory/GroupAction/Defs.lean#L234",
+          "use": "For a group action, equality of orbit a and orbit b is equivalent to membership of a in orbit b. Instantiate with the reviewed diagonal action."
+        },
+        {
+          "module": "Mathlib.Algebra.Group.Finsupp",
+          "declaration": "Finsupp.induction_linear",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Group/Finsupp.lean#L283",
+          "use": "Extends pointwise finiteness from basis columns to every input using zero, addition, and arbitrary-coefficient singleton cases. Keep the candidate supports symbolic."
+        }
+      ],
+      "approach": "This connection follows ExpansionIntoRightDiagrams. The independently reviewed statement matches the displayed identity on archived p. 27 and current published p. 29. Specialize to M given by the typed left drawing, and keep the fixed supported-orbit sum with each coefficient taken at the normalized pair. RightOrbitDiagramFromProjectedStabilizer supplies the inclusion j, the designated dots, and their finite-fiber witness. Retain finite_linear_support and sum_orbit_drawings for the basis-to-vector extension. The consumer workspace compiled and audited the final direct application of the new supplier's second conjunct to the reviewed finite criterion. The older replay's fold-to-indexed adapter was needed with the earlier finite-criterion type."
+    },
+    {
+      "id": "CaseFiveRequiresInfiniteExpansion",
+      "deps": [
+        "ExpansionIntoRightDiagrams",
+        "EvaluationWithOneProjection"
+      ],
+      "available": [
+        {
+          "module": "Proofs.EvaluationWithOneProjection",
+          "declaration": "EvaluationWithOneProjection",
+          "revision": "sha256:ad1d09a3ac2a6883f169cf66c763ca69d72581a5007103029bf7cd55098bf223",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/EvaluationWithOneProjection.lean#L7",
+          "use": "The two native-bracketing column formulas specialize to the named left and right diagrams under their separate finite-fiber premises. Uses the exact coefficient and projection parameters in equations (6.3) and (6.4)."
+        },
+        {
+          "module": "MackeyDiagrams.PlanarShape",
+          "declaration": "MackeyDiagrams.PlanarCode.Equivalent.context",
+          "revision": "sha256:da276779707d995f477ed2a18a6cb12d20259649865f42bb583cbdac2cf147cd",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PlanarShape.lean#L127",
+          "use": "Preserves code equivalence under a prefix and suffix. The local rigidity proof handles contiguous subwords."
+        },
+        {
+          "module": "MackeyDiagrams.PlanarShape",
+          "declaration": "MackeyDiagrams.PlanarCode.Equivalent.exchange",
+          "revision": "sha256:da276779707d995f477ed2a18a6cb12d20259649865f42bb583cbdac2cf147cd",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PlanarShape.lean#L129",
+          "use": "Permits disjoint events to exchange with the specified shifts. The consecutive two-wire events of the right drawing overlap."
+        },
+        {
+          "module": "MackeyDiagrams.PlanarShape",
+          "declaration": "MackeyDiagrams.LabelledDrawing.PlanarAtBoundary.interpret",
+          "revision": "sha256:da276779707d995f477ed2a18a6cb12d20259649865f42bb583cbdac2cf147cd",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PlanarShape.lean#L195",
+          "use": "Evaluates arbitrary typed witnesses of the reviewed right shape by aligning the boundaries."
+        },
+        {
+          "module": "MackeyDiagrams.MixedIdentities",
+          "declaration": "MackeyDiagrams.Biset.Hom.transferBasis_sum",
+          "revision": "sha256:c739722827ee60ea5b7fc6c7ed0aa51bba24a6c551728259f89aeaf1cb4f0975",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/MixedIdentities.lean#L15",
+          "use": "Evaluates a projection column using its given finite fiber. The support argument uses an empty fiber when the selected lower label misses x."
+        },
+        {
+          "module": "MackeyDiagrams.ScopedCup",
+          "declaration": "MackeyDiagrams.ScopedDiagram.eval_linearCombination_apply",
+          "revision": "sha256:1089b5d24184f922dd7723d5a20b4a8b881918e23bf34634f73c1fb10a0d88e3",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/ScopedCup.lean#L161",
+          "use": "Expands local evaluated finite label combinations as list sums of scaled values. Use linearity through the boundary maps."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "revision": "sha256:533e75bc752c7bc1cdf9f37ac63a33dde70abf9f35d92496e985873d3f32913f",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedDrawing.lean#L16",
+          "use": "Stores the entire typed family with a proof of finite support of its evaluated summands for every input. The index type is independent of the input, including when infinite."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing.evalAt_def",
+          "revision": "sha256:533e75bc752c7bc1cdf9f37ac63a33dde70abf9f35d92496e985873d3f32913f",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedDrawing.lean#L40",
+          "use": "Evaluates at a vector by summing over the finite support of values at that vector, preserving the stored family. The evaluation audit gives propext, Classical.choice, and Quot.sound."
+        },
+        {
+          "module": "Mathlib.Algebra.Group.Finsupp",
+          "declaration": "Finsupp.induction_linear",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Group/Finsupp.lean#L283",
+          "use": "Extends pointwise finiteness from basis columns to every input using zero, addition, and arbitrary-coefficient singleton cases. Keep the candidate supports symbolic."
+        }
+      ],
+      "approach": "The engine compiled, audited, and registered the exact Example 6.6 replay after its scheduled inputs were ready. Its displayed identity is on archived p. 27 and current published p. 29. Carry forward the checked local declarations rigid_eq, support_atBoundary, fixed_right_code, right_all_support, finite_right_sum, right_column, and pointwise_column_sum from the exact-statement replay. The rigidity and support lemmas transport across the boundary reorderings and cover every PlanarAtBoundary witness. The named-family finite iff in ExpansionIntoRightDiagrams has a narrower drawing predicate. The replay proves the obstruction by taking x outside the union of the lower label supports in a finite combination. The left column is then nonzero while the finite sum vanishes. Each selected column of the infinite family equals the left column, and the pointwise-support proof extends to all inputs with the index P fixed. Keep the finite obstruction as an equality test on evaluated combinations. The replay specializes EvaluationWithOneProjection at the named left drawing and named right family, then proves the broader support bound by typed syntax induction."
+    }
+  ],
+  "repairs": []
+}

@@ -1,0 +1,2 @@
+import Proofs.FiniteParabolicSingleDiagramReplacements
+#print axioms FiniteParabolicSingleDiagramReplacements

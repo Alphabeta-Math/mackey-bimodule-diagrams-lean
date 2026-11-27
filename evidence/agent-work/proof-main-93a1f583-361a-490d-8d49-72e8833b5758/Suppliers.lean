@@ -1,0 +1,10 @@
+import MackeyDiagrams
+import Proofs.MixedCrossingFiberMaps
+
+#check MackeyDiagrams.LabelledDrawing.eval_expandProjection
+#check MackeyDiagrams.ScopedDiagram.eval_expandedMixedProjection
+#check MackeyDiagrams.ProjectionDot.Mixed
+#check MackeyDiagrams.Biset.Hom.transferBasis_sum
+#check MackeyDiagrams.ScopedDiagram.eval_linearCombination_apply
+#check MackeyDiagrams.Generator.mixedEquiv
+#print axioms MixedCrossingFiberMaps

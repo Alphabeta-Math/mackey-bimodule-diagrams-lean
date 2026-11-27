@@ -1,0 +1,2 @@
+'SmallGeneratorBridge.smallOfPreserves' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SmallGeneratorBridge.equivalenceOfSmallProjectiveGenerator' depends on axioms: [propext, Classical.choice, Quot.sound]

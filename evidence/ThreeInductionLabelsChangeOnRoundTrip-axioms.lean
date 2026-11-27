@@ -1,0 +1,2 @@
+import Proofs.ThreeInductionLabelsChangeOnRoundTrip
+#print axioms ThreeInductionLabelsChangeOnRoundTrip

@@ -1,0 +1,35 @@
+{
+  "source_sha256": "371b49e798fd904a1323667f853126fdb914a438c32add1e1ace7e3cec02955a",
+  "commands": [
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "-o",
+      ".lake/build/lib/lean/Proofs/BimoduleTensorBicategoryCoherence.olean",
+      "Proofs/BimoduleTensorBicategoryCoherence.lean"
+    ],
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "evidence/BimoduleTensorBicategoryCoherence-axioms.lean"
+    ]
+  ],
+  "build": {
+    "code": 0,
+    "output": ""
+  },
+  "axioms": {
+    "code": 0,
+    "output": "'BimoduleTensorBicategoryCoherence' depends on axioms: [propext, Quot.sound]\n"
+  },
+  "axiomPolicy": "Classical.choice forbidden by source statement",
+  "ok": true,
+  "workspace_sha256": "0b8923f32a923e0fc946dfe2b389ab92d02b9e01e481b4de6755e55d083f7b65",
+  "olean_sha256": "53cee54b07a4906f42e9ae7c85c93b315017eb31524982039b98f75cda99e7b8"
+}

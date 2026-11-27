@@ -1,0 +1,163 @@
+UnitWork.lean:171:60: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+UnitWork.lean:175:80: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+UnitWork.lean:171:60: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+UnitWork.lean:175:80: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+UnitWork.lean:267:43: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+UnitWork.lean:267:43: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+UnitWork.lean:287:31: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+UnitWork.lean:287:35: warning: Unused tactic linter: `rfl` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+UnitWork.lean:287:35: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+UnitWork.lean:303:43: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+UnitWork.lean:303:43: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+UnitWork.lean:323:31: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+UnitWork.lean:323:35: warning: Unused tactic linter: `rfl` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+UnitWork.lean:323:35: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+UnitWork.lean:360:15: warning: This simp argument is unused:
+  tensor_act_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [prodOne, assocForward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+UnitWork.lean:360:32: warning: This simp argument is unused:
+  prodOne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tensor_act_pure, assocForward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+UnitWork.lean:370:15: warning: This simp argument is unused:
+  tensor_act_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [prodOne, assocBackward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+UnitWork.lean:370:32: warning: This simp argument is unused:
+  prodOne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tensor_act_pure, assocBackward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+UnitWork.lean:360:60: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+UnitWork.lean:370:61: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+UnitWork.lean:360:60: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+UnitWork.lean:370:61: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+UnitWork.lean:486:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+UnitWork.lean:804:18: error: don't know how to synthesize placeholder for argument `hb`
+context:
+K H : Type
+inst✝¹ : Group K
+inst✝ : Group H
+X : Rep ℂ (K × H)
+a : ↑(Reg K)
+x : ↑X
+⊢ GroupBalanced (Reg K) X (leftUnitorPair X)
+UnitWork.lean:808:18: error: don't know how to synthesize placeholder for argument `hb`
+context:
+K H : Type
+inst✝¹ : Group K
+inst✝ : Group H
+X : Rep ℂ (K × H)
+a : ↑(Reg H)
+x : ↑X
+⊢ GroupBalanced X (Reg H) (rightUnitorPair X)
+UnitWork.lean:876:39: error: Application type mismatch: The argument
+  Equiv.ulift.symm
+has type
+  ?m.48 ≃ ULift.{?u.115, ?u.114} ?m.48
+but is expected to have type
+  ?m.41 →₀ ?m.53
+in the application
+  Finsupp.mapDomain_equiv_apply Equiv.ulift.symm
+UnitWork.lean:879:79: error: unsolved goals
+K H : Type
+inst✝¹ : Group K
+inst✝ : Group H
+X : Rep ℂ (K × H)
+a : MonoidAlgebra ℂ K
+x : ↑X
+⊢ ∑ x_1 ∈ a.coeff.support, ((leftUnitorPair X) ((basisCoords (Biset.regular K)) (Finsupp.single x_1 (a.coeff x_1)))) x =
+    ∑ k ∈ a.coeff.support, a.coeff k • (X.ρ (k, 1)) x
+UnitWork.lean:884:35: warning: This simp argument is unused:
+  basisCoords_single
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finsupp.sum, map_sum, LinearMap.flip_apply, leftUnitorPair_single]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+UnitWork.lean:884:77: warning: This simp argument is unused:
+  leftUnitorPair_single
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finsupp.sum, map_sum, basisCoords_single, LinearMap.flip_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+UnitWork.lean:887:81: error: unsolved goals
+K H : Type
+inst✝¹ : Group K
+inst✝ : Group H
+X : Rep ℂ (K × H)
+a : MonoidAlgebra ℂ H
+x : ↑X
+⊢ ∑ x_1 ∈ a.coeff.support,
+      ((rightUnitorPair X) x) ((basisCoords (Biset.regular H)) (Finsupp.single x_1 (a.coeff x_1))) =
+    ∑ h ∈ a.coeff.support, a.coeff h • (X.ρ (1, h⁻¹)) x
+UnitWork.lean:892:35: warning: This simp argument is unused:
+  basisCoords_single
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finsupp.sum, map_sum, rightUnitorPair_single]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+UnitWork.lean:892:55: warning: This simp argument is unused:
+  rightUnitorPair_single
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finsupp.sum, map_sum, basisCoords_single]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

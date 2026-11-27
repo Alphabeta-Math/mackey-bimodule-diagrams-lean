@@ -1,0 +1,143 @@
+BisetWork.lean:171:60: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+BisetWork.lean:175:80: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+BisetWork.lean:171:60: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+BisetWork.lean:175:80: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+BisetWork.lean:267:43: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+BisetWork.lean:267:43: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+BisetWork.lean:287:31: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+BisetWork.lean:287:35: warning: Unused tactic linter: `rfl` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+BisetWork.lean:287:35: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+BisetWork.lean:303:43: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+BisetWork.lean:303:43: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+BisetWork.lean:323:31: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+BisetWork.lean:323:35: warning: Unused tactic linter: `rfl` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+BisetWork.lean:323:35: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+BisetWork.lean:360:15: warning: This simp argument is unused:
+  tensor_act_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [prodOne, assocForward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:360:32: warning: This simp argument is unused:
+  prodOne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tensor_act_pure, assocForward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:370:15: warning: This simp argument is unused:
+  tensor_act_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [prodOne, assocBackward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:370:32: warning: This simp argument is unused:
+  prodOne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tensor_act_pure, assocBackward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:360:60: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+BisetWork.lean:370:61: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+BisetWork.lean:360:60: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+BisetWork.lean:370:61: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+BisetWork.lean:486:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+BisetWork.lean:602:4: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (Biset.liftBalanced ?f ?hf) (((Biset.pairLinear ?m.212 ?m.217 ?m.218) ?x) ?y)
+in the target expression
+  (Biset.liftBalanced ((pure (linearize X) (linearize Y) ∘ₗ ↑(basisCoords X)).compl₂ ↑(basisCoords Y)) ⋯)
+      (((Biset.pairLinear ℂ X Y) v) w) =
+    ((pure (linearize X) (linearize Y)) ((basisCoords X) v)) ((basisCoords Y) w)
+
+K H J : Type
+inst✝² : Group K
+inst✝¹ : Group H
+inst✝ : Group J
+X : Biset K H
+Y : Biset H J
+v : X.carrier →₀ ℂ
+w : Y.carrier →₀ ℂ
+⊢ (Biset.liftBalanced ((pure (linearize X) (linearize Y) ∘ₗ ↑(basisCoords X)).compl₂ ↑(basisCoords Y)) ⋯)
+      (((Biset.pairLinear ℂ X Y) v) w) =
+    ((pure (linearize X) (linearize Y)) ((basisCoords X) v)) ((basisCoords Y) w)
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    compareBackward._proof_3 X Y
+  has type
+    ∀ (h : H) (x : X.carrier →₀ ℂ) (y : Y.carrier →₀ ℂ),
+      (((pure (linearize X) (linearize Y) ∘ₗ ↑(basisCoords X)).compl₂ ↑(basisCoords Y))
+            ((Biset.actLinear ℂ X (1, h)) x))
+          ((Biset.actLinear ℂ Y (h, 1)) y) =
+        (((pure (linearize X) (linearize Y) ∘ₗ ↑(basisCoords X)).compl₂ ↑(basisCoords Y)) x) y
+  but is expected to have type
+    Biset.IsBalanced ((pure (linearize X) (linearize Y) ∘ₗ ↑(basisCoords X)).compl₂ ↑(basisCoords Y))
+  in the application
+    Biset.liftBalanced ((pure (linearize X) (linearize Y) ∘ₗ ↑(basisCoords X)).compl₂ ↑(basisCoords Y)) ⋯
+BisetWork.lean:626:59: error: Application type mismatch: The argument
+  z
+has type
+  ULift.{u, 0} (X.tensor Y).carrier
+but is expected to have type
+  ↑(linearize (X.tensor Y))
+in the application
+  LinearEquiv.surjective (basisCoords (X.tensor Y)) z
+BisetWork.lean:645:24: warning: `LinearEquiv.ofLinear` has been deprecated: Use `LinearEquiv.ofLinearMap` instead
+
+Hint: Replace the deprecated name:
+  LinearEquiv.ofLinearM̲a̲p̲
+BisetWork.lean:645:67: error: Application type mismatch: The argument
+  right
+has type
+  forward ∘ₗ backward = LinearMap.id
+but is expected to have type
+  backward ∘ₗ forward = LinearMap.id
+in the application
+  LinearEquiv.ofLinear forward backward ?m.286 right

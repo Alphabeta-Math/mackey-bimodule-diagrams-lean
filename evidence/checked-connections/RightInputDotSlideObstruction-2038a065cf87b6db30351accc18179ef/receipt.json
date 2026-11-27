@@ -1,0 +1,49 @@
+{
+  "id": "RightInputDotSlideObstruction",
+  "lean": "leanprover/lean4:v4.36.0-rc2",
+  "leanRevision": "b35cb10cf2ced51a2fd1880cfdbf75c71ab7a35a",
+  "mathlib": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+  "workspace": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean",
+  "manifestSha256": "8902ec05c32c92c98e90ebb36796aacc426e0353d1ce2f8f3240b5ee8c4ce7fa",
+  "imports": [
+    {
+      "module": "MackeyDiagrams",
+      "files": [
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/build/lib/lean/MackeyDiagrams.olean",
+          "sha256": "e33e0c8578aa9961064b37908f5c65de398dcaa9090828d90bef3932c28027be"
+        }
+      ]
+    },
+    {
+      "module": "Mathlib.Basic.Complex.Basic",
+      "files": [
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Basic/Complex/Basic.olean",
+          "sha256": "8c8be579b7bb8987f2725023814b5b331117a44254240ed48dbfda2808906227"
+        },
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Basic/Complex/Basic.olean.private",
+          "sha256": "5a1f10f9d3c47d8f34696dfd2761fe4392eca017ababe291d4a51feec83c4841"
+        },
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Basic/Complex/Basic.olean.server",
+          "sha256": "5165ed129ae8726a826aec69fa5a2ad91a46ed02c5820098173bc765e6e0160f"
+        }
+      ]
+    }
+  ],
+  "searchPaths": [],
+  "statementSha256": "f0c3657b4ee7763f5090b3e18e3fe049d671e3310caaeed086196da91d0c77d5",
+  "sourceSha256": "068a96b29dfd187b555f9f4c6f2f0bf03f6920565f185d0680eac342cd75a427",
+  "oleanSha256": "c11c6b2ae85f42d18a6d3381d21bc01547b0eaa02f458c20004a31e1f2ede1ea",
+  "build": {
+    "code": 0,
+    "output": ""
+  },
+  "audit": {
+    "code": 0,
+    "output": "'LeanWorkflowCheckedConnection' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "scope": "The exact supplied statement was checked in this workspace. Importability and interpretation in another workspace are separate obligations."
+}

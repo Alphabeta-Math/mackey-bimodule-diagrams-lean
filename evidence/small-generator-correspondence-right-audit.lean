@@ -1,0 +1,3 @@
+import WattsFoundation.SmallGeneratorCorrespondenceRight
+#print axioms SmallGeneratorBridge.exactEvaluation_left_right
+#print axioms SmallGeneratorBridge.exactEvaluation_map

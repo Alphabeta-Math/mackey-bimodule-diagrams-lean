@@ -1,0 +1,64 @@
+'MackeyDiagrams.DotLabel.eligible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.DotLabel.upDrawing_shape' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.DotLabel.downDrawing_shape' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.DotLabel.eval_upDrawing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.DotLabel.eval_downDrawing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.DotLabel.upDrawing_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.DotLabel.downDrawing_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.DotLabel.upDrawing_basis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.DotLabel.downDrawing_basis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.DotLabel.upDrawing_compose' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.DotLabel.downDrawing_compose' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.LanguageChecks.trivalent_inputs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.LanguageChecks.trivalent_outputs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.LanguageChecks.dot_coefficients_preserve_shape' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MackeyDiagrams.LanguageChecks.zero_dot_keeps_mark' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.LanguageChecks.singleton_dot_basis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.LanguageChecks.singleton_down_dot_basis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.LanguageChecks.group_dot_and_linear_dot_same_shape' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MackeyDiagrams.LanguageChecks.merge_is_one_trivalent_vertex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.LanguageChecks.bent_junction_same_shape' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.LanguageChecks.two_mark_parallel_frame' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.LanguageChecks.disjoint_dot_heights_preserve_shape' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MackeyDiagrams.LanguageChecks.disjoint_dot_heights_preserve_evaluation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MackeyDiagrams.LanguageChecks.tensor_parentheses_preserve_shape' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MackeyDiagrams.LanguageChecks.vertical_parentheses_preserve_shape' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MackeyDiagrams.LanguageChecks.identity_dot_is_still_a_different_shape' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MackeyDiagrams.LanguageChecks.right_curl_keeps_actual_junctions_and_mark' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MackeyDiagrams.LanguageChecks.projection_presentations_keep_distinct_shapes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MackeyDiagrams.LanguageChecks.projection_presentations_preserve_evaluation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MackeyDiagrams.TrivalentVertex.expand' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.ScopedDiagram.linearRightCurlUp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.PlanarCode.length_eq' depends on axioms: [propext]
+'MackeyDiagrams.LabelledDrawing.Shapes.boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.LabelledDrawing.PlanarAtBoundary.interpret' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.LabelledDrawing.planarReplaces_iff_attainable_subset' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MackeyDiagrams.LabelledDrawing.planarReplaces_refl' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.LabelledDrawing.planarReplaces_trans' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.LabelledDrawing.shapeReplaces_iff_attainable_subset' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MackeyDiagrams.LabelledDrawing.shapeReplaces_refl' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyDiagrams.LabelledDrawing.shapeReplaces_trans' depends on axioms: [propext, Classical.choice, Quot.sound]

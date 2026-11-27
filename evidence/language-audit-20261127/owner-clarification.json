@@ -1,0 +1,7 @@
+{
+  "time": "2026-11-27T04:57:54.839065+00:00",
+  "direction": "Owner clarification, 27 November 2026: Every dot at every marked strand vertex is a finite C-linear combination of eligible group elements, each term satisfying the exact adjacent-embedding intertwining condition. Group-element dots are the coefficient-one singleton special case. This applies uniformly, including ordinary dots and dots in expanded crossings and curls. Dot coefficient values, number of nonzero summands, and the constructor used to build a dot are not part of its geometric shape. Preserve the ordered oriented wiring, marked vertices, genuine arithmetic expression scopes, trivalent orientations, and fixed boundary groups and centralizer cosets. Separate arbitrary group-algebra intertwiners from this termwise-eligible dot language; do not silently identify all bimodule maps with eligible dot labels. Read the complete original paper and its rendered diagrams, and use the project shared language rather than inventing a private shape grammar in one theorem type.",
+  "source": "Owner messages in the active conversation; input.request updated with controller and workers stopped.",
+  "articleChanged": false,
+  "planChanged": false
+}

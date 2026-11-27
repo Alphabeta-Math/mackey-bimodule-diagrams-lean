@@ -1,0 +1,2 @@
+import Proofs.DiagrammaticFunctorCorrespondence
+#print axioms DiagrammaticFunctorCorrespondence

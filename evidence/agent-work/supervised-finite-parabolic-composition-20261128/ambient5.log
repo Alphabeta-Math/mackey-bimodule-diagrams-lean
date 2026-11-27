@@ -1,0 +1,120 @@
+Ambient.lean:171:60: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Ambient.lean:175:80: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Ambient.lean:171:60: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Ambient.lean:175:80: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Ambient.lean:267:43: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Ambient.lean:267:43: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Ambient.lean:286:32: error(lean.unknownIdentifier): Unknown constant `Prod.fst_mk`
+Ambient.lean:286:45: error(lean.unknownIdentifier): Unknown constant `Prod.snd_mk`
+Ambient.lean:293:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (lift ?X ?Y ?b ?hb) (((pure ?X ?Y) ?x) ?y)
+in the target expression
+  (lift (tensor X Y) Z (assocForwardInner X Y Z) ⋯) (((pure (tensor X Y) Z) (((pure X Y) x) y)) z) =
+    ((pure X (tensor Y Z)) x) (((pure Y Z) y) z)
+
+K H J F : Type
+inst✝³ : Group K
+inst✝² : Group H
+inst✝¹ : Group J
+inst✝ : Group F
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+x : ↑X
+y : ↑Y
+z : ↑Z
+⊢ (lift (tensor X Y) Z (assocForwardInner X Y Z) ⋯) (((pure (tensor X Y) Z) (((pure X Y) x) y)) z) =
+    ((pure X (tensor Y Z)) x) (((pure Y Z) y) z)
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    assocForwardInner X Y Z
+  has type
+    Carrier X Y →ₗ[ℂ] ↑Z →ₗ[ℂ] Carrier X (tensor Y Z)
+  but is expected to have type
+    ↑(tensor X Y) →ₗ[ℂ] ↑Z →ₗ[ℂ] Carrier X (tensor Y Z)
+  in the application
+    lift (tensor X Y) Z (assocForwardInner X Y Z)
+Ambient.lean:303:43: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Ambient.lean:303:43: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Ambient.lean:322:32: error(lean.unknownIdentifier): Unknown constant `Prod.fst_mk`
+Ambient.lean:322:45: error(lean.unknownIdentifier): Unknown constant `Prod.snd_mk`
+Ambient.lean:329:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (lift ?X ?Y ?b ?hb) (((pure ?X ?Y) ?x) ?y)
+in the target expression
+  (lift X (tensor Y Z) (assocBackwardInner X Y Z).flip ⋯) (((pure X (tensor Y Z)) x) (((pure Y Z) y) z)) =
+    ((pure (tensor X Y) Z) (((pure X Y) x) y)) z
+
+K H J F : Type
+inst✝³ : Group K
+inst✝² : Group H
+inst✝¹ : Group J
+inst✝ : Group F
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+x : ↑X
+y : ↑Y
+z : ↑Z
+⊢ (lift X (tensor Y Z) (assocBackwardInner X Y Z).flip ⋯) (((pure X (tensor Y Z)) x) (((pure Y Z) y) z)) =
+    ((pure (tensor X Y) Z) (((pure X Y) x) y)) z
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    (assocBackwardInner X Y Z).flip
+  has type
+    ↑X →ₗ[ℂ] Carrier Y Z →ₗ[ℂ] Carrier (tensor X Y) Z
+  but is expected to have type
+    ↑X →ₗ[ℂ] ↑(tensor Y Z) →ₗ[ℂ] Carrier (tensor X Y) Z
+  in the application
+    lift X (tensor Y Z) (assocBackwardInner X Y Z).flip
+Ambient.lean:360:32: error(lean.unknownIdentifier): Unknown constant `Prod.fst_mk`
+Ambient.lean:360:45: error(lean.unknownIdentifier): Unknown constant `Prod.snd_mk`
+Ambient.lean:370:32: error(lean.unknownIdentifier): Unknown constant `Prod.fst_mk`
+Ambient.lean:370:45: error(lean.unknownIdentifier): Unknown constant `Prod.snd_mk`
+Ambient.lean:360:15: warning: This simp argument is unused:
+  tensor_act_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Prod.fst_mk, Prod.snd_mk, prodOne, assocForward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:360:58: warning: This simp argument is unused:
+  prodOne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tensor_act_pure, Prod.fst_mk, Prod.snd_mk, assocForward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:370:15: warning: This simp argument is unused:
+  tensor_act_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Prod.fst_mk, Prod.snd_mk, prodOne, assocBackward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Ambient.lean:370:58: warning: This simp argument is unused:
+  prodOne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tensor_act_pure, Prod.fst_mk, Prod.snd_mk, assocBackward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

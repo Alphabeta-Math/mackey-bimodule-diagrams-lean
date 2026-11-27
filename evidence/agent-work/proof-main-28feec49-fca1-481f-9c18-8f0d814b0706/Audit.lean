@@ -1,0 +1,2 @@
+import ProofCheck
+#print axioms ParallelReidemeisterTwoRestriction

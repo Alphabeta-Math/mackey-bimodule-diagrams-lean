@@ -1,0 +1,2 @@
+import Proofs.FiniteParabolicJoinOfFamily
+#print axioms FiniteParabolicJoinOfFamily

@@ -1,0 +1,2 @@
+import Proofs.OrdinaryMackeyDecomposition
+#print axioms OrdinaryMackeyDecomposition

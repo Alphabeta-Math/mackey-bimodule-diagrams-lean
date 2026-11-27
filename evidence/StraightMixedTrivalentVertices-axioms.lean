@@ -1,0 +1,2 @@
+import Proofs.StraightMixedTrivalentVertices
+#print axioms StraightMixedTrivalentVertices

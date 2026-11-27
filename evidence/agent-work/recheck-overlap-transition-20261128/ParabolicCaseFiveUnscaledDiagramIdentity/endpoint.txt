@@ -1,0 +1,206 @@
+let Sinf : Subgroup (Equiv.Perm Nat) :=
+  Subgroup.closure {σ | Equiv.Perm.IsSwap σ}
+let U := ↥Sinf
+let blockSym : Finset Nat → Subgroup (Equiv.Perm Nat) :=
+  fun X => MonoidHom.range (Equiv.Perm.ofSubtype (p := fun m : Nat => m ∈ X))
+let parabolic : Subgroup U → Prop :=
+  fun H => ∃ (n : Nat) (blocks : Fin n → Finset Nat),
+    (∀ l, Finset.Nonempty (blocks l)) ∧
+    Pairwise (fun l m => Disjoint (blocks l) (blocks m)) ∧
+    Subgroup.map (Subgroup.subtype Sinf) H = iSup (fun l => blockSym (blocks l))
+∀ (G A D F C E : Subgroup U),
+  parabolic G → parabolic A → parabolic D → parabolic F → parabolic C → parabolic E →
+  ∀ (a : MackeyDiagrams.ConjEmbedding A G) (b : MackeyDiagrams.ConjEmbedding A D)
+    (d : MackeyDiagrams.ConjEmbedding F D) (c : MackeyDiagrams.ConjEmbedding C G)
+    (e : MackeyDiagrams.ConjEmbedding C E) (f : MackeyDiagrams.ConjEmbedding F E),
+  let up := @MackeyDiagrams.Word.up U _
+  let down := @MackeyDiagrams.Word.down U _
+  let tensor := @MackeyDiagrams.Word.tensor U _
+  let comp := @MackeyDiagrams.ConjEmbedding.comp U _
+  let ga := up a
+  let ad := down b
+  let df := up d
+  let gc := up c
+  let ce := down e
+  let ef := up f
+  let bottom := tensor ga (tensor ad df)
+  let top := tensor gc (tensor ce ef)
+  let X := MackeyDiagrams.Word.basis bottom
+  let Y := MackeyDiagrams.Word.basis top
+  let Pair := X.carrier × Y.carrier
+  let input := fun (g : G) (x : D) =>
+    MackeyDiagrams.Biset.pair (MackeyDiagrams.Word.basis ga)
+      (MackeyDiagrams.Word.basis (tensor ad df)) g (MackeyDiagrams.Generator.mixedPair b d x)
+  let output := fun (g : G) (y : E) =>
+    MackeyDiagrams.Biset.pair (MackeyDiagrams.Word.basis gc)
+      (MackeyDiagrams.Word.basis (tensor ce ef)) g (MackeyDiagrams.Generator.mixedPair e f y)
+  let pair := fun (r : D) (t : G) (s : E) => (input 1 r, output t s)
+  letI : MulAction (G × F) Pair :=
+    { smul := fun q z => (MackeyDiagrams.Biset.act X q z.1, MackeyDiagrams.Biset.act Y q z.2)
+      one_smul := fun z => Prod.ext (MackeyDiagrams.Biset.one_act X z.1)
+        (MackeyDiagrams.Biset.one_act Y z.2)
+      mul_smul := fun q q' z => Prod.ext (MackeyDiagrams.Biset.mul_act X q q' z.1)
+        (MackeyDiagrams.Biset.mul_act Y q q' z.2) }
+  let orbit : Pair → Set Pair := MulAction.orbit (G × F)
+  let stabilizer : Pair → Subgroup (G × F) := MulAction.stabilizer (G × F)
+  let projected := fun z : Pair =>
+    Subgroup.map (MonoidHom.comp (Subgroup.subtype F) (MonoidHom.snd G F)) (stabilizer z)
+  let swaps := fun P : Subgroup U =>
+    Subgroup.closure {σ : U | σ ∈ P ∧ Equiv.Perm.IsSwap (σ : Equiv.Perm Nat)}
+  let RightData := fun B' : Subgroup U =>
+    Σ (i : MackeyDiagrams.ConjEmbedding B' A)
+      (j : MackeyDiagrams.ConjEmbedding B' F)
+      (k : MackeyDiagrams.ConjEmbedding B' C),
+      MackeyDiagrams.Dot (comp b i) (comp d j) ×
+      MackeyDiagrams.Dot (comp a i) (comp c k) ×
+      MackeyDiagrams.Dot (comp e k) (comp f j)
+  let labels : {B' : Subgroup U} → RightData B' → D × G × E :=
+    fun ⟨_, _, _, r, t, s⟩ =>
+      (MackeyDiagrams.Dot.element r, MackeyDiagrams.Dot.element t, MackeyDiagrams.Dot.element s)
+  let representative := fun {B'} (data : RightData B') =>
+    let (r, t, s) := labels data
+    pair r t s
+  let toF : {B' : Subgroup U} → RightData B' → (B' →* F) :=
+    fun ⟨_, j, _, _, _, _⟩ => MackeyDiagrams.ConjEmbedding.toHom j
+  let isInclusion := fun {B'} (data : RightData B') =>
+    ∀ h : B', (toF data h : U) = (h : U)
+  let Fiber : {B' : Subgroup U} → RightData B' → Type :=
+    fun ⟨i, j, _, _, _, _⟩ => (MackeyDiagrams.Word.basis (tensor (up i) (down j))).carrier
+  let lowerMap : {B' : Subgroup U} → (data : RightData B') → Fiber data →
+      (MackeyDiagrams.Word.basis (tensor ad df)).carrier :=
+    fun ⟨i, j, _, r, _, _⟩ => MackeyDiagrams.Generator.mixedMultiplicationBasis b d i j r
+  let finiteFibers := fun {B' : Subgroup U} (data : RightData B') =>
+    ∀ z, Set.Finite {w : Fiber data | lowerMap data w = z}
+  let RightTerm := Σ B' : Subgroup U, {data : RightData B' // finiteFibers data}
+  let rightRepresentative := fun (term : RightTerm) => representative term.2.val
+  (∀ (B : Subgroup U), parabolic B →
+    ∀ (u : MackeyDiagrams.ConjEmbedding G B) (v : MackeyDiagrams.ConjEmbedding D B)
+      (w : MackeyDiagrams.ConjEmbedding E B),
+    let RLabel := MackeyDiagrams.Dot (comp u a) (comp v b)
+    let TLabel := MackeyDiagrams.Dot (comp v d) (comp w f)
+    let SLabel := MackeyDiagrams.Dot (comp u c) (comp w e)
+    let S := fun (r : RLabel) (t : TLabel) (s : SLabel) =>
+      {O : Set Pair | ∃ (g : G) (x : D) (h : G) (y : E),
+        O = orbit (input g x, output h y) ∧
+        MackeyDiagrams.ConjEmbedding.toHom u h * MackeyDiagrams.Dot.element s *
+            MackeyDiagrams.ConjEmbedding.toHom w y =
+          MackeyDiagrams.ConjEmbedding.toHom u g * MackeyDiagrams.Dot.element r *
+            MackeyDiagrams.ConjEmbedding.toHom v x * MackeyDiagrams.Dot.element t}
+    ∃ (leftFibers : ∀ (s : SLabel) z,
+          Set.Finite {p | MackeyDiagrams.Generator.mixedMultiplicationBasis u w c e s p = z})
+      (finiteOrbits : ∀ r t s, Set.Finite (Set.univ : Set ↥(S r t s)))
+      (rightTerm : ∀ r t s, ↥(S r t s) → RightTerm),
+      (∀ r t s (O : ↥(S r t s)),
+        let term := rightTerm r t s O
+        let z := rightRepresentative term
+        orbit z = O.val ∧ term.1 = projected z ∧ parabolic term.1 ∧ isInclusion term.2.val) ∧
+      ∀ (R : Type*) [CommRing R],
+      let drawId := fun {K H : Subgroup U} (p : MackeyDiagrams.Word K H) =>
+        MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.id (R := R) p)
+      let eval := fun (drawing : MackeyDiagrams.LabelledDrawing R bottom top) =>
+        MackeyDiagrams.Biset.Hom.toLinearMap
+          (MackeyDiagrams.ScopedDiagram.eval (MackeyDiagrams.LabelledDrawing.interpret drawing))
+      let rightDiagramFromData : {B' : Subgroup U} → (data : RightData B') → finiteFibers data →
+          MackeyDiagrams.LabelledDrawing R bottom top :=
+        fun ⟨i, j, k, r, t, s⟩ finite =>
+          let ai := up i
+          let fj := down j
+          let ck := up k
+          let lower := MackeyDiagrams.LabelledDrawing.compactProjection (R := R)
+            b d i j [(1, ⟨r, finite⟩)]
+          let middle := MackeyDiagrams.LabelledDrawing.parallelUp (R := R) a i c k [(1, t)]
+          let upper := MackeyDiagrams.LabelledDrawing.mixedMultiplication (R := R) e f k j [(1, s)]
+          MackeyDiagrams.LabelledDrawing.vertical
+            (MackeyDiagrams.LabelledDrawing.horizontal (drawId ga) lower)
+            (MackeyDiagrams.LabelledDrawing.vertical
+              (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.unassociate ga ai fj))
+              (MackeyDiagrams.LabelledDrawing.vertical
+                (MackeyDiagrams.LabelledDrawing.horizontal middle (drawId fj))
+                (MackeyDiagrams.LabelledDrawing.vertical
+                  (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.associate gc ck fj))
+                  (MackeyDiagrams.LabelledDrawing.horizontal (drawId gc) upper))))
+      let rightDiagram := fun (term : RightTerm) => rightDiagramFromData term.2.val term.2.property
+      let coefficient := fun (diagram : MackeyDiagrams.LabelledDrawing R bottom top) (z : Pair) =>
+        eval diagram (Finsupp.single z.1 (1 : R)) z.2
+      let T := fun (O : Set Pair) (n : R) (z : Pair) =>
+        @ite R (z ∈ O) (Classical.propDecidable (z ∈ O)) n 0
+      let leftDiagram := fun
+          (rs : List (R × RLabel)) (ts : List (R × TLabel)) (ss : List (R × SLabel)) =>
+        let lower := MackeyDiagrams.LabelledDrawing.mixedMultiplication (R := R) u v a b rs
+        let middle := MackeyDiagrams.LabelledDrawing.parallelUp (R := R) v d w f ts
+        let upper := MackeyDiagrams.LabelledDrawing.compactProjection (R := R) u w c e
+          (List.map (fun (cs, s) => (cs, ⟨s, leftFibers s⟩)) ss)
+        MackeyDiagrams.LabelledDrawing.vertical
+          (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.unassociate ga ad df))
+          (MackeyDiagrams.LabelledDrawing.vertical
+            (MackeyDiagrams.LabelledDrawing.horizontal lower (drawId df))
+            (MackeyDiagrams.LabelledDrawing.vertical
+              (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.associate (down u) (up v) df))
+              (MackeyDiagrams.LabelledDrawing.vertical
+                (MackeyDiagrams.LabelledDrawing.horizontal (drawId (down u)) middle)
+                (MackeyDiagrams.LabelledDrawing.vertical
+                  (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.unassociate (down u) (up w) ef))
+                  (MackeyDiagrams.LabelledDrawing.vertical
+                    (MackeyDiagrams.LabelledDrawing.horizontal upper (drawId ef))
+                    (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.associate gc ce ef)))))))
+      let orbitSum := fun (r : RLabel) (t : TLabel) (s : SLabel) =>
+        (⟨Set.Finite.toFinset (finiteOrbits r t s), fun O => rightDiagram (rightTerm r t s O)⟩ :
+          MackeyDiagrams.IndexedDrawing R bottom top ↥(S r t s))
+      (∀ r t s (O : ↥(S r t s)) z,
+        coefficient (MackeyDiagrams.IndexedDrawing.summand (orbitSum r t s) O) z =
+          T O.val 1 z) ∧
+      (∀ r t s,
+        eval (leftDiagram [(1, r)] [(1, t)] [(1, s)]) =
+          MackeyDiagrams.IndexedDrawing.eval (orbitSum r t s)) ∧
+      (∀ (rs : MackeyDiagrams.DotLabel R (comp u a) (comp v b))
+          (ts : MackeyDiagrams.DotLabel R (comp v d) (comp w f))
+          (ss : MackeyDiagrams.DotLabel R (comp u c) (comp w e))
+          (m : Finsupp X.carrier R),
+        eval (leftDiagram (MackeyDiagrams.DotLabel.terms rs) (MackeyDiagrams.DotLabel.terms ts)
+          (MackeyDiagrams.DotLabel.terms ss)) m =
+          Finsupp.sum rs (fun r cr =>
+            Finsupp.sum ts (fun t ct =>
+              Finsupp.sum ss (fun s cs =>
+                (cr * ct * cs) • MackeyDiagrams.IndexedDrawing.eval (orbitSum r t s) m))))) ∧
+  (
+    let drawId := fun {K H : Subgroup U} (p : MackeyDiagrams.Word K H) =>
+      MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.id (R := Complex) p)
+    let eval := fun (drawing : MackeyDiagrams.LabelledDrawing Complex bottom top) =>
+      MackeyDiagrams.Biset.Hom.toLinearMap
+        (MackeyDiagrams.ScopedDiagram.eval (MackeyDiagrams.LabelledDrawing.interpret drawing))
+    let rightDiagramFromData : {B' : Subgroup U} → (data : RightData B') → finiteFibers data →
+        MackeyDiagrams.LabelledDrawing Complex bottom top :=
+      fun ⟨i, j, k, r, t, s⟩ finite =>
+        let ai := up i
+        let fj := down j
+        let ck := up k
+        let lower := MackeyDiagrams.LabelledDrawing.compactProjection (R := Complex)
+          b d i j [(1, ⟨r, finite⟩)]
+        let middle := MackeyDiagrams.LabelledDrawing.parallelUp (R := Complex) a i c k [(1, t)]
+        let upper := MackeyDiagrams.LabelledDrawing.mixedMultiplication (R := Complex) e f k j [(1, s)]
+        MackeyDiagrams.LabelledDrawing.vertical
+          (MackeyDiagrams.LabelledDrawing.horizontal (drawId ga) lower)
+          (MackeyDiagrams.LabelledDrawing.vertical
+            (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.unassociate ga ai fj))
+            (MackeyDiagrams.LabelledDrawing.vertical
+              (MackeyDiagrams.LabelledDrawing.horizontal middle (drawId fj))
+              (MackeyDiagrams.LabelledDrawing.vertical
+                (MackeyDiagrams.LabelledDrawing.ordinary (MackeyDiagrams.Diagram.associate gc ck fj))
+                (MackeyDiagrams.LabelledDrawing.horizontal (drawId gc) upper))))
+    let rightDiagram := fun (term : RightTerm) => rightDiagramFromData term.2.val term.2.property
+    let coefficient := fun (diagram : MackeyDiagrams.LabelledDrawing Complex bottom top) (z : Pair) =>
+      eval diagram (Finsupp.single z.1 (1 : Complex)) z.2
+    let T := fun (O : Set Pair) (n : Complex) (z : Pair) =>
+      @ite Complex (z ∈ O) (Classical.propDecidable (z ∈ O)) n 0
+    ∀ z : Pair,
+      ∃ term : RightTerm,
+        let z₀ := rightRepresentative term
+        let P := projected z₀
+        let L := swaps P
+        let n := Subgroup.relIndex L P
+        orbit z₀ = orbit z ∧ term.1 = L ∧ parabolic term.1 ∧ isInclusion term.2.val ∧ n ≠ 0 ∧
+        (∀ p : Pair, coefficient (rightDiagram term) p = T (orbit z) (n : Complex) p) ∧
+        (∀ p : Pair,
+          coefficient (MackeyDiagrams.LabelledDrawing.scale (n : Complex)⁻¹ (rightDiagram term)) p =
+            T (orbit z) 1 p)
+  )

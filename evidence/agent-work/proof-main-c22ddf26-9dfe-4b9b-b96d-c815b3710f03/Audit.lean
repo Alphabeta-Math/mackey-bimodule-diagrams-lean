@@ -1,0 +1,2 @@
+import Proofs.CaseOneNoFiniteRightReplacement
+#print axioms CaseOneNoFiniteRightReplacement

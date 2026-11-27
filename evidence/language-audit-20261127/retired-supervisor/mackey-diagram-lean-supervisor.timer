@@ -1,0 +1,12 @@
+[Unit]
+Description=Inspect the Mackey diagram Lean workflow every ten minutes
+
+[Timer]
+OnActiveSec=1s
+OnUnitInactiveSec=10min
+AccuracySec=1s
+Unit=mackey-diagram-lean-supervisor.service
+
+[Install]
+WantedBy=timers.target
+

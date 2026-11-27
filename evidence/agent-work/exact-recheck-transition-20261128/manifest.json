@@ -1,0 +1,26 @@
+[
+  {
+    "id": "UnequalParabolicCurlProducts",
+    "pid": 226240,
+    "scope": "leanworker-885c9c6b-9a8f-4018-9e0d-08aaa804b47b.scope",
+    "preserved": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/exact-recheck-transition-20261128/UnequalParabolicCurlProducts"
+  },
+  {
+    "id": "SharedParabolicForParallelCrossings",
+    "pid": 226757,
+    "scope": "leanworker-aaceb263-0d51-4cd9-aefa-e8e48e47c651.scope",
+    "preserved": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/exact-recheck-transition-20261128/SharedParabolicForParallelCrossings"
+  },
+  {
+    "id": "FiniteParabolicSingleDiagramReplacements",
+    "pid": 228130,
+    "scope": "leanworker-673ef54b-ca27-4537-84be-35d606c2e766.scope",
+    "preserved": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/exact-recheck-transition-20261128/FiniteParabolicSingleDiagramReplacements"
+  },
+  {
+    "id": "ParabolicExtremalThreeInductionExample",
+    "pid": 228579,
+    "scope": "leanworker-60f9a464-016e-45fa-a0da-35281c2de2d6.scope",
+    "preserved": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/exact-recheck-transition-20261128/ParabolicExtremalThreeInductionExample"
+  }
+]

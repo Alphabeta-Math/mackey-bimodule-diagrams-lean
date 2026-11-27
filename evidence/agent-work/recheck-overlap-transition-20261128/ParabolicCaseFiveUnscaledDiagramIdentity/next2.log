@@ -1,0 +1,785 @@
+CheckNext2.lean:752:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+CheckNext2.lean:760:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+CheckNext2.lean:761:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+CheckNext2.lean:762:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+CheckNext2.lean:763:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+CheckNext2.lean:764:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+CheckNext2.lean:765:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+CheckNext2.lean:766:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+CheckNext2.lean:778:4: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+CheckNext2.lean:790:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+CheckNext2.lean:828:8: error: Dependent elimination failed: Type mismatch when solving this alternative: it has type
+  motive ⟨fst✝⁵, ⟨⟨fst✝⁴, ⟨fst✝³, ⟨fst✝², (fst✝¹, fst✝, snd✝)⟩⟩⟩, property✝⟩⟩
+but is expected to have type
+  motive ⟨fst✝⁵, ⟨⟨fst✝⁴, ⟨fst✝³, ⟨fst✝², (fst✝¹, fst✝, snd✝)⟩⟩⟩, property✝⟩⟩
+CheckNext2.lean:854:12: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (fun {B'} x =>
+      match x with
+      | ⟨fst, ⟨fst_1, ⟨fst_2, (r, t, s)⟩⟩⟩ => (r.element, t.element, s.element))
+    data
+in the target expression
+  pair (labels data).1 (labels data).2.1 (labels data).2.2 = z₀
+
+Sinf : Subgroup (Equiv.Perm ℕ) := Subgroup.closure {σ | σ.IsSwap}
+U : Type := ↥Sinf
+blockSym : Finset ℕ → Subgroup (Equiv.Perm ℕ) := fun X => Equiv.Perm.ofSubtype.range
+parabolic : Subgroup U → Prop :=
+  fun H =>
+    ∃ n blocks,
+      (∀ (l : Fin n), (blocks l).Nonempty) ∧
+        (Pairwise fun l m => Disjoint (blocks l) (blocks m)) ∧ Subgroup.map Sinf.subtype H = ⨆ l, blockSym (blocks l)
+G A D F C E : Subgroup U
+hG : parabolic G
+hA : parabolic A
+hD : parabolic D
+hF : parabolic F
+hC : parabolic C
+hE : parabolic E
+a : ConjEmbedding A G
+b : ConjEmbedding A D
+d : ConjEmbedding F D
+c : ConjEmbedding C G
+e : ConjEmbedding C E
+f : ConjEmbedding F E
+up : {A B : Subgroup U} → ConjEmbedding A B → Word B A := @Word.up U Sinf.toGroup
+down : {A B : Subgroup U} → ConjEmbedding A B → Word A B := @Word.down U Sinf.toGroup
+tensor : {A B C : Subgroup U} → Word A B → Word B C → Word A C := @Word.tensor U Sinf.toGroup
+comp : {H G K : Subgroup U} → ConjEmbedding G K → ConjEmbedding H G → ConjEmbedding H K :=
+  @ConjEmbedding.comp U Sinf.toGroup
+ga : Word G A := up a
+ad : Word A D := down b
+df : Word D F := up d
+gc : Word G C := up c
+ce : Word C E := down e
+ef : Word E F := up f
+bottom : Word G F := tensor ga (tensor ad df)
+top : Word G F := tensor gc (tensor ce ef)
+X : Biset ↥G ↥F := bottom.basis
+Y : Biset ↥G ↥F := top.basis
+Pair : Type := X.carrier × Y.carrier
+input : ↥G → ↥D → (ga.basis.tensor (tensor ad df).basis).carrier :=
+  fun g x => ga.basis.pair (tensor ad df).basis g (Generator.mixedPair b d x)
+output : ↥G → ↥E → (gc.basis.tensor (tensor ce ef).basis).carrier :=
+  fun g y => gc.basis.pair (tensor ce ef).basis g (Generator.mixedPair e f y)
+pair : ↥D → ↥G → ↥E → (ga.basis.tensor (tensor ad df).basis).carrier × (gc.basis.tensor (tensor ce ef).basis).carrier :=
+  fun r t s => (input 1 r, output t s)
+orbit : Pair → Set Pair := MulAction.orbit (↥G × ↥F)
+stabilizer : Pair → Subgroup (↥G × ↥F) := MulAction.stabilizer (↥G × ↥F)
+projected : Pair → Subgroup U := fun z => Subgroup.map (F.subtype.comp (MonoidHom.snd ↥G ↥F)) (stabilizer z)
+swaps : Subgroup U → Subgroup U := fun P => Subgroup.closure {σ | σ ∈ P ∧ (↑σ).IsSwap}
+RightData : Subgroup U → Type :=
+  fun B' =>
+    (i : ConjEmbedding B' A) ×
+      (j : ConjEmbedding B' F) ×
+        (k : ConjEmbedding B' C) × Dot (comp b i) (comp d j) × Dot (comp a i) (comp c k) × Dot (comp e k) (comp f j)
+labels : {B' : Subgroup U} → RightData B' → ↥D × ↥G × ↥E :=
+  fun {B'} x =>
+    match x with
+    | ⟨fst, ⟨fst_1, ⟨fst_2, (r, t, s)⟩⟩⟩ => (r.element, t.element, s.element)
+representative : {B' : Subgroup U} → RightData B' → Pair :=
+  fun {B'} data =>
+    match labels data with
+    | (r, t, s) => pair r t s
+toF : {B' : Subgroup U} → RightData B' → ↥B' →* ↥F :=
+  fun {B'} x =>
+    match x with
+    | ⟨fst, ⟨j, ⟨fst_1, (fst_2, fst_3, snd)⟩⟩⟩ => j.toHom
+isInclusion : {B' : Subgroup U} → RightData B' → Prop := fun {B'} data => ∀ (h : ↥B'), ↑((toF data) h) = ↑h
+Fiber : {B' : Subgroup U} → RightData B' → Type :=
+  fun {B'} x =>
+    match x with
+    | ⟨i, ⟨j, ⟨fst, (fst_1, fst_2, snd)⟩⟩⟩ => (tensor (up i) (down j)).basis.carrier
+lowerMap : {B' : Subgroup U} → (data : RightData B') → Fiber data → (tensor ad df).basis.carrier :=
+  fun {B'} x =>
+    match (motive := (x : RightData B') → Fiber x → (tensor ad df).basis.carrier) x with
+    | ⟨i, ⟨j, ⟨fst, (r, fst_1, snd)⟩⟩⟩ => Generator.mixedMultiplicationBasis b d i j r
+finiteFibers : {B' : Subgroup U} → RightData B' → Prop :=
+  fun {B'} data => ∀ (z : (tensor ad df).basis.carrier), {w | lowerMap data w = z}.Finite
+RightTerm : Type := (B' : Subgroup U) × { data // finiteFibers data }
+rightRepresentative : RightTerm → Pair := fun term => representative ↑term.snd
+this✝⁷ : MulAction (↥G × ↥F) Pair := { smul := fun q z => (X.act q z.1, Y.act q z.2), mul_smul := ⋯, one_smul := ⋯ }
+hFiniteG : Finite ↥G
+hFiniteD : Finite ↥D
+hFiniteE : Finite ↥E
+hFiniteF : Finite ↥F
+this✝⁶ : Finite ↥G := hFiniteG
+this✝⁵ : Finite ↥D := hFiniteD
+this✝⁴ : Finite ↥E := hFiniteE
+this✝³ : Finite ↥F := hFiniteF
+this✝² : Finite X.carrier := caseWord_finite a b d
+this✝¹ : Finite Y.carrier := caseWord_finite c e f
+this✝ : Finite Pair :=
+  ParabolicCaseFiveUnscaledDiagramIdentity._proof_1 G A D F C E a b d c e f hFiniteG hFiniteD hFiniteE
+expansion :
+  let up := @Word.up (↥(Subgroup.closure {σ | σ.IsSwap})) (Subgroup.closure {σ | σ.IsSwap}).toGroup;
+  let down := @Word.down (↥(Subgroup.closure {σ | σ.IsSwap})) (Subgroup.closure {σ | σ.IsSwap}).toGroup;
+  let tensor := @Word.tensor (↥(Subgroup.closure {σ | σ.IsSwap})) (Subgroup.closure {σ | σ.IsSwap}).toGroup;
+  let comp := @ConjEmbedding.comp (↥(Subgroup.closure {σ | σ.IsSwap})) (Subgroup.closure {σ | σ.IsSwap}).toGroup;
+  let ga := up a;
+  let ad := down b;
+  let df := up d;
+  let gc := up c;
+  let ce := down e;
+  let ef := up f;
+  let bottom := tensor ga (tensor ad df);
+  let top := tensor gc (tensor ce ef);
+  let X := bottom.basis;
+  let Y := top.basis;
+  let Pair := X.carrier × Y.carrier;
+  have input := fun g x => ga.basis.pair (tensor ad df).basis g (Generator.mixedPair b d x);
+  have output := fun g y => gc.basis.pair (tensor ce ef).basis g (Generator.mixedPair e f y);
+  have pair := fun r t s => (input 1 r, output t s);
+  have orbit := MulAction.orbit (↥G × ↥F);
+  have stabilizer := MulAction.stabilizer (↥G × ↥F);
+  have projected := fun z => Subgroup.map (F.subtype.comp (MonoidHom.snd ↥G ↥F)) (stabilizer z);
+  have swaps := fun P => Subgroup.closure {σ | σ ∈ P ∧ (↑σ).IsSwap};
+  have coefficient := fun M z => (M.toLinearMap (Finsupp.single z.1 1)) z.2;
+  have matrix := fun O n z => if z ∈ O then ↑n else 0;
+  let RightData := fun B' =>
+    (i : ConjEmbedding B' A) ×
+      (j : ConjEmbedding B' F) ×
+        (k : ConjEmbedding B' C) × Dot (comp b i) (comp d j) × Dot (comp a i) (comp c k) × Dot (comp e k) (comp f j);
+  have labels := fun {B'} x =>
+    match x with
+    | ⟨fst, ⟨fst_1, ⟨fst_2, (r, t, s)⟩⟩⟩ => (r.element, t.element, s.element);
+  have representative := fun {B'} data =>
+    match labels data with
+    | (r, t, s) => pair r t s;
+  have toF := fun {B'} x =>
+    match x with
+    | ⟨fst, ⟨j, ⟨fst_1, (fst_2, fst_3, snd)⟩⟩⟩ => j.toHom;
+  have isInclusion := fun {B'} data => ∀ (h : ↥B'), ↑((toF data) h) = ↑h;
+  let Fiber := fun {B'} x =>
+    match x with
+    | ⟨i, ⟨j, ⟨fst, (fst_1, fst_2, snd)⟩⟩⟩ => (tensor (up i) (down j)).basis.carrier;
+  let lowerMap := fun {B'} x =>
+    match (motive := (x : RightData B') → Fiber x → (tensor ad df).basis.carrier) x with
+    | ⟨i, ⟨j, ⟨fst, (r, fst_1, snd)⟩⟩⟩ => Generator.mixedMultiplicationBasis b d i j r;
+  let finiteFibers := fun {B'} data => ∀ (z : (tensor ad df).basis.carrier), {w | lowerMap data w = z}.Finite;
+  have drawId := fun {K H} p => LabelledDrawing.ordinary (Diagram.id p);
+  have eval := fun drawing => drawing.interpret.eval;
+  have rightDiagram := fun {B'} x finite =>
+    match x, finite with
+    | ⟨i, ⟨j, ⟨k, (r, t, s)⟩⟩⟩, finite =>
+      let ai := up i;
+      let fj := down j;
+      let ck := up k;
+      have lower := LabelledDrawing.compactProjection b d i j [(1, { dot := r, finite := finite })];
+      have middle := LabelledDrawing.parallelUp a i c k [(1, t)];
+      have upper := LabelledDrawing.mixedMultiplication e f k j [(1, s)];
+      ((drawId ga).horizontal lower).vertical
+        ((LabelledDrawing.ordinary (Diagram.unassociate ga ai fj)).vertical
+          ((middle.horizontal (drawId fj)).vertical
+            ((LabelledDrawing.ordinary (Diagram.associate gc ck fj)).vertical ((drawId gc).horizontal upper))));
+  have realizes := fun {B'} data O n =>
+    orbit (representative data) = O ∧
+      ∃ (finite : finiteFibers data), ∀ (z : Pair), coefficient (eval (rightDiagram data finite)) z = matrix O n z;
+  let LeftUpperFiber := fun {B} u w s =>
+    ∀ (z : ((Biset.restriction u).tensor (Biset.induction w)).carrier),
+      {p | Generator.mixedMultiplicationBasis u w c e s p = z}.Finite;
+  have leftDiagram := fun {B} u v w r t s finite =>
+    have lower := LabelledDrawing.mixedMultiplication u v a b [(1, r)];
+    have middle := LabelledDrawing.parallelUp v d w f [(1, t)];
+    have upper := LabelledDrawing.compactProjection u w c e [(1, { dot := s, finite := finite })];
+    (LabelledDrawing.ordinary (Diagram.unassociate ga ad df)).vertical
+      ((lower.horizontal (drawId df)).vertical
+        ((LabelledDrawing.ordinary (Diagram.associate (down u) (up v) df)).vertical
+          (((drawId (down u)).horizontal middle).vertical
+            ((LabelledDrawing.ordinary (Diagram.unassociate (down u) (up w) ef)).vertical
+              ((upper.horizontal (drawId ef)).vertical (LabelledDrawing.ordinary (Diagram.associate gc ce ef)))))));
+  (∀ (B : Subgroup ↥(Subgroup.closure {σ | σ.IsSwap})),
+      (fun H =>
+            ∃ n blocks,
+              (∀ (l : Fin n), (blocks l).Nonempty) ∧
+                (Pairwise fun l m => Disjoint (blocks l) (blocks m)) ∧
+                  Subgroup.map (Subgroup.closure {σ | σ.IsSwap}).subtype H = ⨆ l, (fun X => ⋯) (blocks l))
+          B →
+        ∀ (u : ConjEmbedding G B) (v : ConjEmbedding D B) (w : ConjEmbedding E B) (r : Dot (comp u a) (comp v b))
+          (t : Dot (comp v d) (comp w f)) (s : Dot (comp u c) (comp w e)) (finite : LeftUpperFiber u w s),
+          have M := eval (leftDiagram u v w r t s finite);
+          have S := {O | ∃ z, O = orbit z ∧ coefficient M z ≠ 0};
+          ∃ expansion, ⋯) ∧
+    ∀ (z : Pair),
+      have P := projected z;
+      have n := (swaps P).relIndex P;
+      IsLeast {m | ∃ B' term, (fun H => ⋯) B' ∧ realizes term (orbit z) m} n ∧
+        (n = 1 ↔
+          (fun H =>
+              ∃ n blocks,
+                (∀ (l : Fin n), (blocks l).Nonempty) ∧ (Pairwise fun l m => Disjoint (blocks l) (blocks m)) ∧ ⋯ = ⋯)
+            P)
+multiplicity :
+  let up := @Word.up (↥(Subgroup.closure {σ | σ.IsSwap})) (Subgroup.closure {σ | σ.IsSwap}).toGroup;
+  let down := @Word.down (↥(Subgroup.closure {σ | σ.IsSwap})) (Subgroup.closure {σ | σ.IsSwap}).toGroup;
+  let tensor := @Word.tensor (↥(Subgroup.closure {σ | σ.IsSwap})) (Subgroup.closure {σ | σ.IsSwap}).toGroup;
+  let comp := @ConjEmbedding.comp (↥(Subgroup.closure {σ | σ.IsSwap})) (Subgroup.closure {σ | σ.IsSwap}).toGroup;
+  let ga := up a;
+  let ad := down b;
+  let df := up d;
+  let gc := up c;
+  let ce := down e;
+  let ef := up f;
+  let bottom := tensor ga (tensor ad df);
+  let top := tensor gc (tensor ce ef);
+  let X := bottom.basis;
+  let Y := top.basis;
+  let Pair := X.carrier × Y.carrier;
+  have input := fun g x => ga.basis.pair (tensor ad df).basis g (Generator.mixedPair b d x);
+  have output := fun g y => gc.basis.pair (tensor ce ef).basis g (Generator.mixedPair e f y);
+  have pair := fun r t s => (input 1 r, output t s);
+  have orbit := MulAction.orbit (↥G × ↥F);
+  have stabilizer := MulAction.stabilizer (↥G × ↥F);
+  have projected := fun z => Subgroup.map (F.subtype.comp (MonoidHom.snd ↥G ↥F)) (stabilizer z);
+  have swaps := fun P => Subgroup.closure {σ | σ ∈ P ∧ (↑σ).IsSwap};
+  have coefficient := fun M z => (M.toLinearMap (Finsupp.single z.1 1)) z.2;
+  have matrix := fun O n z => if z ∈ O then ↑n else 0;
+  let RightData := fun B' =>
+    (i : ConjEmbedding B' A) ×
+      (j : ConjEmbedding B' F) ×
+        (k : ConjEmbedding B' C) × Dot (comp b i) (comp d j) × Dot (comp a i) (comp c k) × Dot (comp e k) (comp f j);
+  have labels := fun {B'} x =>
+    match x with
+    | ⟨fst, ⟨fst_1, ⟨fst_2, (r, t, s)⟩⟩⟩ => (r.element, t.element, s.element);
+  have representative := fun {B'} data =>
+    match labels data with
+    | (r, t, s) => pair r t s;
+  have toA := fun {B'} x =>
+    match x with
+    | ⟨i, ⟨fst, ⟨fst_1, (fst_2, fst_3, snd)⟩⟩⟩ => i.toHom;
+  have toF := fun {B'} x =>
+    match x with
+    | ⟨fst, ⟨j, ⟨fst_1, (fst_2, fst_3, snd)⟩⟩⟩ => j.toHom;
+  have toC := fun {B'} x =>
+    match x with
+    | ⟨fst, ⟨fst_1, ⟨k, (fst_2, fst_3, snd)⟩⟩⟩ => k.toHom;
+  have restricts := fun {P K} term full hK =>
+    labels term = labels full ∧
+      toA term = (toA full).comp (Subgroup.inclusion hK) ∧
+        toF term = (toF full).comp (Subgroup.inclusion hK) ∧ toC term = (toC full).comp (Subgroup.inclusion hK);
+  have image := fun {B'} data => (F.subtype.comp (toF data)).range;
+  have isInclusion := fun {B'} data => ∀ (h : ↥B'), ↑((toF data) h) = ↑h;
+  let Fiber := fun {B'} x =>
+    match x with
+    | ⟨i, ⟨j, ⟨fst, (fst_1, fst_2, snd)⟩⟩⟩ => (tensor (up i) (down j)).basis.carrier;
+  let lowerMap := fun {B'} x =>
+    match (motive := (x : RightData B') → Fiber x → (tensor ad df).basis.carrier) x with
+    | ⟨i, ⟨j, ⟨fst, (r, fst_1, snd)⟩⟩⟩ => Generator.mixedMultiplicationBasis b d i j r;
+  let finiteFibers := fun {B'} data => ∀ (z : (tensor ad df).basis.carrier), {w | lowerMap data w = z}.Finite;
+  have drawId := fun {K H} p => LabelledDrawing.ordinary (Diagram.id p);
+  have eval := fun drawing => drawing.interpret.eval;
+  have rightDiagram := fun {B'} x finite =>
+    match x, finite with
+    | ⟨i, ⟨j, ⟨k, (r, t, s)⟩⟩⟩, finite =>
+      let ai := up i;
+      let fj := down j;
+      let ck := up k;
+      have lower := LabelledDrawing.compactProjection b d i j [(1, { dot := r, finite := finite })];
+      have middle := LabelledDrawing.parallelUp a i c k [(1, t)];
+      have upper := LabelledDrawing.mixedMultiplication e f k j [(1, s)];
+      ((drawId ga).horizontal lower).vertical
+        ((LabelledDrawing.ordinary (Diagram.unassociate ga ai fj)).vertical
+          ((middle.horizontal (drawId fj)).vertical (⋯.vertical ⋯)));
+  have rightCount := fun {B'} data g x y =>
+    match labels data with
+    | (fst, t, s) =>
+      Nat.card
+        { w //
+          lowerMap data w = Generator.mixedPair b d x ∧
+            (have v := Quotient.out w;
+              output (⋯ * t) (s * ⋯)) =
+              y };
+  have realizes := fun {B'} data O n =>
+    orbit (representative data) = O ∧
+      ∃ (finite : finiteFibers data), ∀ (z : Pair), coefficient (eval (rightDiagram data finite)) z = matrix O n z;
+  let LeftUpperFiber := fun {B} u w s =>
+    ∀ (z : ((Biset.restriction u).tensor (Biset.induction w)).carrier),
+      {p | Generator.mixedMultiplicationBasis u w c e s p = z}.Finite;
+  have leftDiagram := fun {B} u v w r t s finite =>
+    have lower := LabelledDrawing.mixedMultiplication u v a b [(1, r)];
+    have middle := LabelledDrawing.parallelUp v d w f [(1, t)];
+    have upper := LabelledDrawing.compactProjection u w c e [(1, { dot := s, finite := finite })];
+    (LabelledDrawing.ordinary (Diagram.unassociate ga ad df)).vertical
+      ((lower.horizontal (drawId df)).vertical ((LabelledDrawing.ordinary ⋯).vertical (⋯.vertical ⋯)));
+  (∀ (M : Biset.Hom ℂ X Y) (z z' : Pair), z' ∈ orbit z → coefficient M z' = coefficient M z) ∧
+    (∀ (z : Pair), ∃ r t s, z ∈ orbit (pair r t s)) ∧
+      (∀ (r : ↥D) (t : ↥G) (s : ↥E),
+          have z := pair r t s;
+          have P := projected z;
+          ⋯) ∧
+        (∀ (B' : Subgroup ↥(Subgroup.closure {σ | σ.IsSwap})),
+            (fun H => ⋯) B' →
+              ∀ (data : RightData B'),
+                have z := representative data;
+                ⋯) ∧
+          (∀ (z : Pair),
+              have P := projected z;
+              have n := ⋯;
+              ⋯) ∧
+            ∀ (B : Subgroup ↥(Subgroup.closure {σ | σ.IsSwap})), ⋯ B → ∀ (u : ⋯), ⋯
+B : Subgroup U
+hB : parabolic B
+u : ConjEmbedding G B
+v : ConjEmbedding D B
+w : ConjEmbedding E B
+RLabel : Type := Dot (comp u a) (comp v b)
+TLabel : Type := Dot (comp v d) (comp w f)
+SLabel : Type := Dot (comp u c) (comp w e)
+S : RLabel → TLabel → SLabel → Set (Set Pair) :=
+  fun r t s =>
+    {O |
+      ∃ g x h y,
+        O = orbit (input g x, output h y) ∧
+          u.toHom h * s.element * w.toHom y = u.toHom g * r.element * v.toHom x * t.element}
+upperCarrier : Type := ((Word.up c).tensor (Word.down e)).basis.carrier
+this : Finite upperCarrier :=
+  Finite.of_surjective (fun p => (Biset.induction c).pair (Biset.restriction e) p.1 p.2) fun p =>
+    Quotient.inductionOn p fun q => Exists.intro q rfl
+leftFibers :
+  ∀ (s : SLabel) (z : ((Biset.restriction u).tensor (Biset.induction w)).carrier),
+    {p | Generator.mixedMultiplicationBasis u w c e s p = z}.Finite
+finiteOrbits : ∀ (r : RLabel) (t : TLabel) (s : SLabel), Set.univ.Finite
+leftOne : RLabel → TLabel → SLabel → LabelledDrawing ℂ (caseWord a b d) (caseWord c e f) :=
+  fun r t s => leftDrawing a b d c e f u v w [(1, r)] [(1, t)] [(1, { dot := s, finite := ⋯ })]
+cL : RLabel → TLabel → SLabel → Pair → ℂ :=
+  fun r t s z => ((drawingEval (leftOne r t s)).toLinearMap (Finsupp.single z.1 1)) z.2
+leftSupport :
+  ∀ (r : RLabel) (t : TLabel) (s : SLabel),
+    (∀ (z : Pair), orbit z ∈ S r t s ↔ cL r t s z ≠ 0) ∧ ∀ (z : Pair), cL r t s z ≠ 0 → cL r t s z = 1
+rightAt : RightTerm → LabelledDrawing ℂ bottom top := fun term => sorry
+r : RLabel
+t : TLabel
+s : SLabel
+O : ↑(S r t s)
+S₀ : Set (Set Pair) := {O' | ∃ z, O' = orbit z ∧ cL r t s z ≠ 0}
+hS : S r t s = S₀
+O₀ : ↑S₀ := ⟨↑O, ⋯⟩
+sum :
+  IndexedDrawing ℂ ((Word.up a).tensor ((Word.down b).tensor (Word.up d)))
+    ((Word.up c).tensor ((Word.down e).tensor (Word.up f)))
+    ↑{O |
+        ∃ z,
+          O = MulAction.orbit (↥G × ↥F) z ∧
+            (fun M z => (M.toLinearMap (Finsupp.single z.1 1)) z.2)
+                ((fun drawing => drawing.interpret.eval)
+                  ((fun {B} u v w r t s finite =>
+                      have lower := LabelledDrawing.mixedMultiplication u v a b [(1, r)];
+                      have middle := LabelledDrawing.parallelUp v d w f [(1, t)];
+                      have upper := LabelledDrawing.compactProjection u w c e [(1, { dot := s, finite := finite })];
+                      (LabelledDrawing.ordinary (Diagram.unassociate (Word.up a) (Word.down b) (Word.up d))).vertical
+                        ((lower.horizontal
+                              ((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) (Word.up d))).vertical
+                          ((LabelledDrawing.ordinary (Diagram.associate (Word.down u) (Word.up v) (Word.up d))).vertical
+                            ((((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) (Word.down u)).horizontal
+                                  middle).vertical
+                              ((LabelledDrawing.ordinary
+                                    (Diagram.unassociate (Word.down u) (Word.up w) (Word.up f))).vertical
+                                ((upper.horizontal
+                                      ((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) (Word.up f))).vertical
+                                  (LabelledDrawing.ordinary
+                                    (Diagram.associate (Word.up c) (Word.down e) (Word.up f)))))))))
+                    u v w r t s ⋯))
+                z ≠
+              0}
+left✝ :
+  ∀
+    (O :
+      ↑{O |
+          ∃ z,
+            O = MulAction.orbit (↥G × ↥F) z ∧
+              (fun M z => (M.toLinearMap (Finsupp.single z.1 1)) z.2)
+                  ((fun drawing => drawing.interpret.eval)
+                    ((fun {B} u v w r t s finite =>
+                        have lower := LabelledDrawing.mixedMultiplication u v a b [(1, r)];
+                        have middle := LabelledDrawing.parallelUp v d w f [(1, t)];
+                        have upper := LabelledDrawing.compactProjection u w c e [(1, { dot := s, finite := finite })];
+                        (LabelledDrawing.ordinary (Diagram.unassociate (Word.up a) (Word.down b) (Word.up d))).vertical
+                          ((lower.horizontal
+                                ((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) (Word.up d))).vertical
+                            ((LabelledDrawing.ordinary
+                                  (Diagram.associate (Word.down u) (Word.up v) (Word.up d))).vertical
+                              ((((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) (Word.down u)).horizontal
+                                    middle).vertical
+                                ((LabelledDrawing.ordinary
+                                      (Diagram.unassociate (Word.down u) (Word.up w) (Word.up f))).vertical
+                                  ((upper.horizontal
+                                        ((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) (Word.up f))).vertical
+                                    (LabelledDrawing.ordinary
+                                      (Diagram.associate (Word.up c) (Word.down e) (Word.up f)))))))))
+                      u v w r t s ⋯))
+                  z ≠
+                0}),
+    O ∈ sum.indices
+hterms :
+  ∀
+    (O :
+      ↑{O |
+          ∃ z,
+            O = MulAction.orbit (↥G × ↥F) z ∧
+              (fun M z => (M.toLinearMap (Finsupp.single z.1 1)) z.2)
+                  ((fun drawing => drawing.interpret.eval)
+                    ((fun {B} u v w r t s finite =>
+                        have lower := LabelledDrawing.mixedMultiplication u v a b [(1, r)];
+                        have middle := LabelledDrawing.parallelUp v d w f [(1, t)];
+                        have upper := LabelledDrawing.compactProjection u w c e [(1, { dot := s, finite := finite })];
+                        (LabelledDrawing.ordinary (Diagram.unassociate (Word.up a) (Word.down b) (Word.up d))).vertical
+                          ((lower.horizontal
+                                ((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) (Word.up d))).vertical
+                            ((LabelledDrawing.ordinary
+                                  (Diagram.associate (Word.down u) (Word.up v) (Word.up d))).vertical
+                              ((((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) (Word.down u)).horizontal
+                                    middle).vertical
+                                ((LabelledDrawing.ordinary
+                                      (Diagram.unassociate (Word.down u) (Word.up w) (Word.up f))).vertical
+                                  ((upper.horizontal
+                                        ((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) (Word.up f))).vertical
+                                    (LabelledDrawing.ordinary
+                                      (Diagram.associate (Word.up c) (Word.down e) (Word.up f)))))))))
+                      u v w r t s ⋯))
+                  z ≠
+                0}),
+    ∃ r₀ t₀ s₀,
+      have z :=
+        (fun r t s =>
+            ((fun g x => (Word.up a).basis.pair ((Word.down b).tensor (Word.up d)).basis g (Generator.mixedPair b d x))
+                1 r,
+              (fun g y => (Word.up c).basis.pair ((Word.down e).tensor (Word.up f)).basis g (Generator.mixedPair e f y))
+                t s))
+          r₀ t₀ s₀;
+      have P := (fun z => Subgroup.map (F.subtype.comp (MonoidHom.snd ↥G ↥F)) (MulAction.stabilizer (↥G × ↥F) z)) z;
+      ↑O = MulAction.orbit (↥G × ↥F) z ∧
+        (fun H =>
+              ∃ n blocks,
+                (∀ (l : Fin n), (blocks l).Nonempty) ∧
+                  (Pairwise fun l m => Disjoint (blocks l) (blocks m)) ∧
+                    Subgroup.map (Subgroup.closure {σ | σ.IsSwap}).subtype H =
+                      ⨆ l, (fun X => Equiv.Perm.ofSubtype.range) (blocks l))
+            P ∧
+          ∃ data,
+            ∃ (fiberProof :
+              (fun {B'} data =>
+                  ∀ (z : ((Word.down b).tensor (Word.up d)).basis.carrier),
+                    {w |
+                        (fun {B'} x =>
+                              match (motive :=
+                                (x :
+                                    (i : ConjEmbedding B' A) ×
+                                      (j : ConjEmbedding B' F) ×
+                                        (k : ConjEmbedding B' C) ×
+                                          Dot (b.comp i) (d.comp j) ×
+                                            Dot (a.comp i) (c.comp k) × Dot (e.comp k) (f.comp j)) →
+                                  (fun {B'} x =>
+                                        match x with
+                                        | ⟨i, ⟨j, ⟨fst, (fst_1, fst_2, snd)⟩⟩⟩ =>
+                                          ((Word.up i).tensor (Word.down j)).basis.carrier)
+                                      x →
+                                    ((Word.down b).tensor (Word.up d)).basis.carrier)
+                                x with
+                              | ⟨i, ⟨j, ⟨fst, (r, fst_1, snd)⟩⟩⟩ => Generator.mixedMultiplicationBasis b d i j r)
+                            data w =
+                          z}.Finite)
+                data),
+              (fun {B'} x =>
+                      match x with
+                      | ⟨fst, ⟨fst_1, ⟨fst_2, (r, t, s)⟩⟩⟩ => (r.element, t.element, s.element))
+                    data =
+                  (r₀, t₀, s₀) ∧
+                (fun {B'} data =>
+                      ∀ (h : ↥B'),
+                        ↑(((fun {B'} x =>
+                                  match x with
+                                  | ⟨fst, ⟨j, ⟨fst_1, (fst_2, fst_3, snd)⟩⟩⟩ => j.toHom)
+                                data)
+                              h) =
+                          ↑h)
+                    data ∧
+                  sum.summand O =
+                      (fun {B'} x finite =>
+                          match x, finite with
+                          | ⟨i, ⟨j, ⟨k, (r, t, s)⟩⟩⟩, finite =>
+                            let ai := Word.up i;
+                            let fj := Word.down j;
+                            let ck := Word.up k;
+                            have lower :=
+                              LabelledDrawing.compactProjection b d i j [(1, { dot := r, finite := finite })];
+                            have middle := LabelledDrawing.parallelUp a i c k [(1, t)];
+                            have upper := LabelledDrawing.mixedMultiplication e f k j [(1, s)];
+                            (((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) (Word.up a)).horizontal
+                                  lower).vertical
+                              ((LabelledDrawing.ordinary (Diagram.unassociate (Word.up a) ai fj)).vertical
+                                ((middle.horizontal
+                                      ((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) fj)).vertical
+                                  ((LabelledDrawing.ordinary (Diagram.associate (Word.up c) ck fj)).vertical
+                                    (((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) (Word.up c)).horizontal
+                                      upper)))))
+                        data fiberProof ∧
+                    ∀
+                      (z' :
+                        ((Word.up a).tensor ((Word.down b).tensor (Word.up d))).basis.carrier ×
+                          ((Word.up c).tensor ((Word.down e).tensor (Word.up f))).basis.carrier),
+                      (fun M z => (M.toLinearMap (Finsupp.single z.1 1)) z.2)
+                          ((fun drawing => drawing.interpret.eval) (sum.summand O)) z' =
+                        (fun O n z => if z ∈ O then ↑n else 0) (↑O) 1 z'
+right✝ :
+  ((fun drawing => drawing.interpret.eval)
+        ((fun {B} u v w r t s finite =>
+            have lower := LabelledDrawing.mixedMultiplication u v a b [(1, r)];
+            have middle := LabelledDrawing.parallelUp v d w f [(1, t)];
+            have upper := LabelledDrawing.compactProjection u w c e [(1, { dot := s, finite := finite })];
+            (LabelledDrawing.ordinary (Diagram.unassociate (Word.up a) (Word.down b) (Word.up d))).vertical
+              ((lower.horizontal ((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) (Word.up d))).vertical
+                ((LabelledDrawing.ordinary (Diagram.associate (Word.down u) (Word.up v) (Word.up d))).vertical
+                  ((((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) (Word.down u)).horizontal middle).vertical
+                    ((LabelledDrawing.ordinary (Diagram.unassociate (Word.down u) (Word.up w) (Word.up f))).vertical
+                      ((upper.horizontal
+                            ((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) (Word.up f))).vertical
+                        (LabelledDrawing.ordinary (Diagram.associate (Word.up c) (Word.down e) (Word.up f)))))))))
+          u v w r t s ⋯)).toLinearMap =
+    sum.eval
+r₀ : ↥D
+t₀ : ↥G
+s₀ : ↥E
+ho :
+  ↑O₀ =
+    MulAction.orbit (↥G × ↥F)
+      ((fun r t s =>
+          ((fun g x => (Word.up a).basis.pair ((Word.down b).tensor (Word.up d)).basis g (Generator.mixedPair b d x)) 1
+              r,
+            (fun g y => (Word.up c).basis.pair ((Word.down e).tensor (Word.up f)).basis g (Generator.mixedPair e f y)) t
+              s))
+        r₀ t₀ s₀)
+hP :
+  ∃ n blocks,
+    (∀ (l : Fin n), (blocks l).Nonempty) ∧
+      (Pairwise fun l m => Disjoint (blocks l) (blocks m)) ∧
+        Subgroup.map (Subgroup.closure {σ | σ.IsSwap}).subtype
+            ((fun z => Subgroup.map (F.subtype.comp (MonoidHom.snd ↥G ↥F)) (MulAction.stabilizer (↥G × ↥F) z))
+              ((fun r t s =>
+                  ((fun g x =>
+                        (Word.up a).basis.pair ((Word.down b).tensor (Word.up d)).basis g (Generator.mixedPair b d x))
+                      1 r,
+                    (fun g y =>
+                        (Word.up c).basis.pair ((Word.down e).tensor (Word.up f)).basis g (Generator.mixedPair e f y))
+                      t s))
+                r₀ t₀ s₀)) =
+          ⨆ l, (fun X => Equiv.Perm.ofSubtype.range) (blocks l)
+data :
+  (i :
+    ConjEmbedding
+      ((fun z => Subgroup.map (F.subtype.comp (MonoidHom.snd ↥G ↥F)) (MulAction.stabilizer (↥G × ↥F) z))
+        ((fun r t s =>
+            ((fun g x => (Word.up a).basis.pair ((Word.down b).tensor (Word.up d)).basis g (Generator.mixedPair b d x))
+                1 r,
+              (fun g y => (Word.up c).basis.pair ((Word.down e).tensor (Word.up f)).basis g (Generator.mixedPair e f y))
+                t s))
+          r₀ t₀ s₀))
+      A) ×
+    (j :
+      ConjEmbedding
+        ((fun z => Subgroup.map (F.subtype.comp (MonoidHom.snd ↥G ↥F)) (MulAction.stabilizer (↥G × ↥F) z))
+          ((fun r t s =>
+              ((fun g x =>
+                    (Word.up a).basis.pair ((Word.down b).tensor (Word.up d)).basis g (Generator.mixedPair b d x))
+                  1 r,
+                (fun g y =>
+                    (Word.up c).basis.pair ((Word.down e).tensor (Word.up f)).basis g (Generator.mixedPair e f y))
+                  t s))
+            r₀ t₀ s₀))
+        F) ×
+      (k :
+        ConjEmbedding
+          ((fun z => Subgroup.map (F.subtype.comp (MonoidHom.snd ↥G ↥F)) (MulAction.stabilizer (↥G × ↥F) z))
+            ((fun r t s =>
+                ((fun g x =>
+                      (Word.up a).basis.pair ((Word.down b).tensor (Word.up d)).basis g (Generator.mixedPair b d x))
+                    1 r,
+                  (fun g y =>
+                      (Word.up c).basis.pair ((Word.down e).tensor (Word.up f)).basis g (Generator.mixedPair e f y))
+                    t s))
+              r₀ t₀ s₀))
+          C) ×
+        Dot (b.comp i) (d.comp j) × Dot (a.comp i) (c.comp k) × Dot (e.comp k) (f.comp j)
+fin :
+  ∀ (z : ((Word.down b).tensor (Word.up d)).basis.carrier),
+    {w |
+        (fun {B'} x =>
+              match (motive :=
+                (x :
+                    (i : ConjEmbedding B' A) ×
+                      (j : ConjEmbedding B' F) ×
+                        (k : ConjEmbedding B' C) ×
+                          Dot (b.comp i) (d.comp j) × Dot (a.comp i) (c.comp k) × Dot (e.comp k) (f.comp j)) →
+                  (fun {B'} x =>
+                        match x with
+                        | ⟨i, ⟨j, ⟨fst, (fst_1, fst_2, snd)⟩⟩⟩ => ((Word.up i).tensor (Word.down j)).basis.carrier)
+                      x →
+                    ((Word.down b).tensor (Word.up d)).basis.carrier)
+                x with
+              | ⟨i, ⟨j, ⟨fst, (r, fst_1, snd)⟩⟩⟩ => Generator.mixedMultiplicationBasis b d i j r)
+            data w =
+          z}.Finite
+hl :
+  (fun {B'} x =>
+        match x with
+        | ⟨fst, ⟨fst_1, ⟨fst_2, (r, t, s)⟩⟩⟩ => (r.element, t.element, s.element))
+      data =
+    (r₀, t₀, s₀)
+hi :
+  ∀
+    (h :
+      ↥((fun z => Subgroup.map (F.subtype.comp (MonoidHom.snd ↥G ↥F)) (MulAction.stabilizer (↥G × ↥F) z))
+          ((fun r t s =>
+              ((fun g x =>
+                    (Word.up a).basis.pair ((Word.down b).tensor (Word.up d)).basis g (Generator.mixedPair b d x))
+                  1 r,
+                (fun g y =>
+                    (Word.up c).basis.pair ((Word.down e).tensor (Word.up f)).basis g (Generator.mixedPair e f y))
+                  t s))
+            r₀ t₀ s₀))),
+    ↑(((fun {B'} x =>
+              match x with
+              | ⟨fst, ⟨j, ⟨fst_1, (fst_2, fst_3, snd)⟩⟩⟩ => j.toHom)
+            data)
+          h) =
+      ↑h
+hd :
+  sum.summand O₀ =
+    (fun {B'} x finite =>
+        match x, finite with
+        | ⟨i, ⟨j, ⟨k, (r, t, s)⟩⟩⟩, finite =>
+          let ai := Word.up i;
+          let fj := Word.down j;
+          let ck := Word.up k;
+          have lower := LabelledDrawing.compactProjection b d i j [(1, { dot := r, finite := finite })];
+          have middle := LabelledDrawing.parallelUp a i c k [(1, t)];
+          have upper := LabelledDrawing.mixedMultiplication e f k j [(1, s)];
+          (((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) (Word.up a)).horizontal lower).vertical
+            ((LabelledDrawing.ordinary (Diagram.unassociate (Word.up a) ai fj)).vertical
+              ((middle.horizontal ((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) fj)).vertical
+                ((LabelledDrawing.ordinary (Diagram.associate (Word.up c) ck fj)).vertical
+                  (((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) (Word.up c)).horizontal upper)))))
+      data fin
+he :
+  ∀
+    (z' :
+      ((Word.up a).tensor ((Word.down b).tensor (Word.up d))).basis.carrier ×
+        ((Word.up c).tensor ((Word.down e).tensor (Word.up f))).basis.carrier),
+    (fun M z => (M.toLinearMap (Finsupp.single z.1 1)) z.2) ((fun drawing => drawing.interpret.eval) (sum.summand O₀))
+        z' =
+      (fun O n z => if z ∈ O then ↑n else 0) (↑O₀) 1 z'
+z₀ : (ga.basis.tensor (tensor ad df).basis).carrier × (gc.basis.tensor (tensor ce ef).basis).carrier := pair r₀ t₀ s₀
+term : RightTerm := ⟨projected z₀, ⟨data, fin⟩⟩
+⊢ pair (labels data).1 (labels data).2.1 (labels data).2.2 = z₀
+CheckNext2.lean:862:8: error: 'change' tactic failed, pattern
+  ((drawingEval (rightAt term)).toLinearMap (Finsupp.single z.1 1)) z.2 = if z ∈ ↑O then ↑1 else 0
+is not definitionally equal to target
+  (fun M z => (M.toLinearMap (Finsupp.single z.1 1)) z.2)
+      ((fun drawing => drawing.interpret.eval)
+        ((fun {B'} x finite =>
+            match x, finite with
+            | ⟨i, ⟨j, ⟨k, (r, t, s)⟩⟩⟩, finite =>
+              let ai := Word.up i;
+              let fj := Word.down j;
+              let ck := Word.up k;
+              have lower := LabelledDrawing.compactProjection b d i j [(1, { dot := r, finite := finite })];
+              have middle := LabelledDrawing.parallelUp a i c k [(1, t)];
+              have upper := LabelledDrawing.mixedMultiplication e f k j [(1, s)];
+              (((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) (Word.up a)).horizontal lower).vertical
+                ((LabelledDrawing.ordinary (Diagram.unassociate (Word.up a) ai fj)).vertical
+                  ((middle.horizontal ((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) fj)).vertical
+                    ((LabelledDrawing.ordinary (Diagram.associate (Word.up c) ck fj)).vertical
+                      (((fun {K H} p => LabelledDrawing.ordinary (Diagram.id p)) (Word.up c)).horizontal upper)))))
+          data fin))
+      z =
+    (fun O n z => if z ∈ O then ↑n else 0) (↑O₀) 1 z
+CheckNext2.lean:884:57: error: Type mismatch: After simplification, term
+  he
+ has type
+  ((drawingEval (rightAt ⟨B', ⟨⟨i, ⟨j, ⟨k, (r', t', s')⟩⟩⟩, fin⟩⟩)).toLinearMap (Finsupp.single z.1 1)) z.2 = 1
+but is expected to have type
+  ((drawingEval (rightDrawing a b d c e f i j k proj t' s')).toLinearMap (Finsupp.single z.1 1)) z.2 = 1
+CheckNext2.lean:888:57: error: Type mismatch: After simplification, term
+  he
+ has type
+  ((drawingEval (rightAt ⟨B', ⟨⟨i, ⟨j, ⟨k, (r', t', s')⟩⟩⟩, fin⟩⟩)).toLinearMap (Finsupp.single z.1 1)) z.2 = 0
+but is expected to have type
+  ((drawingEval (rightDrawing a b d c e f i j k proj t' s')).toLinearMap (Finsupp.single z.1 1)) z.2 = 0
+CheckNext2.lean:917:55: error: unknown free variable `_fvar.341837`
+CheckNext2.lean:948:4: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+'ParabolicCaseFiveUnscaledDiagramIdentity' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

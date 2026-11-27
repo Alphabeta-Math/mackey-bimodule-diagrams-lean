@@ -1,0 +1,2 @@
+import Proofs.ParabolicCurlJoinIntersection
+#print axioms ParabolicCurlJoinIntersection

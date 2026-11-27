@@ -1,0 +1,6 @@
+{
+  "type": "∀ {ι : Type*} [Finite ι] (X : ι → Finset Nat),\n  (∀ i, Finset.Nonempty (X i)) →\n  Pairwise (fun i j => Disjoint (X i) (X j)) →\n  ∀ α : ↥(Subgroup.closure {σ : Equiv.Perm Nat | Equiv.Perm.IsSwap σ}),\n    let blockProduct : (ι → Finset Nat) → Subgroup (Equiv.Perm Nat) :=\n      fun blocks => iSup (fun i =>\n        MonoidHom.range (Equiv.Perm.ofSubtype (p := fun n : Nat => n ∈ blocks i)))\n    Subgroup.map\n        (MulEquiv.toMonoidHom (MulAut.conj (α : Equiv.Perm Nat)))\n        (blockProduct X) =\n      blockProduct (fun i => Finset.image (α : Equiv.Perm Nat) (X i))",
+  "value": null,
+  "source": "article",
+  "sourceReason": "Ian Xiao, § 7, Proposition 7.1, Conjugation, p. 28. The published PDF matches the project copy byte for byte. The defect-report URL returned HTTP 404, and the plan supplies no portal correction for this endpoint. Mathlib identifies the swap closure with the finitely supported permutations. The supremum of the disjoint embedded block factors represents their product. The empty index type gives the trivial group, and singleton padding contributes only trivial factors."
+}

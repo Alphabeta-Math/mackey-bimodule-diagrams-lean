@@ -1,0 +1,84 @@
+Checking WattsFoundation/ConcreteTensorFunctor.lean
+'WattsFoundation.concreteTensorFunctor' depends on axioms: [propext, Quot.sound]
+'WattsFoundation.concreteTensorFunctor_additive' depends on axioms: [propext, Quot.sound]
+Checking WattsFoundation/ConcreteTensorUnitor.lean
+'WattsFoundation.concreteTensorRegularIso' depends on axioms: [propext, Quot.sound]
+Checking WattsFoundation/ConcreteTensorBimoduleMap.lean
+'WattsFoundation.bimoduleMapEquivNatTrans' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WattsFoundation.tensorBimoduleMapNatTrans' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WattsFoundation.tensorNatEvaluationMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WattsFoundation.concreteTensor_fromRegular' depends on axioms: [propext, Quot.sound]
+Checking WattsFoundation/WattsFreeComparison.lean
+WattsFoundation/WattsFreeComparison.lean:49:16: warning: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'WattsFoundation.wattsFreeLeg_coproduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WattsFoundation.watts_comparison_free_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]
+Checking WattsFoundation/WattsAllComparison.lean
+'WattsFoundation.watts_comparison_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]
+Checking WattsFoundation/WattsNaturalIso.lean
+'WattsFoundation.wattsComparisonNatTrans' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WattsFoundation.wattsNaturalIso' depends on axioms: [propext, Classical.choice, Quot.sound]
+Checking WattsFoundation/WattsMathlibBridge.lean
+WattsFoundation/WattsMathlibBridge.lean:21:0: warning: automatically included section variable(s) unused in theorem `WattsFoundation.wattsCoproducts_of_mathlib`:
+  [F.Additive]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [F.Additive] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'WattsFoundation.wattsCoproducts_of_mathlib' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WattsFoundation.wattsCokernels_of_mathlib' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WattsFoundation.wattsNaturalIsoOfMathlib' depends on axioms: [propext, Classical.choice, Quot.sound]
+Checking WattsFoundation/ConcreteTensorPreservation.lean
+'WattsFoundation.concreteTensorFunctor_preservesCoproducts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WattsFoundation.concreteTensorFunctor_preservesCokernels' depends on axioms: [propext, Classical.choice, Quot.sound]
+Checking WattsFoundation/WattsMathlibReverse.lean
+WattsFoundation/WattsMathlibReverse.lean:48:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+WattsFoundation/WattsMathlibReverse.lean:22:0: warning: automatically included section variable(s) unused in theorem `WattsFoundation.mathlibCoproducts_of_watts`:
+  [F.Additive]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [F.Additive] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+WattsFoundation/WattsMathlibReverse.lean:58:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+'WattsFoundation.mathlibCoproducts_of_watts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WattsFoundation.mathlibFiniteColimits_of_watts' depends on axioms: [propext, Classical.choice, Quot.sound]
+Checking WattsFoundation/ReconstructionSupport.lean
+'ReconstructionCheck.cokernel_of_equiv' depends on axioms: [propext, Quot.sound]
+'ReconstructionCheck.unit_surjective' depends on axioms: [propext, Quot.sound]
+'ReconstructionCheck.exact_on_hom' depends on axioms: [propext]
+'ReconstructionCheck.unit_injective' depends on axioms: [propext, Quot.sound]
+'ReconstructionCheck.reflect_bijective' depends on axioms: [propext]
+'ReconstructionCheck.PointwiseReconstruction' depends on axioms: [propext, Quot.sound]
+Checking WattsFoundation/ClassicalReconstruction.lean
+'ClassicalReconstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+Checking WattsFoundation/NormalMorphismsInAbelianCategories.lean
+Checking WattsFoundation/GeneratorCokernelPresentations.lean
+Checking WattsFoundation/CancellationAndZeroKernels.lean
+Checking WattsFoundation/ModuleProductsAndCoproducts.lean
+Checking WattsFoundation/GeneratorHomExactnessAndDetection.lean
+Checking WattsFoundation/ModuleQuotientUniversalProperty.lean
+Checking WattsFoundation/ModuleKernelsCokernelsAndImages.lean
+Checking WattsFoundation/ModuleCategoriesAreAbelian.lean
+Checking WattsFoundation/ExactPresentationsAreCokernels.lean
+Checking WattsFoundation/FreeModulesAndPresentations.lean
+Checking WattsFoundation/RegularModuleSmallProjectiveGenerator.lean
+Checking WattsFoundation/GeneratorHomFullyFaithful.lean
+Checking WattsFoundation/ReconstructionFromSmallProjectiveGenerator.lean

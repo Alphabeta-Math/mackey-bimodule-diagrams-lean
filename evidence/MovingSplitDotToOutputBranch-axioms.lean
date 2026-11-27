@@ -1,0 +1,2 @@
+import Proofs.MovingSplitDotToOutputBranch
+#print axioms MovingSplitDotToOutputBranch

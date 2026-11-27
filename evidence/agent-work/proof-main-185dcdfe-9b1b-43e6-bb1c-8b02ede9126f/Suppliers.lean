@@ -1,0 +1,25 @@
+import Mathlib
+import MackeyDiagrams
+import Proofs.EvaluationForTwoProjections
+import Proofs.ParabolicExtremalOutsideRestrictionRegions
+
+open private parabolic_region_bounds parabolic_finite left_witness left_project_eval right_project_eval left_bound_transport dot_ranges range_comp_le conj conj_mul conj_one first_injective from Proofs.ParabolicExtremalOutsideRestrictionRegions
+#check parabolic_region_bounds
+#check parabolic_finite
+#check left_witness
+#check left_project_eval
+#check right_project_eval
+#check left_bound_transport
+#check dot_ranges
+#check range_comp_le
+#check conj
+#check conj_mul
+#check conj_one
+#check first_injective
+#check Subgroup.relIndex_map_map_of_injective
+#check Subgroup.relIndex_self
+open private transportedEmbeddings from Proofs.CaseTwoLeftProjectionConstruction
+#check transportedEmbeddings
+open private finite_mixed lower_le_max from Proofs.ParabolicExtremalOutsideRestrictionRegions
+#check finite_mixed
+#check lower_le_max

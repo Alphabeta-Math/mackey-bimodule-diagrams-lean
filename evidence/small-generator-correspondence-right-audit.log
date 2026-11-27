@@ -1,0 +1,2 @@
+'SmallGeneratorBridge.exactEvaluation_left_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SmallGeneratorBridge.exactEvaluation_map' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,2 @@
+'SmallGeneratorBridge.regularToHom' depends on axioms: [propext, Quot.sound]
+'SmallGeneratorBridge.regularToHom_right' depends on axioms: [propext, Quot.sound]

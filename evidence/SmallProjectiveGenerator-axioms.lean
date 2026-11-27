@@ -1,0 +1,2 @@
+import Proofs.SmallProjectiveGenerator
+#print axioms SmallProjectiveGenerator

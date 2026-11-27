@@ -1,0 +1,2 @@
+import WattsFoundation.GeneratorRegularUnit
+#print axioms SmallGeneratorBridge.regularToHom

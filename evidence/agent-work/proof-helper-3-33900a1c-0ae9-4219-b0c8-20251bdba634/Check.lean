@@ -1,0 +1,14 @@
+import Batteries.Tactic.OpenPrivate
+import Core
+import Proofs.DotSlidePreorderNotSymmetric
+
+open private code drawing_code_vert drawing_code_horiz diagram_code_vert diagram_code_horiz
+  encode_stack shift_zero StraightAt EmptyCodeStraight normalize normalize_vertical normalize_horizontal
+  normalize_id juxtaposeMap pad_left_eval pad_right_eval boundaryDirs boundaryDirs_append word_boundaryDirs
+  append_singleton shift_eq_nil expanded_no_singleton_merge dot_empty_coherence merge_empty_coherence
+  from Proofs.DotSlidePreorderNotSymmetric
+
+#check code
+#check dot_empty_coherence
+#check merge_empty_coherence
+#check StraightAt.id

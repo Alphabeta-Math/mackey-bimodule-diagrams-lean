@@ -1,0 +1,9 @@
+import Proofs.ParabolicExtremalOutsideRestrictionRegions
+#check private OutsideRegionsAux.left_project_eval
+#check private OutsideRegionsAux.right_project_eval
+#check private OutsideRegionsAux.left_mul_eval
+#check private OutsideRegionsAux.right_mul_eval
+#check private OutsideRegionsAux.parabolic_finite
+#check private OutsideRegionsAux.inclusion
+#check private OutsideRegionsAux.restrictTo
+#check private OutsideRegionsAux.conjugated

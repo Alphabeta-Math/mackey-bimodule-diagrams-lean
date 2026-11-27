@@ -1,0 +1,35 @@
+{
+  "source_sha256": "efc06ee64a1bba318d200944ae79c2e296ca91ec27e37304f4cf88ee7a552649",
+  "commands": [
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "-o",
+      ".lake/build/lib/lean/Proofs/NaturalTransformationsOfTensorFunctors.olean",
+      "Proofs/NaturalTransformationsOfTensorFunctors.lean"
+    ],
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "evidence/NaturalTransformationsOfTensorFunctors-axioms.lean"
+    ]
+  ],
+  "build": {
+    "code": 0,
+    "output": ""
+  },
+  "axioms": {
+    "code": 0,
+    "output": "'NaturalTransformationsOfTensorFunctors' depends on axioms: [propext, Quot.sound]\n"
+  },
+  "axiomPolicy": "Classical.choice forbidden by source statement",
+  "ok": true,
+  "workspace_sha256": "0b8923f32a923e0fc946dfe2b389ab92d02b9e01e481b4de6755e55d083f7b65",
+  "olean_sha256": "5e928db13a707e049b5cfc7ae34d8aad6c7fb5465aaf2dfdd9f0e552bd03feaf"
+}

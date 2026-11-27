@@ -1,0 +1,2 @@
+import Proofs.InductionRestrictionMergesAndSplits
+#print axioms InductionRestrictionMergesAndSplits

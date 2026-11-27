@@ -1,0 +1,119 @@
+⚠ [1667/1887] Replayed MackeyDiagrams.Embedding
+warning: MackeyDiagrams/Embedding.lean: imports `Mathlib.GroupTheory.Subgroup.Centralizer` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Embedding.lean: imports `Mathlib.Tactic.Group` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [1668/1887] Ran MackeyDiagrams.Embedding:irArts
+warning: MackeyDiagrams/Embedding.lean: imports `Mathlib.GroupTheory.Subgroup.Centralizer` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Embedding.lean: imports `Mathlib.Tactic.Group` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2383/2556] Replayed MackeyDiagrams.Linear
+warning: MackeyDiagrams/Linear.lean: imports `Mathlib.LinearAlgebra.BilinearMap` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Linear.lean: imports `Mathlib.LinearAlgebra.Finsupp.LSum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Linear.lean: imports `Mathlib.LinearAlgebra.Span.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2384/2556] Ran MackeyDiagrams.Linear:irArts
+warning: MackeyDiagrams/Linear.lean: imports `Mathlib.LinearAlgebra.BilinearMap` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Linear.lean: imports `Mathlib.LinearAlgebra.Finsupp.LSum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Linear.lean: imports `Mathlib.LinearAlgebra.Span.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2439/2556] Replayed MackeyDiagrams.Dot
+warning: MackeyDiagrams/Dot.lean: imports `Mathlib.Algebra.MonoidAlgebra.Module` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2440/2556] Ran MackeyDiagrams.Dot:irArts
+warning: MackeyDiagrams/Dot.lean: imports `Mathlib.Algebra.MonoidAlgebra.Module` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2443/2556] Replayed MackeyDiagrams.Trace
+warning: MackeyDiagrams/Trace.lean:27:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: MackeyDiagrams/Trace.lean:33:6: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [2576/2802] Replayed MackeyDiagrams.Transfer
+warning: MackeyDiagrams/Transfer.lean: imports `Mathlib.GroupTheory.Index` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Transfer.lean:136:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: MackeyDiagrams/Transfer.lean:137:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: MackeyDiagrams/Transfer.lean:139:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [2577/2802] Ran MackeyDiagrams.Transfer:irArts
+warning: MackeyDiagrams/Transfer.lean: imports `Mathlib.GroupTheory.Index` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2594/2802] Replayed MackeyDiagrams.CupCapIdentities
+warning: MackeyDiagrams/CupCapIdentities.lean: imports `Mathlib.Data.Set.Card` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2595/2802] Ran MackeyDiagrams.CupCapIdentities:irArts
+warning: MackeyDiagrams/CupCapIdentities.lean: imports `Mathlib.Data.Set.Card` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2606/2802] Replayed MackeyDiagrams.ScopedCupFinite
+warning: MackeyDiagrams/ScopedCupFinite.lean:26:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [2618/2802] Replayed MackeyDiagrams.DotSlideObstruction
+warning: MackeyDiagrams/DotSlideObstruction.lean: imports `Mathlib.GroupTheory.Perm.Support` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/DotSlideObstruction.lean: imports `Mathlib.GroupTheory.GroupAction.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2619/2802] Ran MackeyDiagrams.DotSlideObstruction:irArts
+warning: MackeyDiagrams/DotSlideObstruction.lean: imports `Mathlib.GroupTheory.Perm.Support` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/DotSlideObstruction.lean: imports `Mathlib.GroupTheory.GroupAction.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2624/2802] Replayed MackeyDiagrams.ProjectionFiber
+warning: MackeyDiagrams/ProjectionFiber.lean:45:2: Unused tactic linter: `change
+  (Diagram.mixedProjectionTail (R := R) a b l r d).eval.toLinearMap (Finsupp.single _ 1) = _` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: MackeyDiagrams/ProjectionFiber.lean:61:2: Unused tactic linter: `change
+  (Diagram.mixedProjectionTail (R := R) a b l r d).eval.toLinearMap (Finsupp.single _ 1) = _` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: MackeyDiagrams/ProjectionFiber.lean:149:2: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp at hv
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [2702/2802] Replayed MackeyDiagrams.RightCurlLabels
+warning: MackeyDiagrams/RightCurlLabels.lean: imports `Mathlib.Algebra.MonoidAlgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2703/2802] Ran MackeyDiagrams.RightCurlLabels:irArts
+warning: MackeyDiagrams/RightCurlLabels.lean: imports `Mathlib.Algebra.MonoidAlgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2712/2802] Replayed MackeyDiagrams.ParallelComposition
+warning: MackeyDiagrams/ParallelComposition.lean: imports `Mathlib.Algebra.MonoidAlgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2713/2802] Ran MackeyDiagrams.ParallelComposition:irArts
+warning: MackeyDiagrams/ParallelComposition.lean: imports `Mathlib.Algebra.MonoidAlgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2718/2802] Replayed MackeyDiagrams.MackeyOrthogonality
+warning: MackeyDiagrams/MackeyOrthogonality.lean:104:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: MackeyDiagrams/MackeyOrthogonality.lean:111:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: MackeyDiagrams/MackeyOrthogonality.lean:118:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [2792/2802] Replayed MackeyDiagrams.MackeyDirectSum
+warning: MackeyDiagrams/MackeyDirectSum.lean: imports `Mathlib.LinearAlgebra.DFinsupp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2793/2802] Ran MackeyDiagrams.MackeyDirectSum:irArts
+warning: MackeyDiagrams/MackeyDirectSum.lean: imports `Mathlib.LinearAlgebra.DFinsupp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+✔ [2794/2802] Built MackeyDiagrams.DotLabels (2.2s)
+✔ [2796/2802] Built MackeyDiagrams.PlanarShape (791ms)
+✔ [2798/2802] Built MackeyDiagrams.LanguageChecks (1.8s)
+✔ [2800/2802] Built MackeyDiagrams (561ms)
+Build completed successfully (2802 jobs).

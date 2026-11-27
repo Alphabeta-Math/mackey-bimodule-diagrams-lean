@@ -1,0 +1,2 @@
+import Proofs.RightUpReidemeisterCurl
+#print axioms RightUpReidemeisterCurl

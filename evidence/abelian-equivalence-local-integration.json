@@ -1,0 +1,234 @@
+{
+  "purpose": "Transport the paper\u2019s functor hypotheses through module-category equivalences",
+  "sources": [
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean",
+      "source_sha256": "853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/WattsSupport.lean",
+      "local_sha256": "853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/BalancedCokernelDescent.lean",
+      "source_sha256": "c0ff0f7ab3122138f1a22d71c1569dc66f701f97f30a7a31f5d2420f5fc6b575",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/BalancedCokernelDescent.lean",
+      "local_sha256": "3327ac1427f59152b05fa74cde4e7f91d78920ad0980f25046d559b7800fb38b"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/NoncommutativeTensorCokernel.lean",
+      "source_sha256": "955f183f9c74fba2f92df9d593999a34001424800700b8d0ae9e6da0f5cba473",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/NoncommutativeTensorCokernel.lean",
+      "local_sha256": "40f446091d7161a783c5884182660234f361355660e407d3df759da09947786f"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/ConcreteTensorUniversal.lean",
+      "source_sha256": "aecf1d070575a22dccee927ed65226b0011a4c1ed3badbb40a9c0c6a52ce1660",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/ConcreteTensorUniversal.lean",
+      "local_sha256": "875cbe9fc1e5d51ec537b36c7093fcc7f46fdacdc32aa5511b3f509a4a99a11d"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/BalancedCoproductAssembly.lean",
+      "source_sha256": "8e61bef960173633b11d9887463de69fb84a55d909674964f729cc70b65eede7",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/BalancedCoproductAssembly.lean",
+      "local_sha256": "0886fcc2025b67480ecf0dd1152c8337c8b4f83c191112a92adb77e70d46cc11"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/NoncommutativeTensorCoproduct.lean",
+      "source_sha256": "102127e36d8ffce5bab109f4ab1b00248e744a2c23a33ade7ba1134677ba52ea",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/NoncommutativeTensorCoproduct.lean",
+      "local_sha256": "c0168cf9ec2ee8b631c7ce21f720e4a1767692f3c571fce7c4fc78082dac9264"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/ConcreteTensorCoproduct.lean",
+      "source_sha256": "bbb30435bb6b333a1d88e07b870beca892ae1bdb8bfe96d70433e7765bd34f27",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/ConcreteTensorCoproduct.lean",
+      "local_sha256": "e9df64fe4b4139c2ff98d6cccb96db4f90f578af0940d06ededb5523664ae90a"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/ConcreteTensorFunctor.lean",
+      "source_sha256": "8a4d904635264056220c19131d6831ff123b0fac84cf9be84fbb8c7f0d5c7416",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/ConcreteTensorFunctor.lean",
+      "local_sha256": "2c51511284643eef36105c91ba78e8fbc3c8435f0e5f4a1b4d1d740f6cb75bf4"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/ConcreteTensorUnitor.lean",
+      "source_sha256": "db70f3c4758e954eb6e3f0e92935ad5db95f49365e8e0fd09a6f8ed552937430",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/ConcreteTensorUnitor.lean",
+      "local_sha256": "e93f6e4939a23085674f703ede5cccee5520463658a992d06cfb978caa708afd"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/ConcreteTensorBimoduleMap.lean",
+      "source_sha256": "433973f70b29a9936cc26cce5d711fa53b42e7db223c7b7778c0e212d4123334",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/ConcreteTensorBimoduleMap.lean",
+      "local_sha256": "17c4c8348082c43c531bddfde3877da5fed0f93aa22a1c37773a9d79aa7ccaa2"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsActions.lean",
+      "source_sha256": "aff94142f5443ca41e7f7f0f384740b4acfd1484f13b5f34afe83d5aa760c9f3",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/WattsActions.lean",
+      "local_sha256": "5063d70e2575ee070375ad23ed2109d025532821c3cb3aa623858168f0532eb5"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsFreeComparison.lean",
+      "source_sha256": "ba001e208b1b22f44a61775c1b6838637a035fe9108e5e0c580292de08647a8c",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/WattsFreeComparison.lean",
+      "local_sha256": "8692e1c2690c4fb3faba1bb635dc729ffb625d3bc646072c8857f8aa6b23c5b2"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/PresentationFiveLemma.lean",
+      "source_sha256": "0fa6c9cab436e9073ac87695ccfda4173bee77fd6b607d1e30c9fcf87fc3b463",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/PresentationFiveLemma.lean",
+      "local_sha256": "1ff520b4aa98660f0c1bf852d2d29bd6673eab0ff0e606446551e41d191c0489"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/CokernelExact.lean",
+      "source_sha256": "9a78671e4b87b085d1a3c4685fb0c7b8a455ee9099fc9b8612b8e28d43ae63d9",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/CokernelExact.lean",
+      "local_sha256": "11a15cdb325d474d907e80d852f64f2a177e2225cb9a338b1d9e453b932d429e"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsAllComparison.lean",
+      "source_sha256": "97d966c30bda52016cc8adcdb2510450bed3697a3f6e698ea46d76f283545a41",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/WattsAllComparison.lean",
+      "local_sha256": "234ed07dc21ace0a81e5e3216c6d116a08e7a69d835dd2b9e0f83f5806404a71"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsNaturalIso.lean",
+      "source_sha256": "314cfbc35ab418630851f598e3de10ad6354cf98caca90965892ba5273c2298b",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/WattsNaturalIso.lean",
+      "local_sha256": "75b9c8d60509a5ef22dfc1ab246092373aef46a536929a59462f216918ec10f5"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsMathlibBridge.lean",
+      "source_sha256": "23f59087aed27751d330665857d74cdd4933b9ab6bf40b1ab370a4889509af9a",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/WattsMathlibBridge.lean",
+      "local_sha256": "e04c955f7b818812befb2ab3bedb5ca8ed7ecd5c471992ff3b55dffe87549677"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/ConcreteTensorPreservation.lean",
+      "source_sha256": "a5007382c9e39232bbe650283fa7b48e224ee2ebefc7113e96504136c21c0a78",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/ConcreteTensorPreservation.lean",
+      "local_sha256": "f3fcbbbf2d53e241330fd472cb6f892c8d94e683394fb28f726f9c5c19b9d173"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsMathlibReverse.lean",
+      "source_sha256": "8228cce9d6befceb5e2bd0029e8cd07138e3c065d9f98f2efc6d727b605b71bf",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/WattsMathlibReverse.lean",
+      "local_sha256": "db67f6556c6eaec91d397b4893b9823bba0adff11b4b7c22c91bb8164ee99bf6"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/General/ConcreteTensorFunctor.lean",
+      "source_sha256": "7053ac862034eb2629e53252388f265913f9fb03ae288f1cab414b2c7a743b60",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/General/ConcreteTensorFunctor.lean",
+      "local_sha256": "3c7b71f34eadbc6e320871193355a11b7b97396612243605a57e3f1981ca9c95"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/General/ConcreteTensorUnitor.lean",
+      "source_sha256": "9f0a122c3add08818a8065dedc81c698b5f285f211962d126d142b99544571bb",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/General/ConcreteTensorUnitor.lean",
+      "local_sha256": "a9b0b987314819bb6dadf0f83b9831f740dd6cd496f9d22b1bb6ed9ad57fbd39"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/General/ConcreteTensorBimoduleMap.lean",
+      "source_sha256": "f8fea8818eb8540b7b14de5cee05e08659ccf37bea79f2ba30fba120a629fc25",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/General/ConcreteTensorBimoduleMap.lean",
+      "local_sha256": "9ff9c3bb776379dad8cf9a6b919718be546f9f739cd568f12575b7598ff5878d"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/General/WattsFreeComparison.lean",
+      "source_sha256": "7d898476b84c09016edec086da9f3bb407e3d51b4307592b69ce40a6c4dfd9b6",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/General/WattsFreeComparison.lean",
+      "local_sha256": "e553aed57d14bba5bb6a7a140007e9f381c79a304904e07026d1c775cd952b38"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/General/WattsAllComparison.lean",
+      "source_sha256": "4b146b37d22cb82653f6df47740c80565a07a75e57242e32bbefeacdcebdee39",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/General/WattsAllComparison.lean",
+      "local_sha256": "36ba973091e05015f7c39ae3320dfdc85f846f3c5eb134444c822a70b3ab6ea1"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/General/WattsNaturalIso.lean",
+      "source_sha256": "5b0a4501f263e24430ec788653669a55691d436592e27be48bcbc2cb8e8c8a32",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/General/WattsNaturalIso.lean",
+      "local_sha256": "3a3b2e8c432eb79fb6bd0250a31ceb991482990469bcfac97f42eefc8c3820a1"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/General/WattsMathlibBridge.lean",
+      "source_sha256": "d649e335d8214eaee9aa76952e0c3b0307a6024a83713a7bc460d5098dd06501",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/General/WattsMathlibBridge.lean",
+      "local_sha256": "1650a6ad7e449a60dcf14853169b6d2c40410c7203c68151dae26e63e41670e6"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/General/ConcreteTensorPreservation.lean",
+      "source_sha256": "ad76451cbeebc784eaafe8ee4ca5ea43583f4c4ac9b97f734adf8b6b5e6a9677",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/General/ConcreteTensorPreservation.lean",
+      "local_sha256": "704fe0951f22cf6bb6d39432c9b1762d958cfdcff8aa679add21b3b4c5894947"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/General/WattsMathlibReverse.lean",
+      "source_sha256": "f54630df80020e89d8a7ec1fbcdf92d727274244367155fad465b05a62c302ef",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/General/WattsMathlibReverse.lean",
+      "local_sha256": "875ca041c23963545b31dfc1f5e292a6b97da8ee3bac9edd24d4d3642d504ab9"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/General/WattsTheorem.lean",
+      "source_sha256": "193d660564464ceb49d78465459519a01dd2ba003091b343885042092c4daf19",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/General/WattsTheorem.lean",
+      "local_sha256": "ad08c5fd2df08df85f839949cf20922c4d93d3211e4ec931643b1bf544bad42c"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/General/BimoduleTensorCategory.lean",
+      "source_sha256": "4a5410c98fe0e5275c535842b894efe19963b30a59b7bf264a8a57b0322f5405",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/General/BimoduleTensorCategory.lean",
+      "local_sha256": "7db56dd6d5ede6c8c6ca9ff304bd49b2cdc337e5a31954a7b6c461f4afc159fc"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/General/EquivalenceFromCounit.lean",
+      "source_sha256": "e2c1443fb369d196897b51399c73f745bf23f090776b9d3c32ad53138dcb881e",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/General/EquivalenceFromCounit.lean",
+      "local_sha256": "0360a974b912a1dcbf41e3abb07dbe1f35675590ac3da4587a7b44d96f3b49a6"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/General/RegularEvaluationEquivalence.lean",
+      "source_sha256": "58f5cb7d82415275afdd1e46698deab3e1bb627ad4018e275b7c06364dce4de7",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/General/RegularEvaluationEquivalence.lean",
+      "local_sha256": "256e14dc3d60922c7a6a7824d945d930ec01a987d3f4a37505f0e4e978f32eca"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/General/OriginalBimoduleAdapter.lean",
+      "source_sha256": "6aba7b7de771dcc5f3f00ea77fdee76812cf41c5b7312c394044797184fae97b",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/General/OriginalBimoduleAdapter.lean",
+      "local_sha256": "761f99233d6d9356ff8fecc3f016da49a6c7ef51016568764518f7b368f62222"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/ReconstructionSupport.lean",
+      "source_sha256": "10c73931422db5459f70a1f41b427c1d3b7b1e48fa56e8f8937babc128ed95bc",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/ReconstructionSupport.lean",
+      "local_sha256": "10c73931422db5459f70a1f41b427c1d3b7b1e48fa56e8f8937babc128ed95bc"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/ClassicalReconstruction.lean",
+      "source_sha256": "184ba9dc419071b6b6167369159016e564d74711f009c612141d9b1040b11037",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/ClassicalReconstruction.lean",
+      "local_sha256": "1604f6cc63db1fcae8e1398ae3e62617e7f46f4020c5da863f0ea8012d00ff4a"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/FiniteBiproductUniversalProperties.lean",
+      "source_sha256": "565ac6536a9177763fdd7516ad28d171e81069a754b0c17ad4cfd093ddcb8c90",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/FiniteBiproductUniversalProperties.lean",
+      "local_sha256": "6481996e280b695fa21785d20a3ad6daf1c904979b7b87b3c627ffb5d3f1fe87"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/AdditiveFunctorsAndBiproducts.lean",
+      "source_sha256": "9929cd6a83ab20d5384474fb0b8ce63d8cbfa244d125ff160a906ec107784250",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/AdditiveFunctorsAndBiproducts.lean",
+      "local_sha256": "0017ec343c7fc9110aae3c3a81677d2629c6dcc2318a0a50a9029455e86bd39f"
+    },
+    {
+      "source": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/AbelianEquivalencesPreserveFunctorHypotheses.lean",
+      "source_sha256": "eb1cb076b8a6731294356b612a13c1c36c4c7f7707ad272a35dd5447abd9aef2",
+      "local": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/AbelianEquivalencesPreserveFunctorHypotheses.lean",
+      "local_sha256": "c56849b0f7d35863ec337edcc219c69d6b1b5df7a17ba73503aca29c495ea88e"
+    }
+  ],
+  "build_log": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/abelian-equivalence-local-build.log"
+}

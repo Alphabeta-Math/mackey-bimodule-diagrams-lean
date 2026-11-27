@@ -1,0 +1,2 @@
+import Proofs.NaturalTransformationsOfTensorFunctors
+#print axioms NaturalTransformationsOfTensorFunctors

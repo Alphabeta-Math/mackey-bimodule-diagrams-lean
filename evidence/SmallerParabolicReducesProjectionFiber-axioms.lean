@@ -1,0 +1,2 @@
+import Proofs.SmallerParabolicReducesProjectionFiber
+#print axioms SmallerParabolicReducesProjectionFiber

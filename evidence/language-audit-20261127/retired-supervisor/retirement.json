@@ -1,0 +1,9 @@
+{
+  "time": "2026-11-27T05:27:29.234630+00:00",
+  "reason": "Owner explicitly retired the separate supervisor; direct in-session supervision continues.",
+  "controller": "mackey-diagram-lean.service remains active",
+  "archived": [
+    "mackey-diagram-lean-supervisor.timer",
+    "mackey-diagram-lean-supervisor.service"
+  ]
+}

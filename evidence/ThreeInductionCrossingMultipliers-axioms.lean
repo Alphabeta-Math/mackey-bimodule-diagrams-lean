@@ -1,0 +1,2 @@
+import Proofs.ThreeInductionCrossingMultipliers
+#print axioms ThreeInductionCrossingMultipliers

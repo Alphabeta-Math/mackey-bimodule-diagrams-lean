@@ -1,0 +1,15 @@
+import MackeyDiagrams
+import Proofs.MovingMergeDotBackToBranch
+#check Finset.sum_toList
+#check Finset.sum_toList_eq_sum
+#check List.sum_map_eq_sum_toFinset
+#check List.sum_toFinset
+#check map_list_sum
+#check Finsupp.sum
+#check Finsupp.mapDomain
+#check Finsupp.mapDomain_support
+#check Complex
+#check MackeyDiagrams.Diagram.mergeUp_rightEmbedding_eq
+#check MackeyDiagrams.Biset.Hom.horizontal_single
+#check MackeyDiagrams.Biset.pairLinear_single
+#check Equiv.mul_swap_eq_swap_mul

@@ -1,0 +1,8 @@
+import MackeyDiagrams
+import Proofs.ThreeInductionReidemeisterThree
+import Proofs.ReplacementForTwoProjections
+import Proofs.ReplacementForTwoMultiplications
+import Proofs.FiniteParabolicJoinOfFamily
+
+set_option maxHeartbeats 2000000
+

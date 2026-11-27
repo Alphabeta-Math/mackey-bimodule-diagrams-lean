@@ -1,0 +1,2 @@
+import WattsFoundation.GeneratorPreimageAction
+#print axioms SmallGeneratorBridge.regularPreimageIso_intertwines

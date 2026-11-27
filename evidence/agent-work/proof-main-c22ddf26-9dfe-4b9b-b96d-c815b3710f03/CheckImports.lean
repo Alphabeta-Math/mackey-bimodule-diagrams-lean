@@ -1,0 +1,9 @@
+import MackeyDiagrams
+import Proofs.EvaluationForTwoProjections
+import Proofs.CaseOneRightProjectionConstruction
+#check SemidirectProduct
+#check Subgroup.relIndex_map_map_of_injective
+#check QuotientGroup.quotientKerEquivOfSurjective
+#check MackeyDiagrams.Biset.Hom.transferBasis_apply
+#print axioms CaseOneRightProjectionConstruction
+#print axioms EvaluationForTwoProjections

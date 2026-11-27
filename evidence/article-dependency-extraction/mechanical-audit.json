@@ -1,0 +1,4267 @@
+{
+  "timestamp_utc": "2026-11-27T21:30:44.770178+00:00",
+  "scope": "Mechanical compiled named-supplier, source-import, source/artifact/receipt and fresh axiom checks. This does not replace the unfinished coordinator review.",
+  "coordinator_review_complete": false,
+  "article_count": 143,
+  "checked_proof_count": 151,
+  "excluded_auxiliaries": [
+    "ProjectiveGeneratorModuleReconstruction",
+    "WattsFreePresentation"
+  ],
+  "named_supplier_references": {
+    "AlternativeThreeInductionInternalGroups": [
+      "ThreeInductionCrossingMultipliers"
+    ],
+    "BalancedTensorAssociativity": [
+      "ModuleTensorUniversalProperty"
+    ],
+    "Bimodule": [],
+    "BimoduleTensorBicategoryCoherence": [
+      "Bimodule"
+    ],
+    "BlockSwapOrbitSumWithoutGroupDot": [
+      "FiniteOrbitSumDiagram"
+    ],
+    "BlockwiseGroupElementDotCriterion": [
+      "GroupElementDotCriterion"
+    ],
+    "CanonicalWattsComparison": [
+      "Bimodule",
+      "ModuleTensorUniversalProperty",
+      "RegularModuleRightAction"
+    ],
+    "CaseFiveLeftShapeEvaluation": [
+      "MixedCrossingFiniteFiberConvention"
+    ],
+    "CaseFivePointwiseFiniteDiagramIdentity": [
+      "ExpansionIntoRightDiagrams",
+      "RightOrbitDiagramFromProjectedStabilizer"
+    ],
+    "CaseFiveRequiresInfiniteExpansion": [
+      "EvaluationWithOneProjection"
+    ],
+    "CaseFiveRequiresTwoTerms": [
+      "EvaluationWithOneProjection"
+    ],
+    "CaseOneNoFiniteRightReplacement": [
+      "EvaluationForTwoProjections"
+    ],
+    "CaseOneRightProjectionConstruction": [],
+    "CaseSixCounterexampleWithTrivialProjectedStabilizers": [
+      "EvaluationWithOneProjection",
+      "FiniteParabolicConjugateBlocks"
+    ],
+    "CaseSixProjectionNoLeftReplacement": [
+      "EvaluationWithOneProjection"
+    ],
+    "CaseSixReplacementThroughOverlappingBlocks": [
+      "EvaluationWithOneProjection"
+    ],
+    "CaseSixRightShapeEvaluation": [],
+    "CaseTwoLeftProjectionConstruction": [
+      "EvaluationForTwoProjections"
+    ],
+    "CaseTwoRequiresSum": [
+      "CaseTwoLeftProjectionConstruction"
+    ],
+    "CommonMackeyIntersectionSum": [
+      "MixedCrossingsThroughSmallerGroup"
+    ],
+    "ComplexEilenbergWatts": [
+      "Bimodule",
+      "EilenbergWatts"
+    ],
+    "ConjugationEmbeddingCentralizerCoset": [],
+    "CurlAcrossTrivalentVertex": [
+      "RightUpReidemeisterCurl"
+    ],
+    "CurlWithCentralizingDot": [
+      "FiniteIndexReverseAdjunction",
+      "RightCurlAndDotSlide"
+    ],
+    "DiagrammaticFunctorCorrespondence": [
+      "Bimodule",
+      "ComplexEilenbergWatts",
+      "EilenbergWatts",
+      "InductionRestrictionBimoduleStrands"
+    ],
+    "DifferentCurlIndices": [
+      "CurlAcrossTrivalentVertex"
+    ],
+    "DotBelowInsideAboveRightCurl": [
+      "RightCurlAndDotSlide"
+    ],
+    "DotBetweenImagesInOneBlock": [],
+    "DotSlidePreorderNotSymmetric": [
+      "RightInputDotSlideObstruction"
+    ],
+    "EilenbergWatts": [
+      "Bimodule"
+    ],
+    "EqualTwoBlockSubgroups": [
+      "StandardTwoBlockRepresentatives"
+    ],
+    "EvaluationForTwoProjections": [
+      "MixedCrossingFiberMaps",
+      "MixedCrossingFiniteFiberConvention"
+    ],
+    "EvaluationWithOneProjection": [
+      "CaseFiveLeftShapeEvaluation",
+      "CaseSixRightShapeEvaluation"
+    ],
+    "ExpansionIntoRightDiagrams": [
+      "RightOrbitDiagramFromProjectedStabilizer"
+    ],
+    "ExtremalParabolicsOfFiniteGroup": [
+      "FiniteParabolicClosure"
+    ],
+    "FiniteIndexReverseAdjunction": [],
+    "FiniteOrbitSumDiagram": [
+      "FiniteIndexReverseAdjunction",
+      "InductionBimoduleOrbitSumBasis"
+    ],
+    "FiniteParabolicBicategoryComposition": [
+      "FiniteParabolicConjugateBlocks",
+      "FiniteParabolicIntersectionBlocks",
+      "GeneralizedMackeyDecomposition",
+      "MackeyDecompositionWithParabolicRepresentatives",
+      "ProductParabolicDoubleCosets"
+    ],
+    "FiniteParabolicBimoduleBicategory": [
+      "FiniteParabolicBicategoryComposition"
+    ],
+    "FiniteParabolicClosure": [
+      "FiniteParabolicConjugateBlocks",
+      "FiniteParabolicIntersectionBlocks",
+      "FiniteParabolicJoinBlocks"
+    ],
+    "FiniteParabolicConjugateBlocks": [],
+    "FiniteParabolicIntersectionBlocks": [],
+    "FiniteParabolicJoinBlocks": [],
+    "FiniteParabolicJoinOfFamily": [
+      "FiniteParabolicJoinBlocks"
+    ],
+    "FiniteParabolicSingleDiagramReplacements": [
+      "CaseOneRightProjectionConstruction",
+      "CaseTwoLeftProjectionConstruction",
+      "ReplacementForTwoMultiplications",
+      "ReplacementForTwoProjections",
+      "ThreeInductionCrossingMultipliers"
+    ],
+    "FixedBoundaryReplacementPreorder": [],
+    "GeneralizedMackeyDecomposition": [
+      "InductionRestrictionAdjunction",
+      "MackeyIdentityDiagram"
+    ],
+    "GroupElementDotCriterion": [
+      "ConjugationEmbeddingCentralizerCoset"
+    ],
+    "InductionBimoduleOrbitSumBasis": [
+      "Bimodule",
+      "GroupElementDotCriterion",
+      "InductionRestrictionBimoduleStrands"
+    ],
+    "InductionMergeDotSlide": [],
+    "InductionRestrictionAdjunction": [
+      "Bimodule",
+      "InductionRestrictionBimoduleStrands"
+    ],
+    "InductionRestrictionBimoduleStrands": [
+      "Bimodule",
+      "ConjugationEmbeddingCentralizerCoset"
+    ],
+    "InductionRestrictionMergesAndSplits": [],
+    "InductionSplitDotSlide": [
+      "InductionMergeDotSlide"
+    ],
+    "LargestCommonMixedCrossingParabolic": [
+      "CommonMackeyIntersectionSum",
+      "ExtremalParabolicsOfFiniteGroup"
+    ],
+    "LargestCommonParabolicDependsOnRepresentatives": [
+      "LargestCommonMixedCrossingParabolic",
+      "MackeyIdentityDiagram"
+    ],
+    "LeftDownReidemeisterCurl": [
+      "InductionRestrictionMergesAndSplits"
+    ],
+    "LeftUpReidemeisterCurl": [],
+    "MackeyConjugationExchangesFactors": [
+      "EqualTwoBlockSubgroups"
+    ],
+    "MackeyDecompositionWithParabolicRepresentatives": [
+      "FiniteParabolicConjugateBlocks",
+      "FiniteParabolicIntersectionBlocks",
+      "GeneralizedMackeyDecomposition",
+      "ParabolicDoubleCosetRepresentatives",
+      "ProductParabolicDoubleCosets"
+    ],
+    "MackeyIdentityDiagram": [],
+    "MackeyInclusionAndProjectionCrossings": [
+      "SurvivingCosetRepresentative"
+    ],
+    "MackeyOrthogonalityDiagram": [
+      "MackeyIdentityDiagram",
+      "MackeyInclusionAndProjectionCrossings",
+      "SurvivingCosetRepresentative"
+    ],
+    "MackeySummandProjection": [
+      "MackeyInclusionAndProjectionCrossings",
+      "SurvivingCosetRepresentative"
+    ],
+    "MixedCrossingComposites": [
+      "MixedCrossingFiberMaps"
+    ],
+    "MixedCrossingFiberMaps": [],
+    "MixedCrossingFiniteFiberConvention": [
+      "MixedCrossingFiberMaps"
+    ],
+    "MixedCrossingsThroughSmallerGroup": [
+      "MixedCrossingFiberMaps"
+    ],
+    "MixedMultiplicationLabelsChangeOnRoundTrip": [],
+    "MixedReidemeisterTwoMackeyCancellation": [
+      "GeneralizedMackeyDecomposition",
+      "MackeyIdentityDiagram"
+    ],
+    "ModuleTensorUniversalProperty": [],
+    "MovingMergeDotBackToBranch": [
+      "InductionMergeDotSlide",
+      "RestrictionMergeDotSlide"
+    ],
+    "MovingSplitDotToOutputBranch": [
+      "InductionSplitDotSlide",
+      "RestrictionSplitDotSlide"
+    ],
+    "MultiplicationCapBend": [],
+    "MultipliersUnderRelabelling": [
+      "ThreeInductionCrossingMultipliers"
+    ],
+    "NaturalTransformationsOfTensorFunctors": [
+      "Bimodule"
+    ],
+    "NormalizedIndexValuedReidemeisterCurls": [
+      "LeftDownReidemeisterCurl",
+      "RightUpReidemeisterCurl"
+    ],
+    "NormalizedTrivalentCurl": [
+      "NormalizedIndexValuedReidemeisterCurls"
+    ],
+    "OneSidedTableauCosetRepresentatives": [
+      "ParabolicDoubleCosetRepresentatives"
+    ],
+    "OrdinaryCupBend": [],
+    "OrdinaryMackeyDecomposition": [],
+    "ParabolicBlockOperationExample": [
+      "FiniteParabolicConjugateBlocks",
+      "FiniteParabolicIntersectionBlocks",
+      "FiniteParabolicJoinBlocks"
+    ],
+    "ParabolicCaseFiveCoefficientOneExpansion": [
+      "ParabolicRightOrbitMultiplicity"
+    ],
+    "ParabolicCaseFiveUnscaledDiagramIdentity": [
+      "ParabolicCaseFiveCoefficientOneExpansion",
+      "ParabolicRightOrbitMultiplicity",
+      "SupportedLeftOrbitProjectedStabilizer"
+    ],
+    "ParabolicCaseSixObstructionAndReplacementFamily": [
+      "ParabolicCaseSixReplacementThroughJoin",
+      "ParabolicCaseSixStrictStabilizerObstruction"
+    ],
+    "ParabolicCaseSixObstructionWithTrivialProjectedStabilizer": [
+      "CaseSixCounterexampleWithTrivialProjectedStabilizers"
+    ],
+    "ParabolicCaseSixOrbitCoefficientVanishesInCharacteristicThree": [
+      "ParabolicRightOrbitMultiplicity"
+    ],
+    "ParabolicCaseSixReplacementThroughJoin": [
+      "EvaluationWithOneProjection",
+      "FiniteParabolicJoinOfFamily"
+    ],
+    "ParabolicCaseSixStrictStabilizerObstruction": [
+      "SupportedLeftOrbitProjectedStabilizer"
+    ],
+    "ParabolicCaseTwoProjectionFiberIndices": [
+      "CaseOneRightProjectionConstruction",
+      "EvaluationForTwoProjections",
+      "ParabolicExtremalOutsideRestrictionRegions"
+    ],
+    "ParabolicCommonRightRegionForLinearLabels": [
+      "ExtremalParabolicsOfFiniteGroup",
+      "FiniteParabolicClosure",
+      "MixedCrossingFiniteFiberConvention"
+    ],
+    "ParabolicCurlFactorization": [
+      "ParabolicCurlsFromBlockRefinements",
+      "ReidemeisterOne"
+    ],
+    "ParabolicCurlJoinIntersection": [
+      "FiniteParabolicClosure",
+      "ReidemeisterOne"
+    ],
+    "ParabolicCurlsFromBlockRefinements": [
+      "ReidemeisterOne"
+    ],
+    "ParabolicDoubleCosetRepresentatives": [],
+    "ParabolicExtremalOutsideRestrictionRegions": [
+      "CaseOneRightProjectionConstruction",
+      "EvaluationForTwoProjections",
+      "FiniteParabolicIntersectionBlocks",
+      "FiniteParabolicJoinBlocks",
+      "MixedCrossingFiniteFiberConvention"
+    ],
+    "ParabolicExtremalThreeInductionExample": [
+      "ParabolicExtremalThreeInductionRegions"
+    ],
+    "ParabolicExtremalThreeInductionRegions": [
+      "FiniteParabolicIntersectionBlocks",
+      "FiniteParabolicJoinBlocks",
+      "ThreeInductionCrossingMultipliers"
+    ],
+    "ParabolicFullMackeyCancellation": [
+      "MixedReidemeisterTwoMackeyCancellation"
+    ],
+    "ParabolicMackeyIntersectionBlocks": [
+      "FiniteParabolicConjugateBlocks",
+      "FiniteParabolicIntersectionBlocks"
+    ],
+    "ParabolicOutsideMultiplicationDiagram": [
+      "CaseOneRightProjectionConstruction",
+      "MixedCrossingFiniteFiberConvention",
+      "ParabolicExtremalOutsideRestrictionRegions",
+      "ReplacementForTwoMultiplications"
+    ],
+    "ParabolicOutsideProjectionDiagram": [
+      "ParabolicCaseTwoProjectionFiberIndices"
+    ],
+    "ParabolicRightDiagramSpanOverCommutativeRings": [
+      "ExtremalParabolicsOfFiniteGroup",
+      "FiniteParabolicClosure",
+      "ParabolicCaseFiveCoefficientOneExpansion",
+      "ParabolicRightOrbitMultiplicity",
+      "SupportedLeftOrbitProjectedStabilizer"
+    ],
+    "ParabolicRightOrbitMultiplicity": [
+      "CaseSixRightShapeEvaluation",
+      "ExtremalParabolicsOfFiniteGroup",
+      "FiniteParabolicClosure",
+      "RightOrbitDiagramFromProjectedStabilizer",
+      "SupportedLeftOrbitProjectedStabilizer"
+    ],
+    "ParabolicSharedRegionParallelInduction": [
+      "ParallelReidemeisterTwoInduction"
+    ],
+    "ParabolicSharedRegionParallelRestriction": [
+      "ParallelReidemeisterTwoRestriction"
+    ],
+    "ParabolicSmallerMackeyReverseComposite": [
+      "MixedCrossingsThroughSmallerGroup"
+    ],
+    "ParallelInductionProductDotAdmissibility": [],
+    "ParallelReidemeisterTwoInduction": [
+      "InductionRestrictionMergesAndSplits",
+      "ParallelInductionProductDotAdmissibility"
+    ],
+    "ParallelReidemeisterTwoRestriction": [],
+    "ProductParabolicDoubleCosets": [
+      "ParabolicDoubleCosetRepresentatives"
+    ],
+    "ProductParabolicsWithOneDoubleCoset": [],
+    "ProductParabolicsWithThreeDoubleCosets": [
+      "StandardTwoBlockRepresentatives"
+    ],
+    "RegularModuleRightAction": [
+      "Bimodule"
+    ],
+    "ReidemeisterOne": [
+      "LeftDownReidemeisterCurl",
+      "LeftUpReidemeisterCurl",
+      "RightDownReidemeisterCurl",
+      "RightUpReidemeisterCurl"
+    ],
+    "ReplacementForTwoMultiplications": [
+      "MixedCrossingFiniteFiberConvention"
+    ],
+    "ReplacementForTwoProjections": [
+      "CaseOneRightProjectionConstruction",
+      "CaseTwoLeftProjectionConstruction",
+      "EvaluationForTwoProjections"
+    ],
+    "RestrictionMergeDotSlide": [],
+    "RestrictionSplitDotSlide": [
+      "InductionRestrictionMergesAndSplits",
+      "RestrictionMergeDotSlide"
+    ],
+    "ReverseCupBend": [
+      "FiniteIndexReverseAdjunction"
+    ],
+    "ReverseTriangleIdentities": [
+      "FiniteIndexReverseAdjunction"
+    ],
+    "RightCurlAndDotSlide": [
+      "InductionMergeDotSlide",
+      "InductionSplitDotSlide",
+      "RestrictionMergeDotSlide",
+      "RestrictionSplitDotSlide",
+      "RightUpReidemeisterCurl"
+    ],
+    "RightDownReidemeisterCurl": [],
+    "RightInputDotSlideObstruction": [],
+    "RightOrbitDiagramFromProjectedStabilizer": [
+      "CaseSixRightShapeEvaluation"
+    ],
+    "RightUpReidemeisterCurl": [],
+    "SharedParabolicForParallelCrossings": [
+      "ParabolicSharedRegionParallelInduction",
+      "ParabolicSharedRegionParallelRestriction"
+    ],
+    "SinglePairCannotProjectOntoSeveralDoubleCosets": [],
+    "SinglePairIdentityCriterion": [
+      "MixedCrossingFiberMaps",
+      "MixedReidemeisterTwoMackeyCancellation"
+    ],
+    "SmallProjectiveGenerator": [],
+    "SmallProjectiveGeneratorCorrespondence": [],
+    "SmallerParabolicReducesProjectionFiber": [],
+    "StandardSymmetricGroupBraidRelation": [],
+    "StandardTwoBlockRepresentatives": [
+      "ParabolicDoubleCosetRepresentatives",
+      "ParabolicMackeyIntersectionBlocks",
+      "TwoBlockDoubleCosetMatrices"
+    ],
+    "StraightMixedTrivalentVertices": [
+      "TrivalentBendIdentities"
+    ],
+    "StrongerEmbeddingConditionSlideObstruction": [
+      "BlockwiseGroupElementDotCriterion"
+    ],
+    "SupportBoundsForInverseProduct": [],
+    "SupportBoundsUnderComposition": [
+      "FiniteParabolicConjugateBlocks"
+    ],
+    "SupportedLeftOrbitProjectedStabilizer": [
+      "CaseFiveLeftShapeEvaluation",
+      "FiniteParabolicConjugateBlocks",
+      "FiniteParabolicIntersectionBlocks",
+      "RightOrbitDiagramFromProjectedStabilizer"
+    ],
+    "SurvivingCosetRepresentative": [],
+    "TableauDoubleCosetRepresentativeInS6": [
+      "ParabolicDoubleCosetRepresentatives",
+      "ParabolicMackeyIntersectionBlocks"
+    ],
+    "ThreeInductionCrossingMultipliers": [
+      "GroupElementDotCriterion",
+      "InductionRestrictionMergesAndSplits"
+    ],
+    "ThreeInductionLabelsChangeOnRoundTrip": [
+      "ThreeInductionCrossingMultipliers"
+    ],
+    "ThreeInductionReidemeisterThree": [
+      "MultipliersUnderRelabelling",
+      "ThreeInductionCrossingMultipliers"
+    ],
+    "TraceCapBend": [
+      "FiniteIndexReverseAdjunction"
+    ],
+    "TransportToMackeyRepresentative": [],
+    "TrivalentBendIdentities": [
+      "MultiplicationCapBend",
+      "OrdinaryCupBend",
+      "ReverseCupBend",
+      "TraceCapBend"
+    ],
+    "TwoBlockDoubleCosetMatrices": [
+      "ParabolicDoubleCosetRepresentatives"
+    ],
+    "TwoBlockSplitGivesFourIntersections": [
+      "StandardTwoBlockRepresentatives"
+    ],
+    "TwoMackeySummandsWithSameInternalLabels": [
+      "CommonMackeyIntersectionSum",
+      "MackeyIdentityDiagram"
+    ],
+    "UnequalParabolicCurlProducts": [
+      "ParabolicCurlJoinIntersection",
+      "ReidemeisterOne"
+    ]
+  },
+  "missing_named_suppliers": [],
+  "source_import_graph_acyclic": true,
+  "open_auxiliary_imports": [],
+  "axioms": {
+    "Bimodule": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RegularModuleRightAction": [
+      "propext",
+      "Quot.sound"
+    ],
+    "CanonicalWattsComparison": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NaturalTransformationsOfTensorFunctors": [
+      "propext",
+      "Quot.sound"
+    ],
+    "SmallProjectiveGenerator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ModuleTensorUniversalProperty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BalancedTensorAssociativity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BimoduleTensorBicategoryCoherence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "EilenbergWatts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ComplexEilenbergWatts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SmallProjectiveGeneratorCorrespondence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ConjugationEmbeddingCentralizerCoset": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "InductionRestrictionBimoduleStrands": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GroupElementDotCriterion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "InductionRestrictionAdjunction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteIndexReverseAdjunction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ReverseTriangleIdentities": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "InductionRestrictionMergesAndSplits": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiagrammaticFunctorCorrespondence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SurvivingCosetRepresentative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MixedCrossingFiberMaps": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MackeyInclusionAndProjectionCrossings": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MackeyIdentityDiagram": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MackeySummandProjection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MackeyOrthogonalityDiagram": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeneralizedMackeyDecomposition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OrdinaryMackeyDecomposition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RightUpReidemeisterCurl": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RightCurlAndDotSlide": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "InductionMergeDotSlide": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "InductionSplitDotSlide": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RestrictionMergeDotSlide": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RestrictionSplitDotSlide": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DotBelowInsideAboveRightCurl": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "CurlWithCentralizingDot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MovingMergeDotBackToBranch": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MovingSplitDotToOutputBranch": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "CurlAcrossTrivalentVertex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DifferentCurlIndices": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "LeftDownReidemeisterCurl": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NormalizedIndexValuedReidemeisterCurls": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NormalizedTrivalentCurl": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FixedBoundaryReplacementPreorder": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RightInputDotSlideObstruction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DotSlidePreorderNotSymmetric": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "InductionBimoduleOrbitSumBasis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteOrbitSumDiagram": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteParabolicConjugateBlocks": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteParabolicIntersectionBlocks": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteParabolicJoinBlocks": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteParabolicClosure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ExtremalParabolicsOfFiniteGroup": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BlockwiseGroupElementDotCriterion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BlockSwapOrbitSumWithoutGroupDot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DotBetweenImagesInOneBlock": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "StrongerEmbeddingConditionSlideObstruction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SupportBoundsUnderComposition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SupportBoundsForInverseProduct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MultiplicationCapBend": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TraceCapBend": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OrdinaryCupBend": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ReverseCupBend": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TrivalentBendIdentities": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "StraightMixedTrivalentVertices": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RightDownReidemeisterCurl": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "LeftUpReidemeisterCurl": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ReidemeisterOne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TransportToMackeyRepresentative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MixedCrossingComposites": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MixedReidemeisterTwoMackeyCancellation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MixedCrossingsThroughSmallerGroup": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "CommonMackeyIntersectionSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TwoMackeySummandsWithSameInternalLabels": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SinglePairCannotProjectOntoSeveralDoubleCosets": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SinglePairIdentityCriterion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParallelInductionProductDotAdmissibility": [
+      "propext",
+      "Quot.sound"
+    ],
+    "ParallelReidemeisterTwoInduction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParallelReidemeisterTwoRestriction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "StandardSymmetricGroupBraidRelation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ThreeInductionCrossingMultipliers": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MultipliersUnderRelabelling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ThreeInductionReidemeisterThree": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ThreeInductionLabelsChangeOnRoundTrip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AlternativeThreeInductionInternalGroups": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MixedCrossingFiniteFiberConvention": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "EvaluationForTwoProjections": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "CaseOneRightProjectionConstruction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "CaseTwoLeftProjectionConstruction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ReplacementForTwoProjections": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "CaseOneNoFiniteRightReplacement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "CaseTwoRequiresSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ReplacementForTwoMultiplications": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MixedMultiplicationLabelsChangeOnRoundTrip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "CaseFiveLeftShapeEvaluation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "CaseSixRightShapeEvaluation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "EvaluationWithOneProjection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RightOrbitDiagramFromProjectedStabilizer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ExpansionIntoRightDiagrams": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "CaseFivePointwiseFiniteDiagramIdentity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "CaseFiveRequiresTwoTerms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "CaseFiveRequiresInfiniteExpansion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "CaseSixProjectionNoLeftReplacement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicBlockOperationExample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicDoubleCosetRepresentatives": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicMackeyIntersectionBlocks": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TableauDoubleCosetRepresentativeInS6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OneSidedTableauCosetRepresentatives": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TwoBlockDoubleCosetMatrices": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "StandardTwoBlockRepresentatives": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "EqualTwoBlockSubgroups": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MackeyConjugationExchangesFactors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ProductParabolicDoubleCosets": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ProductParabolicsWithOneDoubleCoset": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ProductParabolicsWithThreeDoubleCosets": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TwoBlockSplitGivesFourIntersections": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MackeyDecompositionWithParabolicRepresentatives": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteParabolicBicategoryComposition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteParabolicBimoduleBicategory": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteParabolicJoinOfFamily": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicCurlsFromBlockRefinements": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicCurlFactorization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicCurlJoinIntersection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnequalParabolicCurlProducts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "LargestCommonMixedCrossingParabolic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicFullMackeyCancellation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicSmallerMackeyReverseComposite": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "LargestCommonParabolicDependsOnRepresentatives": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicSharedRegionParallelInduction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicSharedRegionParallelRestriction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SharedParabolicForParallelCrossings": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteParabolicSingleDiagramReplacements": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicExtremalThreeInductionRegions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicExtremalThreeInductionExample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicExtremalOutsideRestrictionRegions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicCaseTwoProjectionFiberIndices": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicOutsideProjectionDiagram": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicOutsideMultiplicationDiagram": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SmallerParabolicReducesProjectionFiber": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicCommonRightRegionForLinearLabels": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SupportedLeftOrbitProjectedStabilizer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicRightOrbitMultiplicity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicCaseFiveCoefficientOneExpansion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicRightDiagramSpanOverCommutativeRings": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicCaseFiveUnscaledDiagramIdentity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicCaseSixStrictStabilizerObstruction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicCaseSixReplacementThroughJoin": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicCaseSixObstructionAndReplacementFamily": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicCaseSixOrbitCoefficientVanishesInCharacteristicThree": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "CaseSixCounterexampleWithTrivialProjectedStabilizers": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ParabolicCaseSixObstructionWithTrivialProjectedStabilizer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "CaseSixReplacementThroughOverlappingBlocks": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "snapshots": {
+    "AlternativeThreeInductionInternalGroups": {
+      "source_sha256": "6163fd3120f506a2039e3beda5c8bc0aad62665b5f4d2a7066572be5a0f00ae5",
+      "olean_sha256": "f4b0e42a1e7734c02f4b459c53091d1981cb3725c66187990f776bd78d94e0cb",
+      "receipt_sha256": "07dba81e764a5c3cf6c27a368baed04b4f436756390b4c5c1b740251db1d8ffa"
+    },
+    "BalancedTensorAssociativity": {
+      "source_sha256": "2069082f489690ee0a881df7f2f5ebad33d114cdd97398518f7d740ef23f279e",
+      "olean_sha256": "3439f37b38f4b52d21cf017d92a84c8cf446c882ea98a2cbe4f7646a67f12eed",
+      "receipt_sha256": "c234e6d3f5ff9ebfc4bfe70e878f397d8e0f5c592fcda36c89aa27f7783e8b6a"
+    },
+    "Bimodule": {
+      "source_sha256": "d988cfe27082f914298f1a6cfced9d0dfa8a2e703996ff311e7c6d4f51a867f8",
+      "olean_sha256": "bc8c0146b287e19222eb5598497008bcc93179444d266e0b78f28743faab66a1",
+      "receipt_sha256": "8862fb599e6057b34d0a13c4b901dacf8cf1d7c07c5f354cc279ed8cd739b895"
+    },
+    "BimoduleTensorBicategoryCoherence": {
+      "source_sha256": "371b49e798fd904a1323667f853126fdb914a438c32add1e1ace7e3cec02955a",
+      "olean_sha256": "53cee54b07a4906f42e9ae7c85c93b315017eb31524982039b98f75cda99e7b8",
+      "receipt_sha256": "8cf2e5ca3fdbe52694c729f102083de7b2c005f6fa2f694d73bcaa3e73e9893a"
+    },
+    "BlockSwapOrbitSumWithoutGroupDot": {
+      "source_sha256": "6de897e792bc4caa0a5c6e1463b282a83dba490acc3f8129a0ababf538543c62",
+      "olean_sha256": "5344b8a912e05b88b830523b6a02e10346d528ef34f08ec53e19543b31cc22b3",
+      "receipt_sha256": "0e865adf67bbe8d6530eb592fc6fa759a21ce71c4e3a0fd7d5aa105abea09439"
+    },
+    "BlockwiseGroupElementDotCriterion": {
+      "source_sha256": "a502522ef6ce531baf25734ae3d60a524151eb863283b15ecafc7be921575011",
+      "olean_sha256": "e1c0ff53b5145023ff66df967961388d8ee342987e0b3d82c3f20d9da5067053",
+      "receipt_sha256": "6afc5f2f89af2fd5b17d9a148077457bb11f4b5a22effc4d9159293aaa9d8869"
+    },
+    "CanonicalWattsComparison": {
+      "source_sha256": "8418e4ddd51fe272c33243d6597a21feab34ce85edeeb036080394624b5559eb",
+      "olean_sha256": "ecaba35cb593803f588b1e29e2e775c5c69fccf2fe71009442a04760f35bf735",
+      "receipt_sha256": "174fda731679d98016fbeca60f63e6afb74f89154dde907cf1c349d1a49aee5c"
+    },
+    "CaseFiveLeftShapeEvaluation": {
+      "source_sha256": "75f52a52e9164b95322030733011d15e8b47a46686ee82b910bd19b02e4825d4",
+      "olean_sha256": "9f96199e20ecc9bc8cfb079c9358c839f95cea1d8f0b9fb040ef2eabdba5c0e2",
+      "receipt_sha256": "7f07dd588f72d23d04828d4695ea89305f585371b80c042d8d413d9d1f301828"
+    },
+    "CaseFivePointwiseFiniteDiagramIdentity": {
+      "source_sha256": "140c40651b7e8ed6e55d52bdf3d178a0f8053983b04a37c1cf6950d785b2152a",
+      "olean_sha256": "5ab15594cb39a7edfacb945001edefe61f110a1ecd4e3c4d89788852bec29f8f",
+      "receipt_sha256": "e424575acc8367d551ccb3d27bfa780c0ed64065ec359488a34f0b545697b469"
+    },
+    "CaseFiveRequiresInfiniteExpansion": {
+      "source_sha256": "1b653d5326ee951db43af1ee350780e9326d061833bd4dbfe03b5316dba6443d",
+      "olean_sha256": "aac93492a01d7b6cb7df8f47bb90d5cb587faae799a0135d726251a12769e44d",
+      "receipt_sha256": "086fc5ee2872eb2417f88b58867f3a1a93646b27bb9fca08877a4ba45b5385b8"
+    },
+    "CaseFiveRequiresTwoTerms": {
+      "source_sha256": "cd49b4f84ba28af4c5c14e9388de69ceed70824e3f3ae96c66bb2fd25bcb9c7d",
+      "olean_sha256": "30f44cddfbbca73397ce44db3100fd1ebce87bdd5e13751615c4b0e2b5f2d6de",
+      "receipt_sha256": "cbb1485fa2f3df8ac394c47ce3dfb855f750ef7db64d0eb5afda6d9653538a37"
+    },
+    "CaseOneNoFiniteRightReplacement": {
+      "source_sha256": "a6e6f05807908f45ccd28e96901fedf51a933f6387cef1a1982a9a06fc1d5bd6",
+      "olean_sha256": "b740d69bd782a008b64ecf1bf9dc90d2c865d7b4aaf92174ab0c9a283cca9586",
+      "receipt_sha256": "ae4a75ebf0b29e7fe2ba7c2a9c735c2d2bfe0bc20c07018acd1ab65549ebc422"
+    },
+    "CaseOneRightProjectionConstruction": {
+      "source_sha256": "9d09a9f16efb222d6656fb6526745775390f720659733d73f565faac3271be6b",
+      "olean_sha256": "e6a0af5f3ef8b915d709ab5ad4d94365b65f5fbd3646e862f9429c5b7515aad7",
+      "receipt_sha256": "fe6e833c4cd0ca92d9685509b2bb680a3d25b2c9770cd0a038da65f76ac6b1d1"
+    },
+    "CaseSixCounterexampleWithTrivialProjectedStabilizers": {
+      "source_sha256": "664398528cb96c0c8f202b77c3859f2b7f255232e66dc940e5c1dbd6c6ec5907",
+      "olean_sha256": "13b3d8688cdb9273bcd2df346b843a7575dc7f97e485b23d824a82388b7b5dc9",
+      "receipt_sha256": "2023bf44f4d4b007b87b8777ba542470062261a644ad8237e799b87ad2dae4a2"
+    },
+    "CaseSixProjectionNoLeftReplacement": {
+      "source_sha256": "a29ec46b9a2bf3758051fe3a0319a87265fa2b27c07004786224fed6ae30f84a",
+      "olean_sha256": "a87c84becc0925a15084ae78716243b30831a303681cddb6eb86cfed0860697c",
+      "receipt_sha256": "82f07b30ff7a433e95ab984d77536876685da3fa14b26c844aa1aacb4afec5cb"
+    },
+    "CaseSixReplacementThroughOverlappingBlocks": {
+      "source_sha256": "ea3a3bbfac52e92eaa18be892e54d8bfa78189be7ed066dee2861e07c4fe2e97",
+      "olean_sha256": "e7bd13a49bcf54d53aa8a1c02a189abe453f0f9f82057c75f0560cf9ad2cb39b",
+      "receipt_sha256": "17b152600f3f723aa09de27d9432d94d07e6920fe68056ffdc4b611b85adf791"
+    },
+    "CaseSixRightShapeEvaluation": {
+      "source_sha256": "eef327ca999d767754ddb10c0660e97b660dc943a4d1b51378b1596db80bf34f",
+      "olean_sha256": "5ef26f5d3fec29a898547b77c1c4b0c77933bbc155cc013f49b0ddd853c8406f",
+      "receipt_sha256": "f28b83f2ea59208cf021d0f006495f37b4f433a7aa9c5f9123d2dc4dbe8d9a0a"
+    },
+    "CaseTwoLeftProjectionConstruction": {
+      "source_sha256": "286504c78c140a5d397c7a301863f4eb7649e1dbadd65c2286abd54649d324e8",
+      "olean_sha256": "22f1e0a7103c6186a0fab2d47e54870916b90ddb55f7b7958304e7df16b09849",
+      "receipt_sha256": "57da212913afceb019ff38560832c1c4754b5081ed78cd71b5708d3933b2fa7f"
+    },
+    "CaseTwoRequiresSum": {
+      "source_sha256": "40ca6c49aed3d24e0f03810d76deefd167486a4eaa5f4cd890128f336233f873",
+      "olean_sha256": "9aa27caf871196e2903935f1ae16165406d13f16a90a34be141b4744ed8a5dee",
+      "receipt_sha256": "4f83ccd381c9efbb343490f4c14e45cbe30f531e2af58f50213ad10507e192ad"
+    },
+    "CommonMackeyIntersectionSum": {
+      "source_sha256": "fefcd91f7e528afa25c97c3cef8cf1ccbac5e8f959f4ab53c338826a9774914d",
+      "olean_sha256": "dc2d31479f8c053033e6e31581524973bd45666deb9642719031cea2c04ebe87",
+      "receipt_sha256": "4581f5c968994c0fa0c155d61e1425b639f5c0640b57f5c4c07836540e01d69c"
+    },
+    "ComplexEilenbergWatts": {
+      "source_sha256": "d8dc92a978c6e40bb5b9c8adefbc58e9015ce13bafcfa77b01abbf249f3b521b",
+      "olean_sha256": "3321bd0b5bc1912106264a05b3fad6eb9481d6c777c4d9156496ffc3f67e741e",
+      "receipt_sha256": "4a886ecab28fe65668b75bd9a0a9f64b50c4caaeb5ec58ba91159d69104b9eb3"
+    },
+    "ConjugationEmbeddingCentralizerCoset": {
+      "source_sha256": "c9e3fb36c2bef09b5089ada0bf2709680c6185355e3b4fe451d2ead06f23ba0e",
+      "olean_sha256": "f209a42b22dcb30650c79f30b48425ac14ba76156ca9b3dfd71841e81bb9074a",
+      "receipt_sha256": "fb6fd2142261d4474694f4f757b4d1ce2c329e9d3af654089dfc043d2d105c63"
+    },
+    "CurlAcrossTrivalentVertex": {
+      "source_sha256": "636995c97c6f78e66c904a581b66be459a6d059001ea5e6bcd971594c483060b",
+      "olean_sha256": "5c2d5a79fa2042a7319af92bd714258f48a86033cd0dca21fc6bf45ffbbf2807",
+      "receipt_sha256": "4aad44763c8e3ed12ea2389066c77388da0941e2e246af9e4ee34e7d908ca1e4"
+    },
+    "CurlWithCentralizingDot": {
+      "source_sha256": "af589cfbb543e9fd4f48d6bed6c0b83c2241210deb689cf52827c58480fb988b",
+      "olean_sha256": "9f562f2be6c8c64c15c7814bdeb8b2e9fd32441ccf889ea4bb91794c904e20ce",
+      "receipt_sha256": "46bab6813fb5cb63221ba2b0c20b937af74051bb61f534eccbb7487df7169981"
+    },
+    "DiagrammaticFunctorCorrespondence": {
+      "source_sha256": "5edaf7192a39a866da12681ff56bfdde29df1be887dceb1cf01da216853caa11",
+      "olean_sha256": "943b9df0f97285517744bfc85d92c8dff8a6fb9e54d342c4c5f02870cab085d2",
+      "receipt_sha256": "5c84782eacd87e64d3aa839e065ea3f2e11e02135ad5a537ef64fb8ed096033d"
+    },
+    "DifferentCurlIndices": {
+      "source_sha256": "18a2e0150f6cea80091f3861e65a1a413812e069b4d05a80b865cc61551decc8",
+      "olean_sha256": "6e61294b0dedac78475dd8a7ea1ca67c2785fd0d5de32e0f2a6cf77f4966689c",
+      "receipt_sha256": "e9b32f2e25121734bd7dc5d010f895dec20b9bb6d48ddacd4bb74273e24928b6"
+    },
+    "DotBelowInsideAboveRightCurl": {
+      "source_sha256": "55d11b16155ffa631b93ed825f1a86be9c0cb11fb9b486384928b6fbb1447e7a",
+      "olean_sha256": "5e5ff9a56c58d540142a1c3597456b59a4533da0b5c4bd80f57dd521f3e592fd",
+      "receipt_sha256": "a03e52151c98ae8d110a95a46d5d55e3376e0d94a104f6bd273f154149a82db2"
+    },
+    "DotBetweenImagesInOneBlock": {
+      "source_sha256": "f90e86ac612c3c15a1e359cae2bcba47fc98afcc6124cbed58db59c0a263f5ca",
+      "olean_sha256": "461dfacffe226c79b6a2c166ee2f7b92265299bbf0e47f05bd54cb00164f46b8",
+      "receipt_sha256": "db47a449379a0bdb6eb33a63a27da29da84b64f05d074ece696deb7d60657c5a"
+    },
+    "DotSlidePreorderNotSymmetric": {
+      "source_sha256": "e0977eb4e51d00724f15b6b18cde064083867fdaa4e668e6b1f1b39f20524a2b",
+      "olean_sha256": "86fed13afdc457648d501db7c85540bfe5be4eb1555f06029631dc6cebe50ec1",
+      "receipt_sha256": "85a89817baf7febfe0125e5dfb6ab392869234850ecf75edc7228cdc7d926316"
+    },
+    "EilenbergWatts": {
+      "source_sha256": "f0e19bdb192ca7aeb94cec07b5d7b0b30c7f344776812852d5ad679b57e823f2",
+      "olean_sha256": "11629cbc03b85cbf9b844fb59ca8936dbb84165f905dff54140030016a8b8c2b",
+      "receipt_sha256": "ac85981c2162a4c604ea8cce424eebfb1bf658b4dc7bb910be67a7a5362fcc2b"
+    },
+    "EqualTwoBlockSubgroups": {
+      "source_sha256": "ac0f662632462f790f5a840c6f02eaaa63d38ae4e745066181b8e8503f9413ca",
+      "olean_sha256": "c2a5f6b4f2ff16a18eeaf540d6638720331be8edf94b997066e869c57f65811b",
+      "receipt_sha256": "0fe58fc71c4d3f706db9d12882f9cdd6ef355f69a8456ca30c0df6a23aa15ecf"
+    },
+    "EvaluationForTwoProjections": {
+      "source_sha256": "04d7ec9695b5f5460ae2b6517569d769efe910444028d02385c3c14f66fb4114",
+      "olean_sha256": "f267241f0469c2bbe480a0da58be45b5430422574defc1bc65309a808cba3a09",
+      "receipt_sha256": "8e838f67552469aea68593dd55201f585a1dd69e94716cd94a46b96effaf8af6"
+    },
+    "EvaluationWithOneProjection": {
+      "source_sha256": "ad1d09a3ac2a6883f169cf66c763ca69d72581a5007103029bf7cd55098bf223",
+      "olean_sha256": "1c4dfdf9d660a330cff63627ae26c3194088b151e3d9976f10eff516de94c3a3",
+      "receipt_sha256": "7f2002faccab6b3b37d1fae5e11331753b68f4544cca68dc9987c585fc1917c3"
+    },
+    "ExpansionIntoRightDiagrams": {
+      "source_sha256": "8d23b095ebafffad055b79cc4156f28ce5b16842c9f759d81363bbae371a8a90",
+      "olean_sha256": "d909971b1e12db109f2aa4e3bd79707cd5584a5a01143ac880cd5d279f400c59",
+      "receipt_sha256": "312294afb10161678442545f211f89c86fb2b16a2c03bafb3795b445abee3c4d"
+    },
+    "ExtremalParabolicsOfFiniteGroup": {
+      "source_sha256": "bd3747339e5719bc68d76de86a0df15cb94618750c096df8bd137c7da55be06f",
+      "olean_sha256": "4349f28184fdf544ebe0e3b93178fdabeeef73d54673f4c1a2f0d077b329955d",
+      "receipt_sha256": "51124ae8cbe894d13cd4eb986b646ec80e674b4fef07292eecfd1664a6c67852"
+    },
+    "FiniteIndexReverseAdjunction": {
+      "source_sha256": "6f322ea68217e5fe0654717fbbf14135d367edad14672729238860cf4d12cc70",
+      "olean_sha256": "08e27eb5f89e84375263827ca9465c9939f74604af092b8f2435d8bb867d392a",
+      "receipt_sha256": "a51dedf132c7c954174703823e4832a5183bf3efbc620cbe6a6d9eb212c71c47"
+    },
+    "FiniteOrbitSumDiagram": {
+      "source_sha256": "1ab6cc6b29b0afc7fdbcafb9dab536cc1726ac6481659b6e0c500aa14aceecf6",
+      "olean_sha256": "541144f6b4b807a0ab9761da0346510a4059660642437e969549c661527c3b93",
+      "receipt_sha256": "6f0eeda9e411b8d7a88f0d40d0450410c60ca61e70656a19345b834a59e03e54"
+    },
+    "FiniteParabolicBicategoryComposition": {
+      "source_sha256": "6d7bf45bafaf72c19dc5c332c7b8c30d120eb0b6a0cff786ef96cfef4cda294b",
+      "olean_sha256": "5da9a03c405d8bf5b7cd155c018b36f9f9b073f45f37f245bf137c194d139d80",
+      "receipt_sha256": "73d8840df00258518a64688f46dc3e4825ba5e7c85ff4778f55a76209d546eed"
+    },
+    "FiniteParabolicBimoduleBicategory": {
+      "source_sha256": "35dd377b787fbe945f559bc5217f8c346b91e3c6542bfb8a1c4c75d32ae41090",
+      "olean_sha256": "42cf43f099f280ab23fc03409169f5f7065e1cb36bb0a962601364dfb27af446",
+      "receipt_sha256": "8efd641d17f979d0027ea80f4798ed0acd2f8a225c944c6d2c1871b8d28549bf"
+    },
+    "FiniteParabolicClosure": {
+      "source_sha256": "3ca5a20bdcccce5a2b097d99be8e33dd326130486b187089385993bfd6fab017",
+      "olean_sha256": "3e4eacbaa147b87a4db62cdf4de7b58f26e6193fff368433556d565055d9e749",
+      "receipt_sha256": "ab0d9ad90e6f15c2f0ffc7d5c325ff766291b490dcdf84f7d5adfc545104f45f"
+    },
+    "FiniteParabolicConjugateBlocks": {
+      "source_sha256": "2d02c65f4b0bb6b16c825bc0714039bde13ee5d27fa5ffb509a7bbe41b8e5e7c",
+      "olean_sha256": "5a6e3ed6d8f7d445729e96ad9254dacb68fe38b5404791567c4979399082c1b2",
+      "receipt_sha256": "fae8a42bde2221e02e56f82d953d9b170b25b3b914f7aa3acb31d9ffdfddffa1"
+    },
+    "FiniteParabolicIntersectionBlocks": {
+      "source_sha256": "b09c312679e90f6e0acb563d26f7ea984d238d2b6c5028dfea9e1e956965cc2b",
+      "olean_sha256": "5560b312c231bcc8809ae9683b3c1f978d77ad57dce4ec16f33abac569083b2c",
+      "receipt_sha256": "1e11c9ffabec84b47286d7dfb4c876e6e340eb2688deb91f28b59a76189e2458"
+    },
+    "FiniteParabolicJoinBlocks": {
+      "source_sha256": "5a5a817c51070f6b9d76c010353098785a3ec901be0199d908a1727a415e5712",
+      "olean_sha256": "c8f7243788798b7140b3b96524d766a27bd627bdabe26a842f8ac590aa6af8bb",
+      "receipt_sha256": "3be19c6e5e52e42d3c885f006cec838369a7a43acdef6526aea4e9623d952055"
+    },
+    "FiniteParabolicJoinOfFamily": {
+      "source_sha256": "79a4d299a2bce93060c169368212bc2ed8aaee39f8401685bd4473ccc437509e",
+      "olean_sha256": "3bb431887d25de06cbc6dcdfd75b6b178eb2f75c0019de9828ae431ab801f9e2",
+      "receipt_sha256": "a904e8ea3ae5d2847e34e1d584ffc586ab8a32abb17085ec242cfd60647d3dd2"
+    },
+    "FiniteParabolicSingleDiagramReplacements": {
+      "source_sha256": "ec248f121acb15228e9f2c959f09fd7845add1d39c666b3c910fbc908128159d",
+      "olean_sha256": "bd1cc3984f7f69d611318405b4a33321d2bd1fe0720c6c391374e3925275b2fd",
+      "receipt_sha256": "8b4962a4336704abc25a01e3e4bd0e8709447ac09ea344de4383fa46c7c47447"
+    },
+    "FixedBoundaryReplacementPreorder": {
+      "source_sha256": "515d351130813edcd976d8c9e6695c06275b48f5e7c039f0ada82aae5d7265b1",
+      "olean_sha256": "1aa97215c987b11efea6a35c80b6256f6e5ce5fb01adb62f874b56fa7855791c",
+      "receipt_sha256": "8036664b5fe54dd58d7b12e42fc082ae0b0b79bc93f617419ae4a496fe4d2098"
+    },
+    "GeneralizedMackeyDecomposition": {
+      "source_sha256": "044084754209ae3de60b4056dbe9a817bdf369063bb483e8ffaa6e945a2557b2",
+      "olean_sha256": "2538f0662df9b2529c400dc445a73fdbefcb7ed60a7071a06856cd9de4b595bc",
+      "receipt_sha256": "3655742adf42b852b026888fb661c2c99a1e508a6cef4da976b2dca4795721a0"
+    },
+    "GroupElementDotCriterion": {
+      "source_sha256": "035f3601602965dea23921db59eb2e3be39aeb2d1ab38c9dc3fa884293ff9297",
+      "olean_sha256": "5e00f7cae7b9e02ed43f24c16042813f42d6af1e02519129c13cf892bcebf64f",
+      "receipt_sha256": "a35f90ad516d2cd27450931fdd6d437ce97c3e343090a53909f68a0f6ba18f55"
+    },
+    "InductionBimoduleOrbitSumBasis": {
+      "source_sha256": "f9a99845926a7f3eb9de48879e0cb5998a2d7a2126cd8770bc183b49992feab5",
+      "olean_sha256": "6452de7b87247a76d429a329cc8de68ef61f9a522ba8f4cc83438da88e202053",
+      "receipt_sha256": "73d98671b0b64cf9c9088d20de7fa7a788d188dfc0d727237957554ef5d56ca5"
+    },
+    "InductionMergeDotSlide": {
+      "source_sha256": "8695902586df4fb11c708bfcd94b1132805ae961b87fce0b833b6b7e9009fc45",
+      "olean_sha256": "349fa23831db0666c310b1275e5bb859872cd47a23cad8db9cf77abdbf619f94",
+      "receipt_sha256": "5d8fe1e8facd72e52aa94703af0883daada052d18ce072acb7e4ef7ec51c73a2"
+    },
+    "InductionRestrictionAdjunction": {
+      "source_sha256": "17fa89cd1b7a93f39276b5e6ea102d8617c3e6d7b0ba6121bf7a653529671967",
+      "olean_sha256": "4ba12adc2b0d0ad5d2e90f8c86541df32fd7ad1e7c3c3c78af4c85e2162d80c1",
+      "receipt_sha256": "130c8a32b4b64ce113cedd34c429f48397513f5ed63bb8cb7def3e2574984253"
+    },
+    "InductionRestrictionBimoduleStrands": {
+      "source_sha256": "1e6f783f72f835dd505c4e982f12dd440a147326276ed895483e77730cbaddf3",
+      "olean_sha256": "451f4e33aed30b0c5774cd8ceca09dc661ddd3bb0cd8406cac03e6ed0bb3773f",
+      "receipt_sha256": "2ddb7dc55c5fa8c4c9e573772dfe26e6e89597056ee21921660db1c4ff94f0df"
+    },
+    "InductionRestrictionMergesAndSplits": {
+      "source_sha256": "08c9d56dc3f0b8d487a0425ccc430ea7ca92ce315bcae45eda0e6f5195b6ff1b",
+      "olean_sha256": "84e39738094b9c29604c20b6e72e1731917c967f0858b96006fdb64f55f3973e",
+      "receipt_sha256": "ecf8ac7f6b7f2f09a5eb5a83b456ce60a9b1bafe79ab8a8bc8543bbe0bed8181"
+    },
+    "InductionSplitDotSlide": {
+      "source_sha256": "80e136ec550c5f18128706a5d6bda29be73fd4a0f95ba3813c182fa6c9982f53",
+      "olean_sha256": "ed5d651dedff90775524773363737cf1a8c0adf60a438938339cc66b78ae3770",
+      "receipt_sha256": "61ca476d2b0a4610972fd75e1f240902448e2d1b097f55796be2ce40b91508cb"
+    },
+    "LargestCommonMixedCrossingParabolic": {
+      "source_sha256": "1fbd16bd71c1380f0183231593207361defdd0416ab8a11fd744ccaa0a1d447d",
+      "olean_sha256": "c01aeb37e8c549f8ef3d9d09667ebef3846bb870ed7104a44a0c40d3a3208879",
+      "receipt_sha256": "53b996d11e5bf98742b541b126f680da45afa641ee37ae3d1636b502342a52e4"
+    },
+    "LargestCommonParabolicDependsOnRepresentatives": {
+      "source_sha256": "736b974e1976b3ff89be7bc919adcf01b1bf93b441892c9e9bd91c44b8dfc500",
+      "olean_sha256": "a5ba2592d4fb325938c10f155c808e9d482fa917d27d94d9d04c3b00dcce6d52",
+      "receipt_sha256": "f0b4f47c796da5dcbcdd46aebfddff335c4e6ac59eddacc6bf38edda6353d5a1"
+    },
+    "LeftDownReidemeisterCurl": {
+      "source_sha256": "6b8d1c78e49c89a5d98773384367563a6d99a139a73ee46a60931240c0bfea0e",
+      "olean_sha256": "e881dc9e923e59935920032bc3f6f5ae5e363da50264120df7d34900a6a4dfbe",
+      "receipt_sha256": "a3b5b67ec63fcc1b3f6d8109fb8c8a9d5e1278538691c015787a64eae0560699"
+    },
+    "LeftUpReidemeisterCurl": {
+      "source_sha256": "6a815b9addf8c2b6841d660280334998957e604754e2c14277c61914e982d386",
+      "olean_sha256": "4f38212b667f94c432c50eda232fa33b4e1645c520054e092d04e86167f18906",
+      "receipt_sha256": "49ca6a984ee8de598c60a6f13f95ba2a4e43f45a6c46d6ea4f140bdc500a3472"
+    },
+    "MackeyConjugationExchangesFactors": {
+      "source_sha256": "a34a0b8f623b7b1628a0f2ffd1460332bf4f93202602d24dd8f08aa3f0519d5f",
+      "olean_sha256": "0884226612574be4841c4aad5dae037fd08dc0c0e41306f3f4e3e1d538ddc175",
+      "receipt_sha256": "26b3108fd0192e48d4f789a73c75fc35d5c9e8d415ae906eb44b4ded119f028d"
+    },
+    "MackeyDecompositionWithParabolicRepresentatives": {
+      "source_sha256": "b77b12d5d1d0c28fce18ce7a3edb7919c1832eb829044077d3a7fff5cd1de574",
+      "olean_sha256": "b6660eaa604a8079035d5ff2eba41c76379bed894b2287d8e5fdf7d3c39e4a64",
+      "receipt_sha256": "47de40c8f4a7256916b92b18c0c09a9fb4ea03e089ae6e39b6d095ee0db0dbdd"
+    },
+    "MackeyIdentityDiagram": {
+      "source_sha256": "65b8d87d96de63547927dc9398c3de79bc7817c4e7ff9c59a5cb32e74f3362bd",
+      "olean_sha256": "3676809dd68255ca06cb880838ed5dad115096a83df328b9d8cf68bda31bf236",
+      "receipt_sha256": "c92d04aea71914739b9f6130c979ac2889fc5c0f60afb6ed55d88c5a7f8f43d2"
+    },
+    "MackeyInclusionAndProjectionCrossings": {
+      "source_sha256": "6edc10a2f83cb423f0d4ebbc42c5392ff17be4950c2868817496a082c73a0a2c",
+      "olean_sha256": "7c1c4b591345a6e65ed4902730812031c2785ae05d9eeb1a21f6a22943d047ed",
+      "receipt_sha256": "cc4da82777e5f4dea1a08b363a774150c8a26092d27179b29563054468b48f93"
+    },
+    "MackeyOrthogonalityDiagram": {
+      "source_sha256": "f9a8c394840e77d6299e198f9dc9e1a74a710c1e44c2177e3dad0ad809b98689",
+      "olean_sha256": "daf0a6fb90f0bcf1481b046e7e1adf1d4fa86676357eb64d2bc50fca959dfd20",
+      "receipt_sha256": "d6c53e09bbfc6b611f2f5ada90d85e2851e57cfa122e5c374923f8a70c3791e2"
+    },
+    "MackeySummandProjection": {
+      "source_sha256": "0e4dd0102c80f8764b4d028af1caa85307518a57f1c7e2657e2d7bed70bf4f4f",
+      "olean_sha256": "b9af5599e0c5ae4d87948b42f68edf2a61b0eb096287f0bbbe0a4e048534df14",
+      "receipt_sha256": "da0fc203405ca45b26536d614c915d52e8b6810235a832a79775abf91061b3ed"
+    },
+    "MixedCrossingComposites": {
+      "source_sha256": "6d6dcd6d1359e484f169d04a4bfd4a5cbf9be1ace307c70b902b99e7e87f1059",
+      "olean_sha256": "7060ba314e585810ef0eec86aa77e3ec069350dba5e16245b3586ada4e59a8a9",
+      "receipt_sha256": "51ee19623329de2eb6f85ef96940fa9bc9abe128f824fa047f4b95c64e1a7c36"
+    },
+    "MixedCrossingFiberMaps": {
+      "source_sha256": "008628adf6e96e109343cf20f6e51d039c24e21d096e65e0a1160677548eab1f",
+      "olean_sha256": "dc773954c03c6301b88899ca70b0227c303a23de08b52edc5553ece4f9d70f56",
+      "receipt_sha256": "97c095c07879b27c7a0cbd2e8e549278bf8403c08b3486e3f947ffe59fb9de51"
+    },
+    "MixedCrossingFiniteFiberConvention": {
+      "source_sha256": "db2a4e4bd8b765c06b57beb66b15b7ef4c7cb6c15e41e2cdf7507444d73a3323",
+      "olean_sha256": "8f950fb2518bde10a90ce88bb77387637398d1fc28a347b2c133fedd679bccda",
+      "receipt_sha256": "0215d17aa79eab8db069f5f24d01fd0011356eef2231857a81e74c194ffc13b1"
+    },
+    "MixedCrossingsThroughSmallerGroup": {
+      "source_sha256": "6ec2bfdb74aa9d89cb0fce4006f1dd0357f2c63282df1ea5af357c688e481115",
+      "olean_sha256": "1167ee9a24c95fd057af0f97a3458bd1627d63c028e2ca27d14a8de18e020167",
+      "receipt_sha256": "cd354146f6819b0779a3944c117d12a50348b59123e605d610e99a48f0af9263"
+    },
+    "MixedMultiplicationLabelsChangeOnRoundTrip": {
+      "source_sha256": "408020b6e5d77ed4d5e0f19beed0a968881d93c247952b6a14877ecc2d4ac98e",
+      "olean_sha256": "ec78b22efd4656564bfe45e9fe012794e512e10b50f93fdcf0ec99e7dba76065",
+      "receipt_sha256": "0657351a050f2d34018ad9ac6b466d6a94f5adf3cf3de0e97276fdce4ec7cfa9"
+    },
+    "MixedReidemeisterTwoMackeyCancellation": {
+      "source_sha256": "bd57d4b7ed9291a9facf706e07d82d40c5801bc178c158ddce297d7dde800bd5",
+      "olean_sha256": "d60e066f24acb4421dbebec8221896361d44029ece889e517e5b4485526707b7",
+      "receipt_sha256": "c5d945c484365d85056fbf681727fa547056cb25fd1182364dbd6ee4c49847b4"
+    },
+    "ModuleTensorUniversalProperty": {
+      "source_sha256": "0d247f5a690de5611eeb14b48e68d00da06b97747d8da8a88c7253a61a5a2ad7",
+      "olean_sha256": "64d1cc2d450b531dc39657a90cbb9386ede82da167a53fbe38ca843cc7a65dda",
+      "receipt_sha256": "108d51e2891c8cfd1a1dde1c431d213a1fbc1d353c29c6176be21d6a35795144"
+    },
+    "MovingMergeDotBackToBranch": {
+      "source_sha256": "676ba2eb29b11583da7da52342d2453b2eda104fc48f9e0ee957e8dc1fabe9be",
+      "olean_sha256": "136124a428fef5dec734570805ba6fe89315b1c60e398e75165bb543d283ef07",
+      "receipt_sha256": "dccb5b85b99e5f44f0544eaa27a351127bac2b926c1572c532eba5cf91854770"
+    },
+    "MovingSplitDotToOutputBranch": {
+      "source_sha256": "621e50a27bbc07e21a5652ae3853ae389930aaa11d10f76537aa55854185e11f",
+      "olean_sha256": "0abf0e0fe3077818d802ddef55f4b0d161fed540ef36a40ee01d21e7b61ae7b2",
+      "receipt_sha256": "28bc4cc0b19fc7e64447414cae68e54c80e2cd5eba6ef4eef587a372d085d27f"
+    },
+    "MultiplicationCapBend": {
+      "source_sha256": "0b9eece1cbec990f0900dc910e6716b8529b6703f8f1f7ddc68ff239538aba52",
+      "olean_sha256": "7867868d5a69a16e1f2cdcaa87c176df924bc4caeee48a0982ae928139c6d7c3",
+      "receipt_sha256": "f48e3feb33cf2cee1f27a569b283000e21257bdeb25d57c8a666924ab8cc8e11"
+    },
+    "MultipliersUnderRelabelling": {
+      "source_sha256": "ef6539ad5e4ad896c3e8082588e876aa9d561ada053de617d74605ffa5d0816e",
+      "olean_sha256": "6726ed17cf008a460cb4fcbe4501e2bd11c93ee6fc1352e203ab5a53b7aa28bd",
+      "receipt_sha256": "5a98b1e7ffda1b431368e8b2bd581edea776a6d59ee88fa0816221ef4e3e7799"
+    },
+    "NaturalTransformationsOfTensorFunctors": {
+      "source_sha256": "efc06ee64a1bba318d200944ae79c2e296ca91ec27e37304f4cf88ee7a552649",
+      "olean_sha256": "5e928db13a707e049b5cfc7ae34d8aad6c7fb5465aaf2dfdd9f0e552bd03feaf",
+      "receipt_sha256": "74d19b9d37e111972266742014aa3fd27cefc9f0f061478395067705d0929430"
+    },
+    "NormalizedIndexValuedReidemeisterCurls": {
+      "source_sha256": "afcab7619920951636cf62791e5b667f1f68cb303c98eebd61eaa05bc1328e5d",
+      "olean_sha256": "bfba637f03e3d3ab0d12adbda611ffd8a028bc27e08855b2cf526de782b1f7b8",
+      "receipt_sha256": "f6d0b6d4e73cbe3f21dd119859e7ae6c0fa20cb77f2c40c2d252c79f5f81f607"
+    },
+    "NormalizedTrivalentCurl": {
+      "source_sha256": "23218d32136379df14e75e70237d3b3b7e2d3c02d50d537963af0ebfaa33dfd3",
+      "olean_sha256": "3d4b0b17ae4bb949afaafa0a3ab983359db00eae6d31169e02556b9e9429f06a",
+      "receipt_sha256": "48b93703285c28ec074f0c92296136ae6dca462b2107c0598d647aa3719b1022"
+    },
+    "OneSidedTableauCosetRepresentatives": {
+      "source_sha256": "affc164d7a2217f7782a8ccee04ce99fa5f91ff75e4a7e30f29e4705a8fbf82d",
+      "olean_sha256": "6832589fe0683536082bcadb5ed23a7e96264f8f79a55d308de72f830b4243e5",
+      "receipt_sha256": "030095d919a9ab83f95cc93e929c62597aa63b4a4e25dc7a4c0df09a7f2cae27"
+    },
+    "OrdinaryCupBend": {
+      "source_sha256": "e44a74aed7cc096044b4d8071c8692452af1d8c0d4d39e9b8ec00c75b2937082",
+      "olean_sha256": "198514cab74f6d1abcfd414a8bda8db6bbf6cbbb13408c164a69ad3d077e1729",
+      "receipt_sha256": "a985b3ef132939d2a96da0fdf579bcaa2c93e229548e6923ee837a20602f7669"
+    },
+    "OrdinaryMackeyDecomposition": {
+      "source_sha256": "7c33a71d2f788cdd72b633b41ad04970a9ef4c6ca3c2bc0800e75d56f60d1c9c",
+      "olean_sha256": "d3d719a59d9f87535674c06889305876d473b0a1b0a15b9edb44462032c496b5",
+      "receipt_sha256": "97cce4ea148ebb7a4285bf05c98df9a20af43d119dcb6fb61652c5a4ef0322a5"
+    },
+    "ParabolicBlockOperationExample": {
+      "source_sha256": "5d4cf0c0ed2c1cdbe69015898e1354f53dc9297342b0fa505edfada21a91751f",
+      "olean_sha256": "d39eda0730df4bce607249658b31bd1b9eb6320b60511815852f5f70e2b1f98f",
+      "receipt_sha256": "7596be5d20e68d52c5e503c7ba261672652ff8ad5d6dcba16c0c69613f2b9f72"
+    },
+    "ParabolicCaseFiveCoefficientOneExpansion": {
+      "source_sha256": "7649c5e43c64bc3f94eb65a7a014e509e2f2669e1f3f680ee56d6258d727debb",
+      "olean_sha256": "2dca08f9ca2030a6160f142c22378ef1f8b7e21b96cbc38e4958547dfef01d4b",
+      "receipt_sha256": "5c66cbb7f19c47ae9e43aeb299caa857f65765d4c6cd3f0c44ab6f40ba10cb06"
+    },
+    "ParabolicCaseFiveUnscaledDiagramIdentity": {
+      "source_sha256": "2d083a72feba0ec320019fd2d9e2f1d552f8cb4f43a216da773c62196f2f6238",
+      "olean_sha256": "11e14c3e28373a1a4e29db1913ee390ab06023392413e36b5b48b4e89031e538",
+      "receipt_sha256": "bc0dc0ed3658ac14db4f7738e35db128f74181aaf9d0e390b5c40fc8bfd2aec9"
+    },
+    "ParabolicCaseSixObstructionAndReplacementFamily": {
+      "source_sha256": "47053772252575c3fba1e7dae414baf73e4bcdcd114835e1c0be2ebcc9fa8054",
+      "olean_sha256": "adb08b5ef9b0b4339af1185eb6de80d617ecf6877d1ed045e4ce5f5d51511847",
+      "receipt_sha256": "b8352c2195fc4a522d81c6027c810f1b4a93c72200e4aa70119811559efec395"
+    },
+    "ParabolicCaseSixObstructionWithTrivialProjectedStabilizer": {
+      "source_sha256": "22b806dfa3ff012fc82b651e0730104b391dcc194fbb7155754e1e8003e8461b",
+      "olean_sha256": "2ee5afe7cfe6c773cc1c99a9ff125e1d8a51ad842db5957c70ba17ef4406e392",
+      "receipt_sha256": "51c561dc5bb33665ca5265198e1f423de8fc24c885d9a232780a0d31470b5701"
+    },
+    "ParabolicCaseSixOrbitCoefficientVanishesInCharacteristicThree": {
+      "source_sha256": "871cfc4d16153d63abb6de09404b7e92f1dc25b75a0632b859281e61361473c4",
+      "olean_sha256": "96dfe0fc0a8d81aad163b5b470270798fc419d51f46251580209377aaf5c9cfe",
+      "receipt_sha256": "c16f32c8fb1be6a1789cc4e9fab68e49f8ceb027a4cde975c7fe6e0007a43e33"
+    },
+    "ParabolicCaseSixReplacementThroughJoin": {
+      "source_sha256": "40d6444eaff2c138f7ec162f73fbfb1e7a5d459f60fefb6fb34ae2a48b91cb91",
+      "olean_sha256": "c892aced476767a7c3c2c783497e7a7f42f651ac9385c51c1b6158389c50ccf0",
+      "receipt_sha256": "4daf9d588d17a6679b20443987491c1389449dd697f97f0eaf8a07d09d8f086d"
+    },
+    "ParabolicCaseSixStrictStabilizerObstruction": {
+      "source_sha256": "af3158b04f200bf0bcff6b794ebd8a8b84cb21d09f40499d2db5445ab673e134",
+      "olean_sha256": "9496c4e7ef0d99fdee843678a37d51974b1c64ee350459d4b0159811c5cbc678",
+      "receipt_sha256": "2193733a4c989590ab8743ddbd427de9bc70d1de06603c13aa852b6aef16120d"
+    },
+    "ParabolicCaseTwoProjectionFiberIndices": {
+      "source_sha256": "0cd583ebffc7350e5b583ba26a5c0ec769b7344665eb9e9ba1e97a12cb2e6bb2",
+      "olean_sha256": "64098f997c34db6cd9f77609ef6bf7171a9a390c1785ec1c1ea631c12f6e7bc6",
+      "receipt_sha256": "ae7321654ea2b00810acae6e5bf0bd9f57fb02d3c4a1451d3abb498c095abcb1"
+    },
+    "ParabolicCommonRightRegionForLinearLabels": {
+      "source_sha256": "f611de4e7ff064014e792692746a6b3755c89920aa77c1e11cfc7e9c56aee8a9",
+      "olean_sha256": "1ba9042f0c43ce3823806ed6ca3a2b45c069b177cea084f56cd1255a718c142b",
+      "receipt_sha256": "03d6bbae402ff77d51e5fcca4223b8c2fd169d89f3b962b09c789f414472180f"
+    },
+    "ParabolicCurlFactorization": {
+      "source_sha256": "471a5ea7e8535c24f2a07320ad809620cf7be951800cda1517f17effd9d0010a",
+      "olean_sha256": "c772e12a1ea0be5570da12710e84142bfa2dabc43242ec3cde2a8e001da9f0f9",
+      "receipt_sha256": "52c7ea4cee7fef6e0b61914d8a3e6eabc9e1395a803e5c45109deadfed3793c4"
+    },
+    "ParabolicCurlJoinIntersection": {
+      "source_sha256": "281067b868a15d421d1f1dca96f12823d7f49918fb9bbb0833bd69d7bef36c97",
+      "olean_sha256": "f9456ab796047d938d666c4e9a5aa3a89c92a4dbed13cfaed8d1c8e1cf3a87a4",
+      "receipt_sha256": "51121c05d64e03578f53202b3ae1768a434dc39d1e97560e190ab171ccf08520"
+    },
+    "ParabolicCurlsFromBlockRefinements": {
+      "source_sha256": "205e414e0fc961e67139ceb6ae17445466edb3f654d08f16f6bd55293de3e005",
+      "olean_sha256": "34ef4db622a67d85f4f284f18661a1b115ee963bceb8f743bb3b06969d42556b",
+      "receipt_sha256": "578d472c341a6057c1edbcb10d8260c991479f9ea2c8a10f1c3773a96576f9b5"
+    },
+    "ParabolicDoubleCosetRepresentatives": {
+      "source_sha256": "906cb335a5d3df0afc28348761c5a336d3b3c2ddc75500df7831780e8fb31a3d",
+      "olean_sha256": "afb9df0f1e3a79dbb7f7153e88ce4d4948e8b4a084fb6f42569d2e761205b3af",
+      "receipt_sha256": "87551d42b7c53938f8b6774100fcd5f8b00ed3c9fc0a240b756e25de97f84d6b"
+    },
+    "ParabolicExtremalOutsideRestrictionRegions": {
+      "source_sha256": "224fd7938819e026642bd8ffa009d7d3a0a16f72309446bd49e26531636e2d98",
+      "olean_sha256": "a79afb674eca762bf795e20981bd822ae0e9b3af69b2f1e18398d3becf916e1b",
+      "receipt_sha256": "ca2275706f8553f8538cb96c4ea8c1fc09389198f019f5e7ed05653b199372b8"
+    },
+    "ParabolicExtremalThreeInductionExample": {
+      "source_sha256": "a32df9431f3522d371a0930a6f2d9f3a6975b29cc8633a45f565f9ff4a681b38",
+      "olean_sha256": "ffeba0fed83dd060fe2c9754ffd371f10d8d399e782e1635833698452209b1d5",
+      "receipt_sha256": "d3e42e45b12eb0a87e5d84b72978418125886b76ed6f944ae8831fbbc8acd76c"
+    },
+    "ParabolicExtremalThreeInductionRegions": {
+      "source_sha256": "accd3ca9990b05f88eda9ae40b80cfbba902e55180bc550251c2e7c875b23d6f",
+      "olean_sha256": "852fa67d334adbbae1bceea314fb01638028ae13e74604ca3fbeb60c2893f8cc",
+      "receipt_sha256": "b2d66d4ee7450dd6ae9ace60bdc346ad4da5859e9f47d595dd30434a12bd618a"
+    },
+    "ParabolicFullMackeyCancellation": {
+      "source_sha256": "4b1f41c73b7fd6e7adc8abb9ec6711a12a2c99a6dd0c34b2485a959c86703926",
+      "olean_sha256": "220e81c166d324eb7becfd307dec3e3b67faaabcfaec655b46931be25924bc06",
+      "receipt_sha256": "4b695200389c21bb376b717d10b45d90554433187b0ff296a747b8d703c70f3d"
+    },
+    "ParabolicMackeyIntersectionBlocks": {
+      "source_sha256": "ed6d20e3b9b252a828998af60c5fead7c04f1746f6894e8dc65f807a489fd9f6",
+      "olean_sha256": "a23901fe3f0b8ddb71dde805ad32848ccd4bf54a043e2df8325c4a60dbea961b",
+      "receipt_sha256": "fe5d1845cadc5c68954cc370870e12fabb4e1a78d9ee47bc502014263c447b39"
+    },
+    "ParabolicOutsideMultiplicationDiagram": {
+      "source_sha256": "031f773cfbe29772b6dbd6eeac124acf33ebd4b201007355982a6d5ab9be2742",
+      "olean_sha256": "9ca2265419755c2c3c474392ba7dbcb8bd26deaab88049fdcaba869d6d752f3c",
+      "receipt_sha256": "d6559e238b8a153be0cd926a18361b22b66ac21c87ad9363a09b9b954f44628f"
+    },
+    "ParabolicOutsideProjectionDiagram": {
+      "source_sha256": "a77934f9d73c6ab6a8eaa37283467e2cd474e95ba5c2256ca6afd52ad88f707b",
+      "olean_sha256": "f07008f046be4b1077eb9dc61d6cfa3b92c5b84b061e76f1a512dc55be0f076a",
+      "receipt_sha256": "a998e876997e4ed80bfa356ffc52a1a300819772baa268fd46703f4a0fbd7fb5"
+    },
+    "ParabolicRightDiagramSpanOverCommutativeRings": {
+      "source_sha256": "003242fa701cd247914ca3cd34e3e278953e5ff91c2204292ab0a4dedf3817c6",
+      "olean_sha256": "8432f957f1803f3bfd94b42d631c18af548f303f74a194c713b6cda8555b3e97",
+      "receipt_sha256": "8b694fe04a2abd6d67dd14937548b5ef413f033f303f55599eeb444870ae74eb"
+    },
+    "ParabolicRightOrbitMultiplicity": {
+      "source_sha256": "e26cbdb1d012032c9ef4436b9bdb7fdca705f8f638d796c8c4178bb83ac6199e",
+      "olean_sha256": "0056b412aa460f033548f0a087a51b7e827cb75a4ed55e83f3cbeddf0fe4c32d",
+      "receipt_sha256": "7ba7f7d07a965760f784817adcbf7ecab23510e393e9e2df07ffe37a44166f3c"
+    },
+    "ParabolicSharedRegionParallelInduction": {
+      "source_sha256": "f1f99511b2f273f0eb688f0417065a0f6d0c81a21de6ccbd8b1fb938709f4fbb",
+      "olean_sha256": "d1f42c4662a483fbf573b8d2551d9243223161aef43c87e1a563e560b50a21e6",
+      "receipt_sha256": "0007b74a55203fface574d706e124615d52630971a227bb9375e6a192f54c727"
+    },
+    "ParabolicSharedRegionParallelRestriction": {
+      "source_sha256": "a622f5c21e5031dfb746938812fbb205f1c73cf6799e9db0eede367a031d2d5c",
+      "olean_sha256": "92a25a7805f4a75dbd855efd22d96123fe664118269fc59d39cb9ae8abe0da35",
+      "receipt_sha256": "497748b94ee3641443f9b43d7cb7c964d7fdb91157a6d6d617fa2db400f8f995"
+    },
+    "ParabolicSmallerMackeyReverseComposite": {
+      "source_sha256": "2bcbbd080e728b38a95afcd2b5dd17185c4b0c544ecd56737d9a68742e22b19a",
+      "olean_sha256": "ea4ebf060d8016c290b4cb5dd2f5fdd0932f0ac183bc899e93cc2140217900b9",
+      "receipt_sha256": "31f77f5956b1c36d1aa656e9e4f80ef12920260d1b0b71864d24e6dd4c458749"
+    },
+    "ParallelInductionProductDotAdmissibility": {
+      "source_sha256": "794d2f3aac72c24df7c244bb1d3e153b60a8ee937641632b899a9d0d3394dadb",
+      "olean_sha256": "96a7c9d44e1cd24b1e9a607c9c57efe3b82ef2c4f73cf9d0e8eff9a5f90ad191",
+      "receipt_sha256": "1c046abdf9184fc2cfcf871394b2eb0062e4db6c764390a0c6b58b4feb4173d5"
+    },
+    "ParallelReidemeisterTwoInduction": {
+      "source_sha256": "2d74e145168178fb9c5ef75e329bfcab7bdeb0231d0a18ed3c8a3288a724143c",
+      "olean_sha256": "d217380f10ec9267027038fb95d5a87c4a60630817d7070242876c4c7b838bdb",
+      "receipt_sha256": "a6e7cb0fc1e3d3cb81b0d01041d1119861e1bf88705f6f791346d645229dfbfc"
+    },
+    "ParallelReidemeisterTwoRestriction": {
+      "source_sha256": "da8b4494cab19572e79115489c532bb9cded7a8a9b263e82b8191d722b6527e0",
+      "olean_sha256": "b0a490d4ac8e59e2cb2d3556a89d6678574a1d06c3ecdf37d79ce9806b51cd6d",
+      "receipt_sha256": "2479af2ad7b9bd31c9a5b117ab8afe01a2bd969b8fa08821f8d40bfa67e72ba6"
+    },
+    "ProductParabolicDoubleCosets": {
+      "source_sha256": "eadaed7aa7712981180c8b324fc0de5806eea91d76cb16d2b52367fbdb162162",
+      "olean_sha256": "388b1a34e5834c4c33c38cb9ea0aadacf893db4878859548787c61b31988fcfc",
+      "receipt_sha256": "10aa6a7029291ff528232eeb64b34adb0d1ebd7c5dbfc76858de77d3431e263d"
+    },
+    "ProductParabolicsWithOneDoubleCoset": {
+      "source_sha256": "75489aca047d87c9aa0a199b2f46080fa75623cc6e5e5d2b6322577ad690afdb",
+      "olean_sha256": "55eb2f5b4ebd5e9b2c1672ecf4ef62b4111e4aad985cad957518d2de844fe6d3",
+      "receipt_sha256": "abb1595261a0060b3c1cd37cbb4614bf24f49e0d16bee095058f80f8fffa7aee"
+    },
+    "ProductParabolicsWithThreeDoubleCosets": {
+      "source_sha256": "64a03bc460055f47e9cdd6b3d78a72a7d071b51c4e946e3bb98f2db6a13e6406",
+      "olean_sha256": "7a48dc0f0dd44a913579b72e1677d00a2ad439af375b06c42b506e919d28ea23",
+      "receipt_sha256": "abfd68a276339e1988669f468bca6100d1dc68cb03e1aaa39c89e22079527f64"
+    },
+    "RegularModuleRightAction": {
+      "source_sha256": "d3db3b9b20436816fe633fef792070ff8a7dd6821802866b6b9f2d93dffdff98",
+      "olean_sha256": "1d7b3bbdef3b407d9500d844abcdc9064aec34d70fb201378ac414acc7c86105",
+      "receipt_sha256": "70f6d988e27adacf616dac1b8da94b93671947e9a5b52ad3eb6699ba8fa43a34"
+    },
+    "ReidemeisterOne": {
+      "source_sha256": "d44b9d3da0ecaf07cd9b014a2b748441f63c2a2d31fa660fec3fff0457ecadb7",
+      "olean_sha256": "bfd5e464d79e70e00b66dadf1aeba1bcc9459f355bdd7986aa10569437452f04",
+      "receipt_sha256": "44c5bee685b0139fe41d3cba3b55929275a965e035a582c6c6cc832418601948"
+    },
+    "ReplacementForTwoMultiplications": {
+      "source_sha256": "ae4427c47420591f2a2736f4490fd08981e33731dc4a12588d7e128b6a44300c",
+      "olean_sha256": "05d74836ae9712b26efb5dd34c1d371d063da54955136dc237b4abb0e6da7bb6",
+      "receipt_sha256": "07b082c5b7e878deb4c01c2d1fb09965ba8995ce9a082f475ce2601e8510a473"
+    },
+    "ReplacementForTwoProjections": {
+      "source_sha256": "20810783a7dabb438fce290fffd900d66a7e97ec1dff3f7a8be4dbad56f4158a",
+      "olean_sha256": "058dd9d845553cab10014cb423f24369a44078d8cf316374d1b8e99cd16ee45d",
+      "receipt_sha256": "d1cac166301f8d10a943d1ebb03900820c6d4abf3d962e15a69048d65879f393"
+    },
+    "RestrictionMergeDotSlide": {
+      "source_sha256": "023240010b88a5b01a26a008436b914aa82b5022d18718144593db334442ef6d",
+      "olean_sha256": "2ed1c9b18e05702e2558dcf939eb9443394c99db0d293d993ce29be4724da236",
+      "receipt_sha256": "75afa78384f2db86051ffa6038e6627f6f11fb208d3f73ab6caec6500f7b5000"
+    },
+    "RestrictionSplitDotSlide": {
+      "source_sha256": "bae24c35d1cdd8ec4a6ac051c8d8699020202f03bd4b2afe57097d2cc1e31da0",
+      "olean_sha256": "c0b9bbf99b30c9d8a13c1bc6bb670a2bd6c66749b33ce0b43053255eb4f2e2db",
+      "receipt_sha256": "9cbc9b60af3c6f91bf65b2576af13ff8e893fad2229b246e9d9dca7b52b79aa0"
+    },
+    "ReverseCupBend": {
+      "source_sha256": "55ac3e799b07e549bf1de95a19c8c0b8038d0af5261162211b9ce38b6cecefc1",
+      "olean_sha256": "deda03731247c428e51dd462c67a7c11d0099748f5a0ea4309a6675977e92fd0",
+      "receipt_sha256": "a4ebaf73d663eb03619ff50b3cdb7544993bf62d16a107afbbb61ff1d6510c01"
+    },
+    "ReverseTriangleIdentities": {
+      "source_sha256": "b68f8cfdb9a7e8b3d0d2cbad1d7bb84cae827ac43c74c06cf120d6ab7b5a2780",
+      "olean_sha256": "eca770eb8d4dbd5c92b66761f3e6e29683dd61be336ab9b76fcd5ba3964377db",
+      "receipt_sha256": "4ae377ae798ea3b70b0ce7354193256f21e5312abb8fa0a46be5f6bbe8996128"
+    },
+    "RightCurlAndDotSlide": {
+      "source_sha256": "07a18b7e988bbfcf73be3c0668837e651ea0fdc0d9250f260637569a6913c4ae",
+      "olean_sha256": "9057a74975a71e9f33412a24a8a777afa19bbf39aa1b2b67510cf4c7955bf805",
+      "receipt_sha256": "519e8a17108aeace08ae5099092d70133701d4699a67aa244c7374a493203b7b"
+    },
+    "RightDownReidemeisterCurl": {
+      "source_sha256": "6e935603beb0ab2ce5017515988b02287119982f907477512b650b708d78b9f9",
+      "olean_sha256": "1100167baad5b2a85bcfee9def53621fc2b1d79c82b8c61458d54f38ac3e484b",
+      "receipt_sha256": "16550ed1a1c39702da961cac692be04dc2779d5854d4e361691e6691eca9ac3a"
+    },
+    "RightInputDotSlideObstruction": {
+      "source_sha256": "9b3b66ef6c8da0dfdabcd81a3c16819458821c07fbdb8883bef9d3561ce7cbd1",
+      "olean_sha256": "aa66d1dbf07285e06300a6e660f2dca8d1768678e3e5573afad489b9484d4471",
+      "receipt_sha256": "4e9d26f87b97394842c5572ff124e8be53598a3633ea50117976e0f7e6b9b7c7"
+    },
+    "RightOrbitDiagramFromProjectedStabilizer": {
+      "source_sha256": "ace0942b26c7892db84b291398fcda28a445b16be2005508a9fb87e9041f5960",
+      "olean_sha256": "7f72243b00fd9370108c3228d05bb607f4b0938b982f7dca43a093bf6782daad",
+      "receipt_sha256": "3890830d8b0604f265e2b78312ebab7456bba53b5a16256eeef58d21b7409ab7"
+    },
+    "RightUpReidemeisterCurl": {
+      "source_sha256": "ff40f8230d4c29fcd7e5b798b4bd39903d32e10b2ea507fbf5d94ad2416b2b85",
+      "olean_sha256": "62b4d98e6d52b8db23d23ed41e522a57af95d81d8a3f1ee6e14eb0be55d9f305",
+      "receipt_sha256": "ae18587a58984da21ba059b02e34bf11e6c22bf0a13946a1fbc3a96579812b30"
+    },
+    "SharedParabolicForParallelCrossings": {
+      "source_sha256": "735bf50550c3b6e80615cb14067f8b2921555f20c87fbf3b2ab615011b40cfae",
+      "olean_sha256": "d856f599fcd54eaa795fe52e1c3e862b270e31af2456305b3aaab5aa28387f93",
+      "receipt_sha256": "40c1b4f963691236718aad044d429ae3a2c07bcdfe0e63352ce8863d1788735e"
+    },
+    "SinglePairCannotProjectOntoSeveralDoubleCosets": {
+      "source_sha256": "4b5a855892ed8e278030be75951791e8e203c5efc6b22eb677f8d0378fb92cb3",
+      "olean_sha256": "41bb61a8b3254018e2995125c87ccbea609cc3549f5f96c226f2b3cf5553fa08",
+      "receipt_sha256": "65806a2468851416fc647345153eb02d1f73aaec78bb506dbec9a5111c411992"
+    },
+    "SinglePairIdentityCriterion": {
+      "source_sha256": "041652eb08ae14084887de8401fb97b80ef8261f80e082f10a096b5af523e424",
+      "olean_sha256": "e95fb0bc98948c722e5b1635dddc3fb34eef7f64141ce178ad27829982427935",
+      "receipt_sha256": "87a715cbfb6846c197ac87679afadb67f623b5d00a7725722c824a694936d021"
+    },
+    "SmallProjectiveGenerator": {
+      "source_sha256": "984d5d9680bd9adeed15ef09cf5bbd8c0a0ffbcfb2a5474d0131e09d2ef5479c",
+      "olean_sha256": "dbb0e2e8e3b45ba146857234f5956682efe8c1bec50c050bae86e1957621fbae",
+      "receipt_sha256": "47000706da6c83b28d5da1f5efb094bf3eddada1a3b74ef71705d39541d5e0a9"
+    },
+    "SmallProjectiveGeneratorCorrespondence": {
+      "source_sha256": "9404e68a0f874c2bbbc92806b2fec86bfbc57b968ccb061ff6d9a66678d0e991",
+      "olean_sha256": "683f3c90f8e2cf16c732ec371f7ed34ec585d51b95f08a5f543954823f4e2a3f",
+      "receipt_sha256": "13afb18c93c0b90c3842c1f640ba844a12086ef7185c0dfebd2577ba0a0824ff"
+    },
+    "SmallerParabolicReducesProjectionFiber": {
+      "source_sha256": "53ffb00f815a67307fa4f0d6924f336285066609f28927b313300bc4c871e2d6",
+      "olean_sha256": "91a3c19bc028581e27adf535b7a1303b892d2a2e36623115f13eb627589c1788",
+      "receipt_sha256": "177d505d0265edcbc075c9dc4a4ce784ed5b1d8b82d6f552753a5fb59eef26a8"
+    },
+    "StandardSymmetricGroupBraidRelation": {
+      "source_sha256": "aefea73810475843609e4d5ea937df2c16a5829331d84b8724b7080ae885ed6f",
+      "olean_sha256": "411793f987efcf33749527e6069b24c253b0fe42df4e6444a8b77f042f9ea224",
+      "receipt_sha256": "7231994bb0e3ef608551f4b183430d6cf402cec46f882f9c3b1f927e667f4036"
+    },
+    "StandardTwoBlockRepresentatives": {
+      "source_sha256": "2bf072d32dd921d3667570f7f2e1af34d183991dbe67cccb0db9efb1b82271c9",
+      "olean_sha256": "80d361497fd9cba3301beeead109ce221ba9db9f4ac52de8a0871b664a748e3e",
+      "receipt_sha256": "2689232337fcf4e34e537c56e7b40c03e658fcbc6b4165cbb0b9a10b590e25fb"
+    },
+    "StraightMixedTrivalentVertices": {
+      "source_sha256": "56cef0961196a49b3cd683342df2e08a6689e4285043acd73888706825ead967",
+      "olean_sha256": "1eb5803d15da1ee0c6e09fb535c69c7c5a63dd9b06d3c8bea589666a9319c00b",
+      "receipt_sha256": "0ba98038819bc2de4d6d46ea91d9f5b888a47b679298be13b3607fa87e03111b"
+    },
+    "StrongerEmbeddingConditionSlideObstruction": {
+      "source_sha256": "d69d03adbc8f91ed0904b8123be11c85d3f791c60cd70249cd8a5df6287aa574",
+      "olean_sha256": "552fb9909e6d4ad281f10689cc2bec2d434939ab4aba97fca62f4978dedd6bc3",
+      "receipt_sha256": "3c7bda81ee4b50057125399dbabda6e7ea8d7e9e7c6d1cc269b386e4e464f4a1"
+    },
+    "SupportBoundsForInverseProduct": {
+      "source_sha256": "96e73984f4634b1a48fe30aca1e41037380387d1503db7b7fd0681a30ada5645",
+      "olean_sha256": "449bb8558a2bfaa9ed06b5eb12d044918796516444b5cc42dbcc03b83e640b78",
+      "receipt_sha256": "e043ee428ad7115687e3182372862c65fea5d45c02f5819897674e91974d0ad5"
+    },
+    "SupportBoundsUnderComposition": {
+      "source_sha256": "9175d2519cd1d84804d8c1a07c3a8143223c5342db45d6c2dd10f3155f0a4556",
+      "olean_sha256": "c1affedc97552bac576a8db8bb7c0d166997559b92af6df8d3d53494dcfac29d",
+      "receipt_sha256": "74324873c12ee6b9da2578e3c24b51e4a3809d2808838a53df856f6105bcd82e"
+    },
+    "SupportedLeftOrbitProjectedStabilizer": {
+      "source_sha256": "e8abb32ef22d30dbafb73c1dd67b0797fa402cea6ec41e8cd5088bcab4a3f683",
+      "olean_sha256": "f03cf71e56af30b9be617ed55dd1a49f0618eb6de0ae4cfe49536e507665e4c3",
+      "receipt_sha256": "96bd9982e16ea2b505060639ce0faf22ce58bb4e8b9aa9e14a3da1d343609585"
+    },
+    "SurvivingCosetRepresentative": {
+      "source_sha256": "ab440eddbf0624611dda2b734685d21bb60aceda2fe95a85ab215a31da7d9bbb",
+      "olean_sha256": "e03c7f032147a2c7fe056d44e6eb62cb43553f7e04d3f59c30c43184124b5d6a",
+      "receipt_sha256": "08abf07b58b33bda6d92173cc9c94ca626ca0d232929037e750c82eca02d2723"
+    },
+    "TableauDoubleCosetRepresentativeInS6": {
+      "source_sha256": "10abf77dda3447103d87554e5972054a644c77c134a147c8dba4b04afcd25aab",
+      "olean_sha256": "438f1e8f35b12fb695c89fb9c8f31f48946caadc50da05a884bcd5e918d392cf",
+      "receipt_sha256": "e5aab26797082026538d94b950add11c8adbad9b2b019c9a23b6f243f5f0342a"
+    },
+    "ThreeInductionCrossingMultipliers": {
+      "source_sha256": "89008ba03a544149b5af0fc347484eb51b196f1ff83e3336c1c93eb5bc288235",
+      "olean_sha256": "2acf99e273be54cb4a92278758381a46836a02e180deda50968e5ffcab7a57a7",
+      "receipt_sha256": "8ad3eae6dfeec4615e33528a2afeefe81c7f8323c8801f42d53ebc61950cfa5d"
+    },
+    "ThreeInductionLabelsChangeOnRoundTrip": {
+      "source_sha256": "2ecffd8239768fbb0dad5b8cfeb5978c197b6ceb5f9f72dadd273fd8b073f90c",
+      "olean_sha256": "805690c39a91290392bb4b5fba917a39cf405f5ac8a025216c61b5374926b3a9",
+      "receipt_sha256": "f83fdadb4e00c13647e010c666854576d9a970da9db40dac2364cd2201c1b5c3"
+    },
+    "ThreeInductionReidemeisterThree": {
+      "source_sha256": "82809f874c598db6487427f6fee1fc21ff84aa9b7228c506af4ace61a306436d",
+      "olean_sha256": "3e5b69bba316202d258854d73b6da9cec67d277041e2042126642d2588efbc04",
+      "receipt_sha256": "fe7bc0af7451250c64b8a8daa50e2294361990fc76a174c613c5c2f666ad7778"
+    },
+    "TraceCapBend": {
+      "source_sha256": "b3551a231f12c21f8da59ee4a33c6501d9f16be9bece0f44021343312b9b7efd",
+      "olean_sha256": "63cefcfa0776bd0c931015f8f8b57205026b6b341b9029ace35900aeb108a3b2",
+      "receipt_sha256": "7f3d3ef020a1316b6d25f6ed6fb9f45e68b4241638f6018c4e908b6e62d56851"
+    },
+    "TransportToMackeyRepresentative": {
+      "source_sha256": "1259dc9a87d49a9f2a2aa9d7e89a451b5ba1a0d3c4491d6fb05702c498a71167",
+      "olean_sha256": "1b8c0e87e813d35ec1ab522c82c4cc107ea8738ebcee6f7ed8c149c9a8f9d419",
+      "receipt_sha256": "a2de71702463f3fea4e8a50152f4727ef5e7b9afb0417dc34048c8ffd3601fc2"
+    },
+    "TrivalentBendIdentities": {
+      "source_sha256": "2c6c3ea1f7fc82e69aa89e4ba63e0bb64a8f2c77b71ffe02b6a5e6116d131df7",
+      "olean_sha256": "8ed320ef238ada78fa39ff8e3ce3120e1b04b906f126d2b65bc35624cd074914",
+      "receipt_sha256": "d4e1ae74e732c5162c65dc1a52c2143ceb7f42eaade446debd5043b0427027d7"
+    },
+    "TwoBlockDoubleCosetMatrices": {
+      "source_sha256": "21413927408fbc819784b644ad895d1a89ce8428a440745e95f2facf3144e268",
+      "olean_sha256": "f600c78a314c8a9c3317413eb3233ece8917e308123fb333411b2c79751517eb",
+      "receipt_sha256": "83e54d9d39254e50d372d336142d2797bf5bb19fa3e8e45db6b59d858b526ba3"
+    },
+    "TwoBlockSplitGivesFourIntersections": {
+      "source_sha256": "848245b2dd6381b1b2cdb70b914d210e4fcc6555f7a9d4fbf38cba22dfee26d5",
+      "olean_sha256": "ee2974ae1c5569665dd8577d4b775bd11c798a7a901d64d36b90ccd7d001d2aa",
+      "receipt_sha256": "e670048b218616f6f638195c46d6d1c423d5f0428238db92fb4c6287d6e50bda"
+    },
+    "TwoMackeySummandsWithSameInternalLabels": {
+      "source_sha256": "c8d55f239143fd7716badafdfac3974236be8a4199ccedcfe28873ab7e28ebd0",
+      "olean_sha256": "e9449c766d325235834779ad3de67665c803db5d6b9909f82ff562e93e85ef57",
+      "receipt_sha256": "7d1ecdd59712ceb86df15f5f83c823cf2c7492af1cdc529c3915eca9f3fc8e1f"
+    },
+    "UnequalParabolicCurlProducts": {
+      "source_sha256": "55a455be06f0b19d7e8ccf8f4963fe4e24ea373282bba5d6c1c1c48534e64252",
+      "olean_sha256": "38ea07fc201457133ec7ccd13f0491a0bba9af7d5800b63701cbe8fc559a2a1d",
+      "receipt_sha256": "699f1a242a2c17807bb95b220055faeec3e0bcf91cdcb36f862253dd3358743a"
+    }
+  },
+  "local_source_modules": {
+    "MackeyDiagrams.Embedding": {
+      "source_sha256": "aa3743ef693b2ba53a39bf55f97adcb03f9fc8330dce5203bab49b1f4a4566d5",
+      "imports": [
+        "Mathlib.GroupTheory.Subgroup.Centralizer",
+        "Mathlib.Tactic.Group"
+      ]
+    },
+    "MackeyDiagrams.Biset": {
+      "source_sha256": "0e1469df7139a937f649a741281d0891588ec589df0b46bd122cb390b5f6b252",
+      "imports": [
+        "MackeyDiagrams.Embedding"
+      ]
+    },
+    "MackeyDiagrams.Linear": {
+      "source_sha256": "9f22b655ebe182c336bd978ab77b26f639f504dfbd0fb2cce8f9b52f5f11413b",
+      "imports": [
+        "MackeyDiagrams.Biset",
+        "Mathlib.LinearAlgebra.BilinearMap",
+        "Mathlib.LinearAlgebra.Finsupp.LSum",
+        "Mathlib.LinearAlgebra.Span.Basic"
+      ]
+    },
+    "MackeyDiagrams.Balanced": {
+      "source_sha256": "c9bc152a75161903bbd1e32f5145c4c58d11398ae806b1ac426fe30dd228beb3",
+      "imports": [
+        "MackeyDiagrams.Linear"
+      ]
+    },
+    "MackeyDiagrams.Dot": {
+      "source_sha256": "c19f7d943afc8d4129fc03858864eb976a4beae4b5f9552b418d0804bf9508c7",
+      "imports": [
+        "MackeyDiagrams.Embedding",
+        "Mathlib.Algebra.MonoidAlgebra.Module"
+      ]
+    },
+    "MackeyDiagrams.Generators": {
+      "source_sha256": "309c9bf934e1b32d08a8c25107f66ddf7d7a5abc7601f3beeb58152a934fac98",
+      "imports": [
+        "MackeyDiagrams.Dot",
+        "MackeyDiagrams.Linear"
+      ]
+    },
+    "MackeyDiagrams.Trace": {
+      "source_sha256": "477d2b80f0dfcde88984396e9c3ac984033edb279581c6d91cc12df523796527",
+      "imports": [
+        "MackeyDiagrams.Generators"
+      ]
+    },
+    "MackeyDiagrams.Transfer": {
+      "source_sha256": "61db06af9cf58c5006e39a66df497eabd06a5456c310f10bcf1df4edc83ad5eb",
+      "imports": [
+        "MackeyDiagrams.Trace",
+        "Mathlib.GroupTheory.Index"
+      ]
+    },
+    "MackeyDiagrams.Mixed": {
+      "source_sha256": "afcb7c755c84989ddc812d98557f501290469d6d9e1136839c3618aa55c73ce0",
+      "imports": [
+        "MackeyDiagrams.Transfer"
+      ]
+    },
+    "MackeyDiagrams.Associator": {
+      "source_sha256": "435ba63a12852052e15b4a0aa42800e77de61eb15d85a7ca8a36314603302403",
+      "imports": [
+        "MackeyDiagrams.Linear"
+      ]
+    },
+    "MackeyDiagrams.Unitors": {
+      "source_sha256": "14a6e9d8aec3e8ccdbe852df20c74b351f5ca95dbf89a0d3092198f6049d4133",
+      "imports": [
+        "MackeyDiagrams.Associator"
+      ]
+    },
+    "MackeyDiagrams.Diagram": {
+      "source_sha256": "71e5520da9171f024692c5ac4cd6045b4d087785070a6781839d4addba66ba31",
+      "imports": [
+        "MackeyDiagrams.Mixed",
+        "MackeyDiagrams.Unitors"
+      ]
+    },
+    "MackeyDiagrams.Identities": {
+      "source_sha256": "7796c8e3a56f678c6fdc1f578a029d8b7258ec724d2425ac6d6f17c847aa5302",
+      "imports": [
+        "MackeyDiagrams.Diagram"
+      ]
+    },
+    "MackeyDiagrams.MixedIdentities": {
+      "source_sha256": "c739722827ee60ea5b7fc6c7ed0aa51bba24a6c551728259f89aeaf1cb4f0975",
+      "imports": [
+        "MackeyDiagrams.Identities"
+      ]
+    },
+    "MackeyDiagrams.Parallel": {
+      "source_sha256": "4e8dfd35bb3a16e343607f728e8c990fc0b5382067970420485afe11c3aa852a",
+      "imports": [
+        "MackeyDiagrams.Identities"
+      ]
+    },
+    "MackeyDiagrams.ParallelDown": {
+      "source_sha256": "3ca8424907ecc9773d95c7dccc3127f0788650a61acf7a3a2dfc7c44dc107bc1",
+      "imports": [
+        "MackeyDiagrams.Parallel"
+      ]
+    },
+    "MackeyDiagrams.CupCapIdentities": {
+      "source_sha256": "4ef56a10595e48b202f7f15ac9671a32b70cf6534c92cd17fac474db443f9109",
+      "imports": [
+        "MackeyDiagrams.MixedIdentities",
+        "Mathlib.Data.Set.Card"
+      ]
+    },
+    "MackeyDiagrams.LinearDots": {
+      "source_sha256": "2b1254eace998a72daf1d033a892815daea97191c45b2488479fa5d8ef8f6eb8",
+      "imports": [
+        "MackeyDiagrams.Identities"
+      ]
+    },
+    "MackeyDiagrams.AlgebraDot": {
+      "source_sha256": "4be5488dedff5b8fec0b4385b805f92476a0d533124e4b15210f01b8512cf596",
+      "imports": [
+        "MackeyDiagrams.LinearDots"
+      ]
+    },
+    "MackeyDiagrams.BentVertices": {
+      "source_sha256": "6a05964d782a0700a5adc98fd158b8eab16a50931cc4e372a37feedfff6b820c",
+      "imports": [
+        "MackeyDiagrams.Diagram"
+      ]
+    },
+    "MackeyDiagrams.ScopedCup": {
+      "source_sha256": "1089b5d24184f922dd7723d5a20b4a8b881918e23bf34634f73c1fb10a0d88e3",
+      "imports": [
+        "MackeyDiagrams.AlgebraDot",
+        "MackeyDiagrams.BentVertices"
+      ]
+    },
+    "MackeyDiagrams.ScopedCupEquivariance": {
+      "source_sha256": "a5cf0830e88238eb62f8b0a4dd4b0d902f5b300176f63baab5f52a9101f6e8d6",
+      "imports": [
+        "MackeyDiagrams.ScopedCup"
+      ]
+    },
+    "MackeyDiagrams.ScopedCupFinite": {
+      "source_sha256": "d696603fc4cd38440e2961f545e99c1ac4f3cfb9b5b880fe3a3263fbea0d3746",
+      "imports": [
+        "MackeyDiagrams.ScopedCupEquivariance",
+        "MackeyDiagrams.MixedIdentities"
+      ]
+    },
+    "MackeyDiagrams.Boundary": {
+      "source_sha256": "e6f5f86fde88be5d72d39e4221e2543b2ad08186598f8bd4252eb2a746fb0f76",
+      "imports": [
+        "MackeyDiagrams.Diagram"
+      ]
+    },
+    "MackeyDiagrams.HorizontalComposition": {
+      "source_sha256": "6f285aec79e47e8175326e915ce43e0bd6c2a2e4f9a3d15f28cc9847753551d2",
+      "imports": [
+        "MackeyDiagrams.Linear"
+      ]
+    },
+    "MackeyDiagrams.BoundaryEvaluation": {
+      "source_sha256": "0882d9b673ab860edda4bbbd4c7a04995aeec3949278fbf12415561874af39f2",
+      "imports": [
+        "MackeyDiagrams.Boundary",
+        "MackeyDiagrams.HorizontalComposition"
+      ]
+    },
+    "MackeyDiagrams.Replacement": {
+      "source_sha256": "f1ee53485b5f5e66e054be2da80ed8fe74f57291c9e4ed5b2a4e532b2345051b",
+      "imports": [
+        "MackeyDiagrams.ScopedCup",
+        "MackeyDiagrams.BoundaryEvaluation"
+      ]
+    },
+    "MackeyDiagrams.DotSlideObstruction": {
+      "source_sha256": "b36d6a91ed9d16a9bd7591a926410b8f78955fb8eb7888d5fb59cc3e041560f4",
+      "imports": [
+        "MackeyDiagrams.Replacement",
+        "Mathlib.GroupTheory.Perm.Support",
+        "Mathlib.GroupTheory.GroupAction.Basic"
+      ]
+    },
+    "MackeyDiagrams.MixedProjectionExpansion": {
+      "source_sha256": "e1bfa09edeecb252601f00e384422f3b5d4d3706eaebb8b0cb2054ea38e0a04d",
+      "imports": [
+        "MackeyDiagrams.ScopedCupEquivariance"
+      ]
+    },
+    "MackeyDiagrams.StructuralBasis": {
+      "source_sha256": "f53bbb62a3d7bd7c5f9c9e03f813a336727759f5b6a39322a80a666585acaded",
+      "imports": [
+        "MackeyDiagrams.MixedProjectionExpansion",
+        "MackeyDiagrams.Parallel"
+      ]
+    },
+    "MackeyDiagrams.ProjectionFiber": {
+      "source_sha256": "be139d4bbb1f557a41436ae45c6aed3128772c28c746e8df641a0bf7588e8f04",
+      "imports": [
+        "MackeyDiagrams.StructuralBasis",
+        "MackeyDiagrams.MixedIdentities"
+      ]
+    },
+    "MackeyDiagrams.DotChain": {
+      "source_sha256": "76e11c0267eccb963b92c8ae58be5e223ab761071ccf42909ac4d1f26ac7b0ee",
+      "imports": [
+        "MackeyDiagrams.Parallel"
+      ]
+    },
+    "MackeyDiagrams.ParallelDotChain": {
+      "source_sha256": "abab81255e317f87b753f12346d3e1450b7de324d804029325392d0869c872a1",
+      "imports": [
+        "MackeyDiagrams.ScopedCup",
+        "MackeyDiagrams.DotChain"
+      ]
+    },
+    "MackeyDiagrams.ProjectionDotChain": {
+      "source_sha256": "3c83c33ef5c25d09230440fbf8b326418019eccf760e1466856306d3b912101d",
+      "imports": [
+        "MackeyDiagrams.DotChain",
+        "MackeyDiagrams.ProjectionFiber"
+      ]
+    },
+    "MackeyDiagrams.RightCurlLabels": {
+      "source_sha256": "8d15bfa0e054f0220aac901a991b90986eccc51fc8a4037e96748099ffd2e573",
+      "imports": [
+        "MackeyDiagrams.ScopedCup",
+        "Mathlib.Algebra.MonoidAlgebra.Basic"
+      ]
+    },
+    "MackeyDiagrams.Trivalent": {
+      "source_sha256": "38ac3656939cb746d918084f4ebc302cf53ed089ae6c8539287452e17059a08a",
+      "imports": [
+        "MackeyDiagrams.BentVertices",
+        "MackeyDiagrams.MixedProjectionExpansion"
+      ]
+    },
+    "MackeyDiagrams.DrawingShape": {
+      "source_sha256": "551876dfe50a2f3c871d6d2230c2c919d30a4de71cf683ce1a0c1f2c3d5151dd",
+      "imports": [
+        "MackeyDiagrams.ParallelDown",
+        "MackeyDiagrams.ParallelDotChain",
+        "MackeyDiagrams.ProjectionDotChain",
+        "MackeyDiagrams.Replacement",
+        "MackeyDiagrams.RightCurlLabels",
+        "MackeyDiagrams.Trivalent"
+      ]
+    },
+    "MackeyDiagrams.OrdinaryCupTrace": {
+      "source_sha256": "f1383f13b55f1831cdb2fad0885bc1e66b146683d3543dacd8b7e8303af539ac",
+      "imports": [
+        "MackeyDiagrams.StructuralBasis"
+      ]
+    },
+    "MackeyDiagrams.LinearDotComposition": {
+      "source_sha256": "8a2f2ab811886e1551011499fecf62754b0df0ce30435e43025bc4e656545eac",
+      "imports": [
+        "MackeyDiagrams.LinearDots"
+      ]
+    },
+    "MackeyDiagrams.ParallelComposition": {
+      "source_sha256": "ccb81b9b5539ea0df4f80f0313d4791dd30e2d2d3889951bc8c354d16c340021",
+      "imports": [
+        "MackeyDiagrams.LinearDotComposition",
+        "MackeyDiagrams.ParallelDown",
+        "Mathlib.Algebra.MonoidAlgebra.Basic"
+      ]
+    },
+    "MackeyDiagrams.ParallelUnit": {
+      "source_sha256": "6559d4691cb906b95ee9d2153f4cab1178e2cd66aaa7101c71a34e1140742d57",
+      "imports": [
+        "MackeyDiagrams.ParallelComposition"
+      ]
+    },
+    "MackeyDiagrams.MackeySummand": {
+      "source_sha256": "daadca418c06fa2a901ff571b252446e745c8d9d26dae0148282a28ed4bac788",
+      "imports": [
+        "MackeyDiagrams.ProjectionFiber"
+      ]
+    },
+    "MackeyDiagrams.MackeyOrthogonality": {
+      "source_sha256": "08004608d65ba56d85f8a5ec83737ebc5ad68314dce98ac8fb6888c5680c7f8c",
+      "imports": [
+        "MackeyDiagrams.MackeySummand"
+      ]
+    },
+    "MackeyDiagrams.MackeyDirectSum": {
+      "source_sha256": "3f19b122455e121d1b330e1b88b9581a6c451843b19bb8a8d2dd1b4081f3153a",
+      "imports": [
+        "MackeyDiagrams.MackeyOrthogonality",
+        "Mathlib.LinearAlgebra.DFinsupp"
+      ]
+    },
+    "MackeyDiagrams.DotLabels": {
+      "source_sha256": "582ad650cad815bc5aa04a5381bebabafad1adc6806deeea1581370e0fe10e60",
+      "imports": [
+        "MackeyDiagrams.DrawingShape",
+        "MackeyDiagrams.LinearDotComposition"
+      ]
+    },
+    "MackeyDiagrams.PlanarShape": {
+      "source_sha256": "da276779707d995f477ed2a18a6cb12d20259649865f42bb583cbdac2cf147cd",
+      "imports": [
+        "MackeyDiagrams.DotLabels"
+      ]
+    },
+    "MackeyDiagrams.LanguageChecks": {
+      "source_sha256": "b5b543b5e2d6dc1e3e7f2feff82d6155e66defa697762b504d34c69d48c332b7",
+      "imports": [
+        "MackeyDiagrams.PlanarShape"
+      ]
+    },
+    "MackeyDiagrams.IndexedDrawing": {
+      "source_sha256": "81d91f9aceca3a90d9ac315298cd7988f57c0c22b3e6770d1ab1a5cb15afd0e6",
+      "imports": [
+        "MackeyDiagrams.PlanarShape"
+      ]
+    },
+    "MackeyDiagrams.PointwiseIndexedDrawing": {
+      "source_sha256": "533e75bc752c7bc1cdf9f37ac63a33dde70abf9f35d92496e985873d3f32913f",
+      "imports": [
+        "MackeyDiagrams.PlanarShape",
+        "Mathlib.Algebra.BigOperators.Finprod"
+      ]
+    },
+    "MackeyDiagrams.PointwiseIndexedBimodule": {
+      "source_sha256": "9b29da2ec5ef1232f0b1138f84316f0f4fb5afe3d5c069fac472b2571b45efb6",
+      "imports": [
+        "MackeyDiagrams.PointwiseIndexedDrawing"
+      ]
+    },
+    "MackeyDiagrams.DiagramVectorSpace": {
+      "source_sha256": "5dca2e060a0d1961780566f605aac5720afcc60e01c1048d3a321530aad622b1",
+      "imports": [
+        "MackeyDiagrams.DrawingShape",
+        "Mathlib.LinearAlgebra.Isomorphisms"
+      ]
+    },
+    "MackeyDiagrams.DiagramAlgebra": {
+      "source_sha256": "9abbdf6a66b1278fd16fc4112f7ad968e6b300211157063d1bed7ad2a68fe6b5",
+      "imports": [
+        "MackeyDiagrams.DiagramVectorSpace",
+        "Mathlib.Algebra.Algebra.Subalgebra.Basic",
+        "Mathlib.Algebra.Algebra.TransferInstance"
+      ]
+    },
+    "MackeyDiagrams.IndexedQuotient": {
+      "source_sha256": "262cc784cf9527d7e46883fe95bb9b2c6c5c71da37fc80c8f6acb902ff7c7238",
+      "imports": [
+        "MackeyDiagrams.DiagramVectorSpace",
+        "MackeyDiagrams.IndexedDrawing"
+      ]
+    },
+    "MackeyDiagrams.DiagramComposition": {
+      "source_sha256": "74d19d78a07ccacca28a06337574025b0daa860cdcfe515fa1fb7f8c68096759",
+      "imports": [
+        "MackeyDiagrams.DiagramVectorSpace"
+      ]
+    },
+    "MackeyDiagrams.BlockAlgebra": {
+      "source_sha256": "64cc3508035cbc03961d49e1140be7d417e11b008700f9e18851a6545f653d5a",
+      "imports": [
+        "MackeyDiagrams.DiagramComposition",
+        "MackeyDiagrams.IndexedQuotient",
+        "Mathlib.Algebra.FreeAlgebra",
+        "Mathlib.RingTheory.Congruence.Hom"
+      ]
+    },
+    "MackeyDiagrams": {
+      "source_sha256": "0081cc917c6f2e32e1617506a83b98e7ec9d5d37178eab5e4e21240934c2af47",
+      "imports": [
+        "MackeyDiagrams.Balanced",
+        "MackeyDiagrams.MixedIdentities",
+        "MackeyDiagrams.ParallelDown",
+        "MackeyDiagrams.CupCapIdentities",
+        "MackeyDiagrams.ScopedCup",
+        "MackeyDiagrams.ScopedCupEquivariance",
+        "MackeyDiagrams.ScopedCupFinite",
+        "MackeyDiagrams.Replacement",
+        "MackeyDiagrams.DotSlideObstruction",
+        "MackeyDiagrams.ProjectionFiber",
+        "MackeyDiagrams.DrawingShape",
+        "MackeyDiagrams.OrdinaryCupTrace",
+        "MackeyDiagrams.LinearDotComposition",
+        "MackeyDiagrams.ParallelComposition",
+        "MackeyDiagrams.ParallelUnit",
+        "MackeyDiagrams.MackeyOrthogonality",
+        "MackeyDiagrams.MackeyDirectSum",
+        "MackeyDiagrams.Trivalent",
+        "MackeyDiagrams.DotLabels",
+        "MackeyDiagrams.PlanarShape",
+        "MackeyDiagrams.LanguageChecks",
+        "MackeyDiagrams.IndexedDrawing",
+        "MackeyDiagrams.PointwiseIndexedDrawing",
+        "MackeyDiagrams.PointwiseIndexedBimodule",
+        "MackeyDiagrams.DiagramVectorSpace",
+        "MackeyDiagrams.DiagramAlgebra",
+        "MackeyDiagrams.IndexedQuotient",
+        "MackeyDiagrams.DiagramComposition",
+        "MackeyDiagrams.BlockAlgebra"
+      ]
+    },
+    "Proofs.ConjugationEmbeddingCentralizerCoset": {
+      "source_sha256": "c9e3fb36c2bef09b5089ada0bf2709680c6185355e3b4fe451d2ead06f23ba0e",
+      "imports": [
+        "Mathlib.Algebra.MonoidAlgebra.Basic",
+        "Mathlib.Basic.Complex.Basic",
+        "Mathlib.GroupTheory.Coset.Basic",
+        "MackeyDiagrams"
+      ]
+    },
+    "Proofs.Bimodule": {
+      "source_sha256": "d988cfe27082f914298f1a6cfced9d0dfa8a2e703996ff311e7c6d4f51a867f8",
+      "imports": [
+        "Mathlib.Algebra.Module.Opposite",
+        "MackeyDiagrams"
+      ]
+    },
+    "Proofs.ModuleTensorUniversalProperty": {
+      "source_sha256": "0d247f5a690de5611eeb14b48e68d00da06b97747d8da8a88c7253a61a5a2ad7",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.Bimodule"
+      ]
+    },
+    "Proofs.InductionRestrictionBimoduleStrands": {
+      "source_sha256": "1e6f783f72f835dd505c4e982f12dd440a147326276ed895483e77730cbaddf3",
+      "imports": [
+        "Mathlib.Algebra.Category.ModuleCat.ChangeOfRings",
+        "Mathlib.RepresentationTheory.Induced",
+        "Mathlib.RepresentationTheory.Rep.Iso",
+        "MackeyDiagrams",
+        "Proofs.ConjugationEmbeddingCentralizerCoset",
+        "Proofs.Bimodule",
+        "Proofs.ModuleTensorUniversalProperty"
+      ]
+    },
+    "Proofs.GroupElementDotCriterion": {
+      "source_sha256": "035f3601602965dea23921db59eb2e3be39aeb2d1ab38c9dc3fa884293ff9297",
+      "imports": [
+        "Mathlib.Algebra.MonoidAlgebra.Basic",
+        "Mathlib.Basic.Complex.Basic",
+        "Mathlib.GroupTheory.Coset.Basic",
+        "MackeyDiagrams",
+        "Proofs.InductionRestrictionBimoduleStrands"
+      ]
+    },
+    "Proofs.InductionRestrictionMergesAndSplits": {
+      "source_sha256": "08c9d56dc3f0b8d487a0425ccc430ea7ca92ce315bcae45eda0e6f5195b6ff1b",
+      "imports": [
+        "Mathlib.Basic.Complex.Basic",
+        "Mathlib.Algebra.MonoidAlgebra.Basic",
+        "MackeyDiagrams",
+        "Proofs.InductionRestrictionBimoduleStrands",
+        "Proofs.ModuleTensorUniversalProperty"
+      ]
+    },
+    "Proofs.ThreeInductionCrossingMultipliers": {
+      "source_sha256": "89008ba03a544149b5af0fc347484eb51b196f1ff83e3336c1c93eb5bc288235",
+      "imports": [
+        "Mathlib.Algebra.MonoidAlgebra.Support",
+        "MackeyDiagrams",
+        "Proofs.GroupElementDotCriterion",
+        "Proofs.InductionRestrictionMergesAndSplits"
+      ]
+    },
+    "Proofs.MultipliersUnderRelabelling": {
+      "source_sha256": "ef6539ad5e4ad896c3e8082588e876aa9d561ada053de617d74605ffa5d0816e",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ThreeInductionCrossingMultipliers"
+      ]
+    },
+    "Proofs.ThreeInductionReidemeisterThree": {
+      "source_sha256": "82809f874c598db6487427f6fee1fc21ff84aa9b7228c506af4ace61a306436d",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.MultipliersUnderRelabelling",
+        "Proofs.ThreeInductionCrossingMultipliers"
+      ]
+    },
+    "Proofs.AlternativeThreeInductionInternalGroups": {
+      "source_sha256": "6163fd3120f506a2039e3beda5c8bc0aad62665b5f4d2a7066572be5a0f00ae5",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ThreeInductionCrossingMultipliers",
+        "Proofs.ThreeInductionReidemeisterThree"
+      ]
+    },
+    "Proofs.BalancedTensorAssociativity": {
+      "source_sha256": "2069082f489690ee0a881df7f2f5ebad33d114cdd97398518f7d740ef23f279e",
+      "imports": [
+        "Mathlib.Algebra.Category.ModuleCat.Basic",
+        "MackeyDiagrams",
+        "Proofs.ModuleTensorUniversalProperty"
+      ]
+    },
+    "Proofs.BimoduleTensorBicategoryCoherence": {
+      "source_sha256": "371b49e798fd904a1323667f853126fdb914a438c32add1e1ace7e3cec02955a",
+      "imports": [
+        "Mathlib.GroupTheory.FreeGroup.Basic",
+        "Mathlib.Algebra.Category.Ring.Basic",
+        "MackeyDiagrams",
+        "Proofs.BalancedTensorAssociativity",
+        "Proofs.Bimodule"
+      ]
+    },
+    "Proofs.InductionBimoduleOrbitSumBasis": {
+      "source_sha256": "f9a99845926a7f3eb9de48879e0cb5998a2d7a2126cd8770bc183b49992feab5",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.InductionRestrictionBimoduleStrands",
+        "Proofs.GroupElementDotCriterion"
+      ]
+    },
+    "Proofs.FiniteParabolicConjugateBlocks": {
+      "source_sha256": "2d02c65f4b0bb6b16c825bc0714039bde13ee5d27fa5ffb509a7bbe41b8e5e7c",
+      "imports": [
+        "Mathlib.GroupTheory.Perm.Support",
+        "MackeyDiagrams"
+      ]
+    },
+    "Proofs.FiniteParabolicIntersectionBlocks": {
+      "source_sha256": "b09c312679e90f6e0acb563d26f7ea984d238d2b6c5028dfea9e1e956965cc2b",
+      "imports": [
+        "Mathlib.GroupTheory.Perm.ClosureSwap",
+        "MackeyDiagrams"
+      ]
+    },
+    "Proofs.FiniteParabolicJoinBlocks": {
+      "source_sha256": "5a5a817c51070f6b9d76c010353098785a3ec901be0199d908a1727a415e5712",
+      "imports": [
+        "Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected",
+        "Mathlib.GroupTheory.Perm.ClosureSwap",
+        "MackeyDiagrams"
+      ]
+    },
+    "Proofs.FiniteParabolicClosure": {
+      "source_sha256": "3ca5a20bdcccce5a2b097d99be8e33dd326130486b187089385993bfd6fab017",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.FiniteParabolicConjugateBlocks",
+        "Proofs.FiniteParabolicIntersectionBlocks",
+        "Proofs.FiniteParabolicJoinBlocks"
+      ]
+    },
+    "Proofs.ExtremalParabolicsOfFiniteGroup": {
+      "source_sha256": "bd3747339e5719bc68d76de86a0df15cb94618750c096df8bd137c7da55be06f",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.FiniteParabolicClosure"
+      ]
+    },
+    "Proofs.BlockwiseGroupElementDotCriterion": {
+      "source_sha256": "a502522ef6ce531baf25734ae3d60a524151eb863283b15ecafc7be921575011",
+      "imports": [
+        "Mathlib.GroupTheory.GroupAction.FixingSubgroup",
+        "MackeyDiagrams",
+        "Proofs.GroupElementDotCriterion",
+        "Proofs.FiniteParabolicConjugateBlocks",
+        "Proofs.ExtremalParabolicsOfFiniteGroup"
+      ]
+    },
+    "Proofs.InductionRestrictionAdjunction": {
+      "source_sha256": "17fa89cd1b7a93f39276b5e6ea102d8617c3e6d7b0ba6121bf7a653529671967",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.InductionRestrictionBimoduleStrands"
+      ]
+    },
+    "Proofs.FiniteIndexReverseAdjunction": {
+      "source_sha256": "6f322ea68217e5fe0654717fbbf14135d367edad14672729238860cf4d12cc70",
+      "imports": [
+        "Mathlib.RepresentationTheory.Coinduced",
+        "MackeyDiagrams",
+        "Proofs.InductionRestrictionBimoduleStrands",
+        "Proofs.InductionRestrictionAdjunction"
+      ]
+    },
+    "Proofs.FiniteOrbitSumDiagram": {
+      "source_sha256": "1ab6cc6b29b0afc7fdbcafb9dab536cc1726ac6481659b6e0c500aa14aceecf6",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.FiniteIndexReverseAdjunction",
+        "Proofs.InductionBimoduleOrbitSumBasis"
+      ]
+    },
+    "Proofs.BlockSwapOrbitSumWithoutGroupDot": {
+      "source_sha256": "6de897e792bc4caa0a5c6e1463b282a83dba490acc3f8129a0ababf538543c62",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.InductionBimoduleOrbitSumBasis",
+        "Proofs.BlockwiseGroupElementDotCriterion",
+        "Proofs.FiniteOrbitSumDiagram"
+      ]
+    },
+    "Proofs.RegularModuleRightAction": {
+      "source_sha256": "d3db3b9b20436816fe633fef792070ff8a7dd6821802866b6b9f2d93dffdff98",
+      "imports": [
+        "Mathlib.Algebra.Category.ModuleCat.Basic",
+        "MackeyDiagrams",
+        "Proofs.Bimodule"
+      ]
+    },
+    "Proofs.CanonicalWattsComparison": {
+      "source_sha256": "8418e4ddd51fe272c33243d6597a21feab34ce85edeeb036080394624b5559eb",
+      "imports": [
+        "Mathlib.Algebra.Category.ModuleCat.Ulift",
+        "MackeyDiagrams",
+        "Proofs.RegularModuleRightAction",
+        "Proofs.ModuleTensorUniversalProperty"
+      ]
+    },
+    "Proofs.MixedCrossingFiberMaps": {
+      "source_sha256": "008628adf6e96e109343cf20f6e51d039c24e21d096e65e0a1160677548eab1f",
+      "imports": [
+        "Mathlib.GroupTheory.DoubleCoset",
+        "MackeyDiagrams",
+        "Proofs.InductionRestrictionBimoduleStrands",
+        "Proofs.GroupElementDotCriterion",
+        "Proofs.InductionRestrictionAdjunction"
+      ]
+    },
+    "Proofs.MixedCrossingFiniteFiberConvention": {
+      "source_sha256": "db2a4e4bd8b765c06b57beb66b15b7ef4c7cb6c15e41e2cdf7507444d73a3323",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.MixedCrossingFiberMaps"
+      ]
+    },
+    "Proofs.CaseFiveLeftShapeEvaluation": {
+      "source_sha256": "75f52a52e9164b95322030733011d15e8b47a46686ee82b910bd19b02e4825d4",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.InductionRestrictionMergesAndSplits",
+        "Proofs.MixedCrossingFiniteFiberConvention"
+      ]
+    },
+    "Proofs.CaseSixRightShapeEvaluation": {
+      "source_sha256": "eef327ca999d767754ddb10c0660e97b660dc943a4d1b51378b1596db80bf34f",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.InductionRestrictionMergesAndSplits",
+        "Proofs.MixedCrossingFiniteFiberConvention"
+      ]
+    },
+    "Proofs.EvaluationWithOneProjection": {
+      "source_sha256": "ad1d09a3ac2a6883f169cf66c763ca69d72581a5007103029bf7cd55098bf223",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.CaseFiveLeftShapeEvaluation",
+        "Proofs.CaseSixRightShapeEvaluation"
+      ]
+    },
+    "Proofs.RightOrbitDiagramFromProjectedStabilizer": {
+      "source_sha256": "ace0942b26c7892db84b291398fcda28a445b16be2005508a9fb87e9041f5960",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.CaseSixRightShapeEvaluation"
+      ]
+    },
+    "Proofs.ExpansionIntoRightDiagrams": {
+      "source_sha256": "8d23b095ebafffad055b79cc4156f28ce5b16842c9f759d81363bbae371a8a90",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.EvaluationWithOneProjection",
+        "Proofs.RightOrbitDiagramFromProjectedStabilizer"
+      ]
+    },
+    "Proofs.CaseFivePointwiseFiniteDiagramIdentity": {
+      "source_sha256": "140c40651b7e8ed6e55d52bdf3d178a0f8053983b04a37c1cf6950d785b2152a",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ExpansionIntoRightDiagrams",
+        "Proofs.RightOrbitDiagramFromProjectedStabilizer"
+      ]
+    },
+    "Proofs.CaseFiveRequiresInfiniteExpansion": {
+      "source_sha256": "1b653d5326ee951db43af1ee350780e9326d061833bd4dbfe03b5316dba6443d",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ExpansionIntoRightDiagrams",
+        "Proofs.EvaluationWithOneProjection"
+      ]
+    },
+    "Proofs.CaseFiveRequiresTwoTerms": {
+      "source_sha256": "cd49b4f84ba28af4c5c14e9388de69ceed70824e3f3ae96c66bb2fd25bcb9c7d",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.EvaluationWithOneProjection"
+      ]
+    },
+    "Proofs.EvaluationForTwoProjections": {
+      "source_sha256": "04d7ec9695b5f5460ae2b6517569d769efe910444028d02385c3c14f66fb4114",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.InductionRestrictionMergesAndSplits",
+        "Proofs.MixedCrossingFiniteFiberConvention",
+        "Proofs.MixedCrossingFiberMaps"
+      ]
+    },
+    "Proofs.CaseOneRightProjectionConstruction": {
+      "source_sha256": "9d09a9f16efb222d6656fb6526745775390f720659733d73f565faac3271be6b",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.EvaluationForTwoProjections"
+      ]
+    },
+    "Proofs.CaseOneNoFiniteRightReplacement": {
+      "source_sha256": "a6e6f05807908f45ccd28e96901fedf51a933f6387cef1a1982a9a06fc1d5bd6",
+      "imports": [
+        "Mathlib.GroupTheory.SemidirectProduct",
+        "MackeyDiagrams",
+        "Proofs.EvaluationForTwoProjections",
+        "Proofs.CaseOneRightProjectionConstruction"
+      ]
+    },
+    "Proofs.CaseSixCounterexampleWithTrivialProjectedStabilizers": {
+      "source_sha256": "664398528cb96c0c8f202b77c3859f2b7f255232e66dc940e5c1dbd6c6ec5907",
+      "imports": [
+        "Mathlib.GroupTheory.Perm.ClosureSwap",
+        "MackeyDiagrams",
+        "Proofs.EvaluationWithOneProjection",
+        "Proofs.FiniteParabolicConjugateBlocks"
+      ]
+    },
+    "Proofs.CaseSixProjectionNoLeftReplacement": {
+      "source_sha256": "a29ec46b9a2bf3758051fe3a0319a87265fa2b27c07004786224fed6ae30f84a",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.EvaluationWithOneProjection"
+      ]
+    },
+    "Proofs.CaseSixReplacementThroughOverlappingBlocks": {
+      "source_sha256": "ea3a3bbfac52e92eaa18be892e54d8bfa78189be7ed066dee2861e07c4fe2e97",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.EvaluationWithOneProjection",
+        "Proofs.FiniteParabolicJoinBlocks"
+      ]
+    },
+    "Proofs.CaseTwoLeftProjectionConstruction": {
+      "source_sha256": "286504c78c140a5d397c7a301863f4eb7649e1dbadd65c2286abd54649d324e8",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.EvaluationForTwoProjections"
+      ]
+    },
+    "Proofs.CaseTwoRequiresSum": {
+      "source_sha256": "40ca6c49aed3d24e0f03810d76deefd167486a4eaa5f4cd890128f336233f873",
+      "imports": [
+        "Mathlib.GroupTheory.SemidirectProduct",
+        "MackeyDiagrams",
+        "Proofs.EvaluationForTwoProjections",
+        "Proofs.CaseTwoLeftProjectionConstruction"
+      ]
+    },
+    "Proofs.SurvivingCosetRepresentative": {
+      "source_sha256": "ab440eddbf0624611dda2b734685d21bb60aceda2fe95a85ab215a31da7d9bbb",
+      "imports": [
+        "Mathlib.GroupTheory.DoubleCoset",
+        "MackeyDiagrams",
+        "Proofs.ConjugationEmbeddingCentralizerCoset"
+      ]
+    },
+    "Proofs.TransportToMackeyRepresentative": {
+      "source_sha256": "1259dc9a87d49a9f2a2aa9d7e89a451b5ba1a0d3c4491d6fb05702c498a71167",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ConjugationEmbeddingCentralizerCoset",
+        "Proofs.SurvivingCosetRepresentative"
+      ]
+    },
+    "Proofs.MixedCrossingComposites": {
+      "source_sha256": "6d6dcd6d1359e484f169d04a4bfd4a5cbf9be1ace307c70b902b99e7e87f1059",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.MixedCrossingFiberMaps",
+        "Proofs.TransportToMackeyRepresentative"
+      ]
+    },
+    "Proofs.MixedCrossingsThroughSmallerGroup": {
+      "source_sha256": "6ec2bfdb74aa9d89cb0fce4006f1dd0357f2c63282df1ea5af357c688e481115",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.MixedCrossingComposites",
+        "Proofs.MixedCrossingFiberMaps"
+      ]
+    },
+    "Proofs.MackeyInclusionAndProjectionCrossings": {
+      "source_sha256": "6edc10a2f83cb423f0d4ebbc42c5392ff17be4950c2868817496a082c73a0a2c",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.InductionRestrictionBimoduleStrands",
+        "Proofs.GroupElementDotCriterion",
+        "Proofs.InductionRestrictionAdjunction",
+        "Proofs.SurvivingCosetRepresentative",
+        "Proofs.MixedCrossingFiberMaps"
+      ]
+    },
+    "Proofs.MackeyIdentityDiagram": {
+      "source_sha256": "65b8d87d96de63547927dc9398c3de79bc7817c4e7ff9c59a5cb32e74f3362bd",
+      "imports": [
+        "Mathlib.Basic.Complex.Basic",
+        "Mathlib.GroupTheory.DoubleCoset",
+        "MackeyDiagrams",
+        "Proofs.MackeyInclusionAndProjectionCrossings"
+      ]
+    },
+    "Proofs.CommonMackeyIntersectionSum": {
+      "source_sha256": "fefcd91f7e528afa25c97c3cef8cf1ccbac5e8f959f4ab53c338826a9774914d",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.MixedCrossingsThroughSmallerGroup",
+        "Proofs.MackeyIdentityDiagram"
+      ]
+    },
+    "WattsFoundation.WattsSupport": {
+      "source_sha256": "853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.RegularModuleRightAction",
+        "Mathlib.Algebra.Category.ModuleCat.Ulift",
+        "Mathlib.GroupTheory.FreeGroup.Basic"
+      ]
+    },
+    "WattsFoundation.BalancedCokernelDescent": {
+      "source_sha256": "3327ac1427f59152b05fa74cde4e7f91d78920ad0980f25046d559b7800fb38b",
+      "imports": [
+        "Mathlib.Algebra.Module.LinearMap.Basic",
+        "Mathlib.Algebra.Module.Opposite"
+      ]
+    },
+    "WattsFoundation.NoncommutativeTensorCokernel": {
+      "source_sha256": "40f446091d7161a783c5884182660234f361355660e407d3df759da09947786f",
+      "imports": [
+        "WattsFoundation.BalancedCokernelDescent"
+      ]
+    },
+    "WattsFoundation.ConcreteTensorUniversal": {
+      "source_sha256": "875cbe9fc1e5d51ec537b36c7093fcc7f46fdacdc32aa5511b3f509a4a99a11d",
+      "imports": [
+        "WattsFoundation.WattsSupport",
+        "WattsFoundation.NoncommutativeTensorCokernel"
+      ]
+    },
+    "WattsFoundation.BalancedCoproductAssembly": {
+      "source_sha256": "0886fcc2025b67480ecf0dd1152c8337c8b4f83c191112a92adb77e70d46cc11",
+      "imports": [
+        "Mathlib.Algebra.Module.LinearMap.Basic",
+        "Mathlib.Algebra.Module.Opposite"
+      ]
+    },
+    "WattsFoundation.NoncommutativeTensorCoproduct": {
+      "source_sha256": "c0168cf9ec2ee8b631c7ce21f720e4a1767692f3c571fce7c4fc78082dac9264",
+      "imports": [
+        "WattsFoundation.BalancedCoproductAssembly",
+        "WattsFoundation.NoncommutativeTensorCokernel"
+      ]
+    },
+    "WattsFoundation.ConcreteTensorCoproduct": {
+      "source_sha256": "e9df64fe4b4139c2ff98d6cccb96db4f90f578af0940d06ededb5523664ae90a",
+      "imports": [
+        "WattsFoundation.ConcreteTensorUniversal",
+        "WattsFoundation.NoncommutativeTensorCoproduct"
+      ]
+    },
+    "WattsFoundation.General.ConcreteTensorFunctor": {
+      "source_sha256": "3c7b71f34eadbc6e320871193355a11b7b97396612243605a57e3f1981ca9c95",
+      "imports": [
+        "WattsFoundation.ConcreteTensorCoproduct",
+        "Mathlib.CategoryTheory.Preadditive.AdditiveFunctor"
+      ]
+    },
+    "WattsFoundation.General.ConcreteTensorUnitor": {
+      "source_sha256": "a9b0b987314819bb6dadf0f83b9831f740dd6cd496f9d22b1bb6ed9ad57fbd39",
+      "imports": [
+        "WattsFoundation.General.ConcreteTensorFunctor"
+      ]
+    },
+    "WattsFoundation.General.ConcreteTensorBimoduleMap": {
+      "source_sha256": "9ff9c3bb776379dad8cf9a6b919718be546f9f739cd568f12575b7598ff5878d",
+      "imports": [
+        "WattsFoundation.General.ConcreteTensorUnitor"
+      ]
+    },
+    "WattsFoundation.WattsActions": {
+      "source_sha256": "5063d70e2575ee070375ad23ed2109d025532821c3cb3aa623858168f0532eb5",
+      "imports": [
+        "WattsFoundation.ConcreteTensorCoproduct"
+      ]
+    },
+    "WattsFoundation.General.WattsFreeComparison": {
+      "source_sha256": "e553aed57d14bba5bb6a7a140007e9f381c79a304904e07026d1c775cd952b38",
+      "imports": [
+        "WattsFoundation.WattsActions"
+      ]
+    },
+    "WattsFoundation.PresentationFiveLemma": {
+      "source_sha256": "1ff520b4aa98660f0c1bf852d2d29bd6673eab0ff0e606446551e41d191c0489",
+      "imports": [
+        "Mathlib.Algebra.Module.LinearMap.Basic"
+      ]
+    },
+    "WattsFoundation.CokernelExact": {
+      "source_sha256": "11a15cdb325d474d907e80d852f64f2a177e2225cb9a338b1d9e453b932d429e",
+      "imports": [
+        "Mathlib.LinearAlgebra.Quotient.Basic"
+      ]
+    },
+    "WattsFoundation.General.WattsAllComparison": {
+      "source_sha256": "36ba973091e05015f7c39ae3320dfdc85f846f3c5eb134444c822a70b3ab6ea1",
+      "imports": [
+        "WattsFoundation.General.WattsFreeComparison",
+        "WattsFoundation.PresentationFiveLemma",
+        "WattsFoundation.CokernelExact"
+      ]
+    },
+    "WattsFoundation.General.WattsNaturalIso": {
+      "source_sha256": "3a3b2e8c432eb79fb6bd0250a31ceb991482990469bcfac97f42eefc8c3820a1",
+      "imports": [
+        "WattsFoundation.General.WattsAllComparison",
+        "Mathlib.CategoryTheory.ConcreteCategory.EpiMono",
+        "Mathlib.CategoryTheory.NatIso"
+      ]
+    },
+    "WattsFoundation.General.WattsMathlibBridge": {
+      "source_sha256": "1650a6ad7e449a60dcf14853169b6d2c40410c7203c68151dae26e63e41670e6",
+      "imports": [
+        "WattsFoundation.General.WattsNaturalIso",
+        "Mathlib.CategoryTheory.Abelian.Exact",
+        "Mathlib.CategoryTheory.Limits.Preserves.Finite",
+        "Mathlib.CategoryTheory.Limits.Preserves.Shapes.Products"
+      ]
+    },
+    "WattsFoundation.General.ConcreteTensorPreservation": {
+      "source_sha256": "704fe0951f22cf6bb6d39432c9b1762d958cfdcff8aa679add21b3b4c5894947",
+      "imports": [
+        "WattsFoundation.General.ConcreteTensorFunctor",
+        "WattsFoundation.General.WattsNaturalIso"
+      ]
+    },
+    "WattsFoundation.General.WattsMathlibReverse": {
+      "source_sha256": "875ca041c23963545b31dfc1f5e292a6b97da8ee3bac9edd24d4d3642d504ab9",
+      "imports": [
+        "WattsFoundation.General.WattsMathlibBridge",
+        "WattsFoundation.General.ConcreteTensorPreservation",
+        "Mathlib.CategoryTheory.Preadditive.LeftExact",
+        "Mathlib.CategoryTheory.Limits.Preserves.Shapes.Kernels",
+        "Mathlib.Algebra.Category.ModuleCat.Abelian"
+      ]
+    },
+    "WattsFoundation.General.WattsTheorem": {
+      "source_sha256": "ad08c5fd2df08df85f839949cf20922c4d93d3211e4ec931643b1bf544bad42c",
+      "imports": [
+        "WattsFoundation.General.WattsMathlibReverse"
+      ]
+    },
+    "WattsFoundation.General.BimoduleTensorCategory": {
+      "source_sha256": "7db56dd6d5ede6c8c6ca9ff304bd49b2cdc337e5a31954a7b6c461f4afc159fc",
+      "imports": [
+        "WattsFoundation.General.ConcreteTensorBimoduleMap",
+        "WattsFoundation.General.WattsTheorem",
+        "Mathlib.CategoryTheory.ObjectProperty.FullSubcategory",
+        "Mathlib.CategoryTheory.Equivalence"
+      ]
+    },
+    "WattsFoundation.General.EquivalenceFromCounit": {
+      "source_sha256": "0360a974b912a1dcbf41e3abb07dbe1f35675590ac3da4587a7b44d96f3b49a6",
+      "imports": [
+        "Mathlib.CategoryTheory.Equivalence",
+        "Mathlib.CategoryTheory.Whiskering"
+      ]
+    },
+    "WattsFoundation.General.RegularEvaluationEquivalence": {
+      "source_sha256": "256e14dc3d60922c7a6a7824d945d930ec01a987d3f4a37505f0e4e978f32eca",
+      "imports": [
+        "WattsFoundation.General.BimoduleTensorCategory",
+        "Mathlib.CategoryTheory.Whiskering",
+        "WattsFoundation.General.EquivalenceFromCounit"
+      ]
+    },
+    "WattsFoundation.General.OriginalBimoduleAdapter": {
+      "source_sha256": "761f99233d6d9356ff8fecc3f016da49a6c7ef51016568764518f7b368f62222",
+      "imports": [
+        "WattsFoundation.General.RegularEvaluationEquivalence",
+        "Proofs.Bimodule"
+      ]
+    },
+    "WattsFoundation.General.OriginalTensorFormulas": {
+      "source_sha256": "63ae1401c73256775ffba52a822ac19a8070567eb670bfa4076a4034ab34b014",
+      "imports": [
+        "WattsFoundation.General.OriginalBimoduleAdapter"
+      ]
+    },
+    "WattsFoundation.General.OriginalTensorUnit": {
+      "source_sha256": "c16e756fa79cfa31e1deda8c50f6aae63a0115648d96a18a248f1f061857085f",
+      "imports": [
+        "WattsFoundation.General.OriginalTensorFormulas"
+      ]
+    },
+    "WattsFoundation.General.OriginalTensorComposite": {
+      "source_sha256": "10b6e1562872fb4c612a28fb25d2582ca8e66b6e36079a1304f2663a99813bea",
+      "imports": [
+        "WattsFoundation.General.OriginalTensorUnit"
+      ]
+    },
+    "WattsFoundation.General.OriginalTensorAssociator": {
+      "source_sha256": "a48c266c4c387b5ebb1542947fb74650c05bd6ba22176007def03aea45f3fe55",
+      "imports": [
+        "WattsFoundation.General.OriginalTensorComposite"
+      ]
+    },
+    "WattsFoundation.ReviewedOriginalWattsConnection": {
+      "source_sha256": "f0426ff5d83c585d6fd341de01820202f11853c57380a3d680181c8927f3e9e5",
+      "imports": [
+        "WattsFoundation.General.OriginalTensorAssociator",
+        "Mathlib.Algebra.Category.Ring.Basic"
+      ]
+    },
+    "Proofs.NaturalTransformationsOfTensorFunctors": {
+      "source_sha256": "efc06ee64a1bba318d200944ae79c2e296ca91ec27e37304f4cf88ee7a552649",
+      "imports": [
+        "Mathlib.Algebra.Category.ModuleCat.Basic",
+        "MackeyDiagrams",
+        "Proofs.Bimodule"
+      ]
+    },
+    "Proofs.EilenbergWatts": {
+      "source_sha256": "f0e19bdb192ca7aeb94cec07b5d7b0b30c7f344776812852d5ad679b57e823f2",
+      "imports": [
+        "Mathlib",
+        "MackeyDiagrams",
+        "WattsFoundation.ReviewedOriginalWattsConnection",
+        "Proofs.Bimodule",
+        "Proofs.RegularModuleRightAction",
+        "Proofs.CanonicalWattsComparison",
+        "Proofs.NaturalTransformationsOfTensorFunctors",
+        "Proofs.ModuleTensorUniversalProperty"
+      ]
+    },
+    "Proofs.ComplexEilenbergWatts": {
+      "source_sha256": "d8dc92a978c6e40bb5b9c8adefbc58e9015ce13bafcfa77b01abbf249f3b521b",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.EilenbergWatts"
+      ]
+    },
+    "Proofs.RightUpReidemeisterCurl": {
+      "source_sha256": "ff40f8230d4c29fcd7e5b798b4bd39903d32e10b2ea507fbf5d94ad2416b2b85",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.FiniteIndexReverseAdjunction",
+        "Proofs.InductionRestrictionMergesAndSplits"
+      ]
+    },
+    "Proofs.CurlAcrossTrivalentVertex": {
+      "source_sha256": "636995c97c6f78e66c904a581b66be459a6d059001ea5e6bcd971594c483060b",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.InductionRestrictionMergesAndSplits",
+        "Proofs.RightUpReidemeisterCurl"
+      ]
+    },
+    "Proofs.InductionMergeDotSlide": {
+      "source_sha256": "8695902586df4fb11c708bfcd94b1132805ae961b87fce0b833b6b7e9009fc45",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.GroupElementDotCriterion",
+        "Proofs.InductionRestrictionMergesAndSplits"
+      ]
+    },
+    "Proofs.InductionSplitDotSlide": {
+      "source_sha256": "80e136ec550c5f18128706a5d6bda29be73fd4a0f95ba3813c182fa6c9982f53",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.GroupElementDotCriterion",
+        "Proofs.InductionRestrictionMergesAndSplits",
+        "Proofs.InductionMergeDotSlide"
+      ]
+    },
+    "Proofs.RestrictionMergeDotSlide": {
+      "source_sha256": "023240010b88a5b01a26a008436b914aa82b5022d18718144593db334442ef6d",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.GroupElementDotCriterion",
+        "Proofs.InductionRestrictionMergesAndSplits"
+      ]
+    },
+    "Proofs.RestrictionSplitDotSlide": {
+      "source_sha256": "bae24c35d1cdd8ec4a6ac051c8d8699020202f03bd4b2afe57097d2cc1e31da0",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.GroupElementDotCriterion",
+        "Proofs.InductionRestrictionMergesAndSplits",
+        "Proofs.RestrictionMergeDotSlide"
+      ]
+    },
+    "Proofs.RightCurlAndDotSlide": {
+      "source_sha256": "07a18b7e988bbfcf73be3c0668837e651ea0fdc0d9250f260637569a6913c4ae",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.GroupElementDotCriterion",
+        "Proofs.FiniteIndexReverseAdjunction",
+        "Proofs.RightUpReidemeisterCurl",
+        "Proofs.InductionMergeDotSlide",
+        "Proofs.InductionSplitDotSlide",
+        "Proofs.RestrictionMergeDotSlide",
+        "Proofs.RestrictionSplitDotSlide"
+      ]
+    },
+    "Proofs.CurlWithCentralizingDot": {
+      "source_sha256": "af589cfbb543e9fd4f48d6bed6c0b83c2241210deb689cf52827c58480fb988b",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.FiniteIndexReverseAdjunction",
+        "Proofs.RightCurlAndDotSlide"
+      ]
+    },
+    "Proofs.DiagrammaticFunctorCorrespondence": {
+      "source_sha256": "5edaf7192a39a866da12681ff56bfdde29df1be887dceb1cf01da216853caa11",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ComplexEilenbergWatts",
+        "Proofs.InductionRestrictionBimoduleStrands",
+        "Proofs.GroupElementDotCriterion",
+        "Proofs.InductionRestrictionAdjunction",
+        "Proofs.FiniteIndexReverseAdjunction",
+        "Proofs.InductionRestrictionMergesAndSplits",
+        "Proofs.ModuleTensorUniversalProperty",
+        "Proofs.BalancedTensorAssociativity"
+      ]
+    },
+    "Proofs.DifferentCurlIndices": {
+      "source_sha256": "18a2e0150f6cea80091f3861e65a1a413812e069b4d05a80b865cc61551decc8",
+      "imports": [
+        "Mathlib.Algebra.Group.TypeTags.Finite",
+        "MackeyDiagrams",
+        "Proofs.CurlAcrossTrivalentVertex"
+      ]
+    },
+    "Proofs.DotBelowInsideAboveRightCurl": {
+      "source_sha256": "55d11b16155ffa631b93ed825f1a86be9c0cb11fb9b486384928b6fbb1447e7a",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.RightCurlAndDotSlide"
+      ]
+    },
+    "Proofs.DotBetweenImagesInOneBlock": {
+      "source_sha256": "f90e86ac612c3c15a1e359cae2bcba47fc98afcc6124cbed58db59c0a263f5ca",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.BlockwiseGroupElementDotCriterion"
+      ]
+    },
+    "Proofs.FixedBoundaryReplacementPreorder": {
+      "source_sha256": "515d351130813edcd976d8c9e6695c06275b48f5e7c039f0ada82aae5d7265b1",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.GroupElementDotCriterion",
+        "Proofs.InductionRestrictionMergesAndSplits"
+      ]
+    },
+    "Proofs.MovingMergeDotBackToBranch": {
+      "source_sha256": "676ba2eb29b11583da7da52342d2453b2eda104fc48f9e0ee957e8dc1fabe9be",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.InductionMergeDotSlide",
+        "Proofs.RestrictionMergeDotSlide"
+      ]
+    },
+    "Proofs.RightInputDotSlideObstruction": {
+      "source_sha256": "9b3b66ef6c8da0dfdabcd81a3c16819458821c07fbdb8883bef9d3561ce7cbd1",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.MovingMergeDotBackToBranch"
+      ]
+    },
+    "Proofs.DotSlidePreorderNotSymmetric": {
+      "source_sha256": "e0977eb4e51d00724f15b6b18cde064083867fdaa4e668e6b1f1b39f20524a2b",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.InductionMergeDotSlide",
+        "Proofs.FixedBoundaryReplacementPreorder",
+        "Proofs.RightInputDotSlideObstruction"
+      ]
+    },
+    "Proofs.ParabolicDoubleCosetRepresentatives": {
+      "source_sha256": "906cb335a5d3df0afc28348761c5a336d3b3c2ddc75500df7831780e8fb31a3d",
+      "imports": [
+        "Mathlib.GroupTheory.DoubleCoset",
+        "Mathlib.Data.Finset.Sort",
+        "MackeyDiagrams",
+        "Proofs.FiniteParabolicIntersectionBlocks"
+      ]
+    },
+    "Proofs.ParabolicMackeyIntersectionBlocks": {
+      "source_sha256": "ed6d20e3b9b252a828998af60c5fead7c04f1746f6894e8dc65f807a489fd9f6",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.FiniteParabolicConjugateBlocks",
+        "Proofs.FiniteParabolicIntersectionBlocks",
+        "Proofs.ParabolicDoubleCosetRepresentatives"
+      ]
+    },
+    "Proofs.TwoBlockDoubleCosetMatrices": {
+      "source_sha256": "21413927408fbc819784b644ad895d1a89ce8428a440745e95f2facf3144e268",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ParabolicDoubleCosetRepresentatives"
+      ]
+    },
+    "Proofs.StandardTwoBlockRepresentatives": {
+      "source_sha256": "2bf072d32dd921d3667570f7f2e1af34d183991dbe67cccb0db9efb1b82271c9",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ParabolicMackeyIntersectionBlocks",
+        "Proofs.TwoBlockDoubleCosetMatrices",
+        "Proofs.ParabolicDoubleCosetRepresentatives"
+      ]
+    },
+    "Proofs.EqualTwoBlockSubgroups": {
+      "source_sha256": "ac0f662632462f790f5a840c6f02eaaa63d38ae4e745066181b8e8503f9413ca",
+      "imports": [
+        "Mathlib.GroupTheory.NoncommPiCoprod",
+        "MackeyDiagrams",
+        "Proofs.StandardTwoBlockRepresentatives"
+      ]
+    },
+    "Proofs.MackeySummandProjection": {
+      "source_sha256": "0e4dd0102c80f8764b4d028af1caa85307518a57f1c7e2657e2d7bed70bf4f4f",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.MackeyInclusionAndProjectionCrossings",
+        "Proofs.SurvivingCosetRepresentative"
+      ]
+    },
+    "Proofs.MackeyOrthogonalityDiagram": {
+      "source_sha256": "f9a8c394840e77d6299e198f9dc9e1a74a710c1e44c2177e3dad0ad809b98689",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.MackeyInclusionAndProjectionCrossings",
+        "Proofs.MackeySummandProjection",
+        "Proofs.MackeyIdentityDiagram",
+        "Proofs.SurvivingCosetRepresentative"
+      ]
+    },
+    "Proofs.GeneralizedMackeyDecomposition": {
+      "source_sha256": "044084754209ae3de60b4056dbe9a817bdf369063bb483e8ffaa6e945a2557b2",
+      "imports": [
+        "Mathlib.CategoryTheory.Adjunction.Unique",
+        "Mathlib.CategoryTheory.Limits.Preserves.FunctorCategory",
+        "MackeyDiagrams",
+        "Proofs.MackeyInclusionAndProjectionCrossings",
+        "Proofs.MackeyIdentityDiagram",
+        "Proofs.MackeyOrthogonalityDiagram",
+        "Proofs.InductionRestrictionAdjunction"
+      ]
+    },
+    "Proofs.ProductParabolicDoubleCosets": {
+      "source_sha256": "eadaed7aa7712981180c8b324fc0de5806eea91d76cb16d2b52367fbdb162162",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ParabolicDoubleCosetRepresentatives"
+      ]
+    },
+    "Proofs.MackeyDecompositionWithParabolicRepresentatives": {
+      "source_sha256": "b77b12d5d1d0c28fce18ce7a3edb7919c1832eb829044077d3a7fff5cd1de574",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.GeneralizedMackeyDecomposition",
+        "Proofs.FiniteParabolicConjugateBlocks",
+        "Proofs.ParabolicMackeyIntersectionBlocks",
+        "Proofs.ProductParabolicDoubleCosets"
+      ]
+    },
+    "Proofs.FiniteParabolicBicategoryComposition": {
+      "source_sha256": "6d7bf45bafaf72c19dc5c332c7b8c30d120eb0b6a0cff786ef96cfef4cda294b",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.MackeyDecompositionWithParabolicRepresentatives",
+        "Proofs.ModuleTensorUniversalProperty"
+      ]
+    },
+    "Proofs.FiniteParabolicBimoduleBicategory": {
+      "source_sha256": "35dd377b787fbe945f559bc5217f8c346b91e3c6542bfb8a1c4c75d32ae41090",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.FiniteParabolicBicategoryComposition",
+        "Proofs.BimoduleTensorBicategoryCoherence"
+      ]
+    },
+    "Proofs.FiniteParabolicJoinOfFamily": {
+      "source_sha256": "79a4d299a2bce93060c169368212bc2ed8aaee39f8401685bd4473ccc437509e",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.FiniteParabolicJoinBlocks"
+      ]
+    },
+    "Proofs.ReplacementForTwoProjections": {
+      "source_sha256": "20810783a7dabb438fce290fffd900d66a7e97ec1dff3f7a8be4dbad56f4158a",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.CaseOneRightProjectionConstruction",
+        "Proofs.CaseTwoLeftProjectionConstruction"
+      ]
+    },
+    "Proofs.ReplacementForTwoMultiplications": {
+      "source_sha256": "ae4427c47420591f2a2736f4490fd08981e33731dc4a12588d7e128b6a44300c",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.InductionRestrictionMergesAndSplits",
+        "Proofs.MixedCrossingFiniteFiberConvention"
+      ]
+    },
+    "Proofs.FiniteParabolicSingleDiagramReplacements": {
+      "source_sha256": "ec248f121acb15228e9f2c959f09fd7845add1d39c666b3c910fbc908128159d",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ThreeInductionReidemeisterThree",
+        "Proofs.ReplacementForTwoProjections",
+        "Proofs.ReplacementForTwoMultiplications",
+        "Proofs.FiniteParabolicJoinOfFamily"
+      ]
+    },
+    "Proofs.LargestCommonMixedCrossingParabolic": {
+      "source_sha256": "1fbd16bd71c1380f0183231593207361defdd0416ab8a11fd744ccaa0a1d447d",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.CommonMackeyIntersectionSum",
+        "Proofs.FiniteParabolicIntersectionBlocks",
+        "Proofs.ExtremalParabolicsOfFiniteGroup",
+        "Proofs.MixedCrossingsThroughSmallerGroup",
+        "Proofs.MackeyInclusionAndProjectionCrossings"
+      ]
+    },
+    "Proofs.LargestCommonParabolicDependsOnRepresentatives": {
+      "source_sha256": "736b974e1976b3ff89be7bc919adcf01b1bf93b441892c9e9bd91c44b8dfc500",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.LargestCommonMixedCrossingParabolic",
+        "Proofs.MackeyIdentityDiagram"
+      ]
+    },
+    "Proofs.LeftDownReidemeisterCurl": {
+      "source_sha256": "6b8d1c78e49c89a5d98773384367563a6d99a139a73ee46a60931240c0bfea0e",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.FiniteIndexReverseAdjunction",
+        "Proofs.InductionRestrictionMergesAndSplits"
+      ]
+    },
+    "Proofs.LeftUpReidemeisterCurl": {
+      "source_sha256": "6a815b9addf8c2b6841d660280334998957e604754e2c14277c61914e982d386",
+      "imports": [
+        "Mathlib.Basic.Complex.Basic",
+        "MackeyDiagrams",
+        "Proofs.InductionRestrictionAdjunction",
+        "Proofs.InductionRestrictionMergesAndSplits"
+      ]
+    },
+    "Proofs.MackeyConjugationExchangesFactors": {
+      "source_sha256": "a34a0b8f623b7b1628a0f2ffd1460332bf4f93202602d24dd8f08aa3f0519d5f",
+      "imports": [
+        "Mathlib.GroupTheory.Perm.ConjAct",
+        "MackeyDiagrams",
+        "Proofs.EqualTwoBlockSubgroups"
+      ]
+    },
+    "Proofs.MixedMultiplicationLabelsChangeOnRoundTrip": {
+      "source_sha256": "408020b6e5d77ed4d5e0f19beed0a968881d93c247952b6a14877ecc2d4ac98e",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ReplacementForTwoMultiplications"
+      ]
+    },
+    "Proofs.MixedReidemeisterTwoMackeyCancellation": {
+      "source_sha256": "bd57d4b7ed9291a9facf706e07d82d40c5801bc178c158ddce297d7dde800bd5",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.GeneralizedMackeyDecomposition",
+        "Proofs.MixedCrossingComposites",
+        "Proofs.MackeyIdentityDiagram"
+      ]
+    },
+    "Proofs.MovingSplitDotToOutputBranch": {
+      "source_sha256": "621e50a27bbc07e21a5652ae3853ae389930aaa11d10f76537aa55854185e11f",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.InductionSplitDotSlide",
+        "Proofs.RestrictionSplitDotSlide"
+      ]
+    },
+    "Proofs.MultiplicationCapBend": {
+      "source_sha256": "0b9eece1cbec990f0900dc910e6716b8529b6703f8f1f7ddc68ff239538aba52",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.InductionRestrictionAdjunction",
+        "Proofs.InductionRestrictionMergesAndSplits"
+      ]
+    },
+    "Proofs.NormalizedIndexValuedReidemeisterCurls": {
+      "source_sha256": "afcab7619920951636cf62791e5b667f1f68cb303c98eebd61eaa05bc1328e5d",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.RightUpReidemeisterCurl",
+        "Proofs.LeftDownReidemeisterCurl"
+      ]
+    },
+    "Proofs.NormalizedTrivalentCurl": {
+      "source_sha256": "23218d32136379df14e75e70237d3b3b7e2d3c02d50d537963af0ebfaa33dfd3",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.CurlAcrossTrivalentVertex",
+        "Proofs.NormalizedIndexValuedReidemeisterCurls"
+      ]
+    },
+    "Proofs.OneSidedTableauCosetRepresentatives": {
+      "source_sha256": "affc164d7a2217f7782a8ccee04ce99fa5f91ff75e4a7e30f29e4705a8fbf82d",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ParabolicDoubleCosetRepresentatives"
+      ]
+    },
+    "Proofs.OrdinaryCupBend": {
+      "source_sha256": "e44a74aed7cc096044b4d8071c8692452af1d8c0d4d39e9b8ec00c75b2937082",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.InductionRestrictionAdjunction",
+        "Proofs.InductionRestrictionMergesAndSplits"
+      ]
+    },
+    "Proofs.OrdinaryMackeyDecomposition": {
+      "source_sha256": "7c33a71d2f788cdd72b633b41ad04970a9ef4c6ca3c2bc0800e75d56f60d1c9c",
+      "imports": [
+        "Mathlib.Algebra.Category.ModuleCat.Ulift",
+        "MackeyDiagrams",
+        "Proofs.GeneralizedMackeyDecomposition"
+      ]
+    },
+    "Proofs.ParabolicBlockOperationExample": {
+      "source_sha256": "5d4cf0c0ed2c1cdbe69015898e1354f53dc9297342b0fa505edfada21a91751f",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.FiniteParabolicClosure",
+        "Proofs.FiniteParabolicConjugateBlocks",
+        "Proofs.FiniteParabolicIntersectionBlocks",
+        "Proofs.FiniteParabolicJoinBlocks"
+      ]
+    },
+    "Proofs.SupportedLeftOrbitProjectedStabilizer": {
+      "source_sha256": "e8abb32ef22d30dbafb73c1dd67b0797fa402cea6ec41e8cd5088bcab4a3f683",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.CaseFiveLeftShapeEvaluation",
+        "Proofs.RightOrbitDiagramFromProjectedStabilizer",
+        "Proofs.FiniteParabolicConjugateBlocks",
+        "Proofs.FiniteParabolicIntersectionBlocks"
+      ]
+    },
+    "Proofs.ParabolicRightOrbitMultiplicity": {
+      "source_sha256": "e26cbdb1d012032c9ef4436b9bdb7fdca705f8f638d796c8c4178bb83ac6199e",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.CaseSixRightShapeEvaluation",
+        "Proofs.RightOrbitDiagramFromProjectedStabilizer",
+        "Proofs.ExtremalParabolicsOfFiniteGroup",
+        "Proofs.FiniteParabolicClosure",
+        "Proofs.SupportedLeftOrbitProjectedStabilizer"
+      ]
+    },
+    "Proofs.ParabolicCaseFiveCoefficientOneExpansion": {
+      "source_sha256": "7649c5e43c64bc3f94eb65a7a014e509e2f2669e1f3f680ee56d6258d727debb",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.RightOrbitDiagramFromProjectedStabilizer",
+        "Proofs.SupportedLeftOrbitProjectedStabilizer",
+        "Proofs.ParabolicRightOrbitMultiplicity"
+      ]
+    },
+    "Proofs.ParabolicCaseFiveUnscaledDiagramIdentity": {
+      "source_sha256": "2d083a72feba0ec320019fd2d9e2f1d552f8cb4f43a216da773c62196f2f6238",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ParabolicCaseFiveCoefficientOneExpansion"
+      ]
+    },
+    "Proofs.ParabolicCaseSixStrictStabilizerObstruction": {
+      "source_sha256": "af3158b04f200bf0bcff6b794ebd8a8b84cb21d09f40499d2db5445ab673e134",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.EvaluationWithOneProjection",
+        "Proofs.SupportedLeftOrbitProjectedStabilizer",
+        "Proofs.ParabolicRightOrbitMultiplicity"
+      ]
+    },
+    "Proofs.ParabolicCaseSixReplacementThroughJoin": {
+      "source_sha256": "40d6444eaff2c138f7ec162f73fbfb1e7a5d459f60fefb6fb34ae2a48b91cb91",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.EvaluationWithOneProjection",
+        "Proofs.FiniteParabolicJoinOfFamily"
+      ]
+    },
+    "Proofs.ParabolicCaseSixObstructionAndReplacementFamily": {
+      "source_sha256": "47053772252575c3fba1e7dae414baf73e4bcdcd114835e1c0be2ebcc9fa8054",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ParabolicCaseSixStrictStabilizerObstruction",
+        "Proofs.ParabolicCaseSixReplacementThroughJoin"
+      ]
+    },
+    "Proofs.ParabolicCaseSixObstructionWithTrivialProjectedStabilizer": {
+      "source_sha256": "22b806dfa3ff012fc82b651e0730104b391dcc194fbb7155754e1e8003e8461b",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.CaseSixCounterexampleWithTrivialProjectedStabilizers"
+      ]
+    },
+    "Proofs.ParabolicCaseSixOrbitCoefficientVanishesInCharacteristicThree": {
+      "source_sha256": "871cfc4d16153d63abb6de09404b7e92f1dc25b75a0632b859281e61361473c4",
+      "imports": [
+        "Mathlib.Data.ZMod.QuotientGroup",
+        "MackeyDiagrams",
+        "Proofs.ParabolicRightOrbitMultiplicity",
+        "Proofs.ParabolicCaseSixStrictStabilizerObstruction"
+      ]
+    },
+    "Proofs.ParabolicExtremalOutsideRestrictionRegions": {
+      "source_sha256": "224fd7938819e026642bd8ffa009d7d3a0a16f72309446bd49e26531636e2d98",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ReplacementForTwoProjections",
+        "Proofs.ReplacementForTwoMultiplications",
+        "Proofs.FiniteParabolicIntersectionBlocks",
+        "Proofs.FiniteParabolicJoinBlocks",
+        "Proofs.CaseOneRightProjectionConstruction",
+        "Proofs.CaseTwoLeftProjectionConstruction"
+      ]
+    },
+    "Proofs.ParabolicCaseTwoProjectionFiberIndices": {
+      "source_sha256": "0cd583ebffc7350e5b583ba26a5c0ec769b7344665eb9e9ba1e97a12cb2e6bb2",
+      "imports": [
+        "Mathlib",
+        "MackeyDiagrams",
+        "Proofs.EvaluationForTwoProjections",
+        "Proofs.ParabolicExtremalOutsideRestrictionRegions"
+      ]
+    },
+    "Proofs.ParabolicCommonRightRegionForLinearLabels": {
+      "source_sha256": "f611de4e7ff064014e792692746a6b3755c89920aa77c1e11cfc7e9c56aee8a9",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.FiniteParabolicJoinOfFamily",
+        "Proofs.ParabolicExtremalOutsideRestrictionRegions",
+        "Proofs.ExtremalParabolicsOfFiniteGroup",
+        "Proofs.EvaluationForTwoProjections",
+        "Proofs.ReplacementForTwoMultiplications",
+        "Proofs.FiniteParabolicClosure"
+      ]
+    },
+    "Proofs.RightDownReidemeisterCurl": {
+      "source_sha256": "6e935603beb0ab2ce5017515988b02287119982f907477512b650b708d78b9f9",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.InductionRestrictionAdjunction",
+        "Proofs.InductionRestrictionMergesAndSplits"
+      ]
+    },
+    "Proofs.ReidemeisterOne": {
+      "source_sha256": "d44b9d3da0ecaf07cd9b014a2b748441f63c2a2d31fa660fec3fff0457ecadb7",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.RightUpReidemeisterCurl",
+        "Proofs.RightDownReidemeisterCurl",
+        "Proofs.LeftUpReidemeisterCurl",
+        "Proofs.LeftDownReidemeisterCurl"
+      ]
+    },
+    "Proofs.ParabolicCurlsFromBlockRefinements": {
+      "source_sha256": "205e414e0fc961e67139ceb6ae17445466edb3f654d08f16f6bd55293de3e005",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ReidemeisterOne",
+        "Proofs.FiniteParabolicClosure"
+      ]
+    },
+    "Proofs.ParabolicCurlFactorization": {
+      "source_sha256": "471a5ea7e8535c24f2a07320ad809620cf7be951800cda1517f17effd9d0010a",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ParabolicCurlsFromBlockRefinements"
+      ]
+    },
+    "Proofs.ParabolicCurlJoinIntersection": {
+      "source_sha256": "281067b868a15d421d1f1dca96f12823d7f49918fb9bbb0833bd69d7bef36c97",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ParabolicCurlsFromBlockRefinements"
+      ]
+    },
+    "Proofs.ParabolicExtremalThreeInductionRegions": {
+      "source_sha256": "accd3ca9990b05f88eda9ae40b80cfbba902e55180bc550251c2e7c875b23d6f",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ThreeInductionCrossingMultipliers",
+        "Proofs.FiniteParabolicIntersectionBlocks",
+        "Proofs.FiniteParabolicJoinBlocks"
+      ]
+    },
+    "Proofs.ParabolicExtremalThreeInductionExample": {
+      "source_sha256": "a32df9431f3522d371a0930a6f2d9f3a6975b29cc8633a45f565f9ff4a681b38",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ParabolicExtremalThreeInductionRegions"
+      ]
+    },
+    "Proofs.ParabolicFullMackeyCancellation": {
+      "source_sha256": "4b1f41c73b7fd6e7adc8abb9ec6711a12a2c99a6dd0c34b2485a959c86703926",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.MixedReidemeisterTwoMackeyCancellation",
+        "Proofs.MackeyDecompositionWithParabolicRepresentatives"
+      ]
+    },
+    "Proofs.ParabolicOutsideMultiplicationDiagram": {
+      "source_sha256": "031f773cfbe29772b6dbd6eeac124acf33ebd4b201007355982a6d5ab9be2742",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ParabolicExtremalOutsideRestrictionRegions",
+        "Proofs.ReplacementForTwoMultiplications"
+      ]
+    },
+    "Proofs.ParabolicOutsideProjectionDiagram": {
+      "source_sha256": "a77934f9d73c6ab6a8eaa37283467e2cd474e95ba5c2256ca6afd52ad88f707b",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ParabolicExtremalOutsideRestrictionRegions",
+        "Proofs.ParabolicCaseTwoProjectionFiberIndices",
+        "Proofs.EvaluationForTwoProjections"
+      ]
+    },
+    "Proofs.ParabolicRightDiagramSpanOverCommutativeRings": {
+      "source_sha256": "003242fa701cd247914ca3cd34e3e278953e5ff91c2204292ab0a4dedf3817c6",
+      "imports": [
+        "Mathlib.Data.ZMod.Basic",
+        "MackeyDiagrams",
+        "Proofs.ParabolicCaseFiveCoefficientOneExpansion",
+        "Proofs.ParabolicRightOrbitMultiplicity"
+      ]
+    },
+    "Proofs.ParallelInductionProductDotAdmissibility": {
+      "source_sha256": "794d2f3aac72c24df7c244bb1d3e153b60a8ee937641632b899a9d0d3394dadb",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.GroupElementDotCriterion",
+        "Proofs.InductionRestrictionMergesAndSplits"
+      ]
+    },
+    "Proofs.ParallelReidemeisterTwoInduction": {
+      "source_sha256": "2d74e145168178fb9c5ef75e329bfcab7bdeb0231d0a18ed3c8a3288a724143c",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.InductionRestrictionMergesAndSplits",
+        "Proofs.ParallelInductionProductDotAdmissibility"
+      ]
+    },
+    "Proofs.ParabolicSharedRegionParallelInduction": {
+      "source_sha256": "f1f99511b2f273f0eb688f0417065a0f6d0c81a21de6ccbd8b1fb938709f4fbb",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ParallelReidemeisterTwoInduction",
+        "Proofs.FiniteParabolicJoinBlocks"
+      ]
+    },
+    "Proofs.ParallelReidemeisterTwoRestriction": {
+      "source_sha256": "da8b4494cab19572e79115489c532bb9cded7a8a9b263e82b8191d722b6527e0",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.GroupElementDotCriterion",
+        "Proofs.InductionRestrictionMergesAndSplits"
+      ]
+    },
+    "Proofs.ParabolicSharedRegionParallelRestriction": {
+      "source_sha256": "a622f5c21e5031dfb746938812fbb205f1c73cf6799e9db0eede367a031d2d5c",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ParallelReidemeisterTwoRestriction",
+        "Proofs.FiniteParabolicJoinBlocks"
+      ]
+    },
+    "Proofs.ParabolicSmallerMackeyReverseComposite": {
+      "source_sha256": "2bcbbd080e728b38a95afcd2b5dd17185c4b0c544ecd56737d9a68742e22b19a",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.MixedCrossingsThroughSmallerGroup",
+        "Proofs.MackeyDecompositionWithParabolicRepresentatives"
+      ]
+    },
+    "Proofs.ProductParabolicsWithOneDoubleCoset": {
+      "source_sha256": "75489aca047d87c9aa0a199b2f46080fa75623cc6e5e5d2b6322577ad690afdb",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ParabolicMackeyIntersectionBlocks",
+        "Proofs.ProductParabolicDoubleCosets"
+      ]
+    },
+    "Proofs.ProductParabolicsWithThreeDoubleCosets": {
+      "source_sha256": "64a03bc460055f47e9cdd6b3d78a72a7d071b51c4e946e3bb98f2db6a13e6406",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.StandardTwoBlockRepresentatives",
+        "Proofs.ProductParabolicDoubleCosets"
+      ]
+    },
+    "Proofs.ReverseCupBend": {
+      "source_sha256": "55ac3e799b07e549bf1de95a19c8c0b8038d0af5261162211b9ce38b6cecefc1",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.FiniteIndexReverseAdjunction",
+        "Proofs.InductionRestrictionMergesAndSplits"
+      ]
+    },
+    "Proofs.ReverseTriangleIdentities": {
+      "source_sha256": "b68f8cfdb9a7e8b3d0d2cbad1d7bb84cae827ac43c74c06cf120d6ab7b5a2780",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.FiniteIndexReverseAdjunction"
+      ]
+    },
+    "Proofs.SharedParabolicForParallelCrossings": {
+      "source_sha256": "735bf50550c3b6e80615cb14067f8b2921555f20c87fbf3b2ab615011b40cfae",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ParabolicSharedRegionParallelInduction",
+        "Proofs.ParabolicSharedRegionParallelRestriction"
+      ]
+    },
+    "Proofs.SinglePairCannotProjectOntoSeveralDoubleCosets": {
+      "source_sha256": "4b5a855892ed8e278030be75951791e8e203c5efc6b22eb677f8d0378fb92cb3",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.MixedCrossingComposites"
+      ]
+    },
+    "Proofs.SinglePairIdentityCriterion": {
+      "source_sha256": "041652eb08ae14084887de8401fb97b80ef8261f80e082f10a096b5af523e424",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.MixedReidemeisterTwoMackeyCancellation",
+        "Proofs.SinglePairCannotProjectOntoSeveralDoubleCosets",
+        "Proofs.MixedCrossingFiberMaps"
+      ]
+    },
+    "Proofs.SmallProjectiveGenerator": {
+      "source_sha256": "984d5d9680bd9adeed15ef09cf5bbd8c0a0ffbcfb2a5474d0131e09d2ef5479c",
+      "imports": [
+        "Mathlib.Algebra.Category.ModuleCat.Colimits",
+        "Mathlib.Algebra.Category.ModuleCat.Projective",
+        "Mathlib.CategoryTheory.Abelian.Basic",
+        "Mathlib.CategoryTheory.Generator.Basic",
+        "Mathlib.CategoryTheory.Preadditive.Yoneda.Basic",
+        "Mathlib.RingTheory.Finiteness.Basic",
+        "MackeyDiagrams"
+      ]
+    },
+    "WattsFoundation.ConcreteTensorFunctor": {
+      "source_sha256": "2c51511284643eef36105c91ba78e8fbc3c8435f0e5f4a1b4d1d740f6cb75bf4",
+      "imports": [
+        "WattsFoundation.ConcreteTensorCoproduct",
+        "Mathlib.CategoryTheory.Preadditive.AdditiveFunctor"
+      ]
+    },
+    "WattsFoundation.ConcreteTensorUnitor": {
+      "source_sha256": "e93f6e4939a23085674f703ede5cccee5520463658a992d06cfb978caa708afd",
+      "imports": [
+        "WattsFoundation.ConcreteTensorFunctor"
+      ]
+    },
+    "WattsFoundation.ConcreteTensorBimoduleMap": {
+      "source_sha256": "17c4c8348082c43c531bddfde3877da5fed0f93aa22a1c37773a9d79aa7ccaa2",
+      "imports": [
+        "WattsFoundation.ConcreteTensorUnitor"
+      ]
+    },
+    "WattsFoundation.WattsFreeComparison": {
+      "source_sha256": "8692e1c2690c4fb3faba1bb635dc729ffb625d3bc646072c8857f8aa6b23c5b2",
+      "imports": [
+        "WattsFoundation.WattsActions"
+      ]
+    },
+    "WattsFoundation.WattsAllComparison": {
+      "source_sha256": "234ed07dc21ace0a81e5e3216c6d116a08e7a69d835dd2b9e0f83f5806404a71",
+      "imports": [
+        "WattsFoundation.WattsFreeComparison",
+        "WattsFoundation.PresentationFiveLemma",
+        "WattsFoundation.CokernelExact"
+      ]
+    },
+    "WattsFoundation.WattsNaturalIso": {
+      "source_sha256": "75b9c8d60509a5ef22dfc1ab246092373aef46a536929a59462f216918ec10f5",
+      "imports": [
+        "WattsFoundation.WattsAllComparison",
+        "Mathlib.CategoryTheory.ConcreteCategory.EpiMono",
+        "Mathlib.CategoryTheory.NatIso"
+      ]
+    },
+    "WattsFoundation.WattsMathlibBridge": {
+      "source_sha256": "e04c955f7b818812befb2ab3bedb5ca8ed7ecd5c471992ff3b55dffe87549677",
+      "imports": [
+        "WattsFoundation.WattsNaturalIso",
+        "Mathlib.CategoryTheory.Abelian.Exact",
+        "Mathlib.CategoryTheory.Limits.Preserves.Finite",
+        "Mathlib.CategoryTheory.Limits.Preserves.Shapes.Products"
+      ]
+    },
+    "WattsFoundation.ConcreteTensorPreservation": {
+      "source_sha256": "f3fcbbbf2d53e241330fd472cb6f892c8d94e683394fb28f726f9c5c19b9d173",
+      "imports": [
+        "WattsFoundation.ConcreteTensorFunctor",
+        "WattsFoundation.WattsNaturalIso"
+      ]
+    },
+    "WattsFoundation.WattsMathlibReverse": {
+      "source_sha256": "db67f6556c6eaec91d397b4893b9823bba0adff11b4b7c22c91bb8164ee99bf6",
+      "imports": [
+        "WattsFoundation.WattsMathlibBridge",
+        "WattsFoundation.ConcreteTensorPreservation",
+        "Mathlib.CategoryTheory.Preadditive.LeftExact",
+        "Mathlib.CategoryTheory.Limits.Preserves.Shapes.Kernels",
+        "Mathlib.Algebra.Category.ModuleCat.Abelian"
+      ]
+    },
+    "WattsFoundation.ReconstructionSupport": {
+      "source_sha256": "10c73931422db5459f70a1f41b427c1d3b7b1e48fa56e8f8937babc128ed95bc",
+      "imports": [
+        "Mathlib.Algebra.Category.ModuleCat.Colimits",
+        "Mathlib.Algebra.Category.ModuleCat.Projective",
+        "Mathlib.CategoryTheory.Abelian.Basic",
+        "Mathlib.CategoryTheory.Generator.Basic",
+        "Mathlib.CategoryTheory.Preadditive.Yoneda.Basic",
+        "Mathlib.RingTheory.Finiteness.Basic"
+      ]
+    },
+    "WattsFoundation.ClassicalReconstruction": {
+      "source_sha256": "1604f6cc63db1fcae8e1398ae3e62617e7f46f4020c5da863f0ea8012d00ff4a",
+      "imports": [
+        "WattsFoundation.ReconstructionSupport",
+        "Mathlib.CategoryTheory.ConcreteCategory.EpiMono"
+      ]
+    },
+    "WattsFoundation.NormalMorphismsInAbelianCategories": {
+      "source_sha256": "89175c5115ade630f163c2ffa80a440ddd53a2a05ce2515042be6204201f4d0a",
+      "imports": [
+        "MackeyDiagrams",
+        "WattsFoundation.ConcreteTensorBimoduleMap",
+        "WattsFoundation.WattsMathlibReverse",
+        "WattsFoundation.General.OriginalBimoduleAdapter",
+        "WattsFoundation.ClassicalReconstruction"
+      ]
+    },
+    "WattsFoundation.GeneratorCokernelPresentations": {
+      "source_sha256": "2356b7dd3ec3bb67c1e34453c28c74d083c544970f96f0c046bfb25a9b0d54ea",
+      "imports": [
+        "MackeyDiagrams",
+        "WattsFoundation.ConcreteTensorBimoduleMap",
+        "WattsFoundation.WattsMathlibReverse",
+        "WattsFoundation.General.OriginalBimoduleAdapter",
+        "WattsFoundation.ClassicalReconstruction",
+        "WattsFoundation.NormalMorphismsInAbelianCategories"
+      ]
+    },
+    "WattsFoundation.CancellationAndZeroKernels": {
+      "source_sha256": "485e6ef3b8fc9e09edb08ed0079bcd389fba1a32ba225b20ef8ab56f605fe9c3",
+      "imports": [
+        "MackeyDiagrams",
+        "WattsFoundation.ConcreteTensorBimoduleMap",
+        "WattsFoundation.WattsMathlibReverse",
+        "WattsFoundation.General.OriginalBimoduleAdapter",
+        "WattsFoundation.ClassicalReconstruction"
+      ]
+    },
+    "WattsFoundation.ModuleProductsAndCoproducts": {
+      "source_sha256": "d4175b483b9f39b16907674353073e9e03fa59bd8c0520e971677e23d9d0f6c7",
+      "imports": [
+        "Mathlib.Algebra.Category.ModuleCat.Products",
+        "MackeyDiagrams",
+        "WattsFoundation.ConcreteTensorBimoduleMap",
+        "WattsFoundation.WattsMathlibReverse",
+        "WattsFoundation.General.OriginalBimoduleAdapter",
+        "WattsFoundation.ClassicalReconstruction"
+      ]
+    },
+    "WattsFoundation.GeneratorHomExactnessAndDetection": {
+      "source_sha256": "5c6344ba3266a564d167d3ae5911be6ad8d432e68785baa987b3759c7af910a3",
+      "imports": [
+        "Mathlib.CategoryTheory.Preadditive.Yoneda.Limits",
+        "Mathlib.CategoryTheory.Abelian.Projective.Basic",
+        "Mathlib.CategoryTheory.Generator.Preadditive",
+        "MackeyDiagrams",
+        "WattsFoundation.ConcreteTensorBimoduleMap",
+        "WattsFoundation.WattsMathlibReverse",
+        "WattsFoundation.General.OriginalBimoduleAdapter",
+        "WattsFoundation.ClassicalReconstruction",
+        "WattsFoundation.CancellationAndZeroKernels",
+        "WattsFoundation.NormalMorphismsInAbelianCategories",
+        "WattsFoundation.ModuleProductsAndCoproducts"
+      ]
+    },
+    "WattsFoundation.ModuleQuotientUniversalProperty": {
+      "source_sha256": "4fce292dfc3cd765ff97e47d1f1575ab6051282433d3b18ac181d2ae9309d909",
+      "imports": [
+        "Mathlib.LinearAlgebra.Quotient.Basic",
+        "MackeyDiagrams",
+        "WattsFoundation.ConcreteTensorBimoduleMap",
+        "WattsFoundation.WattsMathlibReverse",
+        "WattsFoundation.General.OriginalBimoduleAdapter",
+        "WattsFoundation.ClassicalReconstruction"
+      ]
+    },
+    "WattsFoundation.ModuleKernelsCokernelsAndImages": {
+      "source_sha256": "d2bdb1ec4eb076f1a4a18086448737980e317a1d42bc0a7a2f32f3bada0f485f",
+      "imports": [
+        "MackeyDiagrams",
+        "WattsFoundation.ConcreteTensorBimoduleMap",
+        "WattsFoundation.WattsMathlibReverse",
+        "WattsFoundation.General.OriginalBimoduleAdapter",
+        "WattsFoundation.ClassicalReconstruction",
+        "WattsFoundation.ModuleQuotientUniversalProperty"
+      ]
+    },
+    "WattsFoundation.ModuleCategoriesAreAbelian": {
+      "source_sha256": "a18d2ec9842858709202cef13d82ea2d1a9109b3c751d0a0f74ca062252289ce",
+      "imports": [
+        "Mathlib.Algebra.Category.ModuleCat.Abelian",
+        "MackeyDiagrams",
+        "WattsFoundation.ConcreteTensorBimoduleMap",
+        "WattsFoundation.WattsMathlibReverse",
+        "WattsFoundation.General.OriginalBimoduleAdapter",
+        "WattsFoundation.ClassicalReconstruction"
+      ]
+    },
+    "WattsFoundation.ExactPresentationsAreCokernels": {
+      "source_sha256": "0ed92a5b95a188bbe1fe9e31e1e9ab19f84f6815e13bd2c2ddf4fec5c4a3c9fa",
+      "imports": [
+        "MackeyDiagrams",
+        "WattsFoundation.ConcreteTensorBimoduleMap",
+        "WattsFoundation.WattsMathlibReverse",
+        "WattsFoundation.General.OriginalBimoduleAdapter",
+        "WattsFoundation.ClassicalReconstruction"
+      ]
+    },
+    "WattsFoundation.FreeModulesAndPresentations": {
+      "source_sha256": "9e79db7fdb7dbf256cbf8482c34b3b1c041d94e6fc613811bfac2e9b521abf58",
+      "imports": [
+        "MackeyDiagrams",
+        "WattsFoundation.ConcreteTensorBimoduleMap",
+        "WattsFoundation.WattsMathlibReverse",
+        "WattsFoundation.General.OriginalBimoduleAdapter",
+        "WattsFoundation.ClassicalReconstruction",
+        "WattsFoundation.ModuleProductsAndCoproducts",
+        "WattsFoundation.ModuleKernelsCokernelsAndImages",
+        "WattsFoundation.ModuleCategoriesAreAbelian",
+        "WattsFoundation.ExactPresentationsAreCokernels"
+      ]
+    },
+    "WattsFoundation.RegularModuleSmallProjectiveGenerator": {
+      "source_sha256": "c44316248fd438295d33201fb66efe9e6ee3da4d358b67253ffa45323811502c",
+      "imports": [
+        "MackeyDiagrams",
+        "WattsFoundation.ConcreteTensorBimoduleMap",
+        "WattsFoundation.WattsMathlibReverse",
+        "WattsFoundation.General.OriginalBimoduleAdapter",
+        "WattsFoundation.ClassicalReconstruction",
+        "WattsFoundation.ModuleProductsAndCoproducts"
+      ]
+    },
+    "WattsFoundation.GeneratorHomFullyFaithful": {
+      "source_sha256": "ecd10ac237b90f3ec5ce2fce43028bce50f78e9312019e659cfeac9a3d5c7906",
+      "imports": [
+        "Mathlib.Algebra.DirectSum.Finsupp",
+        "MackeyDiagrams",
+        "WattsFoundation.ConcreteTensorBimoduleMap",
+        "WattsFoundation.WattsMathlibReverse",
+        "WattsFoundation.General.OriginalBimoduleAdapter",
+        "WattsFoundation.ClassicalReconstruction",
+        "WattsFoundation.GeneratorCokernelPresentations",
+        "WattsFoundation.GeneratorHomExactnessAndDetection",
+        "WattsFoundation.FreeModulesAndPresentations",
+        "WattsFoundation.RegularModuleSmallProjectiveGenerator"
+      ]
+    },
+    "WattsFoundation.ReconstructionFromSmallProjectiveGenerator": {
+      "source_sha256": "723c4d0bc2439af62dc2d41a43fb6154637272f0659d2b63e4d031cc8732dc0e",
+      "imports": [
+        "MackeyDiagrams",
+        "WattsFoundation.ConcreteTensorBimoduleMap",
+        "WattsFoundation.WattsMathlibReverse",
+        "WattsFoundation.General.OriginalBimoduleAdapter",
+        "WattsFoundation.ClassicalReconstruction",
+        "WattsFoundation.GeneratorHomFullyFaithful",
+        "WattsFoundation.GeneratorHomExactnessAndDetection",
+        "WattsFoundation.FreeModulesAndPresentations"
+      ]
+    },
+    "WattsFoundation.SmallGeneratorBridge": {
+      "source_sha256": "ce62ef1dc565de2ec54b78ef2fb0c36b4c4623af44d80061d1f7a505be97f1a7",
+      "imports": [
+        "WattsFoundation.ReconstructionFromSmallProjectiveGenerator",
+        "Mathlib.Algebra.Category.Grp.Colimits",
+        "Mathlib.CategoryTheory.Preadditive.Yoneda.Basic"
+      ]
+    },
+    "WattsFoundation.FiniteBiproductUniversalProperties": {
+      "source_sha256": "6481996e280b695fa21785d20a3ad6daf1c904979b7b87b3c627ffb5d3f1fe87",
+      "imports": [
+        "Mathlib.CategoryTheory.Preadditive.Biproducts",
+        "MackeyDiagrams",
+        "WattsFoundation.ConcreteTensorBimoduleMap",
+        "WattsFoundation.WattsMathlibReverse",
+        "WattsFoundation.General.OriginalBimoduleAdapter",
+        "WattsFoundation.ClassicalReconstruction"
+      ]
+    },
+    "WattsFoundation.AdditiveFunctorsAndBiproducts": {
+      "source_sha256": "0017ec343c7fc9110aae3c3a81677d2629c6dcc2318a0a50a9029455e86bd39f",
+      "imports": [
+        "MackeyDiagrams",
+        "WattsFoundation.ConcreteTensorBimoduleMap",
+        "WattsFoundation.WattsMathlibReverse",
+        "WattsFoundation.General.OriginalBimoduleAdapter",
+        "WattsFoundation.ClassicalReconstruction",
+        "WattsFoundation.FiniteBiproductUniversalProperties"
+      ]
+    },
+    "WattsFoundation.AbelianEquivalencesPreserveFunctorHypotheses": {
+      "source_sha256": "c56849b0f7d35863ec337edcc219c69d6b1b5df7a17ba73503aca29c495ea88e",
+      "imports": [
+        "Mathlib.CategoryTheory.Adjunction.Additive",
+        "MackeyDiagrams",
+        "WattsFoundation.ConcreteTensorBimoduleMap",
+        "WattsFoundation.WattsMathlibReverse",
+        "WattsFoundation.General.OriginalBimoduleAdapter",
+        "WattsFoundation.ClassicalReconstruction",
+        "WattsFoundation.AdditiveFunctorsAndBiproducts"
+      ]
+    },
+    "WattsFoundation.GeneratorFunctorTransport": {
+      "source_sha256": "556b48e23760245f3e62d403cee32695feadb0bd727f5fb4fc11ee24dcef28f2",
+      "imports": [
+        "WattsFoundation.AbelianEquivalencesPreserveFunctorHypotheses",
+        "WattsFoundation.General.OriginalBimoduleAdapter",
+        "Mathlib.CategoryTheory.Adjunction.Limits"
+      ]
+    },
+    "WattsFoundation.GeneratorRegularUnit": {
+      "source_sha256": "b5690bfba3cf7dcfc64ebb95028c01786e4b64fde7eb9f3f6ae01c93d54a6cdd",
+      "imports": [
+        "WattsFoundation.SmallGeneratorBridge",
+        "Mathlib.Algebra.Module.ULift"
+      ]
+    },
+    "WattsFoundation.GeneratorRegularActions": {
+      "source_sha256": "5fe35abb01bd6f42753996f979e14e5a459234a7daa762b5873272146566de19",
+      "imports": [
+        "WattsFoundation.GeneratorRegularUnit"
+      ]
+    },
+    "WattsFoundation.GeneratorTransport": {
+      "source_sha256": "9968ad0229fa1ef78e9ec34cded3ae3a758f406345db86b60d1d3c4e3f411f14",
+      "imports": [
+        "WattsFoundation.GeneratorRegularActions"
+      ]
+    },
+    "WattsFoundation.GeneratorTransportNaturality": {
+      "source_sha256": "8e295b20dc09479e6ea2342f06eb317f31d674ef1161fe6db071d3f9a67f5dd3",
+      "imports": [
+        "WattsFoundation.GeneratorTransport"
+      ]
+    },
+    "WattsFoundation.GeneratorRegularIntertwining": {
+      "source_sha256": "7a894929250b36bba77c08ae915a9cb4b4ddfc5105b7757a6adf5a42eaccc229",
+      "imports": [
+        "WattsFoundation.GeneratorRegularActions"
+      ]
+    },
+    "WattsFoundation.GeneratorPreimageAction": {
+      "source_sha256": "bd0cc7ecaf8ebc7bcdb631d64714173dcf25a0995412275c4c6fdd360250a5b0",
+      "imports": [
+        "WattsFoundation.GeneratorTransport",
+        "WattsFoundation.GeneratorRegularIntertwining"
+      ]
+    },
+    "WattsFoundation.GeneratorTransportAction": {
+      "source_sha256": "c7d693f9d62e37cc7ec9d93f806af2d1cd92592fd10547f1bd5fa9e8ee6a92a7",
+      "imports": [
+        "WattsFoundation.GeneratorTransport",
+        "WattsFoundation.GeneratorPreimageAction"
+      ]
+    },
+    "WattsFoundation.General.OriginalBimoduleRepack": {
+      "source_sha256": "79dfdbbb9dc64f3a2b0ef926e2447c01e609be40a70c0f5abaa289f19addb900",
+      "imports": [
+        "WattsFoundation.General.OriginalBimoduleAdapter"
+      ]
+    },
+    "WattsFoundation.General.OriginalBimoduleRepackIso": {
+      "source_sha256": "2b3ab4db392fecdf613eb98115229745c047d4b580808ea1e36bfbbf5ef3fc12",
+      "imports": [
+        "WattsFoundation.General.OriginalBimoduleRepack"
+      ]
+    },
+    "WattsFoundation.General.OriginalBimoduleRepackFunctor": {
+      "source_sha256": "20539f5086024b5a2133dd77117d4f2827d444bb314e525e1388f0e9f9c71d1d",
+      "imports": [
+        "WattsFoundation.General.OriginalBimoduleRepackIso",
+        "Mathlib.CategoryTheory.NatIso"
+      ]
+    },
+    "WattsFoundation.SmallGeneratorCorrespondenceBase": {
+      "source_sha256": "c2be993d191100d61230302543ac7a161190161d8c8e1920e11ae841a4765128",
+      "imports": [
+        "WattsFoundation.SmallGeneratorBridge",
+        "WattsFoundation.GeneratorFunctorTransport",
+        "WattsFoundation.GeneratorTransportNaturality",
+        "WattsFoundation.GeneratorTransportAction",
+        "WattsFoundation.General.OriginalBimoduleRepackFunctor"
+      ]
+    },
+    "WattsFoundation.SmallGeneratorCorrespondenceRight": {
+      "source_sha256": "40a10a3b597541452871392fe692163df05c4120a660d1cdf05f94da92032dcc",
+      "imports": [
+        "WattsFoundation.SmallGeneratorCorrespondenceBase"
+      ]
+    },
+    "WattsFoundation.ReviewedSmallGeneratorConnection": {
+      "source_sha256": "b277f555a257e38fb7ac15ea575c0c9ba3d42312cfa0797e3244cfae59bb4d23",
+      "imports": [
+        "WattsFoundation.SmallGeneratorCorrespondenceRight"
+      ]
+    },
+    "Proofs.SmallProjectiveGeneratorCorrespondence": {
+      "source_sha256": "9404e68a0f874c2bbbc92806b2fec86bfbc57b968ccb061ff6d9a66678d0e991",
+      "imports": [
+        "Mathlib",
+        "MackeyDiagrams",
+        "WattsFoundation.ReviewedSmallGeneratorConnection",
+        "Proofs.EilenbergWatts",
+        "Proofs.SmallProjectiveGenerator"
+      ]
+    },
+    "Proofs.SmallerParabolicReducesProjectionFiber": {
+      "source_sha256": "53ffb00f815a67307fa4f0d6924f336285066609f28927b313300bc4c871e2d6",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ParabolicExtremalOutsideRestrictionRegions",
+        "Proofs.ParabolicCaseTwoProjectionFiberIndices"
+      ]
+    },
+    "Proofs.StandardSymmetricGroupBraidRelation": {
+      "source_sha256": "aefea73810475843609e4d5ea937df2c16a5829331d84b8724b7080ae885ed6f",
+      "imports": [
+        "Mathlib.GroupTheory.GroupAction.FixingSubgroup",
+        "MackeyDiagrams",
+        "Proofs.ParallelReidemeisterTwoInduction"
+      ]
+    },
+    "Proofs.TraceCapBend": {
+      "source_sha256": "b3551a231f12c21f8da59ee4a33c6501d9f16be9bece0f44021343312b9b7efd",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.FiniteIndexReverseAdjunction",
+        "Proofs.InductionRestrictionMergesAndSplits"
+      ]
+    },
+    "Proofs.TrivalentBendIdentities": {
+      "source_sha256": "2c6c3ea1f7fc82e69aa89e4ba63e0bb64a8f2c77b71ffe02b6a5e6116d131df7",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.MultiplicationCapBend",
+        "Proofs.TraceCapBend",
+        "Proofs.OrdinaryCupBend",
+        "Proofs.ReverseCupBend"
+      ]
+    },
+    "Proofs.StraightMixedTrivalentVertices": {
+      "source_sha256": "56cef0961196a49b3cd683342df2e08a6689e4285043acd73888706825ead967",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.TrivalentBendIdentities"
+      ]
+    },
+    "Proofs.StrongerEmbeddingConditionSlideObstruction": {
+      "source_sha256": "d69d03adbc8f91ed0904b8123be11c85d3f791c60cd70249cd8a5df6287aa574",
+      "imports": [
+        "Mathlib.GroupTheory.GroupAction.SubMulAction.OfFixingSubgroup",
+        "MackeyDiagrams",
+        "Proofs.MovingMergeDotBackToBranch",
+        "Proofs.BlockwiseGroupElementDotCriterion",
+        "Proofs.FiniteParabolicConjugateBlocks"
+      ]
+    },
+    "Proofs.SupportBoundsUnderComposition": {
+      "source_sha256": "9175d2519cd1d84804d8c1a07c3a8143223c5342db45d6c2dd10f3155f0a4556",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ConjugationEmbeddingCentralizerCoset",
+        "Proofs.FiniteParabolicClosure",
+        "Proofs.FiniteParabolicConjugateBlocks"
+      ]
+    },
+    "Proofs.SupportBoundsForInverseProduct": {
+      "source_sha256": "96e73984f4634b1a48fe30aca1e41037380387d1503db7b7fd0681a30ada5645",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.SupportBoundsUnderComposition"
+      ]
+    },
+    "Proofs.TableauDoubleCosetRepresentativeInS6": {
+      "source_sha256": "10abf77dda3447103d87554e5972054a644c77c134a147c8dba4b04afcd25aab",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ParabolicDoubleCosetRepresentatives",
+        "Proofs.ParabolicMackeyIntersectionBlocks"
+      ]
+    },
+    "Proofs.ThreeInductionLabelsChangeOnRoundTrip": {
+      "source_sha256": "2ecffd8239768fbb0dad5b8cfeb5978c197b6ceb5f9f72dadd273fd8b073f90c",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.MultipliersUnderRelabelling"
+      ]
+    },
+    "Proofs.TwoBlockSplitGivesFourIntersections": {
+      "source_sha256": "848245b2dd6381b1b2cdb70b914d210e4fcc6555f7a9d4fbf38cba22dfee26d5",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.StandardTwoBlockRepresentatives"
+      ]
+    },
+    "Proofs.TwoMackeySummandsWithSameInternalLabels": {
+      "source_sha256": "c8d55f239143fd7716badafdfac3974236be8a4199ccedcfe28873ab7e28ebd0",
+      "imports": [
+        "Mathlib.Algebra.Group.TypeTags.Finite",
+        "Mathlib.Data.ZMod.QuotientGroup",
+        "MackeyDiagrams",
+        "Proofs.CommonMackeyIntersectionSum",
+        "Proofs.MackeyIdentityDiagram"
+      ]
+    },
+    "Proofs.UnequalParabolicCurlProducts": {
+      "source_sha256": "55a455be06f0b19d7e8ccf8f4963fe4e24ea373282bba5d6c1c1c48534e64252",
+      "imports": [
+        "MackeyDiagrams",
+        "Proofs.ParabolicCurlJoinIntersection"
+      ]
+    }
+  },
+  "audit_files": {
+    "GraphAudit.lean": "08581d8a281e0b1d5b615f26ffb90565d7507c6902e9ff190c3da38554b92215",
+    "AxiomsAudit.lean": "2ff914ab5a6312dc95e60974b01d5116b11d80c783bf296f65cc94a527aef34a",
+    "current-graph-audit.tsv": "c339e160a1120baa088d9f1bfae4191feae73b146e4d8d7355824b37c298b9ac",
+    "current-axioms-audit.log": "9831065489b276e5fc34400896db00ee5cc6950e83af765aa481aa87e7084c64"
+  }
+}

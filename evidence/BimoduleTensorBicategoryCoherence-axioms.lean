@@ -1,0 +1,2 @@
+import Proofs.BimoduleTensorBicategoryCoherence
+#print axioms BimoduleTensorBicategoryCoherence

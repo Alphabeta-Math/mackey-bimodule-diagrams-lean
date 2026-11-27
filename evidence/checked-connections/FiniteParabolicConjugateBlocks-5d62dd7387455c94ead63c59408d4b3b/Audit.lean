@@ -1,0 +1,2 @@
+import WorkflowConnection
+#print axioms LeanWorkflowCheckedConnection

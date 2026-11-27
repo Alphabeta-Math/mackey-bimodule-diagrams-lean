@@ -1,0 +1,17 @@
+{
+  "time": "2026-11-27T05:21:10.429953+00:00",
+  "ownerDirection": "Supervise the workflow continuously.",
+  "project": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean",
+  "actions": [
+    "Keep the native controller and ten-minute supervisor timer running.",
+    "Make the controller service persistent so it remains restartable after transient-unit garbage collection.",
+    "Retire the stale inactive-controller investigation after verifying the recovered controller and active endpoint reviews."
+  ],
+  "constraints": [
+    "Preserve the paper inventory and all owner dot-language directions.",
+    "Keep native independent reviews, compilation, axiom checks and dependency gates.",
+    "Source-statement amendments require the owner decision process.",
+    "Do not publish or push."
+  ],
+  "controllerServiceFile": "/home/lazyinspirit/.config/systemd/user/mackey-diagram-lean.service"
+}

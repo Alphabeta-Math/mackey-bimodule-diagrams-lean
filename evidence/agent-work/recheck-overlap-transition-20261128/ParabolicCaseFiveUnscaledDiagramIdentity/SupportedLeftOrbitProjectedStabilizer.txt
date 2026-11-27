@@ -1,0 +1,141 @@
+let finitary := Subgroup.closure {σ : Equiv.Perm Nat | Equiv.Perm.IsSwap σ}
+let U := ↥finitary
+let blockSym := fun (S : Finset Nat) =>
+  MonoidHom.range (Equiv.Perm.ofSubtype (p := fun n : Nat => n ∈ S))
+let parabolic := fun (H : Subgroup U) =>
+  ∃ (n : Nat) (blocks : Fin n → Finset Nat),
+    (∀ i, Finset.Nonempty (blocks i)) ∧
+    Pairwise (fun i j => Disjoint (blocks i) (blocks j)) ∧
+    Subgroup.map (Subgroup.subtype finitary) H = iSup (fun i => blockSym (blocks i))
+∀ {G A D F C E B : Subgroup U},
+  parabolic G → parabolic A → parabolic D → parabolic F →
+  parabolic C → parabolic E → parabolic B →
+  ∀ (a : MackeyDiagrams.ConjEmbedding A G) (b : MackeyDiagrams.ConjEmbedding A D)
+    (d : MackeyDiagrams.ConjEmbedding F D) (c : MackeyDiagrams.ConjEmbedding C G)
+    (e : MackeyDiagrams.ConjEmbedding C E) (f : MackeyDiagrams.ConjEmbedding F E)
+    (u : MackeyDiagrams.ConjEmbedding G B) (v : MackeyDiagrams.ConjEmbedding D B)
+    (w : MackeyDiagrams.ConjEmbedding E B),
+  let up := @MackeyDiagrams.Word.up U _
+  let down := @MackeyDiagrams.Word.down U _
+  let tensor := @MackeyDiagrams.Word.tensor U _
+  let comp := @MackeyDiagrams.ConjEmbedding.comp U _
+  ∀ (r : MackeyDiagrams.Dot (comp u a) (comp v b))
+    (t : MackeyDiagrams.Dot (comp v d) (comp w f))
+    (s : MackeyDiagrams.Dot (comp u c) (comp w e)),
+  let upperProduct := MackeyDiagrams.Generator.mixedMultiplicationBasis u w c e s
+  ∃ (leftFinite : ∀ z, Set.Finite {p | upperProduct p = z}),
+    let ga := up a
+    let ad := down b
+    let df := up d
+    let gc := up c
+    let ce := down e
+    let ef := up f
+    let du := down u
+    let uv := up v
+    let uw := up w
+    let bottom := tensor ga (tensor ad df)
+    let top := tensor gc (tensor ce ef)
+    let X := MackeyDiagrams.Word.basis bottom
+    let Y := MackeyDiagrams.Word.basis top
+    let input := fun (g : G) (x : D) =>
+      MackeyDiagrams.Biset.pair (MackeyDiagrams.Biset.induction a)
+        (MackeyDiagrams.Word.basis (tensor ad df)) g (MackeyDiagrams.Generator.mixedPair b d x)
+    let output := fun (h : G) (y : E) =>
+      MackeyDiagrams.Biset.pair (MackeyDiagrams.Biset.induction c)
+        (MackeyDiagrams.Word.basis (tensor ce ef)) h (MackeyDiagrams.Generator.mixedPair e f y)
+    let stack := @MackeyDiagrams.LabelledDrawing.vertical U _ Complex _
+    let juxtapose := @MackeyDiagrams.LabelledDrawing.horizontal U _ Complex _
+    let ordinary := @MackeyDiagrams.LabelledDrawing.ordinary U _ Complex _
+    let first : MackeyDiagrams.LabelledDrawing Complex (tensor (tensor ga ad) df) (tensor (tensor du uv) df) :=
+      juxtapose (MackeyDiagrams.LabelledDrawing.mixedMultiplication u v a b [(1, r)])
+        (ordinary (MackeyDiagrams.Diagram.id df))
+    let middle : MackeyDiagrams.LabelledDrawing Complex (tensor uv df) (tensor uw ef) :=
+      MackeyDiagrams.LabelledDrawing.parallelUp v d w f [(1, t)]
+    let last : MackeyDiagrams.LabelledDrawing Complex (tensor (tensor du uw) ef) (tensor (tensor gc ce) ef) :=
+      juxtapose (MackeyDiagrams.LabelledDrawing.compactProjection u w c e [(1, ⟨s, leftFinite⟩)])
+        (ordinary (MackeyDiagrams.Diagram.id ef))
+    let leftDiagram : MackeyDiagrams.LabelledDrawing Complex bottom top :=
+      stack (ordinary (MackeyDiagrams.Diagram.unassociate ga ad df))
+        (stack first
+          (stack (ordinary (MackeyDiagrams.Diagram.associate du uv df))
+            (stack (juxtapose (ordinary (MackeyDiagrams.Diagram.id du)) middle)
+              (stack (ordinary (MackeyDiagrams.Diagram.unassociate du uw ef))
+                (stack last (ordinary (MackeyDiagrams.Diagram.associate gc ce ef)))))))
+    letI : MulAction (G × F) X.carrier :=
+      { smul := MackeyDiagrams.Biset.act X
+        one_smul := MackeyDiagrams.Biset.one_act X
+        mul_smul := MackeyDiagrams.Biset.mul_act X }
+    letI : MulAction (G × F) Y.carrier :=
+      { smul := MackeyDiagrams.Biset.act Y
+        one_smul := MackeyDiagrams.Biset.one_act Y
+        mul_smul := MackeyDiagrams.Biset.mul_act Y }
+    let Pair := X.carrier × Y.carrier
+    let orbit : Pair → Set Pair := MulAction.orbit (G × F)
+    let stabilizer : Pair → Subgroup (G × F) := MulAction.stabilizer (G × F)
+    let project := Subgroup.map (MonoidHom.snd G F)
+    let inAmbient := Subgroup.map (Subgroup.subtype F)
+    let projectedSource := fun (p : X.carrier) => project (MulAction.stabilizer (G × F) p)
+    let projectedTarget := fun (p : Y.carrier) => project (MulAction.stabilizer (G × F) p)
+    let projectedPair := fun (p : Pair) => project (stabilizer p)
+    let coefficient := fun (diagram : MackeyDiagrams.LabelledDrawing Complex bottom top) (z : Pair) =>
+      MackeyDiagrams.Biset.Hom.toLinearMap
+        (MackeyDiagrams.ScopedDiagram.eval (MackeyDiagrams.LabelledDrawing.interpret diagram))
+        (Finsupp.single z.1 (1 : Complex)) z.2
+    let actB := fun (q : G × F) (z : B) =>
+      MackeyDiagrams.ConjEmbedding.toHom u q.1 * z *
+        (MackeyDiagrams.ConjEmbedding.toHom w (MackeyDiagrams.ConjEmbedding.toHom f q.2))⁻¹
+    ∃ (sourceMap : X.carrier → B) (targetMap : Y.carrier → B),
+      (∀ (g : G) (x : D), sourceMap (input g x) =
+        MackeyDiagrams.ConjEmbedding.toHom u g * MackeyDiagrams.Dot.element r *
+          MackeyDiagrams.ConjEmbedding.toHom v x * MackeyDiagrams.Dot.element t) ∧
+      (∀ (h : G) (y : E), targetMap (output h y) =
+        MackeyDiagrams.ConjEmbedding.toHom u h * MackeyDiagrams.Dot.element s *
+          MackeyDiagrams.ConjEmbedding.toHom w y) ∧
+      (∀ (q : G × F) (p : X.carrier),
+        sourceMap (MackeyDiagrams.Biset.act X q p) = actB q (sourceMap p)) ∧
+      (∀ (q : G × F) (p : Y.carrier),
+        targetMap (MackeyDiagrams.Biset.act Y q p) = actB q (targetMap p)) ∧
+      (∀ z : Pair, coefficient leftDiagram z ≠ 0 ↔ sourceMap z.1 = targetMap z.2) ∧
+      (∀ z : Pair, coefficient leftDiagram z ≠ 0 →
+        projectedPair z = projectedSource z.1 ⊓ projectedTarget z.2 ∧
+        parabolic (inAmbient (projectedSource z.1)) ∧
+        parabolic (inAmbient (projectedTarget z.2)) ∧
+        parabolic (inAmbient (projectedPair z)) ∧
+        coefficient leftDiagram z = 1) ∧
+      (∀ (x : D) (h : G) (y : E),
+        let z₀ : Pair := (input 1 x, output h y)
+        coefficient leftDiagram z₀ ≠ 0 →
+        projectedSource z₀.1 =
+          Subgroup.comap (MackeyDiagrams.ConjEmbedding.toHom d)
+            (Subgroup.map (MulEquiv.toMonoidHom (MulAut.conj x⁻¹))
+              (MonoidHom.range (MackeyDiagrams.ConjEmbedding.toHom b))) ∧
+        projectedTarget z₀.2 =
+          Subgroup.comap (MackeyDiagrams.ConjEmbedding.toHom f)
+            (Subgroup.map (MulEquiv.toMonoidHom (MulAut.conj y⁻¹))
+              (MonoidHom.range (MackeyDiagrams.ConjEmbedding.toHom e))) ∧
+        let P := inAmbient (projectedPair z₀)
+        ∃ (i : MackeyDiagrams.ConjEmbedding P A) (j : MackeyDiagrams.ConjEmbedding P F)
+          (k : MackeyDiagrams.ConjEmbedding P C)
+          (r' : MackeyDiagrams.Dot (comp b i) (comp d j))
+          (t' : MackeyDiagrams.Dot (comp a i) (comp c k))
+          (s' : MackeyDiagrams.Dot (comp e k) (comp f j)),
+          (∀ p : P, (MackeyDiagrams.ConjEmbedding.toHom j p : U) = (p : U)) ∧
+          MackeyDiagrams.Dot.element r' = x ∧
+          MackeyDiagrams.Dot.element t' = h ∧
+          MackeyDiagrams.Dot.element s' = y ∧
+          ∃ (rightFinite : ∀ z, Set.Finite
+            {p | MackeyDiagrams.Generator.mixedMultiplicationBasis b d i j r' p = z}),
+            let ai := up i
+            let fj := down j
+            let ck := up k
+            let lower := MackeyDiagrams.LabelledDrawing.compactProjection b d i j [(1, ⟨r', rightFinite⟩)]
+            let center := MackeyDiagrams.LabelledDrawing.parallelUp a i c k [(1, t')]
+            let upper := MackeyDiagrams.LabelledDrawing.mixedMultiplication e f k j [(1, s')]
+            let rightDiagram : MackeyDiagrams.LabelledDrawing Complex bottom top :=
+              stack (juxtapose (ordinary (MackeyDiagrams.Diagram.id ga)) lower)
+                (stack (ordinary (MackeyDiagrams.Diagram.unassociate ga ai fj))
+                  (stack (juxtapose center (ordinary (MackeyDiagrams.Diagram.id fj)))
+                    (stack (ordinary (MackeyDiagrams.Diagram.associate gc ck fj))
+                      (juxtapose (ordinary (MackeyDiagrams.Diagram.id gc)) upper))))
+            ∀ z : Pair, coefficient rightDiagram z =
+              @ite Complex (z ∈ orbit z₀) (Classical.propDecidable (z ∈ orbit z₀)) 1 0)

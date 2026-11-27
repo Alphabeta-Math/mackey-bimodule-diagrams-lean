@@ -1,0 +1,16 @@
+{
+  "accepted": false,
+  "request": {
+    "endpoint": "e89d7ab017e33ab7e5deba83b563b867b5ae014c57e6e1f4c0aceb43a85d385f",
+    "decision": {
+      "id": "RightDownReidemeisterCurl",
+      "reason": "Exact reviewed right-down curl. Use merge-split cancellation on the two downward factors, cancel the associators, and evaluate the ordinary cup followed by the trace cap as the identity.",
+      "mathlibImports": [
+        "Mathlib.Basic.Complex.Basic"
+      ],
+      "proof": "by\n  intro U inst K H G δ α hδ hα d a down loopDown loopUp straight cup middle cap curl\n  have hmid :\n      (MackeyDiagrams.Generator.mergeDown Complex a d).vertical\n        (MackeyDiagrams.Generator.splitDown Complex a d) =\n      MackeyDiagrams.Biset.Hom.id ((MackeyDiagrams.Word.down d).basis.tensor\n        (MackeyDiagrams.Word.down a).basis) :=\n    MackeyDiagrams.Diagram.mergeDown_splitDown a d\n  have hcup :\n      (MackeyDiagrams.Generator.ordinaryCup Complex a).vertical\n        (MackeyDiagrams.Generator.traceCap Complex a) =\n      MackeyDiagrams.Biset.Hom.id (MackeyDiagrams.Biset.regular H) :=\n    MackeyDiagrams.Diagram.ordinaryCup_traceCap a\n  simp only [curl, middle, cup, cap, straight, down, loopDown, loopUp, MackeyDiagrams.Diagram.eval, hmid, MackeyDiagrams.Word.basis,\n    MackeyDiagrams.Biset.Hom.horizontal_id]\n  rw [← MackeyDiagrams.Biset.Hom.vertical_assoc\n      (MackeyDiagrams.Biset.unassociate (MackeyDiagrams.Biset.restriction d)\n        (MackeyDiagrams.Biset.restriction a) (MackeyDiagrams.Biset.induction a) Complex),\n    MackeyDiagrams.Biset.Hom.vertical_id, ← MackeyDiagrams.Biset.Hom.vertical_assoc\n      (MackeyDiagrams.Biset.unassociate (MackeyDiagrams.Biset.restriction d)\n        (MackeyDiagrams.Biset.restriction a) (MackeyDiagrams.Biset.induction a) Complex),\n    MackeyDiagrams.Biset.unassociate_associate, MackeyDiagrams.Biset.Hom.id_vertical]\n  rw [← MackeyDiagrams.Biset.Hom.vertical_assoc\n      ((MackeyDiagrams.Biset.Hom.id (MackeyDiagrams.Biset.restriction d)).horizontal\n        (MackeyDiagrams.Generator.ordinaryCup Complex a)),\n    MackeyDiagrams.Biset.Hom.horizontal_vertical,\n    MackeyDiagrams.Biset.Hom.id_vertical, hcup,\n    MackeyDiagrams.Biset.Hom.horizontal_id, MackeyDiagrams.Biset.Hom.id_vertical]\n  exact MackeyDiagrams.Biset.insertRightUnit_rightUnit",
+      "support": "universe u"
+    }
+  },
+  "reason": "Error: The approved endpoint or its dependencies changed after submission"
+}

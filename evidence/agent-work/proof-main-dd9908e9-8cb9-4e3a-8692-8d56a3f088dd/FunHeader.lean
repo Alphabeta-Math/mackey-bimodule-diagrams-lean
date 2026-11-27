@@ -1,0 +1,7 @@
+import Mathlib.CategoryTheory.Whiskering
+import Mathlib.CategoryTheory.Adjunction.Unique
+import MackeyDiagrams
+import Proofs.InductionRestrictionAdjunction
+import Proofs.MackeyIdentityDiagram
+import Mathlib.CategoryTheory.Limits.Preserves.FunctorCategory
+import Mathlib.GroupTheory.DoubleCoset

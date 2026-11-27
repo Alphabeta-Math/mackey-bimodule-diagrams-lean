@@ -1,0 +1,522 @@
+BisetWork.lean:171:64: error: Tactic `rfl` failed: The left-hand side
+  ∑ x_1 ∈ b.coeff.support, b.coeff x_1 • (DFunLike.coe.{u + 1, u + 1, u + 1} (pure X Y) x) ((Y.ρ (1, x_1⁻¹)) y)
+is not definitionally equal to the right-hand side
+  ∑ x_1 ∈ b.coeff.support,
+    b.coeff x_1 •
+      (DFunLike.coe.{u + 1, 1, u + 1} { toFun := exterior X Y, map_one' := ⋯, map_mul' := ⋯ } (1, x_1⁻¹))
+        (((pure X Y) x) y)
+
+K H J : Type
+inst✝² : Group K
+inst✝¹ : Group H
+inst✝ : Group J
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+a : MonoidAlgebra ℂ K
+b : MonoidAlgebra ℂ J
+x : ↑X
+y : ↑Y
+⊢ ∑ x_1 ∈ b.coeff.support, b.coeff x_1 • ((pure X Y) x) ((Y.ρ (1, x_1⁻¹)) y) =
+    ∑ x_1 ∈ b.coeff.support,
+      b.coeff x_1 • ({ toFun := exterior X Y, map_one' := ⋯, map_mul' := ⋯ } (1, x_1⁻¹)) (((pure X Y) x) y)
+BisetWork.lean:175:84: error: Tactic `rfl` failed: The left-hand side
+  ∑ x_1 ∈ a.coeff.support,
+    a.coeff x_1 • (DFunLike.coe.{u + 1, u + 1, u + 1} (pure X Y) ((X.ρ (x_1, 1)) x)) (rightAct Y b y)
+is not definitionally equal to the right-hand side
+  ∑ x_1 ∈ a.coeff.support,
+    a.coeff x_1 •
+      (DFunLike.coe.{u + 1, 1, u + 1} { toFun := exterior X Y, map_one' := ⋯, map_mul' := ⋯ } (x_1, 1))
+        (((pure X Y) x) (rightAct Y b y))
+
+K H J : Type
+inst✝² : Group K
+inst✝¹ : Group H
+inst✝ : Group J
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+a : MonoidAlgebra ℂ K
+b : MonoidAlgebra ℂ J
+x : ↑X
+y : ↑Y
+right : ((pure X Y) x) (rightAct Y b y) = rightAct (tensor X Y) b (((pure X Y) x) y)
+⊢ ∑ x_1 ∈ a.coeff.support, a.coeff x_1 • ((pure X Y) ((X.ρ (x_1, 1)) x)) (rightAct Y b y) =
+    ∑ x_1 ∈ a.coeff.support,
+      a.coeff x_1 • ({ toFun := exterior X Y, map_one' := ⋯, map_mul' := ⋯ } (x_1, 1)) (((pure X Y) x) (rightAct Y b y))
+BisetWork.lean:171:34: warning: This simp argument is unused:
+  tensor_act_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [map_sum, map_smul, prodOne]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:171:51: warning: This simp argument is unused:
+  prodOne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [map_sum, map_smul, tensor_act_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:175:54: warning: This simp argument is unused:
+  tensor_act_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [map_sum, map_smul, LinearMap.flip_apply, prodOne]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:175:71: warning: This simp argument is unused:
+  prodOne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [map_sum, map_smul, LinearMap.flip_apply, tensor_act_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:267:47: error: Tactic `rfl` failed: The left-hand side
+  (DFunLike.coe.{u + 1, 1, u + 1} { toFun := exterior Y Z, map_one' := ⋯, map_mul' := ⋯ } (h, 1)) (((pure Y Z) y) z)
+is not definitionally equal to the right-hand side
+  (DFunLike.coe.{u + 1, u + 1, u + 1} (pure Y Z) ((Y.ρ (h, 1)) y)) z
+
+K H J F : Type
+inst✝¹³ : Group K
+inst✝¹² : Group H
+inst✝¹¹ : Group J
+inst✝¹⁰ : Group F
+V₁ V₂ V₃ V₄ V₅ : Type u
+inst✝⁹ : AddCommGroup V₁
+inst✝⁸ : Module ℂ V₁
+inst✝⁷ : AddCommGroup V₂
+inst✝⁶ : Module ℂ V₂
+inst✝⁵ : AddCommGroup V₃
+inst✝⁴ : Module ℂ V₃
+inst✝³ : AddCommGroup V₄
+inst✝² : Module ℂ V₄
+inst✝¹ : AddCommGroup V₅
+inst✝ : Module ℂ V₅
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+h : H
+x : ↑X
+y : ↑Y
+z : ↑Z
+⊢ ({ toFun := exterior Y Z, map_one' := ⋯, map_mul' := ⋯ } (h, 1)) (((pure Y Z) y) z) = ((pure Y Z) ((Y.ρ (h, 1)) y)) z
+BisetWork.lean:267:17: warning: This simp argument is unused:
+  tensor_act_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [prodOne]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:267:34: warning: This simp argument is unused:
+  prodOne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tensor_act_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:270:24: warning: declaration uses `sorry`
+BisetWork.lean:287:35: error: Tactic `rfl` failed: The left-hand side
+  ((assocForwardInner X Y Z) (({ toFun := exterior X Y, map_one' := ⋯, map_mul' := ⋯ } (1, h)) (((pure X Y) x) y)))
+    ((Z.ρ (h, 1)) z)
+is not definitionally equal to the right-hand side
+  ((pure X (tensor Y Z)) x) (((pure Y Z) y) z)
+
+K H J F : Type
+inst✝¹³ : Group K
+inst✝¹² : Group H
+inst✝¹¹ : Group J
+inst✝¹⁰ : Group F
+V₁ V₂ V₃ V₄ V₅ : Type u
+inst✝⁹ : AddCommGroup V₁
+inst✝⁸ : Module ℂ V₁
+inst✝⁷ : AddCommGroup V₂
+inst✝⁶ : Module ℂ V₂
+inst✝⁵ : AddCommGroup V₃
+inst✝⁴ : Module ℂ V₃
+inst✝³ : AddCommGroup V₄
+inst✝² : Module ℂ V₄
+inst✝¹ : AddCommGroup V₅
+inst✝ : Module ℂ V₅
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+h : J
+p : ↑(tensor X Y)
+z : ↑Z
+x : ↑X
+y : ↑Y
+⊢ ((assocForwardInner X Y Z) (({ toFun := exterior X Y, map_one' := ⋯, map_mul' := ⋯ } (1, h)) (((pure X Y) x) y)))
+      ((Z.ρ (h, 1)) z) =
+    ((pure X (tensor Y Z)) x) (((pure Y Z) y) z)
+BisetWork.lean:286:15: warning: This simp argument is unused:
+  tensor_act_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [prodOne, assocForwardInner_pure, pure_balanced Y Z h y z]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:286:32: warning: This simp argument is unused:
+  prodOne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tensor_act_pure, assocForwardInner_pure, pure_balanced Y Z h y z]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:287:6: warning: This simp argument is unused:
+  pure_balanced Y Z h y z
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tensor_act_pure, prodOne, assocForwardInner_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:289:24: warning: declaration uses `sorry`
+BisetWork.lean:293:2: warning: Unused tactic linter: `rw [lift_pure, assocForwardInner_pure]` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+BisetWork.lean:303:47: error: Tactic `rfl` failed: The left-hand side
+  (DFunLike.coe.{u + 1, 1, u + 1} { toFun := exterior X Y, map_one' := ⋯, map_mul' := ⋯ } (1, h)) (((pure X Y) x) y)
+is not definitionally equal to the right-hand side
+  (DFunLike.coe.{u + 1, u + 1, u + 1} (pure X Y) x) ((Y.ρ (1, h)) y)
+
+K H J F : Type
+inst✝¹³ : Group K
+inst✝¹² : Group H
+inst✝¹¹ : Group J
+inst✝¹⁰ : Group F
+V₁ V₂ V₃ V₄ V₅ : Type u
+inst✝⁹ : AddCommGroup V₁
+inst✝⁸ : Module ℂ V₁
+inst✝⁷ : AddCommGroup V₂
+inst✝⁶ : Module ℂ V₂
+inst✝⁵ : AddCommGroup V₃
+inst✝⁴ : Module ℂ V₃
+inst✝³ : AddCommGroup V₄
+inst✝² : Module ℂ V₄
+inst✝¹ : AddCommGroup V₅
+inst✝ : Module ℂ V₅
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+h : J
+y : ↑Y
+z : ↑Z
+x : ↑X
+⊢ ({ toFun := exterior X Y, map_one' := ⋯, map_mul' := ⋯ } (1, h)) (((pure X Y) x) y) = ((pure X Y) x) ((Y.ρ (1, h)) y)
+BisetWork.lean:303:17: warning: This simp argument is unused:
+  tensor_act_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [prodOne]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:303:34: warning: This simp argument is unused:
+  prodOne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tensor_act_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:306:24: warning: declaration uses `sorry`
+BisetWork.lean:323:35: error: Tactic `rfl` failed: The left-hand side
+  ((assocBackwardInner X Y Z) (({ toFun := exterior Y Z, map_one' := ⋯, map_mul' := ⋯ } (h, 1)) (((pure Y Z) y) z)))
+    ((X.ρ (1, h)) x)
+is not definitionally equal to the right-hand side
+  ((pure (tensor X Y) Z) (((pure X Y) x) y)) z
+
+K H J F : Type
+inst✝¹³ : Group K
+inst✝¹² : Group H
+inst✝¹¹ : Group J
+inst✝¹⁰ : Group F
+V₁ V₂ V₃ V₄ V₅ : Type u
+inst✝⁹ : AddCommGroup V₁
+inst✝⁸ : Module ℂ V₁
+inst✝⁷ : AddCommGroup V₂
+inst✝⁶ : Module ℂ V₂
+inst✝⁵ : AddCommGroup V₃
+inst✝⁴ : Module ℂ V₃
+inst✝³ : AddCommGroup V₄
+inst✝² : Module ℂ V₄
+inst✝¹ : AddCommGroup V₅
+inst✝ : Module ℂ V₅
+X : Rep ℂ (K × H)
+Y : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+h : H
+x : ↑X
+p : ↑(tensor Y Z)
+y : ↑Y
+z : ↑Z
+⊢ ((assocBackwardInner X Y Z) (({ toFun := exterior Y Z, map_one' := ⋯, map_mul' := ⋯ } (h, 1)) (((pure Y Z) y) z)))
+      ((X.ρ (1, h)) x) =
+    ((pure (tensor X Y) Z) (((pure X Y) x) y)) z
+BisetWork.lean:322:15: warning: This simp argument is unused:
+  tensor_act_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [prodOne, assocBackwardInner_pure, pure_balanced X Y h x y]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:322:32: warning: This simp argument is unused:
+  prodOne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tensor_act_pure, assocBackwardInner_pure, pure_balanced X Y h x y]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:323:6: warning: This simp argument is unused:
+  pure_balanced X Y h x y
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tensor_act_pure, prodOne, assocBackwardInner_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:325:24: warning: declaration uses `sorry`
+BisetWork.lean:360:15: warning: This simp argument is unused:
+  tensor_act_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [prodOne, assocForward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:360:32: warning: This simp argument is unused:
+  prodOne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tensor_act_pure, assocForward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:360:41: warning: This simp argument is unused:
+  assocForward_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tensor_act_pure, prodOne]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:370:15: warning: This simp argument is unused:
+  tensor_act_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [prodOne, assocBackward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:370:32: warning: This simp argument is unused:
+  prodOne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tensor_act_pure, assocBackward_pure]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:370:41: warning: This simp argument is unused:
+  assocBackward_pure
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tensor_act_pure, prodOne]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:360:60: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+BisetWork.lean:370:61: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+BisetWork.lean:360:60: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+BisetWork.lean:370:61: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+BisetWork.lean:424:6: error: Tactic `apply` failed: could not unify the conclusion of `Sigma.ext rfl`
+  ?m.393 = ?m.393
+with the goal
+  ⟨((⟨i, x⟩, ⟨j, y⟩).1.fst, (⟨i, x⟩, ⟨j, y⟩).2.fst),
+      (X (⟨i, x⟩, ⟨j, y⟩).1.fst).pair (Y (⟨i, x⟩, ⟨j, y⟩).2.fst) (⟨i, x⟩, ⟨j, y⟩).1.snd (⟨i, x⟩, ⟨j, y⟩).2.snd⟩ =
+    ⟨((⟨i, (X i).act (1, h) x⟩, ⟨j, (Y j).act (h, 1) y⟩).1.fst,
+        (⟨i, (X i).act (1, h) x⟩, ⟨j, (Y j).act (h, 1) y⟩).2.fst),
+      (X (⟨i, (X i).act (1, h) x⟩, ⟨j, (Y j).act (h, 1) y⟩).1.fst).pair
+        (Y (⟨i, (X i).act (1, h) x⟩, ⟨j, (Y j).act (h, 1) y⟩).2.fst)
+        (⟨i, (X i).act (1, h) x⟩, ⟨j, (Y j).act (h, 1) y⟩).1.snd
+        (⟨i, (X i).act (1, h) x⟩, ⟨j, (Y j).act (h, 1) y⟩).2.snd⟩
+
+Note: The full type of `Sigma.ext rfl` is
+  Sigma.snd ?m.393 ≍ Sigma.snd ?m.393 → ?m.393 = ?m.393
+
+case refl.refl
+K H J F : Type
+inst✝¹³ : Group K
+inst✝¹² : Group H
+inst✝¹¹ : Group J
+inst✝¹⁰ : Group F
+V₁ V₂ V₃ V₄ V₅ : Type u
+inst✝⁹ : AddCommGroup V₁
+inst✝⁸ : Module ℂ V₁
+inst✝⁷ : AddCommGroup V₂
+inst✝⁶ : Module ℂ V₂
+inst✝⁵ : AddCommGroup V₃
+inst✝⁴ : Module ℂ V₃
+inst✝³ : AddCommGroup V₄
+inst✝² : Module ℂ V₄
+inst✝¹ : AddCommGroup V₅
+inst✝ : Module ℂ V₅
+X✝ : Rep ℂ (K × H)
+Y✝ : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+ι κ : Type
+X : ι → Biset K H
+Y : κ → Biset H J
+i : ι
+x : (X i).carrier
+j : κ
+y : (Y j).carrier
+h : H
+⊢ ⟨((⟨i, x⟩, ⟨j, y⟩).1.fst, (⟨i, x⟩, ⟨j, y⟩).2.fst),
+      (X (⟨i, x⟩, ⟨j, y⟩).1.fst).pair (Y (⟨i, x⟩, ⟨j, y⟩).2.fst) (⟨i, x⟩, ⟨j, y⟩).1.snd (⟨i, x⟩, ⟨j, y⟩).2.snd⟩ =
+    ⟨((⟨i, (X i).act (1, h) x⟩, ⟨j, (Y j).act (h, 1) y⟩).1.fst,
+        (⟨i, (X i).act (1, h) x⟩, ⟨j, (Y j).act (h, 1) y⟩).2.fst),
+      (X (⟨i, (X i).act (1, h) x⟩, ⟨j, (Y j).act (h, 1) y⟩).1.fst).pair
+        (Y (⟨i, (X i).act (1, h) x⟩, ⟨j, (Y j).act (h, 1) y⟩).2.fst)
+        (⟨i, (X i).act (1, h) x⟩, ⟨j, (Y j).act (h, 1) y⟩).1.snd
+        (⟨i, (X i).act (1, h) x⟩, ⟨j, (Y j).act (h, 1) y⟩).2.snd⟩
+BisetWork.lean:463:2: error: unsolved goals
+case refine_1
+K H J : Type
+inst✝² : Group K
+inst✝¹ : Group H
+inst✝ : Group J
+ι κ : Type
+X : ι → Biset K H
+Y : κ → Biset H J
+source : Biset K J := (sumBasis X).tensor (sumBasis Y)
+target : Biset K J := sumTensorBasis X Y
+e : (((sumBasis X).tensor (sumBasis Y)).carrier →₀ ℂ) ≃ₗ[ℂ] (sumTensorBasis X Y).carrier →₀ ℂ :=
+  Finsupp.domLCongr (distributeBasis X Y)
+g : K × J
+x : source.carrier
+c : ℂ
+⊢ Finsupp.single ((distributeBasis X Y) (source.act g x)) c =
+    (Biset.actLinear ℂ target g) (Finsupp.single ((distributeBasis X Y) x) c)
+BisetWork.lean:474:4: error: Tactic `rfl` failed: The left-hand side
+  (Finsupp.domLCongr (distributeBasis X Y))
+    (((Biset.pairLinear ℂ (sumBasis X) (sumBasis Y)) (Finsupp.single ⟨i, x⟩ 1)) (Finsupp.single ⟨j, y⟩ 1))
+is not definitionally equal to the right-hand side
+  Finsupp.single ⟨(i, j), (X i).pair (Y j) x y⟩ 1
+
+case refine_2
+K H J : Type
+inst✝² : Group K
+inst✝¹ : Group H
+inst✝ : Group J
+ι κ : Type
+X : ι → Biset K H
+Y : κ → Biset H J
+source : Biset K J := (sumBasis X).tensor (sumBasis Y)
+target : Biset K J := sumTensorBasis X Y
+e : (((sumBasis X).tensor (sumBasis Y)).carrier →₀ ℂ) ≃ₗ[ℂ] (sumTensorBasis X Y).carrier →₀ ℂ :=
+  Finsupp.domLCongr (distributeBasis X Y)
+i : ι
+j : κ
+x : (X i).carrier
+y : (Y j).carrier
+⊢ (Finsupp.domLCongr (distributeBasis X Y))
+      (((Biset.pairLinear ℂ (sumBasis X) (sumBasis Y)) (Finsupp.single ⟨i, x⟩ 1)) (Finsupp.single ⟨j, y⟩ 1)) =
+    Finsupp.single ⟨(i, j), (X i).pair (Y j) x y⟩ 1
+BisetWork.lean:471:68: warning: This simp argument is unused:
+  distributeBasis_action
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Biset.actLinear_single, e, Finsupp.domLCongr_single]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:473:15: warning: This simp argument is unused:
+  Biset.pairLinear_single
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [one_mul, e, Finsupp.domLCongr_single]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:473:40: warning: This simp argument is unused:
+  one_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Biset.pairLinear_single, e, Finsupp.domLCongr_single]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:473:52: warning: This simp argument is unused:
+  Finsupp.domLCongr_single
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Biset.pairLinear_single, one_mul, e]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:479:2: error: failed to synthesize
+  MulAction (K × H) (ULift.{u_1, 0} X.carrier)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+BisetWork.lean:502:38: error: Application type mismatch: The argument
+  e
+has type
+  ↑M ≃ₗ[ℂ] ↑N
+but is expected to have type
+  M.ρ.IntertwiningMap N.ρ
+in the application
+  @Equiv.mk' ℂ G (↑M) (↑N) Complex.instSemiring inst✝.toMonoid M.hV1.toAddCommMonoid N.hV1.toAddCommMonoid M.hV2 N.hV2
+    M.ρ N.ρ e
+BisetWork.lean:502:13: error: could not synthesize default value for parameter 'left_inv' using tactics
+BisetWork.lean:502:13: error: No applicable extensionality theorem found for type
+  ↑M
+
+Note: Extensionality theorems can be registered by marking them with the `[ext]` attribute
+BisetWork.lean:502:13: error: could not synthesize default value for parameter 'right_inv' using tactics
+BisetWork.lean:502:13: error: No applicable extensionality theorem found for type
+  ↑N
+
+Note: Extensionality theorems can be registered by marking them with the `[ext]` attribute
+BisetWork.lean:508:73: error: unsolved goals
+K H J F : Type
+inst✝¹³ : Group K
+inst✝¹² : Group H
+inst✝¹¹ : Group J
+inst✝¹⁰ : Group F
+V₁ V₂ V₃ V₄ V₅ : Type u
+inst✝⁹ : AddCommGroup V₁
+inst✝⁸ : Module ℂ V₁
+inst✝⁷ : AddCommGroup V₂
+inst✝⁶ : Module ℂ V₂
+inst✝⁵ : AddCommGroup V₃
+inst✝⁴ : Module ℂ V₃
+inst✝³ : AddCommGroup V₄
+inst✝² : Module ℂ V₄
+inst✝¹ : AddCommGroup V₅
+inst✝ : Module ℂ V₅
+X✝ : Rep ℂ (K × H)
+Y✝ : Rep ℂ (H × J)
+Z : Rep ℂ (J × F)
+X Y : Biset K H
+e : (X.carrier →₀ ℂ) ≃ₗ[ℂ] Y.carrier →₀ ℂ
+he : ∀ (g : K × H) (x : X.carrier →₀ ℂ), e ((Biset.actLinear ℂ X g) x) = (Biset.actLinear ℂ Y g) (e x)
+g : K × H
+v : X.carrier →₀ ℂ
+⊢ (basisCoords Y)
+      (e ((basisCoords X).symm (((ofMulAction ℂ (K × H) (ULift.{u, 0} X.carrier)) g) ((basisCoords X) v)))) =
+    ((ofMulAction ℂ (K × H) (ULift.{u, 0} Y.carrier)) g) ((basisCoords Y) (e v))
+BisetWork.lean:511:40: warning: This simp argument is unused:
+  ← basisCoords_action
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [LinearEquiv.trans_apply, LinearEquiv.symm_apply_apply, he]
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:511:92: warning: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [LinearEquiv.trans_apply, ← basisCoords_action, LinearEquiv.symm_apply_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BisetWork.lean:522:11: error: typeclass instance problem is stuck
+  Module ?m.188 ℂ
+
+Note: Lean will not try to resolve this typeclass instance problem because the first and third type arguments to `Module` are metavariables. These arguments must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.

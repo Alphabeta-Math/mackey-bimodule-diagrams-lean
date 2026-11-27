@@ -1,0 +1,2 @@
+import Proofs.ParabolicSmallerMackeyReverseComposite
+#print axioms ParabolicSmallerMackeyReverseComposite

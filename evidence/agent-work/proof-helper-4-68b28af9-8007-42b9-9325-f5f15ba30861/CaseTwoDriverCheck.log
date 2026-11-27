@@ -1,0 +1,6 @@
+'CaseTwoAudit.right_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CaseTwoAudit.rhs_probe_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CaseTwoAudit.rhs_probe_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CaseTwoAudit.canonical_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CaseTwoAudit.frame_eq_of_atBoundary_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CaseTwoAudit.no_replacement_of_canonical' depends on axioms: [propext, Classical.choice, Quot.sound]

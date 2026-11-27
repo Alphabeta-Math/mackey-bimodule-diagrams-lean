@@ -1,0 +1,43 @@
+'LargestCommonMixedCrossingParabolic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MackeyIdentityDiagram' depends on axioms: [propext, Classical.choice, Quot.sound]
+Equiv.Perm.subtypeEquivSubtypePerm.{u_4} {α : Type u_4} (p : α → Prop) [DecidablePred p] :
+  Equiv.Perm (Subtype p) ≃ { f // ∀ (a : α), ¬p a → f a = a }
+Equiv.Perm.Disjoint.commute.{u_1} {α : Type u_1} {f g : Equiv.Perm α} (h : f.Disjoint g) : Commute f g
+Equiv.Perm.mem_support_iff_of_commute.{u_1} {α : Type u_1} [DecidableEq α] [Fintype α] {g c : Equiv.Perm α}
+  (hgc : Commute g c) (x : α) : g x ∈ c.support ↔ x ∈ c.support
+Equiv.Perm.support_swap.{u_1} {α : Type u_1} [DecidableEq α] [Fintype α] {x y : α} (h : x ≠ y) :
+  (Equiv.swap x y).support = {x, y}
+Equiv.swap_apply_apply.{u_4} {α : Type u_4} [DecidableEq α] (f : Equiv.Perm α) (x y : α) :
+  Equiv.swap (f x) (f y) = f * Equiv.swap x y * f⁻¹
+Finset.mem_Icc.{u_1} {α : Type u_1} [Preorder α] [LocallyFiniteOrder α] {a b x : α} : x ∈ Finset.Icc a b ↔ a ≤ x ∧ x ≤ b
+Nat.card_Icc (a b : ℕ) : (Finset.Icc a b).card = b + 1 - a
+Fintype.card_perm.{u_1} {α : Type u_1} [DecidableEq α] [Fintype α] :
+  Fintype.card (Equiv.Perm α) = (Fintype.card α).factorial
+Nat.card_zpowers.{u_2} {α : Type u_2} [Group α] (a : α) : Nat.card ↥(Subgroup.zpowers a) = orderOf a
+Subgroup.relIndex_mul_card.{u_1} {G : Type u_1} [Group G] (H K : Subgroup G) :
+  H.relIndex K * Nat.card ↥(H ⊓ K) = Nat.card ↥K
+DoubleCoset.eq.{u_1} {G : Type u_1} [Group G] {H K : Subgroup G} {a b : G} :
+  DoubleCoset.mk H K a = DoubleCoset.mk H K b ↔ ∃ h ∈ H, ∃ k ∈ K, b = h * a * k
+Fintype.sum_equiv.{u_1, u_2, u_3} {ι : Type u_1} {κ : Type u_2} {M : Type u_3} [Fintype ι] [Fintype κ] [AddCommMonoid M]
+  (e : ι ≃ κ) (f : ι → M) (g : κ → M) (h : ∀ (x : ι), f x = g (e x)) : ∑ x, f x = ∑ x, g x
+MackeyDiagrams.Biset.Hom.ext.{u, v} {R : Type v} [CommSemiring R] {K H : Type u} [Group K] [Group H]
+  {X Y : MackeyDiagrams.Biset K H} {f g : MackeyDiagrams.Biset.Hom R X Y} (h : f.toLinearMap = g.toLinearMap) : f = g
+MackeyCrossingProof.compact_inclusion.{u} {U : Type u} [Group U] {K H G L : Subgroup U}
+  (a : MackeyDiagrams.ConjEmbedding K G) (b : MackeyDiagrams.ConjEmbedding H G) (l : MackeyDiagrams.ConjEmbedding L K)
+  (r : MackeyDiagrams.ConjEmbedding L H) (d : MackeyDiagrams.Dot (a.comp l) (b.comp r)) :
+  (MackeyDiagrams.LabelledDrawing.mixedMultiplication a b l r [(1, d)]).interpret.eval =
+    (MackeyDiagrams.Diagram.mixedMultiplication a b l r d).eval
+MackeyCrossingProof.compact_projection.{u} {U : Type u} [Group U] {K H G L : Subgroup U}
+  (a : MackeyDiagrams.ConjEmbedding K G) (b : MackeyDiagrams.ConjEmbedding H G) (l : MackeyDiagrams.ConjEmbedding L K)
+  (r : MackeyDiagrams.ConjEmbedding L H) (d : MackeyDiagrams.Dot (a.comp l) (b.comp r))
+  (hf :
+    ∀ (z : ((MackeyDiagrams.Biset.restriction a).tensor (MackeyDiagrams.Biset.induction b)).carrier),
+      {w | MackeyDiagrams.Generator.mixedMultiplicationBasis a b l r d w = z}.Finite) :
+  (MackeyDiagrams.LabelledDrawing.compactProjection a b l r [(1, { dot := d, finite := hf })]).interpret.eval =
+    (MackeyDiagrams.Diagram.mixedProjection a b l r d hf).eval
+MackeyDiagrams.IndexedDrawing.eval_apply.{u, v, w} {U : Type u} [Group U] {K H : Subgroup U} {R : Type v}
+  [CommSemiring R] {p q : MackeyDiagrams.Word K H} {ι : Type w} (d : MackeyDiagrams.IndexedDrawing R p q ι)
+  (x : p.basis.carrier →₀ R) : d.eval x = ∑ i ∈ d.indices, (d.summand i).interpret.eval.toLinearMap x
+MackeyDiagrams.PointwiseIndexedDrawing.evalAt_def.{u, v, w} {U : Type u} [Group U] {K H : Subgroup U} {R : Type v}
+  [CommSemiring R] {p q : MackeyDiagrams.Word K H} {ι : Type w} (d : MackeyDiagrams.PointwiseIndexedDrawing R p q ι)
+  (x : p.basis.carrier →₀ R) : d.evalAt x = ∑ i ∈ ⋯.toFinset, (d.summand i).interpret.eval.toLinearMap x

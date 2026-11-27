@@ -1,0 +1,15 @@
+import MackeyDiagrams.MackeyInclusionExpansion
+import MackeyDiagrams
+import Proofs.SurvivingCosetRepresentative
+
+#check MackeyDiagrams.Diagram.eval_expandedMackeyInclusion
+#check MackeyDiagrams.Generator.injective_mixedMultiplicationBasis
+#check MackeyDiagrams.Generator.mixedRange_eq_doubleCoset
+#check MackeyDiagrams.Generator.finiteFiber_of_injective
+#check MackeyDiagrams.LabelledDrawing.eval_expandProjection
+#check DoubleCoset.eq
+#print axioms MackeyDiagrams.Diagram.eval_expandedMackeyInclusion
+#print axioms MackeyDiagrams.LabelledDrawing.eval_expandProjection
+
+#check SurvivingCosetRepresentative
+#check MackeyDiagrams.RightCupTrace.eval_eq_reverseCup

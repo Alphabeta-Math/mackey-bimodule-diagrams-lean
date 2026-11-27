@@ -1,0 +1,2 @@
+import Proofs.ParabolicFullMackeyCancellation
+#print axioms ParabolicFullMackeyCancellation

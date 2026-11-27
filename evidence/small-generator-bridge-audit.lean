@@ -1,0 +1,3 @@
+import WattsFoundation.SmallGeneratorBridge
+#print axioms SmallGeneratorBridge.smallOfPreserves
+#print axioms SmallGeneratorBridge.equivalenceOfSmallProjectiveGenerator

@@ -1,0 +1,2 @@
+import Proofs.CommonMackeyIntersectionSum
+#print axioms CommonMackeyIntersectionSum

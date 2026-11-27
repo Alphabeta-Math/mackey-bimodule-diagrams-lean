@@ -1,0 +1,2 @@
+import Proofs.MackeySummandProjection
+#print axioms MackeySummandProjection

@@ -1,0 +1,15 @@
+{
+  "accepted": false,
+  "request": {
+    "endpoint": "6fbce64aed1b23d252dc6600215448e26093140345a6dafb64e3289fa97532c0",
+    "decision": {
+      "id": "ParallelReidemeisterTwoInduction",
+      "reason": "Exact reviewed parallel Reidemeister II for induction. Compose the two ordinary or finite linear labels, remove a unit product dot, and use equal boundary words for the identity specialization.",
+      "mathlibImports": [
+        "Mathlib.Basic.Complex.Basic"
+      ],
+      "proof": "by\n  intro U inst G K H B H' α β γ δ α' β' hα hβ hγ hδ hα' hβ'\n    a b c d a' b' bottom middle top bottomWord middleWord topWord\n    bottomMerge middleMerge middleSplit topSplit lowerCrossing upperCrossing mergeDotSplit unitCancellation\n  have cancelUnit (node : MackeyDiagrams.Diagram Complex\n        (MackeyDiagrams.Word.up bottom) (MackeyDiagrams.Word.up top))\n      (same : bottom = top)\n      (he : node.eval = (MackeyDiagrams.Diagram.transportUpId same).eval) :\n      unitCancellation node := by\n    refine ⟨same, ?_, ?_⟩\n    · change (bottomMerge.eval.vertical node.eval).vertical topSplit.eval =\n        (bottomMerge.eval.vertical (MackeyDiagrams.Diagram.transportUpId same).eval).vertical topSplit.eval\n      rw [he]\n    · intro boundary\n      exact MackeyDiagrams.Diagram.eval_unitCrossing_sameBoundary a b a' b' same boundary\n  have hc : middleSplit.eval.vertical middleMerge.eval =\n      MackeyDiagrams.Biset.Hom.id (MackeyDiagrams.Word.up middle).basis :=\n    MackeyDiagrams.Diagram.splitUp_mergeUp c d\n  refine ⟨?_, ?_, ?_⟩\n  · intro x y productDot twoCrossings\n    refine ⟨MackeyDiagrams.Diagram.parallelUp_comp a b c d a' b' x y, ?_⟩\n    intro h\n    obtain ⟨same, he⟩ := MackeyDiagrams.Diagram.eval_upDot_unit (R := Complex) (x.vertical y) h\n    exact cancelUnit productDot same he\n  · intro x y product productDot twoCrossings\n    constructor\n    · have he : (MackeyDiagrams.Diagram.linearUpDot x).eval.vertical\n          (MackeyDiagrams.Diagram.linearUpDot y).eval = productDot.eval :=\n        MackeyDiagrams.Diagram.linearUpDot_vertical x y\n      exact MackeyDiagrams.Biset.Hom.merge_dot_split_comp\n        bottomMerge.eval (MackeyDiagrams.Diagram.linearUpDot x).eval\n        middleSplit.eval middleMerge.eval (MackeyDiagrams.Diagram.linearUpDot y).eval\n        topSplit.eval productDot.eval hc he\n    · intro h\n      obtain ⟨same, he⟩ := MackeyDiagrams.Diagram.eval_linearUpDot_unit product h\n      exact cancelUnit productDot same he\n  · intro x\n    refine ⟨x.inverse, rfl, MackeyDiagrams.Diagram.parallelUp_return a b c d x, ?_⟩\n    have hx : x.inverse.inverse = x := MackeyDiagrams.Dot.ext (inv_inv x.element)\n    have hh := MackeyDiagrams.Diagram.parallelUp_return (R := Complex) c d a b x.inverse\n    rw [hx] at hh\n    exact hh"
+    }
+  },
+  "reason": "Error: The approved endpoint or its dependencies changed after submission"
+}

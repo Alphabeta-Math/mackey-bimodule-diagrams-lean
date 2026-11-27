@@ -1,0 +1,7 @@
+{
+  "id": "SmallProjectiveGeneratorCorrespondence",
+  "remove": "ProjectiveGeneratorModuleReconstruction",
+  "receipt": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/checked-connections/SmallProjectiveGeneratorCorrespondence-c4ebd489805e9ea174d8622bfe4f1414/receipt.json",
+  "addImport": "WattsFoundation.ReviewedSmallGeneratorConnection",
+  "reason": "The exact reviewed article theorem has a checked classical proof using a different reconstruction route; this source closure does not use the separately held choice-free auxiliary, which remains unproved."
+}

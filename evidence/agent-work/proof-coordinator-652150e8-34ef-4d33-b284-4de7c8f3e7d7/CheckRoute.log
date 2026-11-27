@@ -1,0 +1,59 @@
+MackeyDiagrams.PlanarCode.Equivalent.exchange (before after : MackeyDiagrams.PlanarCode.Code) (i gap : ℕ)
+  (left right : MackeyDiagrams.PlanarEvent) :
+  MackeyDiagrams.PlanarCode.Equivalent
+    (before ++
+        [MackeyDiagrams.PlanarEvent.place i left,
+          MackeyDiagrams.PlanarEvent.place (i + left.outputs.length + gap) right] ++
+      after)
+    (before ++
+        [MackeyDiagrams.PlanarEvent.place (i + left.inputs.length + gap) right,
+          MackeyDiagrams.PlanarEvent.place i left] ++
+      after)
+MackeyDiagrams.PlanarCode.Equivalent.context (before after : MackeyDiagrams.PlanarCode.Code)
+  {a b : MackeyDiagrams.PlanarCode.Code} :
+  MackeyDiagrams.PlanarCode.Equivalent a b →
+    MackeyDiagrams.PlanarCode.Equivalent (before ++ a ++ after) (before ++ b ++ after)
+MackeyDiagrams.PlanarCode.length_eq {a b : MackeyDiagrams.PlanarCode.Code}
+  (h : MackeyDiagrams.PlanarCode.Equivalent a b) : List.length a = List.length b
+Quotient.exact.{u} {α : Sort u} {s : Setoid α} {a b : α} : ⟦a⟧ = ⟦b⟧ → a ≈ b
+MackeyDiagrams.LabelledDrawing.PlanarAtBoundary.{u, v} {U : Type u} [Group U] {K H : Subgroup U} (R : Type v)
+  [CommSemiring R] (p q : MackeyDiagrams.Boundary K H) (s : MackeyDiagrams.PlanarShape) : Type (max u v)
+MackeyDiagrams.LabelledDrawing.PlanarAtBoundary.interpret.{u, v} {U : Type u} [Group U] {K H : Subgroup U} {R : Type v}
+  [CommSemiring R] {p q : MackeyDiagrams.Boundary K H} {s : MackeyDiagrams.PlanarShape}
+  (label : MackeyDiagrams.LabelledDrawing.PlanarAtBoundary R p q s) : MackeyDiagrams.ScopedDiagram R p.word q.word
+MackeyDiagrams.Word.eval_reorderToFrom.{u, v} {U : Type u} [Group U] {K H : Subgroup U} {R : Type v} [CommSemiring R]
+  (p : MackeyDiagrams.Word K H) :
+  (p.reorderToBoundary.vertical p.reorderFromBoundary).eval = (MackeyDiagrams.Diagram.id p).eval
+MackeyDiagrams.Word.eval_reorderFromTo.{u, v} {U : Type u} [Group U] {K H : Subgroup U} {R : Type v} [CommSemiring R]
+  (p : MackeyDiagrams.Word K H) :
+  (p.reorderFromBoundary.vertical p.reorderToBoundary).eval = (MackeyDiagrams.Diagram.id p.boundary.word).eval
+MackeyDiagrams.Biset.Hom.transferBasis_sum.{u, v} {K H : Type u} [Group K] [Group H] {X Y : MackeyDiagrams.Biset K H}
+  (R : Type v) [CommSemiring R] (f : X.carrier → Y.carrier) (finite : ∀ (y : Y.carrier), {x | f x = y}.Finite)
+  (y : Y.carrier) : MackeyDiagrams.Biset.Hom.transferBasis R f finite y = ∑ x ∈ ⋯.toFinset, Finsupp.single x 1
+MackeyDiagrams.Biset.associateBasisEquiv.{u} {K H J F : Type u} [Group K] [Group H] [Group J] [Group F]
+  (X : MackeyDiagrams.Biset K H) (Y : MackeyDiagrams.Biset H J) (Z : MackeyDiagrams.Biset J F) :
+  ((X.tensor Y).tensor Z).carrier ≃ (X.tensor (Y.tensor Z)).carrier
+MackeyDiagrams.Generator.mixedEquiv.{u} {U : Type u} [Group U] {H K G : Subgroup U}
+  (a : MackeyDiagrams.ConjEmbedding K G) (b : MackeyDiagrams.ConjEmbedding H G) :
+  ((MackeyDiagrams.Biset.restriction a).tensor (MackeyDiagrams.Biset.induction b)).carrier ≃ ↥G
+MackeyDiagrams.ScopedDiagram.eval_linearCombination_apply.{u, v} {U : Type u} [Group U] {R : Type v} [CommSemiring R]
+  {K H : Subgroup U} {p q : MackeyDiagrams.Word K H} (terms : List (R × MackeyDiagrams.ScopedDiagram R p q))
+  (x : p.basis.carrier →₀ R) :
+  (MackeyDiagrams.ScopedDiagram.linearCombination terms).eval.toLinearMap x =
+    (List.map (fun term => term.1 • term.2.eval.toLinearMap x) terms).sum
+MackeyDiagrams.PointwiseIndexedDrawing.evalAt_def.{u, v, w} {U : Type u} [Group U] {K H : Subgroup U} {R : Type v}
+  [CommSemiring R] {p q : MackeyDiagrams.Word K H} {ι : Type w} (d : MackeyDiagrams.PointwiseIndexedDrawing R p q ι)
+  (x : p.basis.carrier →₀ R) : d.evalAt x = ∑ i ∈ ⋯.toFinset, (d.summand i).interpret.eval.toLinearMap x
+MackeyDiagrams.PointwiseIndexedDrawing.eval_apply.{u, v, w} {U : Type u} [Group U] {K H : Subgroup U} {R : Type v}
+  [CommSemiring R] {p q : MackeyDiagrams.Word K H} {ι : Type w} (d : MackeyDiagrams.PointwiseIndexedDrawing R p q ι)
+  (x : p.basis.carrier →₀ R) : d.eval x = d.evalAt x
+'MackeyDiagrams.PointwiseIndexedDrawing.eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EvaluationWithOneProjection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExpansionIntoRightDiagrams' depends on axioms: [propext, Classical.choice, Quot.sound]
+Finsupp.induction_linear.{u_1, u_3} {ι : Type u_1} {M : Type u_3} [AddZeroClass M] {motive : (ι →₀ M) → Prop}
+  (f : ι →₀ M) (zero : motive 0) (add : ∀ (f g : ι →₀ M), motive f → motive g → motive (f + g))
+  (single : ∀ (a : ι) (b : M), motive (Finsupp.single a b)) : motive f
+Subgroup.index_top.{u_1} {G : Type u_1} [Group G] : ⊤.index = 1
+[MackeyDiagrams.PlanarEvent.vertex 1 (MackeyDiagrams.VertexKind.mixedProjection),
+ MackeyDiagrams.PlanarEvent.vertex 0 (MackeyDiagrams.VertexKind.parallelUp),
+ MackeyDiagrams.PlanarEvent.vertex 1 (MackeyDiagrams.VertexKind.mixedMultiplication)]

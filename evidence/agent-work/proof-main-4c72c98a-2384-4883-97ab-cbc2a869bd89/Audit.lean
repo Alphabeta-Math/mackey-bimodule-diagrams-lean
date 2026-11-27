@@ -1,0 +1,2 @@
+import ParabolicRightDiagramSpanOverCommutativeRings
+#print axioms ParabolicRightDiagramSpanOverCommutativeRings

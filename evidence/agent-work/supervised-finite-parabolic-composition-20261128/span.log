@@ -1,0 +1,59 @@
+SpanWork.lean:492:23: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+SpanWork.lean:500:23: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+SpanWork.lean:492:23: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+SpanWork.lean:500:23: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+SpanWork.lean:509:4: error: Tactic `apply` failed: could not unify the conclusion of `@Subtype.ext`
+  ?a1 = ?a2
+with the goal
+  ↑((embed ↑↑(composeSpan hH S T r).snd.1 ⋯).toHom x) x✝ = ↑((outerLeft S T r).toHom x) x✝
+
+Note: The full type of `@Subtype.ext` is
+  ∀ {α : Sort ?u.34} {p : α → Prop} {a1 a2 : { x // p x }}, ↑a1 = ↑a2 → a1 = a2
+
+K H J : Subgroup P
+hH : Parabolic H
+S : Span K H
+T : Span H J
+r : ↥H
+x : ↥↑(composeSpan hH S T r).fst
+x✝ : ℕ
+⊢ ↑((embed ↑↑(composeSpan hH S T r).snd.1 ⋯).toHom x) x✝ = ↑((outerLeft S T r).toHom x) x✝
+SpanWork.lean:519:4: error: Tactic `apply` failed: could not unify the conclusion of `@Subtype.ext`
+  ?a1 = ?a2
+with the goal
+  ↑((embed ↑↑(composeSpan hH S T r).snd.2 ⋯).toHom x) x✝ = ↑((outerRight S T r).toHom x) x✝
+
+Note: The full type of `@Subtype.ext` is
+  ∀ {α : Sort ?u.53} {p : α → Prop} {a1 a2 : { x // p x }}, ↑a1 = ↑a2 → a1 = a2
+
+K H J : Subgroup P
+hH : Parabolic H
+S : Span K H
+T : Span H J
+r : ↥H
+hl : embed ↑↑(composeSpan hH S T r).snd.1 ⋯ = outerLeft S T r
+x : ↥↑(composeSpan hH S T r).fst
+x✝ : ℕ
+⊢ ↑((embed ↑↑(composeSpan hH S T r).snd.2 ⋯).toHom x) x✝ = ↑((outerRight S T r).toHom x) x✝
+SpanWork.lean:541:4: error: Tactic `apply` failed: could not unify the conclusion of `@Subtype.ext`
+  ?a1 = ?a2
+with the goal
+  ↑((embed 1 h).toHom x) x✝ = ↑((MackeyDiagrams.ConjEmbedding.id H).toHom x) x✝
+
+Note: The full type of `@Subtype.ext` is
+  ∀ {α : Sort ?u.21} {p : α → Prop} {a1 a2 : { x // p x }}, ↑a1 = ↑a2 → a1 = a2
+
+H : Subgroup P
+hH : Parabolic H
+h : conjugate 1 H ≤ H
+x : ↥H
+x✝ : ℕ
+⊢ ↑((embed 1 h).toHom x) x✝ = ↑((MackeyDiagrams.ConjEmbedding.id H).toHom x) x✝

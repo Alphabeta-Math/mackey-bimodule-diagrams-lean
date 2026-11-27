@@ -1,0 +1,22 @@
+[
+  "Bimodule",
+  "SmallProjectiveGenerator",
+  "RegularModuleRightAction",
+  "ModuleTensorUniversalProperty",
+  "BalancedTensorAssociativity",
+  "BimoduleTensorBicategoryCoherence",
+  "EilenbergWatts",
+  "SmallProjectiveGeneratorCorrespondence",
+  "InductionRestrictionBimoduleStrands",
+  "GroupElementDotCriterion",
+  "InductionRestrictionMergesAndSplits",
+  "DiagrammaticFunctorCorrespondence",
+  "MackeyIdentityDiagram",
+  "GeneralizedMackeyDecomposition",
+  "InductionBimoduleOrbitSumBasis",
+  "TrivalentBendIdentities",
+  "ParallelReidemeisterTwoInduction",
+  "ThreeInductionReidemeisterThree",
+  "MixedCrossingFiniteFiberConvention",
+  "FiniteParabolicBimoduleBicategory"
+]

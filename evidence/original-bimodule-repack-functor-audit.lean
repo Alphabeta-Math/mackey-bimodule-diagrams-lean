@@ -1,0 +1,5 @@
+import WattsFoundation.General.OriginalBimoduleRepackFunctor
+#print axioms WattsFoundation.General.repackedFunctorIso
+#print axioms WattsFoundation.General.repackedFunctor_forget
+#print axioms WattsFoundation.General.repackedEquivalence_forget
+#print axioms WattsFoundation.General.repackedEquivalence_right

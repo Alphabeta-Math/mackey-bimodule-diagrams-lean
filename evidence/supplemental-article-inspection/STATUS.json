@@ -1,0 +1,6 @@
+{
+  "status": "Supplemental unfinished inspection, not an accepted coordinator verdict",
+  "reason": "Final verification must resume original Step 4 coordinator session; separate scoped review session interrupted.",
+  "originalCoordinatorSession": "01a21c16-9078-7320-bfcf-7b222f2818f8",
+  "interruptedSession": "01a21ee4-052a-7852-a354-9d099a2e5730"
+}

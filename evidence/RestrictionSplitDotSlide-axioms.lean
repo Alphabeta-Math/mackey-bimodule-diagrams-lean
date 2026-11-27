@@ -1,0 +1,2 @@
+import Proofs.RestrictionSplitDotSlide
+#print axioms RestrictionSplitDotSlide

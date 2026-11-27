@@ -1,0 +1,95 @@
+{
+  "WattsFreePresentation": {
+    "status": "locally compiled and axiom-audited; special case plus general coproduct lemma",
+    "localIntegration": "Import MackeyDiagrams.External.StacksEilenbergWatts from the current project build. The upstream file was compiled unchanged apart from an attribution comment against the project Lean and mathlib; source and compiled artifact hashes are recorded in evidence/verified-stacks-eilenberg-watts/receipt.json. Stacks.EilenbergWatts.iso assumes one commutative ring and a linear endofunctor: it is not the arbitrary two-ring Eilenberg\u2013Watts theorem. The cofan lemma applies to arbitrary categories only with the stated IsColimit and IsIso hypotheses. Both depend on Classical.choice, so neither establishes a choice-free proof by its axiom audit. No original endpoint is closed without a checked adapter.",
+    "sources": [
+      {
+        "lean": "leanprover/lean4:v4.36.0-rc2",
+        "revision": "f56a316ddf7a930906d88b78d6f9a2668cffd0cf",
+        "verificationUrl": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/verified-stacks-eilenberg-watts/audit.log",
+        "declaration": "Stacks.EilenbergWatts.iso",
+        "sourceUrl": "https://github.com/AxiomMath/Stacks/blob/f56a316ddf7a930906d88b78d6f9a2668cffd0cf/StacksFrontier/AlgebraicGeometry/TopDegreeBaseChange/EilenbergWatts.lean#L429"
+      },
+      {
+        "lean": "leanprover/lean4:v4.36.0-rc2",
+        "revision": "f56a316ddf7a930906d88b78d6f9a2668cffd0cf",
+        "verificationUrl": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/verified-stacks-eilenberg-watts/audit.log",
+        "declaration": "CategoryTheory.NatTrans.isIso_app_of_isColimit_cofan",
+        "sourceUrl": "https://github.com/AxiomMath/Stacks/blob/f56a316ddf7a930906d88b78d6f9a2668cffd0cf/StacksFrontier/AlgebraicGeometry/TopDegreeBaseChange/EilenbergWatts.lean#L84"
+      }
+    ]
+  },
+  "EilenbergWatts": {
+    "status": "the original exact reviewed Eilenberg\u2013Watts endpoint is registered, compiled and axiom-audited; the Stacks source below is a narrower separately checked supplier",
+    "localIntegration": "Import MackeyDiagrams.External.StacksEilenbergWatts from the current project build. The upstream file was compiled unchanged apart from an attribution comment against the project Lean and mathlib; source and compiled artifact hashes are recorded in evidence/verified-stacks-eilenberg-watts/receipt.json. Stacks.EilenbergWatts.iso assumes one commutative ring and a linear endofunctor: it is not the arbitrary two-ring Eilenberg\u2013Watts theorem. The cofan lemma applies to arbitrary categories only with the stated IsColimit and IsIso hypotheses. Both depend on Classical.choice, so neither establishes a choice-free proof by its axiom audit. No original endpoint is closed without a checked adapter. The exact original Eilenberg\u2013Watts endpoint was subsequently proved using WattsFoundation.ReviewedOriginalWattsConnection; see evidence/EilenbergWatts-compile.json and evidence/checked-connections/EilenbergWatts-2a72adc1088d4a166c37cf51398d71eb/receipt.json. The separate choice-free auxiliary remains open.",
+    "sources": [
+      {
+        "lean": "leanprover/lean4:v4.36.0-rc2",
+        "revision": "f56a316ddf7a930906d88b78d6f9a2668cffd0cf",
+        "verificationUrl": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/verified-stacks-eilenberg-watts/audit.log",
+        "declaration": "Stacks.EilenbergWatts.iso",
+        "sourceUrl": "https://github.com/AxiomMath/Stacks/blob/f56a316ddf7a930906d88b78d6f9a2668cffd0cf/StacksFrontier/AlgebraicGeometry/TopDegreeBaseChange/EilenbergWatts.lean#L429"
+      },
+      {
+        "lean": "leanprover/lean4:v4.36.0-rc2",
+        "revision": "f56a316ddf7a930906d88b78d6f9a2668cffd0cf",
+        "verificationUrl": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/verified-stacks-eilenberg-watts/audit.log",
+        "declaration": "CategoryTheory.NatTrans.isIso_app_of_isColimit_cofan",
+        "sourceUrl": "https://github.com/AxiomMath/Stacks/blob/f56a316ddf7a930906d88b78d6f9a2668cffd0cf/StacksFrontier/AlgebraicGeometry/TopDegreeBaseChange/EilenbergWatts.lean#L84"
+      }
+    ]
+  },
+  "SmallProjectiveGeneratorCorrespondence": {
+    "status": "the exact reviewed article correspondence is registered, compiled and axiom-audited using ordinary choice",
+    "localIntegration": "The exact reviewed article statement is proved by WattsFoundation.ReviewedSmallGeneratorConnection and registered as Proofs.SmallProjectiveGeneratorCorrespondence. Its native build and axiom audit are in evidence/SmallProjectiveGeneratorCorrespondence-compile.json, and the separately checked exact connection is in /home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/checked-connections/SmallProjectiveGeneratorCorrespondence-c4ebd489805e9ea174d8622bfe4f1414/receipt.json. The locally built reconstruction, evaluation transport, naturality, bimodule-action and strict repacking helpers are documented with source and artifact hashes in evidence/small-generator-correspondence-foundations.json. This classical proof does not discharge the separately stated choice-free ProjectiveGeneratorModuleReconstruction auxiliary.",
+    "sources": [
+      {
+        "declaration": "ReconstructionFromSmallProjectiveGenerator",
+        "lean": "leanprover/lean4:v4.36.0-rc2",
+        "revision": "working-tree; source-sha256:723c4d0bc2439af62dc2d41a43fb6154637272f0659d2b63e4d031cc8732dc0e",
+        "sourceUrl": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/ReconstructionFromSmallProjectiveGenerator.lean",
+        "verificationUrl": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/reconstruction-local-audit.log"
+      },
+      {
+        "declaration": "SmallGeneratorBridge.equivalenceOfSmallProjectiveGenerator",
+        "lean": "leanprover/lean4:v4.36.0-rc2",
+        "revision": "working-tree; source-sha256:ce62ef1dc565de2ec54b78ef2fb0c36b4c4623af44d80061d1f7a505be97f1a7",
+        "sourceUrl": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/SmallGeneratorBridge.lean",
+        "verificationUrl": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/small-generator-bridge-audit.log",
+        "oleanSha256": "9cdb1a5c45b26abdc12ce83739a98633bd0485e6afa8718bca4295b4147f8bda"
+      },
+      {
+        "declaration": "SmallGeneratorBridge.regularToHom_right",
+        "lean": "leanprover/lean4:v4.36.0-rc2",
+        "revision": "working-tree; source-sha256:5fe35abb01bd6f42753996f979e14e5a459234a7daa762b5873272146566de19",
+        "sourceUrl": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/GeneratorRegularActions.lean",
+        "verificationUrl": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/generator-regular-actions-audit.log",
+        "oleanSha256": "fc9d9466f39218b0cc6547bef5f6063f7808982aa268e39b6d53c12987b3525e"
+      },
+      {
+        "declaration": "SmallGeneratorBridge.evaluationTransportIso_natural",
+        "lean": "leanprover/lean4:v4.36.0-rc2",
+        "revision": "working-tree; source-sha256:8e295b20dc09479e6ea2342f06eb317f31d674ef1161fe6db071d3f9a67f5dd3",
+        "sourceUrl": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/GeneratorTransportNaturality.lean",
+        "verificationUrl": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/generator-transport-naturality-audit.log",
+        "oleanSha256": "24652b072c750ca7adb7caae386b4de2a052b51d99f02cbd9a45b86de60bbaba"
+      },
+      {
+        "declaration": "SmallGeneratorBridge.evaluationTransportIso_intertwines",
+        "lean": "leanprover/lean4:v4.36.0-rc2",
+        "revision": "working-tree; source-sha256:c7d693f9d62e37cc7ec9d93f806af2d1cd92592fd10547f1bd5fa9e8ee6a92a7",
+        "sourceUrl": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/GeneratorTransportAction.lean",
+        "verificationUrl": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/generator-transport-action-audit.log",
+        "oleanSha256": "e2aeb3bf2b00e2e2449236f79273fbe2b1e73858fc7bcfe78e78d05d5d36a368"
+      },
+      {
+        "declaration": "ReviewedSmallGeneratorConnection",
+        "lean": "leanprover/lean4:v4.36.0-rc2",
+        "revision": "working-tree; source-sha256:b277f555a257e38fb7ac15ea575c0c9ba3d42312cfa0797e3244cfae59bb4d23",
+        "sourceUrl": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/ReviewedSmallGeneratorConnection.lean",
+        "verificationUrl": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/checked-connections/SmallProjectiveGeneratorCorrespondence-c4ebd489805e9ea174d8622bfe4f1414/receipt.json",
+        "oleanSha256": "d596c901d5445120b241680d7007db8b458a1096aece39c0d49fd848830bd0fc"
+      }
+    ]
+  }
+}

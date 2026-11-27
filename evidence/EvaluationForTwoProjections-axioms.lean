@@ -1,0 +1,2 @@
+import Proofs.EvaluationForTwoProjections
+#print axioms EvaluationForTwoProjections

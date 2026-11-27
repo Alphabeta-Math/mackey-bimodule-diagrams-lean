@@ -1,0 +1,166 @@
+{
+  "routes": [
+    {
+      "id": "SmallProjectiveGeneratorCorrespondence",
+      "deps": [
+        "EilenbergWatts",
+        "SmallProjectiveGenerator",
+        "ProjectiveGeneratorModuleReconstruction"
+      ],
+      "available": [
+        {
+          "module": "WattsFoundation.SmallGeneratorBridge",
+          "declaration": "SmallGeneratorBridge.equivalenceOfSmallProjectiveGenerator",
+          "revision": "sha256:ce62ef1dc565de2ec54b78ef2fb0c36b4c4623af44d80061d1f7a505be97f1a7",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/SmallGeneratorBridge.lean#L68",
+          "use": "From an abelian category with Type v coproducts, Projective P, IsSeparator P and the exact AddCommGrp-valued Hom preservation premise, gives IsEquivalence of preadditiveCoyonedaObj P. Apply independently at (A,P) and (E,Q). Its local Lean v4.36.0-rc2 audit reports propext, Classical.choice, and Quot.sound."
+        },
+        {
+          "module": "WattsFoundation.ReconstructionFromSmallProjectiveGenerator",
+          "declaration": "ReconstructionFromSmallProjectiveGenerator",
+          "revision": "sha256:723c4d0bc2439af62dc2d41a43fb6154637272f0659d2b63e4d031cc8732dc0e",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/ReconstructionFromSmallProjectiveGenerator.lean#L12",
+          "use": "Transitive supplier used by SmallGeneratorBridge.equivalenceOfSmallProjectiveGenerator. It takes bijectivity of the explicit direct-sum comparison and returns a quasi-inverse and the two natural isomorphisms for preadditiveCoyonedaObj. The bridge supplies the bijectivity premise. The reconstruction audit reports propext, Classical.choice, and Quot.sound."
+        },
+        {
+          "module": "Proofs.EilenbergWatts",
+          "declaration": "EilenbergWatts",
+          "revision": "sha256:f0e19bdb192ca7aeb94cec07b5d7b0b30c7f344776812852d5ad679b57e823f2",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/EilenbergWatts.lean#L12",
+          "use": "Registered article theorem over arbitrary unital rings and the reviewed common module-carrier universe. Its chosen equivalence supplies balanced pure tensors and the two map formulas, plus the inverse evaluation equality and right action formula."
+        },
+        {
+          "module": "WattsFoundation.GeneratorRegularIntertwining",
+          "declaration": "SmallGeneratorBridge.regularRight",
+          "revision": "sha256:7a894929250b36bba77c08ae915a9cb4b4ddfc5105b7757a6adf5a42eaccc229",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/GeneratorRegularIntertwining.lean#L6",
+          "use": "The conjugation of LinearMap.mulRight by ULift.moduleEquiv on R = (End P)ᵐᵒᵖ. It uses ULift.{0} and has the same definition as the reviewed EilenbergWatts rho at ring universe v and lift universe 0."
+        },
+        {
+          "module": "WattsFoundation.GeneratorTransport",
+          "declaration": "SmallGeneratorBridge.evaluationTransportIso",
+          "revision": "sha256:9968ad0229fa1ef78e9ec34cded3ae3a758f406345db86b60d1d3c4e3f411f14",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/GeneratorTransport.lean#L14",
+          "use": "Given IsEquivalence of preadditiveCoyonedaObj P, identifies the S-modules HQ.obj (F.obj (HP.asEquivalence.inverse.obj regular)) and HQ.obj (F.obj P). The iso maps the preimage comparison through F and HQ. Its audit reports propext, Classical.choice, and Quot.sound."
+        },
+        {
+          "module": "WattsFoundation.GeneratorTransportNaturality",
+          "declaration": "SmallGeneratorBridge.evaluationTransportIso_natural",
+          "revision": "sha256:8e295b20dc09479e6ea2342f06eb317f31d674ef1161fe6db071d3f9a67f5dd3",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/GeneratorTransportNaturality.lean#L6",
+          "use": "For any η : F ⟶ G and the same installed HP equivalence, the square with HQ applied to η at the preimage of the regular module and at P commutes. Supplies naturality in the original functor category. The audit reports propext, Classical.choice, and Quot.sound."
+        },
+        {
+          "module": "WattsFoundation.GeneratorTransportAction",
+          "declaration": "SmallGeneratorBridge.evaluationTransportIso_intertwines",
+          "revision": "sha256:c7d693f9d62e37cc7ec9d93f806af2d1cd92592fd10547f1bd5fa9e8ee6a92a7",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/WattsFoundation/GeneratorTransportAction.lean#L7",
+          "use": "For a scalar r : (End P)ᵐᵒᵖ, intertwines the image under HP.inverse, F and HQ of regularRight P r with HQ.map (F.map (End.asHom (unop r))). With the Eilenberg–Watts right-action clause this gives the postcomposition action. The audit reports propext, Classical.choice, and Quot.sound."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Yoneda.Basic",
+          "declaration": "CategoryTheory.preadditiveCoyonedaObj",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Yoneda/Basic.lean#L69",
+          "use": "The reviewed module-valued Hom functor over the opposite endomorphism ring. Its module action is precomposition, and its map on category morphisms is postcomposition."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Equivalence",
+          "declaration": "CategoryTheory.Functor.asEquivalence",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Equivalence.lean#L627",
+          "use": "Packages the exact Hom functor as an equivalence once the bridge supplies its IsEquivalence instance."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Equivalence",
+          "declaration": "CategoryTheory.Equivalence.congrLeft",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Equivalence.lean#L404",
+          "use": "Transports functor categories by precomposition with the inverse of the supplied source equivalence."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Equivalence",
+          "declaration": "CategoryTheory.Equivalence.congrRight",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Equivalence.lean#L418",
+          "use": "Transports functor categories by postcomposition with the supplied target equivalence."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Adjunction.Limits",
+          "declaration": "CategoryTheory.Adjunction.isEquivalence_preservesColimits",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Adjunction/Limits.lean#L101",
+          "use": "Equivalence functors preserve colimits at the needed discrete and finite shapes. Apply to both directions of the module-category equivalences."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.AdditiveFunctor",
+          "declaration": "CategoryTheory.preservesFiniteColimits_le_additiveFunctor",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/AdditiveFunctor.lean#L323",
+          "use": "A finite-colimit-preserving functor between the supplied preadditive categories with zero objects and source binary biproducts is additive."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.ObjectProperty.FullSubcategory",
+          "declaration": "CategoryTheory.ObjectProperty.lift",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/ObjectProperty/FullSubcategory.lean#L158",
+          "use": "Lifts either whiskering functor to the reviewed Good full subcategory once composition has been shown to preserve the three Good fields."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.ObjectProperty.FullSubcategory",
+          "declaration": "CategoryTheory.ObjectProperty.isoMk",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/ObjectProperty/FullSubcategory.lean#L101",
+          "use": "Lifts the ambient unit and counit isomorphisms between objects already known to satisfy Good."
+        },
+        {
+          "module": "Mathlib.Algebra.Category.ModuleCat.Basic",
+          "declaration": "CategoryTheory.Iso.toLinearEquiv",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/Basic.lean#L283",
+          "use": "Extracts the left S-linear equivalence from the module comparison isomorphism. Use its inverse additive equivalence to pull the right action onto the desired carrier."
+        },
+        {
+          "module": "Mathlib.Algebra.Module.TransferInstance",
+          "declaration": "AddEquiv.module",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Module/TransferInstance.lean#L52",
+          "use": "Pulls a module structure back along an additive equivalence α ≃+ β with the existing additive structures on α and β. Use for the (MulOpposite R)-module while retaining the desired left S-module."
+        },
+        {
+          "module": "Mathlib.Algebra.Module.TransferInstance",
+          "declaration": "AddEquiv.linearEquiv",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Module/TransferInstance.lean#L60",
+          "use": "The same additive equivalence is linear for the pulled-back action. This verifies right linearity of the two comparison maps."
+        },
+        {
+          "module": "Mathlib.Algebra.Category.ModuleCat.Basic",
+          "declaration": "ModuleCat.ofHom_hom",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/Basic.lean#L173",
+          "use": "Identifies re-bundling a module morphism from its underlying linear map with the original morphism. Use when comparing the strict forgotten functor map with HQ.map (θ.app P)."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Equivalence",
+          "declaration": "CategoryTheory.Equivalence.changeFunctor",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Equivalence.lean#L561",
+          "use": "Replaces the forward functor of an equivalence along an explicit natural isomorphism, allowing the chosen forward functor to have the exact evaluation object and map required by the endpoint."
+        }
+      ],
+      "approach": "Import WattsFoundation.GeneratorTransportNaturality, WattsFoundation.GeneratorTransportAction, and Proofs.EilenbergWatts in the consumer workspace. The checked transport lemmas now supply the regular comparison, naturality, and action square. Install Projective P and Projective Q from the endpoint and apply SmallGeneratorBridge.equivalenceOfSmallProjectiveGenerator with the respective separator and discrete-colimit-preservation premises. Fix these IsEquivalence instances before introducing HP.asEquivalence and HQ.asEquivalence so the transported functor and the checked regular comparison use the same HP inverse. Transport along the source inverse and HQ by whiskering. Lift both directions to the reviewed Good using additivity and finite and Type v discrete colimit preservation, and lift the ambient unit and counit. Compose with the registered EilenbergWatts inverse at ring universe v and lift universe 0. Use its equality after forgetting the right action to obtain a natural module comparison with evaluation at the lifted regular. Compose this with evaluationTransportIso. Apply evaluationTransportIso_natural at the underlying θ of the reviewed full subcategory. For the action formula, reduce the EilenbergWatts conjugated right multiplication to regularRight and apply evaluationTransportIso_intertwines at MulOpposite.op p. The next small check is repacking a single Sigma bimodule along a symbolic left S-module isomorphism e from the transported carrier to the desired evaluation carrier. Keep the desired ModuleCat object and use e.toLinearEquiv.symm.toAddEquiv.module to pull back the right action from the transported carrier. Prove the two actions commute by left S-linearity of e and e.inv and the transported object's commuting-action field. Package the existing left module with its equality witness and the transferred right action. After that check, define the repacked forward map from the underlying linear map of HQ.map (θ.app P). Use comparison naturality and right linearity to verify that it respects the transferred right action. Lift the module comparisons to bimodule isomorphisms and use changeFunctor. Choose the strict evaluation equality using the repacked objects and maps, with ModuleCat.ofHom_hom for the rebundled maps. Compute the reviewed cast formulas using that equality. The left action is precomposition by q, the right action square gives b ≫ F.obj.map (End.asHom p), and the morphism is b ≫ θ.app P. The exact bimodule packaging and the final correspondence proposition still need a consumer compile and axiom audit. The plan retains ProjectiveGeneratorModuleReconstruction pending the engine's owner decision on that planned edge after an exact article proof receipt. The existing portal hold concerns choice-free inverse families."
+    }
+  ],
+  "repairs": [],
+  "holds": [
+    {
+      "id": "WattsFreePresentation",
+      "reason": "Owner review is needed for the reviewed conclusion's data-valued natural inverse. The retained proofs give every forward clause and pointwise surjectivity. The diagnostics expose the small-target injectivity gap and a separate kernel restriction on extracting a family of actual inverse morphisms from pointwise ExistsUnique in Prop. Resume the full endpoint when an audited construction supplies this family from the existing assumptions or the owner resolves the representation through independent review. The diagnostics concern this Lean construction and do not establish a counterexample to the source."
+    },
+    {
+      "id": "ProjectiveGeneratorModuleReconstruction",
+      "reason": "Owner review is needed for the actual choice-free unit and counit inverse families. The checked pointwise statements remain evidence. Resume if an audited data-valued construction from the reviewed inputs is available or the owner resolves the representation through independent review."
+    }
+  ]
+}

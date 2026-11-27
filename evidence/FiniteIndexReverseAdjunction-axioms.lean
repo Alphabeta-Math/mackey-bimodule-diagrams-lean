@@ -1,0 +1,2 @@
+import Proofs.FiniteIndexReverseAdjunction
+#print axioms FiniteIndexReverseAdjunction

@@ -1,0 +1,2 @@
+import Proofs.ParabolicCaseTwoProjectionFiberIndices
+#print axioms ParabolicCaseTwoProjectionFiberIndices

@@ -1,0 +1,9 @@
+import MackeyDiagrams
+import Proofs.EvaluationForTwoProjections
+open MackeyDiagrams
+#check EvaluationForTwoProjections
+#check _private.Proofs.EvaluationForTwoProjections.«0».EvaluationForTwoProjectionsAux.index_formula
+#check _private.Proofs.EvaluationForTwoProjections.«0».EvaluationForTwoProjectionsAux.pulls_left
+#check _private.Proofs.EvaluationForTwoProjections.«0».EvaluationForTwoProjectionsAux.of_pulls
+#check _private.Proofs.EvaluationForTwoProjections.«0».EvaluationForTwoProjectionsAux.weighted_compact
+#check _private.Proofs.EvaluationForTwoProjections.«0».EvaluationForTwoProjectionsAux.weighted_atLeft

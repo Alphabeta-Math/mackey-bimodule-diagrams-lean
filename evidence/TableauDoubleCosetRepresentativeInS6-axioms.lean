@@ -1,0 +1,2 @@
+import Proofs.TableauDoubleCosetRepresentativeInS6
+#print axioms TableauDoubleCosetRepresentativeInS6

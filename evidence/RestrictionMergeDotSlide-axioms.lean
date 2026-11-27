@@ -1,0 +1,2 @@
+import Proofs.RestrictionMergeDotSlide
+#print axioms RestrictionMergeDotSlide

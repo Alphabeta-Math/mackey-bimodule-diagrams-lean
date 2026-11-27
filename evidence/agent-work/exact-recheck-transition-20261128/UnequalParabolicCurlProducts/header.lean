@@ -1,0 +1,5 @@
+import MackeyDiagrams
+import Proofs.ParabolicCurlJoinIntersection
+
+set_option maxHeartbeats 2000000
+

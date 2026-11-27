@@ -1,0 +1,6 @@
+{
+  "time": "2026-11-27T05:31:49.178281+00:00",
+  "diagnostic": "SyntaxError: Bad escaped character in JSON at position 285 (line 1 column 286)",
+  "observation": "Controller exited after active workers finished and released lock; review queue retained. Exact worker response was not retained in workflow evidence.",
+  "action": "Resume native controller; do not change reviewed claims or skip review."
+}

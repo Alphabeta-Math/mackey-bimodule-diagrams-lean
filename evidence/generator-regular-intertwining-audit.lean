@@ -1,0 +1,2 @@
+import WattsFoundation.GeneratorRegularIntertwining
+#print axioms SmallGeneratorBridge.regularToHom_intertwines

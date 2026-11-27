@@ -1,0 +1,18 @@
+{
+  "ownerRequest": "complete step 4 and step 5 of the LEAN workflow, then commit and push",
+  "additionalRequirement": "the 35 prerequisite results must be included in the same repo",
+  "activeArticleEndpoints": 143,
+  "activePlannedProofs": 151,
+  "prerequisitePackage": "prerequisites",
+  "prerequisiteEndpoints": 35,
+  "finalCoordinatorSession": "01a21c16-9078-7320-bfcf-7b222f2818f8",
+  "retiredUnprovedAuxiliaries": [
+    {
+      "ids": [
+        "WattsFreePresentation",
+        "ProjectiveGeneratorModuleReconstruction"
+      ],
+      "reason": "Owner directs: formalize only necessary results, not the entire lecture notes, and complete Steps 4\u20135. All 143 inventoried paper endpoints have registered proofs. These two stronger choice-free portal auxiliary claims are outside their dependency closure, have no retained consumers, and are not imported by the 278 local source modules checked in evidence/article-dependency-extraction/mechanical-audit.json. Ordinary Classical.choice is permitted for the article correspondences. These claims are retired as unproved, not accepted or refuted; preserve their full original state and holds in the retirement evidence."
+    }
+  ]
+}

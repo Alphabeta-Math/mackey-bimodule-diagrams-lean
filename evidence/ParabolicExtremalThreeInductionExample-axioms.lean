@@ -1,0 +1,2 @@
+import Proofs.ParabolicExtremalThreeInductionExample
+#print axioms ParabolicExtremalThreeInductionExample

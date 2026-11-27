@@ -1,0 +1,261 @@
+
+open MackeyDiagrams
+
+private abbrev linearize (X : Biset K H) : Rep.{u} Complex (K × H) :=
+  letI : MulAction (K × H) (ULift.{u} X.carrier) :=
+    { smul := fun g x => ⟨X.act g x.down⟩
+      one_smul := fun x => congrArg ULift.up (X.one_act x.down)
+      mul_smul := fun g h x => congrArg ULift.up (X.mul_act g h x.down) }
+  Rep.ofMulAction Complex (K × H) (ULift.{u} X.carrier)
+
+private abbrev sumBasis {ι : Type} (X : ι → Biset K H) : Biset K H where
+  carrier := Sigma (fun i => (X i).carrier)
+  act g x := ⟨x.1, (X x.1).act g x.2⟩
+  one_act x := Sigma.ext rfl (heq_of_eq ((X x.1).one_act x.2))
+  mul_act g h x := Sigma.ext rfl (heq_of_eq ((X x.1).mul_act g h x.2))
+
+private abbrev sumTensorBasis {ι κ : Type} (X : ι → Biset K H) (Y : κ → Biset H J) :=
+  sumBasis (fun ij : ι × κ => (X ij.1).tensor (Y ij.2))
+
+private def distributeBasis {ι κ : Type} (X : ι → Biset K H) (Y : κ → Biset H J) :
+    ((sumBasis X).tensor (sumBasis Y)).carrier ≃ (sumTensorBasis X Y).carrier where
+  toFun := Quotient.lift
+    (fun z => ⟨(z.1.1, z.2.1), (X z.1.1).pair (Y z.2.1) z.1.2 z.2.2⟩)
+    (by
+      rintro ⟨⟨i, x⟩, ⟨j, y⟩⟩ ⟨⟨i', x'⟩, ⟨j', y'⟩⟩ ⟨h, hx, hy⟩
+      change (⟨i, (X i).act (1, h) x⟩ : Sigma fun i => (X i).carrier) = ⟨i', x'⟩ at hx
+      change (⟨j, (Y j).act (h, 1) y⟩ : Sigma fun j => (Y j).carrier) = ⟨j', y'⟩ at hy
+      cases hx
+      cases hy
+      change (⟨(i, j), (X i).pair (Y j) x y⟩ : (sumTensorBasis X Y).carrier) =
+        ⟨(i, j), (X i).pair (Y j) ((X i).act (1, h) x) ((Y j).act (h, 1) y)⟩
+      exact congrArg (Sigma.mk (i, j)) (Quotient.sound ⟨h, rfl, rfl⟩))
+  invFun := fun ⟨(i, j), z⟩ =>
+    Quotient.lift (fun p => (sumBasis X).pair (sumBasis Y) ⟨i, p.1⟩ ⟨j, p.2⟩)
+      (by
+        rintro ⟨x, y⟩ ⟨x', y'⟩ ⟨h, hx, hy⟩
+        exact Quotient.sound ⟨h, by exact congrArg (Sigma.mk i) hx,
+          by exact congrArg (Sigma.mk j) hy⟩) z
+  left_inv := by
+    intro z
+    refine Quotient.inductionOn z ?_
+    rintro ⟨⟨i, x⟩, ⟨j, y⟩⟩
+    rfl
+  right_inv := by
+    rintro ⟨⟨i, j⟩, z⟩
+    refine Quotient.inductionOn z ?_
+    rintro ⟨x, y⟩
+    rfl
+
+private theorem distributeBasis_action {ι κ : Type} (X : ι → Biset K H) (Y : κ → Biset H J)
+    (g : K × J) (z : ((sumBasis X).tensor (sumBasis Y)).carrier) :
+    distributeBasis X Y (((sumBasis X).tensor (sumBasis Y)).act g z) =
+      (sumTensorBasis X Y).act g (distributeBasis X Y z) := by
+  refine Quotient.inductionOn z ?_
+  rintro ⟨⟨i, x⟩, ⟨j, y⟩⟩
+  rfl
+
+private theorem distribute {ι κ : Type} (X : ι → Biset K H) (Y : κ → Biset H J) :
+    let source := Biset.tensor (sumBasis X) (sumBasis Y)
+    let target := sumTensorBasis X Y
+    ∃ e : (source.carrier →₀ Complex) ≃ₗ[Complex] (target.carrier →₀ Complex),
+      (∀ g x, e (source.actLinear Complex g x) = target.actLinear Complex g (e x)) ∧
+      ∀ (i : ι) (j : κ) (x : (X i).carrier) (y : (Y j).carrier),
+        e (Biset.pairLinear Complex (sumBasis X) (sumBasis Y)
+          (Finsupp.single ⟨i, x⟩ 1) (Finsupp.single ⟨j, y⟩ 1)) =
+          Finsupp.single ⟨(i, j), (X i).pair (Y j) x y⟩ 1 := by
+  intro source target
+  let e := Finsupp.domLCongr (R := Complex) (M := Complex) (distributeBasis X Y)
+  refine ⟨e, ?_, ?_⟩
+  · intro g
+    apply LinearMap.congr_fun
+      (f := e.toLinearMap.comp (source.actLinear Complex g))
+      (g := (target.actLinear Complex g).comp e.toLinearMap)
+    apply Finsupp.lhom_ext
+    intro x c
+    change e (source.actLinear Complex g (Finsupp.single x c)) =
+      target.actLinear Complex g (e (Finsupp.single x c))
+    dsimp only [source, target, e]
+    rw [Biset.actLinear_single, Finsupp.domLCongr_single, Finsupp.domLCongr_single,
+      Biset.actLinear_single, distributeBasis_action]
+  · intro i j x y
+    change e (Biset.pairLinear Complex (sumBasis X) (sumBasis Y)
+      (Finsupp.single ⟨i, x⟩ 1) (Finsupp.single ⟨j, y⟩ 1)) = _
+    rw [Biset.pairLinear_single, one_mul]
+    dsimp only [e]
+    rw [Finsupp.domLCongr_single]
+    rfl
+
+private theorem linearize_single (X : Biset K H) (g : K × H) (x : X.carrier) (c : Complex) :
+    (linearize.{u} X).ρ g (MonoidAlgebra.single (ULift.up x) c) =
+      MonoidAlgebra.single (ULift.up (X.act g x)) c := by
+  letI : MulAction (K × H) (ULift.{u} X.carrier) :=
+    { smul := fun g x => ⟨X.act g x.down⟩
+      one_smul := fun x => congrArg ULift.up (X.one_act x.down)
+      mul_smul := fun g h x => congrArg ULift.up (X.mul_act g h x.down) }
+  exact Representation.ofMulAction_single (k := Complex) g (ULift.up x) c
+
+private def basisCoords (X : Biset K H) : (X.carrier →₀ Complex) ≃ₗ[Complex] (linearize.{u} X).V :=
+  (Finsupp.domLCongr Equiv.ulift.symm).trans (MonoidAlgebra.coeffLinearEquiv Complex).symm
+
+private theorem basisCoords_single (X : Biset K H) (x : X.carrier) (c : Complex) :
+    basisCoords.{u} X (Finsupp.single x c) = MonoidAlgebra.single (ULift.up x) c := by
+  simp only [basisCoords, LinearEquiv.trans_apply, Finsupp.domLCongr_single]
+  rfl
+
+private theorem basisCoords_action (X : Biset K H) (g : K × H) (x : X.carrier →₀ Complex) :
+    basisCoords.{u} X (X.actLinear Complex g x) = (linearize X).ρ g (basisCoords.{u} X x) := by
+  apply LinearMap.congr_fun
+    (f := (basisCoords.{u} X).toLinearMap.comp (X.actLinear Complex g))
+    (g := ((linearize.{u} X).ρ g).comp (basisCoords.{u} X).toLinearMap)
+  apply Finsupp.lhom_ext
+  intro a c
+  change basisCoords.{u} X (X.actLinear Complex g (Finsupp.single a c)) =
+    (linearize X).ρ g (basisCoords.{u} X (Finsupp.single a c))
+  rw [Biset.actLinear_single, basisCoords_single, basisCoords_single, linearize_single]
+
+private def equivariantIso {G : Type} [Group G] {M N : Rep.{u} Complex G}
+    (e : M.V ≃ₗ[Complex] N.V) (h : ∀ g x, e (M.ρ g x) = N.ρ g (e x)) : M ≅ N :=
+  Rep.mkIso (Representation.Equiv.mk e (fun g => LinearMap.ext (h g)))
+
+private def liftBisetEquiv {X Y : Biset K H}
+    (e : (X.carrier →₀ Complex) ≃ₗ[Complex] (Y.carrier →₀ Complex))
+    (he : ∀ g x, e (X.actLinear Complex g x) = Y.actLinear Complex g (e x)) :
+    linearize.{u} X ≅ linearize.{u} Y :=
+  equivariantIso ((basisCoords X).symm.trans (e.trans (basisCoords Y))) (by
+    intro g x
+    obtain ⟨v, rfl⟩ := (basisCoords X).surjective x
+    change basisCoords Y (e ((basisCoords X).symm ((linearize X).ρ g (basisCoords X v)))) =
+      (linearize Y).ρ g (basisCoords Y (e ((basisCoords X).symm (basisCoords X v))))
+    rw [← basisCoords_action X g v, LinearEquiv.symm_apply_apply, LinearEquiv.symm_apply_apply,
+      he, basisCoords_action])
+
+private def liftBasisEquiv {X Y : Biset K H} (e : X.carrier ≃ Y.carrier)
+    (h : ∀ g x, e (X.act g x) = Y.act g (e x)) : linearize.{u} X ≅ linearize.{u} Y :=
+  liftBisetEquiv (Finsupp.domLCongr e) (by
+    intro g
+    apply LinearMap.congr_fun
+      (f := (Finsupp.domLCongr (R := Complex) (M := Complex) e).toLinearMap.comp (X.actLinear Complex g))
+      (g := (Y.actLinear Complex g).comp (Finsupp.domLCongr e).toLinearMap)
+    apply Finsupp.lhom_ext
+    intro x c
+    change Finsupp.domLCongr (R := Complex) (M := Complex) e (X.actLinear Complex g (Finsupp.single x c)) =
+      Y.actLinear Complex g (Finsupp.domLCongr e (Finsupp.single x c))
+    simp only [Biset.actLinear_single, Finsupp.domLCongr_single, h])
+
+
+private def bisetPair (X : Biset K H) (Y : Biset H J) :
+    (linearize.{u} X).V →ₗ[Complex] (linearize.{u} Y).V →ₗ[Complex] (linearize.{u} (X.tensor Y)).V :=
+  ((((Biset.pairLinear Complex X Y).comp (basisCoords X).symm.toLinearMap).compl₂
+    (basisCoords Y).symm.toLinearMap).compr₂ (basisCoords (X.tensor Y)).toLinearMap)
+
+private theorem bisetPair_coords (X : Biset K H) (Y : Biset H J)
+    (x : X.carrier →₀ Complex) (y : Y.carrier →₀ Complex) :
+    bisetPair X Y (basisCoords.{u} X x) (basisCoords.{u} Y y) =
+      basisCoords.{u} (X.tensor Y) (Biset.pairLinear Complex X Y x y) := by
+  change basisCoords.{u} (X.tensor Y) (Biset.pairLinear Complex X Y
+    ((basisCoords.{u} X).symm (basisCoords.{u} X x)) ((basisCoords.{u} Y).symm (basisCoords.{u} Y y))) = _
+  rw [LinearEquiv.symm_apply_apply, LinearEquiv.symm_apply_apply]
+
+private theorem bisetPair_action (X : Biset K H) (Y : Biset H J) (g : K × J)
+    (x : (linearize.{u} X).V) (y : (linearize.{u} Y).V) :
+    bisetPair X Y ((linearize X).ρ (g.1, 1) x) ((linearize Y).ρ (1, g.2) y) =
+      (linearize (X.tensor Y)).ρ g (bisetPair X Y x y) := by
+  obtain ⟨v, rfl⟩ := (basisCoords X).surjective x
+  obtain ⟨w, rfl⟩ := (basisCoords Y).surjective y
+  rw [← basisCoords_action X _ v, ← basisCoords_action Y _ w, bisetPair_coords,
+    bisetPair_coords, ← basisCoords_action]
+  exact congrArg (basisCoords.{u} (X.tensor Y))
+    (Biset.pairLinear_action Complex X Y (g.1, 1) (1, g.2) g (fun _ _ => rfl) v w)
+
+private theorem bisetPair_balanced (X : Biset K H) (Y : Biset H J) :
+    GroupBalanced (linearize.{u} X) (linearize.{u} Y) (bisetPair X Y) := by
+  intro h x y
+  obtain ⟨v, rfl⟩ := (basisCoords X).surjective x
+  obtain ⟨w, rfl⟩ := (basisCoords Y).surjective y
+  rw [← basisCoords_action X _ v, ← basisCoords_action Y _ w, bisetPair_coords,
+    bisetPair_coords, Biset.pairLinear_balance]
+
+private def compareForward (X : Biset K H) (Y : Biset H J) :
+    Carrier (linearize.{u} X) (linearize.{u} Y) →ₗ[Complex] (linearize.{u} (X.tensor Y)).V :=
+  lift _ _ (bisetPair X Y) (bisetPair_balanced X Y)
+
+private theorem compareForward_pure (X : Biset K H) (Y : Biset H J)
+    (x : (linearize.{u} X).V) (y : (linearize.{u} Y).V) :
+    compareForward X Y (pure (linearize X) (linearize Y) x y) = bisetPair X Y x y :=
+  lift_pure _ _ _ _ _ _
+
+private def compareBackward (X : Biset K H) (Y : Biset H J) :
+    (linearize.{u} (X.tensor Y)).V →ₗ[Complex] Carrier (linearize.{u} X) (linearize.{u} Y) :=
+  let b := (((pure (linearize.{u} X) (linearize.{u} Y)).comp
+    (basisCoords X).toLinearMap).compl₂ (basisCoords Y).toLinearMap)
+  let hb : Biset.IsBalanced b := by
+    intro h x y
+    change pure (linearize X) (linearize Y) (basisCoords X (X.actLinear Complex (1, h) x))
+      (basisCoords Y (Y.actLinear Complex (h, 1) y)) = _
+    rw [basisCoords_action, basisCoords_action]
+    exact pure_balanced (linearize X) (linearize Y) h _ _
+  (Biset.liftBalanced b hb).comp (basisCoords (X.tensor Y)).symm.toLinearMap
+
+private theorem compareBackward_pair (X : Biset K H) (Y : Biset H J)
+    (x : (linearize.{u} X).V) (y : (linearize.{u} Y).V) :
+    compareBackward X Y (bisetPair X Y x y) = pure (linearize X) (linearize Y) x y := by
+  obtain ⟨v, rfl⟩ := (basisCoords X).surjective x
+  obtain ⟨w, rfl⟩ := (basisCoords Y).surjective y
+  rw [bisetPair_coords]
+  unfold compareBackward
+  rw [LinearMap.comp_apply, LinearEquiv.coe_coe, LinearEquiv.symm_apply_apply]
+  erw [Biset.liftBalanced_pairLinear]
+  rfl
+
+private theorem bisetPair_ext (X : Biset K H) (Y : Biset H J)
+    {W : Type*} [AddCommGroup W] [Module Complex W]
+    (f g : (linearize.{u} (X.tensor Y)).V →ₗ[Complex] W)
+    (h : ∀ x y, f (bisetPair X Y x y) = g (bisetPair X Y x y)) : f = g := by
+  let b := ((bisetPair X Y).compr₂ f).comp (basisCoords.{u} X).toLinearMap |>.compl₂
+    (basisCoords.{u} Y).toLinearMap
+  have hb : Biset.IsBalanced b := by
+    intro h x y
+    change f (bisetPair X Y (basisCoords X (X.actLinear Complex (1, h) x))
+      (basisCoords Y (Y.actLinear Complex (h, 1) y))) = _
+    rw [basisCoords_action, basisCoords_action, bisetPair_balanced]
+    rfl
+  have hf (q : (linearize.{u} (X.tensor Y)).V →ₗ[Complex] W)
+      (hq : ∀ x y, q (bisetPair X Y x y) = f (bisetPair X Y x y)) :
+      q.comp (basisCoords (X.tensor Y)).toLinearMap = Biset.liftBalanced b hb := by
+    apply Biset.liftBalanced_unique b hb
+    intro x y
+    change q (basisCoords (X.tensor Y) (Biset.pairLinear Complex X Y x y)) =
+      f (bisetPair X Y (basisCoords X x) (basisCoords Y y))
+    rw [← bisetPair_coords, hq]
+  apply LinearMap.ext
+  intro z
+  obtain ⟨z, rfl⟩ := (basisCoords (X.tensor Y)).surjective z
+  exact LinearMap.congr_fun ((hf f (fun _ _ => rfl)).trans (hf g (fun x y => (h x y).symm)).symm) z
+
+private def compareTensor (X : Biset K H) (Y : Biset H J) :
+    tensor (linearize.{u} X) (linearize.{u} Y) ≅ linearize.{u} (X.tensor Y) := by
+  let forward := compareForward.{u} X Y
+  let backward := compareBackward.{u} X Y
+  have left : backward.comp forward = LinearMap.id := by
+    apply pure_ext (linearize X) (linearize Y)
+    intro x y
+    change compareBackward X Y (compareForward X Y (pure (linearize X) (linearize Y) x y)) = _
+    rw [compareForward_pure, compareBackward_pair]
+    rfl
+  have right : forward.comp backward = LinearMap.id := by
+    apply bisetPair_ext X Y
+    intro x y
+    change compareForward X Y (compareBackward X Y (bisetPair X Y x y)) = _
+    rw [compareBackward_pair, compareForward_pure]
+    rfl
+  apply equivariantIso (LinearEquiv.ofLinearMap forward backward right left)
+  intro g
+  apply LinearMap.congr_fun
+    (f := forward.comp ((tensor (linearize X) (linearize Y)).ρ g))
+    (g := ((linearize (X.tensor Y)).ρ g).comp forward)
+  apply pure_ext (linearize X) (linearize Y)
+  intro x y
+  change compareForward X Y ((tensor (linearize X) (linearize Y)).ρ g (pure (linearize X) (linearize Y) x y)) =
+    (linearize (X.tensor Y)).ρ g (compareForward X Y (pure (linearize X) (linearize Y) x y))
+  rw [tensor_act_pure, compareForward_pure, compareForward_pure, bisetPair_action]

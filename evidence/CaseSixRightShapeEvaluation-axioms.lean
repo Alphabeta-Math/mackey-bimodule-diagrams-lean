@@ -1,0 +1,2 @@
+import Proofs.CaseSixRightShapeEvaluation
+#print axioms CaseSixRightShapeEvaluation

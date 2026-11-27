@@ -1,0 +1,2 @@
+import Proofs.ParabolicCaseSixObstructionWithTrivialProjectedStabilizer
+#print axioms ParabolicCaseSixObstructionWithTrivialProjectedStabilizer

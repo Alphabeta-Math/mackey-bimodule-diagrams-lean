@@ -1,0 +1,244 @@
+
+private abbrev Reg (H : Type) [Group H] := linearize.{u} (Biset.regular H)
+
+private theorem monoExt {G : Type*} {W : Type*} [AddCommGroup W] [Module Complex W]
+    {l m : MonoidAlgebra Complex G →ₗ[Complex] W}
+    (h : ∀ g c, l (MonoidAlgebra.single g c) = m (MonoidAlgebra.single g c)) : l = m := by
+  apply LinearMap.ext
+  intro a
+  have he : l.comp (MonoidAlgebra.coeffLinearEquiv Complex).symm.toLinearMap =
+      m.comp (MonoidAlgebra.coeffLinearEquiv Complex).symm.toLinearMap := by
+    apply Finsupp.lhom_ext
+    exact h
+  exact LinearMap.congr_fun he a.coeff
+
+private def leftUnitorPair (X : Rep.{u} Complex (K × H)) :
+    (Reg.{u} K).V →ₗ[Complex] X.V →ₗ[Complex] X.V :=
+  (freeLift Complex (fun a : ULift.{u} K => X.ρ (a.down, 1))).comp
+    (MonoidAlgebra.coeffLinearEquiv Complex).toLinearMap
+
+private def rightUnitorPair (X : Rep.{u} Complex (K × H)) :
+    X.V →ₗ[Complex] (Reg.{u} H).V →ₗ[Complex] X.V :=
+  ((freeLift Complex (fun a : ULift.{u} H => X.ρ (1, a.down⁻¹))).comp
+    (MonoidAlgebra.coeffLinearEquiv Complex).toLinearMap).flip
+
+private theorem leftUnitorPair_single (X : Rep.{u} Complex (K × H)) (k : K) (c : Complex) (x : X.V) :
+    leftUnitorPair X (MonoidAlgebra.single (ULift.up k) c) x = c • X.ρ (k, 1) x := by
+  change freeLift Complex (fun a : ULift.{u} K => X.ρ (a.down, 1)) (Finsupp.single (ULift.up k) c) x = _
+  rw [freeLift_single]
+  rfl
+
+private theorem rightUnitorPair_single (X : Rep.{u} Complex (K × H)) (h : H) (c : Complex) (x : X.V) :
+    rightUnitorPair X x (MonoidAlgebra.single (ULift.up h) c) = c • X.ρ (1, h⁻¹) x := by
+  change freeLift Complex (fun a : ULift.{u} H => X.ρ (1, a.down⁻¹)) (Finsupp.single (ULift.up h) c) x = _
+  rw [freeLift_single]
+  rfl
+
+private theorem leftUnitorPair_balanced (X : Rep.{u} Complex (K × H)) :
+    GroupBalanced (Reg.{u} K) X (leftUnitorPair X) := by
+  intro k a x
+  apply LinearMap.congr_fun
+    (f := ((leftUnitorPair X).flip (X.ρ (k, 1) x)).comp ((Reg.{u} K).ρ (1, k)))
+    (g := (leftUnitorPair X).flip x)
+  apply monoExt
+  rintro ⟨g⟩ c
+  change leftUnitorPair X ((Reg.{u} K).ρ (1, k) (MonoidAlgebra.single (ULift.up g) c))
+    (X.ρ (k, 1) x) = leftUnitorPair X (MonoidAlgebra.single (ULift.up g) c) x
+  have he := linearize_single.{u} (Biset.regular K) (1, k) g c
+  change (Reg.{u} K).ρ (1, k) (MonoidAlgebra.single (ULift.up g) c) =
+    MonoidAlgebra.single (ULift.up (1 * g * k⁻¹)) c at he
+  rw [he, leftUnitorPair_single, leftUnitorPair_single, ← prodRep_mul_apply]
+  simp
+
+private theorem rightUnitorPair_balanced (X : Rep.{u} Complex (K × H)) :
+    GroupBalanced X (Reg.{u} H) (rightUnitorPair X) := by
+  intro h x a
+  apply LinearMap.congr_fun
+    (f := (rightUnitorPair X (X.ρ (1, h) x)).comp ((Reg.{u} H).ρ (h, 1)))
+    (g := rightUnitorPair X x)
+  apply monoExt
+  rintro ⟨g⟩ c
+  change rightUnitorPair X (X.ρ (1, h) x)
+    ((Reg.{u} H).ρ (h, 1) (MonoidAlgebra.single (ULift.up g) c)) =
+      rightUnitorPair X x (MonoidAlgebra.single (ULift.up g) c)
+  have he := linearize_single.{u} (Biset.regular H) (h, 1) g c
+  change (Reg.{u} H).ρ (h, 1) (MonoidAlgebra.single (ULift.up g) c) =
+    MonoidAlgebra.single (ULift.up (h * g * 1⁻¹)) c at he
+  rw [he, rightUnitorPair_single, rightUnitorPair_single, ← prodRep_mul_apply]
+  simp [mul_assoc]
+
+private abbrev lunitLinear (X : Rep.{u} Complex (K × H)) :=
+  lift (Reg.{u} K) X (leftUnitorPair X) (leftUnitorPair_balanced X)
+
+private abbrev runitLinear (X : Rep.{u} Complex (K × H)) :=
+  lift X (Reg.{u} H) (rightUnitorPair X) (rightUnitorPair_balanced X)
+
+private abbrev idBasis (G : Type) [One G] : MonoidAlgebra Complex (ULift.{u} G) :=
+  MonoidAlgebra.single (ULift.up 1) 1
+
+private def lunitInsert (X : Rep.{u} Complex (K × H)) : X.V →ₗ[Complex] Carrier (Reg.{u} K) X :=
+  pure (Reg.{u} K) X (idBasis K)
+
+private def runitInsert (X : Rep.{u} Complex (K × H)) : X.V →ₗ[Complex] Carrier X (Reg.{u} H) :=
+  (pure X (Reg.{u} H)).flip (idBasis H)
+
+-- Alphabeta Math bicategory coherence, step 1.2. The regular bimodule
+-- unitors are the extended actions. The inverse inserts the identity
+-- basis vector. The two inverse laws use balance on the pure tensors.
+private def lunitEquiv (X : Rep.{u} Complex (K × H)) : Carrier (Reg.{u} K) X ≃ₗ[Complex] X.V := by
+  have h₁ : (lunitLinear X).comp (lunitInsert X) = LinearMap.id := by
+    apply LinearMap.ext
+    intro x
+    change lunitLinear X (pure (Reg.{u} K) X (idBasis K) x) = x
+    rw [lift_pure, leftUnitorPair_single, one_smul, prodOne]
+  have h₂ : (lunitInsert X).comp (lunitLinear X) = LinearMap.id := by
+    apply pure_ext (Reg.{u} K) X
+    intro a x
+    apply LinearMap.congr_fun
+      (f := (lunitInsert X).comp ((leftUnitorPair X).flip x))
+      (g := (pure (Reg.{u} K) X).flip x)
+    · apply monoExt
+      rintro ⟨k⟩ c
+      change lunitInsert X (leftUnitorPair X (MonoidAlgebra.single (ULift.up k) c) x) =
+        pure (Reg.{u} K) X (MonoidAlgebra.single (ULift.up k) c) x
+      rw [leftUnitorPair_single, map_smul]
+      change c • pure (Reg.{u} K) X (idBasis K) (X.ρ (k, 1) x) = _
+      rw [← groupSingle _ _ (pure_balanced (Reg.{u} K) X) k]
+      have he := linearize_single.{u} (Biset.regular K) (1, k⁻¹) (1 : K) 1
+      change (Reg.{u} K).ρ (1, k⁻¹) (idBasis K) = MonoidAlgebra.single (ULift.up (1 * 1 * (k⁻¹)⁻¹)) 1 at he
+      rw [he]
+      simp only [one_mul, inv_inv]
+      change c • (pure (Reg.{u} K) X).flip x (MonoidAlgebra.single (ULift.up k) 1) = _
+      rw [← map_smul]
+      have hc : c • MonoidAlgebra.single (ULift.up k) 1 = MonoidAlgebra.single (ULift.up k) c := by simp
+      rw [hc]
+      rfl
+  exact LinearEquiv.ofLinearMap (lunitLinear X) (lunitInsert X) h₁ h₂
+
+private def runitEquiv (X : Rep.{u} Complex (K × H)) : Carrier X (Reg.{u} H) ≃ₗ[Complex] X.V := by
+  have h₁ : (runitLinear X).comp (runitInsert X) = LinearMap.id := by
+    apply LinearMap.ext
+    intro x
+    change runitLinear X (pure X (Reg.{u} H) x (idBasis H)) = x
+    rw [lift_pure, rightUnitorPair_single, one_smul, inv_one, prodOne]
+  have h₂ : (runitInsert X).comp (runitLinear X) = LinearMap.id := by
+    apply pure_ext X (Reg.{u} H)
+    intro x a
+    apply LinearMap.congr_fun
+      (f := (runitInsert X).comp (rightUnitorPair X x))
+      (g := pure X (Reg.{u} H) x)
+    · apply monoExt
+      rintro ⟨h⟩ c
+      change runitInsert X (rightUnitorPair X x (MonoidAlgebra.single (ULift.up h) c)) =
+        pure X (Reg.{u} H) x (MonoidAlgebra.single (ULift.up h) c)
+      rw [rightUnitorPair_single, map_smul]
+      change c • pure X (Reg.{u} H) (X.ρ (1, h⁻¹) x) (idBasis H) = _
+      rw [groupSingle _ _ (pure_balanced X (Reg.{u} H)) h]
+      have he := linearize_single.{u} (Biset.regular H) (h, 1) (1 : H) 1
+      change (Reg.{u} H).ρ (h, 1) (idBasis H) = MonoidAlgebra.single (ULift.up (h * 1 * 1⁻¹)) 1 at he
+      rw [he]
+      simp only [inv_one, mul_one]
+      rw [← map_smul]
+      congr 1
+      change c • MonoidAlgebra.single (ULift.up h) 1 = MonoidAlgebra.single (ULift.up h) c
+      simp
+  exact LinearEquiv.ofLinearMap (runitLinear X) (runitInsert X) h₁ h₂
+
+private theorem lunitEquiv_pure (X : Rep.{u} Complex (K × H)) (a : (Reg.{u} K).V) (x : X.V) :
+    lunitEquiv X (pure (Reg.{u} K) X a x) = leftUnitorPair X a x :=
+  lift_pure (Reg K) X (leftUnitorPair X) (leftUnitorPair_balanced X) a x
+
+private theorem runitEquiv_pure (X : Rep.{u} Complex (K × H)) (a : (Reg.{u} H).V) (x : X.V) :
+    runitEquiv X (pure X (Reg.{u} H) x a) = rightUnitorPair X x a :=
+  lift_pure X (Reg H) (rightUnitorPair X) (rightUnitorPair_balanced X) x a
+
+private def lunit (X : Rep.{u} Complex (K × H)) : tensor (Reg.{u} K) X ≅ X :=
+  equivariantIso (lunitEquiv X) (by
+    intro g
+    apply LinearMap.congr_fun
+      (f := (lunitEquiv X).toLinearMap.comp ((tensor (Reg.{u} K) X).ρ g))
+      (g := (X.ρ g).comp (lunitEquiv X).toLinearMap)
+    apply pure_ext (Reg.{u} K) X
+    intro a x
+    change lunitEquiv X ((tensor (Reg.{u} K) X).ρ g (pure (Reg.{u} K) X a x)) =
+      X.ρ g (lunitEquiv X (pure (Reg.{u} K) X a x))
+    rw [tensor_act_pure, lunitEquiv_pure, lunitEquiv_pure]
+    apply LinearMap.congr_fun
+      (f := ((leftUnitorPair X).flip (X.ρ (1, g.2) x)).comp ((Reg.{u} K).ρ (g.1, 1)))
+      (g := (X.ρ g).comp ((leftUnitorPair X).flip x))
+    apply monoExt
+    rintro ⟨k⟩ c
+    change leftUnitorPair X ((Reg.{u} K).ρ (g.1, 1) (MonoidAlgebra.single (ULift.up k) c))
+      (X.ρ (1, g.2) x) = X.ρ g (leftUnitorPair X (MonoidAlgebra.single (ULift.up k) c) x)
+    have he := linearize_single.{u} (Biset.regular K) (g.1, 1) k c
+    change (Reg.{u} K).ρ (g.1, 1) (MonoidAlgebra.single (ULift.up k) c) =
+      MonoidAlgebra.single (ULift.up (g.1 * k * 1⁻¹)) c at he
+    rw [he, leftUnitorPair_single, leftUnitorPair_single, map_smul, ← prodRep_mul_apply,
+      ← prodRep_mul_apply]
+    rcases g with ⟨g, h⟩
+    simp)
+
+private def runit (X : Rep.{u} Complex (K × H)) : tensor X (Reg.{u} H) ≅ X :=
+  equivariantIso (runitEquiv X) (by
+    intro g
+    apply LinearMap.congr_fun
+      (f := (runitEquiv X).toLinearMap.comp ((tensor X (Reg.{u} H)).ρ g))
+      (g := (X.ρ g).comp (runitEquiv X).toLinearMap)
+    apply pure_ext X (Reg.{u} H)
+    intro x a
+    change runitEquiv X ((tensor X (Reg.{u} H)).ρ g (pure X (Reg.{u} H) x a)) =
+      X.ρ g (runitEquiv X (pure X (Reg.{u} H) x a))
+    rw [tensor_act_pure, runitEquiv_pure, runitEquiv_pure]
+    apply LinearMap.congr_fun
+      (f := (rightUnitorPair X (X.ρ (g.1, 1) x)).comp ((Reg.{u} H).ρ (1, g.2)))
+      (g := (X.ρ g).comp (rightUnitorPair X x))
+    apply monoExt
+    rintro ⟨h⟩ c
+    change rightUnitorPair X (X.ρ (g.1, 1) x)
+      ((Reg.{u} H).ρ (1, g.2) (MonoidAlgebra.single (ULift.up h) c)) =
+        X.ρ g (rightUnitorPair X x (MonoidAlgebra.single (ULift.up h) c))
+    have he := linearize_single.{u} (Biset.regular H) (1, g.2) h c
+    change (Reg.{u} H).ρ (1, g.2) (MonoidAlgebra.single (ULift.up h) c) =
+      MonoidAlgebra.single (ULift.up (1 * h * g.2⁻¹)) c at he
+    rw [he, rightUnitorPair_single, rightUnitorPair_single, map_smul, ← prodRep_mul_apply,
+      ← prodRep_mul_apply]
+    rcases g with ⟨g, h'⟩
+    simp)
+
+private theorem lunit_pure (X : Rep.{u} Complex (K × H)) (a : (Reg.{u} K).V) (x : X.V) :
+    (lunit X).hom.hom (pure (Reg.{u} K) X a x) = leftUnitorPair X a x :=
+  lunitEquiv_pure X a x
+
+private theorem runit_pure (X : Rep.{u} Complex (K × H)) (a : (Reg.{u} H).V) (x : X.V) :
+    (runit X).hom.hom (pure X (Reg.{u} H) x a) = rightUnitorPair X x a :=
+  runitEquiv_pure X a x
+
+private theorem regCoords_mapDomain {G : Type} [Group G] (a : MonoidAlgebra Complex G) :
+    MonoidAlgebra.mapDomain ULift.up a = basisCoords.{u} (Biset.regular G) a.coeff := by
+  apply MonoidAlgebra.coeff_injective
+  simp only [basisCoords, LinearEquiv.trans_apply, MonoidAlgebra.coeff_mapDomain,
+    MonoidAlgebra.coeffLinearEquiv_symm_apply, Finsupp.domLCongr_apply]
+  ext z
+  exact Finsupp.mapDomain_equiv_apply (f := Equiv.ulift.symm) a.coeff z
+
+private theorem leftUnitorPair_algebra (X : Rep.{u} Complex (K × H)) (a : MonoidAlgebra Complex K) (x : X.V) :
+    leftUnitorPair X (MonoidAlgebra.mapDomain ULift.up a) x = leftAct X a x := by
+  rw [regCoords_mapDomain]
+  change (leftUnitorPair X).flip x (basisCoords (Biset.regular K) a.coeff) =
+    ∑ k ∈ a.coeff.support, a.coeff k • X.ρ (k, 1) x
+  conv_lhs => rw [← Finsupp.sum_single a.coeff]
+  simp only [Finsupp.sum, map_sum, LinearMap.flip_apply]
+  apply Finset.sum_congr rfl
+  intro k _
+  rw [basisCoords_single, leftUnitorPair_single]
+
+private theorem rightUnitorPair_algebra (X : Rep.{u} Complex (K × H)) (a : MonoidAlgebra Complex H) (x : X.V) :
+    rightUnitorPair X x (MonoidAlgebra.mapDomain ULift.up a) = rightAct X a x := by
+  rw [regCoords_mapDomain]
+  change rightUnitorPair X x (basisCoords (Biset.regular H) a.coeff) =
+    ∑ h ∈ a.coeff.support, a.coeff h • X.ρ (1, h⁻¹) x
+  conv_lhs => rw [← Finsupp.sum_single a.coeff]
+  simp only [Finsupp.sum, map_sum]
+  apply Finset.sum_congr rfl
+  intro h _
+  rw [basisCoords_single, rightUnitorPair_single]

@@ -1,0 +1,10 @@
+PrivateCheck.lean:3:4: error: unexpected token 'private'; expected 'scoped' or identifier
+PrivateCheck.lean:3:12: error: unexpected identifier; expected 'lemma'
+PrivateCheck.lean:6:7: error(lean.unknownIdentifier): Unknown identifier `parabolic_finite`
+PrivateCheck.lean:7:7: error(lean.unknownIdentifier): Unknown identifier `finite_word_of_groups`
+PrivateCheck.lean:8:7: error(lean.unknownIdentifier): Unknown identifier `projected_finite`
+PrivateCheck.lean:9:7: error(lean.unknownIdentifier): Unknown identifier `point_surjective`
+Subgroup.relIndex.{u_1} {G : Type u_1} [Group G] (H K : Subgroup G) : ℕ
+Set.finite_univ.{u} {α : Type u} [Finite α] : Set.univ.Finite
+Set.toFinite.{u} {α : Type u} (s : Set α) [Finite ↑s] : s.Finite
+'ParabolicCaseFiveCoefficientOneExpansion' depends on axioms: [propext, Classical.choice, Quot.sound]

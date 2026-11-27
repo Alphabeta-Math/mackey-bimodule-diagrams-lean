@@ -1,0 +1,15 @@
+{
+  "accepted": true,
+  "request": {
+    "endpoint": "dc9f972e24f88f7f67882aba8fe503fcdf79d71173f1bc85d33d824aadd5f0a2",
+    "decision": {
+      "id": "LeftUpReidemeisterCurl",
+      "reason": "Exact reviewed left-up curl. Use merge-split cancellation on the two upward factors, cancel the associators, and evaluate the ordinary cup followed by the trace cap as the identity.",
+      "mathlibImports": [
+        "Mathlib.Basic.Complex.Basic"
+      ],
+      "proof": "by\n  intro U inst K H G δ α hδ hα d a up loopDown loopUp straight cup middle cap curl\n  have hmid :\n      (MackeyDiagrams.Generator.mergeUp Complex a d).vertical\n        (MackeyDiagrams.Generator.splitUp Complex a d) =\n      MackeyDiagrams.Biset.Hom.id ((MackeyDiagrams.Word.up a).basis.tensor\n        (MackeyDiagrams.Word.up d).basis) :=\n    MackeyDiagrams.Diagram.mergeUp_splitUp a d\n  have hcup :\n      (MackeyDiagrams.Generator.ordinaryCup Complex a).vertical\n        (MackeyDiagrams.Generator.traceCap Complex a) =\n      MackeyDiagrams.Biset.Hom.id (MackeyDiagrams.Biset.regular H) :=\n    MackeyDiagrams.Diagram.ordinaryCup_traceCap a\n  simp only [curl, middle, cup, cap, straight, up, loopDown, loopUp,\n    MackeyDiagrams.Diagram.eval, hmid, MackeyDiagrams.Word.basis,\n    MackeyDiagrams.Biset.Hom.horizontal_id]\n  rw [← MackeyDiagrams.Biset.Hom.vertical_assoc\n      (MackeyDiagrams.Biset.associate (MackeyDiagrams.Biset.restriction a)\n        (MackeyDiagrams.Biset.induction a) (MackeyDiagrams.Biset.induction d) Complex),\n    MackeyDiagrams.Biset.Hom.vertical_id, ← MackeyDiagrams.Biset.Hom.vertical_assoc\n      (MackeyDiagrams.Biset.associate (MackeyDiagrams.Biset.restriction a)\n        (MackeyDiagrams.Biset.induction a) (MackeyDiagrams.Biset.induction d) Complex),\n    MackeyDiagrams.Biset.associate_unassociate, MackeyDiagrams.Biset.Hom.id_vertical]\n  rw [← MackeyDiagrams.Biset.Hom.vertical_assoc\n      ((MackeyDiagrams.Generator.ordinaryCup Complex a).horizontal\n        (MackeyDiagrams.Biset.Hom.id (MackeyDiagrams.Biset.induction d))),\n    MackeyDiagrams.Biset.Hom.horizontal_vertical,\n    MackeyDiagrams.Biset.Hom.id_vertical, hcup,\n    MackeyDiagrams.Biset.Hom.horizontal_id, MackeyDiagrams.Biset.Hom.id_vertical]\n  exact MackeyDiagrams.Biset.insertLeftUnit_leftUnit",
+      "support": "universe u"
+    }
+  }
+}

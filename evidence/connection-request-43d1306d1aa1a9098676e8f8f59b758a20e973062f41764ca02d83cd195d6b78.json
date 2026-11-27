@@ -1,0 +1,16 @@
+{
+  "accepted": false,
+  "request": {
+    "endpoint": "251e032e735d87aa7ab7f3a6e1295dfa82109ebcc6ef5e33697a8dd2c3473b1a",
+    "decision": {
+      "id": "ReidemeisterOne",
+      "reason": "Apply the four compiled curl identities to the same two conjugated embeddings.",
+      "mathlibImports": [
+        "Mathlib.Basic.Complex.Basic"
+      ],
+      "support": "universe u",
+      "proof": "by\n  intro U inst K H G δ α hδ hα\n  exact ⟨RightUpReidemeisterCurl K H G δ α hδ hα,\n    RightDownReidemeisterCurl K H G δ α hδ hα,\n    LeftUpReidemeisterCurl K H G δ α hδ hα,\n    LeftDownReidemeisterCurl K H G δ α hδ hα⟩\n"
+    }
+  },
+  "reason": "Error: The approved endpoint or its dependencies changed after submission"
+}

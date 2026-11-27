@@ -1,0 +1,2 @@
+import Proofs.CaseFiveRequiresInfiniteExpansion
+#print axioms CaseFiveRequiresInfiniteExpansion

@@ -1,0 +1,7 @@
+import MackeyDiagrams
+import Mathlib.Data.ZMod.Basic
+import Proofs.ParabolicCaseFiveCoefficientOneExpansion
+import Proofs.ParabolicRightOrbitMultiplicity
+
+open MackeyDiagrams
+open scoped BigOperators

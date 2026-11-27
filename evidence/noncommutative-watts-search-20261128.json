@@ -1,0 +1,23 @@
+{
+  "checked_utc": "2026-11-27T17:44:18.270958+00:00",
+  "candidates": [
+    {
+      "url": "https://github.com/optpku/stacks/blob/e2299cf97f975b08e7b5b59202ed00adc80ff6b7/ReasLib/Algebra/Category/ModuleCat/Bimod/EilenbergWatts.lean",
+      "declaration": "ModuleCat.EilenbergWatts.eilenbergWatts_tfae",
+      "scope": "functors between right-module categories over two rings",
+      "result": "The theorem body is sorry. It is not verified proof evidence and is not used."
+    },
+    {
+      "url": "https://github.com/optpku/stacks/blob/e2299cf97f975b08e7b5b59202ed00adc80ff6b7/ReasLib/Algebra/Category/ModuleCat/Bimod/EilenbergWatts/Linear.lean",
+      "declaration": "ModuleCat.EilenbergWatts.tensorFunctorIsEquivalence",
+      "result": "The equivalence instance is sorry. It is not verified proof evidence and is not used."
+    },
+    {
+      "url": "https://github.com/AxiomMath/Stacks/blob/f56a316ddf7a930906d88b78d6f9a2668cffd0cf/StacksFrontier/AlgebraicGeometry/FunctorsAndMorphisms/FunctorsBetweenCategories/LinearTensorEquivalence.lean",
+      "declaration": "ModuleCat.tensorFunctorEquivalence",
+      "scope": "two commutative algebras A, B over a commutative ring R",
+      "result": "Source has no direct sorry; its imported dependency closure and axioms have not been audited here. It does not cover arbitrary noncommutative group algebras."
+    }
+  ],
+  "conclusion": "No verified general two-noncommutative-ring supplier was found in this search. Existing held Lean endpoints remain unresolved."
+}

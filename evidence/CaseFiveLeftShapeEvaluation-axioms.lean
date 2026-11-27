@@ -1,0 +1,2 @@
+import Proofs.CaseFiveLeftShapeEvaluation
+#print axioms CaseFiveLeftShapeEvaluation

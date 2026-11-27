@@ -1,0 +1,2 @@
+import WattsFoundation.SmallGeneratorCorrespondenceBase
+#print axioms SmallGeneratorBridge.exactEvaluationEquivalence_forget

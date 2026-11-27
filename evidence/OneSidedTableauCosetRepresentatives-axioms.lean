@@ -1,0 +1,2 @@
+import Proofs.OneSidedTableauCosetRepresentatives
+#print axioms OneSidedTableauCosetRepresentatives

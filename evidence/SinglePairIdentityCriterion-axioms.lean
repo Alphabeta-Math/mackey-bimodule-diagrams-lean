@@ -1,0 +1,2 @@
+import Proofs.SinglePairIdentityCriterion
+#print axioms SinglePairIdentityCriterion

@@ -1,0 +1,33 @@
+import MackeyDiagrams
+import Proofs.GeneralizedMackeyDecomposition
+open CategoryTheory CategoryTheory.Limits Representation
+open scoped MonoidAlgebra
+#check Rep.res
+#check Rep.res_obj_ρ
+#check Rep.resFunctor
+#check Rep.resMap_hom_apply
+#check Representation.Equiv.mk
+#check Rep.mkIso
+#check MonoidAlgebra.lift_symm_apply
+#check MonoidAlgebra.mapDomainAlgHom_of
+#check MonoidAlgebra.liftLinearMap
+#check MonoidAlgebra.liftLinearMap_single
+#check MonoidAlgebra.coeffLinearEquiv
+#check ULift.moduleEquiv
+#check ULift.moduleEquiv_apply
+#check MonoidAlgebra.lsingle_apply
+#check MonoidAlgebra.lift
+#check MonoidAlgebra.of_apply
+#check IsColimit.comp_coconePointUniqueUpToIso_hom
+#check HasColimit.ι_isoOfNatIso_inv
+#check CategoryTheory.Functor.whiskeringRight
+#check CategoryTheory.NatIso.ofComponents
+#check CategoryTheory.Limits.Sigma.ι
+#check MonoidAlgebra.hom_ext
+#check MonoidAlgebra.algHom_ext
+#check MonoidAlgebra.linearMap_ext
+#check ModuleCat.Hom.congr_fun
+#check Rep.hom_comm_apply
+#check ModuleCat.ofHom
+#check LinearMap.mulRight_apply
+#check Representation.ind

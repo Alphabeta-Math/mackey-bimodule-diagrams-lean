@@ -1,0 +1,15 @@
+import Proofs.ParabolicExtremalOutsideRestrictionRegions
+import Proofs.ExtremalParabolicsOfFiniteGroup
+import Proofs.FiniteParabolicJoinOfFamily
+open MackeyDiagrams
+set_option pp.privateNames true
+#print ParabolicExtremalOutsideRestrictionRegions
+#check _private.Proofs.ParabolicExtremalOutsideRestrictionRegions.0.OutsideRegionsAux.left_project_eval
+#check _private.Proofs.ParabolicExtremalOutsideRestrictionRegions.0.OutsideRegionsAux.left_mul_eval
+#check Subgroup.map_le_map_iff_of_injective
+#check Subgroup.map_le_iff_le_comap
+#check Subgroup.map_comap_eq
+#check Subgroup.comap_map_eq_self_of_injective
+#check Subgroup.map_map
+#check Subgroup.map_le_range
+#check Biset.Hom.horizontal_single

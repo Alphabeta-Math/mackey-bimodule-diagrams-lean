@@ -1,0 +1,5151 @@
+Bimodule String Diagrams and the
+Generalized Mackey Decomposition
+
+Ian Xiao
+
+Abstract
+
+I develop a string-diagram calculus for group-algebra bimodules in which centralizer
+cosets record the conjugation embeddings used in induction and restriction. Explicit
+inclusion and projection maps give Mackey decomposition for conjugate embeddings. I
+prove Reidemeister I and II identities and construct fixed-boundary Reidemeister III
+replacements. Some cases require sums, and others admit no replacement even by linear
+combinations. For finite parabolic subgroups of S∞, ordered block matching gives explicit
+double-coset representatives and Mackey summands. Parabolic intersections and joins
+give further identities. For the move with a middle restriction strand, a stabilizer index
+determines the attainable orbit coefficients on the right-hand shape over any commutative
+coefficient ring.
+
+Contents
+
+1
+Bimodules and functors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2
+1.1
+The Eilenberg–Watts correspondence . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2
+1.2
+The diagrammatic bimodule category . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2
+1.3
+The corresponding functor category . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7
+2
+Mackey decomposition . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7
+2.1
+The ordinary Mackey theorem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7
+2.2
+Generalized Mackey theorem for conjugate embeddings . . . . . . . . . . . . . . . . .
+7
+3
+Right curls, trivalent moves, and admissible labellings
+. . . . . . . . . . . . . . . .
+10
+3.1
+Right curls and dots
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+10
+3.2
+Moving dots across a merge or split . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+11
+3.3
+When one shape can replace another
+. . . . . . . . . . . . . . . . . . . . . . . . . . .
+12
+3.4
+Maps between induction bimodules . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+12
+3.5
+Bends at a trivalent vertex . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+14
+4
+Reidemeister I move . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+16
+5
+Reidemeister II move
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17
+5.1
+Mixed orientations and Mackey decomposition . . . . . . . . . . . . . . . . . . . . . .
+17
+5.2
+Strands pointing the same way . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+20
+6
+Reidemeister III move . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+21
+6.1
+Three induction strands
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+21
+6.2
+One restriction strand on the outside . . . . . . . . . . . . . . . . . . . . . . . . . . .
+23
+6.3
+One restriction strand in the middle . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+27
+7
+Finite parabolic subgroups . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+30
+7.1
+Examples . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+31
+7.2
+Double cosets from tableaux . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+31
+7.3
+Two blocks and products . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+32
+7.4
+Mackey decomposition for finite parabolics . . . . . . . . . . . . . . . . . . . . . . . .
+34
+7.5
+The finite-parabolic bimodule bicategory . . . . . . . . . . . . . . . . . . . . . . . . .
+34
+8
+Reidemeister identities for finite parabolics
+. . . . . . . . . . . . . . . . . . . . . . .
+35
+8.1
+Reidemeister I . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+35
+8.2
+Reidemeister II
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+37
+8.3
+Reidemeister III . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+39
+
+1
+
+
+1
+Bimodules and functors
+
+We define the strands and generating maps as group-algebra bimodules and use Eilenberg–
+Watts to identify the corresponding functors and natural transformations.
+
+1.1
+The Eilenberg–Watts correspondence
+
+For unital rings R, S, R-Mod denotes the category of unital left R-modules and Bimod(S, R)
+the category of unital S-R bimodules.
+
+Theorem 1.1 (Eilenberg–Watts [1, 2]). For unital rings R, S, there is an equivalence from
+Bimod(S, R) to the category of additive, right-exact functors R-Mod →S-Mod that preserve
+all set-indexed coproducts, with natural transformations as morphisms. It sends
+
+B �−→B ⊗R −,
+f �−→f ⊗R id.
+
+Its quasi-inverse sends F to F(RR) and θ to θR.
+For b ∈F(R) and r ∈R, the right
+action is br = F(ρr)(b), where ρr(x) = xr. For composable bimodules B ∈Bimod(S, R) and
+C ∈Bimod(T, S), composition corresponds to C ⊗S B, and the identity corresponds to the
+regular bimodule.
+
+For C-algebras the equivalence identifies bimodules with equal scalar actions with C-linear
+functors of the stated kind.
+
+Let A, E be locally small abelian categories with all set-indexed coproducts and small projective
+generators P, Q. Here small means that Hom(P, −) or Hom(Q, −) preserves those coproducts.
+Put R = EndA(P)op and S = EndE(Q)op. The Hom functors give equivalences A ≃R-Mod
+and E ≃S-Mod [2, Chs. 8–10]. Theorem 1.1 then sends F to HomE(Q, F(P)), with actions
+
+qopbpop = F(p) ◦b ◦q.
+
+A natural transformation acts by postcomposition with its component at P.
+
+1.2
+The diagrammatic bimodule category
+
+Khovanov’s graphical calculus for induction and restriction between finite groups is the
+starting point for this construction [5, § 3.2].
+
+Fix a group U. For X ≤U, write C[X] for its complex group algebra. If αH = αHα−1 ≤G,
+write α∗: C[H] →C[G] for conjugation by α, extended linearly. This map depends exactly
+on
+¯α = αCU(H),
+CU(H) = {u ∈U : uh = hu for all h ∈H}.
+
+The centralizer in a strand label is taken for the source of its embedding. Thus an eligible
+conjugating element for a strand from H into G satisfies αHα−1 ≤G; the strand records its
+centralizer coset, and hence the embedding, rather than a chosen representative.
+
+The up and down strands below denote
+
+IG,H
+
+α
+= C[G](C[G])α∗,C[H],
+DH,G
+
+α
+= C[H],α∗(C[G])C[G].
+
+The actions are x · h = xαhα−1 on I and h · x = αhα−1x on D. Tensoring on the right gives
+induction and restriction, respectively. The target group is on the left. Read horizontal
+composition as tensor product over the middle group and vertical composition from bottom
+to top.
+
+2
+
+
+G
+H
+
+α
+
+IG,H
+
+α
+
+H
+G
+
+α
+
+DH,G
+
+α
+
+Nodes.
+Let α, β be two labels for embeddings of H into G. Choose α′ ∈α and β′ ∈β with
+d = α′(β′)−1 ∈G. This determines a node
+
+IG,H
+
+α
+·d
+−−→IG,H
+
+β
+,
+x �−→xd.
+
+The map respects the right action exactly when α∗(h)d = dβ∗(h) for all h ∈H. The possible
+group elements are G ∩αCU(H)β−1. Changing representatives can change d and hence the
+map. For the down strands the same d gives x �→d−1x.
+
+d = α′(β′)−1
+G
+H
+
+α
+
+β
+
+d−1 = β′(α′)−1
+H
+G
+
+α
+
+β
+
+Linear dot labels.
+We also allow a node to be a finite C-linear combination of the
+group-element nodes just defined. For fixed incoming and outgoing labels, write
+
+a =
+�
+
+d∈S
+cdd,
+cd ∈C,
+S ⊆G ∩αCU(H)β−1 finite.
+
+Every supported group element must be eligible individually: α∗(h)d = dβ∗(h) for every
+h ∈H. On up strands this node acts by x �→xa. The corresponding linear combination on
+down strands acts by
+x �−→
+�
+
+d∈S
+cdd−1x.
+
+This extends the group-element rule linearly; it does not take a multiplicative inverse of a. A
+group-algebra element that intertwines only after its terms are added need not be an eligible
+single dot. Larger diagrams can realize further bimodule maps, as in Proposition 3.3.
+
+A linear label occupies one marked node, including for a zero label. Its coefficients and
+support do not change the drawing’s shape. An eligible node labelled 1 evaluates to the
+identity map of its strand, while the drawing still has a dot. Expanding a label into terms is
+an equality of evaluated linear combinations; it does not replace one marked node by several
+successive nodes.
+
+Cups and caps.
+Suppress the embedding and group labels on I, D. Each tensor product is
+over the group algebra of the middle region. For Indα∗⊣Resα∗, the unit and counit are
+
+η : C[H] −→D ⊗C[G] I,
+h �−→α∗(h) ⊗1,
+
+ε : I ⊗C[H] D −→C[G],
+x ⊗y �−→xy.
+
+3
+
+
+In the unit formula, D⊗C[G]I identifies with C[G] by multiplication. Define the C[H]-bimodule
+trace
+
+Eα(g) =
+
+�
+α−1gα,
+g ∈αH,
+0,
+g /∈αH,
+g ∈G,
+
+and extend it linearly. When [G : αH] < ∞, choose T ⊆G with G = �
+t∈T
+αH t. The reverse
+adjunction Resα∗⊣Indα∗has unit and counit
+
+�η : C[G] −→I ⊗C[H] D,
+g �−→
+�
+
+t∈T
+gt−1 ⊗t =
+�
+
+t∈T
+t−1 ⊗tg,
+
+�ε : D ⊗C[G] I −→C[H],
+x ⊗y �−→Eα(xy).
+
+Replacing t by α∗(h)t leaves the balanced tensor t−1 ⊗t unchanged. Right multiplication by
+g ∈G permutes the cosets αHt, which proves the displayed equality for �η. The dual-basis
+identities are
+�
+
+t∈T
+t−1α∗
+�Eα(tx)
+�= x,
+�
+
+t∈T
+α∗
+�Eα(xt−1)
+�t = x.
+
+For a basis element x ∈G, each identity has exactly one nonzero term, by the decompositions
+using T and T −1. They give the two reverse triangle identities. The trace cap is defined at
+every index. The reverse unit displayed above is part of the generating calculus at finite
+index.
+
+H
+G
+H
+
+α
+α
+
+H
+G
+H
+G
+
+α
+α
+
+G
+
+η
+ε
+
+G
+H
+G
+
+α
+α
+
+G
+H
+G
+H
+
+α
+α
+
+H
+
+�η (finite index)
+�ε
+
+Merges and splits.
+For βL ≤H and αH ≤G, the induction merge is
+
+IG,H
+
+α
+⊗C[H] IH,L
+
+β
+∼
+−−→IG,L
+
+αβ ,
+x ⊗y �−→x α∗(y).
+
+The restriction merge has the reverse order of the two factors,
+
+DL,H
+
+β
+⊗C[H] DH,G
+
+α
+∼
+−−→DL,G
+
+αβ ,
+y ⊗x �−→α∗(y) x.
+
+The splits are their inverses, z �→z ⊗1 and z �→1 ⊗z, respectively. Reflect the merge
+diagrams vertically while keeping each strand type to draw the splits.
+
+G
+H
+L
+
+G
+L
+
+α
+β
+
+αβ
+
+L
+H
+G
+
+L
+G
+
+β
+α
+
+αβ
+
+4
+
+
+Diagrams and evaluated maps.
+For fixed endpoints K, H, the objects of DU(K, H) are
+sequences of strands from H to K, interpreted as tensor products. When K = H, the empty
+sequence gives the regular bimodule. Diagrams are built from dots, cups, caps, merges, splits,
+identities, and the associativity and unit maps for tensor products, using horizontal tensor
+product and vertical stacking. Each diagram has a specified bottom source and top target.
+Stacking requires matching boundary objects, including the ordered strands, orientations,
+centralizer cosets, and region groups.
+
+Fix boundary objects X, Y , also writing X, Y for their bimodules. Let V (X, Y ) be the vector
+space of finite formal C-linear combinations of admissible diagrams from X to Y . For stacking
+we make the usual associativity and identity-wire identifications. Evaluation is the linear map
+
+evX,Y : V (X, Y ) −→HomC[K]-C[H](X, Y ),
+�
+
+i
+ciDi �−→
+�
+
+i
+ci ev(Di).
+
+A formal diagram and the bimodule map it evaluates to are distinct objects. Different
+diagrams can give the same map. We identify two linear combinations exactly when their
+evaluations agree, so
+
+HomDU(K,H)(X, Y ) = V (X, Y )/ ker evX,Y ∼= im evX,Y .
+
+Thus each hom-space is a complex vector space of generated bimodule maps. Representability
+of further bimodule maps requires a separate argument, such as the orbit-sum construction
+in Proposition 3.3.
+
+Composition and the diagram algebra.
+Stacking extends bilinearly:
+
+
+�
+
+j
+bjEj
+
+
+
+◦
+
+��
+
+i
+ciDi
+
+�
+
+=
+�
+
+j,i
+bjci(Ej ◦Di),
+Di : X →Y,
+Ej : Y →Z.
+
+Evaluation preserves composition. Consequently it descends to the quotient hom-spaces, with
+associative composition and identity given by the undecorated identity diagram. Horizontal
+tensor product is also bilinear on maps, over the group algebra of the common region.
+
+To combine diagrams with different sources and targets in one algebra, choose a finite family
+X = (Xi)i∈F of boundary objects in DU(K, H), and put
+
+AX =
+�
+
+i,j∈F
+V (Xi, Xj).
+
+An element of V (Xi, Xj) occupies block (j, i). Multiply two blocks by stacking when their
+intermediate boundary indices match, and by zero otherwise; then extend bilinearly. Explicitly,
+for D : Xi →Xj and E : Xk →Xℓ,
+
+EℓkDji =
+
+�
+(E ◦D)ℓi,
+k = j,
+0,
+k ̸= j.
+
+This is associative matrix multiplication, with identity the sum of the individual identity
+diagrams in the diagonal blocks.
+
+Evaluate each block as the corresponding bimodule map on �
+i∈F Xi. This gives an algebra
+homomorphism EvX whose kernel is the two-sided ideal
+
+IX =
+�
+
+i,j∈F
+ker evXi,Xj .
+
+5
+
+
+Indeed, composing an evaluated block map with the inclusion of Xi and the projection to Xj
+recovers its (j, i) entry. The quotient algebra is therefore
+
+AX = AX /IX ∼=
+�
+
+i,j∈F
+HomDU(K,H)(Xi, Xj) ∼= im EvX ,
+
+with multiplication as above.
+It is precisely the algebra of evaluated block maps with
+diagrammatic entries, and is a unital subalgebra of the bimodule endomorphisms of �
+i Xi.
+Every hom-space embeds as its own block. If ei is the class of the identity diagram in block
+(i, i), then
+1 =
+�
+
+i∈F
+ei,
+eiAX ei ∼= EndDU(K,H)(Xi).
+
+Thus the fixed-boundary endomorphism algebras are the diagonal corners of the combined
+diagram algebra.
+
+For an infinite family, the same construction with finite-support block sums is locally unital:
+any finite collection of elements has a common two-sided unit �
+i∈S ei, where the finite
+set S contains all its source and target indices. With infinitely many nonzero boundary
+objects there is no global unit in this finite-support algebra. One may adjoin a global unit by
+adjoining the identity operator on �
+i Xi to its evaluated image.
+
+In particular, for one fixed boundary object X, stacking makes AX = V (X, X) an associative
+unital C-algebra, with ED = E◦D read bottom to top. Evaluation is an algebra homomorphism
+to the bimodule endomorphisms of X. Its kernel IX is a two-sided ideal: for n ∈IX and
+a, b ∈AX,
+ev(anb) = ev(a) ◦0 ◦ev(b) = 0.
+
+The algebra of diagrammatic endomorphisms is therefore
+
+EndDU(K,H)(X) = AX/IX,
+[E][D] = [E ◦D],
+1 = [idX].
+
+This algebra need not be commutative. On IG,1
+¯1
+, every g ∈G gives a dot rg(x) = xg, and
+rh ◦rg(x) = xgh. If gh ̸= hg, the two dot orders give different maps.
+
+Sums of maps and direct sums.
+Inside one hom-space, a finite linear combination may
+be pictured as a superposition of diagrams with the same source and target; evaluation
+adds their maps on the same input. Actual direct sums of bimodules give different input
+and output summands: a direct sum f ⊕g acts separately on those summands as a block-
+diagonal map. More generally, a map �
+i Xi →�
+j Yj has entries fji : Xi →Yj, and acts by
+(xi)i �→(�
+i fji(xi))j. Thus sums across different boundaries in the combined algebra retain
+their block positions, while superpositions add maps inside one block. Section 2 uses the full
+bimodule category for arbitrary direct sums. Its pointwise finite infinite sums have the stated
+finiteness conditions, beyond the finite combinations defining V (X, Y ).
+
+Convention for diagrammatic identities.
+Throughout this article, displayed identities
+between diagrams are equalities of their evaluated bimodule maps, with the same source
+and target. For readability we use the slight abuse D1 = D2 for ev(D1) = ev(D2). The
+same convention applies to finite C-linear combinations, with evaluation extended linearly.
+When an indexed sum is allowed by the stated pointwise finiteness conditions, it denotes the
+pointwise sum of the evaluated maps: only finitely many terms are nonzero on each input.
+Such a sum need not belong to V (X, Y ), whose formal linear combinations are finite.
+
+6
+
+
+1.3
+The corresponding functor category
+
+Eilenberg–Watts identifies C[K]-C[H] bimodules with equal scalar actions with C-linear,
+right-exact, coproduct-preserving functors from C[H]-Mod to C[K]-Mod. Bimodule maps
+correspond to natural transformations.
+
+The category DU(K, H) corresponds to composites of the given inductions and restrictions.
+Its transformations are built from the indicated maps by tensor product, composition, and
+finite linear combination. For a transformation between two such tensor functors, membership
+is determined by its component at C[H], using the tensor unit identifications. Finite direct
+sums and matrices of maps correspond on both sides.
+
+These composite functors are exact and preserve coproducts. Restriction acts on the same
+vector spaces, and C[G] is free as a right C[H]-module along each embedding. Allowing every
+bimodule map would give the full subcategory on these functors.
+
+2
+Mackey decomposition
+
+We state ordinary Mackey decomposition and give its diagrammatic form for conjugation
+embeddings. Each double coset determines one summand and its inclusion and projection.
+
+2.1
+The ordinary Mackey theorem
+
+Theorem 2.1 (Ordinary Mackey decomposition [3]). Let K, H ≤G be subgroups with their
+given inclusions. Set I = K\G/H, the set of double cosets KgH = {kgh : k ∈K, h ∈H}
+for g ∈G. Choose an indexed family (σi)i∈I in G with σi ∈i for each i. Thus i = KσiH and
+
+G =
+�
+
+i∈I
+KσiH.
+
+For each i ∈I, set Li = K ∩σiHσ−1
+i
+. Use the inclusion Li �→K and the embedding
+µi : Li �→H given by ℓ�→σ−1
+i
+ℓσi. Then there is a natural isomorphism
+
+ResG
+K IndG
+H ∼=
+�
+
+i∈I
+IndK
+Li Resµi .
+
+At the bimodule level the map from the i-th summand C[K] ⊗C[Li] C[H] to C[G] takes k ⊗h
+to kσih.
+
+The finite-group formulation is from Khovanov [5, Eq. (29) and Prop. 6]. The version for
+arbitrary groups stated here is the case α = β = 1 of Theorem 2.2.
+
+2.2
+Generalized Mackey theorem for conjugate embeddings
+
+Let K, H, G ≤U and α, β ∈U satisfy αK ≤G and βH ≤G. Let J = (αK)\G/(βH). Choose
+one representative σj ∈j for each j ∈J, so
+
+j = (αK)σj(βH),
+G =
+�
+
+j∈J
+j.
+(2.1)
+
+For each j, set
+Lj = αK ∩σjβH.
+(2.2)
+
+The embeddings out of Lj are λj(ℓ) = α−1ℓα ∈K and µj(ℓ) = β−1σ−1
+j ℓσjβ ∈H. The strand
+
+labels for these maps are α−1 = α−1CU(Lj) and β−1σ−1
+j
+= β−1σ−1
+j CU(Lj).
+
+7
+
+
+Write M = C[K](C[G])C[H] with actions through α∗, β∗, and Mj = C[K] ⊗C[Lj] C[H] with
+actions in the tensor product through λj, µj. A boundary with middle region G represents
+DK,G
+¯α
+⊗C[G] IG,H
+¯β
+∼= M; one with middle region Lj represents IK,Lj
+
+α−1 ⊗C[Lj] DLj,H
+
+β−1σ−1
+j
+∼= Mj.
+
+Theorem 2.2 (Generalized Mackey decomposition). There are bimodule maps pj : M →Mj
+and ιj : Mj →M such that
+
+idM =
+�
+
+j∈J
+ιj ◦pj,
+pj ◦ιi =
+
+�
+idMi,
+i = j,
+0,
+i ̸= j.
+(2.3)
+
+The sum is pointwise finite and gives
+
+M ∼=
+�
+
+j∈J
+Mj,
+Resα∗Indβ∗∼=
+�
+
+j∈J
+Indλj Resµj .
+
+The inclusion and projection diagrams below extend Khovanov’s finite-group diagrams to
+conjugate embeddings [5, Prop. 6].
+
+For each j, choose right coset representatives hu indexed by Uj, so that
+
+H =
+�
+
+u∈Uj
+(β−1σ−1
+j Lj)hu.
+(2.4)
+
+For g ∈G, put
+U′
+j(g) = {u ∈Uj : α−1gβh−1
+u β−1σ−1
+j α ∈K}.
+
+Lemma 2.3 (The surviving coset representative). The set U′
+j(g) has exactly one element if
+g ∈j and is empty otherwise.
+
+Proof. If u ∈U′
+j(g), then gβh−1
+u β−1 ∈(αK)σj, so g ∈j. Conversely, write g = αkα−1σjβhβ−1
+
+with k ∈K and h ∈H. Cancelling k in the defining test, we obtain
+
+u ∈U′
+j(g) ⇐⇒σjβhh−1
+u β−1σ−1
+j
+∈αK
+
+⇐⇒hh−1
+u
+∈β−1σ−1
+j Lj.
+
+The middle expression is already in σjβH. The last condition holds for exactly one u by
+(2.4).
+
+Proof of Theorem 2.2. The dot σj and the multiplication cap give
+
+ιj(k ⊗h) = αkα−1σjβhβ−1.
+
+This formula is balanced because α∗(λj(ℓ)) = ℓand σjβ∗(µj(ℓ)) = ℓσj for ℓ∈Lj. It commutes
+with the left K-action and the right H-action.
+
+For the other crossing, the reverse cup supplies the coset terms, the dot inserts σ−1
+j , and the
+trace Eα : C[G] →C[K] keeps only the indices in U′
+j(g). Thus
+
+pj(g) =
+�
+
+u∈U′
+j(g)
+α−1gβh−1
+u β−1σ−1
+j α ⊗hu.
+
+Extend this formula linearly. If the coset index in (2.4) is infinite, apply the trace term by
+term. Lemma 2.3 gives at most one term on each basis element.
+
+8
+
+
+G
+
+Lj
+
+G
+
+K
+H
+=
+
+σj
+
+σ−1
+j
+
+¯α
+
+¯α
+
+¯β
+
+¯β
+
+α−1
+
+β−1σ−1
+j
+
+K
+H
+
+G
+
+G
+
+Lj
+
+Apply ιj to each surviving term. The dot σj cancels σ−1
+j , and h−1
+u hu = 1, so
+
+(ιj ◦pj)(g) = |U′
+j(g)| g.
+(2.5)
+
+By Lemma 2.3, this fixes g if g ∈j and sends it to zero otherwise. Each g ∈G lies in exactly
+one double coset. Summing over j gives idM, and the sum is finite on each input.
+
+K
+G
+H
+
+¯α
+¯β
+
+=
+�
+
+j∈J
+
+G
+
+Lj
+
+G
+
+K
+H
+
+In the reverse order, let g = ιi(k ⊗h). Then g ∈i, so pj(g) = 0 for i ̸= j. For i = j let u be
+the unique element of U′
+j(g). The lemma gives ℓ= σjβhh−1
+u β−1σ−1
+j
+∈Lj. Substituting into
+pj and using the tensor relation gives
+
+(pj ◦ιj)(k ⊗h) = kλj(ℓ) ⊗hu = k ⊗µj(ℓ)hu = k ⊗h.
+(2.6)
+
+Lj
+
+G
+
+Li
+
+K
+H
+=
+
+σ−1
+j
+
+σi
+
+α−1
+
+α−1
+
+β−1σ−1
+j
+
+β−1σ−1
+i
+
+¯α
+
+¯β
+K
+H
+G
+
+Lj
+
+Li
+
+The two identities make (pj)j the inverse of the bimodule map �
+j Mj →M with components
+ιj. Thus each pj is a bimodule map. Tensoring the isomorphism on the right gives the stated
+functor isomorphism.
+
+9
+
+
+3
+Right curls, trivalent moves, and admissible labellings
+
+We establish local rules for comparing diagrams, including how dots pass through curls or
+three-strand vertices, and when bending a strand at such a vertex preserves its map.
+
+3.1
+Right curls and dots
+
+The right curl on IG,H
+¯α
+uses the reverse cup and multiplication cap for the embedding by δ of
+K into H. It requires [H : δK] < ∞. For the inclusion this index is [H : K].
+
+Proposition 3.1 (Right curl and dot slide). The curl multiplies by [H : δK]. For d = αβ−1 ∈
+G, the dot rd(x) = xd changes ¯α to ¯β. Using the same embedding of K into H, the dot below,
+inside, or above the curl gives x �→[H : δK]xd.
+
+For the four identities below take γ, γ′ for embeddings of H into G and α, β for embeddings of
+K into H. Set d = γ(γ′)−1 ∈G and e = αβ−1 ∈H. Write mγ,α and m↓
+γ,α for the induction
+and restriction merges and ℓa(x) = ax. The identities are in order for the induction merge,
+induction split, restriction merge, and restriction split.
+
+mγ′,β ◦(rd ⊗re) = rdγ′e(γ′)−1 ◦mγ,α,
+(3.1)
+
+(rd ⊗re) ◦m−1
+γ,α = m−1
+γ′,β ◦rdγ′e(γ′)−1,
+(3.2)
+
+m↓
+γ′,β ◦(ℓe−1 ⊗ℓd−1) = ℓγ′e−1(γ′)−1d−1 ◦m↓
+γ,α,
+(3.3)
+
+(ℓe−1 ⊗ℓd−1) ◦(m↓
+γ,α)−1 = (m↓
+γ′,β)−1 ◦ℓγ′e−1(γ′)−1d−1.
+(3.4)
+
+Proof of the induction merge identity. Since mγ,α(x ⊗y) = xγ∗(y) and dγ′
+∗(y) = γ∗(y)d, we
+have
+mγ′,β(xd ⊗ye) = xd γ′
+∗(ye) = xγ∗(y) dγ′
+∗(e).
+
+This gives (3.1).
+
+d
+
+¯α
+
+¯β
+
+G
+
+K
+H
+
+¯δ
+
+d
+
+¯α
+
+¯β
+
+G
+
+K
+H
+
+¯δ
+
+d
+
+¯α
+
+¯β
+
+G
+
+K
+H
+
+¯δ
+
+=
+=
+
+Proof of the curl identity. Choose T with H = �
+t∈T (δK)t. The cup gives �
+t xα∗(t−1) ⊗t in
+C[G] ⊗C[K] C[H]. The cap gives �
+t xα∗(t−1)α∗(t) = [H : δK]x. A dot inside the curl inserts
+d in the first factor and changes the cap to use β∗. Since α∗(t−1)d β∗(t) = d, the result is
+[H : δK]xd. This also equals composition with the scalar curl on either side.
+
+More generally, in the full bimodule category, insert on the induction factor the endomorphism
+given by right multiplication by a ∈C[H] commuting with C[δK]. It is an eligible single dot
+under our convention when each supported group element centralizes δK; commuting only
+after addition suffices for the endomorphism in this calculation. The resulting curl acts by
+right multiplication by
+
+α∗
+
+��
+
+t∈T
+t−1at
+
+�
+
+.
+
+10
+
+
+This follows by inserting a between t−1 and t. Replacing t by ℓt, ℓ∈δK, leaves the summand
+unchanged. Right multiplication permutes the cosets, so the sum is central in C[H]. A dot
+between the α∗and β∗strands intertwines their images of this sum.
+
+3.2
+Moving dots across a merge or split
+
+The diagrams below show the case d = 1 of the four identities in Proposition 3.1. Read from
+bottom to top.
+
+Induction merge
+
+G
+K
+
+H
+¯γ
+¯α
+
+γβ
+
+e
+¯β
+
+=
+G
+K
+
+H
+¯γ
+¯α
+
+γβ
+
+γeγ−1
+γα
+
+Induction split
+
+G
+K
+
+H
+¯γ
+¯β
+
+γα
+
+e
+¯α
+=
+G
+K
+
+H
+¯γ
+¯β
+
+γα
+
+γeγ−1
+γβ
+
+Restriction merge
+
+G
+K
+
+H
+
+¯γ
+¯α
+
+γβ
+
+e−1 ¯β
+
+=
+G
+K
+
+H
+
+¯γ
+¯α
+
+γβ
+
+γe−1γ−1
+
+γα
+
+Restriction split
+
+G
+K
+
+H
+
+¯γ
+¯β
+
+γα
+
+e−1
+
+¯α
+=
+G
+K
+
+H
+
+¯γ
+¯β
+
+γα
+
+γe−1γ−1
+γβ
+
+Moving a dot back to a branch.
+Fix the incoming labels of a merge. A dot D ∈G on
+its merged strand can move to the right input exactly when D ∈γH. Necessity follows from
+(3.1) with d = 1. For sufficiency take e = γ−1Dγ ∈H and β = e−1α. This embeds K into H
+and gives the same output embedding, since both conjugate (γα)∗by D−1. A dot can always
+move to the left input by taking γ′ = D−1γ and e = 1.
+
+For a split with left label ¯α, moving a dot to the right output requires D ∈αH. To move it
+to the left output, factor the given input representative b as (bγ−1)γ. Since D = b(αγ)−1,
+the left representative bγ−1 = Dα embeds H into G.
+
+Moving a curl across a vertex.
+A right curl with no dot multiplies by its index. It can
+move across a merge or split if the new curl has the same index. The right input and the
+merged strand have the same right region K. The left input has right region H, where
+
+[H : αL] = [H : αK] [K : L]
+
+11
+
+
+for L ≤K and finite indices.
+
+Example 3.1 (Two curls with different indices). For G = H = C2 and K = L = 1, the curls
+using 1 multiply by 1 on the right input and by 2 on the left.
+
+Dividing each curl by its finite index gives the identity.
+
+3.3
+When one shape can replace another
+
+For shapes A, B with the same boundary shape, write A ⪯B if every labelling of A can be
+replaced by a labelling of B with the same boundary groups, boundary cosets, and map.
+Internal labels may change. This is inclusion of the sets of maps at each fixed boundary, so
+the relation is reflexive and transitive.
+
+Proposition 3.2. Let A be the induction merge with a dot on the right input, and let B be
+the induction merge with a dot on the merged strand. Then A ⪯B and B ⪯̸ A.
+
+Proof. The induction-merge slide in (3.1) is defined for every admissible labelling of A and
+preserves its boundary and map.
+
+Example 3.2 proves B ⪯̸ A.
+
+Example 3.2 (A dot that cannot move to the right input). Take the standard inclusions in
+the finitary symmetric group
+
+K = Sym({1, 2}) ≤H = Sym({1, 2, 3}) ≤G = Sym({1, 2, 3, 4}).
+
+Fix all boundary strands to be these inclusions and their composite. Put g = (3 4) on the
+merged strand of B. It centralizes K, so g, 1 represent the same label there. The map sends
+1 ⊗1 to g. In shape A, the image of 1 ⊗1 is the right-input label and lies in H, whereas
+g /∈H.
+
+3.4
+Maps between induction bimodules
+
+Proposition 3.3. The space of bimodule maps from IG,H
+¯α
+to IG,H
+¯β
+has a basis given by right
+multiplication by the sums of the finite orbits of
+
+h · g = α∗(h)g β∗(h)−1
+(h ∈H, g ∈G).
+
+The single group-element dots are the singleton orbits. If H is finite, the sum over each orbit
+is realized by a diagram.
+
+Proof. A left C[G]-linear map is right multiplication by its value a at 1. It respects the
+C[H]-action precisely when α∗(h)a = aβ∗(h) for every h. Invariance forces the coefficients to
+be constant on an orbit, and finite support excludes infinite orbits. This proves the basis
+statement.
+
+For finite H, insert the reverse cup for 1 �→H on the right of the ¯α-strand. Merge the two
+induction strands to an induction from 1 to G, put the dot g on that strand, then split using
+the ¯β-strand and apply the multiplication cap for 1 �→H. The resulting value at x is
+
+x
+�
+
+t∈H
+α∗(t−1)gβ∗(t) = x | StabH(g)|
+�
+
+z∈H·g
+z.
+
+The stabilizer order is invertible in C.
+
+12
+
+
+Example 3.3 (A block swap). Let
+
+B1 = {1, 2, 3},
+B2 = {4, 5, 6},
+B3 = {7, 8, 9},
+B4 = {10, 11, 12}.
+
+Put
+
+G = Sym(B1 ∪B2) × Sym(B3 ∪B4),
+H =
+
+4
+�
+
+i=1
+Sym(Bi).
+
+Take α = (4 7)(5 8)(6 9) and β = 1. The embeddings send (4 5) to transpositions in different
+G-blocks. Every element of G preserves the two blocks, so there is no group-element dot
+between these embeddings. The sum over the orbit of 1 gives a nonzero diagram map by
+Proposition 3.3.
+
+A criterion for group-element dots.
+Suppose H, G are products of symmetric groups
+on disjoint blocks in the group of finitely supported permutations. Each embedding sends
+a non-singleton H-block into a G-block. A dot exists exactly when the two images of each
+non-singleton H-block lie in the same G-block. Necessity follows by testing transpositions.
+For sufficiency extend β(x) �→α(x) on those images to permutations in the G-blocks. These
+partial bijections differ from the identity at finitely many points, so the extensions can have
+finite support. Together they give a dot in G.
+
+Example 3.4 (A dot between two images in one block). 1 and (2 3) send {1, 2} to different
+sets in S4, and (2 3) gives a dot.
+
+A stronger embedding condition.
+Fix a representative β for the embedding of K into
+H. Suppose σβ−1H ≤G whenever σK ≤G. A reverse slide onto the right leg can still fail.
+
+Example 3.5 (A reverse slide under the stronger embedding condition). Use K = �
+i Sym(Bi),
+H = Sym(B1 ∪B2) × Sym(B3 ∪B4), G = S{1,...,12}, and β = 1. If σK ≤G, the support of σK
+forces σ to preserve {1, . . . , 12}, so σH ≤G. The block swap α = (4 7)(5 8)(6 9) conjugates K
+to itself and lies in G \ H. It labels a dot on the merged strand from the inclusion to ¯α. It
+cannot move to the right input because it lies outside H.
+
+Bounds on the support of representatives.
+For a finite subgroup X given by symmetric
+groups on disjoint blocks, let supp X be the union of its non-singleton blocks and �X =
+Sym(supp X). The conditions α ∈G �H and β ∈H �
+K do not ensure αβ ∈G�
+K.
+
+Example 3.6 (Support bounds under composition). Take
+
+G = H = Sym({1, . . . , 6}) × Sym({7, . . . , 12}),
+K = Sym({1, 2, 3}).
+
+Let α swap the two six-point blocks and let β = 1. The two embeddings satisfy the support
+bounds. Every element of G�
+K preserves each six-point block, whereas αβ carries the support
+of K into the second block. Even the composite strand label has no representative in G�
+K.
+
+Example 3.7 (Support bounds for an inverse product). Consider whether βα−1H ≤G when
+α, β ∈�GH both embed H in G. Take G to be the product of the symmetric groups on
+{1, 2}, {3, 4}, {5, 6}, H = Sym({1, 2}), α = (1 3)(2 4), and β = (4 5). Both permutations
+belong to �GH and embed H in G. But βα−1 sends {1, 2} to {3, 5}, so βα−1H ≰G.
+
+13
+
+
+3.5
+Bends at a trivalent vertex
+
+Proposition 3.4 (Bend identities). Let K
+α∗
+−→H
+γ∗
+−→G be conjugation embeddings. The
+two diagrams in each pair below give the same bimodule map. The multiplication-cap and
+ordinary-cup identities hold at all indices. The trace-cap identity holds when [H : αK] < ∞,
+and the reverse-cup identity holds when [G : γαK] < ∞.
+
+Multiplication cap
+¯γ
+
+¯α
+
+G
+
+K
+
+H
+
+γα
+¯α
+
+=
+
+¯γ
+
+γα
+
+¯γ
+G
+
+K
+
+H
+
+γα
+¯α
+Trace cap
+¯α
+
+¯γ
+
+K
+
+G
+
+H
+
+γα
+¯γ
+
+=
+
+¯α
+
+γα
+
+¯α
+K
+
+G
+
+H
+
+γα
+¯γ
+
+Ordinary cup
+
+¯α
+
+¯γ
+
+K
+
+G
+
+H
+
+γα
+¯γ
+
+=
+
+¯α
+
+γα
+
+¯α
+K
+
+G
+
+H
+
+γα
+¯γ
+
+Reverse cup
+
+¯γ
+
+¯α
+G
+
+K
+
+H
+
+γα
+¯α
+
+=
+
+¯γ
+
+γα
+
+¯γ
+G
+
+K
+
+H
+
+γα
+¯α
+
+Proof. Read the diagrams from bottom to top and evaluate on group elements. Use the
+merges, splits, and trace caps Eδ of Section 1.2.
+
+Multiplication cap. For g ⊗h ∈C[G] ⊗C[K] C[H], we obtain
+
+LHS
+g ⊗h �−→g ⊗1 ⊗h �−→g ⊗h �−→gγ∗(h),
+
+RHS
+g ⊗h �−→g ⊗h ⊗1 ⊗1 �−→g ⊗γ∗(h) ⊗1 �−→gγ∗(h).
+
+The left cap multiplies in H, then balancing over C[H] identifies g ⊗h with gγ∗(h). On the
+right, the ordinary cup inserts 1 ⊗1, and the cap multiplies in G.
+
+Trace cap. Choose hi ∈H with H = �
+i∈I(αKα−1)hi. On g ⊗g′ ∈C[G] ⊗C[G] C[G], the left
+side is
+LHS
+g ⊗g′ �−→1 ⊗g ⊗g′ �−→1 ⊗Eγ(gg′) �−→Eγ(gg′).
+
+14
+
+
+The reverse cup on the right inserts �
+i h−1
+i
+⊗hi.
+
+RHS
+g ⊗g′ �−→
+�
+
+i
+g ⊗g′ ⊗h−1
+i
+⊗hi
+
+�−→
+�
+
+i
+g ⊗g′γ∗(h−1
+i ) ⊗hi
+
+�−→
+�
+
+i
+α∗
+�
+Eγα(gg′γ∗(h−1
+i ))
+�
+hi.
+
+If gg′ /∈γHγ−1, all terms vanish. If gg′ = γ∗(h), only the i with hh−1
+i
+∈αKα−1 survives. Its
+term is (hh−1
+i )hi = h = Eγ(gg′).
+
+Ordinary cup. For h ∈C[H], the two outputs are
+
+LHS
+h �−→1 ⊗1 ⊗h �−→1 ⊗γ∗(h),
+
+RHS
+h �−→h ⊗1 ⊗1 �−→γ∗(h) ⊗1.
+
+They are equal by balancing over C[G].
+
+Reverse cup. Use the same hi as in the trace cap. On the left,
+
+LHS
+g �−→
+�
+
+i
+g ⊗h−1
+i
+⊗hi �−→
+�
+
+i
+gγ∗(h−1
+i ) ⊗hi.
+
+Choose gj with G = �
+j(γHγ−1)gj and g0 = 1. Then γ∗(hi)gj are representatives for the
+cosets ((γα)K(γα)−1)γ∗(hi)gj. On the right, write the input as g ⊗1 over C[G] before
+applying the large cup. The cup, split, and trace give
+
+RHS
+g �−→
+�
+
+i,j
+g(γ∗(hi)gj)−1 ⊗γ∗(hi)gj ⊗1
+
+�−→
+�
+
+i,j
+g(γ∗(hi)gj)−1 ⊗1 ⊗γ∗(hi)gj ⊗1
+
+�−→
+�
+
+i,j
+g(γ∗(hi)gj)−1 ⊗Eγ(γ∗(hi)gj)
+
+=
+�
+
+i
+gγ∗(h−1
+i ) ⊗hi.
+
+Only j = 0 survives the trace. The finite index for the large cup also makes the smaller cup
+on the left finite.
+
+The equations let us draw the vertices with three straight segments.
+
+15
+
+
+4
+Reidemeister I move
+
+We evaluate each of the four oriented curls and identify the two that multiply the identity by
+a subgroup index.
+
+Use K
+δ∗
+−→H
+α∗
+−→G. The subscript on id lists the groups on the left and right.
+
+Theorem 4.1 (Reidemeister I). The four curls shown below satisfy
+
+right curl on an up-strand = [H : δK] idG·H,
+(4.1)
+
+right curl on a down-strand = idK·H,
+(4.2)
+
+left curl on an up-strand = idH·K,
+(4.3)
+
+left curl on a down-strand = [H : δK] idH·G.
+(4.4)
+
+The K-loops require finite [H : δK]. The G-loops hold at arbitrary index.
+
+K
+
+¯δ
+
+G
+H
+
+¯α
+
+G
+
+¯α
+K
+H
+
+¯δ
+Right curl, up
+Right curl, down
+
+G
+¯α
+H
+K
+
+¯δ
+
+K
+¯δ
+
+H
+G
+
+¯α
+Left curl, up
+Left curl, down
+
+16
+
+
+Proof. For the loops enclosing K, choose T ⊆H with H = �
+t∈T (δK)t. The reverse cup
+inserts �
+t t−1 ⊗t. Apply α∗to each factor before multiplying.
+
+right curl, up
+x �−→
+�
+
+t∈T x α∗(t−1)α∗(t) = [H : δK] x,
+
+left curl, down
+x �−→
+�
+
+t∈T α∗(t−1)α∗(t) x = [H : δK] x.
+
+For the loops enclosing G, the ordinary unit inserts 1 ⊗1. The join uses the composite
+embedding, and the cap applies Eα to the product.
+
+right curl, down
+x �−→α∗(x) ⊗1 �−→Eα(α∗(x)) = x,
+
+left curl, up
+x �−→1 ⊗α∗(x) �−→Eα(α∗(x)) = x.
+
+Here Eαα∗= idC[H]. Tensoring gives the functor identities.
+
+Over C, dividing either K-loop by its finite index [H : δK] gives the identity.
+
+5
+Reidemeister II move
+
+We evaluate pairs of crossings. For strands pointing in opposite directions, the identities
+come from Mackey decomposition. For parallel strands, merging reduces the composite to
+multiplication by a single element of the group algebra.
+
+5.1
+Mixed orientations and Mackey decomposition
+
+Use J, σj, Lj, M, Mj from Section 2.2. The two boundary strands of M point in opposite
+directions, with G between them. To allow a different middle group, take aL ≤K, bL ≤H
+and s = αa(βb)−1 ∈G. Use s, s−1 as the two crossing labels and put
+
+ML = C[K] ⊗C[L] C[H],
+Ls = (αK) ∩(sβH),
+n = [Ls : αaL].
+
+The tensor product has basis K ×LH, the classes [k, h] of pairs under [kaℓa−1, h] = [k, bℓb−1h],
+ℓ∈L. The relation identifies exactly the pairs equated by balancing the tensor product.
+
+Proposition 5.1 (Two crossings with opposite orientations). Suppose n < ∞. Let pL : M →
+ML and ιL : ML →M be the two crossings. Write q([k, h]) = αkα−1sβhβ−1. If s ∈j, then
+
+ιL ◦pL = nPj,
+pL ◦ιL(z) =
+�
+
+q(w)=q(z)
+w
+(z ∈K ×L H),
+
+where Pj fixes the basis elements in j and sends the others to zero. The second composite is
+the identity exactly when n = 1. For n > 1, no scalar multiple of it is the identity.
+
+Proof. Since sβb = αa, conjugation by s identifies the two images of L. Thus αaL ≤Ls and
+q respects the relation on pairs. The dot s and multiplication cap give ιL([k, h]) = q([k, h]).
+
+Choose T with H = �
+t∈T (bL)t. The reverse cup supplies t−1 ⊗t, the dot multiplies the first
+factor by s−1, and the trace Eα gives
+
+pL(g) =
+�
+
+t∈T
+Eα
+�gβt−1β−1s−1�⊗t.
+
+Each class has a unique representative (k, t) with t ∈T. The trace returns k exactly when
+q([k, t]) = g. Hence pL(g) = �
+q(w)=g w.
+
+17
+
+
+The action of K × H is (k0, h0)[k, h] = [k0k, hh−1
+0 ] and (k0, h0)g = αk0α−1gβh−1
+0 β−1. The
+balanced set is transitive and q is equivariant with image j. Sending (k0, h0) to αk0α−1
+
+identifies the stabilizers of s and [1, 1] with Ls and αaL, respectively. Their index gives n
+preimages for each g ∈j. The sums are therefore finite and define a bimodule map. Applying
+q to the sum gives ng on j. In the other order the result sums all preimages of q(z). If n > 1,
+this includes a basis element besides z.
+
+The reverse cup is a map when [H : bL] < ∞. At infinite index the formula for pL sums only
+the terms that survive the trace. It still defines a map for finite n. For infinite n, the sum on
+g ∈j has infinite support.
+
+Mackey cancellation.
+Take L = Lj, a = α−1, b = β−1σ−1
+j . Then s = σj, n = 1, and the
+two orders give
+
+pj ◦ιi =
+
+�
+idMi,
+i = j,
+0,
+i ̸= j,
+
+�
+
+j∈J
+ιj ◦pj = idM.
+
+Here q is a bijection onto j. For i ̸= j, pj vanishes on the image of ιi. The projections sum to
+the identity because the double cosets partition G. Read the diagrams from bottom to top.
+
+Lj
+
+G
+
+Lj
+
+K
+H
+ιj
+
+pj
+
+α−1
+β−1σ−1
+j
+
+α−1
+β−1σ−1
+j
+
+=
+K
+Lj
+H
+
+α−1
+β−1σ−1
+j
+
+�
+
+j∈J
+
+G
+
+Lj
+
+G
+
+K
+H
+pj
+
+ιj
+
+¯α
+¯β
+
+¯α
+¯β
+
+=
+K
+G
+H
+
+¯α
+¯β
+
+Lemma 5.2 (Transport to the Mackey representative). Let s = αa(βb)−1 ∈j and write
+
+s = (αkα−1)σj(βhβ−1),
+k ∈K,
+h ∈H.
+
+Then L′ = αk−1aL ≤Lj. Use the restrictions of λj, µj for the embeddings of L′. The map
+
+[x, y]L �−→[xk, hy]L′
+
+is a bijection respecting the left K-action and right H-action. Its linear extension intertwines
+the multiplication crossings with labels s, σj, and the projection crossings with labels s−1, σ−1
+j
+when their fiber sums are finite. Moreover, [Lj : L′] = [Ls : αaL].
+
+Proof. Multiplying the factorization of s by βb gives t = αk−1a = σjβhb. The first expression
+puts tLt−1 inside αK and the second puts it inside σjβH. Hence L′ = tLt−1 ≤Lj. For ℓ∈L
+the restricted embeddings send tℓt−1 to
+
+λj(tℓt−1) = k−1aℓa−1k,
+µj(tℓt−1) = hbℓb−1h−1.
+
+These identities carry the balancing relation for L to the one for L′ and back under the
+inverse shifts. The shifts commute with the left K-action and right H-action. The crossing
+values agree by
+α(xk)α−1σjβ(hy)β−1 = αxα−1sβyβ−1.
+
+The bijection also identifies the fibers, so it intertwines the reverse crossings when the fiber
+sums are finite. Finally, conjugation by αk−1α−1 takes Ls to Lj and αaL to L′, proving the
+index equality.
+
+This justifies restricting the Mackey embeddings in the calculation below. For any admissible
+dot in j, the composite on C[G] is the projection onto j multiplied by the transported index,
+whenever the reverse crossing is defined.
+
+18
+
+
+Smaller internal groups and intersections.
+Restrict the embeddings of Lj to L ≤Lj,
+and write pL,j, ιL,j for the resulting crossings. For finite [Lj : L], Proposition 5.1 gives
+ιL,j ◦pL,j = [Lj : L] (ιj ◦pj).
+
+In the rightmost diagram, q maps balanced pairs to the double coset j.
+
+q : K ×L H −→j,
+q([k, h]L) = αkα−1σjβhβ−1.
+
+The lower crossing ιL,j is the linear extension of q. The upper crossing pL,j sends q(z) to the
+sum of its [Lj : L] preimages, so pL,j ◦ιL,j is the identity exactly when L = Lj.
+
+G
+
+L
+
+G
+
+K
+H
+pL,j
+
+ιL,j
+
+¯α
+¯β
+
+¯α
+¯β
+
+= [Lj : L]
+
+G
+
+Lj
+
+G
+
+K
+H
+pj
+
+ιj
+
+¯α
+¯β
+
+¯α
+¯β
+
+L
+
+G
+
+L
+
+K
+H
+ιL,j
+
+pL,j
+
+α−1
+β−1σ−1
+j
+
+α−1
+β−1σ−1
+j
+
+: z �→
+�
+
+q(w)=q(z)
+w
+
+For nonempty J0 ⊆J, the group L = �
+j∈J0 Lj can be used separately for each j ∈J0. Use
+α−1 into K and β−1σ−1
+j
+into H. The right labels for i, j agree exactly when σiσ−1
+j
+∈CU(L).
+If all [Lj : L] are finite, termwise division gives
+
+�
+
+j∈J0
+
+ιL,j ◦pL,j
+
+[Lj : L]
+=
+�
+
+j∈J0
+ιj ◦pj.
+
+Also pL,j ◦ιL,i = 0 for i ̸= j, since the double cosets are disjoint. For infinite J0 the sum of
+maps is pointwise finite, with one term on each basis element in the selected cosets. A finite
+J0 gives a sum of diagrams when the cups exist.
+
+Example 5.1 (Two Mackey summands with the same internal labels). For G = S3 × C2, use
+the inclusions of K = H = ⟨(12)⟩× C2. The double cosets have representatives 1, ((13), 1),
+with L1 = K and L2 = {1} × C2. Their common group L = L2 is central, so both pairs use
+the same internal strand labels. The first pair has index 2, the second index 1.
+
+K
+G
+H
+
+¯1
+¯1
+
+= 1
+
+2
+
+G
+
+L
+
+G
+
+K
+H
+pL,1
+
+ιL,1
+
+¯1
+¯1
+
+¯1
+¯1
+
++
+
+G
+
+L
+
+G
+
+K
+H
+pL,2
+
+ιL,2
+
+¯1
+¯1
+
+¯1
+¯1
+
+Proposition 5.3 (A single pair of crossings). A composite M →ML →M cannot project
+onto two or more double cosets, even with arbitrary bimodule maps at the crossings.
+
+Proof. For a K × H-module V , quotient by the span of gv −v for g ∈K × H, v ∈V .
+Equivariant maps descend to these quotients. For a permutation module the quotient has
+one basis vector per orbit. The quotient for ML has dimension one because the action is
+transitive. Thus any map through ML has rank at most one on the quotients. The projection
+onto several double cosets has one independent image vector for each selected coset.
+
+A single pair can give idM only when |J| = 1. In that case use the full Mackey intersection,
+with the same convention for infinite index as above.
+
+19
+
+
+5.2
+Strands pointing the same way
+
+The bottom, middle, and top chains through H, B, H′ have composite conjugators u = αβ,
+v = γδ, and w = α′β′.
+
+d
+
+e
+
+B
+¯γ
+¯δ
+
+¯α
+¯β
+
+α′
+β′
+
+H
+
+H′
+
+G
+K
+
+=
+de
+
+¯u
+
+¯w
+
+¯α
+¯β
+
+α′
+β′
+
+H
+
+H′
+
+G
+K
+
+de=1
+=
+¯u
+
+¯α
+¯β
+
+α′
+β′
+
+H
+
+H′
+
+G
+K
+
+Theorem 5.4 (Parallel Reidemeister II). Two induction crossings labelled d, e, read bottom
+to top, equal a merge, a dot de from ¯u to ¯w, and a split. For de = 1 the merged labels agree
+and the dot disappears. The remaining map is the identity if both boundary sequences agree.
+Each group-element label d has an admissible return label d−1.
+
+Proof. The three merges identify the tensor products with copies of C[G], with right actions
+through u∗, v∗, w∗. The split and merge on the middle product cancel, leaving x �→xd �→xde.
+For group-element dots u−1dv and v−1ew centralize K, so their product u−1de w does too.
+The same test applies to each product of terms in linear labels. If de = 1, then u−1w ∈CU(K),
+so the merged strand stays the same through the dot. If the boundaries agree, the top split
+inverts the bottom merge. Finally v−1d−1u = (u−1dv)−1 proves admissibility for the return
+dot. Both products of d, d−1 equal 1.
+
+For two restriction strands, the group-element labels act on the left, giving x �→d−1x �→
+e−1d−1x = (de)−1x. The product label is again de, including for linear labels by expansion
+in group elements.
+
+20
+
+
+6
+Reidemeister III move
+
+With the boundary fixed, we determine when one three-crossing shape can replace the other.
+We treat three induction strands and the six directions of replacement with one restriction
+strand, including cases that require a sum or admit no replacement.
+
+6.1
+Three induction strands
+
+For the standard inclusions Sn ⊂Sn+1, Khovanov obtains the three-upward-strand braid
+relation from the relation for adjacent transpositions [5, Prop. 7].
+
+All strands point up. For adjacent groups X, Y ≤U, XY
+represents the label XY CU(Y ).
+Fix the six outer groups and the six boundary strand labels shown below.
+
+G
+F
+
+A
+D
+
+C
+E
+
+GA
+
+GC
+
+AD
+
+CE
+
+DF
+
+EF
+
+B
+
+GB
+
+BD
+
+BE
+
+x1
+
+x2
+
+x3
+
+←→
+G
+F
+
+A
+D
+
+C
+E
+
+GA
+
+GC
+
+AD
+
+CE
+
+DF
+
+EF
+
+B′
+
+B′F
+
+AB′
+
+CB′
+
+y1
+
+y2
+
+y3
+
+Diagrams and their classes.
+Let L, R be the admissible labellings of the left and right
+shapes at this boundary. A labelling specifies the middle group, the three interior strand
+cosets, and the three crossing dots. Each crossing merges, applies its dot, and splits. A dot
+can be a finite C-linear combination of the group elements allowed between the two merged
+strand labels.
+
+Write ev(D) for the resulting map from the bottom tensor product to the top one. Within
+each shape let D ∼E mean ev(D) = ev(E), and write [D] for the equivalence class of D.
+
+Multipliers.
+Choose boundary representatives and put
+
+u = GA AD DF ,
+v = GC CE EF .
+
+Merging the bottom and top products gives C[G] with right C[F]-actions through u∗, v∗.
+Every left C[G]-linear map is right multiplication by its value at 1, denoted m(D). At the
+fixed boundary, equality of these values is equality of maps.
+
+Lemma 6.1 (Multipliers under relabelling). At the fixed boundary there are constructions
+ϕ : L →R and ψ : R →L preserving the multiplier of every input diagram. Their two round
+trips satisfy
+
+m(ψ(ϕ(D))) = m(D)
+(D ∈L),
+m(ϕ(ψ(D))) = m(D)
+(D ∈R).
+
+21
+
+
+Proof. For a single p ∈G, the right C[F]-linearity condition is
+
+ufu−1p = pvfv−1
+(f ∈F)
+⇐⇒
+u−1pv ∈CU(F).
+
+At a crossing of the left pair, let λ∗, µ∗be the incoming and outgoing merged embeddings
+into G, and let d be the dot. Merging with the third strand after applying the dot gives
+zdµ∗(w) = zλ∗(w)d, so the multiplier is d. At a crossing of the right pair, the left embedding
+γ∗sends the dot to γ∗(d) because zγ∗(wd) = zγ∗(w)γ∗(d). Hence the multipliers are
+
+left
+x1( GB )∗(x2)x3,
+
+right
+( GA )∗(y1)y2( GC )∗(y3).
+
+Expand the three labels into group elements. Each triple gives a bimodule map whose
+multiplier is a single group element p. Thus u−1pv ∈CU(F) for every p in the support of m,
+the group elements with nonzero coefficient.
+
+Construction of ϕ.
+Given a left-hand diagram with multiplier m, choose the right-hand
+internal group B′ = F and take
+
+B′F = 1,
+AB′ = AD DF ,
+CB′ = CE EF .
+
+The outer vertices compare equal embeddings into A and C, so take y1 = y3 = 1. At the
+middle vertex, pv represents ¯u for every p in the support of m, since u−1pv ∈CU(F). Using v
+for the outgoing label gives the dot (pv)v−1 = p. Thus y2 = m is allowed and gives multiplier
+m.
+
+Construction of ψ.
+Given a right-hand diagram with multiplier m, choose the left-hand
+internal group B = G and take
+
+GB = 1,
+BD = GA AD ,
+BE = GC CE .
+
+The outer vertices compare equal embeddings of D and E into G, so take x1 = x3 = 1. The
+middle vertex compares u∗, v∗into B = G. The same representatives pv, v allow x2 = m.
+The left strand is the inclusion G →G, so the multiplier is m.
+
+Round-trip calculations.
+After the first step the multiplier is still m(D). Returning to
+the left gives B = G and dots (1, m(D), 1). Returning to the right gives B′ = F and the same
+dot triple. Substitution gives
+
+m(ψ(ϕ(D))) = 1 · m(D) · 1 = m(D)
+(D ∈L),
+
+m(ϕ(ψ(D))) = ( GA )∗(1) m(D) ( GC )∗(1) = m(D)
+(D ∈R).
+
+Theorem 6.2 (Reidemeister III). At the fixed boundary, the constructions of Lemma 6.1
+induce mutually inverse bijections
+
+L/∼−→R/∼,
+[D] �−→[ϕ(D)],
+R/∼−→L/∼,
+[D] �−→[ψ(D)].
+
+The induced maps are independent of the internal labellings chosen in any construction
+preserving the boundary and evaluated map.
+
+Proof. If D ∼E on the left, the lemma gives m(ϕ(D)) = m(D) = m(E) = m(ϕ(E)), so the
+outputs are equivalent. The same argument applies to ψ. Any other output with the same
+shape, boundary, and multiplier gives the same class. The two round-trip equalities in the
+lemma therefore give the identity on each set of classes.
+
+22
+
+
+Example 6.1 (A round trip with different labels). Take every group to be C2 = {1, g} and
+every strand to carry the identity embedding. The left diagram D with dots (g, 1, g) has
+multiplier g2 = 1. Its round trip D′ = ψ(ϕ(D)) has dots (1, 1, 1). Both diagrams give the
+identity bimodule map. Since ϕ uses only the multiplier at this boundary, ϕ(D) = ϕ(D′). One
+return rule cannot recover both inputs. Starting on the right gives the same obstruction for
+ψ.
+
+Other choices of internal group.
+For ψ one may use any B ≤G containing GA A,
+GC C, and all group elements with nonzero coefficient in m. The outer embeddings still
+agree and the inclusion sends m ∈C[B] to the same multiplier.
+
+For ϕ with group-element labels, choose representatives at each crossing. A representative αβc
+of a composite coset factors as α(βc), so the choices can be made on the strands themselves.
+This gives
+
+x1 = GA AD BD
+
+−1 GB
+
+−1,
+
+x2 = BD
+
+′ DF EF
+
+−1 BE
+
+−1,
+
+x3 = GB
+
+′ BE
+
+′ CE
+
+−1 GC
+
+−1.
+
+Primes denote other representatives of the same internal labels. Each boundary strand meets
+one vertex, so use its chosen representative in u, v. Both GB and GB
+
+′ act the same way
+
+on B. For p = x1 GB x2 GB
+
+−1x3, cancellation gives
+
+u−1pv =
+�DF
+
+−1 BD
+
+−1 BD
+
+′ DF
+
+�
+
+·
+�EF
+
+−1 BE
+
+−1 GB
+
+−1 GB
+
+′ BE
+
+′ EF
+
+�.
+
+The first factor centralizes DF
+
+−1
+D.
+In the second,
+GB
+
+−1 GB
+
+′ centralizes B, which
+
+contains BE E, and BE
+
+−1 BE
+
+′ centralizes E. Thus the second factor centralizes EF
+
+−1
+E.
+Both factors centralize
+
+B′′ = DF
+
+−1
+D ∩EF
+
+−1
+E.
+
+It contains F. Take B′ = τB′′ for any τ ∈U and use
+
+B′F = τ,
+AB′ = AD DF τ −1,
+CB′ = CE EF τ −1.
+
+The inclusions in the definition of B′′ and F ≤B′′ give these three embeddings. The outer
+composites agree, so y1 = y3 = 1. At the middle vertex (uτ −1)−1p(vτ −1) = τ(u−1pv)τ −1
+
+centralizes B′, so y2 = p gives the original multiplier.
+
+6.2
+One restriction strand on the outside
+
+Number the three positions from left to right at the bottom. Read the diagrams from bottom
+to top. The crossing s1 exchanges positions 1 and 2, and s2 exchanges positions 2 and 3.
+
+s1
+s2
+
+1
+1
+2
+2
+3
+3
+
+23
+
+
+In each pair below, the left shape is s1s2s1 and the right shape is s2s1s2. The numbers
+identify the direction of replacement. Fix the boundary groups and the boundary strand
+cosets in each pair. Letters such as a denote conjugation embeddings, and ¯a is the coset of a
+representative of a. Write ad = a ◦d. Write Adp for conjugation by p.
+
+A label s on a mixed crossing denotes the parameter in qs([k, h]) = α(k)sβ(h). The multipli-
+cation crossing is qs. The projection uses the trace dot s−1 and sends
+
+z �−→q!
+s(z) =
+�
+
+qs([k,h])=z
+[k, h].
+
+By Proposition 5.1, this formula applies when the fibers of qs are finite, even if the cup by
+itself would have infinite index. In a composite with linear labels, each projection must have
+finite fibers for every term used.
+
+6.2.1
+Cases 1 and 2. Both mixed crossings are projections
+
+x1
+
+x2
+
+x3
+
+B
+G
+F
+
+A
+D
+
+C
+E
+
+¯a
+¯b
+¯c
+
+¯d
+¯e
+¯f
+
+Case 1
+
+1
+−−→
+2
+←−−
+
+y1
+
+y2
+
+y3
+
+B′
+G
+F
+
+A
+D
+
+C
+E
+
+¯a
+¯b
+¯c
+
+¯d
+¯e
+¯f
+
+Case 2
+
+The lower embeddings are a : G →A, b : D →A, and c : F →D. The upper ones are
+d : C →G, e : E →C, and f : E →F. After merging parallel strands, the bottom basis is
+A, with actions through a, bc. The top basis is G ×E F, balanced using de, f.
+
+Lemma 6.3 (Evaluation for two projections). With a group element at each vertex, either
+shape evaluates to Q!
+p, the sum over the fibers of
+
+Qp([g, h]) = a(g)p(bc)(h),
+[g, h] ∈G ×E F,
+
+for a unique p ∈A. Its admissibility condition and fiber size over its image are
+
+(ade)(v)p = p(bcf)(v)
+(v ∈E),
+
+np = [a(G) ∩p(bc)(F)p−1 : (ade)(E)] < ∞.
+(6.1)
+
+A diagram with linear labels evaluates to a finite linear combination of these Q!
+p. Its coefficients
+are determined by the evaluated map.
+
+Proof. On the left, write r : B →G, s : B →D, and t : E →B. Use x, y for the first two
+mixed crossing elements and z for the upper induction dot. Following the underlying set
+maps backwards gives
+[g, h] �−→[gz−1, h] �−→[gz−1, yc(h)]
+
+�−→a(gz−1)x b(yc(h)).
+
+24
+
+
+Thus p = a(z−1)xb(y). On the right use u : B′ →A, v : C →B′, and w : F →B′, with
+induction dot ℓand mixed crossing elements m, n. The set maps give
+
+[g, h] �−→[g, nw(h)] �−→a(g)m u(nw(h))
+
+�−→a(g)m u(nw(h))ℓ−1.
+
+Thus p = mu(n)ℓ−1. Taking inverse images twice gives the fiber of the composite. These
+fibers are finite because each projection has finite fibers. Balancing gives the first condition in
+(6.1). The stabilizer index calculation in Proposition 5.1 gives np. Expanding the three labels
+proves the linear formula. The coefficient of [1, 1] in Q!
+p(z) is 1 for z = p and 0 otherwise, so
+the coefficient of each Q!
+p can be recovered.
+
+Theorem 6.4 (Replacement for two projections). For p satisfying (6.1), put Pp =
+⟨(ad)(C), p(bc)(F)p−1⟩≤A.
+
+1. In Case 1, a finite sum of right diagrams gives the same map as the left diagram exactly
+when each p with nonzero coefficient satisfies
+
+[a(G) ∩Pp : (ad)(C)] < ∞.
+(6.2)
+
+Each such Q!
+p has a single right diagram. If [G : d(C)] < ∞, one right diagram suffices
+for the whole sum.
+
+2. In Case 2, every right diagram has a replacement by a finite sum of left diagrams. If
+[G : (de)(E)] < ∞, one left diagram suffices.
+
+Under [G : (de)(E)] < ∞, in particular for finite groups, the single-diagram replacements
+induce inverse bijections on the two sets of classes modulo equality of evaluated maps.
+
+Proof. For Case 1, the three vertex conditions on the right are
+
+bc = Adℓ◦uw,
+ad = Adm ◦uv,
+
+ve = Adn ◦wf.
+
+By p = mu(n)ℓ−1, the group mu(B′)m−1 contains Pp. Its intersection with a(G) has finite
+index over (ad)(C), since that index is the middle fiber size. This proves necessity for each
+term. The coefficient test in Lemma 6.3 gives necessity for finite sums.
+
+For sufficiency take B′ = Pp, u the inclusion, v = ad, w = Adp ◦bc, and (ℓ, m, n) = (p−1, 1, 1).
+The first vertex satisfies bc = Adp−1 ◦uw. The middle fiber is finite by (6.2). The upper
+vertex uses ve = wf, and its index is at most np because (ad)(C) ≤a(G). If [G : d(C)]
+is finite, take a common B′ = A, u = id, v = ad, w = bc. Put the linear combination of
+crossing elements on the upper mixed crossing and use 1 at the first two. The middle fiber
+then has size [G : d(C)], and the upper fiber of each crossing element has size at most np.
+
+For Case 2 use the full intersection at the first crossing.
+
+B = a−1�a(G) ∩pb(D)p−1�,
+r = incl,
+
+s = b−1 ◦Adp−1 ◦a
+��
+B,
+t = de.
+
+Use (x, y, z) = (p, 1, 1). Equation (6.1) gives st = cf. The first fiber has size 1 on its image.
+Transporting the second intersection by Adp ◦b gives the index np. This produces one left
+diagram per crossing element. If [G : (de)(E)] < ∞, take a common B = E, r = de, s =
+cf, t = id and put the linear combination of crossing elements on the lower mixed crossing.
+For each crossing element the first fiber size is bounded by [G : (de)(E)], and the second has
+size 1.
+
+25
+
+
+In the two-way case both constructions preserve evaluation. Equivalent inputs therefore give
+equivalent outputs, and each round trip returns to the original shape with the original map.
+This proves the asserted inverses on classes.
+
+Example 6.2 (A Case 1 diagram with no finite right replacement). Take U = A = Z2 ⋊C2,
+where C2 swaps the two coordinate lines. Set G = Z2, C = Z × {0}, D = F = C2, and
+B = E = 1. Use inclusions and unit labels on the left. Both reverse cups have index 2, and
+Q!
+1(gh) = [g, h] for g ∈G, h ∈F. However P1 = ⟨C, F⟩= A because the swap conjugates C
+to the other coordinate line. The index in (6.2) is [G : C] = ∞.
+
+Example 6.3 (A Case 2 diagram requiring a sum). In the same semidirect product write τ
+for the swap. Set G = D = Z × {0} and C = E = F = B′ = 1. Use inclusions on the right,
+with dots (1, 1 +τ, 1). Both right-hand reverse cups have index 1. The resulting map Q!
+1 +Q!
+τ
+is nonzero on both 1 and τ. A left replacement must use parameters at the first crossing
+in both G and GτG, since p = a(z−1)xb(y) is in the same double coset as that crossing’s
+crossing element x. The corresponding intersections are G and 1. The crossing element in
+GτG forces B = 1, giving the crossing element in G infinite fibers.
+
+6.2.2
+Cases 3 and 4. Both mixed crossings are multiplications
+
+x1
+
+x2
+
+x3
+
+B
+G
+F
+
+C
+E
+
+A
+D
+
+¯d
+¯e
+¯f
+
+¯a
+¯b
+¯c
+
+Case 3
+
+←→
+
+y1
+
+y2
+
+y3
+
+B′
+G
+F
+
+C
+E
+
+A
+D
+
+¯d
+¯e
+¯f
+
+¯a
+¯b
+¯c
+
+Case 4
+
+The boundary embeddings from Cases 1 and 2 exchange top and bottom. The source basis is
+G ×E F and the target basis is A.
+
+Theorem 6.5 (Replacement for two multiplications). At arbitrary index, either shape
+evaluates to
+[g, h] �−→a(g)M(bc)(h),
+
+where M ∈C[A] is a finite complex linear combination of group elements p satisfying
+(ade)(v)p = p(bcf)(v) for v ∈E. Every such M is realized by a single diagram of either
+shape. The two replacements induce inverse bijections on classes modulo equality of evaluated
+maps.
+
+Proof. The two backward calculations in Lemma 6.3 now run from bottom to top. Each
+mixed crossing applies its map qs, and the parallel-strand crossing acts by the corresponding
+merge, dot and split. Each group-element triple gives Qp. Expansion gives the formula with
+M, which is the value at [1, 1].
+
+In Case 3 take B′ = A, u = id, v = ad, w = bc. Put the label M at the bottom mixed crossing
+and 1 at the other two. For each term p of M the first multiplication gives [g, p(bc)(h)].
+
+26
+
+
+The next multiplication and the last merge and split give a(g)p(bc)(h). In Case 4 take
+B = E, r = de, s = cf, t = id. Put M at the top mixed crossing and 1 at the other two.
+The first merge and split and the next multiplication give [g, c(h)]. The last multiplication
+gives a(g)pb(c(h)) for each term p. In both constructions the condition on p is exactly the
+condition at its vertex. All mixed crossings are multiplication maps, so no index condition
+enters.
+
+Equality of M is equality of evaluated maps. The constructions preserve M, so they are well
+defined on classes and each round trip is the identity on its set of classes.
+
+Example 6.4 (A round trip for two mixed multiplications). The round trip may change
+the labels. With every group C2 = {1, g} and every embedding the identity, the left diagram
+with labels (g, 1, g) has M = 1. Its round trip has labels (1, 1, 1) and the same map.
+
+6.3
+One restriction strand in the middle
+
+x1
+
+x2
+
+x3
+
+B
+G
+F
+
+A
+D
+
+C
+E
+
+¯a
+¯b
+¯d
+
+¯c
+¯e
+¯f
+
+Case 5
+
+5
+−−→
+6
+←−−
+
+y1
+
+y2
+
+y3
+
+B′
+G
+F
+
+A
+D
+
+C
+E
+
+¯a
+¯b
+¯d
+
+¯c
+¯e
+¯f
+
+Case 6
+
+Write a : A →G, b : A →D, and d : F →D for the lower embeddings and c : C →G,
+e : C →E, and f : F →E for the upper ones. The source basis is G ×A D and the target
+basis is G ×C E.
+
+Lemma 6.6 (Evaluation with one projection). On the left use u : G →B, v : D →B, and
+w : E →B, and labels r, t, s from bottom to top, with r, s the mixed crossing elements. The
+map is
+[g, x]A �−→
+�
+
+[h,y]C
+u(h)sw(y)=u(g)rv(x)t
+
+[h, y]C.
+(6.3)
+
+On the right use i : B′ →A, j : B′ →F, and k : B′ →C, and write the labels in the same
+order as r, t, s. The map is
+
+[g, x]A �−→
+�
+
+[α,h]∈A×B′F
+b(α)rd(h)=x
+
+[ga(α)t, sf(h)]C.
+(6.4)
+
+For linear labels, sum the formulas over the group-element triples.
+
+Proof. On the left the vertex conditions are
+
+ua = Adr ◦vb,
+vd = Adt ◦wf,
+uc = Ads ◦we.
+
+27
+
+
+The lower multiplication gives u(g)rv(x), the induction dot right-multiplies by t, and the
+upper projection takes the displayed fiber. On the right the conditions are
+
+bi = Adr ◦dj,
+ai = Adt ◦ck,
+ek = Ads ◦fj.
+
+The lower projection sums factorizations of x as b(α)rd(h). The induction dot sends the first
+coordinate of the surviving pair to ga(α)t, and the upper multiplication sends the second to
+sf(h).
+
+6.3.1
+Case 5. Replacement by sums of right diagrams
+
+Theorem 6.7 (Expansion into right diagrams). With this boundary, every bimodule map is
+a sum of right diagrams under the finite-fiber convention, with only finitely many nonzero
+terms on each input. A finite sum suffices exactly when only finitely many G × F-orbits of
+input–output basis pairs have nonzero matrix coefficient. The group acts simultaneously on
+the input and output.
+
+Proof. Let G × F act on each basis by left multiplication by G and right multiplication by
+the inverse of F, using the boundary embeddings. The action on input–output pairs acts on
+both coordinates. A bimodule map has constant matrix coefficient on each orbit.
+
+Choose a representative ([1, r]A, [t, s]C) of an orbit. Let P ≤F be the image of its stabilizer
+in F. In detail, h ∈P exactly when there exist i(h) ∈A, k(h) ∈C satisfying
+
+rd(h)r−1 = b(i(h)),
+sf(h)s−1 = e(k(h)),
+
+a(i(h)) = tc(k(h))t−1.
+
+These equations describe the stabilizer as the graph {(a(i(h)), h) : h ∈P}. They also make
+i, k conjugation embeddings. Take B′ = P, j the inclusion, and labels (r, t, s). The displayed
+equations are the three vertex conditions.
+
+The pairs in the orbit have the form
+
+�[g′, rd(h)]A, [g′t, sf(h)]C
+�
+(g′ ∈G, h ∈F).
+
+The source in this pair equals [g, x]A exactly when g′ = ga(α) and x = b(α)rd(h) for some
+α ∈A. Two such choices give the same pair exactly when they are equivalent in A ×P F, by
+the full stabilizer description. Thus (6.4) sums each output in the orbit once. If this orbit
+has nonzero coefficient in a bimodule map, it has finitely many outputs over each input, so
+the lower projection is defined.
+
+Conversely, (6.4) shows that a group-element triple contributes to at most one orbit, irre-
+spective of the chosen internal group. Finite sums and finite linear labels therefore involve
+finitely many orbits. The construction gives one diagram for each orbit of nonzero coefficient.
+At each input only finitely many of these diagrams contribute, because an element of the
+target has finite support. This gives the asserted expansion.
+
+In the diagram, S is the set of supported orbits, PO is the projected pair stabilizer, and cO is
+the matrix coefficient on the orbit.
+
+28
+
+
+G
+
+A
+D
+
+C
+E
+
+F
+
+a
+b
+d
+
+c
+e
+f
+
+B
+
+r
+
+t
+
+s
+
+u
+
+v
+
+w
+
+=
+�
+
+O∈S
+cO G
+
+A
+D
+
+C
+E
+
+F
+
+a
+b
+d
+
+c
+e
+f
+
+PO
+
+rO
+
+tO
+
+sO
+
+jO
+
+iO
+
+kO
+
+Example 6.5 (A Case 5 diagram requiring two terms). Take U = D = E = C2 = {1, g}
+and G = A = C = F = 1, with inclusion labels.
+Let L(r, t, s) and R(r, t, s) denote
+the left and right drawings above with these vertex labels and with B = C2, B′ = 1,
+respectively. Equation (6.3) gives L(1, 1, 1) = idC[C2]. Every right diagram factors through
+the one-dimensional space immediately above the first crossing: its basis is G ×B′ F, where
+G = F = B′ = 1. Equation (6.4) gives
+
+L(1, 1, 1) = R(1, 1, 1) + R(g, 1, g).
+
+Each right diagram selects and reinserts one of the two basis elements.
+
+1
+
+1
+C2
+
+1
+C2
+
+1
+
+1
+1
+1
+
+1
+1
+1
+
+C2
+
+1
+
+1
+
+1
+
+1
+
+1
+
+1
+
+= 1
+
+1
+C2
+
+1
+C2
+
+1
+
+1
+1
+1
+
+1
+1
+1
+
+1
+
+1
+
+1
+
+1
+
+1
+
+1
+
+1
+
++ 1
+
+1
+C2
+
+1
+C2
+
+1
+
+1
+1
+1
+
+1
+1
+1
+
+1
+
+g
+
+1
+
+g
+
+1
+
+1
+
+1
+
+Example 6.6 (An infinite expansion in Case 5). Take U = B = G = C = D = E infinite
+cyclic, written multiplicatively, and A = F = 1. The left diagram with inclusions and unit
+labels sends [g, x] �→gx after identifying the target with C[U]. Its reverse cup has index 1.
+On the right B′ = 1 is forced. Each right diagram vanishes unless x is one of the finitely
+many crossing elements of its first crossing. The same holds for a finite sum. Using L, R for
+the drawings with this boundary, the pointwise finite identity is
+
+L(1, 1, 1) =
+�
+
+x∈U
+R(x, x, 1).
+
+The term indexed by x selects second coordinate x and sends [g, x] to gx.
+
+U
+
+1
+U
+
+U
+U
+
+1
+
+1
+1
+1
+
+1
+1
+1
+
+U
+
+1
+
+1
+
+1
+
+1
+
+1
+
+1
+
+=
+�
+
+x∈U U
+
+1
+U
+
+U
+U
+
+1
+
+1
+1
+1
+
+1
+1
+1
+
+1
+
+x
+
+x
+
+1
+
+1
+
+1
+
+1
+
+29
+
+
+6.3.2
+Case 6. A right diagram can have no left replacement
+
+Example 6.7 (A Case 6 projection with no left replacement). Use the boundary in Ex-
+ample 6.5. The right diagram R(1, 1, 1) fixes 1 and sends g to 0. On the left B = C2 is
+forced since it receives D and E and lies in U = C2. All embeddings of C2 are identities,
+so (6.3) sends x to s−1rxt for each group-element triple. These maps and all their finite
+linear combinations commute with translation by g. The right map sends g to zero, while
+translating its value at 1 gives g. Thus no finite sum of left diagrams gives the right map.
+All cups in this example have index at most 2.
+
+1
+
+1
+C2
+
+1
+C2
+
+1
+
+1
+1
+1
+
+1
+1
+1
+
+1
+
+1
+
+1
+
+1
+
+1
+
+1
+
+1
+
+̸=
+
+N
+�
+
+ν=1
+λν
+1
+
+1
+C2
+
+1
+C2
+
+1
+
+1
+1
+1
+
+1
+1
+1
+
+C2
+
+rν
+
+tν
+
+sν
+
+1
+
+1
+
+1
+
+7
+Finite parabolic subgroups
+
+We compute conjugates, intersections, and subgroups generated by unions of finite parabolics.
+Block counts give explicit double-coset representatives and Mackey summands. The closure
+properties and the Mackey formula give a bicategory of finite parabolic groups.
+
+Let S∞be the group of finitely supported permutations of N. A finite parabolic subgroup is
+a product �
+i∈I Sym(Xi), where the Xi are pairwise disjoint finite subsets of N and I is finite.
+Each factor fixes the complement of Xi pointwise. Omit empty blocks. The trivial group is
+allowed. When comparing two such groups, take a finite set X containing both unions of
+blocks and add singleton blocks so that both collections partition X.
+
+Proposition 7.1 (Closure of finite parabolics). Finite parabolic subgroups are closed under
+conjugation in S∞, pairwise intersections, and forming the subgroup generated by two of
+them.
+
+Proof. Conjugation. If H = �
+i∈I Sym(Xi) and α ∈S∞, then
+
+αH =
+�
+
+i∈I
+Sym(α(Xi)).
+
+Indeed, (αhα−1)(α(x)) = α(h(x)) for x ∈Xi.
+This preserves α(Xi) for every h ∈H.
+Conversely, a permutation preserving these images and fixing their complement conjugates
+back to a permutation in H.
+
+Intersection. For A = �
+i∈I Sym(Ai) and B = �
+j∈J Sym(Bj), use blocks that partition the
+same finite set X. A permutation of X preserves every Ai and every Bj exactly when it
+preserves every Ai ∩Bj. Thus
+
+A ∩B =
+�
+
+i∈I
+
+�
+
+j∈J
+Sym(Ai ∩Bj),
+
+where empty intersections contribute trivial factors.
+
+30
+
+
+Subgroup generated by a union. Join Ai to Bj in a graph whenever Ai ∩Bj ̸= ∅. For each
+
+connected component, let �
+AB
+(k) be the union of its blocks. Each point lies in an A-block
+and a B-block joined by an edge, so either side gives the same union. The components give
+the minimal nonempty collections of blocks on the two sides with a common union, since any
+such collection contains every neighbor of each selected block.
+
+Both A and B preserve each �
+AB
+(k). Inside �
+AB
+(k), a path of overlapping blocks joins any
+two points. Choosing a point in each overlap gives a chain whose consecutive transpositions
+belong to A or B. After removing repetitions, successive applications of (x z) = (y z)(x y)(y z)
+give the transposition of the endpoints. Since transpositions generate each symmetric group,
+
+the join is ⟨A ∪B⟩= �
+k Sym(�
+AB
+(k)).
+
+Lemma 7.2 (Parabolic subgroups below and above a finite group). Let P ≤S∞be finite.
+Its largest parabolic subgroup is generated by all transpositions in P. Its smallest parabolic
+overgroup is the product of the symmetric groups on its nonsingleton orbits.
+
+Proof. Each transposition in P generates a parabolic subgroup. Their join is parabolic by
+Proposition 7.1 and lies in P. Every parabolic subgroup of P is generated by transpositions
+in P, giving maximality. For the overgroup, P acts on a finite set containing the supports of
+its elements and preserves every orbit on it. The product on the nonsingleton orbits contains
+P. Each block of any parabolic overgroup of P is preserved by P, so each orbit lies in one
+block. The stated product therefore lies in every parabolic overgroup.
+
+7.1
+Examples
+
+Example 7.1 (Conjugation, intersection, and generation). Take
+
+A = Sym({1, 2, 3}) × Sym({4, 5}),
+
+B = Sym({2, 3, 4}) × Sym({6, 7}).
+
+Use singleton blocks for the remaining points in {1, . . . , 7}.
+
+Conjugation. For α = (1 4 6), the two nonsingleton blocks of A map to {2, 3, 4} and {5, 6}, so
+
+αA = Sym({2, 3, 4}) × Sym({5, 6}).
+
+Intersection. The only intersection of blocks with at least two points is {1, 2, 3} ∩{2, 3, 4} =
+{2, 3}. Hence A ∩B = Sym({2, 3}).
+
+Subgroup generated by a union. The block {2, 3, 4} overlaps both nonsingleton blocks of A,
+so their common union is {1, 2, 3, 4, 5}. The block {6, 7} meets only its two singleton blocks
+on the A side. Thus
+
+⟨A ∪B⟩= Sym({1, 2, 3, 4, 5}) × Sym({6, 7}).
+
+For instance, the join contains (1 5), obtained by taking endpoint transpositions along a path
+of overlapping blocks.
+
+7.2
+Double cosets from tableaux
+
+First let G = Sym(X). Write K = �
+i Sym(Xi) and H = �
+j Sym(Yj), with singleton blocks
+added so that both partitions cover X. Order each list of blocks and order the points within
+each block by their natural order in N.
+
+31
+
+
+Make a tableau whose i-th row has positions labeled by the points of Xi. In the initial tableau
+t0, the box at position x has entry j if x ∈Yj. A permutation σ ∈G sends the entry at x to
+position σ(x). Write Rij for the number of entries j in row i of σt0.
+
+The classification is due to James and Kerber [4, Thm. 1.3.10].
+
+Proposition 7.3 (Double coset representatives). The map
+
+KσH �−→(Rij),
+Rij = |Xi ∩σ(Yj)|
+
+is a bijection onto the nonnegative integer matrices with row sums |Xi| and column sums |Yj|.
+For a given matrix, construct a representative as follows.
+
+1. Split the ordered block Xi into consecutive pieces of sizes Ri1, Ri2, . . .. The j-th piece
+consists of the positions that will carry entry j.
+
+2. Split the ordered block Yj into consecutive pieces of sizes R1j, R2j, . . .. Map its i-th
+piece in order to the j-th piece of Xi.
+
+The matched pieces partition X on each side, so the prescribed maps give a permutation. It
+sends exactly Rij points from Yj into Xi.
+
+For any representative σ, the Mackey intersection is
+
+K ∩σHσ−1 =
+�
+
+i,j
+Sym(Xi ∩σ(Yj)).
+
+This is the block-intersection formula of Proposition 7.1 applied to K and σHσ−1.
+
+Example 7.2 (A double-coset representative from a tableau). In S6 use the two subgroups
+
+K = Sym({1, 2, 4, 5}) × Sym({3, 6}),
+
+H = Sym({1, 3, 5}) × Sym({2, 4, 6}).
+
+For the matrix ( 1 3
+2 0 ), the first row receives one 1 at position 1. The second row receives
+two 1’s at positions 3, 6. The ordered matching gives σ = (5 6), and its Mackey group is
+Sym({2, 4, 5}) × Sym({3, 6}).
+
+Example 7.3 (One-sided coset representatives). Taking H = 1, with each Yj a singleton,
+gives representatives for the right cosets Kσ. Their inverses give representatives for the left
+cosets σ−1K.
+
+7.3
+Two blocks and products
+
+When K and H each have two blocks in Sym(X), write n = |X|, c = |X1|, and d = |Y1|. The
+matrices are precisely
+�
+a
+c −a
+d −a
+n −c −d + a
+
+�
+
+,
+max(0, c + d −n) ≤a ≤min(c, d),
+a ∈Z.
+
+The entry a determines the other three entries, and the bounds make all four entries
+nonnegative.
+
+For standard two-block subgroups of Sn, take K = Sn1 × Sn−n1 and H = Sn2 × Sn−n2,
+where 1 ≤n1, n2 < n and each first block begins at 1. An alternative set of representatives,
+convenient for computing the intersections, is
+
+m = min(n1, n2, n −max(n1, n2)),
+σ0 = 1,
+
+σi = (min(n1, n2) −i + 1, max(n1, n2) + i) σi−1
+(1 ≤i ≤m).
+
+32
+
+
+The transpositions are disjoint. Each one takes a further point of Y1 out of X1 and puts a
+point of its complement in X1. Thus ai = min(n1, n2) −i takes every allowed value exactly
+once. The four Mackey block sizes, in row order, are
+
+ai,
+n1 −ai,
+n2 −ai,
+n −n1 −n2 + ai.
+
+The four intersections are intervals in the standard order, with empty intervals omitted.
+
+Example 7.4 (Equal two-block subgroups). For K = H = Sn × Sm ≤Sn+m, n ≥m, the
+representatives swap the last i points of the first block with the first i points of the second
+block in reverse order. The intersection group is Sn−i × Si × Si × Sm−i, with a zero-size factor
+interpreted as the trivial group.
+
+Example 7.5 (Conjugation exchanging two factors). Even when σ−1
+i
+Liσi = Li, the conjuga-
+tion can exchange factors. For n = m = 2, the representative with i = 2 exchanges the two
+S2 factors.
+
+Now let G = �
+i Gi be a finite parabolic group. On the finite set partitioned by the blocks of
+G, each block of K or H lies inside a block of G, since every transposition within it belongs
+to G. Thus K = �
+i Ki, H = �
+i Hi, where Ki, Hi ≤Gi are the restrictions to that block.
+Double coset equality is componentwise, giving
+
+K\G/H ∼=
+�
+
+i
+Ki\Gi/Hi.
+
+Choose one matrix and its representative in each Gi and multiply those representatives,
+whose supports are disjoint. This gives every double coset once. A factor with Ki = Gi or
+Hi = Gi contributes only the representative 1.
+
+Example 7.6 (A product with one double coset). For G = S4 × S4, K = (S2 × S2) × S4 and
+H = S4 × (S2 × S2), each ambient block contributes one double coset. The representative is
+1, and K ∩H = S4
+2.
+
+Example 7.7 (A product with three double cosets). For G = S3
+4 on three successive blocks,
+K = (S2 × S2) × S4 × (S2 × S2) and H = S4 × (S2 × S2) × (S2 × S2), the first two blocks
+again contribute 1. In the last block choose σ0 = 1, σ1 = (10 11), and σ2 = (9 12)(10 11). The
+Mackey groups are L0 = L2 = S6
+2 and L1 = S4
+2. Conjugation by σ2 exchanges the last two S2
+factors of L2.
+
+A Mackey group refines both block partitions, with the H partition transported by the
+representative. A binary split on each side can yield four blocks inside a single block of G.
+
+Example 7.8 (A two-block split giving four intersections). The middle double coset of
+S2 × S2\S4/(S2 × S2) has four singleton blocks. Thus the family of binary refinements of G
+with a prescribed split size need not contain the Mackey groups.
+
+33
+
+
+7.4
+Mackey decomposition for finite parabolics
+
+Theorem 7.4 (Mackey decomposition with explicit parabolic representatives). Let K, H, G
+be finite parabolics in S∞, and let αK, βH ≤G. Index the double cosets
+
+J = (αK)\G/(βH),
+G =
+�
+
+j∈J
+(αK)σj(βH)
+
+by the tuples of matrices for the blocks of G, with σj obtained by the ordered matching of
+Proposition 7.3. Put
+
+Lj = αK ∩σjβH,
+λj(ℓ) = α−1ℓα,
+µj(ℓ) = β−1σ−1
+j ℓσjβ.
+
+Then Lj is the product of the symmetric groups on the corresponding block intersections, and
+there is a natural isomorphism
+
+Resα∗◦Indβ∗∼=
+�
+
+j∈J
+Indλj ◦Resµj .
+
+For inclusion boundary embeddings this is
+
+ResG
+K ◦IndG
+H ∼=
+�
+
+j∈K\G/H
+IndK
+Lj ◦cσj ◦ResH
+σ−1
+j
+Ljσj,
+
+where cσj gives ℓ∈Lj the action of σ−1
+j ℓσj.
+
+Proof. Conjugation preserves the parabolic subgroups. The ordered matching in each block of
+G gives the double cosets, and the block-intersection formula computes Lj. Apply Theorem 2.2
+to these representatives, using the two displayed embeddings of Lj. For inclusions, µj is
+conjugation by σ−1
+j
+into its image followed by inclusion in H, giving the stated factorization
+of restriction.
+
+7.5
+The finite-parabolic bimodule bicategory
+
+Khovanov considers a bicategory generated by induction and restriction between finite groups
+[5, § 3.2]. The closure and Mackey results above give a version for finite parabolics with one
+intermediate group per summand.
+
+Corollary 7.5 (The finite-parabolic bimodule bicategory). Finite parabolic subgroups of S∞
+form a bicategory with 1-morphisms H →K the bimodules isomorphic to finite direct sums of
+
+C[K] ⊗C[L] C[H],
+K
+a←−L b−→H,
+
+where L is finite parabolic and a, b are conjugation embeddings in S∞. The 2-morphisms are
+bimodule maps. Composition is tensor product over the group algebra of the common group.
+
+Proof. With either leg the identity, the displayed bimodule is an induction or restriction
+strand. With both legs the identity at H, it is the regular bimodule C[H].
+
+For composition with H
+c←−M
+d−→J, apply Theorem 7.4 to the middle factor C[H] with its
+actions through b and c. For each representative r ∈H of a double coset in b(L)\H/c(M),
+the resulting summand has middle group
+
+b(L) ∩rc(M)r−1
+
+and embeddings x �→a(b−1(x)) into K and x �→d(c−1(r−1xr)) into J. These are conjugation
+embeddings, and the middle group is finite parabolic by Proposition 7.1. Theorem 7.4 also
+gives explicit representatives r by ordered matching on the blocks of H. There are finitely
+many double cosets, and tensor product distributes over finite direct sums. The associativity
+and unit isomorphisms are those of bimodule tensor product.
+
+34
+
+
+Proposition 7.1 also gives a least parabolic group containing any finite collection of parabolic
+images. It is the subgroup generated by their union, called their join. If all the images lie
+in a prescribed group, so does their join. Section 8 uses joins to construct common internal
+regions for Reidemeister moves.
+
+8
+Reidemeister identities for finite parabolics
+
+We apply the block computations to the three types of Reidemeister moves. They give curl
+coefficients, common internal groups for two crossings, and explicit choices or obstructions
+for three-crossing replacements, including their multiplicities over general coefficient rings.
+
+We work in the bicategory of Section 7.5, with U = S∞and all region groups finite parabolic.
+We use the diagrams and labels of Sections 4–6.
+
+8.1
+Reidemeister I
+
+Proposition 8.1 (Curls from block refinements). In Theorem 4.1, write H = �
+i∈I Sym(Xi)
+and δK = �
+j∈J Sym(Yj), using singleton blocks to partition the same finite set. The right
+up-curl and left down-curl have scalar
+
+[H : δK] =
+�
+
+i∈I
+
+|Xi|!
+�
+j:Yj⊆Xi |Yj|!.
+
+Merging two blocks of sizes a, b gives a scalar
+�a+b
+a
+�. A sequence of such merges factors the
+curl through the intermediate parabolics, and the product of its scalars is independent of the
+merge order. The other two curls have scalar 1.
+
+Proof. A transposition of two points of Yj belongs to H, so both points lie in the same Xi.
+Thus the Yj refine the Xi, including the singleton blocks. The index formula follows by
+dividing the orders of the block factors. A single merge replaces a!b! by (a + b)!.
+
+For the factorization diagram use the image A = δK as the internal group and the inclusion
+into H. To factor the curl through an intermediate group δK ≤B ≤H, choose representatives
+r of the right cosets of δK in B and t of the right cosets of B in H. The products rt represent
+the right cosets of δK in H exactly once. In the up-curl calculation the cup and cap then
+contribute
+�
+
+t
+
+�
+
+r
+x α∗(t−1)α∗(r−1)α∗(r)α∗(t).
+
+The sum over r is the inner curl and contributes [B : δK]. The outer cup and cap contribute
+[H : B]. In the down-curl the same product of factors acts on the left of x. Iterating gives
+the asserted factorization. Every sequence of binary merges within the Xi has the same total
+index. The two curls enclosing G are the identities of Theorem 4.1.
+
+K
+
+δ
+G
+H
+
+α
+
+α
+
+= [H : δK] G
+H
+
+α
+
+α
+
+G
+
+α
+K
+H
+
+δ
+
+δ
+
+=
+K
+H
+
+δ
+
+δ
+
+G
+α
+H
+K
+
+δ
+
+δ
+
+=
+H
+K
+
+δ
+
+δ
+
+K
+δ
+H
+G
+
+α
+
+α
+
+= [H : δK] H
+G
+
+α
+
+α
+
+35
+
+
+A
+
+1
+G
+H
+
+α
+
+α
+
+= [H : B] [B : A]
+G
+H
+
+α
+
+α
+
+A
+1
+H
+G
+
+α
+
+α
+
+= [H : B] [B : A]
+H
+G
+
+α
+
+α
+
+Proposition 8.2 (Curls for a join and an intersection). Fix either of the two index-valued
+curls on a strand and let cA denote that curl with internal group A ≤H, using inclusions
+into H. For finite parabolics A, B ≤H,
+
+cA∩B ◦c⟨A∪B⟩=
+|AB|
+|⟨A ∪B⟩| (cA ◦cB).
+
+The scalar is 1 exactly when, on each block of ⟨A ∪B⟩, at least one of the two original
+partitions has that whole block.
+
+Proof. The block groups on both sides are allowed by Proposition 7.1. Apply Theorem 4.1
+and use |AB| = |A||B|/|A ∩B|, where AB is the set of products ab. The scalar is 1 exactly
+when this set is the whole join. The product set splits over the blocks of the join. On a block
+where one partition has a single part, its symmetric group is already the whole factor. If
+both partitions split the block, choose two points in different B-parts and a permutation
+sending them to points in different A-parts. Swapping the two images changes the size of an
+intersection of an A-part with an image of a B-part. These sizes are constant on an A, B
+double coset, so there is more than one double coset on that block. Then AB cannot be the
+whole factor.
+
+Example 8.1 (Unequal products of curls). For H = Sym({1, 2, 3}), A = ⟨(12)⟩and B =
+⟨(23)⟩, the intersection is trivial and the join is H. Write J = ⟨A ∪B⟩in the diagram. The
+two products of curls have scalars 6 and 9, respectively.
+
+J
+
+1
+
+A∩B
+
+1
+G
+H
+
+¯α
+
+¯α
+
+=
+|AB|
+|⟨A ∪B⟩|
+
+B
+
+1
+
+A
+
+1
+G
+H
+
+¯α
+
+¯α
+
+J
+1
+
+A∩B
+1
+H
+G
+
+¯α
+
+¯α
+
+=
+|AB|
+|⟨A ∪B⟩|
+
+B
+1
+
+A
+1
+H
+G
+
+¯α
+
+¯α
+
+36
+
+
+8.2
+Reidemeister II
+
+Proposition 8.3 (Largest common region for mixed crossings). Fix a nonempty set J0 of
+Mackey summands in Section 5 and keep their representatives σj fixed. Use the internal
+strand labels α−1 and β−1σ−1
+j
+on a common group L. Choose any j0 ∈J0 and set
+
+P =
+
+
+
+�
+
+j∈J0
+Lj
+
+
+
+∩CG
+�{σj0σ−1
+j
+: j ∈J0}
+�.
+
+The largest parabolic L for which both internal labels agree in all selected summands is the
+subgroup generated by all transpositions in P. This choice simultaneously minimizes the
+indices in
+�
+
+j∈J0
+
+ιL,j ◦pL,j
+
+[Lj : L]
+=
+�
+
+j∈J0
+ιj ◦pj.
+
+Proof. The two embeddings for the j-th summand exist on L when L ≤Lj. The left label is
+fixed, and the right label for j equals the reference label exactly when σj0σ−1
+j
+∈CS∞(L). Thus
+the allowed groups are exactly the parabolic subgroups of P. Lemma 7.2 gives the largest
+one, which minimizes every [Lj : L], and Proposition 5.1 gives the identity. If at least two
+summands are selected, the identity still requires a sum of diagrams by Proposition 5.3.
+
+�
+
+j∈J0
+
+1
+[Lj : L]
+
+G
+
+G
+
+L
+
+K
+H
+
+α−1
+β−1σ−1
+j
+pL,j
+
+ιL,j
+
+¯α
+¯β
+
+¯α
+¯β
+
+=
+�
+
+j∈J0
+
+G
+
+G
+
+Lj
+
+K
+H
+
+α−1
+β−1σ−1
+j
+pj
+
+ιj
+
+¯α
+¯β
+
+¯α
+¯β
+
+In the reverse order the composite pL,j ◦ιL,j sums the fiber through each basis vector, as in
+Proposition 5.1.
+
+�
+
+j∈J
+
+G
+
+G
+
+Lj
+K
+H
+pj
+
+ιj
+
+¯α
+¯β
+
+¯α
+¯β
+
+=
+
+G
+
+G
+
+K
+H
+
+¯α
+¯β
+
+¯α
+¯β
+
+Lj
+
+Lj
+
+G
+K
+H
+ιj
+
+pj
+
+α−1
+β−1σ−1
+j
+
+α−1
+β−1σ−1
+j
+
+=
+
+Lj
+
+Lj
+
+K
+H
+
+α−1
+β−1σ−1
+j
+
+α−1
+β−1σ−1
+j
+
+When all double cosets are selected, the sum through the full Mackey groups Lj is the identity
+on the boundary with middle group G. For a single full summand the reverse composite is
+the identity on its balanced product.
+
+37
+
+
+L
+
+L
+
+G
+K
+H
+ιL,j
+
+pL,j
+
+α−1
+β−1σ−1
+j
+
+α−1
+β−1σ−1
+j
+
+=
+z �−→
+�
+
+q(w)=q(z)
+w
+
+Example 8.2 (The common parabolic depends on the representatives). Let G = S3 × S5
+on the blocks {1, 2, 3} and {4, 5, 6, 7, 8}, with K = H = ⟨(12)⟩× S5 and inclusion labels.
+The two double cosets have representatives 1, (13)(456). Their Mackey groups intersect in
+the second factor, but the common-label condition gives P = ⟨(456)⟩× ⟨(78)⟩. The largest
+common parabolic is ⟨(78)⟩. Choosing 1, (13) instead gives the full second factor as the largest
+common parabolic, with indices 2 and 1.
+
+G
+
+G
+
+K
+H
+
+¯1
+¯1
+
+¯1
+¯1
+
+=
+1
+120
+
+G
+
+G
+
+⟨(78)⟩
+K
+H
+pL,1
+
+ιL,1
+
+¯1
+¯1
+
+¯1
+¯1
+
++ 1
+
+60
+
+G
+
+G
+
+⟨(78)⟩
+K
+H
+pL,2
+
+ιL,2
+
+¯1
+¯1
+
+¯1
+¯1
+
+G
+
+G
+
+K
+H
+
+¯1
+¯1
+
+¯1
+¯1
+
+= 1
+
+2
+
+G
+
+G
+
+S5
+K
+H
+pL,1
+
+ιL,1
+
+¯1
+¯1
+
+¯1
+¯1
+
++
+
+G
+
+G
+
+S5
+K
+H
+pL,2
+
+ιL,2
+
+¯1
+¯1
+
+¯1
+¯1
+
+Proposition 8.4 (Shared region for parallel crossings). Take a finite family of the parallel
+two-crossing diagrams of Theorem 5.4, with the same outside groups G, K and prescribed
+middle composite conjugators vi. With inclusion as the middle embedding into G, the least
+common middle group is
+
+P =
+
+��
+
+i
+
+viK
+
+�
+
+.
+
+Each diagram keeps its dots and its evaluated map. In the diagram Bi denotes the original
+middle group.
+
+Proof. The middle group must contain every viK. Their join is parabolic. Factor each
+embedding of K through this join by conjugation by vi, followed by inclusion into G. The
+composite embeddings and the conditions on the dots are unchanged. Theorem 5.4 therefore
+gives the same evaluated map, for both induction and restriction.
+
+38
+
+
+d
+
+e
+Bi
+¯γi
+¯δi
+G
+K
+
+H
+
+H′
+
+¯α
+¯β
+
+α′
+β′
+
+=
+
+d
+
+e
+P
+¯1
+¯vi
+G
+K
+
+H
+
+H′
+
+¯α
+¯β
+
+α′
+β′
+
+=
+de
+¯u
+¯w
+G
+K
+
+H
+
+H′
+
+¯α
+¯β
+
+α′
+β′
+
+d
+
+e
+Bi
+¯γi
+¯δi
+K
+G
+
+H
+
+H′
+
+¯α
+¯β
+
+α′
+β′
+
+=
+
+d
+
+e
+P
+¯1
+¯vi
+K
+G
+
+H
+
+H′
+
+¯α
+¯β
+
+α′
+β′
+
+=
+de
+¯u
+¯w
+K
+G
+
+H
+
+H′
+
+¯α
+¯β
+
+α′
+β′
+
+8.3
+Reidemeister III
+
+For three induction strands, the constructions of Lemma 6.1 use B′ = F and B = G. Both are
+boundary groups, so the inverse bijections on evaluation classes restrict to this category. In
+Cases 1–4 the usual single-diagram replacements can use B′ = A and B = E. The following
+choices give sharper bounds for group-element dots.
+
+Proposition 8.5 (Extremal regions for three induction strands). Use the boundary labels
+of Section 6. Write a = GA , d = AD , c = GC , and e = CE . For an admissible
+group-element multiplier p ∈G and diagrams with group-element dots, the least transported
+left region and the greatest transported right region are, respectively,
+
+Bmin =
+�
+adD, pceE
+�
+,
+B′
+max = aA ∩pcC.
+
+With these regions, both diagrams evaluate to x �→xp.
+
+Proof. For left dots x1, x2, x3, transport the region B into G by x1 GB . The two outside
+vertex conditions put adD and x1x3ceE in the transported region. Conjugating the latter
+by x1( GB )∗(x2)x−1
+1 , an element of the transported region, puts pceE there as well, by the
+multiplier formula in Lemma 6.1. Thus the region contains the displayed join. To attain
+it, take that join as B, use GB = 1, BD = ad, BE = pce, and use dots (1, 1, p). The
+middle embeddings of F agree because p intertwines the two boundary embeddings.
+
+For right dots y1, y2, y3, transport B′ by ay1 AB′ . Its image lies in aA. By the middle
+vertex it also lies in pcC, since p = ( GA )∗(y1)y2( GC )∗(y3) and the last factor belongs to
+cC. The lower vertex puts uF in the transported region, where u is the bottom composite.
+To attain the intersection, take it as B′ and use AB′ = a−1, CB′ = c−1p−1, B′F = u,
+and dots (1, p, 1). The bottom outside composite is the prescribed embedding of F into A.
+The top outside composite is the prescribed embedding into C because p intertwines the
+boundary embeddings. The middle dot is p. Join and intersection closure keep both choices
+parabolic.
+
+39
+
+
+G
+
+A
+D
+
+C
+E
+
+F
+
+a
+d
+DF
+
+c
+e
+EF
+
+Bmin
+
+1
+
+1
+
+p
+
+1
+
+ad
+
+pce
+
+=
+G
+
+A
+D
+
+C
+E
+
+F
+
+a
+d
+DF
+
+c
+e
+EF
+
+B′
+max
+
+1
+
+p
+
+1
+
+u
+
+a−1
+
+c−1p−1
+
+Example 8.3 (Extremal internal groups for three inductions). For inclusion labels with
+G = S4, A = D = ⟨(12)⟩, C = E = ⟨(23)⟩, F = 1 and p = 1, the left minimum is
+Sym({1, 2, 3}) and the right maximum is 1.
+
+Linear dots give sums of the single-crossing element identities.
+
+Proposition 8.6 (Extremal regions in Cases 1–4). Use the embeddings a, b, c, d, e, f of
+Cases 1–4 and fix an admissible group-element crossing element p ∈A. For Cases 1 and 3
+the least transported right region is
+
+Pp =
+�
+(ad)(C), p(bc)(F)p−1�
+.
+
+For Cases 2 and 4 the greatest transported left region is Bmax = a(G) ∩pb(D)p−1. More
+precisely, every parabolic B in the interval
+
+(ade)(E) ≤B ≤a(G) ∩pb(D)p−1
+
+is a possible transported left region. With the largest choice in Case 2 the first projection has
+one preimage on its image.
+
+Proof. In the notation of Theorem 6.4, the right region transported by mu contains
+(ad)(C) by the middle vertex. The lower vertex and p = mu(n)ℓ−1 put p(bc)(F)p−1 =
+mu(nw(F)n−1)m−1 in the same region. The proof of that theorem attains the join using
+B′ = Pp, the inclusion u, v = ad, w = Adp ◦bc, and (ℓ, m, n) = (p−1, 1, 1). The reversed
+arrows in Case 3 give the same group and the multiplication map.
+
+In the left diagram, transport the image ar(B) by a(z−1) using the notation of Lemma 6.3. It
+contains (ade)(E) by the upper vertex, is contained in a(G), and is contained in pb(D)p−1 by
+the lower vertex and p = a(z−1)xb(y). Conversely, for any B in the interval, take r = a−1|B,
+s = b−1 ◦Adp−1 |B, t = ade, and use x = p, y = z = 1. Here st = cf is the admissibility
+condition on p. In Case 2, transporting the two stabilizer indices to A gives
+
+[a(G) ∩pb(D)p−1 : B],
+[B ∩p(bc)(F)p−1 : (ade)(E)].
+
+Both indices are finite because the ambient groups are finite. The first is 1 at the maximum.
+Reversing the arrows gives the corresponding choice in Case 4.
+
+The projection diagrams below map C[A] to the complex span of G ×E F. Both send z to
+the sum of the preimages of z under Qp([g, h]) = a(g)p(bc)(h). The mixed crossing labelled p
+on the left uses trace dot p−1. On the right, the lower crossing is between parallel strands
+and carries dot p−1.
+
+40
+
+
+G
+
+A
+D
+
+C
+E
+
+F
+
+a
+b
+c
+
+d
+e
+f
+
+Bmax
+
+p
+
+1
+
+1
+
+r
+
+s
+
+t
+
+=
+G
+
+A
+D
+
+C
+E
+
+F
+
+a
+b
+c
+
+d
+e
+f
+
+Pp
+
+p−1
+
+1
+
+1
+
+w
+
+u
+
+v
+
+The multiplication diagrams below have the opposite source and target. Each sends [g, h] to
+a(g)p(bc)(h).
+
+G
+
+C
+E
+
+A
+D
+
+F
+
+d
+e
+f
+
+a
+b
+c
+
+Bmax
+
+1
+
+1
+
+p
+
+r
+
+t
+
+s
+
+=
+G
+
+C
+E
+
+A
+D
+
+F
+
+d
+e
+f
+
+a
+b
+c
+
+Pp
+
+1
+
+1
+
+p
+
+w
+
+v
+
+u
+
+Example 8.4 (A smaller internal group reduces a projection fiber). In Case 1 take A = S4,
+G = Sym({1, 2, 4}), C = ⟨(12)⟩, D = F = ⟨(23)⟩, E = 1 and p = 1, with inclusions. The least
+right region is Sym({1, 2, 3}). Its intersection with G is C, so the middle projection has fiber
+size 1 on its image. With the right region A, that fiber size is 3.
+
+The bounds are for one crossing element. For several crossing elements p with the same two
+dots ℓ= p−1
+0
+and m = 1 on the right, a single diagram can put all coefficients at the third
+dot. The least region for this placement is the smallest parabolic subgroup of A containing
+
+(ad)(C),
+p0(bc)(F)p−1
+0 ,
+pp−1
+0
+for every crossing element p.
+
+Indeed, the third dot must contain pp−1
+0
+since p = u(n)p0. Conversely, take the inclusion u,
+v = ad, w = Adp0 ◦bc, and put the coefficients on those elements n = pp−1
+0 . Apply Lemma 7.2
+to the subgroup generated by the displayed elements and subgroups.
+
+Proposition 8.7 (Coefficient-one expansion in Case 5). A left diagram in Case 5 with group-
+element dots is a sum of right diagrams, one for each supported orbit of input–output pairs,
+each with coefficient 1. Write S for this set of orbits, PO for each projected stabilizer, and TO
+for the matrix with coefficient 1 on O and 0 elsewhere. For any orbit of input–output pairs, let
+P ≤F be the projection of its stabilizer. Among single right diagrams with group-element dots
+realizing this orbit, the least multiplicity is [P : L], where L is generated by all transpositions
+in P. It equals 1 exactly when P is parabolic.
+
+Proof. In the notation of Lemma 6.6, the left equation compares the two maps
+
+[g, x]A �−→u(g)rv(x)t,
+[h, y]C �−→u(h)sw(y).
+
+Both are equivariant for the action of G × F on B given by (q, k) · z = u(q)z w(f(k))−1. This
+follows from the three vertex equations, including vd = Adt ◦wf. A supported pair has the
+
+41
+
+
+same image z under the two maps. If k ∈F lies in both individual stabilizer projections, the
+corresponding G-components q1, q2 satisfy
+
+u(q1) = z w(f(k)) z−1 = u(q2).
+
+Since u is injective, q1 = q2. Hence the projected pair stabilizer is exactly the intersection
+of the two individual projections. For a representative ([1, x]A, [h, y]C), those projections
+are d−1(x−1b(A)x) and f−1(y−1e(C)y), with inverse images taken in F. They are finite
+parabolics by conjugation and intersection closure. The orbit term in Theorem 6.7 can
+therefore use the full stabilizer and counts each pair once. Every left basis coefficient is 1 on
+a supported pair by (6.3).
+
+For an arbitrary right orbit, the vertex conditions require j(B′) ≤P. Conversely every
+parabolic subgroup of P works by restricting the three embeddings. Replacing A ×P F by
+A ×j(B′) F gives [P : j(B′)] classes over each original class, because the balancing action is
+free. Thus each pair is counted exactly that many times. The largest parabolic subgroup
+of P from Lemma 7.2 minimizes the index. Stabilizers of other representatives project to
+conjugate subgroups of F, so the minimum is independent of the representative.
+
+Other coefficient rings.
+For these two three-crossing shapes, the same basis formulas
+work over any commutative ring R with identity. For each orbit O of input–output pairs, let
+LO be the largest parabolic subgroup of PO. The R-span of right diagrams in the space of
+bimodule maps is
+�
+
+O
+
+�[PO : LO] R
+�TO.
+
+Indeed, each multiplicity [PO : j(B′)] is divisible by [PO : LO], and taking j(B′) = LO realizes
+that index. The sum runs over all orbits, including those on which no left diagram is nonzero.
+Over Z, the quotient by this span is therefore the direct sum of the groups Z/[PO : LO]Z.
+The coefficient-one expansion of a left diagram also holds over R, since the coefficient count
+uses only the basis sets.
+
+G
+
+A
+D
+
+C
+E
+
+F
+
+a
+b
+d
+
+c
+e
+f
+
+B
+
+r
+
+t
+
+s
+
+u
+
+v
+
+w
+
+=
+�
+
+O∈S
+G
+
+A
+D
+
+C
+E
+
+F
+
+a
+b
+d
+
+c
+e
+f
+
+PO
+
+rO
+
+tO
+
+sO
+
+1
+
+iO
+
+kO
+
+For linear left dots, expand into group-element triples and apply the coefficient-one identity
+to each term. Any right orbit can still be realized over C with coefficient 1 by dividing by its
+least multiplicity.
+
+42
+
+
+G
+
+A
+D
+
+C
+E
+
+F
+
+a
+b
+d
+
+c
+e
+f
+
+L
+
+r
+
+t
+
+s
+
+1
+
+i|L
+
+k|L
+
+= [P : L] TO
+
+Proposition 8.8 (A Case 6 obstruction and a replacement family). If the projected pair
+stabilizer of a right orbit is strictly smaller than the intersection of its two individual stabilizer
+projections, its orbit map has no left replacement, even by a finite sum.
+
+On the other hand, suppose F = 1, all boundary embeddings are inclusions, GE is a subgroup,
+D ∩GE = A, and G ∩E = C. Then every right diagram has a single left replacement through
+the parabolic group ⟨G ∪D ∪E⟩.
+
+Proof. Proposition 8.7 shows that a group-element left term can have a nonzero coefficient on
+an orbit only when its projected pair stabilizer equals the intersection of the two individual
+projections. Every left term therefore vanishes on the indicated orbit.
+
+For the second assertion, B′ = 1 on the right since F = 1. For right dots (r, t, s), take the
+displayed join as B on the left, the inclusion embeddings, and dots (1, r−1ts, 1). In the left
+formula an output exists exactly when xr−1 ∈GE, because g, t, s ∈GE. As xr−1 ∈D, this
+is xr−1 ∈A. In that case the class [g(xr−1)t, s]C is the unique output, because G ∩E = C.
+The right formula gives the same class under the same condition. For linear right dots with
+coefficients cr, ct, cs at the three vertices, put �
+r,t,s crctcsr−1ts at the middle left dot. Every
+term is admissible because F = 1.
+
+G
+
+A
+D
+
+C
+E
+
+F
+
+a
+b
+d
+
+c
+e
+f
+
+B′
+
+r
+
+t
+
+s
+
+j
+
+i
+
+k
+
+̸=
+
+N
+�
+
+ν=1
+λν
+G
+
+A
+D
+
+C
+E
+
+F
+
+a
+b
+d
+
+c
+e
+f
+
+Bν
+
+rν
+
+tν
+
+sν
+
+uν
+
+vν
+
+wν
+
+G
+
+A
+D
+
+C
+E
+
+1
+
+1
+1
+1
+
+1
+1
+1
+
+B
+
+1
+
+r−1ts
+
+1
+
+1
+
+1
+
+1
+
+=
+G
+
+A
+D
+
+C
+E
+
+1
+
+1
+1
+1
+
+1
+1
+1
+
+1
+
+r
+
+t
+
+s
+
+1
+
+1
+
+1
+
+43
+
+
+Example 8.5 (An orbit coefficient vanishing in characteristic three). Take all six boundary
+groups equal to S3, the identity embeddings, and right dots (1, (123), 1) with B′ = 1. The
+individual projections are both S3, while the pair stabilizer projects to ⟨(123)⟩. On the two
+bases identified with S3, the map sends x to 3x((123) + (132)), since each conjugate of (123)
+is counted three times. Over a ring of characteristic 3, every right diagram has zero coefficient
+on this orbit.
+
+A left replacement can also fail when the projected pair stabilizer equals the intersection of
+the two individual projections.
+
+Proposition 8.9 (A Case 6 obstruction with trivial projected stabilizer). A right diagram
+in the finite-parabolic category can have no left replacement even when its projected pair
+stabilizer and both individual stabilizer projections are trivial.
+
+Proof. Example 8.6 gives the obstruction. All three projected stabilizers are trivial because
+F = 1.
+
+Example 8.6 (A Case 6 obstruction with trivial projected stabilizers). Take
+
+G = A = C = ⟨(12), (34)⟩,
+D = E = Sym({1, 2, 3, 4}),
+F = 1
+
+with inclusion embeddings. The two boundary bases identify with D by multiplication. The
+right diagram with B′ = 1 and unit dots fixes the basis elements of A and sends those in
+D \ A to zero by (6.4).
+
+Consider any left diagram with group-element dots r, t, s and embeddings u, v, w as in
+Lemma 6.6. Its lower and upper vertex conditions give
+
+u(G) ≤rv(D)r−1,
+u(G) ≤sw(E)s−1.
+
+The image u(G) moves four points. Both displayed overgroups are full symmetric groups on
+four points, so they are the same subgroup. Use [1, x]A and [1, y]C for the input and output.
+The left-diagram equation becomes
+
+sw(y)s−1 = (rv(x)r−1)(rts−1).
+
+If rts−1 belongs to the common subgroup, every input has exactly one output. Otherwise
+every input has zero outputs. By linearity, the sum of the output coefficients of any finite
+sum of left diagrams is constant on basis inputs. The right diagram has coefficient sum 1 on
+A and 0 off A, so it has no left replacement.
+
+Example 8.7 (A left replacement through overlapping blocks). Take G = A = C = F = 1,
+D = ⟨(12)⟩and E = ⟨(23)⟩. The right diagram that sends r to s and all other basis elements
+to zero has a left replacement with middle group Sym({1, 2, 3}) and middle dot r−1s.
+
+1
+1
+
+1
+D
+
+1
+E
+
+¯1
+
+¯1
+
+¯1
+
+¯1
+
+¯1
+
+¯1
+
+1
+
+r−1s
+
+1
+
+S{1,2,3}
+=
+1
+1
+
+1
+D
+
+1
+E
+
+¯1
+
+¯1
+
+¯1
+
+¯1
+
+¯1
+
+¯1
+
+r
+
+1
+
+s
+
+1
+
+44
+
+
+AI usage disclosure
+
+Codex was used to test conjectures proposed by myself and verify the correctness of my own
+handwritten proofs. The new results and constructions are my own.
+
+References
+
+[1] C. E. Watts, Intrinsic characterizations of some additive functors, Proc. Amer. Math.
+Soc. 11 (1960), 5–8. doi:10.2307/2032707.
+
+[2] Ian Xiao, Abelian Categories and Bimodules. Get Curious, 2026, Chapters 8–10. Collected
+notes.
+
+[3] G. W. Mackey, On induced representations of groups, Amer. J. Math. 73 (1951), 576–592.
+doi:10.2307/2372309.
+
+[4] G. James and A. Kerber, The Representation Theory of the Symmetric Group, Addison-
+Wesley, 1981, Section 1.3. Chapter 1.
+
+[5] M. Khovanov, Heisenberg algebra and a graphical calculus, Fund. Math. 225 (2014),
+169–210. doi:10.4064/fm225-1-8. arXiv:1009.3295.
+
+45
+
+

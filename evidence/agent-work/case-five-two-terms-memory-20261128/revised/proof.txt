@@ -1,0 +1,14 @@
+by
+  classical
+  -- Xiao, Example 6.5, archived PDF p. 27 and 28 November revision p. 29.
+  -- https://getcurious.cc/downloads/mackey-bimodules.pdf
+  -- EvaluationWithOneProjection supplies both finite-fiber columns, (6.3) and (6.4).
+  refine ⟨?_, ⟨CaseFiveTwoTermsProof.apex_equiv⟩, ?_,
+    CaseFiveTwoTermsProof.two_term_identity, CaseFiveTwoTermsProof.right_column⟩
+  · apply CaseFiveTwoTermsProof.basis_ext
+    exact CaseFiveTwoTermsProof.left_column
+  · intro r t s
+    refine ⟨CaseFiveTwoTermsProof.factor r t s, ?_⟩
+    rw [CaseFiveTwoTermsProof.factor r t s]
+    exact CaseFiveTwoTermsProof.apex_obstruction
+      (CaseFiveTwoTermsProof.toApex r) (CaseFiveTwoTermsProof.fromApex t s)

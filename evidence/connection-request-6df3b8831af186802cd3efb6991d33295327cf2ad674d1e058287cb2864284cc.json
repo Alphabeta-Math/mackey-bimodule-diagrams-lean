@@ -1,0 +1,12 @@
+{
+  "accepted": true,
+  "request": {
+    "endpoint": "bb298cfb5819fb2536ee2d647dbbba8679902d25618c535e1d18c9db21d235ff",
+    "decision": {
+      "id": "FiniteParabolicBimoduleBicategory",
+      "reason": "Replay the previously compiled and axiom-audited proof after a definitionally equivalent indexed-scope correction; the controller must recompile it against its current dependencies.",
+      "proof": "by\n  -- Xiao, Corollary 7.5 and § 7.5, p. 32 in the archived original and\n  -- p. 34 in the published 28 November revision.\n  -- Alphabeta Math, Morita bicategory coherence, steps 1.1–1.3, 2.1–2.2\n  -- and 3.1. The composition supplier checks the canonical maps and laws\n  -- on pure tensors for these complex representations. Its balance and\n  -- lift laws apply to the same tensor witnesses, with the inverse right\n  -- action on the second group factor. The general Morita theorem uses\n  -- a different quotient model, so this proof takes the laws directly\n  -- from the composition supplier along with its admissibility proofs.\n  -- The identity-span isomorphism and the explicit double-coset formula\n  -- are the two additional clauses of that supplier.\n  obtain ⟨hFinitary, _, hUnitAdmissible, tensor, tmul, tensorMap, assoc,\n    leftUnit, rightUnit, hTensor, hTensorMap, hId, hComp, hAssoc,\n    hUnits, hAssocNatural, hUnitsNatural, hPentagon, hTriangle, _⟩ :=\n    FiniteParabolicBicategoryComposition.{u}\n  exact ⟨hFinitary, hUnitAdmissible, tensor, tmul, tensorMap, assoc,\n    leftUnit, rightUnit, hTensor, hTensorMap, hId, hComp, hAssoc,\n    hUnits, hAssocNatural, hUnitsNatural, hPentagon, hTriangle⟩",
+      "mathlibImports": []
+    }
+  }
+}

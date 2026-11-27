@@ -1,0 +1,9 @@
+{
+  "time": "2026-11-27T07:44:37.080274+00:00",
+  "purpose": "Provide one shared finite indexed diagram-sum scope for the existing full Mackey cancellation endpoint.",
+  "sourceSha256": "81d91f9aceca3a90d9ac315298cd7988f57c0c22b3e6770d1ab1a5cb15afd0e6",
+  "artifactSha256": "e415c24a686e3f87b3b535bb83575f494b6b6a6fe7551a8727466c5c5e1ea307",
+  "build": "lake build MackeyDiagrams.IndexedDrawing MackeyDiagrams passed",
+  "checks": "Singleton sum evaluation and shape indices and summands compile; eval_apply and shape use only propext, Classical.choice and Quot.sound.",
+  "proofCredit": "No article endpoint proof credit; the endpoint still needs three independent reviews and proof compilation."
+}

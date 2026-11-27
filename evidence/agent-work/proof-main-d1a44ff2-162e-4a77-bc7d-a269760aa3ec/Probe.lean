@@ -1,0 +1,6 @@
+import Proofs.ParabolicExtremalOutsideRestrictionRegions
+import Proofs.ReplacementForTwoMultiplications
+set_option pp.privateNames true in
+#print ParabolicExtremalOutsideRestrictionRegions
+#check @_private.Proofs.ParabolicExtremalOutsideRestrictionRegions.0.OutsideRegionsAux.parabolic_region_bounds
+#check @_private.Proofs.ReplacementForTwoMultiplications.0.ReplacementMultiplicationsAux.eval_eq_iff

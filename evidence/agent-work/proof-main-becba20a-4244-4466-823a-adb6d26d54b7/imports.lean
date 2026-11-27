@@ -1,0 +1,6 @@
+import MackeyDiagrams
+import Proofs.CaseOneRightProjectionConstruction
+import Proofs.CaseTwoLeftProjectionConstruction
+
+set_option maxHeartbeats 2000000
+

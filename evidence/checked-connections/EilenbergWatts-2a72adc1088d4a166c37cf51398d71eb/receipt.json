@@ -1,0 +1,36 @@
+{
+  "id": "EilenbergWatts",
+  "lean": "leanprover/lean4:v4.36.0-rc2",
+  "leanRevision": "b35cb10cf2ced51a2fd1880cfdbf75c71ab7a35a",
+  "mathlib": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+  "workspace": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean",
+  "manifestSha256": "8902ec05c32c92c98e90ebb36796aacc426e0353d1ce2f8f3240b5ee8c4ce7fa",
+  "imports": [
+    {
+      "module": "WattsFoundation.ReviewedOriginalWattsConnection",
+      "files": [
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/build/lib/lean/WattsFoundation/ReviewedOriginalWattsConnection.olean",
+          "sha256": "6064ac0ddb23304fd8452a25f91571bd4c36e70dbd7448ad9983aec4db776201"
+        }
+      ]
+    }
+  ],
+  "searchPaths": [],
+  "universes": [
+    "u",
+    "v"
+  ],
+  "statementSha256": "ad0f39045ff0e49843fc3d95f4eb1dc2abe03bd06263697b3b2a2dcbf90050e1",
+  "sourceSha256": "4b2dc93dd1eacefa5fc8ff9196ebd0ebdb96ddd28f484e7476e7f346d9be083f",
+  "oleanSha256": "8455ce7683ff8951bce9d6081690c700e4822c4dd1071410fb140243e7154f22",
+  "build": {
+    "code": 0,
+    "output": ""
+  },
+  "audit": {
+    "code": 0,
+    "output": "'LeanWorkflowCheckedConnection' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "scope": "The exact supplied statement was checked in this workspace. Importability and interpretation in another workspace are separate obligations."
+}

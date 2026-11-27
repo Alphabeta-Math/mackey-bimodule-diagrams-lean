@@ -1,0 +1,37 @@
+{
+  "id": "SmallProjectiveGeneratorCorrespondence",
+  "lean": "leanprover/lean4:v4.36.0-rc2",
+  "leanRevision": "b35cb10cf2ced51a2fd1880cfdbf75c71ab7a35a",
+  "mathlib": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+  "workspace": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean",
+  "manifestSha256": "8902ec05c32c92c98e90ebb36796aacc426e0353d1ce2f8f3240b5ee8c4ce7fa",
+  "imports": [
+    {
+      "module": "WattsFoundation.ReviewedSmallGeneratorConnection",
+      "files": [
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/build/lib/lean/WattsFoundation/ReviewedSmallGeneratorConnection.olean",
+          "sha256": "d596c901d5445120b241680d7007db8b458a1096aece39c0d49fd848830bd0fc"
+        }
+      ]
+    }
+  ],
+  "searchPaths": [],
+  "universes": [
+    "u",
+    "v",
+    "w"
+  ],
+  "statementSha256": "23694461d8bce6ba89a9dc7d65f86db0719f34f0e7063ce297dd5464dd816609",
+  "sourceSha256": "9a87ccacdab586abb37ce26d7f7968293d45752c6f5cf731721b32eae9d82255",
+  "oleanSha256": "8bab7a9dd988f8574fa166888bd5aad5fc767363c899ec27982a27c771d5c125",
+  "build": {
+    "code": 0,
+    "output": ""
+  },
+  "audit": {
+    "code": 0,
+    "output": "'LeanWorkflowCheckedConnection' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "scope": "The exact supplied statement was checked in this workspace. Importability and interpretation in another workspace are separate obligations."
+}

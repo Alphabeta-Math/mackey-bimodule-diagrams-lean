@@ -1,0 +1,2 @@
+import WattsFoundation.GeneratorFunctorTransport
+#print axioms SmallGeneratorBridge.functorTransport

@@ -1,0 +1,2 @@
+import Proofs.MackeyInclusionAndProjectionCrossings
+#print axioms MackeyInclusionAndProjectionCrossings

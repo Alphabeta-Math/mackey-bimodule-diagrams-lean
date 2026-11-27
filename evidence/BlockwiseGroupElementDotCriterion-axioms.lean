@@ -1,0 +1,2 @@
+import Proofs.BlockwiseGroupElementDotCriterion
+#print axioms BlockwiseGroupElementDotCriterion

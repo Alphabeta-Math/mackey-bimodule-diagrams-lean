@@ -1,0 +1,14 @@
+import NotesProofs.ReconstructionFromSmallProjectiveGenerator
+import Mathlib.CategoryTheory.Equivalence
+import Mathlib.CategoryTheory.Limits.Shapes.Products
+
+#check ReconstructionFromSmallProjectiveGenerator
+#print axioms ReconstructionFromSmallProjectiveGenerator
+#check CategoryTheory.Limits.Cofan.IsColimit.mk
+#check CategoryTheory.Limits.IsColimit.coconePointUniqueUpToIso
+#check CategoryTheory.Limits.isColimitOfPreserves
+#check CategoryTheory.Equivalence.congrLeft
+#check CategoryTheory.Equivalence.congrRight
+#check CategoryTheory.Equivalence.changeFunctor
+#check CategoryTheory.preadditiveCoyonedaObj
+#check DirectSum.toAddMonoid_of

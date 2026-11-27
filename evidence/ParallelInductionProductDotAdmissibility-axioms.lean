@@ -1,0 +1,2 @@
+import Proofs.ParallelInductionProductDotAdmissibility
+#print axioms ParallelInductionProductDotAdmissibility

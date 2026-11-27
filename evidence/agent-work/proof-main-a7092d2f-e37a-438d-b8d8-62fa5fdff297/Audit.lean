@@ -1,0 +1,2 @@
+import ProductParabolicsWithThreeDoubleCosets
+#print axioms ProductParabolicsWithThreeDoubleCosets

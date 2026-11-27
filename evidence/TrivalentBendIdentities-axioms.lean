@@ -1,0 +1,2 @@
+import Proofs.TrivalentBendIdentities
+#print axioms TrivalentBendIdentities

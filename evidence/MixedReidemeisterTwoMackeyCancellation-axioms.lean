@@ -1,0 +1,2 @@
+import Proofs.MixedReidemeisterTwoMackeyCancellation
+#print axioms MixedReidemeisterTwoMackeyCancellation

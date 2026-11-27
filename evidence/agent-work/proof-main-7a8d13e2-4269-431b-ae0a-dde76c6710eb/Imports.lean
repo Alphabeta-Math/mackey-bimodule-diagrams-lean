@@ -1,0 +1,11 @@
+import MackeyDiagrams
+import Proofs.FiniteIndexReverseAdjunction
+import Proofs.InductionRestrictionMergesAndSplits
+#check MackeyDiagrams.Diagram.eval_associate_single
+#check MackeyDiagrams.Diagram.eval_ext_on_generators
+#check Finset.sum_bij
+#check Finset.sum_filter
+#check QuotientGroup.rightRel_apply
+#check Finset.sum_congr
+#check Finset.sum_subtype
+#check Function.Injective.eq_iff

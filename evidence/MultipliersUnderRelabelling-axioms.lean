@@ -1,0 +1,2 @@
+import Proofs.MultipliersUnderRelabelling
+#print axioms MultipliersUnderRelabelling

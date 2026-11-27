@@ -1,0 +1,47 @@
+{
+  "archive": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/source/mackey-bimodules.pdf (sha256:bc57d13777e7df145b6dfd84029e0e9539fedb33d22b2823e14c096e4c3c12f2)",
+  "published": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/article-revision/mackey-bimodules.pdf (sha256:813c82da512e992a11a53aa044c3a79d199b2bef5295639084c1f6b789d27e61)",
+  "provenance": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/source-provenance-correction-20261128.json (sha256:68c3efbabca1117182f25486ee13bccf9cc51e2e4c4ebc013f665e4f5b500096)",
+  "comparison": [
+    {
+      "id": "MixedReidemeisterTwoMackeyCancellation",
+      "finding": "Archived p. 16 has one explicit sum over all J. Its installed corrected type uses a fixed PointwiseIndexedDrawing. Input support controls evaluation alone, and infinite J is allowed."
+    },
+    {
+      "id": "CommonMackeyIntersectionSum",
+      "finding": "The two sums of maps over the same nonempty J₀ stay whole, including an infinite J₀ when evaluation is pointwise finite. Finite J₀ gives two actual finite scopes only in the branch with both standalone cups. The installed type and registered proof use these scopes."
+    },
+    {
+      "id": "CaseOneRightProjectionConstruction",
+      "finding": "Archived pp. 22–23 draw the two individual shapes. Theorem 6.4(1) expresses finite replacement by equality of maps and separately presents a single drawing under the index bound. The list fold is an evaluated-map expression for every length."
+    },
+    {
+      "id": "CaseTwoLeftProjectionConstruction",
+      "finding": "Archived pp. 22–23 give finite replacement by map equality and a separate single labelled drawing at finite index. The coefficient-list fold contributes to evaluation of the replacement; the labelled vertices in the individual drawing keep their geometry."
+    },
+    {
+      "id": "ReplacementForTwoProjections",
+      "finding": "Archived pp. 22–24 express the finite replacement through equal maps and the single replacements through classes modulo evaluated maps. There is no explicit outer indexed sum in the paired boundary figure."
+    },
+    {
+      "id": "CaseTwoRequiresSum",
+      "finding": "Archived p. 24 describes the single right diagram with middle mark 1+τ. Q₁!+Qτ! is its evaluated map; the left list fold only computes the comparison map. A zero or singleton list does not remove an outer scope drawn by this endpoint."
+    },
+    {
+      "id": "RightOrbitDiagramFromProjectedStabilizer",
+      "finding": "Archived pp. 25–26 require the complete individual right orbit diagram and its finite-fiber witness. The fold occurs only in the coefficient-support assertion for finite combinations, including empty and singleton lists."
+    },
+    {
+      "id": "ExpansionIntoRightDiagrams",
+      "finding": "Theorem 6.7 on archived p. 26 states a pointwise finite evaluated expansion and a finite support criterion. The fold is only on the finite evaluated-map side. The top figure on archived p. 27 is the distinct Case Five displayed-identity endpoint."
+    },
+    {
+      "id": "CaseSixProjectionNoLeftReplacement",
+      "finding": "The displayed inequality keeps one finite scope over all list positions and coefficients, including an empty family, a singleton, repetitions and zero coefficients. The installed reviewed type now retains this scope and all fiber constraints."
+    },
+    {
+      "id": "CaseFivePointwiseFiniteDiagramIdentity",
+      "finding": "The top figure shows the left diagram and one possibly infinite scope over the full supported orbit set with coefficient and projected stabilizer per position. Its installed type preserves that scope using PointwiseIndexedDrawing and uses IndexedDrawing for the finite criterion."
+    }
+  ]
+}

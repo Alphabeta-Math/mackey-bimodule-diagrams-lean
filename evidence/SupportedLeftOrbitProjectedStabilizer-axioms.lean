@@ -1,0 +1,2 @@
+import Proofs.SupportedLeftOrbitProjectedStabilizer
+#print axioms SupportedLeftOrbitProjectedStabilizer

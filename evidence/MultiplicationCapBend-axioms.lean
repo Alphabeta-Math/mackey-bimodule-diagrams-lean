@@ -1,0 +1,2 @@
+import Proofs.MultiplicationCapBend
+#print axioms MultiplicationCapBend

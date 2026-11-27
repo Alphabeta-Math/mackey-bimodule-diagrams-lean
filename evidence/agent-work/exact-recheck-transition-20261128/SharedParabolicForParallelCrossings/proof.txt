@@ -1,0 +1,55 @@
+by
+  intro finitary U blockSym parabolic ι _ G K H B H' hG hK hH hB hH'
+    α β γ δ α' β' hα hβ hγ hδ hα' hβ' v image P
+  rcases ParabolicSharedRegionParallelRestriction G K H B H' hG hK
+      (fun i => ⟨hH i, hB i, hH' i⟩) α β γ δ α' β' hα hβ hγ hδ hα' hβ' with
+    ⟨least, hPG, hKP, down⟩
+  rcases ParabolicSharedRegionParallelInduction G K H B H' hG hK hH hB hH'
+      α β γ δ α' β' hα hβ hγ hδ hα' hβ' with ⟨_, _, up⟩
+  refine ⟨⟨⟨least.1.2.1, least.1.1, least.1.2.2⟩,
+    fun Q hQ => least.2 ⟨hQ.2.1, hQ.1, hQ.2.2⟩⟩, hPG, hKP, ?_⟩
+  intro inclusion throughP evalDrawing
+  have hIncl : ∀ p : P, (1 : U) * (p : U) * (1 : U)⁻¹ ∈ G := by
+    intro p
+    simpa only [one_mul, inv_one, mul_one] using hPG p.property
+  have inclusionEq : MackeyDiagrams.ConjEmbedding.ofConjugator (1 : U) hIncl = inclusion := by
+    apply MackeyDiagrams.ConjEmbedding.ext
+    apply MonoidHom.ext
+    intro p
+    apply Subtype.ext
+    change (1 : U) * (p : U) * (1 : U)⁻¹ = (p : U)
+    simp only [one_mul, inv_one, mul_one]
+  intro i a b c d a' b' bottom middle top newMiddle
+  obtain ⟨same, _, downMaps⟩ := down i
+  let twoUp {M : Subgroup U} (g : MackeyDiagrams.ConjEmbedding M G)
+      (q : MackeyDiagrams.ConjEmbedding K M)
+      (x : MackeyDiagrams.DotLabel Complex bottom (g.comp q))
+      (y : MackeyDiagrams.DotLabel Complex (g.comp q) top) :=
+    MackeyDiagrams.LabelledDrawing.vertical
+      (MackeyDiagrams.LabelledDrawing.parallelUp a b g q x.terms)
+      (MackeyDiagrams.LabelledDrawing.parallelUp g q a' b' y.terms)
+  let merge := MackeyDiagrams.LabelledDrawing.trivalent (R := Complex)
+    (MackeyDiagrams.TrivalentVertex.mergeUp a b)
+  let split := MackeyDiagrams.LabelledDrawing.trivalent (R := Complex)
+    (MackeyDiagrams.TrivalentVertex.splitUp a' b')
+  let upAgreement (g : MackeyDiagrams.ConjEmbedding P G) : Prop :=
+    ∃ sameUp : middle = g.comp (throughP i),
+      ∀ (x : MackeyDiagrams.DotLabel Complex bottom middle)
+        (y : MackeyDiagrams.DotLabel Complex middle top),
+        let shared := twoUp g (throughP i)
+          (Eq.ndrec (motive := fun m => MackeyDiagrams.DotLabel Complex bottom m) x sameUp)
+          (Eq.ndrec (motive := fun m => MackeyDiagrams.DotLabel Complex m top) y sameUp)
+        evalDrawing (twoUp c d x y) = evalDrawing shared ∧
+          evalDrawing shared =
+            evalDrawing ((merge.vertical (MackeyDiagrams.DotLabel.upDrawing (x.compose y))).vertical split)
+  have upAtOne : upAgreement (MackeyDiagrams.ConjEmbedding.ofConjugator (1 : U) hIncl) := up i
+  have upAtInclusion : upAgreement inclusion := Eq.mp (congrArg upAgreement inclusionEq) upAtOne
+  obtain ⟨_, upMaps⟩ := upAtInclusion
+  use same
+  intro x y newX newY product originalUp sharedUp mergedUp originalDown sharedDown mergedDown
+  refine ⟨?_, downMaps x y⟩
+  obtain ⟨originalEq, sharedEq⟩ := upMaps x y
+  exact ⟨originalEq, sharedEq.trans
+    (MackeyDiagrams.Biset.Hom.vertical_assoc
+      (evalDrawing merge) (evalDrawing (MackeyDiagrams.DotLabel.upDrawing product))
+      (evalDrawing split))⟩

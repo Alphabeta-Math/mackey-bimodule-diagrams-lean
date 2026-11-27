@@ -1,0 +1,6 @@
+{
+  "type": "∀ {U : Type*} [Group U] (H G : Subgroup U) (α β : U)\n  (hα : ∀ h : H, α * (h : U) * α⁻¹ ∈ G)\n  (hβ : ∀ h : H, β * (h : U) * β⁻¹ ∈ G),\n  MonoidAlgebra.mapDomainAlgHom Complex Complex\n      (MackeyDiagrams.ConjEmbedding.ofConjugator α hα).toHom =\n    MonoidAlgebra.mapDomainAlgHom Complex Complex\n      (MackeyDiagrams.ConjEmbedding.ofConjugator β hβ).toHom ↔\n  LeftCosetEquivalence (Subgroup.centralizer (H : Set U) : Set U) α β",
+  "value": null,
+  "source": "article",
+  "sourceReason": "Ian Xiao, § 1.2, unnumbered, p. 2. The published PDF matched the project copy, and the article webpage reproduced this endpoint. The supplied defect-report URL returned HTTP 404. The task context supplied only the original article endpoint."
+}

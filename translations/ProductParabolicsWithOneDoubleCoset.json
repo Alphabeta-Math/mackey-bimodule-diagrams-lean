@@ -1,0 +1,6 @@
+{
+  "type": "let S₂ := Equiv.Perm (Fin 2)\nlet S₄ := Equiv.Perm (Fin 4)\nlet G := S₄ × S₄\nlet split : S₂ × S₂ →* S₄ :=\n  MonoidHom.comp\n    (MulEquiv.toMonoidHom (Equiv.permCongrHom (finSumFinEquiv (m := 2) (n := 2))))\n    (Equiv.Perm.sumCongrHom (Fin 2) (Fin 2))\nlet P : Subgroup S₄ := MonoidHom.range split\nlet T : Subgroup S₄ := ⊤\nlet K : Subgroup G := Subgroup.prod P T\nlet H : Subgroup G := Subgroup.prod T P\n(∀ q : DoubleCoset.Quotient (P : Set S₄) (T : Set S₄),\n  q = DoubleCoset.mk P T (1 : S₄)) ∧\n(∀ q : DoubleCoset.Quotient (T : Set S₄) (P : Set S₄),\n  q = DoubleCoset.mk T P (1 : S₄)) ∧\n(∀ q : DoubleCoset.Quotient (K : Set G) (H : Set G),\n  q = DoubleCoset.mk K H (1 : G)) ∧\nK ⊓ H = Subgroup.prod P P ∧\nNonempty (↥(K ⊓ H) ≃* ((S₂ × S₂) × (S₂ × S₂)))",
+  "value": null,
+  "source": "article",
+  "sourceReason": "Ian Xiao, Bimodule String Diagrams and the Generalized Mackey Decomposition, Example 7.6 (ex:product-two-factors), p. 31. The published PDF matches the project copy byte for byte. The supplied defect-report URL returned HTTP 404, and no correction for this endpoint was available. Each Fin 4 factor uses zero-based labels for the four ordered points. The two Fin 2 summands embed as the first and last consecutive pairs in each factor. https://getcurious.cc/downloads/mackey-bimodules.pdf"
+}

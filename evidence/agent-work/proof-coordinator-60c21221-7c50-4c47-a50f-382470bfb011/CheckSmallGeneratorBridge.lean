@@ -1,0 +1,7 @@
+import WattsFoundation.SmallGeneratorBridge
+import Mathlib.CategoryTheory.Equivalence
+
+#check SmallGeneratorBridge.equivalenceOfSmallProjectiveGenerator
+#print axioms SmallGeneratorBridge.equivalenceOfSmallProjectiveGenerator
+#check CategoryTheory.Functor.asEquivalence
+#check CategoryTheory.Equivalence.changeFunctor

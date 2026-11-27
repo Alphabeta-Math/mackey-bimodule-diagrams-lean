@@ -1,0 +1,2 @@
+import Proofs.ParabolicCommonRightRegionForLinearLabels
+#print axioms ParabolicCommonRightRegionForLinearLabels

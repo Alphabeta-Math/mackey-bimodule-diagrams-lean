@@ -1,0 +1,4 @@
+'WattsFoundation.General.repackedFunctorIso' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WattsFoundation.General.repackedFunctor_forget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WattsFoundation.General.repackedEquivalence_forget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WattsFoundation.General.repackedEquivalence_right' depends on axioms: [propext, Classical.choice, Quot.sound]

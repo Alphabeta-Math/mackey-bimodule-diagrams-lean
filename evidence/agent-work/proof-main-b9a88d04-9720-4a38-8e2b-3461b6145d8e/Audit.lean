@@ -1,0 +1,3 @@
+import FiniteParabolicSingleDiagramReplacements
+
+#print axioms FiniteParabolicSingleDiagramReplacements

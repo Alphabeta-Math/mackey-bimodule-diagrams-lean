@@ -1,0 +1,2 @@
+import Proofs.RightInputDotSlideObstruction
+#print axioms RightInputDotSlideObstruction

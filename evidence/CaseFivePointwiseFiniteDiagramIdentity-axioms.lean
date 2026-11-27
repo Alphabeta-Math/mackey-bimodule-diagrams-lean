@@ -1,0 +1,2 @@
+import Proofs.CaseFivePointwiseFiniteDiagramIdentity
+#print axioms CaseFivePointwiseFiniteDiagramIdentity

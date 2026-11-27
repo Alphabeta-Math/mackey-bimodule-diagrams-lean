@@ -1,0 +1,15 @@
+{
+  "accepted": false,
+  "request": {
+    "endpoint": "23db847b30499211e3fa34c9d4282312c4d3f0b1f7d7f9b5d86c634d4ea5da2c",
+    "decision": {
+      "id": "InductionMergeDotSlide",
+      "proof": "by\n  intro U group K H G γ α β hγ hα hβ he g a b e rightDot merge\n  constructor\n  · intro γ' hγ' hd g' d lifted merged left right\n    apply MackeyDiagrams.Diagram.eval_ext\n    intro z r\n    refine Quotient.inductionOn z (fun xy => ?_)\n    rcases xy with ⟨x, y⟩\n    change G at x\n    change H at y\n    change left.eval.toLinearMap\n        (Finsupp.single ((MackeyDiagrams.Word.up g).basis.pair\n          (MackeyDiagrams.Word.up a).basis x y) r) =\n      right.eval.toLinearMap\n        (Finsupp.single ((MackeyDiagrams.Word.up g).basis.pair\n          (MackeyDiagrams.Word.up a).basis x y) r)\n    dsimp only [left, right, merge, rightDot]\n    rw [MackeyDiagrams.Diagram.eval_vertical_apply,\n      MackeyDiagrams.Diagram.eval_vertical_apply,\n      MackeyDiagrams.Diagram.eval_horizontal_single,\n      MackeyDiagrams.Diagram.eval_upDot_single,\n      MackeyDiagrams.Diagram.eval_upDot_single,\n      MackeyDiagrams.Biset.pairLinear_single, one_mul]\n    simp only [Finsupp.smul_single, smul_eq_mul, mul_one]\n    rw [MackeyDiagrams.Diagram.eval_mergeUp_single,\n      MackeyDiagrams.Diagram.eval_mergeUp_single,\n      MackeyDiagrams.Diagram.eval_upDot_single]\n    congr 1\n    change (x * d.element) * g'.toHom (y * e.element) =\n      (x * g.toHom y) * (d.element * g'.toHom e.element)\n    rw [map_mul, ← mul_assoc (x * d.element), mul_assoc x d.element,\n      ← d.intertwines y]\n    simp only [mul_assoc]\n  · exact MackeyDiagrams.Diagram.mergeUp_slide_right _ _\n",
+      "mathlibImports": [
+        "Mathlib.Basic.Complex.Basic"
+      ],
+      "reason": "Exact reviewed §3.2 induction-merge slide, including the two-input-dot identity, by balanced-basis evaluation and Dot.intertwines. The straight-left specialization uses Diagram.mergeUp_slide_right. Native check and axiom receipt: evidence/checked-connections/InductionMergeDotSlide-35669a6fda70c55531a695d34dfb2ab3/receipt.json."
+    }
+  },
+  "reason": "Error: The approved endpoint or its dependencies changed after submission"
+}

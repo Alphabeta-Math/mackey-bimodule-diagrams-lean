@@ -1,0 +1,2 @@
+import Proofs.GroupElementDotCriterion
+#print axioms GroupElementDotCriterion

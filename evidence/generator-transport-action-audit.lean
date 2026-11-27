@@ -1,0 +1,3 @@
+import WattsFoundation.GeneratorTransportAction
+#print axioms SmallGeneratorBridge.regularPreimageIso_intertwines
+#print axioms SmallGeneratorBridge.evaluationTransportIso_intertwines

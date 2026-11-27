@@ -1,0 +1,16 @@
+{
+  "accepted": true,
+  "request": {
+    "endpoint": "c01f95e834ad048d5b69648d979eac292b8fdd350e61d18370c41dfa9aa61fcd",
+    "decision": {
+      "id": "ConjugationEmbeddingCentralizerCoset",
+      "reason": "Exact reviewed type checked in the pinned project without rebuilding dependencies. Equality of the algebra maps is evaluated on the basis elements of coefficient one and reduces to ConjEmbedding.ofConjugator_eq_iff and leftCoset_eq_iff. Native connection evidence is in evidence/checked-connections/ConjugationEmbeddingCentralizerCoset-f659b2cb896fe60b079e5ebd3c2a1c03/receipt.json.",
+      "proof": "by\n  intro U _ H G α β hα hβ\n  let a := MackeyDiagrams.ConjEmbedding.ofConjugator α hα\n  let b := MackeyDiagrams.ConjEmbedding.ofConjugator β hβ\n  change MonoidAlgebra.mapDomainAlgHom Complex Complex a.toHom =\n    MonoidAlgebra.mapDomainAlgHom Complex Complex b.toHom ↔\n      LeftCosetEquivalence (Subgroup.centralizer (H : Set U) : Set U) α β\n  have coset : a = b ↔ LeftCosetEquivalence (Subgroup.centralizer (H : Set U) : Set U) α β :=\n    (MackeyDiagrams.ConjEmbedding.ofConjugator_eq_iff α β hα hβ).trans\n      (leftCoset_eq_iff (Subgroup.centralizer (H : Set U))).symm\n  constructor\n  · intro eq\n    apply coset.mp\n    apply MackeyDiagrams.ConjEmbedding.ext\n    apply MonoidHom.ext\n    intro h\n    have coeffEq := congrArg (fun f :\n        MonoidAlgebra Complex H →ₐ[Complex] MonoidAlgebra Complex G =>\n      (f (MonoidAlgebra.single h 1)).coeff) eq\n    change (MonoidAlgebra.mapDomain a.toHom (MonoidAlgebra.single h 1)).coeff =\n      (MonoidAlgebra.mapDomain b.toHom (MonoidAlgebra.single h 1)).coeff at coeffEq\n    rw [MonoidAlgebra.mapDomain_single, MonoidAlgebra.mapDomain_single] at coeffEq\n    exact Finsupp.single_left_injective (one_ne_zero : (1 : Complex) ≠ 0) coeffEq\n  · intro eq\n    rw [coset.mpr eq]",
+      "mathlibImports": [
+        "Mathlib.Algebra.MonoidAlgebra.Basic",
+        "Mathlib.Basic.Complex.Basic",
+        "Mathlib.GroupTheory.Coset.Basic"
+      ]
+    }
+  }
+}

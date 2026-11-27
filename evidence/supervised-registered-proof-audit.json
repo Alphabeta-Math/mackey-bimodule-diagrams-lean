@@ -1,0 +1,1514 @@
+{
+  "checked_at_utc": "2026-11-27T21:18:56.721909+00:00",
+  "scope": "Registered native proofs and existing build and axiom receipts; not a new source-meaning review or final dependency-graph verification.",
+  "proved_count": 151,
+  "main_article_count": 143,
+  "mismatches": [],
+  "proofs": {
+    "Bimodule": {
+      "source_sha256": "d988cfe27082f914298f1a6cfced9d0dfa8a2e703996ff311e7c6d4f51a867f8",
+      "olean_sha256": "bc8c0146b287e19222eb5598497008bcc93179444d266e0b78f28743faab66a1",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "main_article_statement": false
+    },
+    "SmallProjectiveGenerator": {
+      "source_sha256": "984d5d9680bd9adeed15ef09cf5bbd8c0a0ffbcfb2a5474d0131e09d2ef5479c",
+      "olean_sha256": "dbb0e2e8e3b45ba146857234f5956682efe8c1bec50c050bae86e1957621fbae",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": false
+    },
+    "ConjugationEmbeddingCentralizerCoset": {
+      "source_sha256": "c9e3fb36c2bef09b5089ada0bf2709680c6185355e3b4fe451d2ead06f23ba0e",
+      "olean_sha256": "f209a42b22dcb30650c79f30b48425ac14ba76156ca9b3dfd71841e81bb9074a",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "FiniteParabolicConjugateBlocks": {
+      "source_sha256": "2d02c65f4b0bb6b16c825bc0714039bde13ee5d27fa5ffb509a7bbe41b8e5e7c",
+      "olean_sha256": "5a6e3ed6d8f7d445729e96ad9254dacb68fe38b5404791567c4979399082c1b2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "FiniteParabolicIntersectionBlocks": {
+      "source_sha256": "b09c312679e90f6e0acb563d26f7ea984d238d2b6c5028dfea9e1e956965cc2b",
+      "olean_sha256": "5560b312c231bcc8809ae9683b3c1f978d77ad57dce4ec16f33abac569083b2c",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "FiniteParabolicJoinBlocks": {
+      "source_sha256": "5a5a817c51070f6b9d76c010353098785a3ec901be0199d908a1727a415e5712",
+      "olean_sha256": "c8f7243788798b7140b3b96524d766a27bd627bdabe26a842f8ac590aa6af8bb",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "RegularModuleRightAction": {
+      "source_sha256": "d3db3b9b20436816fe633fef792070ff8a7dd6821802866b6b9f2d93dffdff98",
+      "olean_sha256": "1d7b3bbdef3b407d9500d844abcdc9064aec34d70fb201378ac414acc7c86105",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "main_article_statement": false
+    },
+    "NaturalTransformationsOfTensorFunctors": {
+      "source_sha256": "efc06ee64a1bba318d200944ae79c2e296ca91ec27e37304f4cf88ee7a552649",
+      "olean_sha256": "5e928db13a707e049b5cfc7ae34d8aad6c7fb5465aaf2dfdd9f0e552bd03feaf",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "main_article_statement": false
+    },
+    "ModuleTensorUniversalProperty": {
+      "source_sha256": "0d247f5a690de5611eeb14b48e68d00da06b97747d8da8a88c7253a61a5a2ad7",
+      "olean_sha256": "64d1cc2d450b531dc39657a90cbb9386ede82da167a53fbe38ca843cc7a65dda",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": false
+    },
+    "SurvivingCosetRepresentative": {
+      "source_sha256": "ab440eddbf0624611dda2b734685d21bb60aceda2fe95a85ab215a31da7d9bbb",
+      "olean_sha256": "e03c7f032147a2c7fe056d44e6eb62cb43553f7e04d3f59c30c43184124b5d6a",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "FiniteParabolicClosure": {
+      "source_sha256": "3ca5a20bdcccce5a2b097d99be8e33dd326130486b187089385993bfd6fab017",
+      "olean_sha256": "3e4eacbaa147b87a4db62cdf4de7b58f26e6193fff368433556d565055d9e749",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicDoubleCosetRepresentatives": {
+      "source_sha256": "906cb335a5d3df0afc28348761c5a336d3b3c2ddc75500df7831780e8fb31a3d",
+      "olean_sha256": "afb9df0f1e3a79dbb7f7153e88ce4d4948e8b4a084fb6f42569d2e761205b3af",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "FiniteParabolicJoinOfFamily": {
+      "source_sha256": "79a4d299a2bce93060c169368212bc2ed8aaee39f8401685bd4473ccc437509e",
+      "olean_sha256": "3bb431887d25de06cbc6dcdfd75b6b178eb2f75c0019de9828ae431ab801f9e2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "CanonicalWattsComparison": {
+      "source_sha256": "8418e4ddd51fe272c33243d6597a21feab34ce85edeeb036080394624b5559eb",
+      "olean_sha256": "ecaba35cb593803f588b1e29e2e775c5c69fccf2fe71009442a04760f35bf735",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": false
+    },
+    "BalancedTensorAssociativity": {
+      "source_sha256": "2069082f489690ee0a881df7f2f5ebad33d114cdd97398518f7d740ef23f279e",
+      "olean_sha256": "3439f37b38f4b52d21cf017d92a84c8cf446c882ea98a2cbe4f7646a67f12eed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": false
+    },
+    "InductionRestrictionBimoduleStrands": {
+      "source_sha256": "1e6f783f72f835dd505c4e982f12dd440a147326276ed895483e77730cbaddf3",
+      "olean_sha256": "451f4e33aed30b0c5774cd8ceca09dc661ddd3bb0cd8406cac03e6ed0bb3773f",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ExtremalParabolicsOfFiniteGroup": {
+      "source_sha256": "bd3747339e5719bc68d76de86a0df15cb94618750c096df8bd137c7da55be06f",
+      "olean_sha256": "4349f28184fdf544ebe0e3b93178fdabeeef73d54673f4c1a2f0d077b329955d",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "SupportBoundsUnderComposition": {
+      "source_sha256": "9175d2519cd1d84804d8c1a07c3a8143223c5342db45d6c2dd10f3155f0a4556",
+      "olean_sha256": "c1affedc97552bac576a8db8bb7c0d166997559b92af6df8d3d53494dcfac29d",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "TransportToMackeyRepresentative": {
+      "source_sha256": "1259dc9a87d49a9f2a2aa9d7e89a451b5ba1a0d3c4491d6fb05702c498a71167",
+      "olean_sha256": "1b8c0e87e813d35ec1ab522c82c4cc107ea8738ebcee6f7ed8c149c9a8f9d419",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicBlockOperationExample": {
+      "source_sha256": "5d4cf0c0ed2c1cdbe69015898e1354f53dc9297342b0fa505edfada21a91751f",
+      "olean_sha256": "d39eda0730df4bce607249658b31bd1b9eb6320b60511815852f5f70e2b1f98f",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicMackeyIntersectionBlocks": {
+      "source_sha256": "ed6d20e3b9b252a828998af60c5fead7c04f1746f6894e8dc65f807a489fd9f6",
+      "olean_sha256": "a23901fe3f0b8ddb71dde805ad32848ccd4bf54a043e2df8325c4a60dbea961b",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "OneSidedTableauCosetRepresentatives": {
+      "source_sha256": "affc164d7a2217f7782a8ccee04ce99fa5f91ff75e4a7e30f29e4705a8fbf82d",
+      "olean_sha256": "6832589fe0683536082bcadb5ed23a7e96264f8f79a55d308de72f830b4243e5",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "TwoBlockDoubleCosetMatrices": {
+      "source_sha256": "21413927408fbc819784b644ad895d1a89ce8428a440745e95f2facf3144e268",
+      "olean_sha256": "f600c78a314c8a9c3317413eb3233ece8917e308123fb333411b2c79751517eb",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ProductParabolicDoubleCosets": {
+      "source_sha256": "eadaed7aa7712981180c8b324fc0de5806eea91d76cb16d2b52367fbdb162162",
+      "olean_sha256": "388b1a34e5834c4c33c38cb9ea0aadacf893db4878859548787c61b31988fcfc",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "BimoduleTensorBicategoryCoherence": {
+      "source_sha256": "371b49e798fd904a1323667f853126fdb914a438c32add1e1ace7e3cec02955a",
+      "olean_sha256": "53cee54b07a4906f42e9ae7c85c93b315017eb31524982039b98f75cda99e7b8",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "main_article_statement": false
+    },
+    "EilenbergWatts": {
+      "source_sha256": "f0e19bdb192ca7aeb94cec07b5d7b0b30c7f344776812852d5ad679b57e823f2",
+      "olean_sha256": "11629cbc03b85cbf9b844fb59ca8936dbb84165f905dff54140030016a8b8c2b",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "GroupElementDotCriterion": {
+      "source_sha256": "035f3601602965dea23921db59eb2e3be39aeb2d1ab38c9dc3fa884293ff9297",
+      "olean_sha256": "5e00f7cae7b9e02ed43f24c16042813f42d6af1e02519129c13cf892bcebf64f",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "InductionRestrictionAdjunction": {
+      "source_sha256": "17fa89cd1b7a93f39276b5e6ea102d8617c3e6d7b0ba6121bf7a653529671967",
+      "olean_sha256": "4ba12adc2b0d0ad5d2e90f8c86541df32fd7ad1e7c3c3c78af4c85e2162d80c1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "InductionRestrictionMergesAndSplits": {
+      "source_sha256": "08c9d56dc3f0b8d487a0425ccc430ea7ca92ce315bcae45eda0e6f5195b6ff1b",
+      "olean_sha256": "84e39738094b9c29604c20b6e72e1731917c967f0858b96006fdb64f55f3973e",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "SupportBoundsForInverseProduct": {
+      "source_sha256": "96e73984f4634b1a48fe30aca1e41037380387d1503db7b7fd0681a30ada5645",
+      "olean_sha256": "449bb8558a2bfaa9ed06b5eb12d044918796516444b5cc42dbcc03b83e640b78",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "TableauDoubleCosetRepresentativeInS6": {
+      "source_sha256": "10abf77dda3447103d87554e5972054a644c77c134a147c8dba4b04afcd25aab",
+      "olean_sha256": "438f1e8f35b12fb695c89fb9c8f31f48946caadc50da05a884bcd5e918d392cf",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "StandardTwoBlockRepresentatives": {
+      "source_sha256": "2bf072d32dd921d3667570f7f2e1af34d183991dbe67cccb0db9efb1b82271c9",
+      "olean_sha256": "80d361497fd9cba3301beeead109ce221ba9db9f4ac52de8a0871b664a748e3e",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ProductParabolicsWithOneDoubleCoset": {
+      "source_sha256": "75489aca047d87c9aa0a199b2f46080fa75623cc6e5e5d2b6322577ad690afdb",
+      "olean_sha256": "55eb2f5b4ebd5e9b2c1672ecf4ef62b4111e4aad985cad957518d2de844fe6d3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ComplexEilenbergWatts": {
+      "source_sha256": "d8dc92a978c6e40bb5b9c8adefbc58e9015ce13bafcfa77b01abbf249f3b521b",
+      "olean_sha256": "3321bd0b5bc1912106264a05b3fad6eb9481d6c777c4d9156496ffc3f67e741e",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "FiniteIndexReverseAdjunction": {
+      "source_sha256": "6f322ea68217e5fe0654717fbbf14135d367edad14672729238860cf4d12cc70",
+      "olean_sha256": "08e27eb5f89e84375263827ca9465c9939f74604af092b8f2435d8bb867d392a",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "MixedCrossingFiberMaps": {
+      "source_sha256": "008628adf6e96e109343cf20f6e51d039c24e21d096e65e0a1160677548eab1f",
+      "olean_sha256": "dc773954c03c6301b88899ca70b0227c303a23de08b52edc5553ece4f9d70f56",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "InductionMergeDotSlide": {
+      "source_sha256": "8695902586df4fb11c708bfcd94b1132805ae961b87fce0b833b6b7e9009fc45",
+      "olean_sha256": "349fa23831db0666c310b1275e5bb859872cd47a23cad8db9cf77abdbf619f94",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "RestrictionMergeDotSlide": {
+      "source_sha256": "023240010b88a5b01a26a008436b914aa82b5022d18718144593db334442ef6d",
+      "olean_sha256": "2ed1c9b18e05702e2558dcf939eb9443394c99db0d293d993ce29be4724da236",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "FixedBoundaryReplacementPreorder": {
+      "source_sha256": "515d351130813edcd976d8c9e6695c06275b48f5e7c039f0ada82aae5d7265b1",
+      "olean_sha256": "1aa97215c987b11efea6a35c80b6256f6e5ce5fb01adb62f874b56fa7855791c",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "InductionBimoduleOrbitSumBasis": {
+      "source_sha256": "f9a99845926a7f3eb9de48879e0cb5998a2d7a2126cd8770bc183b49992feab5",
+      "olean_sha256": "6452de7b87247a76d429a329cc8de68ef61f9a522ba8f4cc83438da88e202053",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "BlockwiseGroupElementDotCriterion": {
+      "source_sha256": "a502522ef6ce531baf25734ae3d60a524151eb863283b15ecafc7be921575011",
+      "olean_sha256": "e1c0ff53b5145023ff66df967961388d8ee342987e0b3d82c3f20d9da5067053",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "MultiplicationCapBend": {
+      "source_sha256": "0b9eece1cbec990f0900dc910e6716b8529b6703f8f1f7ddc68ff239538aba52",
+      "olean_sha256": "7867868d5a69a16e1f2cdcaa87c176df924bc4caeee48a0982ae928139c6d7c3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "OrdinaryCupBend": {
+      "source_sha256": "e44a74aed7cc096044b4d8071c8692452af1d8c0d4d39e9b8ec00c75b2937082",
+      "olean_sha256": "198514cab74f6d1abcfd414a8bda8db6bbf6cbbb13408c164a69ad3d077e1729",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "RightDownReidemeisterCurl": {
+      "source_sha256": "6e935603beb0ab2ce5017515988b02287119982f907477512b650b708d78b9f9",
+      "olean_sha256": "1100167baad5b2a85bcfee9def53621fc2b1d79c82b8c61458d54f38ac3e484b",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "LeftUpReidemeisterCurl": {
+      "source_sha256": "6a815b9addf8c2b6841d660280334998957e604754e2c14277c61914e982d386",
+      "olean_sha256": "4f38212b667f94c432c50eda232fa33b4e1645c520054e092d04e86167f18906",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParallelInductionProductDotAdmissibility": {
+      "source_sha256": "794d2f3aac72c24df7c244bb1d3e153b60a8ee937641632b899a9d0d3394dadb",
+      "olean_sha256": "96a7c9d44e1cd24b1e9a607c9c57efe3b82ef2c4f73cf9d0e8eff9a5f90ad191",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParallelReidemeisterTwoRestriction": {
+      "source_sha256": "da8b4494cab19572e79115489c532bb9cded7a8a9b263e82b8191d722b6527e0",
+      "olean_sha256": "b0a490d4ac8e59e2cb2d3556a89d6678574a1d06c3ecdf37d79ce9806b51cd6d",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ThreeInductionCrossingMultipliers": {
+      "source_sha256": "89008ba03a544149b5af0fc347484eb51b196f1ff83e3336c1c93eb5bc288235",
+      "olean_sha256": "2acf99e273be54cb4a92278758381a46836a02e180deda50968e5ffcab7a57a7",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "EqualTwoBlockSubgroups": {
+      "source_sha256": "ac0f662632462f790f5a840c6f02eaaa63d38ae4e745066181b8e8503f9413ca",
+      "olean_sha256": "c2a5f6b4f2ff16a18eeaf540d6638720331be8edf94b997066e869c57f65811b",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ProductParabolicsWithThreeDoubleCosets": {
+      "source_sha256": "64a03bc460055f47e9cdd6b3d78a72a7d071b51c4e946e3bb98f2db6a13e6406",
+      "olean_sha256": "7a48dc0f0dd44a913579b72e1677d00a2ad439af375b06c42b506e919d28ea23",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "TwoBlockSplitGivesFourIntersections": {
+      "source_sha256": "848245b2dd6381b1b2cdb70b914d210e4fcc6555f7a9d4fbf38cba22dfee26d5",
+      "olean_sha256": "ee2974ae1c5569665dd8577d4b775bd11c798a7a901d64d36b90ccd7d001d2aa",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ReverseTriangleIdentities": {
+      "source_sha256": "b68f8cfdb9a7e8b3d0d2cbad1d7bb84cae827ac43c74c06cf120d6ab7b5a2780",
+      "olean_sha256": "eca770eb8d4dbd5c92b66761f3e6e29683dd61be336ab9b76fcd5ba3964377db",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "DiagrammaticFunctorCorrespondence": {
+      "source_sha256": "5edaf7192a39a866da12681ff56bfdde29df1be887dceb1cf01da216853caa11",
+      "olean_sha256": "943b9df0f97285517744bfc85d92c8dff8a6fb9e54d342c4c5f02870cab085d2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "MackeyInclusionAndProjectionCrossings": {
+      "source_sha256": "6edc10a2f83cb423f0d4ebbc42c5392ff17be4950c2868817496a082c73a0a2c",
+      "olean_sha256": "7c1c4b591345a6e65ed4902730812031c2785ae05d9eeb1a21f6a22943d047ed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "RightUpReidemeisterCurl": {
+      "source_sha256": "ff40f8230d4c29fcd7e5b798b4bd39903d32e10b2ea507fbf5d94ad2416b2b85",
+      "olean_sha256": "62b4d98e6d52b8db23d23ed41e522a57af95d81d8a3f1ee6e14eb0be55d9f305",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "InductionSplitDotSlide": {
+      "source_sha256": "80e136ec550c5f18128706a5d6bda29be73fd4a0f95ba3813c182fa6c9982f53",
+      "olean_sha256": "ed5d651dedff90775524773363737cf1a8c0adf60a438938339cc66b78ae3770",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "RestrictionSplitDotSlide": {
+      "source_sha256": "bae24c35d1cdd8ec4a6ac051c8d8699020202f03bd4b2afe57097d2cc1e31da0",
+      "olean_sha256": "c0b9bbf99b30c9d8a13c1bc6bb670a2bd6c66749b33ce0b43053255eb4f2e2db",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "MovingMergeDotBackToBranch": {
+      "source_sha256": "676ba2eb29b11583da7da52342d2453b2eda104fc48f9e0ee957e8dc1fabe9be",
+      "olean_sha256": "136124a428fef5dec734570805ba6fe89315b1c60e398e75165bb543d283ef07",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "LeftDownReidemeisterCurl": {
+      "source_sha256": "6b8d1c78e49c89a5d98773384367563a6d99a139a73ee46a60931240c0bfea0e",
+      "olean_sha256": "e881dc9e923e59935920032bc3f6f5ae5e363da50264120df7d34900a6a4dfbe",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "FiniteOrbitSumDiagram": {
+      "source_sha256": "1ab6cc6b29b0afc7fdbcafb9dab536cc1726ac6481659b6e0c500aa14aceecf6",
+      "olean_sha256": "541144f6b4b807a0ab9761da0346510a4059660642437e969549c661527c3b93",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "DotBetweenImagesInOneBlock": {
+      "source_sha256": "f90e86ac612c3c15a1e359cae2bcba47fc98afcc6124cbed58db59c0a263f5ca",
+      "olean_sha256": "461dfacffe226c79b6a2c166ee2f7b92265299bbf0e47f05bd54cb00164f46b8",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "TraceCapBend": {
+      "source_sha256": "b3551a231f12c21f8da59ee4a33c6501d9f16be9bece0f44021343312b9b7efd",
+      "olean_sha256": "63cefcfa0776bd0c931015f8f8b57205026b6b341b9029ace35900aeb108a3b2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ReverseCupBend": {
+      "source_sha256": "55ac3e799b07e549bf1de95a19c8c0b8038d0af5261162211b9ce38b6cecefc1",
+      "olean_sha256": "deda03731247c428e51dd462c67a7c11d0099748f5a0ea4309a6675977e92fd0",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "MixedCrossingComposites": {
+      "source_sha256": "6d6dcd6d1359e484f169d04a4bfd4a5cbf9be1ace307c70b902b99e7e87f1059",
+      "olean_sha256": "7060ba314e585810ef0eec86aa77e3ec069350dba5e16245b3586ada4e59a8a9",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParallelReidemeisterTwoInduction": {
+      "source_sha256": "2d74e145168178fb9c5ef75e329bfcab7bdeb0231d0a18ed3c8a3288a724143c",
+      "olean_sha256": "d217380f10ec9267027038fb95d5a87c4a60630817d7070242876c4c7b838bdb",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "MultipliersUnderRelabelling": {
+      "source_sha256": "ef6539ad5e4ad896c3e8082588e876aa9d561ada053de617d74605ffa5d0816e",
+      "olean_sha256": "6726ed17cf008a460cb4fcbe4501e2bd11c93ee6fc1352e203ab5a53b7aa28bd",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "MixedCrossingFiniteFiberConvention": {
+      "source_sha256": "db2a4e4bd8b765c06b57beb66b15b7ef4c7cb6c15e41e2cdf7507444d73a3323",
+      "olean_sha256": "8f950fb2518bde10a90ce88bb77387637398d1fc28a347b2c133fedd679bccda",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "MackeyConjugationExchangesFactors": {
+      "source_sha256": "a34a0b8f623b7b1628a0f2ffd1460332bf4f93202602d24dd8f08aa3f0519d5f",
+      "olean_sha256": "0884226612574be4841c4aad5dae037fd08dc0c0e41306f3f4e3e1d538ddc175",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicSharedRegionParallelRestriction": {
+      "source_sha256": "a622f5c21e5031dfb746938812fbb205f1c73cf6799e9db0eede367a031d2d5c",
+      "olean_sha256": "92a25a7805f4a75dbd855efd22d96123fe664118269fc59d39cb9ae8abe0da35",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicExtremalThreeInductionRegions": {
+      "source_sha256": "accd3ca9990b05f88eda9ae40b80cfbba902e55180bc550251c2e7c875b23d6f",
+      "olean_sha256": "852fa67d334adbbae1bceea314fb01638028ae13e74604ca3fbeb60c2893f8cc",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "MackeyIdentityDiagram": {
+      "source_sha256": "65b8d87d96de63547927dc9398c3de79bc7817c4e7ff9c59a5cb32e74f3362bd",
+      "olean_sha256": "3676809dd68255ca06cb880838ed5dad115096a83df328b9d8cf68bda31bf236",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "MackeySummandProjection": {
+      "source_sha256": "0e4dd0102c80f8764b4d028af1caa85307518a57f1c7e2657e2d7bed70bf4f4f",
+      "olean_sha256": "b9af5599e0c5ae4d87948b42f68edf2a61b0eb096287f0bbbe0a4e048534df14",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "RightCurlAndDotSlide": {
+      "source_sha256": "07a18b7e988bbfcf73be3c0668837e651ea0fdc0d9250f260637569a6913c4ae",
+      "olean_sha256": "9057a74975a71e9f33412a24a8a777afa19bbf39aa1b2b67510cf4c7955bf805",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "MovingSplitDotToOutputBranch": {
+      "source_sha256": "621e50a27bbc07e21a5652ae3853ae389930aaa11d10f76537aa55854185e11f",
+      "olean_sha256": "0abf0e0fe3077818d802ddef55f4b0d161fed540ef36a40ee01d21e7b61ae7b2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "CurlAcrossTrivalentVertex": {
+      "source_sha256": "636995c97c6f78e66c904a581b66be459a6d059001ea5e6bcd971594c483060b",
+      "olean_sha256": "5c2d5a79fa2042a7319af92bd714258f48a86033cd0dca21fc6bf45ffbbf2807",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "NormalizedIndexValuedReidemeisterCurls": {
+      "source_sha256": "afcab7619920951636cf62791e5b667f1f68cb303c98eebd61eaa05bc1328e5d",
+      "olean_sha256": "bfba637f03e3d3ab0d12adbda611ffd8a028bc27e08855b2cf526de782b1f7b8",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "RightInputDotSlideObstruction": {
+      "source_sha256": "9b3b66ef6c8da0dfdabcd81a3c16819458821c07fbdb8883bef9d3561ce7cbd1",
+      "olean_sha256": "aa66d1dbf07285e06300a6e660f2dca8d1768678e3e5573afad489b9484d4471",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "BlockSwapOrbitSumWithoutGroupDot": {
+      "source_sha256": "6de897e792bc4caa0a5c6e1463b282a83dba490acc3f8129a0ababf538543c62",
+      "olean_sha256": "5344b8a912e05b88b830523b6a02e10346d528ef34f08ec53e19543b31cc22b3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "StrongerEmbeddingConditionSlideObstruction": {
+      "source_sha256": "d69d03adbc8f91ed0904b8123be11c85d3f791c60cd70249cd8a5df6287aa574",
+      "olean_sha256": "552fb9909e6d4ad281f10689cc2bec2d434939ab4aba97fca62f4978dedd6bc3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "TrivalentBendIdentities": {
+      "source_sha256": "2c6c3ea1f7fc82e69aa89e4ba63e0bb64a8f2c77b71ffe02b6a5e6116d131df7",
+      "olean_sha256": "8ed320ef238ada78fa39ff8e3ce3120e1b04b906f126d2b65bc35624cd074914",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ReidemeisterOne": {
+      "source_sha256": "d44b9d3da0ecaf07cd9b014a2b748441f63c2a2d31fa660fec3fff0457ecadb7",
+      "olean_sha256": "bfd5e464d79e70e00b66dadf1aeba1bcc9459f355bdd7986aa10569437452f04",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "MixedCrossingsThroughSmallerGroup": {
+      "source_sha256": "6ec2bfdb74aa9d89cb0fce4006f1dd0357f2c63282df1ea5af357c688e481115",
+      "olean_sha256": "1167ee9a24c95fd057af0f97a3458bd1627d63c028e2ca27d14a8de18e020167",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "SinglePairCannotProjectOntoSeveralDoubleCosets": {
+      "source_sha256": "4b5a855892ed8e278030be75951791e8e203c5efc6b22eb677f8d0378fb92cb3",
+      "olean_sha256": "41bb61a8b3254018e2995125c87ccbea609cc3549f5f96c226f2b3cf5553fa08",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "StandardSymmetricGroupBraidRelation": {
+      "source_sha256": "aefea73810475843609e4d5ea937df2c16a5829331d84b8724b7080ae885ed6f",
+      "olean_sha256": "411793f987efcf33749527e6069b24c253b0fe42df4e6444a8b77f042f9ea224",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ThreeInductionReidemeisterThree": {
+      "source_sha256": "82809f874c598db6487427f6fee1fc21ff84aa9b7228c506af4ace61a306436d",
+      "olean_sha256": "3e5b69bba316202d258854d73b6da9cec67d277041e2042126642d2588efbc04",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ThreeInductionLabelsChangeOnRoundTrip": {
+      "source_sha256": "2ecffd8239768fbb0dad5b8cfeb5978c197b6ceb5f9f72dadd273fd8b073f90c",
+      "olean_sha256": "805690c39a91290392bb4b5fba917a39cf405f5ac8a025216c61b5374926b3a9",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "EvaluationForTwoProjections": {
+      "source_sha256": "04d7ec9695b5f5460ae2b6517569d769efe910444028d02385c3c14f66fb4114",
+      "olean_sha256": "f267241f0469c2bbe480a0da58be45b5430422574defc1bc65309a808cba3a09",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ReplacementForTwoMultiplications": {
+      "source_sha256": "ae4427c47420591f2a2736f4490fd08981e33731dc4a12588d7e128b6a44300c",
+      "olean_sha256": "05d74836ae9712b26efb5dd34c1d371d063da54955136dc237b4abb0e6da7bb6",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "CaseFiveLeftShapeEvaluation": {
+      "source_sha256": "75f52a52e9164b95322030733011d15e8b47a46686ee82b910bd19b02e4825d4",
+      "olean_sha256": "9f96199e20ecc9bc8cfb079c9358c839f95cea1d8f0b9fb040ef2eabdba5c0e2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "CaseSixRightShapeEvaluation": {
+      "source_sha256": "eef327ca999d767754ddb10c0660e97b660dc943a4d1b51378b1596db80bf34f",
+      "olean_sha256": "5ef26f5d3fec29a898547b77c1c4b0c77933bbc155cc013f49b0ddd853c8406f",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicSharedRegionParallelInduction": {
+      "source_sha256": "f1f99511b2f273f0eb688f0417065a0f6d0c81a21de6ccbd8b1fb938709f4fbb",
+      "olean_sha256": "d1f42c4662a483fbf573b8d2551d9243223161aef43c87e1a563e560b50a21e6",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicExtremalThreeInductionExample": {
+      "source_sha256": "a32df9431f3522d371a0930a6f2d9f3a6975b29cc8633a45f565f9ff4a681b38",
+      "olean_sha256": "ffeba0fed83dd060fe2c9754ffd371f10d8d399e782e1635833698452209b1d5",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "MackeyOrthogonalityDiagram": {
+      "source_sha256": "f9a8c394840e77d6299e198f9dc9e1a74a710c1e44c2177e3dad0ad809b98689",
+      "olean_sha256": "daf0a6fb90f0bcf1481b046e7e1adf1d4fa86676357eb64d2bc50fca959dfd20",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "DotBelowInsideAboveRightCurl": {
+      "source_sha256": "55d11b16155ffa631b93ed825f1a86be9c0cb11fb9b486384928b6fbb1447e7a",
+      "olean_sha256": "5e5ff9a56c58d540142a1c3597456b59a4533da0b5c4bd80f57dd521f3e592fd",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "CurlWithCentralizingDot": {
+      "source_sha256": "af589cfbb543e9fd4f48d6bed6c0b83c2241210deb689cf52827c58480fb988b",
+      "olean_sha256": "9f562f2be6c8c64c15c7814bdeb8b2e9fd32441ccf889ea4bb91794c904e20ce",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "DifferentCurlIndices": {
+      "source_sha256": "18a2e0150f6cea80091f3861e65a1a413812e069b4d05a80b865cc61551decc8",
+      "olean_sha256": "6e61294b0dedac78475dd8a7ea1ca67c2785fd0d5de32e0f2a6cf77f4966689c",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "NormalizedTrivalentCurl": {
+      "source_sha256": "23218d32136379df14e75e70237d3b3b7e2d3c02d50d537963af0ebfaa33dfd3",
+      "olean_sha256": "3d4b0b17ae4bb949afaafa0a3ab983359db00eae6d31169e02556b9e9429f06a",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "DotSlidePreorderNotSymmetric": {
+      "source_sha256": "e0977eb4e51d00724f15b6b18cde064083867fdaa4e668e6b1f1b39f20524a2b",
+      "olean_sha256": "86fed13afdc457648d501db7c85540bfe5be4eb1555f06029631dc6cebe50ec1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "StraightMixedTrivalentVertices": {
+      "source_sha256": "56cef0961196a49b3cd683342df2e08a6689e4285043acd73888706825ead967",
+      "olean_sha256": "1eb5803d15da1ee0c6e09fb535c69c7c5a63dd9b06d3c8bea589666a9319c00b",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "CommonMackeyIntersectionSum": {
+      "source_sha256": "fefcd91f7e528afa25c97c3cef8cf1ccbac5e8f959f4ab53c338826a9774914d",
+      "olean_sha256": "dc2d31479f8c053033e6e31581524973bd45666deb9642719031cea2c04ebe87",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "AlternativeThreeInductionInternalGroups": {
+      "source_sha256": "6163fd3120f506a2039e3beda5c8bc0aad62665b5f4d2a7066572be5a0f00ae5",
+      "olean_sha256": "f4b0e42a1e7734c02f4b459c53091d1981cb3725c66187990f776bd78d94e0cb",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "CaseOneRightProjectionConstruction": {
+      "source_sha256": "9d09a9f16efb222d6656fb6526745775390f720659733d73f565faac3271be6b",
+      "olean_sha256": "e6a0af5f3ef8b915d709ab5ad4d94365b65f5fbd3646e862f9429c5b7515aad7",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "CaseTwoLeftProjectionConstruction": {
+      "source_sha256": "286504c78c140a5d397c7a301863f4eb7649e1dbadd65c2286abd54649d324e8",
+      "olean_sha256": "22f1e0a7103c6186a0fab2d47e54870916b90ddb55f7b7958304e7df16b09849",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "MixedMultiplicationLabelsChangeOnRoundTrip": {
+      "source_sha256": "408020b6e5d77ed4d5e0f19beed0a968881d93c247952b6a14877ecc2d4ac98e",
+      "olean_sha256": "ec78b22efd4656564bfe45e9fe012794e512e10b50f93fdcf0ec99e7dba76065",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "EvaluationWithOneProjection": {
+      "source_sha256": "ad1d09a3ac2a6883f169cf66c763ca69d72581a5007103029bf7cd55098bf223",
+      "olean_sha256": "1c4dfdf9d660a330cff63627ae26c3194088b151e3d9976f10eff516de94c3a3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "RightOrbitDiagramFromProjectedStabilizer": {
+      "source_sha256": "ace0942b26c7892db84b291398fcda28a445b16be2005508a9fb87e9041f5960",
+      "olean_sha256": "7f72243b00fd9370108c3228d05bb607f4b0938b982f7dca43a093bf6782daad",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicCurlsFromBlockRefinements": {
+      "source_sha256": "205e414e0fc961e67139ceb6ae17445466edb3f654d08f16f6bd55293de3e005",
+      "olean_sha256": "34ef4db622a67d85f4f284f18661a1b115ee963bceb8f743bb3b06969d42556b",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "SharedParabolicForParallelCrossings": {
+      "source_sha256": "735bf50550c3b6e80615cb14067f8b2921555f20c87fbf3b2ab615011b40cfae",
+      "olean_sha256": "d856f599fcd54eaa795fe52e1c3e862b270e31af2456305b3aaab5aa28387f93",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "GeneralizedMackeyDecomposition": {
+      "source_sha256": "044084754209ae3de60b4056dbe9a817bdf369063bb483e8ffaa6e945a2557b2",
+      "olean_sha256": "2538f0662df9b2529c400dc445a73fdbefcb7ed60a7071a06856cd9de4b595bc",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "TwoMackeySummandsWithSameInternalLabels": {
+      "source_sha256": "c8d55f239143fd7716badafdfac3974236be8a4199ccedcfe28873ab7e28ebd0",
+      "olean_sha256": "e9449c766d325235834779ad3de67665c803db5d6b9909f82ff562e93e85ef57",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ReplacementForTwoProjections": {
+      "source_sha256": "20810783a7dabb438fce290fffd900d66a7e97ec1dff3f7a8be4dbad56f4158a",
+      "olean_sha256": "058dd9d845553cab10014cb423f24369a44078d8cf316374d1b8e99cd16ee45d",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "CaseOneNoFiniteRightReplacement": {
+      "source_sha256": "a6e6f05807908f45ccd28e96901fedf51a933f6387cef1a1982a9a06fc1d5bd6",
+      "olean_sha256": "b740d69bd782a008b64ecf1bf9dc90d2c865d7b4aaf92174ab0c9a283cca9586",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "CaseTwoRequiresSum": {
+      "source_sha256": "40ca6c49aed3d24e0f03810d76deefd167486a4eaa5f4cd890128f336233f873",
+      "olean_sha256": "9aa27caf871196e2903935f1ae16165406d13f16a90a34be141b4744ed8a5dee",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ExpansionIntoRightDiagrams": {
+      "source_sha256": "8d23b095ebafffad055b79cc4156f28ce5b16842c9f759d81363bbae371a8a90",
+      "olean_sha256": "d909971b1e12db109f2aa4e3bd79707cd5584a5a01143ac880cd5d279f400c59",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "CaseFiveRequiresTwoTerms": {
+      "source_sha256": "cd49b4f84ba28af4c5c14e9388de69ceed70824e3f3ae96c66bb2fd25bcb9c7d",
+      "olean_sha256": "30f44cddfbbca73397ce44db3100fd1ebce87bdd5e13751615c4b0e2b5f2d6de",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "CaseSixProjectionNoLeftReplacement": {
+      "source_sha256": "a29ec46b9a2bf3758051fe3a0319a87265fa2b27c07004786224fed6ae30f84a",
+      "olean_sha256": "a87c84becc0925a15084ae78716243b30831a303681cddb6eb86cfed0860697c",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicCurlFactorization": {
+      "source_sha256": "471a5ea7e8535c24f2a07320ad809620cf7be951800cda1517f17effd9d0010a",
+      "olean_sha256": "c772e12a1ea0be5570da12710e84142bfa2dabc43242ec3cde2a8e001da9f0f9",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicCurlJoinIntersection": {
+      "source_sha256": "281067b868a15d421d1f1dca96f12823d7f49918fb9bbb0833bd69d7bef36c97",
+      "olean_sha256": "f9456ab796047d938d666c4e9a5aa3a89c92a4dbed13cfaed8d1c8e1cf3a87a4",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "LargestCommonMixedCrossingParabolic": {
+      "source_sha256": "1fbd16bd71c1380f0183231593207361defdd0416ab8a11fd744ccaa0a1d447d",
+      "olean_sha256": "c01aeb37e8c549f8ef3d9d09667ebef3846bb870ed7104a44a0c40d3a3208879",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "SupportedLeftOrbitProjectedStabilizer": {
+      "source_sha256": "e8abb32ef22d30dbafb73c1dd67b0797fa402cea6ec41e8cd5088bcab4a3f683",
+      "olean_sha256": "f03cf71e56af30b9be617ed55dd1a49f0618eb6de0ae4cfe49536e507665e4c3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicCaseSixReplacementThroughJoin": {
+      "source_sha256": "40d6444eaff2c138f7ec162f73fbfb1e7a5d459f60fefb6fb34ae2a48b91cb91",
+      "olean_sha256": "c892aced476767a7c3c2c783497e7a7f42f651ac9385c51c1b6158389c50ccf0",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "CaseSixCounterexampleWithTrivialProjectedStabilizers": {
+      "source_sha256": "664398528cb96c0c8f202b77c3859f2b7f255232e66dc940e5c1dbd6c6ec5907",
+      "olean_sha256": "13b3d8688cdb9273bcd2df346b843a7575dc7f97e485b23d824a82388b7b5dc9",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "CaseSixReplacementThroughOverlappingBlocks": {
+      "source_sha256": "ea3a3bbfac52e92eaa18be892e54d8bfa78189be7ed066dee2861e07c4fe2e97",
+      "olean_sha256": "e7bd13a49bcf54d53aa8a1c02a189abe453f0f9f82057c75f0560cf9ad2cb39b",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "OrdinaryMackeyDecomposition": {
+      "source_sha256": "7c33a71d2f788cdd72b633b41ad04970a9ef4c6ca3c2bc0800e75d56f60d1c9c",
+      "olean_sha256": "d3d719a59d9f87535674c06889305876d473b0a1b0a15b9edb44462032c496b5",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "MixedReidemeisterTwoMackeyCancellation": {
+      "source_sha256": "bd57d4b7ed9291a9facf706e07d82d40c5801bc178c158ddce297d7dde800bd5",
+      "olean_sha256": "d60e066f24acb4421dbebec8221896361d44029ece889e517e5b4485526707b7",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "CaseFivePointwiseFiniteDiagramIdentity": {
+      "source_sha256": "140c40651b7e8ed6e55d52bdf3d178a0f8053983b04a37c1cf6950d785b2152a",
+      "olean_sha256": "5ab15594cb39a7edfacb945001edefe61f110a1ecd4e3c4d89788852bec29f8f",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "CaseFiveRequiresInfiniteExpansion": {
+      "source_sha256": "1b653d5326ee951db43af1ee350780e9326d061833bd4dbfe03b5316dba6443d",
+      "olean_sha256": "aac93492a01d7b6cb7df8f47bb90d5cb587faae799a0135d726251a12769e44d",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "MackeyDecompositionWithParabolicRepresentatives": {
+      "source_sha256": "b77b12d5d1d0c28fce18ce7a3edb7919c1832eb829044077d3a7fff5cd1de574",
+      "olean_sha256": "b6660eaa604a8079035d5ff2eba41c76379bed894b2287d8e5fdf7d3c39e4a64",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "UnequalParabolicCurlProducts": {
+      "source_sha256": "55a455be06f0b19d7e8ccf8f4963fe4e24ea373282bba5d6c1c1c48534e64252",
+      "olean_sha256": "38ea07fc201457133ec7ccd13f0491a0bba9af7d5800b63701cbe8fc559a2a1d",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "LargestCommonParabolicDependsOnRepresentatives": {
+      "source_sha256": "736b974e1976b3ff89be7bc919adcf01b1bf93b441892c9e9bd91c44b8dfc500",
+      "olean_sha256": "a5ba2592d4fb325938c10f155c808e9d482fa917d27d94d9d04c3b00dcce6d52",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "FiniteParabolicSingleDiagramReplacements": {
+      "source_sha256": "ec248f121acb15228e9f2c959f09fd7845add1d39c666b3c910fbc908128159d",
+      "olean_sha256": "bd1cc3984f7f69d611318405b4a33321d2bd1fe0720c6c391374e3925275b2fd",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicExtremalOutsideRestrictionRegions": {
+      "source_sha256": "224fd7938819e026642bd8ffa009d7d3a0a16f72309446bd49e26531636e2d98",
+      "olean_sha256": "a79afb674eca762bf795e20981bd822ae0e9b3af69b2f1e18398d3becf916e1b",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicRightOrbitMultiplicity": {
+      "source_sha256": "e26cbdb1d012032c9ef4436b9bdb7fdca705f8f638d796c8c4178bb83ac6199e",
+      "olean_sha256": "0056b412aa460f033548f0a087a51b7e827cb75a4ed55e83f3cbeddf0fe4c32d",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicCaseSixObstructionWithTrivialProjectedStabilizer": {
+      "source_sha256": "22b806dfa3ff012fc82b651e0730104b391dcc194fbb7155754e1e8003e8461b",
+      "olean_sha256": "2ee5afe7cfe6c773cc1c99a9ff125e1d8a51ad842db5957c70ba17ef4406e392",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "SinglePairIdentityCriterion": {
+      "source_sha256": "041652eb08ae14084887de8401fb97b80ef8261f80e082f10a096b5af523e424",
+      "olean_sha256": "e95fb0bc98948c722e5b1635dddc3fb34eef7f64141ce178ad27829982427935",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "FiniteParabolicBicategoryComposition": {
+      "source_sha256": "6d7bf45bafaf72c19dc5c332c7b8c30d120eb0b6a0cff786ef96cfef4cda294b",
+      "olean_sha256": "5da9a03c405d8bf5b7cd155c018b36f9f9b073f45f37f245bf137c194d139d80",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicFullMackeyCancellation": {
+      "source_sha256": "4b1f41c73b7fd6e7adc8abb9ec6711a12a2c99a6dd0c34b2485a959c86703926",
+      "olean_sha256": "220e81c166d324eb7becfd307dec3e3b67faaabcfaec655b46931be25924bc06",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicSmallerMackeyReverseComposite": {
+      "source_sha256": "2bcbbd080e728b38a95afcd2b5dd17185c4b0c544ecd56737d9a68742e22b19a",
+      "olean_sha256": "ea4ebf060d8016c290b4cb5dd2f5fdd0932f0ac183bc899e93cc2140217900b9",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicCaseTwoProjectionFiberIndices": {
+      "source_sha256": "0cd583ebffc7350e5b583ba26a5c0ec769b7344665eb9e9ba1e97a12cb2e6bb2",
+      "olean_sha256": "64098f997c34db6cd9f77609ef6bf7171a9a390c1785ec1c1ea631c12f6e7bc6",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicOutsideMultiplicationDiagram": {
+      "source_sha256": "031f773cfbe29772b6dbd6eeac124acf33ebd4b201007355982a6d5ab9be2742",
+      "olean_sha256": "9ca2265419755c2c3c474392ba7dbcb8bd26deaab88049fdcaba869d6d752f3c",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicCommonRightRegionForLinearLabels": {
+      "source_sha256": "f611de4e7ff064014e792692746a6b3755c89920aa77c1e11cfc7e9c56aee8a9",
+      "olean_sha256": "1ba9042f0c43ce3823806ed6ca3a2b45c069b177cea084f56cd1255a718c142b",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicCaseFiveCoefficientOneExpansion": {
+      "source_sha256": "7649c5e43c64bc3f94eb65a7a014e509e2f2669e1f3f680ee56d6258d727debb",
+      "olean_sha256": "2dca08f9ca2030a6160f142c22378ef1f8b7e21b96cbc38e4958547dfef01d4b",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicCaseSixStrictStabilizerObstruction": {
+      "source_sha256": "af3158b04f200bf0bcff6b794ebd8a8b84cb21d09f40499d2db5445ab673e134",
+      "olean_sha256": "9496c4e7ef0d99fdee843678a37d51974b1c64ee350459d4b0159811c5cbc678",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "FiniteParabolicBimoduleBicategory": {
+      "source_sha256": "35dd377b787fbe945f559bc5217f8c346b91e3c6542bfb8a1c4c75d32ae41090",
+      "olean_sha256": "42cf43f099f280ab23fc03409169f5f7065e1cb36bb0a962601364dfb27af446",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicOutsideProjectionDiagram": {
+      "source_sha256": "a77934f9d73c6ab6a8eaa37283467e2cd474e95ba5c2256ca6afd52ad88f707b",
+      "olean_sha256": "f07008f046be4b1077eb9dc61d6cfa3b92c5b84b061e76f1a512dc55be0f076a",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "SmallerParabolicReducesProjectionFiber": {
+      "source_sha256": "53ffb00f815a67307fa4f0d6924f336285066609f28927b313300bc4c871e2d6",
+      "olean_sha256": "91a3c19bc028581e27adf535b7a1303b892d2a2e36623115f13eb627589c1788",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicRightDiagramSpanOverCommutativeRings": {
+      "source_sha256": "003242fa701cd247914ca3cd34e3e278953e5ff91c2204292ab0a4dedf3817c6",
+      "olean_sha256": "8432f957f1803f3bfd94b42d631c18af548f303f74a194c713b6cda8555b3e97",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicCaseFiveUnscaledDiagramIdentity": {
+      "source_sha256": "2d083a72feba0ec320019fd2d9e2f1d552f8cb4f43a216da773c62196f2f6238",
+      "olean_sha256": "11e14c3e28373a1a4e29db1913ee390ab06023392413e36b5b48b4e89031e538",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicCaseSixObstructionAndReplacementFamily": {
+      "source_sha256": "47053772252575c3fba1e7dae414baf73e4bcdcd114835e1c0be2ebcc9fa8054",
+      "olean_sha256": "adb08b5ef9b0b4339af1185eb6de80d617ecf6877d1ed045e4ce5f5d51511847",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "ParabolicCaseSixOrbitCoefficientVanishesInCharacteristicThree": {
+      "source_sha256": "871cfc4d16153d63abb6de09404b7e92f1dc25b75a0632b859281e61361473c4",
+      "olean_sha256": "96dfe0fc0a8d81aad163b5b470270798fc419d51f46251580209377aaf5c9cfe",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    },
+    "SmallProjectiveGeneratorCorrespondence": {
+      "source_sha256": "9404e68a0f874c2bbbc92806b2fec86bfbc57b968ccb061ff6d9a66678d0e991",
+      "olean_sha256": "683f3c90f8e2cf16c732ec371f7ed34ec585d51b95f08a5f543954823f4e2a3f",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "main_article_statement": true
+    }
+  }
+}

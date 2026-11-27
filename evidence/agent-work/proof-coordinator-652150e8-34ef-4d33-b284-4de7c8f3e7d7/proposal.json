@@ -1,0 +1,128 @@
+{
+  "routes": [
+    {
+      "id": "CaseFiveRequiresInfiniteExpansion",
+      "deps": [
+        "ExpansionIntoRightDiagrams",
+        "EvaluationWithOneProjection"
+      ],
+      "available": [
+        {
+          "module": "Proofs.EvaluationWithOneProjection",
+          "declaration": "EvaluationWithOneProjection",
+          "revision": "sha256:ad1d09a3ac2a6883f169cf66c763ca69d72581a5007103029bf7cd55098bf223",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/EvaluationWithOneProjection.lean#L7",
+          "use": "Both single-projection orders have singleton-label column formulas and finite-label extensions with native parentheses and explicit finite fibers. Specialize these for the two named concrete drawings. This is a direct proof supplier."
+        },
+        {
+          "module": "Proofs.ExpansionIntoRightDiagrams",
+          "declaration": "ExpansionIntoRightDiagrams",
+          "revision": "sha256:bebb49d1d6148e82a9778915291f31452ccdbc556194af165b217f1f947b2a33",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/ExpansionIntoRightDiagrams.lean#L156",
+          "use": "Its finite-support iff is for its explicit right-shape family under agreed boundary embeddings. It is evaluation evidence once matched to this example, and does not by itself cover the reviewed full PlanarAtBoundary fiber."
+        },
+        {
+          "module": "MackeyDiagrams.Mixed",
+          "declaration": "MackeyDiagrams.Generator.mixedEquiv",
+          "revision": "sha256:afcb7c755c84989ddc812d98557f501290469d6d9e1136839c3618aa55c73ce0",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Mixed.lean#L44",
+          "use": "Identifies the inner mixed pair with its ambient group; use it to parameterize source and target basis points in the concrete example."
+        },
+        {
+          "module": "MackeyDiagrams.Associator",
+          "declaration": "MackeyDiagrams.Biset.associateBasisEquiv",
+          "revision": "sha256:435ba63a12852052e15b4a0aa42800e77de61eb15d85a7ca8a36314603302403",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/Associator.lean#L67",
+          "use": "Converts the two three-factor bracketings on pure basis triples so the formula is applied at the correct input."
+        },
+        {
+          "module": "MackeyDiagrams.MixedIdentities",
+          "declaration": "MackeyDiagrams.Biset.Hom.transferBasis_sum",
+          "revision": "sha256:c739722827ee60ea5b7fc6c7ed0aa51bba24a6c551728259f89aeaf1cb4f0975",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/MixedIdentities.lean#L15",
+          "use": "Evaluates the first projection at a basis input as a sum over the actual finite fiber. An empty fiber gives zero."
+        },
+        {
+          "module": "MackeyDiagrams.PlanarShape",
+          "declaration": "MackeyDiagrams.PlanarCode.encode",
+          "revision": "sha256:da276779707d995f477ed2a18a6cb12d20259649865f42bb583cbdac2cf147cd",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PlanarShape.lean#L111",
+          "use": "Encodes typed erasure by ordered positioned vertices and scoped arithmetic boxes. A straight drawing contributes no event."
+        },
+        {
+          "module": "MackeyDiagrams.PlanarShape",
+          "declaration": "MackeyDiagrams.PlanarCode.Equivalent.exchange",
+          "revision": "sha256:da276779707d995f477ed2a18a6cb12d20259649865f42bb583cbdac2cf147cd",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PlanarShape.lean#L130",
+          "use": "Exchanges two disjoint events with the specified arity-dependent shifts. Use its exact gap formula to rule out exchanges between the adjacent pairs of the three concrete two-wire vertices."
+        },
+        {
+          "module": "MackeyDiagrams.PlanarShape",
+          "declaration": "MackeyDiagrams.PlanarCode.Equivalent.context",
+          "revision": "sha256:da276779707d995f477ed2a18a6cb12d20259649865f42bb583cbdac2cf147cd",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PlanarShape.lean#L128",
+          "use": "An equivalence of codes lifts under an arbitrary common prefix and suffix. The rigidity induction must therefore cover contiguous segments of the three-event code."
+        },
+        {
+          "module": "MackeyDiagrams.PlanarShape",
+          "declaration": "MackeyDiagrams.LabelledDrawing.PlanarAtBoundary.interpret",
+          "revision": "sha256:da276779707d995f477ed2a18a6cb12d20259649865f42bb583cbdac2cf147cd",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PlanarShape.lean#L195",
+          "use": "Interprets any typed shape witness after aligning its endpoint boundaries. The shape witness is not an assumed factorization into the reviewed explicit right term."
+        },
+        {
+          "module": "MackeyDiagrams.BoundaryEvaluation",
+          "declaration": "MackeyDiagrams.Word.eval_reorderToFrom",
+          "revision": "sha256:0882d9b673ab860edda4bbbd4c7a04995aeec3949278fbf12415561874af39f2",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/BoundaryEvaluation.lean#L153",
+          "use": "Cancels reorder to then from the boundary at the evaluated-map level."
+        },
+        {
+          "module": "MackeyDiagrams.BoundaryEvaluation",
+          "declaration": "MackeyDiagrams.Word.eval_reorderFromTo",
+          "revision": "sha256:0882d9b673ab860edda4bbbd4c7a04995aeec3949278fbf12415561874af39f2",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/BoundaryEvaluation.lean#L172",
+          "use": "Cancels the other adjacent reorder composite at the evaluated boundary."
+        },
+        {
+          "module": "MackeyDiagrams.ScopedCup",
+          "declaration": "MackeyDiagrams.ScopedDiagram.eval_linearCombination_apply",
+          "revision": "sha256:1089b5d24184f922dd7723d5a20b4a8b881918e23bf34634f73c1fb10a0d88e3",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/ScopedCup.lean#L161",
+          "use": "Turns an evaluated list combination of scoped diagrams into the list sum of scalar-applied values. Use this for the finite obstruction."
+        },
+        {
+          "module": "Mathlib.Algebra.Group.Finsupp",
+          "declaration": "Finsupp.induction_linear",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Group/Finsupp.lean#L283",
+          "use": "Proves a Prop for any finitely supported function from zero, addition, and arbitrary-coefficient singleton cases. Use it at symbolic input to extend pointwise support and equality from basis points."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "revision": "sha256:533e75bc752c7bc1cdf9f37ac63a33dde70abf9f35d92496e985873d3f32913f",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedDrawing.lean#L16",
+          "use": "Stores the complete typed family over P and a finite-support proof for its evaluations at each input."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing.evalAt_def",
+          "revision": "sha256:533e75bc752c7bc1cdf9f37ac63a33dde70abf9f35d92496e985873d3f32913f",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedDrawing.lean#L40",
+          "use": "Expands evaluation at x as a finite sum over the stored evaluation support at x, without changing the full index type or the shape."
+        },
+        {
+          "module": "MackeyDiagrams.PointwiseIndexedDrawing",
+          "declaration": "MackeyDiagrams.PointwiseIndexedDrawing.eval_apply",
+          "revision": "sha256:533e75bc752c7bc1cdf9f37ac63a33dde70abf9f35d92496e985873d3f32913f",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/MackeyDiagrams/PointwiseIndexedDrawing.lean#L68",
+          "use": "The linear evaluation at x is evalAt x; the shared-slot audit of eval has propext, Classical.choice and Quot.sound."
+        }
+      ],
+      "approach": "The independently reviewed statement-only correction is installed, and the former geometry hold has cleared. Its manifest matches the current Lean type byte for byte. Candidate file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-4221117b-91f3-43a8-9114-aeaa66fc2248/CaseFiveRequiresInfiniteExpansion.candidate.lean (sha256:aaf1058c023ff109923aa4a901ff9cccf31658ecb2dd51ff2c78257c0d535e51). Audit file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/agent-work/proof-coordinator-4221117b-91f3-43a8-9114-aeaa66fc2248/CaseFiveRequiresInfiniteExpansion.candidate.log (sha256:1d144b84ddba21c32d266d98419940dd7653752b88a03c5926271bc457f53fb4). The Example 6.6 figure on archived p. 27 and published p. 29 has one explicit sum over the entire infinite cyclic index and right labels (r,r,1). Both rendered figures were checked separately. The differing PDF hashes are recorded in file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/source-provenance-correction-20261128.json (sha256:68c3efbabca1117182f25486ee13bccf9cc51e2e4c4ebc013f665e4f5b500096). file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/source/mackey-bimodules.pdf#page=27 https://getcurious.cc/downloads/mackey-bimodules.pdf#page=29 First separate the concrete basis calculation from the arbitrary-shape obstruction. The endpoint's p has full range and index 1, and a conjugation embedding into T forces its source to be trivial. Parameterize the source basis by (g,x) in P×P using the mixed-basis equivalence and the trivial middle balancing group. Identify the target with P by the product on the regular-factor balanced basis, with inverse represented by (1,z). Apply EvaluationWithOneProjection to the two fixed one-projection shapes at the stated embeddings, aligning their native parentheses on basis triples. Keep the existing left index and the finite-fiber proof for each lower-right term. Check the named left column is output(g*x), the named right singleton R(r,r,1) has this value exactly when x=r, and a fully labelled named right drawing can only act on x in the image of its lower forward crossing label's support. The latter follows by checking when the lower projection fiber contains the input, using the stored forward dot element and its inverse trace convention. The missing general step is the assertion for every RightDrawing. It ranges over PlanarAtBoundary and cannot be reduced just by unfolding rightAt or applying the finite-orbit iff for one explicit family. Start with a small pure-code lemma. Apply Quotient.exact to the wiring component of d.shape_eq. The shared-slot check of the three prescribed vertex blocks gives the raw code [(1,mixedProjection),(0,parallelUp),(1,mixedMultiplication)]. The exact check and declaration signatures are in file:///tmp/lean-agent-swf1uA/CheckRoute.log (sha256:ccc892e897c61dfea27360c0ef1be7780bc0d1d9ddacce6d19066c131836f49a). Show every code equivalent to this one is this same positioned code. Strengthen the induction to every contiguous segment of the three-entry code so the context case reduces to its inner segment. Every adjacent pair has positions differing by one and both vertices have two inputs and two outputs, so neither side of an exchange can match the fixed segment. The add and scale cases cannot match a segment of bare vertices. This checks the wiring invariant before introducing concrete dependent drawing terms. Next prove only the support consequence needed from the typed syntax, rather than a uniqueness theorem for all labellings. Inspect LabelledDrawing.erase.geometry and the ordinary Diagram cases under the fixed code. Split out a prefix with no visible events and isolate the first lower mixedProjection or labelled compactProjection, transporting coordinates across the erased identity, unit and reassociation nodes. Use the endpoint's trivial-subgroup assertion at the inner region embedding into T. For each first-projection label its balanced source has just the trivial pair, so the ambient image tested by transfer is exactly that forward dot element. Outside the finite set of these elements the first projection vanishes; linearity makes every subsequent piece vanish. In the ordinary singleton case the set has one point; in the empty-label case it is empty. Handle the boundary reorder in PlanarAtBoundary.interpret on basis points, using the two checked reorder cancellations at matching boundaries. This establishes the finite-support witness for arbitrary geometric labellings, including those with different parentheses. For a finite list of RightDrawing terms, take the union of the resulting lower supports and use eval_linearCombination_apply after the boundary transport. Choose x outside this finite set in the infinite group P. The right combination kills input (1,x), whereas the left output x is a nonzero singleton. In the final infinite identity use the same complete rightTerm r for every r of P. For each input v, every nonzero evaluated summand has r among the second coordinates of its finitely many source basis terms. Build finiteSupport separately, then use evalAt_def and linear extension of the singleton-column calculation to evaluate the one stored PointwiseIndexedDrawing. The finite index filter is an evaluation witness and does not change the fixed scope. All prerequisites are compiled in the consumer workspace; the main remaining proof work is this fixed-code and first-projection support check."
+    }
+  ],
+  "repairs": [],
+  "holds": []
+}

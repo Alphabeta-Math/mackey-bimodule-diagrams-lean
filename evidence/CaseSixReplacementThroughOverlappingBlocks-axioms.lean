@@ -1,0 +1,2 @@
+import Proofs.CaseSixReplacementThroughOverlappingBlocks
+#print axioms CaseSixReplacementThroughOverlappingBlocks

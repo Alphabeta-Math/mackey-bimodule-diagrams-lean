@@ -1,0 +1,2 @@
+import Proofs.ParabolicMackeyIntersectionBlocks
+#print axioms ParabolicMackeyIntersectionBlocks

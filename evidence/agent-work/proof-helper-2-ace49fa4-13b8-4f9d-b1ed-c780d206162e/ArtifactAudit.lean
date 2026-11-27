@@ -1,0 +1,7 @@
+import Final
+
+#print axioms FiniteParabolicBicategoryComposition
+#print axioms _private.Final.0.FiniteParabolicCompositionSupport.middleMackey
+#print axioms _private.Final.0.FiniteParabolicCompositionSupport.spanTensorIso
+#print axioms _private.Final.0.FiniteParabolicCompositionSupport.composeSpan_basis
+#print axioms GeneralizedMackeyDecomposition

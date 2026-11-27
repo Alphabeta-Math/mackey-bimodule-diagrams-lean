@@ -1,0 +1,2 @@
+import Proofs.DifferentCurlIndices
+#print axioms DifferentCurlIndices

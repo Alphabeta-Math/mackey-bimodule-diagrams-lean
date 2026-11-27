@@ -1,0 +1,49 @@
+{
+  "id": "InductionMergeDotSlide",
+  "lean": "leanprover/lean4:v4.36.0-rc2",
+  "leanRevision": "b35cb10cf2ced51a2fd1880cfdbf75c71ab7a35a",
+  "mathlib": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+  "workspace": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean",
+  "manifestSha256": "8902ec05c32c92c98e90ebb36796aacc426e0353d1ce2f8f3240b5ee8c4ce7fa",
+  "imports": [
+    {
+      "module": "MackeyDiagrams",
+      "files": [
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/build/lib/lean/MackeyDiagrams.olean",
+          "sha256": "0611ce379ff521033831e5a162661c50f04975da2d1f565c32fdb090391e90b1"
+        }
+      ]
+    },
+    {
+      "module": "Mathlib.Basic.Complex.Basic",
+      "files": [
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Basic/Complex/Basic.olean",
+          "sha256": "8c8be579b7bb8987f2725023814b5b331117a44254240ed48dbfda2808906227"
+        },
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Basic/Complex/Basic.olean.private",
+          "sha256": "5a1f10f9d3c47d8f34696dfd2761fe4392eca017ababe291d4a51feec83c4841"
+        },
+        {
+          "file": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Basic/Complex/Basic.olean.server",
+          "sha256": "5165ed129ae8726a826aec69fa5a2ad91a46ed02c5820098173bc765e6e0160f"
+        }
+      ]
+    }
+  ],
+  "searchPaths": [],
+  "statementSha256": "98ba6bb9a89af4a9dd12fe662153d2f945847fcad4e653b7f770cd8e8b47153f",
+  "sourceSha256": "e02c20bb8971f5a0ef58e1e21bab19b9e588fe011ea892f36e1890ddccbb1b22",
+  "oleanSha256": "400e03eef851d40cbad9e1c073709d4b0a6c859495ddab8627bbdaf03ce4dabe",
+  "build": {
+    "code": 0,
+    "output": ""
+  },
+  "audit": {
+    "code": 0,
+    "output": "'LeanWorkflowCheckedConnection' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "scope": "The exact supplied statement was checked in this workspace. Importability and interpretation in another workspace are separate obligations."
+}

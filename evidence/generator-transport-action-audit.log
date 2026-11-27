@@ -1,0 +1,2 @@
+'SmallGeneratorBridge.regularPreimageIso_intertwines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SmallGeneratorBridge.evaluationTransportIso_intertwines' depends on axioms: [propext, Classical.choice, Quot.sound]

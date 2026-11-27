@@ -1,0 +1,2 @@
+import Proofs.ReverseTriangleIdentities
+#print axioms ReverseTriangleIdentities
