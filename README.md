@@ -1,5 +1,21 @@
 # Bimodule String Diagrams and the Generalized Mackey Decomposition
 
+This repository standardizes and formalizes the conjugated string-diagram language of [*Bimodule String Diagrams and the Generalized Mackey Decomposition*](https://getcurious.cc/downloads/mackey-bimodules.pdf) in Lean. It gives diagrams an explicit syntax and geometry, then proves how they evaluate to bimodule maps. This makes diagrammatic identities precise while preserving the distinction between a drawing, its shape, and the map it represents.
+
+Regions are labelled by subgroups of an ambient group. Ordered strings carry induction or restriction orientations and conjugation embeddings, with conjugator labels identified by the appropriate centralizer cosets. Dots are finite **ℂ-linear combinations of eligible group elements**, with eligibility checked for every supported term. Cups, caps, trivalent merges and splits, and mixed and parallel crossings have concrete constructors with specified source and target boundaries and the required compatibility and finiteness data. Horizontal tensoring, vertical stacking, and indexed sums retain their scopes. Planar shapes preserve orientations, marked vertices and positioned wiring, with disjoint operations allowed to interchange.
+
+For fixed boundary objects $X,Y$, let $V(X,Y)$ be the space of finite formal complex linear combinations of admissible diagrams. Evaluation is a linear map to bimodule homomorphisms. The diagrammatic hom-space is its kernel quotient:
+
+$$
+\operatorname{Hom}_{\mathrm{diag}}(X,Y)
+= V(X,Y)/\ker(\operatorname{ev}_{X,Y})
+\cong \operatorname{im}(\operatorname{ev}_{X,Y}).
+$$
+
+Thus two combinations represent the same quotient class exactly when their evaluated bimodule maps agree; their underlying drawings and shapes remain distinct data. Stacking descends to bilinear, associative composition with identity diagrams. For $X=Y$, it gives an **associative unital ℂ-algebra** of diagram-presented endomorphisms. For a finite family of boundary objects, the block-algebra construction also includes diagrams with different bottom and top objects: compatible blocks multiply by stacking, incompatible blocks multiply to zero, and the unit is the sum of the identity blocks. Diagrammatic equations are interpreted as equalities of evaluated maps; finite formal expressions can equivalently be compared by their quotient classes.
+
+All 143 inventoried article results and their supporting active endpoints have passed Lean compilation, axiom audits, dependency review, and the complete-library build. The [35 categorical prerequisites](prerequisites/README.md) are included in this repository. The formalization works over a commutative coefficient ring, with the paper's language obtained by specializing to ℂ; [DIAGRAMS.md](DIAGRAMS.md) describes the precise Lean representations and conventions.
+
 All listed results compiled and passed the axiom audit.
 
 [Article](https://getcurious.cc/downloads/mackey-bimodules.pdf) · [Alphabeta Math](https://getcurious.cc/articles/math-bimodule-string-diagrams)
@@ -69,10 +85,6 @@ Run `lake update`, `lake exe cache get`, then `lake build`. The workflow additio
 
 Run `make` from this repository root to build both the article and its prerequisite packages. See [BUILD.md](BUILD.md).
 
-## Retired optional prerequisites
-
-- WattsFreePresentation, ProjectiveGeneratorModuleReconstruction: unproved and excluded from the active plan. Owner directs: formalize only necessary results, not the entire lecture notes, and complete Steps 4–5. All 143 inventoried paper endpoints have registered proofs. These two stronger choice-free portal auxiliary claims are outside their dependency closure, have no retained consumers, and are not imported by the 278 local source modules checked in evidence/article-dependency-extraction/mechanical-audit.json. Ordinary Classical.choice is permitted for the article correspondences. These claims are retired as unproved, not accepted or refuted; preserve their full original state and holds in the retirement evidence. Original statements and state are preserved in evidence/retired-prerequisites-*.json.
-
 <!-- Diagram semantics appendix -->
 
 ## How the string diagrams are formalized
@@ -104,7 +116,7 @@ The owner clarified on 27 November 2026 that **every dot is a finite complex lin
 
 The list-based `LabelledDrawing.upDot` and `.downDot` are equivalent presentations of finite labels. Their interpretation uses `ScopedDiagram.weightedUpDot` and `.weightedDownDot`. Erasure records one visible mark, regardless of coefficients or number of terms. [`LinearDots.lean`](MackeyDiagrams/LinearDots.lean) and [`LinearDotComposition.lean`](MackeyDiagrams/LinearDotComposition.lean) give the lower-level evaluated sums and prove composition by the ordered products of all pairs of terms. `Diagram.upDot` and `.downDot` remain the group-element special cases used in earlier endpoints.
 
-An arbitrary group-algebra intertwiner is a different object. [`AlgebraDot.lean`](MackeyDiagrams/AlgebraDot.lean) retains the evaluator for a whole label that intertwines; its supported elements need not intertwine separately. Such a map is not silently admitted as an eligible dot by the owner-clarified shape grammar. The paper's special centralizing-algebra curl assertion (§3.1, p. 8) remains preserved for independent review, including this distinction; its original hypothesis must not be narrowed to termwise centralizing support. [`RightCurlLabels.lean`](MackeyDiagrams/RightCurlLabels.lean) retains that separate evaluator and its actual outer-embedding transport. The canonical `LabelledDrawing.rightCurlUp` instead uses an eligible finite linear label inside the actual trivalent cup/cap composite.
+An arbitrary group-algebra intertwiner is a different object. [`AlgebraDot.lean`](MackeyDiagrams/AlgebraDot.lean) retains the evaluator for a whole label that intertwines; its supported elements need not intertwine separately. Such a map is not silently admitted as an eligible dot by the owner-clarified shape grammar. The paper's special centralizing-algebra curl assertion (§3.1, p. 8) retains its whole-label hypothesis, including this distinction; its hypothesis is not narrowed to termwise centralizing support. [`RightCurlLabels.lean`](MackeyDiagrams/RightCurlLabels.lean) retains that separate evaluator and its actual outer-embedding transport. The canonical `LabelledDrawing.rightCurlUp` instead uses an eligible finite linear label inside the actual trivalent cup/cap composite.
 
 ### Linear combinations and endomorphism algebra
 
@@ -160,4 +172,4 @@ A sentence in the earlier revised section 1.2 incorrectly described horizontal t
 
 [`LanguageChecks.lean`](MackeyDiagrams/LanguageChecks.lean) checks all twelve trivalent boundary orientations, uniform linear labels, zero labels, termwise downward inverses, the two-dot parallel frame, disjoint-height interchange and its evaluation, identity-dot shape distinction, explicit curl junctions, and distinct projection presentations with equal evaluation. The new language modules build against the pinned Lean and Mathlib. The focused axiom audit is retained under `.lake/lean-workflow-supervision/language-audit-20261127/`.
 
-These library checks do not grant registered proof credit to the 153 article endpoints. The initial translation recheck after the owner clarification has completed, with suppliers checked before consumers; subsequent reviews found additional indexed-scope issues, and the affected corrections are being reviewed and re-proved. That initial recheck is not a guarantee that no other translation needs repair. Statements that describe arbitrary algebra intertwiners, explicitly restrict to group-element dots, or quantify over diagram shapes require particular attention. The source inventory and previous evidence remain preserved. The project remains a draft until the workflow's compilation, allowed-axiom checks, dependency audit and full closeout succeed.
+The shared-library checks are separate from registered endpoint proof credit. The workflow has now completed compilation, allowed-axiom auditing, final dependency review, and the full build for all 151 active endpoints, including all 143 inventoried article statements. All 35 categorical prerequisites in `prerequisites/` have also completed those checks. The initial recheck after the linear-dot clarification and the later indexed-scope corrections are retained in the evidence history; current accepted translations and proof hashes are recorded in `state.json` and `proof-graph.json`.
