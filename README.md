@@ -12,9 +12,17 @@ $$
 \cong \mathrm{im}(\mathrm{ev}_{X,Y}).
 $$
 
-Thus two combinations represent the same quotient class exactly when their evaluated bimodule maps agree; their underlying drawings and shapes remain distinct data. Stacking descends to bilinear, associative composition with identity diagrams. For $X=Y$, it gives an **associative unital ℂ-algebra** of diagram-presented endomorphisms. For a finite family of boundary objects, the block-algebra construction also includes diagrams with different bottom and top objects: compatible blocks multiply by stacking, incompatible blocks multiply to zero, and the unit is the sum of the identity blocks. Diagrammatic equations are interpreted as equalities of evaluated maps; finite formal expressions can equivalently be compared by their quotient classes.
+Thus two combinations represent the same quotient class exactly when their evaluated bimodule maps agree; their underlying drawings and shapes remain distinct data. Stacking descends to bilinear, associative composition with identity diagrams. For $X=Y$, it gives an **associative unital ℂ-algebra** of diagram-presented endomorphisms. For a finite family of boundary objects with fixed outer groups, the block-algebra construction also includes diagrams with different bottom and top objects: compatible blocks multiply by stacking, incompatible blocks multiply to zero, and the unit is the sum of the identity blocks. Diagrammatic equations are interpreted as equalities of evaluated maps; finite formal expressions can equivalently be compared by their quotient classes.
 
 All 143 inventoried article results and their supporting active endpoints have passed Lean compilation, axiom audits, dependency review, and the complete-library build. The [35 categorical prerequisites](prerequisites/README.md) are included in this repository. The formalization works over a commutative coefficient ring, with the paper's language obtained by specializing to ℂ; [DIAGRAMS.md](DIAGRAMS.md) describes the precise Lean representations and conventions.
+
+### A simple TikZ example
+
+<img src="docs/identity-dot.svg" width="440" alt="An undotted upward strand and an identity-dotted upward strand have equal evaluated bimodule maps.">
+
+Both strings carry the same conjugation label. The dot is the coefficient-one identity label: inserting it leaves the evaluated bimodule map unchanged, while retaining the visible mark in the drawing. Lean proves this in [`DotLabel.upDrawing_identity`](MackeyDiagrams/DotLabels.lean).
+
+[TikZ source](docs/identity-dot.tex) · [Rendering commands](docs/README.md).
 
 All listed results compiled and passed the axiom audit.
 

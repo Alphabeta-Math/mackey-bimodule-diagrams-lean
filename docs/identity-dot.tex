@@ -1,0 +1,22 @@
+\documentclass[12pt]{article}
+\usepackage{tikz}
+\pagestyle{empty}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line width=0.8pt]
+  \fill[white] (-0.8,-0.6) rectangle (4.8,2.8);
+  \draw[->] (0,0) -- (0,2);
+  \draw[->] (4,0) -- (4,2);
+  \fill (4,1) circle (1.7pt);
+  \node[right=4pt] at (4,1) {$1$};
+  \node at (0,2.45) {$D_0$};
+  \node at (4,2.45) {$D_1$};
+  \node at (0,-0.35) {$\bar\alpha$};
+  \node at (4,-0.35) {$\bar\alpha$};
+  \node at (-0.5,0.65) {$G$};
+  \node at (0.5,0.65) {$H$};
+  \node at (3.5,0.65) {$G$};
+  \node at (4.5,0.65) {$H$};
+  \node at (2,1) {$\stackrel{\mathrm{ev}}{=}$};
+\end{tikzpicture}
+\end{document}
