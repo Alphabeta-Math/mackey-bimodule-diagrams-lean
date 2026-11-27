@@ -26,9 +26,24 @@
   },
   "axioms": {
     "code": 0,
-    "output": "'TensorPentagonAndTriangle' depends on axioms: [propext, Quot.sound]\n"
+    "output": "'FiniteBiproductUniversalProperties' depends on axioms: [propext, Classical.choice, Quot.sound]\n'BiproductMatrixCalculus' depends on axioms: [propext, Classical.choice, Quot.sound]\n'AdditiveFunctorsAndBiproducts' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CancellationAndZeroKernels' depends on axioms: [propext, Classical.choice, Quot.sound]\n'NormalMorphismsInAbelianCategories' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ExactPresentationsAreCokernels' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ModuleQuotientUniversalProperty' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ModuleKernelsCokernelsAndImages' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ModuleCategoriesAreAbelian' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ModuleProductsAndCoproducts' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FreeModulesAndPresentations' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RegularModuleSmallProjectiveGenerator' depends on axioms: [propext, Classical.choice, Quot.sound]\n'BalancedTensorUniversalProperty' depends on axioms: [propext, Quot.sound]\n'BimoduleTensorFunctoriality' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RegularModuleTensorUnits' depends on axioms: [propext, Classical.choice, Quot.sound]\n'BalancedTensorAssociativity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'TensorPreservesCoproducts' depends on axioms: [propext, Classical.choice, Quot.sound]\n'TensorPreservesCokernels' depends on axioms: [propext, Classical.choice, Quot.sound]\n'GroupAlgebraRingLaws' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RepresentationModuleCorrespondence' depends on axioms: [propext, Classical.choice, Quot.sound]\n'GroupAlgebraInductionAdjunction' depends on axioms: [propext, Classical.choice, Quot.sound]\n'GeneratorHomExactnessAndDetection' depends on axioms: [propext, Classical.choice, Quot.sound]\n'GeneratorCokernelPresentations' depends on axioms: [propext, Classical.choice, Quot.sound]\n'GeneratorHomFullyFaithful' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ReconstructionFromSmallProjectiveGenerator' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RegularEvaluationRightAction' depends on axioms: [propext, Quot.sound]\n'CanonicalWattsNaturalTransformation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EilenbergWatts' depends on axioms: [propext, Classical.choice, Quot.sound]\n'NaturalTransformationsByRegularEvaluation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'BimoduleFunctorHomEquivalence' depends on axioms: [propext, Classical.choice, Quot.sound]\n'TensorDictionaryCompositionAndIdentities' depends on axioms: [propext, Classical.choice, Quot.sound]\n'TensorPentagonAndTriangle' depends on axioms: [propext, Quot.sound]\n'HorizontalCompositionOfTransformations' depends on axioms: [propext, Classical.choice, Quot.sound]\n'AbelianEquivalencesPreserveFunctorHypotheses' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CategoricalBimoduleDictionary' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
   },
   "ok": true,
   "workspace_sha256": "9d1810ef9d904e18d8d9d05a543347df5b6e2e6ba4135f1aa12479dd4ba81c14",
-  "olean_sha256": "01589bf9e4b022ef951ba6febe2c5d1a367008207a80bf72f0fa68983ac55589"
+  "olean_sha256": "7c725e54ae3740e9052f605eb768fdbc588c08f80e2527224ed5a83a2a63a088",
+  "finalLibraryAudit": {
+    "sourceSha256": "fa1fd1fca7499786b40bfa21623be1b11f59cae5fd8399a377b22b6a46f61af8",
+    "oleanSha256": "7c725e54ae3740e9052f605eb768fdbc588c08f80e2527224ed5a83a2a63a088",
+    "previousOleanSha256": "01589bf9e4b022ef951ba6febe2c5d1a367008207a80bf72f0fa68983ac55589",
+    "command": [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/prerequisites/evidence/final-library-axioms.lean"
+    ],
+    "log": "evidence/final-library-axioms.log",
+    "timestamp": "2026-11-27T21:51:49.714Z"
+  }
 }
