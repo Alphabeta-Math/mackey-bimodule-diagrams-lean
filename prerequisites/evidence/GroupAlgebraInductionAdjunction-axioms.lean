@@ -1,0 +1,2 @@
+import NotesProofs.GroupAlgebraInductionAdjunction
+#print axioms GroupAlgebraInductionAdjunction

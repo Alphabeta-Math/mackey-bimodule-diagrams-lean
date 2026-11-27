@@ -1,0 +1,11 @@
+{
+  "accepted": true,
+  "request": {
+    "endpoint": "fd5f858d8c03a1a9aac0b375029760df80a70c3e265842e12aa0d41fad74d825",
+    "decision": {
+      "id": "EilenbergWatts",
+      "reason": "The exact reviewed statement and this proof were independently Lean-compiled and axiom-audited; see evidence/reviewed-watts-connection-build.log and the corresponding NotesProofs/ReviewedWatts source. The controller must still verify every planned prerequisite and audit before granting proof credit.",
+      "proof": "by\n  intro R S _ _\n  constructor\n  · intro F _ hc hp\n    exact (NotesProofs.wattsNaturalIso F hc hp).isIso_hom\n  · intro B _ _ _ _\n    exact ⟨inferInstance, NotesProofs.concreteTensorFunctor_preservesCokernels B,\n      NotesProofs.concreteTensorFunctor_preservesCoproducts B⟩\n"
+    }
+  }
+}

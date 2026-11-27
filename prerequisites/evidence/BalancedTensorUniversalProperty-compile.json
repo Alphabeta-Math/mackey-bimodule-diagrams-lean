@@ -1,0 +1,34 @@
+{
+  "source_sha256": "44b8efe8811901fe84650cf26e1ae27eb8a18b816c7be076bfc29a2d9877d1b0",
+  "commands": [
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "-o",
+      ".lake/build/lib/lean/NotesProofs/BalancedTensorUniversalProperty.olean",
+      "NotesProofs/BalancedTensorUniversalProperty.lean"
+    ],
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "evidence/BalancedTensorUniversalProperty-axioms.lean"
+    ]
+  ],
+  "build": {
+    "code": 0,
+    "output": ""
+  },
+  "axioms": {
+    "code": 0,
+    "output": "'BalancedTensorUniversalProperty' depends on axioms: [propext, Quot.sound]\n"
+  },
+  "ok": true,
+  "workspace_sha256": "9d1810ef9d904e18d8d9d05a543347df5b6e2e6ba4135f1aa12479dd4ba81c14",
+  "olean_sha256": "6c729a6b4919e5570b2b3f549f4115b2389490c6b480a555843229a457df898f"
+}

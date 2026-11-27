@@ -1,0 +1,7 @@
+'ModuleTensorUniversalProperty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BalancedTensorAssociativity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RegularModuleRightAction' depends on axioms: [propext, Quot.sound]
+'CanonicalWattsComparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NaturalTransformationsOfTensorFunctors' depends on axioms: [propext, Quot.sound]
+'SmallProjectiveGenerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BimoduleTensorBicategoryCoherence' depends on axioms: [propext, Quot.sound]

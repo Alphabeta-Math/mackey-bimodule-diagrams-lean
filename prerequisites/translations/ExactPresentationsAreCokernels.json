@@ -1,0 +1,9 @@
+{
+  "type": "∀ {𝒜 : Type*} [CategoryTheory.Category.{_} 𝒜] [CategoryTheory.Abelian 𝒜]\n  {A B C : 𝒜} (f : Quiver.Hom A B) (q : Quiver.Hom B C),\n  (∃ h : CategoryTheory.CategoryStruct.comp f q = 0,\n    CategoryTheory.ShortComplex.Exact (CategoryTheory.ShortComplex.mk f q h) ∧ CategoryTheory.Epi q) ↔\n  (∃ h : CategoryTheory.CategoryStruct.comp f q = 0,\n    Nonempty (CategoryTheory.Limits.IsColimit (CategoryTheory.Limits.CokernelCofork.ofπ q h)))",
+  "value": null,
+  "source": "article",
+  "sourceReason": "Proposition 4.9 on page 12 of the cached lecture notes. Exactness at C is expressed by Epi q, and each side includes the zero composite it entails. The configured defect report returned HTTP 404, so no correction was available there. The Lean check used only the standard axioms permitted by the owner's ordinary-choice convention.",
+  "artifacts": [
+    "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-f15d5323-a29e-4ffc-b642-0fe684d381a4/Check.lean"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "accepted": true,
+  "request": {
+    "endpoint": "249e5a2be9134e07ecd65e2de34412056026f01ca25ffe041cb79f778c17ba91",
+    "decision": {
+      "id": "ModuleCategoriesAreAbelian",
+      "reason": "The exact reviewed statement is supplied by Mathlib’s module-category instances and was independently compiled and axiom-audited in NotesProofs/ReviewedModuleCategoriesConnection.lean; see evidence/reviewed-module-categories-build.log.",
+      "proof": "by\n  intro R _\n  exact ⟨inferInstance, ⟨inferInstance⟩⟩",
+      "mathlibImports": [
+        "Mathlib.Algebra.Category.ModuleCat.Abelian"
+      ]
+    }
+  }
+}

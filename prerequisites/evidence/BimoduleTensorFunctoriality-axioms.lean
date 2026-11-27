@@ -1,0 +1,2 @@
+import NotesProofs.BimoduleTensorFunctoriality
+#print axioms BimoduleTensorFunctoriality

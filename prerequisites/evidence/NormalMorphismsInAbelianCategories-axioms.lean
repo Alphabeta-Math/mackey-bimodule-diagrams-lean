@@ -1,0 +1,2 @@
+import NotesProofs.NormalMorphismsInAbelianCategories
+#print axioms NormalMorphismsInAbelianCategories

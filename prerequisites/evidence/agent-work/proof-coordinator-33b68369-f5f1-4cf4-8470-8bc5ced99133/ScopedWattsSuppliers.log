@@ -1,0 +1,33 @@
+ReviewedWattsMorphismsConnection : ∀ (R S : Type u) [inst : Ring R] [inst_1 : Ring S],
+  (∀ (F G : ModuleCat R ⥤ ModuleCat S) [inst_2 : F.Additive] [inst_3 : G.Additive],
+      NotesProofs.WattsPreservesCokernels F →
+        NotesProofs.WattsPreservesCoproducts F →
+          NotesProofs.WattsPreservesCokernels G →
+            NotesProofs.WattsPreservesCoproducts G →
+              let A := ChoiceFreeWatts.regular R;
+              let B₀ := F.obj A;
+              let D₀ := G.obj A;
+              ∃ e, ∀ (η : NatTrans F G), ↑(e.toFun η) = ModuleCat.Hom.hom (η.app A)) ∧
+    ∀ (B D : Type u) [inst_2 : AddCommGroup B] [inst_3 : AddCommGroup D] [inst_4 : Module S B] [inst_5 : Module S D]
+      [inst_6 : Module Rᵐᵒᵖ B] [inst_7 : Module Rᵐᵒᵖ D] [inst_8 : SMulCommClass Rᵐᵒᵖ S B]
+      [inst_9 : SMulCommClass Rᵐᵒᵖ S D],
+      let TB := NotesProofs.concreteTensorFunctor B;
+      let TD := NotesProofs.concreteTensorFunctor D;
+      ∀ (η : NatTrans TB TD), ∃! β, η = NotesProofs.tensorBimoduleMapNatTrans β
+'ReviewedWattsMorphismsConnection' depends on axioms: [propext, Classical.choice, Quot.sound]
+(NotesProofs.General.ConcreteBimodule.Good R
+      S).fullyFaithfulι.homEquiv : (FF ⟶ GG) ≃
+  ((NotesProofs.General.ConcreteBimodule.Good R S).ι.obj FF ⟶ (NotesProofs.General.ConcreteBimodule.Good R S).ι.obj GG)
+(NotesProofs.General.ConcreteBimodule.Good R S).fullyFaithfulι.homEquiv.symm.trans
+  (NotesProofs.General.ConcreteBimodule.eilenbergWattsCanonical R
+        S).fullyFaithfulInverse.homEquiv : ((NotesProofs.General.ConcreteBimodule.Good R S).ι.obj FF ⟶
+    (NotesProofs.General.ConcreteBimodule.Good R S).ι.obj GG) ≃
+  ((NotesProofs.General.ConcreteBimodule.eilenbergWattsCanonical R S).inverse.obj FF ⟶
+    (NotesProofs.General.ConcreteBimodule.eilenbergWattsCanonical R S).inverse.obj GG)
+ObjectProperty.hom_ext
+  (NotesProofs.General.ConcreteBimodule.Good R
+    S) : InducedCategory.Hom.hom ?m.8 = InducedCategory.Hom.hom ?m.9 → ?m.8 = ?m.9
+ObjectProperty.homMk : (FF.obj ⟶ GG.obj) → (FF ⟶ GG)
+CategoryTheory.Functor.FullyFaithful.homEquiv_symm_apply.{v₁, v₂, u₁, u₂} {C : Type u₁} [Category.{v₁, u₁} C]
+  {D : Type u₂} [Category.{v₂, u₂} D] {F : C ⥤ D} (hF : F.FullyFaithful) {X Y : C} (f : F.obj X ⟶ F.obj Y) :
+  hF.homEquiv.symm f = hF.preimage f

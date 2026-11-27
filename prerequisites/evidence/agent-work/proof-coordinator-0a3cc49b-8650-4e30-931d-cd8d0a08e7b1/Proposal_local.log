@@ -1,0 +1,375 @@
+SmallProjectiveGenerator_regular.{v} (B : Type v) [Ring B] :
+  CategoryTheory.Projective ↧B ∧
+    CategoryTheory.IsSeparator ↧B ∧
+      ∀ (I : Type v),
+        CategoryTheory.Limits.PreservesColimitsOfShape (CategoryTheory.Discrete I)
+          (CategoryTheory.preadditiveCoyoneda.obj (Opposite.op ↧B))
+NotesProofs.cokernel_universal_exact.{u, v} {R : Type u} [Ring R] {L P X : Type v} [AddCommGroup L] [Module R L]
+  [AddCommGroup P] [Module R P] [AddCommGroup X] [Module R X] (f : L →ₗ[R] P) (q : P →ₗ[R] X)
+  (factor :
+    ∀ (Z : Type v) [inst : AddCommGroup Z] [inst_1 : Module R Z] (g : P →ₗ[R] Z),
+      (∀ (l : L), g (f l) = 0) → ∃ h, ∀ (p : P), h (q p) = g p)
+  (p : P) : q p = 0 → ∃ l, f l = p
+NotesProofs.wattsRightModule.{u, v, z, w} {A : Type u} {B : Type v} [Ring A] [Ring B]
+  (F : CategoryTheory.Functor (ModuleCat A) (ModuleCat B)) [F.Additive] : Module Aᵐᵒᵖ ↑(ChoiceFreeWatts.M F)
+NotesProofs.wattsRight_commutes.{u, v, z, w} {A : Type u} {B : Type v} [Ring A] [Ring B]
+  (F : CategoryTheory.Functor (ModuleCat A) (ModuleCat B)) [F.Additive] : SMulCommClass Aᵐᵒᵖ B ↑(ChoiceFreeWatts.M F)
+NotesProofs.wattsRight_apply.{u, v, z, w} {A : Type u} {B : Type v} [Ring A] [Ring B]
+  (F : CategoryTheory.Functor (ModuleCat A) (ModuleCat B)) [F.Additive] (a : A) (m : ↑(ChoiceFreeWatts.M F)) :
+  MulOpposite.op a • m = (ChoiceFreeWatts.right F a) m
+ChoiceFreeWatts.pureBalanced.{u, w, j} {A : Type u} [Ring A] {M : Type w} [AddCommGroup M] {X : Type j} [AddCommGroup X]
+  [Module A X] (right : A → M → M) : ChoiceFreeWatts.Balanced right (ChoiceFreeWatts.pure right)
+ChoiceFreeWatts.tensorLift.{u, w, j, u_1} {A : Type u} [Ring A] {M : Type w} [AddCommGroup M] {X : Type j}
+  [AddCommGroup X] [Module A X] (right : A → M → M) {Y : Type u_1} [AddCommGroup Y] (f : M → X → Y)
+  (hf : ChoiceFreeWatts.Balanced right f) : ChoiceFreeWatts.Tensor right X →+ Y
+ChoiceFreeWatts.tensorLift_pure.{u, w, j, u_1} {A : Type u} [Ring A] {M : Type w} [AddCommGroup M] {X : Type j}
+  [AddCommGroup X] [Module A X] (right : A → M → M) {Y : Type u_1} [AddCommGroup Y] (f : M → X → Y)
+  (hf : ChoiceFreeWatts.Balanced right f) (m : M) (x : X) :
+  (ChoiceFreeWatts.tensorLift right f hf) (ChoiceFreeWatts.pure right m x) = f m x
+ChoiceFreeWatts.tensorExt.{u, w, j, u_1} {A : Type u} [Ring A] {M : Type w} [AddCommGroup M] {X : Type j}
+  [AddCommGroup X] [Module A X] (right : A → M → M) {Y : Type u_1} [AddCommGroup Y]
+  (f g : ChoiceFreeWatts.Tensor right X →+ Y)
+  (h : ∀ (m : M) (x : X), f (ChoiceFreeWatts.pure right m x) = g (ChoiceFreeWatts.pure right m x)) : f = g
+ModuleTensorUniversalProperty.{u, v, w, z} (R : Type u) (M : Type v) (N : Type w) [Ring R] [AddCommGroup M]
+  [AddCommGroup N] [Module Rᵐᵒᵖ M] [Module R N] :
+  let F := M × N →₀ ℤ;
+  have gen := fun p => Finsupp.single p 1;
+  have H :=
+    AddSubgroup.closure
+      {x |
+        (∃ m m' n, x = gen (m + m', n) - gen (m, n) - gen (m', n)) ∨
+          (∃ m n n', x = gen (m, n + n') - gen (m, n) - gen (m, n')) ∨
+            ∃ r m n, x = gen (MulOpposite.op r • m, n) - gen (m, r • n)};
+  let T := F ⧸ H;
+  have τ := fun p => (QuotientAddGroup.mk' H) (gen p);
+  ((∀ (m m' : M) (n : N), τ (m + m', n) = τ (m, n) + τ (m', n)) ∧
+      (∀ (m : M) (n n' : N), τ (m, n + n') = τ (m, n) + τ (m, n')) ∧
+        ∀ (r : R) (m : M) (n : N), τ (MulOpposite.op r • m, n) = τ (m, r • n)) ∧
+    ∀ (A : Type z) [inst : AddCommGroup A],
+      let Bal :=
+        { b //
+          (∀ (m m' : M) (n : N), b (m + m', n) = b (m, n) + b (m', n)) ∧
+            (∀ (m : M) (n n' : N), b (m, n + n') = b (m, n) + b (m, n')) ∧
+              ∀ (r : R) (m : M) (n : N), b (MulOpposite.op r • m, n) = b (m, r • n) };
+      (∀ (b : Bal), ∃! lift, ∀ (m : M) (n : N), lift (τ (m, n)) = ↑b (m, n)) ∧
+        ∃ e, ∀ (f : T →+ A) (p : M × N), ↑(e f) p = f (τ p)
+ChoiceFreeWatts.outerModule.{u, v, w, j} {A : Type u} [Ring A] {M : Type w} [AddCommGroup M] {X : Type j}
+  [AddCommGroup X] [Module A X] (right : A → M → M) {B : Type v} [Ring B] [Module B M]
+  (commute : ∀ (a : A) (b : B) (m : M), right a (b • m) = b • right a m) : Module B (ChoiceFreeWatts.Tensor right X)
+ChoiceFreeWatts.scale_pure.{u, v, w, j} {A : Type u} [Ring A] {M : Type w} [AddCommGroup M] {X : Type j}
+  [AddCommGroup X] [Module A X] (right : A → M → M) {B : Type v} [Ring B] [Module B M]
+  (commute : ∀ (a : A) (b : B) (m : M), right a (b • m) = b • right a m) (b : B) (m : M) (x : X) :
+  (ChoiceFreeWatts.scale right commute b) (ChoiceFreeWatts.pure right m x) = ChoiceFreeWatts.pure right (b • m) x
+ChoiceFreeWatts.tensorLinearLift.{u, v, w, j, u_1} {A : Type u} [Ring A] {M : Type w} [AddCommGroup M] {X : Type j}
+  [AddCommGroup X] [Module A X] (right : A → M → M) {B : Type v} [Ring B] [Module B M]
+  (commute : ∀ (a : A) (b : B) (m : M), right a (b • m) = b • right a m) {Y : Type u_1} [AddCommGroup Y] [Module B Y]
+  (f : M → X → Y) (hf : ChoiceFreeWatts.Balanced right f) (hB : ∀ (b : B) (m : M) (x : X), f (b • m) x = b • f m x) :
+  ChoiceFreeWatts.Tensor right X →ₗ[B] Y
+ChoiceFreeWatts.tensorLinearLift_pure.{u, v, w, j, u_1} {A : Type u} [Ring A] {M : Type w} [AddCommGroup M] {X : Type j}
+  [AddCommGroup X] [Module A X] (right : A → M → M) {B : Type v} [Ring B] [Module B M]
+  (commute : ∀ (a : A) (b : B) (m : M), right a (b • m) = b • right a m) {Y : Type u_1} [AddCommGroup Y] [Module B Y]
+  (f : M → X → Y) (hf : ChoiceFreeWatts.Balanced right f) (hB : ∀ (b : B) (m : M) (x : X), f (b • m) x = b • f m x)
+  (m : M) (x : X) : (ChoiceFreeWatts.tensorLinearLift right commute f hf hB) (ChoiceFreeWatts.pure right m x) = f m x
+NotesProofs.concreteTensorUnitor.{u} {R S : Type u} [Ring R] [Ring S] (M : Type u) [AddCommGroup M] [Module Rᵐᵒᵖ M]
+  [Module S M] [SMulCommClass Rᵐᵒᵖ S M] :
+  ChoiceFreeWatts.Tensor NotesProofs.rightAction ↑(ChoiceFreeWatts.regular R) →ₗ[S] M
+NotesProofs.concrete_tensor_direct_sum_iso.{u, v} {R S : Type u} [Ring R] [Ring S] {M : Type v} [AddCommGroup M]
+  [Module Rᵐᵒᵖ M] [Module S M] [SMulCommClass Rᵐᵒᵖ S M] {I : Type v} (D : I → ModuleCat R) :
+  ∃ e,
+    ∀ (i : I) (m : M) (x : ↑(D i)),
+      e (ChoiceFreeWatts.summand (NotesProofs.concreteTensorFamily D) i ((NotesProofs.concretePure m) x)) =
+        (NotesProofs.concretePure m) ((ChoiceFreeWatts.sumIncl D i) x)
+NotesProofs.balanced_tensor_preserves_cokernel.{u, v} {R S : Type u} [Ring R] [Ring S] {M L N Q TL TN TQ : Type v}
+  [AddCommGroup M] [Module Rᵐᵒᵖ M] [Module S M] [AddCommGroup L] [Module R L] [AddCommGroup N] [Module R N]
+  [AddCommGroup Q] [Module R Q] [AddCommGroup TL] [Module S TL] [AddCommGroup TN] [Module S TN] [AddCommGroup TQ]
+  [Module S TQ] (f : L →ₗ[R] N) (q : N →ₗ[R] Q) (q_surj : Function.Surjective ⇑q)
+  (exact : ∀ (n : N), q n = 0 → ∃ l, f l = n) (qf_zero : ∀ (l : L), q (f l) = 0) (pL : M →+ L →+ TL) (pN : M →+ N →+ TN)
+  (pQ : M →+ Q →+ TQ) (tensorL : NotesProofs.IsBalancedTensor pL) (tensorN : NotesProofs.IsBalancedTensor pN)
+  (tensorQ : NotesProofs.IsBalancedTensor pQ) (tf : TL →ₗ[S] TN) (tq : TN →ₗ[S] TQ)
+  (tf_pure : ∀ (m : M) (l : L), tf ((pL m) l) = (pN m) (f l))
+  (tq_pure : ∀ (m : M) (n : N), tq ((pN m) n) = (pQ m) (q n)) :
+  (∀ (z : TL), tq (tf z) = 0) ∧
+    ∀ (D : Type v) [inst : AddCommGroup D] [inst_1 : Module S D] (h : TN →ₗ[S] D),
+      (∀ (z : TL), h (tf z) = 0) → ∃! k, ∀ (z : TN), k (tq z) = h z
+ChoiceFreeWatts.beta_balanced.{u, v, z, w} {A : Type u} {B : Type v} [Ring A] [Ring B]
+  (F : CategoryTheory.Functor (ModuleCat A) (ModuleCat B)) [F.Additive] (X : ModuleCat A) :
+  ChoiceFreeWatts.Balanced (fun a m => (ChoiceFreeWatts.right F a) m) (ChoiceFreeWatts.beta F X)
+ChoiceFreeWatts.ell_comp.{u, z} {A : Type u} [Ring A] {X Y : ModuleCat A} (f : X ⟶ Y) (x : ↑X) :
+  CategoryTheory.CategoryStruct.comp (ChoiceFreeWatts.ell X x) f = ChoiceFreeWatts.ell Y ((ModuleCat.Hom.hom f) x)
+ChoiceFreeWatts.comparison_pure.{u, v, z, w} {A : Type u} {B : Type v} [Ring A] [Ring B]
+  (F : CategoryTheory.Functor (ModuleCat A) (ModuleCat B)) [F.Additive] (X : ModuleCat A) (m : ↑(ChoiceFreeWatts.M F))
+  (x : ↑X) :
+  (ChoiceFreeWatts.comparison F X) (ChoiceFreeWatts.pure (fun a m => (ChoiceFreeWatts.right F a) m) m x) =
+    ChoiceFreeWatts.beta F X m x
+CanonicalWattsComparison.{u, v, z, w} (A : Type u) (B : Type v) [Ring A] [Ring B]
+  (F : CategoryTheory.Functor (ModuleCat A) (ModuleCat B)) [F.Additive] :
+  let regular := ↧(ULift.{z, u} A);
+  have down := ULift.moduleEquiv;
+  let FX := F.obj;
+  let M := FX regular;
+  have right := fun a m =>
+    (ModuleCat.Hom.hom (F.map (ModuleCat.ofHom (down.symm.conjRingEquiv (LinearMap.mulRight A a))))) m;
+  have ell := fun _X x => ModuleCat.ofHom ((↑down).smulRight x);
+  have beta := fun X m x => (ModuleCat.Hom.hom (F.map (ell X x))) m;
+  let Free := fun X => ↑M × ↑X →₀ ℤ;
+  have gen := fun _X m x => Finsupp.single (m, x) 1;
+  have relations := fun X =>
+    AddSubgroup.closure
+      {p |
+        (∃ m m' x, p = gen X (m + m') x - gen X m x - gen X m' x) ∨
+          (∃ m x x', p = gen X m (x + x') - gen X m x - gen X m x') ∨
+            ∃ a m x, p = gen X (right a m) x - gen X m (a • x)};
+  let Tensor := fun X => Free X ⧸ relations X;
+  have pure := fun X m x => (QuotientAddGroup.mk' (relations X)) (gen X m x);
+  (∀ (X : ModuleCat A),
+      (∀ (m m' : ↑M) (x : ↑X), beta X (m + m') x = beta X m x + beta X m' x) ∧
+        (∀ (m : ↑M) (x x' : ↑X), beta X m (x + x') = beta X m x + beta X m x') ∧
+          (∀ (a : A) (m : ↑M) (x : ↑X), beta X (right a m) x = beta X m (a • x)) ∧
+            ∀ (b : B) (m : ↑M) (x : ↑X), beta X (b • m) x = b • beta X m x) ∧
+    ∃ tensorModule,
+      let obj := fun X => ↧(Tensor X);
+      ∃ map,
+        ∃ (mapId :
+          ∀ (X : ModuleCat A), map (CategoryTheory.CategoryStruct.id X) = CategoryTheory.CategoryStruct.id (obj X))
+          (mapComp :
+          ∀ {X Y Z : ModuleCat A} (f : X.Hom Y) (g : Y.Hom Z),
+            map (CategoryTheory.CategoryStruct.comp f g) = CategoryTheory.CategoryStruct.comp (map f) (map g)),
+          let T := { obj := obj, map := map, map_id := mapId, map_comp := mapComp };
+          let liftedF := F.comp (ModuleCat.uliftFunctor.{max u z, w, v} B);
+          ∃ tau,
+            (∀ (X : ModuleCat A) (b : B) (m : ↑M) (x : ↑X), b • pure X m x = pure X (b • m) x) ∧
+              (∀ (X Y : ModuleCat A) (f : X.Hom Y) (m : ↑M) (x : ↑X),
+                  (ModuleCat.Hom.hom (T.map f)) (pure X m x) = pure Y m (f.hom x)) ∧
+                ∀ (X : ModuleCat A),
+                  have tauX := ↑ULift.moduleEquiv ∘ₗ ModuleCat.Hom.hom (tau.app X);
+                  (∀ (m : ↑M) (x : ↑X), tauX (pure X m x) = beta X m x) ∧
+                    ∀ (h : Tensor X →+ ↑(FX X)),
+                      (∀ (m : ↑M) (x : ↑X), h (pure X m x) = beta X m x) → h = tauX.toAddMonoidHom
+BalancedTensorAssociativity.{u, v, x, w, y, z, t} (R : Type u) (S : Type v) [Ring R] [Ring S] :
+  let Middle := (N : ModuleCat R) × { right // SMulCommClass Sᵐᵒᵖ R ↑N };
+  let Triple := ModuleCat Rᵐᵒᵖ × Middle × ModuleCat S;
+  let first := fun X => X.1;
+  let middle := fun X => X.2.1.fst;
+  let last := fun X => X.2.2;
+  have rightMiddle := fun X => ↑X.2.1.snd;
+  have innerLeft := fun X =>
+    let M := first X;
+    let N := middle X;
+    let F := ↑M × ↑N →₀ ℤ;
+    have gen := fun a b => Finsupp.single (a, b) 1;
+    have H :=
+      AddSubgroup.closure
+        {z |
+          (∃ a a' b, z = gen (a + a') b - gen a b - gen a' b) ∨
+            (∃ a b b', z = gen a (b + b') - gen a b - gen a b') ∨
+              ∃ r a b, z = gen (MulOpposite.op r • a) b - gen a (r • b)};
+    ⟨H, fun m n => (QuotientAddGroup.mk' H) (gen m n)⟩;
+  have innerRight := fun X =>
+    let N := middle X;
+    let P := last X;
+    let F := ↑N × ↑P →₀ ℤ;
+    have gen := fun a b => Finsupp.single (a, b) 1;
+    have H :=
+      AddSubgroup.closure
+        {z |
+          (∃ a a' b, z = gen (a + a') b - gen a b - gen a' b) ∨
+            (∃ a b b', z = gen a (b + b') - gen a b - gen a b') ∨
+              ∃ r a b, z = gen (MulOpposite.op r • a) b - gen a (r • b)};
+    ⟨H, fun n p => (QuotientAddGroup.mk' H) (gen n p)⟩;
+  let MN := fun X => (↑(first X) × ↑(middle X) →₀ ℤ) ⧸ (innerLeft X).fst;
+  let NP := fun X => (↑(middle X) × ↑(last X) →₀ ℤ) ⧸ (innerRight X).fst;
+  let InnerActions := fun X =>
+    { a //
+      (∀ (s : S) (m : ↑(first X)) (n : ↑(middle X)),
+          SMul.smul (MulOpposite.op s) ((innerLeft X).snd m n) = (innerLeft X).snd m (SMul.smul (MulOpposite.op s) n)) ∧
+        ∀ (r : R) (n : ↑(middle X)) (p : ↑(last X)),
+          SMul.smul r ((innerRight X).snd n p) = (innerRight X).snd (r • n) p };
+  let Parenthesized := Sigma InnerActions;
+  have left := fun X =>
+    let M := first X.fst;
+    let N := middle X.fst;
+    let P := last X.fst;
+    let A := MN X.fst;
+    let F := A × ↑P →₀ ℤ;
+    have gen := fun a b => Finsupp.single (a, b) 1;
+    have H :=
+      AddSubgroup.closure
+        {z |
+          (∃ a a' b, z = gen (a + a') b - gen a b - gen a' b) ∨
+            (∃ a b b', z = gen a (b + b') - gen a b - gen a b') ∨
+              ∃ r a b, z = gen (MulOpposite.op r • a) b - gen a (r • b)};
+    ⟨H, fun m n p => (QuotientAddGroup.mk' H) (gen ((innerLeft X.fst).snd m n) p)⟩;
+  have right := fun X =>
+    let M := first X.fst;
+    let N := middle X.fst;
+    let P := last X.fst;
+    let B := NP X.fst;
+    let F := ↑M × B →₀ ℤ;
+    have gen := fun a b => Finsupp.single (a, b) 1;
+    have H :=
+      AddSubgroup.closure
+        {z |
+          (∃ a a' b, z = gen (a + a') b - gen a b - gen a' b) ∨
+            (∃ a b b', z = gen a (b + b') - gen a b - gen a b') ∨
+              ∃ r a b, z = gen (MulOpposite.op r • a) b - gen a (r • b)};
+    ⟨H, fun m n p => (QuotientAddGroup.mk' H) (gen m ((innerRight X.fst).snd n p))⟩;
+  let L := fun X => (MN X.fst × ↑(last X.fst) →₀ ℤ) ⧸ (left X).fst;
+  let T := fun X => (↑(first X.fst) × NP X.fst →₀ ℤ) ⧸ (right X).fst;
+  have tL := fun X => (left X).snd;
+  have tT := fun X => (right X).snd;
+  (∀ (X : Triple), Nonempty (InnerActions X)) ∧
+    ∃ α,
+      (∀ (X : Parenthesized) (e : L X ≃+ T X),
+          (∀ (m : ↑(first X.fst)) (n : ↑(middle X.fst)) (p : ↑(last X.fst)), e (tL X m n p) = tT X m n p) ↔ e = α X) ∧
+        (∀ (X : Parenthesized) (C : Type z) [inst : Ring C] [inst_1 : Module C ↑(first X.fst)]
+            [SMulCommClass C Rᵐᵒᵖ ↑(first X.fst)],
+            ∃ aL aT,
+              (∀ (c : C) (m : ↑(first X.fst)) (n : ↑(middle X.fst)) (p : ↑(last X.fst)),
+                  SMul.smul c (tL X m n p) = tL X (c • m) n p ∧ SMul.smul c (tT X m n p) = tT X (c • m) n p) ∧
+                ∀ (c : C) (q : L X), (α X) (SMul.smul c q) = SMul.smul c ((α X) q)) ∧
+          (∀ (X : Parenthesized) (D : Type t) [inst : Ring D] [inst_1 : Module Dᵐᵒᵖ ↑(last X.fst)]
+              [SMulCommClass S Dᵐᵒᵖ ↑(last X.fst)],
+              ∃ aL aT,
+                (∀ (d : D) (m : ↑(first X.fst)) (n : ↑(middle X.fst)) (p : ↑(last X.fst)),
+                    SMul.smul (MulOpposite.op d) (tL X m n p) = tL X m n (MulOpposite.op d • p) ∧
+                      SMul.smul (MulOpposite.op d) (tT X m n p) = tT X m n (MulOpposite.op d • p)) ∧
+                  ∀ (d : D) (q : L X),
+                    (α X) (SMul.smul (MulOpposite.op d) q) = SMul.smul (MulOpposite.op d) ((α X) q)) ∧
+            ∀ (X Y : Parenthesized) (f : ↑(first X.fst) →ₗ[Rᵐᵒᵖ] ↑(first Y.fst))
+              (g : ↑(middle X.fst) →ₗ[R] ↑(middle Y.fst)) (h : ↑(last X.fst) →ₗ[S] ↑(last Y.fst)),
+              (∀ (s : S) (n : ↑(middle X.fst)),
+                  g (SMul.smul (MulOpposite.op s) n) = SMul.smul (MulOpposite.op s) (g n)) →
+                let TensorMaps := (L X →+ L Y) × (T X →+ T Y);
+                have induced := fun maps =>
+                  ∀ (m : ↑(first X.fst)) (n : ↑(middle X.fst)) (p : ↑(last X.fst)),
+                    maps.1 (tL X m n p) = tL Y (f m) (g n) (h p) ∧ maps.2 (tT X m n p) = tT Y (f m) (g n) (h p);
+                (∃ maps, induced maps) ∧
+                  ∀ (maps : TensorMaps), induced maps → ∀ (q : L X), (α Y) (maps.1 q) = maps.2 ((α X) q)
+ReviewedWattsConnection.{u} (R S : Type u) [Ring R] [Ring S] :
+  (∀ (F : CategoryTheory.Functor (ModuleCat R) (ModuleCat S)) [inst : F.Additive],
+      NotesProofs.WattsPreservesCokernels F →
+        NotesProofs.WattsPreservesCoproducts F → CategoryTheory.IsIso (NotesProofs.wattsComparisonNatTrans F)) ∧
+    ∀ (B : Type u) [inst : AddCommGroup B] [inst_1 : Module S B] [inst_2 : Module Rᵐᵒᵖ B]
+      [inst_3 : SMulCommClass Rᵐᵒᵖ S B],
+      have T := NotesProofs.concreteTensorFunctor B;
+      T.Additive ∧ NotesProofs.WattsPreservesCokernels T ∧ NotesProofs.WattsPreservesCoproducts T
+NotesProofs.concreteTensorFunctor.{u} {R S : Type u} [Ring R] [Ring S] (M : Type u) [AddCommGroup M] [Module Rᵐᵒᵖ M]
+  [Module S M] [SMulCommClass Rᵐᵒᵖ S M] : CategoryTheory.Functor (ModuleCat R) (ModuleCat S)
+NotesProofs.concretePure.{u, v} {R : Type u} [Ring R] {M X : Type v} [AddCommGroup M] [Module Rᵐᵒᵖ M] [AddCommGroup X]
+  [Module R X] : M →+ X →+ ChoiceFreeWatts.Tensor NotesProofs.rightAction X
+ReviewedWattsMorphismsConnection.{u} (R S : Type u) [Ring R] [Ring S] :
+  (∀ (F G : CategoryTheory.Functor (ModuleCat R) (ModuleCat S)) [inst : F.Additive] [inst_1 : G.Additive],
+      NotesProofs.WattsPreservesCokernels F →
+        NotesProofs.WattsPreservesCoproducts F →
+          NotesProofs.WattsPreservesCokernels G →
+            NotesProofs.WattsPreservesCoproducts G →
+              let A := ChoiceFreeWatts.regular R;
+              let B₀ := F.obj A;
+              let D₀ := G.obj A;
+              ∃ e, ∀ (η : CategoryTheory.NatTrans F G), ↑(e.toFun η) = ModuleCat.Hom.hom (η.app A)) ∧
+    ∀ (B D : Type u) [inst : AddCommGroup B] [inst_1 : AddCommGroup D] [inst_2 : Module S B] [inst_3 : Module S D]
+      [inst_4 : Module Rᵐᵒᵖ B] [inst_5 : Module Rᵐᵒᵖ D] [inst_6 : SMulCommClass Rᵐᵒᵖ S B]
+      [inst_7 : SMulCommClass Rᵐᵒᵖ S D],
+      let TB := NotesProofs.concreteTensorFunctor B;
+      let TD := NotesProofs.concreteTensorFunctor D;
+      ∀ (η : CategoryTheory.NatTrans TB TD), ∃! β, η = NotesProofs.tensorBimoduleMapNatTrans β
+BimoduleTensorBicategoryCoherence.{u} :
+  let BimodStructure := fun B A M => Bimodule.1 ↑B ↑A ↑M;
+  let Bimod := fun B A => Sigma (BimodStructure B A);
+  have sum := fun T xs => xs.sum;
+  let left := fun {B A} M => SMul.smul;
+  let right := fun {B A} M a => SMul.smul (MulOpposite.op a);
+  let Equivariant := fun {B A} M N f =>
+    (∀ (b : ↑B) (m : ↑M.fst), f (left M b m) = left N b (f m)) ∧
+      ∀ (a : ↑A) (m : ↑M.fst), f (right M a m) = right N a (f m);
+  let Hom := fun {B A} M N => { f // Equivariant M N ⇑f };
+  let Iso := fun {B A} M N => { e // Equivariant M N ⇑e };
+  have isoHom := fun {B A} {M N} e => ⟨(↑e).toAddMonoidHom, ⋯⟩;
+  have idMap := fun {B A} M => ⟨AddMonoidHom.id ↑M.fst, ⋯⟩;
+  have comp := fun {B A} {M N P} g f => ⟨(↑g).comp ↑f, ⋯⟩;
+  let regular := fun A => ⟨↧↑A, ↑(Bimodule.2.1 ↑A)⟩;
+  have IsBalanced := fun {C B A} G F T t =>
+    (∀ (g g' : ↑G.fst) (f : ↑F.fst), t (g + g') f = t g f + t g' f) ∧
+      (∀ (g : ↑G.fst) (f f' : ↑F.fst), t g (f + f') = t g f + t g f') ∧
+        ∀ (b : ↑B) (g : ↑G.fst) (f : ↑F.fst), t (right G b g) f = t g (left F b f);
+  let relation := fun {C B A} G F x y =>
+    have gen := fun g f => FreeAddGroup.of (g, f);
+    (∃ p q, x = p + q ∧ y = q + p) ∨
+      (∃ g g' f, x = gen (g + g') f ∧ y = gen g f + gen g' f) ∨
+        (∃ g f f', x = gen g (f + f') ∧ y = gen g f + gen g f') ∨
+          ∃ b g f, x = gen (right G b g) f ∧ y = gen g (left F b f);
+  let congruence := fun {C B A} G F => addConGen (relation G F);
+  let underlying := fun {C B A} G F =>
+    let c := congruence G F;
+    ↧c.Quotient;
+  have pure := fun {C B A} G F g f => ⟦FreeAddGroup.of (g, f)⟧;
+  ∃ actions,
+    let tensor := fun {C B A} G F => ⟨underlying G F, actions G F⟩;
+    have tmul := fun {C B A} G F => pure G F;
+    (∀ {C B A : RingCat} (G : Bimod C B) (F : Bimod B A),
+        IsBalanced G F (tensor G F).fst (tmul G F) ∧
+          ∀ (T : AddCommGrpCat) (b : ↑G.fst → ↑F.fst → ↑T),
+            IsBalanced G F T b → ∃! lift, ∀ (g : ↑G.fst) (f : ↑F.fst), lift (tmul G F g f) = b g f) ∧
+      (∀ {C B A : RingCat} (G : Bimod C B) (F : Bimod B A) (g : ↑G.fst) (f : ↑F.fst),
+          (∀ (c : ↑C), left (tensor G F) c (tmul G F g f) = tmul G F (left G c g) f) ∧
+            ∀ (a : ↑A), right (tensor G F) a (tmul G F g f) = tmul G F g (right F a f)) ∧
+        ∃ tensorMap assoc leftUnitor rightUnitor,
+          (∀ {C B A : RingCat} (G : Bimod C B) (F : Bimod B A) (x : ↑(tensor G F).fst),
+              ∃ terms, x = sum (tensor G F).fst (List.map (fun p => tmul G F p.1 p.2) terms)) ∧
+            (∀ {C B A : RingCat} {G G' : Bimod C B} {F F' : Bimod B A} (g : Hom G G') (f : Hom F F') (y : ↑G.fst)
+                (x : ↑F.fst), ↑(tensorMap g f) (tmul G F y x) = tmul G' F' (↑g y) (↑f x)) ∧
+              (∀ {C B A : RingCat} (G : Bimod C B) (F : Bimod B A),
+                  tensorMap (idMap G) (idMap F) = idMap (tensor G F)) ∧
+                (∀ {C B A : RingCat} {G G' G'' : Bimod C B} {F F' F'' : Bimod B A} (g : Hom G G') (g' : Hom G' G'')
+                    (f : Hom F F') (f' : Hom F' F''),
+                    tensorMap (comp g' g) (comp f' f) = comp (tensorMap g' f') (tensorMap g f)) ∧
+                  (∀ {D C B A : RingCat} (H : Bimod D C) (G : Bimod C B) (F : Bimod B A) (h : ↑H.fst) (g : ↑G.fst)
+                      (f : ↑F.fst),
+                      ↑(assoc H G F) (tmul (tensor H G) F (tmul H G h g) f) = tmul H (tensor G F) h (tmul G F g f)) ∧
+                    (∀ {B A : RingCat} (F : Bimod B A) (b : ↑B) (a : ↑A) (f : ↑F.fst),
+                        ↑(leftUnitor F) (tmul (regular B) F b f) = left F b f ∧
+                          ↑(rightUnitor F) (tmul F (regular A) f a) = right F a f) ∧
+                      (∀ {D C B A : RingCat} {H H' : Bimod D C} {G G' : Bimod C B} {F F' : Bimod B A} (h : Hom H H')
+                          (g : Hom G G') (f : Hom F F'),
+                          comp (isoHom (assoc H' G' F')) (tensorMap (tensorMap h g) f) =
+                            comp (tensorMap h (tensorMap g f)) (isoHom (assoc H G F))) ∧
+                        (∀ {B A : RingCat} {F F' : Bimod B A} (f : Hom F F'),
+                            comp (isoHom (leftUnitor F')) (tensorMap (idMap (regular B)) f) =
+                                comp f (isoHom (leftUnitor F)) ∧
+                              comp (isoHom (rightUnitor F')) (tensorMap f (idMap (regular A))) =
+                                comp f (isoHom (rightUnitor F))) ∧
+                          (∀ {E D C B A : RingCat} (K : Bimod E D) (H : Bimod D C) (G : Bimod C B) (F : Bimod B A),
+                              comp (isoHom (assoc K H (tensor G F))) (isoHom (assoc (tensor K H) G F)) =
+                                comp (tensorMap (idMap K) (isoHom (assoc H G F)))
+                                  (comp (isoHom (assoc K (tensor H G) F))
+                                    (tensorMap (isoHom (assoc K H G)) (idMap F)))) ∧
+                            ∀ {C B A : RingCat} (G : Bimod C B) (F : Bimod B A),
+                              comp (tensorMap (idMap G) (isoHom (leftUnitor F))) (isoHom (assoc G (regular B) F)) =
+                                tensorMap (isoHom (rightUnitor G)) (idMap F)
+ReviewedWattsCategoryConnection.{u, v} (R S : Type u) [Ring R] [Ring S] :
+  have tensor := NotesProofs.General.ConcreteBimodule.tensorRepresentation R S;
+  have regular := ChoiceFreeWatts.regular R;
+  tensor.Full ∧
+    tensor.Faithful ∧
+      tensor.EssSurj ∧
+        ∃ E,
+          E.functor = tensor ∧
+            (∀ (F : NotesProofs.General.ConcreteBimodule.GoodFunctors R S),
+                E.inverse.obj F = NotesProofs.General.ConcreteBimodule.wattsBimodule R S F.obj) ∧
+              (∀ {F G : NotesProofs.General.ConcreteBimodule.GoodFunctors R S} (η : F ⟶ G),
+                  ↑(E.inverse.map η) ≍ ModuleCat.Hom.hom (η.hom.app regular)) ∧
+                (∀ (F : NotesProofs.General.ConcreteBimodule.GoodFunctors R S) (X : ModuleCat R),
+                    ModuleCat.Hom.hom ((E.counitIso.hom.app F).hom.app X) ≍ ChoiceFreeWatts.comparison F.obj X) ∧
+                  ∀ (B : NotesProofs.General.ConcreteBimodule R S),
+                    ↑(E.unitIso.inv.app B) ≍ NotesProofs.General.concreteTensorUnitor B.carrier
+NotesProofs.tensorBimoduleMapComponent_pure.{u} {R S : Type u} [Ring R] [Ring S] {M N : Type u} [AddCommGroup M]
+  [Module Rᵐᵒᵖ M] [Module S M] [SMulCommClass Rᵐᵒᵖ S M] [AddCommGroup N] [Module Rᵐᵒᵖ N] [Module S N]
+  [SMulCommClass Rᵐᵒᵖ S N] (f : NotesProofs.BimoduleMap) (X : ModuleCat R) (m : M) (x : ↑X) :
+  (NotesProofs.tensorBimoduleMapComponent f X) ((NotesProofs.concretePure m) x) = (NotesProofs.concretePure (↑f m)) x
+NotesProofs.General.ConcreteBimodule.eilenbergWattsCanonical.{u, v} (R S : Type u) [Ring R] [Ring S] :
+  NotesProofs.General.ConcreteBimodule R S ≌ NotesProofs.General.ConcreteBimodule.GoodFunctors R S
+NotesProofs.General.originalWattsWithEvaluation.{u, v} (R S : Type u) [Ring R] [Ring S] :
+  NotesProofs.General.OriginalBimodule R S ≌ NotesProofs.General.ConcreteBimodule.GoodFunctors R S
+NotesProofs.General.wattsCokernels_of_mathlib.{u, v} {A B : Type u} [Ring A] [Ring B]
+  (F : CategoryTheory.Functor (ModuleCat A) (ModuleCat B)) [F.Additive]
+  [CategoryTheory.Limits.PreservesFiniteColimits F] : NotesProofs.General.WattsPreservesCokernels F

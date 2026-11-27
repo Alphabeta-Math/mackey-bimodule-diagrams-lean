@@ -1,0 +1,2 @@
+import NotesProofs.ModuleKernelsCokernelsAndImages
+#print axioms ModuleKernelsCokernelsAndImages

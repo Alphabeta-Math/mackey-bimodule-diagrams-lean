@@ -1,0 +1,2 @@
+import NotesProofs.BiproductMatrixCalculus
+#print axioms BiproductMatrixCalculus

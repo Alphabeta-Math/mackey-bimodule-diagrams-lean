@@ -1,0 +1,10 @@
+import NotesProofs.General.BimoduleTensorCategory
+
+#check @NotesProofs.General.ConcreteBimodule.eilenbergWattsEquivalence
+#print axioms NotesProofs.General.ConcreteBimodule.eilenbergWattsEquivalence
+#print axioms NotesProofs.General.ConcreteBimodule.tensorRepresentation_full
+#print axioms NotesProofs.General.ConcreteBimodule.tensorRepresentation_faithful
+#print axioms NotesProofs.General.ConcreteBimodule.tensorRepresentation_essSurj
+#print axioms NotesProofs.General.bimoduleMapEquivNatTrans
+#print axioms NotesProofs.General.eilenbergWattsIso
+#print axioms NotesProofs.General.tensorFunctor_good

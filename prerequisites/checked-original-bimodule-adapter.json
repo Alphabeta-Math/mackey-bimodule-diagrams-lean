@@ -1,0 +1,14 @@
+{
+  "source": "NotesProofs/General/OriginalBimoduleAdapter.lean",
+  "sha256": "7c871eb4af1c8470cb8627c35ae41765f8c7b71435fd02f2a1a20e1d7fd732a3",
+  "build_command": "lake build NotesProofs.General.OriginalBimoduleAdapter",
+  "build_log": "evidence/original-bimodule-adapter-build.log",
+  "declaration": "NotesProofs.General.originalBimoduleWattsEquivalence",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "scope": "The original workflow Sigma/subtype bimodule category for arbitrary rings in Type u and carriers in Type (max u v) is equivalent to the checked category of additive module functors preserving finite colimits and coproducts.",
+  "limits": "This establishes the category-level bridge. The original reviewed endpoint additionally specifies exact evaluation-on-regular, tensor universal-property, naturality, composition and unit formulas; those require separate checked connections before it is credited. The original choice-free portal claims are separate."
+}

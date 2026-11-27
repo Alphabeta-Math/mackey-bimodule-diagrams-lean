@@ -1,0 +1,8 @@
+{
+  "id": "FiniteBiproductUniversalProperties",
+  "reason": "The exact reviewed endpoint follows from Mathlib’s isBilimitOfTotal, bicone construction and IsBilimit.total; independent source and audit in NotesProofs/ReviewedFiniteBiproductConnection.lean and evidence/reviewed-finite-biproduct-build.log.",
+  "proof": "by\n  classical\n  intro C _ _ J _ X\n  letI : Fintype J := Fintype.ofFinite J\n  refine ⟨?_, ?_, ?_⟩\n  · intro B h\n    exact ⟨CategoryTheory.Limits.isBilimitOfTotal B h⟩\n  · intro P hP\n    exact CategoryTheory.Limits.IsBilimit.total (CategoryTheory.Limits.biconeIsBilimitOfLimitConeOfIsLimit hP)\n  · intro Q hQ\n    exact CategoryTheory.Limits.IsBilimit.total (CategoryTheory.Limits.biconeIsBilimitOfColimitCoconeOfIsColimit hQ)\n",
+  "mathlibImports": [
+    "Mathlib.CategoryTheory.Preadditive.Biproducts"
+  ]
+}

@@ -1,0 +1,2 @@
+import NotesProofs.ModuleQuotientUniversalProperty
+#print axioms ModuleQuotientUniversalProperty

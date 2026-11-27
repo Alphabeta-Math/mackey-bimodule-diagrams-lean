@@ -1,0 +1,43 @@
+ReviewedWattsConnection : ∀ (R S : Type u) [inst : Ring R] [inst_1 : Ring S],
+  (∀ (F : CategoryTheory.Functor (ModuleCat R) (ModuleCat S)) [inst_2 : F.Additive],
+      NotesProofs.WattsPreservesCokernels F →
+        NotesProofs.WattsPreservesCoproducts F → CategoryTheory.IsIso (NotesProofs.wattsComparisonNatTrans F)) ∧
+    ∀ (B : Type u) [inst_2 : AddCommGroup B] [inst_3 : Module S B] [inst_4 : Module Rᵐᵒᵖ B]
+      [inst_5 : SMulCommClass Rᵐᵒᵖ S B],
+      have T := NotesProofs.concreteTensorFunctor B;
+      T.Additive ∧ NotesProofs.WattsPreservesCokernels T ∧ NotesProofs.WattsPreservesCoproducts T
+'ReviewedWattsConnection' depends on axioms: [propext, Classical.choice, Quot.sound]
+ReviewedWattsMorphismsConnection : ∀ (R S : Type u) [inst : Ring R] [inst_1 : Ring S],
+  (∀ (F G : CategoryTheory.Functor (ModuleCat R) (ModuleCat S)) [inst_2 : F.Additive] [inst_3 : G.Additive],
+      NotesProofs.WattsPreservesCokernels F →
+        NotesProofs.WattsPreservesCoproducts F →
+          NotesProofs.WattsPreservesCokernels G →
+            NotesProofs.WattsPreservesCoproducts G →
+              let A := ChoiceFreeWatts.regular R;
+              let B₀ := F.obj A;
+              let D₀ := G.obj A;
+              ∃ e, ∀ (η : CategoryTheory.NatTrans F G), ↑(e.toFun η) = ModuleCat.Hom.hom (η.app A)) ∧
+    ∀ (B D : Type u) [inst_2 : AddCommGroup B] [inst_3 : AddCommGroup D] [inst_4 : Module S B] [inst_5 : Module S D]
+      [inst_6 : Module Rᵐᵒᵖ B] [inst_7 : Module Rᵐᵒᵖ D] [inst_8 : SMulCommClass Rᵐᵒᵖ S B]
+      [inst_9 : SMulCommClass Rᵐᵒᵖ S D],
+      let TB := NotesProofs.concreteTensorFunctor B;
+      let TD := NotesProofs.concreteTensorFunctor D;
+      ∀ (η : CategoryTheory.NatTrans TB TD), ∃! β, η = NotesProofs.tensorBimoduleMapNatTrans β
+'ReviewedWattsMorphismsConnection' depends on axioms: [propext, Classical.choice, Quot.sound]
+ReviewedWattsCategoryConnection : ∀ (R S : Type u) [inst : Ring R] [inst_1 : Ring S],
+  have tensor := NotesProofs.General.ConcreteBimodule.tensorRepresentation R S;
+  have regular := ChoiceFreeWatts.regular R;
+  tensor.Full ∧
+    tensor.Faithful ∧
+      tensor.EssSurj ∧
+        ∃ E,
+          E.functor = tensor ∧
+            (∀ (F : NotesProofs.General.ConcreteBimodule.GoodFunctors R S),
+                E.inverse.obj F = NotesProofs.General.ConcreteBimodule.wattsBimodule R S F.obj) ∧
+              (∀ {F G : NotesProofs.General.ConcreteBimodule.GoodFunctors R S} (η : F ⟶ G),
+                  ↑(E.inverse.map η) ≍ ModuleCat.Hom.hom (η.hom.app regular)) ∧
+                (∀ (F : NotesProofs.General.ConcreteBimodule.GoodFunctors R S) (X : ModuleCat R),
+                    ModuleCat.Hom.hom ((E.counitIso.hom.app F).hom.app X) ≍ ChoiceFreeWatts.comparison F.obj X) ∧
+                  ∀ (B : NotesProofs.General.ConcreteBimodule R S),
+                    ↑(E.unitIso.inv.app B) ≍ NotesProofs.General.concreteTensorUnitor B.carrier
+'ReviewedWattsCategoryConnection' depends on axioms: [propext, Classical.choice, Quot.sound]

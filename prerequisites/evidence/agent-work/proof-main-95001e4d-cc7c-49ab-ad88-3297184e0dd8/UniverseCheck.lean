@@ -1,0 +1,13 @@
+import MackeyDiagrams
+import NotesProofs.ConcreteTensorBimoduleMap
+import NotesProofs.WattsMathlibReverse
+import NotesProofs.General.OriginalBimoduleAdapter
+import NotesProofs.ClassicalReconstruction
+import NotesProofs.ReconstructionFromSmallProjectiveGenerator
+import NotesProofs.BimoduleFunctorHomEquivalence
+import NotesProofs.AbelianEquivalencesPreserveFunctorHypotheses
+import NotesProofs.TensorDictionaryCompositionAndIdentities
+
+set_option pp.universes true
+#print NotesProofs.General.ConcreteBimodule.wattsBimodule
+#check @NotesProofs.wattsRight_apply

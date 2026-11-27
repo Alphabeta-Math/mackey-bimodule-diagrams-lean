@@ -1,0 +1,10 @@
+{
+  "type": "∀ (C : Type u) [CategoryTheory.Category.{v} C] [CategoryTheory.Preadditive C]\n    [CategoryTheory.Limits.HasZeroObject C] [CategoryTheory.Limits.HasFiniteBiproducts C]\n    [CategoryTheory.Limits.HasKernels C] [CategoryTheory.Limits.HasCokernels C]\n    {X Y : C} (f g : Quiver.Hom X Y),\n  (CategoryTheory.Mono f ↔ CategoryTheory.Limits.IsZero (CategoryTheory.Limits.kernel f)) ∧\n  (CategoryTheory.Epi f ↔ CategoryTheory.Limits.IsZero (CategoryTheory.Limits.cokernel f)) ∧\n  (∀ {W : C} (i : Quiver.Hom W X),\n    (∃ h : CategoryTheory.CategoryStruct.comp i f = CategoryTheory.CategoryStruct.comp i g,\n      Nonempty (CategoryTheory.Limits.IsLimit (CategoryTheory.Limits.Fork.ofι i h))) ↔\n    (∃ h : CategoryTheory.CategoryStruct.comp i (f - g) = 0,\n      Nonempty (CategoryTheory.Limits.IsLimit (CategoryTheory.Limits.KernelFork.ofι i h)))) ∧\n  (∀ {W : C} (p : Quiver.Hom Y W),\n    (∃ h : CategoryTheory.CategoryStruct.comp f p = CategoryTheory.CategoryStruct.comp g p,\n      Nonempty (CategoryTheory.Limits.IsColimit (CategoryTheory.Limits.Cofork.ofπ p h))) ↔\n    (∃ h : CategoryTheory.CategoryStruct.comp (f - g) p = 0,\n      Nonempty (CategoryTheory.Limits.IsColimit (CategoryTheory.Limits.CokernelCofork.ofπ p h))))",
+  "value": null,
+  "source": "article",
+  "sourceReason": "The cached TeX (env-4-2) and PDF (p. 10) agree on Proposition 4.2 of Ian X, Abelian Categories and Bimodules. Section 4.1 supplies the additive-category convention. The equalizer and coequalizer clauses express the equivalence of universal properties for the same structure arrow. The specified defect-report URL returned HTTP 404, so any correction for this proposition could not be checked there. The owner permits ordinary choice and keeps historical choice-free auxiliary endpoints separate.",
+  "artifacts": [
+    "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-48f3b8cb-08d3-4709-a754-876d22c5a956/CheckEndpoint.lean",
+    "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-48f3b8cb-08d3-4709-a754-876d22c5a956/proposal.json"
+  ]
+}

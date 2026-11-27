@@ -1,0 +1,3 @@
+import ModuleKernelsCokernelsAndImages
+
+#print axioms ModuleKernelsCokernelsAndImages

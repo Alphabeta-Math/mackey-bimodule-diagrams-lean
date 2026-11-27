@@ -1,0 +1,2 @@
+import NotesProofs.RegularModuleSmallProjectiveGenerator
+#print axioms RegularModuleSmallProjectiveGenerator

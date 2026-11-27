@@ -1,0 +1,2 @@
+import NotesProofs.TensorPentagonAndTriangle
+#print axioms TensorPentagonAndTriangle

@@ -1,0 +1,2 @@
+import NotesProofs.TensorPreservesCoproducts
+#print axioms TensorPreservesCoproducts

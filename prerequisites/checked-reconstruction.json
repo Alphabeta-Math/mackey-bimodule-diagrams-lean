@@ -1,0 +1,21 @@
+{
+  "description": "Checked pointwise-to-natural reconstruction connection, conditional on its explicit presentation and adjunction data",
+  "source_files_sha256": {
+    "NotesProofs/ReconstructionSupport.lean": "10c73931422db5459f70a1f41b427c1d3b7b1e48fa56e8f8937babc128ed95bc",
+    "NotesProofs/ClassicalReconstruction.lean": "184ba9dc419071b6b6167369159016e564d74711f009c612141d9b1040b11037"
+  },
+  "build_command": "lake build NotesProofs.ReconstructionSupport NotesProofs.ClassicalReconstruction",
+  "results": {
+    "ReconstructionCheck.PointwiseReconstruction": [
+      "propext",
+      "Quot.sound"
+    ],
+    "ClassicalReconstruction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "limits": "The explicit hypotheses include a supplied adjunction, chosen copowers and cokernels, a presentation isomorphism and a unit formula. This connection does not construct those inputs or prove the full projective-generator equivalence from source hypotheses. It does not discharge the original project choice-free endpoint.",
+  "source": "ReconstructionSupport adapts evidence/agent-work/proof-main-30954e59-25ef-4514-b0b4-0ecbd09c6bf4/Connection.lean from the target project, replacing an unnecessary paper-theorem import with exact Mathlib imports and omitting the unused diagram library. ClassicalReconstruction packages its pointwise result via Mathlib natural isomorphisms."
+}

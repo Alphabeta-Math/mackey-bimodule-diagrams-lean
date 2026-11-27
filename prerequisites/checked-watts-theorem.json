@@ -1,0 +1,39 @@
+{
+  "source_files_sha256": {
+    "NotesProofs/BalancedCokernelDescent.lean": "c0ff0f7ab3122138f1a22d71c1569dc66f701f97f30a7a31f5d2420f5fc6b575",
+    "NotesProofs/BalancedCoproductAssembly.lean": "8e61bef960173633b11d9887463de69fb84a55d909674964f729cc70b65eede7",
+    "NotesProofs/CokernelExact.lean": "9a78671e4b87b085d1a3c4685fb0c7b8a455ee9099fc9b8612b8e28d43ae63d9",
+    "NotesProofs/ConcreteTensorCoproduct.lean": "bbb30435bb6b333a1d88e07b870beca892ae1bdb8bfe96d70433e7765bd34f27",
+    "NotesProofs/ConcreteTensorFunctor.lean": "8a4d904635264056220c19131d6831ff123b0fac84cf9be84fbb8c7f0d5c7416",
+    "NotesProofs/ConcreteTensorPreservation.lean": "a5007382c9e39232bbe650283fa7b48e224ee2ebefc7113e96504136c21c0a78",
+    "NotesProofs/ConcreteTensorUniversal.lean": "aecf1d070575a22dccee927ed65226b0011a4c1ed3badbb40a9c0c6a52ce1660",
+    "NotesProofs/NoncommutativeTensorCokernel.lean": "955f183f9c74fba2f92df9d593999a34001424800700b8d0ae9e6da0f5cba473",
+    "NotesProofs/NoncommutativeTensorCoproduct.lean": "102127e36d8ffce5bab109f4ab1b00248e744a2c23a33ade7ba1134677ba52ea",
+    "NotesProofs/PresentationCokernel.lean": "e747d402a9f71e96becf542bc4c2577e72ee408be65c6136bef0aad789732722",
+    "NotesProofs/PresentationFiveLemma.lean": "0fa6c9cab436e9073ac87695ccfda4173bee77fd6b607d1e30c9fcf87fc3b463",
+    "NotesProofs/WattsActions.lean": "aff94142f5443ca41e7f7f0f384740b4acfd1484f13b5f34afe83d5aa760c9f3",
+    "NotesProofs/WattsAllComparison.lean": "97d966c30bda52016cc8adcdb2510450bed3697a3f6e698ea46d76f283545a41",
+    "NotesProofs/WattsFreeComparison.lean": "ba001e208b1b22f44a61775c1b6838637a035fe9108e5e0c580292de08647a8c",
+    "NotesProofs/WattsMathlibBridge.lean": "23f59087aed27751d330665857d74cdd4933b9ab6bf40b1ab370a4889509af9a",
+    "NotesProofs/WattsMathlibReverse.lean": "8228cce9d6befceb5e2bd0029e8cd07138e3c065d9f98f2efc6d727b605b71bf",
+    "NotesProofs/WattsNaturalIso.lean": "314cfbc35ab418630851f598e3de10ad6354cf98caca90965892ba5273c2298b",
+    "NotesProofs/WattsSupport.lean": "853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+    "NotesProofs/WattsTheorem.lean": "f021cafacbd203cb8a1beaedf1c24349a52cb503bae2447182e0546c2b62789f"
+  },
+  "build_command": "lake build NotesProofs.WattsTheorem",
+  "build_log": "evidence/watts-theorem-build.log",
+  "declarations": {
+    "NotesProofs.tensorFunctor_good": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NotesProofs.eilenbergWattsIso": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "scope": "For arbitrary unital rings in one Lean universe: tensoring by a bimodule is additive and preserves finite colimits and all coproducts of that universe; conversely each additive finite-colimit and coproduct-preserving functor is naturally isomorphic to the concrete tensor functor attached to its value on the lifted regular module. Both directions use Mathlib preservation typeclasses.",
+  "limits": "Classical choice is used. The full functor-category equivalence, source-model/universe adapters, and endpoint translation reviews remain separate; original choice-free portal endpoints are not discharged by these results."
+}

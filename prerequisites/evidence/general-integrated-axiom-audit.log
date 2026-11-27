@@ -1,0 +1,18 @@
+NotesProofs.General.ConcreteBimodule.eilenbergWattsEquivalence : (R S : Type u_1) →
+  [inst : Ring R] →
+    [inst_1 : Ring S] → NotesProofs.General.ConcreteBimodule R S ≌ NotesProofs.General.ConcreteBimodule.GoodFunctors R S
+'NotesProofs.General.ConcreteBimodule.eilenbergWattsEquivalence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NotesProofs.General.ConcreteBimodule.tensorRepresentation_full' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NotesProofs.General.ConcreteBimodule.tensorRepresentation_faithful' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NotesProofs.General.ConcreteBimodule.tensorRepresentation_essSurj' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NotesProofs.General.bimoduleMapEquivNatTrans' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NotesProofs.General.eilenbergWattsIso' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NotesProofs.General.tensorFunctor_good' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,13 @@
+{
+  "reviewed_type_sha256": "9f46652306ace1e1527f8131d63c9a247e08ff1f69bc52c86303f99ba7c72df5",
+  "source_sha256": "4db8af47244cb3af75713178bd781cb6b30ce31022308b776e13722d1ee32ab2",
+  "source": "NotesProofs/ReviewedWattsConnection.lean",
+  "build_log": "evidence/reviewed-watts-connection-build.log",
+  "result": "ReviewedWattsConnection",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "status": "independent connection compiled; not yet accepted as native workflow proof"
+}

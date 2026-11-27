@@ -1,0 +1,13 @@
+{
+  "source": "NotesProofs/BalancedCoproductAssembly.lean",
+  "sha256": "8e61bef960173633b11d9887463de69fb84a55d909674964f729cc70b65eede7",
+  "declaration": "NotesProofs.balanced_coproduct_assembly",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "build_command": "lake build NotesProofs.BalancedCoproductAssembly",
+  "build_log": "evidence/balanced-coproduct-build.log",
+  "limits": "Assumes the stated coproduct universal property in additive groups and R-linear coproduct legs. The induced tensor coproduct universal property and the concrete direct-sum bridge remain to be constructed."
+}

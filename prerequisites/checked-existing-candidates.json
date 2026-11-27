@@ -1,0 +1,58 @@
+[
+  {
+    "declaration": "ModuleTensorUniversalProperty",
+    "source": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/ModuleTensorUniversalProperty.lean",
+    "sha256": "0d247f5a690de5611eeb14b48e68d00da06b97747d8da8a88c7253a61a5a2ad7",
+    "status": "source hash matches original workflow proof credit; imported successfully and audited in the pinned prerequisite workspace; check exact type and hypotheses before applying",
+    "audit_command": "lake env lean -j1 NotesProofs/ExistingCandidatesAudit.lean",
+    "audit_log": "evidence/existing-candidates-audit.log"
+  },
+  {
+    "declaration": "BalancedTensorAssociativity",
+    "source": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/BalancedTensorAssociativity.lean",
+    "sha256": "2069082f489690ee0a881df7f2f5ebad33d114cdd97398518f7d740ef23f279e",
+    "status": "source hash matches original workflow proof credit; imported successfully and audited in the pinned prerequisite workspace; check exact type and hypotheses before applying",
+    "audit_command": "lake env lean -j1 NotesProofs/ExistingCandidatesAudit.lean",
+    "audit_log": "evidence/existing-candidates-audit.log"
+  },
+  {
+    "declaration": "RegularModuleRightAction",
+    "source": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/RegularModuleRightAction.lean",
+    "sha256": "d3db3b9b20436816fe633fef792070ff8a7dd6821802866b6b9f2d93dffdff98",
+    "status": "source hash matches original workflow proof credit; imported successfully and audited in the pinned prerequisite workspace; check exact type and hypotheses before applying",
+    "audit_command": "lake env lean -j1 NotesProofs/ExistingCandidatesAudit.lean",
+    "audit_log": "evidence/existing-candidates-audit.log"
+  },
+  {
+    "declaration": "CanonicalWattsComparison",
+    "source": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/CanonicalWattsComparison.lean",
+    "sha256": "8418e4ddd51fe272c33243d6597a21feab34ce85edeeb036080394624b5559eb",
+    "status": "source hash matches original workflow proof credit; imported successfully and audited in the pinned prerequisite workspace; check exact type and hypotheses before applying",
+    "audit_command": "lake env lean -j1 NotesProofs/ExistingCandidatesAudit.lean",
+    "audit_log": "evidence/existing-candidates-audit.log"
+  },
+  {
+    "declaration": "NaturalTransformationsOfTensorFunctors",
+    "source": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/NaturalTransformationsOfTensorFunctors.lean",
+    "sha256": "efc06ee64a1bba318d200944ae79c2e296ca91ec27e37304f4cf88ee7a552649",
+    "status": "source hash matches original workflow proof credit; imported successfully and audited in the pinned prerequisite workspace; check exact type and hypotheses before applying",
+    "audit_command": "lake env lean -j1 NotesProofs/ExistingCandidatesAudit.lean",
+    "audit_log": "evidence/existing-candidates-audit.log"
+  },
+  {
+    "declaration": "SmallProjectiveGenerator",
+    "source": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/SmallProjectiveGenerator.lean",
+    "sha256": "984d5d9680bd9adeed15ef09cf5bbd8c0a0ffbcfb2a5474d0131e09d2ef5479c",
+    "status": "source hash matches original workflow proof credit; imported successfully and audited in the pinned prerequisite workspace; check exact type and hypotheses before applying",
+    "audit_command": "lake env lean -j1 NotesProofs/ExistingCandidatesAudit.lean",
+    "audit_log": "evidence/existing-candidates-audit.log"
+  },
+  {
+    "declaration": "BimoduleTensorBicategoryCoherence",
+    "source": "/home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/BimoduleTensorBicategoryCoherence.lean",
+    "sha256": "371b49e798fd904a1323667f853126fdb914a438c32add1e1ace7e3cec02955a",
+    "status": "source hash matches original workflow proof credit; imported successfully and audited in the pinned prerequisite workspace; check exact type and hypotheses before applying",
+    "audit_command": "lake env lean -j1 NotesProofs/ExistingCandidatesAudit.lean",
+    "audit_log": "evidence/existing-candidates-audit.log"
+  }
+]

@@ -1,0 +1,2 @@
+import ArticleCheck
+#print axioms GroupAlgebraInductionAdjunction

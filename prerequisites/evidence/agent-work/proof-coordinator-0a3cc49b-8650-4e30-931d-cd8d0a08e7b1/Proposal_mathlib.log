@@ -1,0 +1,256 @@
+Submodule.liftQ.{u_1, u_2, u_3, u_4} {R : Type u_1} {M : Type u_2} [Ring R] [AddCommGroup M] [Module R M]
+  (p : Submodule R M) {R₂ : Type u_3} {M₂ : Type u_4} [Ring R₂] [AddCommGroup M₂] [Module R₂ M₂] {τ₁₂ : R →+* R₂}
+  (f : M →ₛₗ[τ₁₂] M₂) (h : p ≤ f.ker) : M ⧸ p →ₛₗ[τ₁₂] M₂
+Submodule.liftQ_mkQ.{u_1, u_2, u_3, u_4} {R : Type u_1} {M : Type u_2} [Ring R] [AddCommGroup M] [Module R M]
+  (p : Submodule R M) {R₂ : Type u_3} {M₂ : Type u_4} [Ring R₂] [AddCommGroup M₂] [Module R₂ M₂] {τ₁₂ : R →+* R₂}
+  (f : M →ₛₗ[τ₁₂] M₂) (h : p ≤ f.ker) : p.liftQ f h ∘ₛₗ p.mkQ = f
+Submodule.mkQ_surjective.{u_1, u_2} {R : Type u_1} {M : Type u_2} [Ring R] [AddCommGroup M] [Module R M]
+  (p : Submodule R M) : Function.Surjective ⇑p.mkQ
+ModuleCat.productConeIsLimit.{u, v, w} {R : Type u} [Ring R] {ι : Type v} (Z : ι → ModuleCat R) :
+  CategoryTheory.Limits.IsLimit (ModuleCat.productCone Z)
+ModuleCat.coproductCoconeIsColimit.{u, v, w} {R : Type u} [Ring R] {ι : Type v} (Z : ι → ModuleCat R) [DecidableEq ι] :
+  CategoryTheory.Limits.IsColimit (ModuleCat.coproductCocone Z)
+DFinsupp.finite_support.{u, v} {ι : Type u} {β : ι → Type v} [(i : ι) → Zero (β i)] (f : Π₀ (i : ι), β i) :
+  {i | f i ≠ 0}.Finite
+CategoryTheory.ShortComplex.exact_and_epi_g_iff_g_is_cokernel.{v_1, u_1} {C : Type u_1}
+  [CategoryTheory.Category.{v_1, u_1} C] [CategoryTheory.Preadditive C] (S : CategoryTheory.ShortComplex C)
+  [CategoryTheory.Balanced C] [S.HasHomology] :
+  S.Exact ∧ CategoryTheory.Epi S.g ↔
+    Nonempty (CategoryTheory.Limits.IsColimit (CategoryTheory.Limits.CokernelCofork.ofπ S.g ⋯))
+ModuleCat.abelian.{v, u} {R : Type u} [Ring R] : CategoryTheory.Abelian (ModuleCat R)
+CategoryTheory.Abelian.monoIsKernelOfCokernel.{v, u} {C : Type u} [CategoryTheory.Category.{v, u} C]
+  [CategoryTheory.Abelian C] {X Y : C} {f : X ⟶ Y} [CategoryTheory.Mono f] (s : CategoryTheory.Limits.Cofork f 0)
+  (h : CategoryTheory.Limits.IsColimit s) : CategoryTheory.Limits.IsLimit (CategoryTheory.Limits.KernelFork.ofι f ⋯)
+CategoryTheory.Abelian.epiIsCokernelOfKernel.{v, u} {C : Type u} [CategoryTheory.Category.{v, u} C]
+  [CategoryTheory.Abelian C] {X Y : C} {f : X ⟶ Y} [CategoryTheory.Epi f] (s : CategoryTheory.Limits.Fork f 0)
+  (h : CategoryTheory.Limits.IsLimit s) : CategoryTheory.Limits.IsColimit (CategoryTheory.Limits.CokernelCofork.ofπ f ⋯)
+CategoryTheory.isIso_of_mono_of_epi.{v, u} {C : Type u} [CategoryTheory.Category.{v, u} C] [CategoryTheory.Balanced C]
+  {X Y : C} (f : X ⟶ Y) [CategoryTheory.Mono f] [CategoryTheory.Epi f] : CategoryTheory.IsIso f
+CategoryTheory.Preadditive.mono_iff_isZero_kernel.{v, u} {C : Type u} [CategoryTheory.Category.{v, u} C]
+  [CategoryTheory.Preadditive C] {X Y : C} (f : X ⟶ Y) [CategoryTheory.Limits.HasKernel f] :
+  CategoryTheory.Mono f ↔ CategoryTheory.Limits.IsZero (CategoryTheory.Limits.kernel f)
+CategoryTheory.Preadditive.epi_iff_isZero_cokernel.{v, u} {C : Type u} [CategoryTheory.Category.{v, u} C]
+  [CategoryTheory.Preadditive C] {X Y : C} (f : X ⟶ Y) [CategoryTheory.Limits.HasCokernel f] :
+  CategoryTheory.Epi f ↔ CategoryTheory.Limits.IsZero (CategoryTheory.Limits.cokernel f)
+CategoryTheory.Preadditive.isLimitKernelForkOfFork.{v, u} {C : Type u} [CategoryTheory.Category.{v, u} C]
+  [CategoryTheory.Preadditive C] {X Y : C} {f g : X ⟶ Y} {c : CategoryTheory.Limits.Fork f g}
+  (i : CategoryTheory.Limits.IsLimit c) : CategoryTheory.Limits.IsLimit (CategoryTheory.Preadditive.kernelForkOfFork c)
+CategoryTheory.Preadditive.isColimitCokernelCoforkOfCofork.{v, u} {C : Type u} [CategoryTheory.Category.{v, u} C]
+  [CategoryTheory.Preadditive C] {X Y : C} {f g : X ⟶ Y} {c : CategoryTheory.Limits.Cofork f g}
+  (i : CategoryTheory.Limits.IsColimit c) :
+  CategoryTheory.Limits.IsColimit (CategoryTheory.Preadditive.cokernelCoforkOfCofork c)
+CategoryTheory.Preadditive.isLimitForkOfKernelFork.{v, u} {C : Type u} [CategoryTheory.Category.{v, u} C]
+  [CategoryTheory.Preadditive C] {X Y : C} {f g : X ⟶ Y} {c : CategoryTheory.Limits.KernelFork (f - g)}
+  (i : CategoryTheory.Limits.IsLimit c) : CategoryTheory.Limits.IsLimit (CategoryTheory.Preadditive.forkOfKernelFork c)
+CategoryTheory.Preadditive.isColimitCoforkOfCokernelCofork.{v, u} {C : Type u} [CategoryTheory.Category.{v, u} C]
+  [CategoryTheory.Preadditive C] {X Y : C} {f g : X ⟶ Y} {c : CategoryTheory.Limits.CokernelCofork (f - g)}
+  (i : CategoryTheory.Limits.IsColimit c) :
+  CategoryTheory.Limits.IsColimit (CategoryTheory.Preadditive.coforkOfCokernelCofork c)
+CategoryTheory.Limits.isBilimitOfTotal.{v, u, u_1} {C : Type u} [CategoryTheory.Category.{v, u} C]
+  [CategoryTheory.Preadditive C] {J : Type u_1} [Fintype J] {f : J → C} (b : CategoryTheory.Limits.Bicone f)
+  (total : ∑ j, CategoryTheory.CategoryStruct.comp (b.π j) (b.ι j) = CategoryTheory.CategoryStruct.id b.pt) :
+  b.IsBilimit
+CategoryTheory.Limits.biconeIsBilimitOfLimitConeOfIsLimit.{v, u, u_1} {C : Type u} [CategoryTheory.Category.{v, u} C]
+  [CategoryTheory.Preadditive C] {J : Type u_1} [Fintype J] {f : J → C}
+  {t : CategoryTheory.Limits.Cone (CategoryTheory.Discrete.functor f)} (ht : CategoryTheory.Limits.IsLimit t) :
+  (CategoryTheory.Limits.Bicone.ofLimitCone ht).IsBilimit
+CategoryTheory.Limits.biconeIsBilimitOfColimitCoconeOfIsColimit.{v, u, u_1} {C : Type u}
+  [CategoryTheory.Category.{v, u} C] [CategoryTheory.Preadditive C] {J : Type u_1} [Fintype J] {f : J → C}
+  {t : CategoryTheory.Limits.Cocone (CategoryTheory.Discrete.functor f)} (ht : CategoryTheory.Limits.IsColimit t) :
+  (CategoryTheory.Limits.Bicone.ofColimitCocone ht).IsBilimit
+CategoryTheory.Limits.IsBilimit.total.{v, u, u_1} {C : Type u} [CategoryTheory.Category.{v, u} C]
+  [CategoryTheory.Preadditive C] {J : Type u_1} [Fintype J] {f : J → C} {b : CategoryTheory.Limits.Bicone f}
+  (i : b.IsBilimit) : ∑ j, CategoryTheory.CategoryStruct.comp (b.π j) (b.ι j) = CategoryTheory.CategoryStruct.id b.pt
+MonoidAlgebra.ring.{u_1, u_4} {R : Type u_1} {M : Type u_4} [Ring R] [Monoid M] : Ring (MonoidAlgebra R M)
+MonoidAlgebra.algebra.{u_1, u_4, u_7} {R : Type u_1} {A : Type u_4} {M : Type u_7} [CommSemiring R] [Semiring A]
+  [Algebra R A] [Monoid M] : Algebra R (MonoidAlgebra A M)
+MonoidAlgebra.single_mul_single.{u_1, u_4} {R : Type u_1} {M : Type u_4} [Semiring R] [Mul M] (m₁ m₂ : M) (r₁ r₂ : R) :
+  MonoidAlgebra.single m₁ r₁ * MonoidAlgebra.single m₂ r₂ = MonoidAlgebra.single (m₁ * m₂) (r₁ * r₂)
+MonoidAlgebra.single_left_injective.{u_1, u_4} {R : Type u_1} {M : Type u_4} [Semiring R] {r : R} (hr : r ≠ 0) :
+  Function.Injective fun m => MonoidAlgebra.single m r
+MonoidAlgebra.single_right_injective.{u_1, u_4} {R : Type u_1} {M : Type u_4} [Semiring R] {m : M} :
+  Function.Injective (MonoidAlgebra.single m)
+MonoidAlgebra.commRing.{u_1, u_4} {R : Type u_1} {M : Type u_4} [CommRing R] [CommMonoid M] :
+  CommRing (MonoidAlgebra R M)
+MonoidAlgebra.mul_def.{u_1, u_4} {R : Type u_1} {M : Type u_4} [Semiring R] [Mul M] (x y : MonoidAlgebra R M) :
+  x * y = x.coeff.sum fun m₁ r₁ => y.coeff.sum fun m₂ r₂ => MonoidAlgebra.single (m₁ * m₂) (r₁ * r₂)
+MonoidAlgebra.one_def.{u_1, u_4} {R : Type u_1} {M : Type u_4} [Semiring R] [One M] : 1 = MonoidAlgebra.single 1 1
+ModuleCat.kernelIsLimit.{u, v} {R : Type u} [Ring R] {M N : ModuleCat R} (f : M ⟶ N) :
+  CategoryTheory.Limits.IsLimit (ModuleCat.kernelCone f)
+ModuleCat.cokernelIsColimit.{u, v} {R : Type u} [Ring R] {M N : ModuleCat R} (f : M ⟶ N) :
+  CategoryTheory.Limits.IsColimit (ModuleCat.cokernelCocone f)
+LinearMap.quotKerEquivRange.{u_1, u_2, u_3} {R : Type u_1} {M : Type u_2} {M₂ : Type u_3} [Ring R] [AddCommGroup M]
+  [AddCommGroup M₂] [Module R M] [Module R M₂] (f : M →ₗ[R] M₂) : (M ⧸ f.ker) ≃ₗ[R] ↥f.range
+ModuleCat.mono_iff_injective.{v, u} {R : Type u} [Ring R] {X Y : ModuleCat R} (f : X ⟶ Y) :
+  CategoryTheory.Mono f ↔ Function.Injective ⇑(CategoryTheory.ConcreteCategory.hom f)
+ModuleCat.epi_iff_surjective.{v, u} {R : Type u} [Ring R] {X Y : ModuleCat R} (f : X ⟶ Y) :
+  CategoryTheory.Epi f ↔ Function.Surjective ⇑(CategoryTheory.ConcreteCategory.hom f)
+LinearMap.quotKerEquivRange_apply_mk.{u_1, u_2, u_3} {R : Type u_1} {M : Type u_2} {M₂ : Type u_3} [Ring R]
+  [AddCommGroup M] [AddCommGroup M₂] [Module R M] [Module R M₂] (f : M →ₗ[R] M₂) (x : M) :
+  ↑(f.quotKerEquivRange (Submodule.Quotient.mk x)) = f x
+LinearMap.ringLmapEquivSelf.{u_1, u_4, u_5} (R : Type u_1) (S : Type u_4) (M : Type u_5) [Semiring R] [Semiring S]
+  [AddCommMonoid M] [Module R M] [Module S M] [SMulCommClass R S M] : (R →ₗ[R] M) ≃ₗ[S] M
+RingEquiv.moduleEndSelf.{u_1} (R : Type u_1) [Semiring R] : Rᵐᵒᵖ ≃+* Module.End R R
+ModuleCat.endRingEquiv.{v, u} {R : Type u} [Ring R] (M : ModuleCat R) : CategoryTheory.End M ≃+* (↑M →ₗ[R] ↑M)
+CategoryTheory.preadditiveCoyonedaObj.{v, u} {C : Type u} [CategoryTheory.Category.{v, u} C]
+  [CategoryTheory.Preadditive C] (X : C) : CategoryTheory.Functor C (ModuleCat (CategoryTheory.End X)ᵐᵒᵖ)
+CategoryTheory.preservesLimits_preadditiveCoyonedaObj.{v, u} {C : Type u} [CategoryTheory.Category.{v, u} C]
+  [CategoryTheory.Preadditive C] (X : C) :
+  CategoryTheory.Limits.PreservesLimits (CategoryTheory.preadditiveCoyonedaObj X)
+CategoryTheory.preservesFiniteColimits_preadditiveCoyonedaObj_of_projective.{v, u} {C : Type u}
+  [CategoryTheory.Category.{v, u} C] [CategoryTheory.Abelian C] (P : C) [hP : CategoryTheory.Projective P] :
+  CategoryTheory.Limits.PreservesFiniteColimits (CategoryTheory.preadditiveCoyonedaObj P)
+CategoryTheory.isSeparator_iff_faithful_preadditiveCoyonedaObj.{v, u} {C : Type u} [CategoryTheory.Category.{v, u} C]
+  [CategoryTheory.Preadditive C] (G : C) :
+  CategoryTheory.IsSeparator G ↔ (CategoryTheory.preadditiveCoyonedaObj G).Faithful
+DirectSum.toModule.{u, v, w, u₁} (R : Type u) [Semiring R] (ι : Type v) {M : ι → Type w} [(i : ι) → AddCommMonoid (M i)]
+  [(i : ι) → Module R (M i)] [DecidableEq ι] (N : Type u₁) [AddCommMonoid N] [Module R N] (φ : (i : ι) → M i →ₗ[R] N) :
+  (DirectSum ι fun i => M i) →ₗ[R] N
+DirectSum.toModule_lof.{u, v, w, u₁} (R : Type u) [Semiring R] {ι : Type v} {M : ι → Type w}
+  [(i : ι) → AddCommMonoid (M i)] [(i : ι) → Module R (M i)] [DecidableEq ι] {N : Type u₁} [AddCommMonoid N]
+  [Module R N] {φ : (i : ι) → M i →ₗ[R] N} (i : ι) (x : M i) :
+  (DirectSum.toModule R ι N φ) ((DirectSum.lof R ι M i) x) = (φ i) x
+CategoryTheory.Limits.isColimitMapCoconeCofanMkEquiv.{w, v₁, v₂, u₁, u₂} {C : Type u₁}
+  [CategoryTheory.Category.{v₁, u₁} C] {D : Type u₂} [CategoryTheory.Category.{v₂, u₂} D]
+  (G : CategoryTheory.Functor C D) {J : Type w} (f : J → C) {P : C} (g : (j : J) → f j ⟶ P) :
+  CategoryTheory.Limits.IsColimit (G.mapCocone (CategoryTheory.Limits.Cofan.mk P g)) ≃
+    CategoryTheory.Limits.IsColimit (CategoryTheory.Limits.Cofan.mk (G.obj P) fun j => G.map (g j))
+CategoryTheory.Limits.preservesColimit_of_preserves_colimit_cocone.{w', w, v₁, v₂, u₁, u₂} {C : Type u₁}
+  [CategoryTheory.Category.{v₁, u₁} C] {D : Type u₂} [CategoryTheory.Category.{v₂, u₂} D] {J : Type w}
+  [CategoryTheory.Category.{w', w} J] {K : CategoryTheory.Functor J C} {F : CategoryTheory.Functor C D}
+  {t : CategoryTheory.Limits.Cocone K} (h : CategoryTheory.Limits.IsColimit t)
+  (hF : CategoryTheory.Limits.IsColimit (F.mapCocone t)) : CategoryTheory.Limits.PreservesColimit K F
+CategoryTheory.IsSeparator.def.{v₁, u₁} {C : Type u₁} [CategoryTheory.Category.{v₁, u₁} C] {G : C} :
+  CategoryTheory.IsSeparator G →
+    ∀ ⦃X Y : C⦄ (f g : X ⟶ Y),
+      (∀ (h : G ⟶ X), CategoryTheory.CategoryStruct.comp h f = CategoryTheory.CategoryStruct.comp h g) → f = g
+CategoryTheory.Limits.CokernelCofork.isColimitOfIsColimitOfIff'.{v, u} {C : Type u} [CategoryTheory.Category.{v, u} C]
+  [CategoryTheory.Limits.HasZeroMorphisms C] {X Y : C} {f : X ⟶ Y} {c : CategoryTheory.Limits.CokernelCofork f}
+  (hc : CategoryTheory.Limits.IsColimit c) {X' : C} (f' : X' ⟶ Y)
+  (iff :
+    ∀ ⦃W : C⦄ (φ : Y ⟶ W), CategoryTheory.CategoryStruct.comp f φ = 0 ↔ CategoryTheory.CategoryStruct.comp f' φ = 0) :
+  CategoryTheory.Limits.IsColimit (CategoryTheory.Limits.CokernelCofork.ofπ (CategoryTheory.Limits.Cofork.π c) ⋯)
+CategoryTheory.Functor.preservesFiniteBiproductsOfAdditive.{v₁, v₂, u₁, u₂} {C : Type u₁} {D : Type u₂}
+  [CategoryTheory.Category.{v₁, u₁} C] [CategoryTheory.Category.{v₂, u₂} D] [CategoryTheory.Preadditive C]
+  [CategoryTheory.Preadditive D] (F : CategoryTheory.Functor C D) [F.Additive] :
+  CategoryTheory.Limits.PreservesFiniteBiproducts F
+CategoryTheory.Functor.additive_of_preserves_binary_products.{v₁, v₂, u₁, u₂} {C : Type u₁} {D : Type u₂}
+  [CategoryTheory.Category.{v₁, u₁} C] [CategoryTheory.Category.{v₂, u₂} D] [CategoryTheory.Preadditive C]
+  [CategoryTheory.Preadditive D] (F : CategoryTheory.Functor C D) [CategoryTheory.Limits.HasBinaryProducts C]
+  [CategoryTheory.Limits.PreservesLimitsOfShape (CategoryTheory.Discrete CategoryTheory.Limits.WalkingPair) F]
+  [F.PreservesZeroMorphisms] : F.Additive
+CategoryTheory.Functor.preservesZeroMorphisms_of_map_zero_object.{v₁, v₂, u₁, u₂} {C : Type u₁}
+  [CategoryTheory.Category.{v₁, u₁} C] {D : Type u₂} [CategoryTheory.Category.{v₂, u₂} D]
+  [CategoryTheory.Limits.HasZeroObject C] [CategoryTheory.Limits.HasZeroObject D]
+  [CategoryTheory.Limits.HasZeroMorphisms C] [CategoryTheory.Limits.HasZeroMorphisms D] {F : CategoryTheory.Functor C D}
+  (i : F.obj 0 ≅ 0) : F.PreservesZeroMorphisms
+Rep.equivalenceModuleMonoidAlgebra.{w, u, v} {k : Type u} {G : Type v} [CommRing k] [Monoid G] :
+  Rep k G ≌ ModuleCat (MonoidAlgebra k G)
+CategoryTheory.Preadditive.comp_sum.{v, u, u_1} {C : Type u} [CategoryTheory.Category.{v, u} C]
+  [CategoryTheory.Preadditive C] {P Q R : C} {J : Type u_1} (s : Finset J) (f : P ⟶ Q) (g : J → (Q ⟶ R)) :
+  CategoryTheory.CategoryStruct.comp f (∑ j ∈ s, g j) = ∑ j ∈ s, CategoryTheory.CategoryStruct.comp f (g j)
+CategoryTheory.Preadditive.sum_comp.{v, u, u_1} {C : Type u} [CategoryTheory.Category.{v, u} C]
+  [CategoryTheory.Preadditive C] {P Q R : C} {J : Type u_1} (s : Finset J) (f : J → (P ⟶ Q)) (g : Q ⟶ R) :
+  CategoryTheory.CategoryStruct.comp (∑ j ∈ s, f j) g = ∑ j ∈ s, CategoryTheory.CategoryStruct.comp (f j) g
+CategoryTheory.Preadditive.add_comp.{v, u} {C : Type u} {inst✝ : CategoryTheory.Category.{v, u} C}
+  [self : CategoryTheory.Preadditive C] (P Q R : C) (f f' : P ⟶ Q) (g : Q ⟶ R) :
+  CategoryTheory.CategoryStruct.comp (f + f') g =
+    CategoryTheory.CategoryStruct.comp f g + CategoryTheory.CategoryStruct.comp f' g
+CategoryTheory.Preadditive.comp_add.{v, u} {C : Type u} {inst✝ : CategoryTheory.Category.{v, u} C}
+  [self : CategoryTheory.Preadditive C] (P Q R : C) (f : P ⟶ Q) (g g' : Q ⟶ R) :
+  CategoryTheory.CategoryStruct.comp f (g + g') =
+    CategoryTheory.CategoryStruct.comp f g + CategoryTheory.CategoryStruct.comp f g'
+Finsupp.linearCombination.{u_1, u_2, u_3} {α : Type u_1} {M : Type u_2} (R : Type u_3) [Semiring R] [AddCommMonoid M]
+  [Module R M] (v : α → M) : (α →₀ R) →ₗ[R] M
+Finsupp.linearCombination_single.{u_1, u_2, u_3} {α : Type u_1} {M : Type u_2} (R : Type u_3) [Semiring R]
+  [AddCommMonoid M] [Module R M] {v : α → M} (c : R) (a : α) :
+  (Finsupp.linearCombination R v) (Finsupp.single a c) = c • v a
+Finsupp.lhom_ext.{u_1, u_2, u_3, u_5, u_6} {α : Type u_1} {M : Type u_2} {N : Type u_3} {R : Type u_5} {R₂ : Type u_6}
+  [Semiring R] [Semiring R₂] [AddCommMonoid M] [Module R M] [AddCommMonoid N] [Module R₂ N] {σ₁₂ : R →+* R₂}
+  ⦃φ ψ : (α →₀ M) →ₛₗ[σ₁₂] N⦄ (h : ∀ (a : α) (b : M), φ (Finsupp.single a b) = ψ (Finsupp.single a b)) : φ = ψ
+CategoryTheory.Adjunction.isEquivalencePreservesLimits.{v, u, v₁, v₂, u₁, u₂} {C : Type u₁}
+  [CategoryTheory.Category.{v₁, u₁} C] {D : Type u₂} [CategoryTheory.Category.{v₂, u₂} D]
+  (E : CategoryTheory.Functor D C) [E.IsEquivalence] :
+  CategoryTheory.Limits.PreservesLimitsOfSize.{v, u, v₂, v₁, u₂, u₁} E
+CategoryTheory.Adjunction.isEquivalence_preservesColimits.{v, u, v₁, v₂, u₁, u₂} {C : Type u₁}
+  [CategoryTheory.Category.{v₁, u₁} C] {D : Type u₂} [CategoryTheory.Category.{v₂, u₂} D]
+  (E : CategoryTheory.Functor C D) [E.IsEquivalence] :
+  CategoryTheory.Limits.PreservesColimitsOfSize.{v, u, v₁, v₂, u₁, u₂} E
+CategoryTheory.Functor.preservesProjectiveObjects_of_isEquivalence.{v₁, v₂, u₁, u₂} {C : Type u₁}
+  [CategoryTheory.Category.{v₁, u₁} C] {D : Type u₂} [CategoryTheory.Category.{v₂, u₂} D]
+  {F : CategoryTheory.Functor C D} [F.IsEquivalence] : F.PreservesProjectiveObjects
+CategoryTheory.IsSeparator.of_equivalence.{v₁, v₂, u₁, u₂} {C : Type u₁} [CategoryTheory.Category.{v₁, u₁} C]
+  {D : Type u₂} [CategoryTheory.Category.{v₂, u₂} D] {G : C} (h : CategoryTheory.IsSeparator G) (α : C ≌ D) :
+  CategoryTheory.IsSeparator (α.functor.obj G)
+CategoryTheory.Adjunction.hasColimitsOfShape_of_equivalence.{v, u, v₁, v₂, u₁, u₂} {C : Type u₁}
+  [CategoryTheory.Category.{v₁, u₁} C] {D : Type u₂} [CategoryTheory.Category.{v₂, u₂} D] {J : Type u}
+  [CategoryTheory.Category.{v, u} J] (E : CategoryTheory.Functor C D) [E.IsEquivalence]
+  [CategoryTheory.Limits.HasColimitsOfShape J D] : CategoryTheory.Limits.HasColimitsOfShape J C
+CategoryTheory.ShortComplex.Exact.map.{v_1, u_1, v_2, u_2} {C : Type u_1} {D : Type u_2}
+  [CategoryTheory.Category.{v_1, u_1} C] [CategoryTheory.Category.{v_2, u_2} D]
+  [CategoryTheory.Limits.HasZeroMorphisms C] [CategoryTheory.Limits.HasZeroMorphisms D]
+  {S : CategoryTheory.ShortComplex C} (h : S.Exact) (F : CategoryTheory.Functor C D) [F.PreservesZeroMorphisms]
+  [F.PreservesLeftHomologyOf S] [F.PreservesRightHomologyOf S] : (S.map F).Exact
+CategoryTheory.Limits.CokernelCofork.mapIsoOfIsColimit.{v, u} {C : Type u} [CategoryTheory.Category.{v, u} C]
+  [CategoryTheory.Limits.HasZeroMorphisms C] {X Y : C} {f : X ⟶ Y} {X' Y' : C} {f' : X' ⟶ Y'}
+  {cc : CategoryTheory.Limits.CokernelCofork f} {cc' : CategoryTheory.Limits.CokernelCofork f'}
+  (hf : CategoryTheory.Limits.IsColimit cc) (hf' : CategoryTheory.Limits.IsColimit cc')
+  (φ : CategoryTheory.Arrow.mk f ≅ CategoryTheory.Arrow.mk f') : cc.pt ≅ cc'.pt
+CategoryTheory.NatIso.ofComponents.{v₁, v₂, u₁, u₂} {C : Type u₁} [CategoryTheory.Category.{v₁, u₁} C] {D : Type u₂}
+  [CategoryTheory.Category.{v₂, u₂} D] {F G : CategoryTheory.Functor C D} (app : (X : C) → F.obj X ≅ G.obj X)
+  (naturality :
+    ∀ {X Y : C} (f : X ⟶ Y),
+      CategoryTheory.CategoryStruct.comp (F.map f) (app Y).hom =
+        CategoryTheory.CategoryStruct.comp (app X).hom (G.map f) := by
+    cat_disch) :
+  F ≅ G
+CategoryTheory.Functor.FullyFaithful.ofFullyFaithful.{v₁, v₂, u₁, u₂} {C : Type u₁} [CategoryTheory.Category.{v₁, u₁} C]
+  {D : Type u₂} [CategoryTheory.Category.{v₂, u₂} D] (F : CategoryTheory.Functor C D) [F.Full] [F.Faithful] :
+  F.FullyFaithful
+CategoryTheory.ShortComplex.moduleCat_exact_iff_range_eq_ker.{v, u} {R : Type u} [Ring R]
+  (S : CategoryTheory.ShortComplex (ModuleCat R)) :
+  S.Exact ↔ (ModuleCat.Hom.hom S.f).range = (ModuleCat.Hom.hom S.g).ker
+MonoidAlgebra.mapDomainRingHom.{u_3, u_6, u_7} (R : Type u_3) {M : Type u_6} {N : Type u_7} [Semiring R] [Monoid M]
+  [Monoid N] (f : M →* N) : MonoidAlgebra R M →+* MonoidAlgebra R N
+MonoidAlgebra.mapDomain_injective.{u_3, u_6, u_7} {R : Type u_3} {M : Type u_6} {N : Type u_7} [Semiring R] {f : M → N}
+  (hf : Function.Injective f) : Function.Injective (MonoidAlgebra.mapDomain f)
+ModuleCat.restrictScalars.{v, u₁, u₂} {R : Type u₁} {S : Type u₂} [Ring R] [Ring S] (f : R →+* S) :
+  CategoryTheory.Functor (ModuleCat S) (ModuleCat R)
+Finsupp.mapDomain_apply_of_injective.{u_1, u_2, u_5} {α : Type u_1} {β : Type u_2} {M : Type u_5} [AddCommMonoid M]
+  {f : α → β} (hf : Function.Injective f) (x : α →₀ M) (a : α) : (Finsupp.mapDomain f x) (f a) = x a
+Finsupp.mapDomain_of_notMem_range.{u_1, u_2, u_5} {α : Type u_1} {β : Type u_2} {M : Type u_5} [AddCommMonoid M]
+  {f : α → β} (x : α →₀ M) (a : β) (h : a ∉ Set.range f) : (Finsupp.mapDomain f x) a = 0
+Rep.ofModuleMonoidAlgebra_obj_ρ.{w, u, v} {k : Type u} {G : Type v} [CommRing k] [Monoid G]
+  (M : ModuleCat (MonoidAlgebra k G)) : (Rep.ofModuleMonoidAlgebra.obj M).ρ = Representation.ofModule ↑M
+CategoryTheory.Adjunction.mkOfHomEquiv.{v₁, v₂, u₁, u₂} {C : Type u₁} [CategoryTheory.Category.{v₁, u₁} C] {D : Type u₂}
+  [CategoryTheory.Category.{v₂, u₂} D] {F : CategoryTheory.Functor C D} {G : CategoryTheory.Functor D C}
+  (adj : CategoryTheory.Adjunction.CoreHomEquiv F G) : F ⊣ G
+CategoryTheory.NatTrans.hcomp.{v₁, v₂, v₃, u₁, u₂, u₃} {C : Type u₁} [CategoryTheory.Category.{v₁, u₁} C] {D : Type u₂}
+  [CategoryTheory.Category.{v₂, u₂} D] {E : Type u₃} [CategoryTheory.Category.{v₃, u₃} E]
+  {F G : CategoryTheory.Functor C D} {H I : CategoryTheory.Functor D E} (α : F ⟶ G) (β : H ⟶ I) : F.comp H ⟶ G.comp I
+CategoryTheory.Equivalence.mk.{v₁, v₂, u₁, u₂} {C : Type u₁} [CategoryTheory.Category.{v₁, u₁} C] {D : Type u₂}
+  [CategoryTheory.Category.{v₂, u₂} D] (F : CategoryTheory.Functor C D) (G : CategoryTheory.Functor D C)
+  (η : CategoryTheory.Functor.id C ≅ F.comp G) (ε : G.comp F ≅ CategoryTheory.Functor.id D) : C ≌ D
+CategoryTheory.Equivalence.congrLeft.{v₁, v₂, v₃, u₁, u₂, u₃} {C : Type u₁} [CategoryTheory.Category.{v₁, u₁} C]
+  {D : Type u₂} [CategoryTheory.Category.{v₂, u₂} D] {E : Type u₃} [CategoryTheory.Category.{v₃, u₃} E] (e : C ≌ D) :
+  CategoryTheory.Functor C E ≌ CategoryTheory.Functor D E
+CategoryTheory.Equivalence.congrRight.{v₁, v₂, v₃, u₁, u₂, u₃} {C : Type u₁} [CategoryTheory.Category.{v₁, u₁} C]
+  {D : Type u₂} [CategoryTheory.Category.{v₂, u₂} D] {E : Type u₃} [CategoryTheory.Category.{v₃, u₃} E] (e : C ≌ D) :
+  CategoryTheory.Functor E C ≌ CategoryTheory.Functor E D
+CategoryTheory.ObjectProperty.lift.{v, v', u, u'} {C : Type u} [CategoryTheory.Category.{v, u} C] {D : Type u'}
+  [CategoryTheory.Category.{v', u'} D] (P : CategoryTheory.ObjectProperty D) (F : CategoryTheory.Functor C D)
+  (hF : ∀ (X : C), P (F.obj X)) : CategoryTheory.Functor C P.FullSubcategory
+CategoryTheory.Functor.preservesFiniteColimits_of_preservesCokernels.{v₁, v₂, u₁, u₂} {C : Type u₁}
+  [CategoryTheory.Category.{v₁, u₁} C] [CategoryTheory.Preadditive C] {D : Type u₂} [CategoryTheory.Category.{v₂, u₂} D]
+  [CategoryTheory.Preadditive D] (F : CategoryTheory.Functor C D) [F.PreservesZeroMorphisms]
+  [CategoryTheory.Limits.HasBinaryBiproducts C] [CategoryTheory.Limits.HasFiniteCoproducts C]
+  [CategoryTheory.Limits.HasCoequalizers C] [CategoryTheory.Limits.HasZeroObject C]
+  [CategoryTheory.Limits.HasZeroObject D]
+  [∀ {X Y : C} (f : X ⟶ Y), CategoryTheory.Limits.PreservesColimit (CategoryTheory.Limits.parallelPair f 0) F] :
+  CategoryTheory.Limits.PreservesFiniteColimits F
+CategoryTheory.Limits.isColimitMapCoconeCoforkEquiv'.{v₁, v₂, u₁, u₂} {C : Type u₁} [CategoryTheory.Category.{v₁, u₁} C]
+  [CategoryTheory.Limits.HasZeroMorphisms C] {D : Type u₂} [CategoryTheory.Category.{v₂, u₂} D]
+  [CategoryTheory.Limits.HasZeroMorphisms D] (G : CategoryTheory.Functor C D) [G.PreservesZeroMorphisms] {X Y Z : C}
+  {f : X ⟶ Y} {h : Y ⟶ Z} (w : CategoryTheory.CategoryStruct.comp f h = 0) :
+  CategoryTheory.Limits.IsColimit (G.mapCocone (CategoryTheory.Limits.CokernelCofork.ofπ h w)) ≃
+    CategoryTheory.Limits.IsColimit (CategoryTheory.Limits.CokernelCofork.ofπ (G.map h) ⋯)

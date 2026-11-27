@@ -1,0 +1,10 @@
+name = "mackey_notes_prerequisites"
+version = "0.1.0"
+defaultTargets = ["NotesProofs"]
+
+[[require]]
+name = "formal_proofs"
+path = ".."
+
+[[lean_lib]]
+name = "NotesProofs"

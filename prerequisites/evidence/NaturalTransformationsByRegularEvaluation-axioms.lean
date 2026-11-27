@@ -1,0 +1,2 @@
+import NotesProofs.NaturalTransformationsByRegularEvaluation
+#print axioms NaturalTransformationsByRegularEvaluation

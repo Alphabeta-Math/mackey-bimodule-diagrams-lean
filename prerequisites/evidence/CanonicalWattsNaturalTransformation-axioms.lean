@@ -1,0 +1,2 @@
+import NotesProofs.CanonicalWattsNaturalTransformation
+#print axioms CanonicalWattsNaturalTransformation

@@ -1,0 +1,23 @@
+{
+  "source_files_sha256": {
+    "NotesProofs/WattsSupport.lean": "853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+    "NotesProofs/BalancedCokernelDescent.lean": "c0ff0f7ab3122138f1a22d71c1569dc66f701f97f30a7a31f5d2420f5fc6b575",
+    "NotesProofs/NoncommutativeTensorCokernel.lean": "955f183f9c74fba2f92df9d593999a34001424800700b8d0ae9e6da0f5cba473",
+    "NotesProofs/ConcreteTensorUniversal.lean": "aecf1d070575a22dccee927ed65226b0011a4c1ed3badbb40a9c0c6a52ce1660"
+  },
+  "build_command": "lake build NotesProofs.ConcreteTensorUniversal",
+  "build_log": "evidence/concrete-tensor-universal-build.log",
+  "results": {
+    "NotesProofs.concretePure_isBalancedTensor": [
+      "propext",
+      "Quot.sound"
+    ],
+    "NotesProofs.concrete_tensor_preserves_cokernel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "provenance": "WattsSupport.lean is an exact copy of the original project evidence/agent-work/proof-main-7dfc1fea-1520-4335-a085-5fc097084b87/Support.lean, with its original imports and proof attribution. Other modules supply checked bridges and a direct universal-property proof.",
+  "limits": "Exact-presentation formulation for arbitrary rings and a bimodule with commuting left and right actions; all modules and target modules are in one fixed Lean universe. The statement uses the free-additive-group quotient tensor model. A reviewed equivalence or adapter may be needed for the notes translation or the original paper\u2019s specific quotient model and universe conventions; this source is not yet registered as an accepted workflow endpoint."
+}

@@ -1,0 +1,21 @@
+CategoryTheory.Limits.PreservesFiniteColimits.{v₁, v₂, u₁, u₂} {C : Type u₁} [Category.{v₁, u₁} C] {D : Type u₂}
+  [Category.{v₂, u₂} D] (F : C ⥤ D) : Prop
+CategoryTheory.Limits.PreservesColimitsOfShape.{w', w, v₁, v₂, u₁, u₂} {C : Type u₁} [Category.{v₁, u₁} C] {D : Type u₂}
+  [Category.{v₂, u₂} D] (J : Type w) [Category.{w', w} J] (F : C ⥤ D) : Prop
+CategoryTheory.Discrete.{u₁} (α : Type u₁) : Type u₁
+CategoryTheory.ObjectProperty.homMk.{v, u} {C : Type u} [Category.{v, u} C] {P : ObjectProperty C}
+  {X Y : P.FullSubcategory} (f : X.obj ⟶ Y.obj) : X ⟶ Y
+NotesProofs.mathlibFiniteColimits_of_watts.{u} {A B : Type u} [Ring A] [Ring B] (F : ModuleCat A ⥤ ModuleCat B)
+  [F.Additive] (h : NotesProofs.WattsPreservesCokernels F) : PreservesFiniteColimits F
+NotesProofs.mathlibCoproducts_of_watts.{u} {A B : Type u} [Ring A] [Ring B] (F : ModuleCat A ⥤ ModuleCat B) [F.Additive]
+  (h : NotesProofs.WattsPreservesCoproducts F) (I : Type u) : PreservesColimitsOfShape (Discrete I) F
+NotesProofs.General.ConcreteBimodule.eilenbergWattsCanonical.{u, v} (R S : Type u) [Ring R] [Ring S] :
+  NotesProofs.General.ConcreteBimodule R S ≌ NotesProofs.General.ConcreteBimodule.GoodFunctors R S
+NotesProofs.tensorNatEvaluation_complete.{u} {R S : Type u} [Ring R] [Ring S] {M N : Type u} [AddCommGroup M]
+  [Module Rᵐᵒᵖ M] [Module S M] [SMulCommClass Rᵐᵒᵖ S M] [AddCommGroup N] [Module Rᵐᵒᵖ N] [Module S N]
+  [SMulCommClass Rᵐᵒᵖ S N] (τ : NotesProofs.concreteTensorFunctor M ⟶ NotesProofs.concreteTensorFunctor N) :
+  NotesProofs.tensorBimoduleMapNatTrans (NotesProofs.tensorNatEvaluationMap τ) = τ
+NotesProofs.tensorNatEvaluation_induced.{u} {R S : Type u} [Ring R] [Ring S] {M N : Type u} [AddCommGroup M]
+  [Module Rᵐᵒᵖ M] [Module S M] [SMulCommClass Rᵐᵒᵖ S M] [AddCommGroup N] [Module Rᵐᵒᵖ N] [Module S N]
+  [SMulCommClass Rᵐᵒᵖ S N] (f : NotesProofs.BimoduleMap) :
+  NotesProofs.tensorNatEvaluationMap (NotesProofs.tensorBimoduleMapNatTrans f) = f

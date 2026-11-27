@@ -1,0 +1,34 @@
+{
+  "source_sha256": "95cd8fee1e43d4d4eb27dff04dcb44f385f9ce402c8abfd7e5215bf8dd9ea3da",
+  "commands": [
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "-o",
+      ".lake/build/lib/lean/NotesProofs/ModuleKernelsCokernelsAndImages.olean",
+      "NotesProofs/ModuleKernelsCokernelsAndImages.lean"
+    ],
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "evidence/ModuleKernelsCokernelsAndImages-axioms.lean"
+    ]
+  ],
+  "build": {
+    "code": 0,
+    "output": ""
+  },
+  "axioms": {
+    "code": 0,
+    "output": "'ModuleKernelsCokernelsAndImages' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "ok": true,
+  "workspace_sha256": "9d1810ef9d904e18d8d9d05a543347df5b6e2e6ba4135f1aa12479dd4ba81c14",
+  "olean_sha256": "ee89cf061df707d312851261d71dd7a64ec1ac9cf35894d393a11c013356401d"
+}

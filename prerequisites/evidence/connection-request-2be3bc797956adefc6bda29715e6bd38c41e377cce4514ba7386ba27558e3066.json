@@ -1,0 +1,11 @@
+{
+  "accepted": true,
+  "request": {
+    "endpoint": "d164fcd3a923fbe100f337856ecb2cbf1cb42d513fc31df142c22d7c51ba771f",
+    "decision": {
+      "id": "NaturalTransformationsByRegularEvaluation",
+      "reason": "The exact reviewed statement and this proof were independently Lean-compiled and axiom-audited; see evidence/reviewed-watts-morphisms-connection-build.log and the corresponding NotesProofs/ReviewedWatts source. The controller must still verify every planned prerequisite and audit before granting proof credit.",
+      "proof": "by\n  intro R S _ _\n  constructor\n  · intro F G _ _ hFc hFp hGc hGp\n    letI : PreservesFiniteColimits F := NotesProofs.mathlibFiniteColimits_of_watts F hFc\n    letI : ∀ I : Type u, PreservesColimitsOfShape (Discrete I) F := NotesProofs.mathlibCoproducts_of_watts F hFp\n    letI : PreservesFiniteColimits G := NotesProofs.mathlibFiniteColimits_of_watts G hGc\n    letI : ∀ I : Type u, PreservesColimitsOfShape (Discrete I) G := NotesProofs.mathlibCoproducts_of_watts G hGp\n    let FF : NotesProofs.General.ConcreteBimodule.GoodFunctors.{u,u} R S := ⟨F, ⟨inferInstance, inferInstance, inferInstance⟩⟩\n    let GG : NotesProofs.General.ConcreteBimodule.GoodFunctors.{u,u} R S := ⟨G, ⟨inferInstance, inferInstance, inferInstance⟩⟩\n    let E := NotesProofs.General.ConcreteBimodule.eilenbergWattsCanonical.{u,u} R S\n    let lift : (F ⟶ G) ≃ (FF ⟶ GG) :=\n      ⟨fun η => (ObjectProperty.homMk η : FF ⟶ GG), fun η => η.hom, fun _ => rfl, fun η => by cases η; rfl⟩\n    let e := lift.trans (E.fullyFaithfulInverse.homEquiv (X := FF) (Y := GG))\n    refine ⟨e, ?_⟩\n    intro η\n    rfl\n  · intro B D _ _ _ _ _ _ _ _ TB TD η\n    refine ⟨NotesProofs.tensorNatEvaluationMap η, ?_, ?_⟩\n    · exact (NotesProofs.tensorNatEvaluation_complete η).symm\n    · intro β hβ\n      have h := congrArg NotesProofs.tensorNatEvaluationMap hβ.symm\n      simpa only [NotesProofs.tensorNatEvaluation_induced] using h\n"
+    }
+  }
+}

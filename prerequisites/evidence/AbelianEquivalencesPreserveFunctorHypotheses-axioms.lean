@@ -1,0 +1,2 @@
+import NotesProofs.AbelianEquivalencesPreserveFunctorHypotheses
+#print axioms AbelianEquivalencesPreserveFunctorHypotheses

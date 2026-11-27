@@ -1,0 +1,182 @@
+⚠ [1668/1824] Replayed MackeyDiagrams.Embedding
+warning: MackeyDiagrams/Embedding.lean: imports `Mathlib.GroupTheory.Subgroup.Centralizer` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Embedding.lean: imports `Mathlib.Tactic.Group` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [1669/1824] Ran MackeyDiagrams.Embedding:irArts
+warning: MackeyDiagrams/Embedding.lean: imports `Mathlib.GroupTheory.Subgroup.Centralizer` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Embedding.lean: imports `Mathlib.Tactic.Group` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2384/2418] Replayed MackeyDiagrams.Linear
+warning: MackeyDiagrams/Linear.lean: imports `Mathlib.LinearAlgebra.BilinearMap` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Linear.lean: imports `Mathlib.LinearAlgebra.Finsupp.LSum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Linear.lean: imports `Mathlib.LinearAlgebra.Span.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2385/2418] Ran MackeyDiagrams.Linear:irArts
+warning: MackeyDiagrams/Linear.lean: imports `Mathlib.LinearAlgebra.BilinearMap` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Linear.lean: imports `Mathlib.LinearAlgebra.Finsupp.LSum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Linear.lean: imports `Mathlib.LinearAlgebra.Span.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2440/3012] Replayed MackeyDiagrams.Dot
+warning: MackeyDiagrams/Dot.lean: imports `Mathlib.Algebra.MonoidAlgebra.Module` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2441/3012] Ran MackeyDiagrams.Dot:irArts
+warning: MackeyDiagrams/Dot.lean: imports `Mathlib.Algebra.MonoidAlgebra.Module` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2444/3012] Replayed MackeyDiagrams.Trace
+warning: MackeyDiagrams/Trace.lean:27:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: MackeyDiagrams/Trace.lean:33:6: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [2576/3012] Replayed MackeyDiagrams.Transfer
+warning: MackeyDiagrams/Transfer.lean: imports `Mathlib.GroupTheory.Index` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Transfer.lean:136:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: MackeyDiagrams/Transfer.lean:137:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: MackeyDiagrams/Transfer.lean:139:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [2577/3012] Ran MackeyDiagrams.Transfer:irArts
+warning: MackeyDiagrams/Transfer.lean: imports `Mathlib.GroupTheory.Index` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2594/3012] Replayed MackeyDiagrams.CupCapIdentities
+warning: MackeyDiagrams/CupCapIdentities.lean: imports `Mathlib.Data.Set.Card` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2595/3012] Ran MackeyDiagrams.CupCapIdentities:irArts
+warning: MackeyDiagrams/CupCapIdentities.lean: imports `Mathlib.Data.Set.Card` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2606/3012] Replayed MackeyDiagrams.ScopedCupFinite
+warning: MackeyDiagrams/ScopedCupFinite.lean:26:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [2618/3012] Replayed MackeyDiagrams.DotSlideObstruction
+warning: MackeyDiagrams/DotSlideObstruction.lean: imports `Mathlib.GroupTheory.Perm.Support` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/DotSlideObstruction.lean: imports `Mathlib.GroupTheory.GroupAction.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2619/3012] Ran MackeyDiagrams.DotSlideObstruction:irArts
+warning: MackeyDiagrams/DotSlideObstruction.lean: imports `Mathlib.GroupTheory.Perm.Support` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/DotSlideObstruction.lean: imports `Mathlib.GroupTheory.GroupAction.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2624/3012] Replayed MackeyDiagrams.ProjectionFiber
+warning: MackeyDiagrams/ProjectionFiber.lean:45:2: Unused tactic linter: `change
+  (Diagram.mixedProjectionTail (R := R) a b l r d).eval.toLinearMap (Finsupp.single _ 1) = _` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: MackeyDiagrams/ProjectionFiber.lean:61:2: Unused tactic linter: `change
+  (Diagram.mixedProjectionTail (R := R) a b l r d).eval.toLinearMap (Finsupp.single _ 1) = _` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: MackeyDiagrams/ProjectionFiber.lean:149:2: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp at hv
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [2702/3012] Replayed MackeyDiagrams.RightCurlLabels
+warning: MackeyDiagrams/RightCurlLabels.lean: imports `Mathlib.Algebra.MonoidAlgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2703/3012] Ran MackeyDiagrams.RightCurlLabels:irArts
+warning: MackeyDiagrams/RightCurlLabels.lean: imports `Mathlib.Algebra.MonoidAlgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2712/3012] Replayed MackeyDiagrams.ParallelComposition
+warning: MackeyDiagrams/ParallelComposition.lean: imports `Mathlib.Algebra.MonoidAlgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2713/3012] Ran MackeyDiagrams.ParallelComposition:irArts
+warning: MackeyDiagrams/ParallelComposition.lean: imports `Mathlib.Algebra.MonoidAlgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2718/3012] Replayed MackeyDiagrams.MackeyOrthogonality
+warning: MackeyDiagrams/MackeyOrthogonality.lean:104:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: MackeyDiagrams/MackeyOrthogonality.lean:111:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: MackeyDiagrams/MackeyOrthogonality.lean:118:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [2792/3012] Replayed MackeyDiagrams.MackeyDirectSum
+warning: MackeyDiagrams/MackeyDirectSum.lean: imports `Mathlib.LinearAlgebra.DFinsupp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2793/3012] Ran MackeyDiagrams.MackeyDirectSum:irArts
+warning: MackeyDiagrams/MackeyDirectSum.lean: imports `Mathlib.LinearAlgebra.DFinsupp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2802/3012] Replayed MackeyDiagrams.PointwiseIndexedDrawing
+warning: MackeyDiagrams/PointwiseIndexedDrawing.lean: imports `Mathlib.Algebra.BigOperators.Finprod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2803/3012] Ran MackeyDiagrams.PointwiseIndexedDrawing:irArts
+warning: MackeyDiagrams/PointwiseIndexedDrawing.lean: imports `Mathlib.Algebra.BigOperators.Finprod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2814/3012] Replayed MackeyDiagrams.DiagramVectorSpace
+warning: MackeyDiagrams/DiagramVectorSpace.lean: imports `Mathlib.LinearAlgebra.Isomorphisms` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2815/3012] Ran MackeyDiagrams.DiagramVectorSpace:irArts
+warning: MackeyDiagrams/DiagramVectorSpace.lean: imports `Mathlib.LinearAlgebra.Isomorphisms` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2846/3012] Replayed MackeyDiagrams.DiagramAlgebra
+warning: MackeyDiagrams/DiagramAlgebra.lean: imports `Mathlib.Algebra.Algebra.Subalgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/DiagramAlgebra.lean: imports `Mathlib.Algebra.Algebra.TransferInstance` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2847/3012] Ran MackeyDiagrams.DiagramAlgebra:irArts
+warning: MackeyDiagrams/DiagramAlgebra.lean: imports `Mathlib.Algebra.Algebra.Subalgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/DiagramAlgebra.lean: imports `Mathlib.Algebra.Algebra.TransferInstance` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2906/3012] Replayed MackeyDiagrams.BlockAlgebra
+warning: MackeyDiagrams/BlockAlgebra.lean: imports `Mathlib.Algebra.FreeAlgebra` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/BlockAlgebra.lean: imports `Mathlib.RingTheory.Congruence.Hom` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2907/3012] Ran MackeyDiagrams.BlockAlgebra:irArts
+warning: MackeyDiagrams/BlockAlgebra.lean: imports `Mathlib.Algebra.FreeAlgebra` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/BlockAlgebra.lean: imports `Mathlib.RingTheory.Congruence.Hom` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3227/3538] Replayed Proofs.Bimodule
+warning: Proofs/Bimodule.lean: imports `Mathlib.Algebra.Module.Opposite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3228/3538] Ran Proofs.Bimodule:irArts
+warning: Proofs/Bimodule.lean: imports `Mathlib.Algebra.Module.Opposite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3229/3538] Replayed Proofs.RegularModuleRightAction
+warning: Proofs/RegularModuleRightAction.lean: imports `Mathlib.Algebra.Category.ModuleCat.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3230/3538] Ran Proofs.RegularModuleRightAction:irArts
+warning: Proofs/RegularModuleRightAction.lean: imports `Mathlib.Algebra.Category.ModuleCat.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3531/3538] Replayed NotesProofs.WattsSupport
+warning: NotesProofs/WattsSupport.lean: imports `Mathlib.Algebra.Category.ModuleCat.Ulift` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/WattsSupport.lean: imports `Mathlib.GroupTheory.FreeGroup.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: NotesProofs/WattsSupport.lean:762:0: 'ChoiceFreeWatts.comparison' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:763:0: 'ChoiceFreeWatts.comparison_regular_left' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:764:0: 'ChoiceFreeWatts.comparison_regular_right' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:766:0: 'ChoiceFreeWatts.tau' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:768:0: 'ChoiceFreeWatts.tensorFunctor' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:769:0: 'ChoiceFreeWatts.comparison_naturality' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:770:0: 'ChoiceFreeWatts.liftedF' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:772:0: 'ChoiceFreeWatts.sumLift' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:774:0: 'ChoiceFreeWatts.freeCoproduct' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:775:0: 'ChoiceFreeWatts.cover_cokernel' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:776:0: 'ChoiceFreeWatts.relations_zero' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:778:0: 'ChoiceFreeWatts.rightCommute' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:780:0: 'ChoiceFreeWatts.comparison_surjective' depends on axioms: [propext, Quot.sound]
+⚠ [3532/3538] Ran NotesProofs.WattsSupport:irArts
+warning: NotesProofs/WattsSupport.lean: imports `Mathlib.Algebra.Category.ModuleCat.Ulift` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/WattsSupport.lean: imports `Mathlib.GroupTheory.FreeGroup.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3533/3538] Replayed NotesProofs.BalancedCokernelDescent
+warning: NotesProofs/BalancedCokernelDescent.lean: imports `Mathlib.Algebra.Module.LinearMap.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/BalancedCokernelDescent.lean: imports `Mathlib.Algebra.Module.Opposite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/BalancedCokernelDescent.lean:73:0: automatically included section variable(s) unused in theorem `NotesProofs.balanced_cokernel_descent_outer_linear`:
+  [Module Rᵐᵒᵖ M]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Module Rᵐᵒᵖ M] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: NotesProofs/BalancedCokernelDescent.lean:84:0: 'NotesProofs.balanced_cokernel_descent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/BalancedCokernelDescent.lean:85:0: 'NotesProofs.balanced_cokernel_descent_outer_linear' depends on axioms: [propext, Quot.sound]
+⚠ [3534/3538] Ran NotesProofs.BalancedCokernelDescent:irArts
+warning: NotesProofs/BalancedCokernelDescent.lean: imports `Mathlib.Algebra.Module.LinearMap.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/BalancedCokernelDescent.lean: imports `Mathlib.Algebra.Module.Opposite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [3535/3538] Replayed NotesProofs.NoncommutativeTensorCokernel
+info: NotesProofs/NoncommutativeTensorCokernel.lean:116:0: 'NotesProofs.balanced_tensor_cokernel_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/NoncommutativeTensorCokernel.lean:117:0: 'NotesProofs.balanced_tensor_preserves_cokernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3537/3538] Built NotesProofs.ConcreteTensorUniversal (1.4s)
+info: NotesProofs/ConcreteTensorUniversal.lean:108:0: 'NotesProofs.concretePure_isBalancedTensor' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/ConcreteTensorUniversal.lean:109:0: 'NotesProofs.concrete_tensor_preserves_cokernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3538 jobs).

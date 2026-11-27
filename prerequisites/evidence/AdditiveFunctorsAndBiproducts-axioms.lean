@@ -1,0 +1,2 @@
+import NotesProofs.AdditiveFunctorsAndBiproducts
+#print axioms AdditiveFunctorsAndBiproducts

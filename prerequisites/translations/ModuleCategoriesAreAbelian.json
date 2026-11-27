@@ -1,0 +1,9 @@
+{
+  "type": "∀ (R : Type u) [Ring R], CategoryTheory.LocallySmall.{v} (ModuleCat.{v} R) ∧ Nonempty (CategoryTheory.Abelian (ModuleCat.{v} R))",
+  "value": null,
+  "source": "article",
+  "sourceReason": "The cached TeX and PDF agree on Theorem 5.6 (env-5-6, p. 16). The translation covers all associative unital rings, including the zero ring, and unital left modules. Local smallness is stated at the module-carrier universe. https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=16\n\nThe configured defect report returned HTTP 404 with and without a trailing slash. The supplied context contains no correction for this endpoint. https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf/prerequisite-omissions-and-potential-defects\n\nThe owner request confirms the article's ordinary-choice convention. The shared-slot Lean check used CategoryTheory.locallySmall_self and ModuleCat.abelian and reported only propext, Classical.choice, and Quot.sound.",
+  "artifacts": [
+    "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-92b6a5e3-7dd7-4466-b7e9-73010d85ffc0/Check.lean"
+  ]
+}

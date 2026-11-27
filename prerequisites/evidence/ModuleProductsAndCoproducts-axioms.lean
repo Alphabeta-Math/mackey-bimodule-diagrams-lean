@@ -1,0 +1,2 @@
+import NotesProofs.ModuleProductsAndCoproducts
+#print axioms ModuleProductsAndCoproducts

@@ -1,0 +1,2 @@
+import NotesProofs.CategoricalBimoduleDictionary
+#print axioms CategoricalBimoduleDictionary

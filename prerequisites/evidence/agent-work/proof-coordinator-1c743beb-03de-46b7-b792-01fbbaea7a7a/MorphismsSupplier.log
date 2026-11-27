@@ -1,0 +1,17 @@
+ReviewedWattsMorphismsConnection : ∀ (R S : Type u) [inst : Ring R] [inst_1 : Ring S],
+  (∀ (F G : CategoryTheory.Functor (ModuleCat R) (ModuleCat S)) [inst_2 : F.Additive] [inst_3 : G.Additive],
+      NotesProofs.WattsPreservesCokernels F →
+        NotesProofs.WattsPreservesCoproducts F →
+          NotesProofs.WattsPreservesCokernels G →
+            NotesProofs.WattsPreservesCoproducts G →
+              let A := ChoiceFreeWatts.regular R;
+              let B₀ := F.obj A;
+              let D₀ := G.obj A;
+              ∃ e, ∀ (η : CategoryTheory.NatTrans F G), ↑(e.toFun η) = ModuleCat.Hom.hom (η.app A)) ∧
+    ∀ (B D : Type u) [inst_2 : AddCommGroup B] [inst_3 : AddCommGroup D] [inst_4 : Module S B] [inst_5 : Module S D]
+      [inst_6 : Module Rᵐᵒᵖ B] [inst_7 : Module Rᵐᵒᵖ D] [inst_8 : SMulCommClass Rᵐᵒᵖ S B]
+      [inst_9 : SMulCommClass Rᵐᵒᵖ S D],
+      let TB := NotesProofs.concreteTensorFunctor B;
+      let TD := NotesProofs.concreteTensorFunctor D;
+      ∀ (η : CategoryTheory.NatTrans TB TD), ∃! β, η = NotesProofs.tensorBimoduleMapNatTrans β
+'ReviewedWattsMorphismsConnection' depends on axioms: [propext, Classical.choice, Quot.sound]

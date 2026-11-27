@@ -1,0 +1,21 @@
+{
+  "source_files_sha256": {
+    "NotesProofs/PresentationFiveLemma.lean": "0fa6c9cab436e9073ac87695ccfda4173bee77fd6b607d1e30c9fcf87fc3b463",
+    "NotesProofs/CokernelExact.lean": "9a78671e4b87b085d1a3c4685fb0c7b8a455ee9099fc9b8612b8e28d43ae63d9",
+    "NotesProofs/PresentationCokernel.lean": "e747d402a9f71e96becf542bc4c2577e72ee408be65c6136bef0aad789732722"
+  },
+  "declarations": [
+    "NotesProofs.presentation_comparison_bijective",
+    "NotesProofs.cokernel_universal_exact",
+    "NotesProofs.epi_universal_surjective",
+    "NotesProofs.presentation_comparison_of_cokernel",
+    "NotesProofs.presentation_comparison_of_cokernels"
+  ],
+  "build_command": "lake build NotesProofs.PresentationCokernel",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "limits": "Generic same-universe module-presentation and cokernel comparison lemmas. Applying them to Eilenberg\u2013Watts requires verifying the comparison naturality and the hypotheses for both actual presentations. They do not settle the old choice-free, mixed-universe endpoint."
+}

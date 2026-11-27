@@ -1,0 +1,8 @@
+⚠ [2446/2447] Built NotesProofs.CokernelExact (864ms)
+warning: NotesProofs/CokernelExact.lean: imports `Mathlib.LinearAlgebra.Quotient.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: NotesProofs/CokernelExact.lean:59:0: 'NotesProofs.cokernel_factorization_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/CokernelExact.lean:60:0: 'NotesProofs.cokernel_universal_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/CokernelExact.lean:61:0: 'NotesProofs.epi_universal_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2447/2447] Ran NotesProofs.CokernelExact:irArts
+warning: NotesProofs/CokernelExact.lean: imports `Mathlib.LinearAlgebra.Quotient.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+Build completed successfully (2447 jobs).

@@ -1,0 +1,2 @@
+import NotesProofs.TensorPreservesCokernels
+#print axioms TensorPreservesCokernels

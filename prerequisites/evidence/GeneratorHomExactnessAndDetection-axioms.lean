@@ -1,0 +1,2 @@
+import NotesProofs.GeneratorHomExactnessAndDetection
+#print axioms GeneratorHomExactnessAndDetection

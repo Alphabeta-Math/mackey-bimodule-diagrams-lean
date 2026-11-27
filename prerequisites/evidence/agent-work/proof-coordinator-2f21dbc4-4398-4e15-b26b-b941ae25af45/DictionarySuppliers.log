@@ -1,0 +1,85 @@
+Equivalence.mk.{u} {α : Sort u} {r : α → α → Prop} (refl : ∀ (x : α), r x x) (symm : ∀ {x y : α}, r x y → r y x)
+  (trans : ∀ {x y z : α}, r x y → r y z → r x z) : _root_.Equivalence r
+Equivalence.trans.{u} {α : Sort u} {r : α → α → Prop} (self : _root_.Equivalence r) {x y z : α} : r x y → r y z → r x z
+CategoryTheory.ObjectProperty.lift.{v, v', u, u'} {C : Type u} [Category.{v, u} C] {D : Type u'} [Category.{v', u'} D]
+  (P : ObjectProperty D) (F : C ⥤ D) (hF : ∀ (X : C), P (F.obj X)) : C ⥤ P.FullSubcategory
+CategoryTheory.ObjectProperty.isoMk.{v, u} {C : Type u} [Category.{v, u} C] (P : ObjectProperty C)
+  {X Y : P.FullSubcategory} (e : X.obj ≅ Y.obj) : X ≅ Y
+CategoryTheory.ObjectProperty.hom_ext.{v, u} {C : Type u} [Category.{v, u} C] (P : ObjectProperty C)
+  {X Y : P.FullSubcategory} {f g : X ⟶ Y} (h : f.hom = g.hom) : f = g
+CategoryTheory.ObjectProperty.fullyFaithfulι.{v, u} {C : Type u} [Category.{v, u} C] (P : ObjectProperty C) :
+  P.ι.FullyFaithful
+CategoryTheory.Functor.FullyFaithful.preimageIso.{v₁, v₂, u₁, u₂} {C : Type u₁} [Category.{v₁, u₁} C] {D : Type u₂}
+  [Category.{v₂, u₂} D] {F : C ⥤ D} (hF : F.FullyFaithful) {X Y : C} (e : F.obj X ≅ F.obj Y) : X ≅ Y
+CategoryTheory.NatIso.ofComponents.{v₁, v₂, u₁, u₂} {C : Type u₁} [Category.{v₁, u₁} C] {D : Type u₂}
+  [Category.{v₂, u₂} D] {F G : C ⥤ D} (app : (X : C) → F.obj X ≅ G.obj X)
+  (naturality : ∀ {X Y : C} (f : X ⟶ Y), F.map f ≫ (app Y).hom = (app X).hom ≫ G.map f := by cat_disch) : F ≅ G
+CategoryTheory.Limits.diagramIsoParallelPair.{v, u} {C : Type u} [Category.{v, u} C] (F : WalkingParallelPair ⥤ C) :
+  F ≅ parallelPair (F.map WalkingParallelPairHom.left) (F.map WalkingParallelPairHom.right)
+CategoryTheory.Limits.preservesColimit_of_iso_diagram.{w', w, v₁, v₂, u₁, u₂} {C : Type u₁} [Category.{v₁, u₁} C]
+  {D : Type u₂} [Category.{v₂, u₂} D] {J : Type w} [Category.{w', w} J] {K₁ K₂ : J ⥤ C} (F : C ⥤ D) (h : K₁ ≅ K₂)
+  [PreservesColimit K₁ F] : PreservesColimit K₂ F
+CategoryTheory.Functor.assoc.{v₁, v₂, v₃, v₄, u₁, u₂, u₃, u₄} {C : Type u₁} [Category.{v₁, u₁} C] {D : Type u₂}
+  [Category.{v₂, u₂} D] {E : Type u₃} [Category.{v₃, u₃} E] {E' : Type u₄} [Category.{v₄, u₄} E'] (F : C ⥤ D)
+  (G : D ⥤ E) (H : E ⥤ E') : (F ⋙ G) ⋙ H = F ⋙ G ⋙ H
+NotesProofs.wattsRight_apply : ∀ (F : ModuleCat ?m.1 ⥤ ModuleCat ?m.2) [inst : F.Additive] (a : ?m.1)
+  (m : ↑(ChoiceFreeWatts.M F)), MulOpposite.op a • m = (ChoiceFreeWatts.right F a) m
+BimoduleFunctorHomEquivalence : ∀ (R S : Type v) [inst : Ring R] [inst_1 : Ring S],
+  have tensor := NotesProofs.General.ConcreteBimodule.tensorRepresentation R S;
+  have regular := ChoiceFreeWatts.regular R;
+  tensor.Full ∧
+    tensor.Faithful ∧
+      tensor.EssSurj ∧
+        ∃ E,
+          E.functor = tensor ∧
+            (∀ (F : NotesProofs.General.ConcreteBimodule.GoodFunctors R S),
+                E.inverse.obj F = NotesProofs.General.ConcreteBimodule.wattsBimodule R S F.obj) ∧
+              (∀ {F G : NotesProofs.General.ConcreteBimodule.GoodFunctors R S} (η : F ⟶ G),
+                  ↑(E.inverse.map η) ≍ ModuleCat.Hom.hom (η.hom.app regular)) ∧
+                (∀ (F : NotesProofs.General.ConcreteBimodule.GoodFunctors R S) (X : ModuleCat R),
+                    ModuleCat.Hom.hom ((E.counitIso.hom.app F).hom.app X) ≍ ChoiceFreeWatts.comparison F.obj X) ∧
+                  ∀ (B : NotesProofs.General.ConcreteBimodule R S),
+                    ↑(E.unitIso.inv.app B) ≍ NotesProofs.General.concreteTensorUnitor B.carrier
+ReconstructionFromSmallProjectiveGenerator : ∀ (C : Type u_1) [inst : Category.{u_2, u_1} C]
+  [LocallySmall.{u_2, u_2, u_1} C] [inst_2 : Abelian C] [inst_3 : HasCoproducts C] (P : C) [Projective P],
+  IsSeparator P →
+    (∀ (I : Type u_2) (X : I → C),
+        Function.Bijective ⇑(DirectSum.toAddMonoid fun i => Preadditive.rightComp P (Sigma.ι X i))) →
+      let R := (End P)ᵐᵒᵖ;
+      have H := preadditiveCoyonedaObj P;
+      ∃ L, Nonempty (L ⋙ H ≅ 𝟭 (ModuleCat R)) ∧ Nonempty (H ⋙ L ≅ 𝟭 C)
+@AbelianEquivalencesPreserveFunctorHypotheses : ∀ {C : Type u_1} {D : Type u_2} [inst : Category.{u_3, u_1} C]
+  [inst_1 : Category.{u_4, u_2} D] [inst_2 : Abelian C] [inst_3 : Abelian D] (e : C ≌ D),
+  have F := e.functor;
+  F.Additive ∧
+    (∀ {X Y : C} (f : X ⟶ Y), PreservesLimit (parallelPair f 0) F ∧ PreservesColimit (parallelPair f 0) F) ∧
+      (∀ (I : Type u_5), PreservesColimitsOfShape (Discrete I) F) ∧
+        (∀ [inst_4 : F.Additive] (S : ShortComplex C), S.Exact → (S.map F).Exact) ∧
+          ∀ [inst_4 : HasCoproducts C],
+            ∃ (hD : HasCoproducts D),
+              ∀ (P : C),
+                Projective P →
+                  IsSeparator P →
+                    (∀ (I : Type u_5) (X : I → C),
+                        Function.Bijective ⇑(DirectSum.toAddMonoid fun i => Preadditive.rightComp P (Sigma.ι X i))) →
+                      Projective (F.obj P) ∧
+                        IsSeparator (F.obj P) ∧
+                          ∀ (I : Type u_5) (Y : I → D),
+                            Function.Bijective
+                              ⇑(DirectSum.toAddMonoid fun i => Preadditive.rightComp (F.obj P) (Sigma.ι Y i))
+eA.congrLeft.trans eD.congrRight : A ⥤ D ≌ ModuleCat R ⥤ ModuleCat S
+PreservesColimits.preservesFiniteColimits eA.functor
+PreservesColimits.preservesFiniteColimits eA.inverse
+PreservesColimits.preservesFiniteColimits eD.functor
+PreservesColimits.preservesFiniteColimits eD.inverse
+Functor.instPreservesColimitsOfShapeOfIsLeftAdjoint eA.functor
+Functor.instPreservesColimitsOfShapeOfIsLeftAdjoint eA.inverse
+Functor.instPreservesColimitsOfShapeOfIsLeftAdjoint eD.functor
+Functor.instPreservesColimitsOfShapeOfIsLeftAdjoint eD.inverse
+Functor.preservesFiniteColimits_of_preservesCokernels F : PreservesFiniteColimits F
+comp_preservesColimitsOfShape eA.inverse (F ⋙ eD.functor)
+inferInstance : PreservesFiniteColimits (eA.inverse ⋙ F ⋙ eD.functor)
+(AbelianEquivalencesPreserveFunctorHypotheses eA.symm).left : eA.symm.functor.Additive
+(AbelianEquivalencesPreserveFunctorHypotheses eD).left : eD.functor.Additive
+comp_preservesColimit eA.functor (G.obj ⋙ eD.inverse)
+comp_preservesColimitsOfShape eA.functor (G.obj ⋙ eD.inverse)

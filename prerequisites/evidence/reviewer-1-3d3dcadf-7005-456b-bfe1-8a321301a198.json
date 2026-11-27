@@ -1,0 +1,1365 @@
+{
+  "role": "reviewer-1",
+  "context": {
+    "input": {
+      "title": "Categorical prerequisites for bimodule string diagrams",
+      "request": "Read the full lecture notes from the exact cached source /home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/lecture-notes-proof-strategy/lecture-notes.tex and PDF /home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/lecture-notes-proof-strategy/lecture-notes.pdf. Formalize only results actually necessary for the target string-diagram paper and their substantial proof chains. Notes sections 4.12–4.14, 5.4–5.9, 6.2–6.7, 7.2, 7.4, 7.6, 8.3–8.6, 9.2–9.6 and 10.1–10.4 are guidance, not permission to inventory irrelevant statements: exact dependencies decide. Prefer exact verified pinned Mathlib declarations where their hypotheses fit and prove missing steps. The notes explicitly assume ordinary choice, and Chapter 8 either supplies choices or assumes global choice: standard Lean axioms propext, Classical.choice and Quot.sound are permitted. Do not assert a choice-free claim from a different portal. Prove the necessary foundations from scratch, using Mathlib and previously checked generic foundational infrastructure where exact statements and hypotheses match; do not use unproved paper conclusions as premises. Record source statements, dependencies and exact Mathlib declarations. Provide checked importable bridges usable by the original project. Its historical choice-free auxiliary endpoints remain separate and must not be falsely marked as proved by an argument using choice. Alert the owner with evidence of any actual mathematical defect in either source.",
+      "article": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf",
+      "portal": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf",
+      "articleScope": {
+        "kind": "prerequisites",
+        "target": "https://getcurious.cc/downloads/mackey-bimodules.pdf"
+      },
+      "directory": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean",
+      "github": "Alphabeta-Math/mackey-bimodule-diagrams-lean",
+      "visibility": "private",
+      "lean": "leanprover/lean4:v4.36.0-rc2",
+      "mathlib": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+      "existing": true,
+      "imports": [
+        "MackeyDiagrams"
+      ],
+      "moduleRoot": "NotesProofs",
+      "deferCloseout": true,
+      "defectReport": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf/prerequisite-omissions-and-potential-defects"
+    },
+    "item": {
+      "id": "FiniteBiproductUniversalProperties",
+      "title": "The two universal properties",
+      "kind": "theorem",
+      "main": true,
+      "article": {
+        "statement": "A biproduct is both a product through $p_j$ and a coproduct through $i_j$. Conversely, any finite product in a preadditive category has canonical biproduct injections; any finite coproduct has canonical biproduct projections.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Proposition 3.5 [env-3-5], p. 8. The finite block maps in target §1.2 and the proof of Proposition 3.9 use the product and coproduct properties of the same object.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=8"
+      },
+      "portal": {
+        "statement": "In a preadditive category, every finite product is a biproduct. Hence for a\npreadditive category the existence of all finite products, all finite\ncoproducts, and all finite biproducts are equivalent conditions.",
+        "locator": "Alphabeta Math, Statement section, thm-in-a-preadditive-category-a-finite-product-is-automatically-a-biproduct",
+        "url": "https://alphabetamath.cc/item/thm-in-a-preadditive-category-a-finite-product-is-automatically-a-biproduct"
+      },
+      "deps": [],
+      "external": [
+        "BiconeTotal",
+        "BiconeFromProduct",
+        "BiconeFromCoproduct"
+      ]
+    },
+    "plan": {
+      "items": [
+        {
+          "id": "FiniteBiproductUniversalProperties",
+          "title": "The two universal properties",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "A biproduct is both a product through $p_j$ and a coproduct through $i_j$. Conversely, any finite product in a preadditive category has canonical biproduct injections; any finite coproduct has canonical biproduct projections.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Proposition 3.5 [env-3-5], p. 8. The finite block maps in target §1.2 and the proof of Proposition 3.9 use the product and coproduct properties of the same object.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=8"
+          },
+          "portal": {
+            "statement": "In a preadditive category, every finite product is a biproduct. Hence for a\npreadditive category the existence of all finite products, all finite\ncoproducts, and all finite biproducts are equivalent conditions.",
+            "locator": "Alphabeta Math, Statement section, thm-in-a-preadditive-category-a-finite-product-is-automatically-a-biproduct",
+            "url": "https://alphabetamath.cc/item/thm-in-a-preadditive-category-a-finite-product-is-automatically-a-biproduct"
+          },
+          "deps": [],
+          "external": [
+            "BiconeTotal",
+            "BiconeFromProduct",
+            "BiconeFromCoproduct"
+          ]
+        },
+        {
+          "id": "BiproductMatrixCalculus",
+          "title": "A morphism is its matrix",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "For finite biproducts $X=\\bigoplus_jX_j$, $Y=\\bigoplus_kY_k$, every $f:X\\to Y$ is determined by entries $f_{kj}=p^Y_k f i^X_j$, and\n\n$$\nf=\\sum_{k,j}i^Y_k f_{kj}p^X_j.\n$$\n\nFor $g:Y\\to Z=\\bigoplus_\\ell Z_\\ell$, composition has entries $(gf)_{\\ell j}=\\sum_k g_{\\ell k}f_{kj}$. Addition is entrywise.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Proposition 3.7 [env-3-7], p. 9. Target §1.2 uses the entry formula to recover each evaluated block and identify stacking with block-matrix multiplication.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=9"
+          },
+          "portal": {
+            "statement": "Let $\\mathcal C$ be an additive category. Let\n$f:\\bigoplus_{i=1}^mA_i\\to\\bigoplus_{j=1}^nB_j$ have matrix\n$F=(f_{ji})_{j,i}$ and let $g:\\bigoplus_{j=1}^nB_j\\to\\bigoplus_{k=1}^rC_k$ have\nmatrix $G=(g_{kj})_{k,j}$. Then the matrix of $gf$ is\n\n$$((gf)_{ki})_{k,i},\\qquad (gf)_{ki}=\\sum_{j=1}^ng_{kj}f_{ji}.$$\n\nThe finiteness of the middle index set is part of the statement.",
+            "locator": "Alphabeta Math, Statement section, thm-composition-of-morphisms-between-finite-biproducts-is-matrix-multiplication",
+            "url": "https://alphabetamath.cc/item/thm-composition-of-morphisms-between-finite-biproducts-is-matrix-multiplication"
+          },
+          "deps": [
+            "FiniteBiproductUniversalProperties"
+          ],
+          "external": [
+            "BiproductTotal"
+          ]
+        },
+        {
+          "id": "AdditiveFunctorsAndBiproducts",
+          "title": "Addition and finite biproducts",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "An additive functor between additive categories preserves finite biproducts. Conversely, a functor between additive categories that preserves zero objects and finite products and coproducts is additive.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Proposition 3.9 [env-3-9], p. 9. The converse supplies additivity in Lemma 10.3, and the forward direction supplies the finite-sum correspondence in target §1.3.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=9"
+          },
+          "portal": {
+            "statement": "For a functor between additive categories, the following are equivalent:\n\n1. the functor is additive;\n2. the functor preserves finite biproducts.",
+            "locator": "Alphabeta Math, Statement section, thm-a-functor-between-additive-categories-is-additive-exactly-when-it-preserves-finite-biproducts",
+            "url": "https://alphabetamath.cc/item/thm-a-functor-between-additive-categories-is-additive-exactly-when-it-preserves-finite-biproducts"
+          },
+          "deps": [
+            "FiniteBiproductUniversalProperties"
+          ],
+          "external": [
+            "AdditivePreservesFiniteBiproducts",
+            "AdditiveFromBinaryProducts"
+          ]
+        },
+        {
+          "id": "CancellationAndZeroKernels",
+          "title": "Cancellation and zero kernels",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "If kernels and cokernels exist, $f$ is monic exactly when its kernel is a zero object, and epic exactly when its cokernel is a zero object. Equalizers of $f,g$ are kernels of $f-g$; coequalizers are cokernels of $f-g$.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Proposition 4.2 [env-4-2], p. 10. Lemma 8.3 uses the zero-kernel and zero-cokernel criteria to turn detection by Hom into monicity and epicity. The ambient additive-category convention is in §4.1, p. 10.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=10"
+          },
+          "portal": {
+            "statement": "For a morphism $f$ in an abelian category:\n\n1. $f$ is monic if and only if its kernel is zero;\n2. $f$ is epic if and only if its cokernel is zero.",
+            "locator": "Alphabeta Math, Statement section, cor-a-morphism-in-an-abelian-category-is-monic-exactly-when-its-kernel-is-zero-and-epic-exactly-when-its-cokernel-is-zero",
+            "url": "https://alphabetamath.cc/item/cor-a-morphism-in-an-abelian-category-is-monic-exactly-when-its-kernel-is-zero-and-epic-exactly-when-its-cokernel-is-zero"
+          },
+          "deps": [],
+          "external": [
+            "MonoIffZeroKernel",
+            "EpiIffZeroCokernel",
+            "EqualizerAsKernel",
+            "CoequalizerAsCokernel"
+          ]
+        },
+        {
+          "id": "NormalMorphismsInAbelianCategories",
+          "title": "Normal morphisms and cancellation in both directions",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "In an abelian category every monomorphism is a kernel of its cokernel, and every epimorphism is a cokernel of its kernel. Consequently a morphism which is both monic and epic is an isomorphism.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Proposition 4.5 [env-4-5], p. 11. Lemma 8.4 presents objects using an epimorphism as the cokernel of its kernel, and Lemma 8.3 uses the monic-and-epic criterion for isomorphisms.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=11"
+          },
+          "portal": {
+            "statement": "In an abelian category, every monomorphism is the kernel of its cokernel, and\ndually every epimorphism is the cokernel of its kernel.",
+            "locator": "Alphabeta Math, Statement section, thm-every-monomorphism-is-the-kernel-of-its-cokernel",
+            "url": "https://alphabetamath.cc/item/thm-every-monomorphism-is-the-kernel-of-its-cokernel"
+          },
+          "deps": [],
+          "external": [
+            "MonoKernelOfCokernel",
+            "EpiCokernelOfKernel",
+            "MonoEpiIso"
+          ]
+        },
+        {
+          "id": "ExactPresentationsAreCokernels",
+          "title": "Presentations are cokernels",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "A sequence $A\\xrightarrow{f}B\\xrightarrow{q}C\\to0$ is exact if and only if $q$ is a cokernel of $f$.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Proposition 4.9 [env-4-9], p. 12. In the abelian-category setting of §4.3, this identifies the sequence and cokernel formulations of right exactness used for the presentations in Theorems 5.8, 6.7 and 9.4.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=12"
+          },
+          "portal": null,
+          "deps": [],
+          "external": [
+            "ExactIffCokernel"
+          ]
+        },
+        {
+          "id": "ModuleQuotientUniversalProperty",
+          "title": "Quotients and their universal property",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "A *submodule* $U\\subseteq M$ is an additive subgroup closed under the $R$-action. The cosets $M/U$ form a module with $(m+U)+(n+U)=m+n+U$ and $r(m+U)=rm+U$. The projection $q:M\\to M/U$ is surjective, and every module morphism $f:M\\to N$ with $f(U)=0$ factors uniquely through $q$.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Proposition 5.4 [env-5-4], p. 15. The quotient factorization constructs the tensor product in Theorem 6.2 and the concrete cokernels used in Theorems 5.8 and 6.7. Section 1.3, p. 4, and the Chapter 5 conventions, p. 14, use ordinary choice, arbitrary unital rings with unital maps, and unital modules.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=15"
+          },
+          "portal": {
+            "statement": "Let $f:M\\to P$ be a module homomorphism and let $N\\le M$ satisfy\n$N\\subseteq\\ker f$. There is a unique module homomorphism\n\n$$\\bar f:M/N\\longrightarrow P$$\n\nsuch that $\\bar f(m+N)=f(m)$, equivalently $f=\\bar f\\circ\\pi$.",
+            "locator": "Alphabeta Math, Statement section, thm-quotient-module-universal-property",
+            "url": "https://alphabetamath.cc/item/thm-quotient-module-universal-property"
+          },
+          "deps": [],
+          "external": [
+            "QuotientLift",
+            "QuotientLiftFactorization",
+            "QuotientProjectionSurjective"
+          ]
+        },
+        {
+          "id": "ModuleKernelsCokernelsAndImages",
+          "title": "Kernels, cokernels, and images",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "For $f:M\\to N$, the submodules $\\ker f=\\{m:f(m)=0\\}$ and $\\operatorname{im}f=\\{f(m):m\\in M\\}$ give the categorical kernel $\\ker f\\hookrightarrow M$ and cokernel $N\\twoheadrightarrow N/\\operatorname{im}f$. The canonical map\n\n$$\nM/\\ker f\\longrightarrow\\operatorname{im}f,\\qquad m+\\ker f\\longmapsto f(m)\n$$\n\nis an isomorphism. Moreover, monomorphisms are exactly injective module maps, and epimorphisms are exactly surjective module maps.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Proposition 5.5 [env-5-5], p. 15. These concrete descriptions justify the module-category abelian structure and the cokernel arguments in Lemma 8.3 and Theorem 6.7.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=15"
+          },
+          "portal": {
+            "statement": "For every module homomorphism $f:M\\to N$, there is a module isomorphism\n\n$$M/\\ker f\\ \\cong\\ \\operatorname{im}f,$$\n\ngiven by $m+\\ker f\\mapsto f(m)$.",
+            "locator": "Alphabeta Math, Statement section, thm-first-isomorphism-theorem-modules",
+            "url": "https://alphabetamath.cc/item/thm-first-isomorphism-theorem-modules"
+          },
+          "deps": [
+            "ModuleQuotientUniversalProperty"
+          ],
+          "external": [
+            "ModuleKernelLimit",
+            "ModuleCokernelColimit",
+            "QuotientKernelRange",
+            "ModuleMonoInjective",
+            "ModuleEpiSurjective"
+          ]
+        },
+        {
+          "id": "ModuleCategoriesAreAbelian",
+          "title": "Module categories are abelian",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "$R\\text{-}\\mathrm{Mod}$ is a locally small abelian category.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Theorem 5.6 [env-5-6], p. 16. Target §1.1 uses the module categories as the abelian categories on the ring side of the reconstruction and right-exact functor correspondence.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=16"
+          },
+          "portal": {
+            "statement": "For every ring $R$, the category $R\\text{-}\\mathbf{Mod}$ of left $R$-modules is\nan abelian category.",
+            "locator": "Alphabeta Math, Statement section, thm-modules-over-a-ring-form-an-abelian-category",
+            "url": "https://alphabetamath.cc/item/thm-modules-over-a-ring-form-an-abelian-category"
+          },
+          "deps": [],
+          "external": [
+            "ModuleAbelian"
+          ]
+        },
+        {
+          "id": "ModuleProductsAndCoproducts",
+          "title": "Products and coproducts of modules",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "For a set-indexed family $(M_i)_{i\\in I}$, the product is the set of all tuples $\\prod_i M_i$, with componentwise operations. The coproduct is the *direct sum* $\\bigoplus_i M_i\\subseteq\\prod_i M_i$, consisting of tuples with only finitely many nonzero coordinates. Their structural maps are coordinate projections and coordinate inclusions, respectively.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Proposition 5.7 [env-5-7], p. 16. The direct sum construction supplies the free copowers in Theorem 5.8, the tensor comparison in Theorem 6.6 and the Mackey sums in target §§2 and 7.4.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=16"
+          },
+          "portal": {
+            "statement": "Let $(M_i)_{i\\in I}$ be left $R$-modules and $N$ a left $R$-module. For every family of homomorphisms $f_i:M_i\\to N$, there is a unique homomorphism\n$$f:\\bigoplus_{i\\in I}M_i\\longrightarrow N$$\nsuch that $f\\circ\\jmath_i=f_i$ for every $i$. It is given by\n$$f((m_i))=\\sum_{i\\in\\operatorname{supp}(m)}f_i(m_i).$$\nFor $I=\\varnothing$, this is the unique map $0\\to N$.",
+            "locator": "Alphabeta Math, Statement section, thm-universal-property-of-module-direct-sums",
+            "url": "https://alphabetamath.cc/item/thm-universal-property-of-module-direct-sums"
+          },
+          "deps": [],
+          "external": [
+            "ModuleProductLimit",
+            "ModuleCoproductColimit"
+          ]
+        },
+        {
+          "id": "FreeModulesAndPresentations",
+          "title": "Free modules and presentations",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "Write $R^{(I)}=\\bigoplus_{i\\in I}R$, and let $e_i$ be the tuple with $1$ at $i$ and $0$ elsewhere. Any family $(m_i)_{i\\in I}$ in $M$ determines a unique linear map $R^{(I)}\\to M$ taking $e_i$ to $m_i$. Every module has an exact sequence\n\n$$\nR^{(J)}\\xrightarrow{d}R^{(I)}\\xrightarrow{q}M\\longrightarrow0.\n$$\n\nExactness means $\\operatorname{im}d=\\ker q$ and $q$ is surjective; equivalently, $q$ is a cokernel of $d$. Such a sequence is a *free presentation*.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Theorem 5.8 [env-5-8], pp. 16–17. Free modules on all elements and then on all kernel elements supply the canonical presentations in Theorems 8.6 and 9.4. The free abelian group case supplies the generators in Theorem 6.2.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=16"
+          },
+          "portal": {
+            "statement": "Let $R$ be a unital ring, $X$ a set, and $M$ a left $R$-module. Every set map $u:X\\to M$ extends uniquely to an $R$-module homomorphism $\\bar u:R^{(X)}\\to M$ satisfying $\\bar u(e_x)=u(x)$. Explicitly,\n$$\\bar u\\left(\\sum_{x\\in F}r_xe_x\\right)=\\sum_{x\\in F}r_xu(x).$$",
+            "locator": "Alphabeta Math, Statement section, thm-universal-property-of-free-modules",
+            "url": "https://alphabetamath.cc/item/thm-universal-property-of-free-modules"
+          },
+          "deps": [
+            "ModuleProductsAndCoproducts",
+            "ModuleKernelsCokernelsAndImages",
+            "ModuleCategoriesAreAbelian",
+            "ExactPresentationsAreCokernels"
+          ],
+          "external": [
+            "FreeModuleHomEquiv",
+            "FinsuppLinearCombination",
+            "FinsuppLinearCombinationSingle",
+            "FinsuppLinearExt"
+          ]
+        },
+        {
+          "id": "RegularModuleSmallProjectiveGenerator",
+          "title": "The regular module is a small projective generator",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "Evaluation at $1$ gives a natural isomorphism of abelian groups $\\operatorname{Hom}_R(R,M)\\cong M$. Consequently, $R$ is projective, is a generator, and is small: the canonical map\n\n$$\n\\bigoplus_i\\operatorname{Hom}_R(R,M_i)\\longrightarrow\\operatorname{Hom}_R\\left(R,\\bigoplus_i M_i\\right)\n$$\n\nis an isomorphism. Here *projective* means every map from $R$ through the target of an epimorphism lifts through that epimorphism; *generator* means $\\operatorname{Hom}_R(R,-)$ distinguishes distinct morphisms; and *small* means the displayed preservation of coproducts. Also $\\operatorname{End}_R(R)\\cong R^{\\mathrm{op}}$ as rings, with endomorphism multiplication given by composition.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Theorem 5.9 [env-5-9], p. 17. Evaluation at 1 and the opposite endomorphism ring explain the maps used in Lemmas 9.2–9.3 and the identification of the regular module in target §1.1.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=17"
+          },
+          "portal": {
+            "statement": "For every unital ring $R$, evaluation at $1$ identifies endomorphisms of the left regular module with right multiplications and gives a ring isomorphism $$\\operatorname{End}_R({}_R R)\\cong R^{\\mathrm{op}}.$$ See [[def-opposite-ring]].",
+            "locator": "Alphabeta Math, Statement section, thm-endomorphism-ring-of-the-left-regular-module-is-opposite",
+            "url": "https://alphabetamath.cc/item/thm-endomorphism-ring-of-the-left-regular-module-is-opposite"
+          },
+          "deps": [
+            "ModuleProductsAndCoproducts"
+          ],
+          "external": [
+            "RegularEvaluation",
+            "RegularEndOpposite",
+            "ModuleEndRing"
+          ]
+        },
+        {
+          "id": "BalancedTensorUniversalProperty",
+          "title": "Construction and universal property",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "There is an abelian group $B\\otimes_R M$, with a balanced map $(b,m)\\mapsto b\\otimes m$, such that for every abelian group $A$, composition with this map gives a bijection\n\n$$\n\\operatorname{Hom}_{\\mathbb Z}(B\\otimes_R M,A)\\cong\\{R\\text{-balanced maps }B\\times M\\to A\\}.\n$$\n\nEvery element of $B\\otimes_R M$ is a finite sum of elements $b\\otimes m$, called *pure tensors*. This universal property determines the tensor product up to a unique isomorphism preserving pure tensors.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Theorem 6.2 [env-6-2], p. 18. The universal property and generation by pure tensors supply the construction and equality tests for the balanced products in target §§1–2, 5–6 and 7.5. The right and left factor conventions are in Definition 6.1, p. 18.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=18"
+          },
+          "portal": {
+            "statement": "Let $R$ be a unital ring, $M$ a right $R$-module, $N$ a left $R$-module, and\n\n$$\\tau:M\\times N\\longrightarrow M\\otimes_RN,\\qquad \\tau(m,n)=m\\otimes n.$$\n\nThe map $\\tau$ is balanced ([[def-balanced-and-bilinear-maps]]). For every abelian group $A$ and every balanced map $b:M\\times N\\to A$, there is a unique group homomorphism\n\n$$\\overline b:M\\otimes_RN\\longrightarrow A$$\n\nsuch that $\\overline b(m\\otimes n)=b(m,n)$ for all $m,n$. Consequently composition with $\\tau$ is a bijection\n\n$$\\operatorname{Hom}_{\\mathbf{Ab}}(M\\otimes_RN,A)\\cong\\operatorname{Bal}_R(M,N;A).$$",
+            "locator": "Alphabeta Math, Statement section, thm-universal-property-of-module-tensor-products",
+            "url": "https://alphabetamath.cc/item/thm-universal-property-of-module-tensor-products"
+          },
+          "deps": [
+            "FreeModulesAndPresentations",
+            "ModuleQuotientUniversalProperty"
+          ],
+          "external": []
+        },
+        {
+          "id": "BimoduleTensorFunctoriality",
+          "title": "Induced actions and functoriality",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "If $B$ is an $S$-$R$ bimodule, then $B\\otimes_R M$ is a left $S$-module by $s(b\\otimes m)=(sb)\\otimes m$. Bimodule maps $u:B\\to B'$ and left-module maps $f:M\\to M'$ induce left $S$-module maps\n\n$$\nu\\otimes f:B\\otimes_R M\\longrightarrow B'\\otimes_R M',\\qquad b\\otimes m\\longmapsto u(b)\\otimes f(m).\n$$\n\nThese operations form a bifunctor $(S\\text{-}\\mathrm{Mod}\\text{-}R)\\times(R\\text{-}\\mathrm{Mod})\\to S\\text{-}\\mathrm{Mod}$, additive separately on morphisms. In particular, $B\\otimes_R-$ is an additive functor.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Proposition 6.3 [env-6-3], p. 19. The induced actions and tensor maps give horizontal composition in target §1.2 and the additive functors required by Theorem 9.4.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=19"
+          },
+          "portal": {
+            "statement": "Let $M$ be a right $R$-module and let ${}_RN_S$ be an $(R,S)$-bimodule. There is a unique right $S$-module structure on $M\\otimes_RN$ satisfying\n\n$$(m\\otimes n)s=m\\otimes(ns).$$\n\nDually, if ${}_SM_R$ is an $(S,R)$-bimodule and $N$ is a left $R$-module, there is a unique left $S$-module structure satisfying\n\n$$s(m\\otimes n)=(sm)\\otimes n.$$\n\nIf both outer actions are present, they commute, so the tensor product is an $(S,T)$-bimodule in the evident handed situation.",
+            "locator": "Alphabeta Math, Statement section, thm-bimodule-actions-induced-on-tensor-products",
+            "url": "https://alphabetamath.cc/item/thm-bimodule-actions-induced-on-tensor-products"
+          },
+          "deps": [
+            "BalancedTensorUniversalProperty"
+          ],
+          "external": []
+        },
+        {
+          "id": "RegularModuleTensorUnits",
+          "title": "Tensoring with the regular module",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "There are natural isomorphisms $R\\otimes_R M\\cong M$, $r\\otimes m\\mapsto rm$, and $B\\otimes_R R\\cong B$, $b\\otimes r\\mapsto br$. If $B$ is an $S$-$R$ bimodule, the latter is an isomorphism of $S$-$R$ bimodules.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Theorem 6.4 [env-6-4], p. 19. The units identify empty boundaries and regular-module components in target §§1.2–1.3, and identify the regular component of the comparison in Theorem 9.4.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=19"
+          },
+          "portal": {
+            "statement": "Let $R$ be a unital ring. For every left $R$-module $N$ and every right $R$-module $M$, the maps\n\n$$\\lambda_N:R\\otimes_RN\\longrightarrow N,\\qquad r\\otimes n\\longmapsto rn,$$\n\nand\n\n$$\\rho_M:M\\otimes_RR\\longrightarrow M,\\qquad m\\otimes r\\longmapsto mr,$$\n\nare group isomorphisms. Their inverses are $n\\mapsto1_R\\otimes n$ and $m\\mapsto m\\otimes1_R$, respectively. The maps respect every displayed outer module structure.",
+            "locator": "Alphabeta Math, Statement section, thm-unit-isomorphisms-for-module-tensor-products",
+            "url": "https://alphabetamath.cc/item/thm-unit-isomorphisms-for-module-tensor-products"
+          },
+          "deps": [
+            "BimoduleTensorFunctoriality"
+          ],
+          "external": []
+        },
+        {
+          "id": "BalancedTensorAssociativity",
+          "title": "Associativity with the correct sides",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "Let $C$ be a $T$-$S$ bimodule, $B$ an $S$-$R$ bimodule, and $M$ a left $R$-module. Then $C\\otimes_S B$ is a $T$-$R$ bimodule, and there is a natural $T$-linear isomorphism\n\n$$\n(C\\otimes_S B)\\otimes_R M\\cong C\\otimes_S(B\\otimes_R M),\\qquad(c\\otimes b)\\otimes m\\longmapsto c\\otimes(b\\otimes m).\n$$",
+            "locator": "Ian X, Abelian Categories and Bimodules, Theorem 6.5 [env-6-5], p. 19. Reassociation supplies the evaluated maps for rebracketing in target §1.2 and composition in target §7.5.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=19"
+          },
+          "portal": {
+            "statement": "Let $M$ be a right $R$-module, let ${}_RN_S$ be an $(R,S)$-bimodule, and let $P$ be a left $S$-module. There is a canonical group isomorphism\n\n$$\\alpha_{M,N,P}:(M\\otimes_RN)\\otimes_SP\\longrightarrow M\\otimes_R(N\\otimes_SP)$$\n\ndetermined by\n\n$$\\alpha_{M,N,P}((m\\otimes n)\\otimes p)=m\\otimes(n\\otimes p).$$\n\nIt respects any compatible outer module actions and is natural in $M,N,P$.",
+            "locator": "Alphabeta Math, Statement section, thm-associativity-of-balanced-tensor-products",
+            "url": "https://alphabetamath.cc/item/thm-associativity-of-balanced-tensor-products"
+          },
+          "deps": [
+            "BimoduleTensorFunctoriality"
+          ],
+          "external": []
+        },
+        {
+          "id": "TensorPreservesCoproducts",
+          "title": "Tensoring preserves arbitrary coproducts",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "For every set-indexed family of left $R$-modules, the canonical $S$-linear map is an isomorphism:\n\n$$\n\\bigoplus_i(B\\otimes_R M_i)\\longrightarrow B\\otimes_R\\left(\\bigoplus_i M_i\\right),\\qquad b\\otimes m_i\\longmapsto b\\otimes\\iota_i(m_i).\n$$",
+            "locator": "Ian X, Abelian Categories and Bimodules, Theorem 6.6 [env-6-6], p. 20. For the bimodule of Proposition 6.3, distributivity is needed in the free-module step of Theorem 9.4, in passing from the bimodule Mackey sum to the functor sum in target §2.2 and in composing sums in §7.5.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=20"
+          },
+          "portal": {
+            "statement": "Let $A$ be a unital ring and $M$ a right $A$-module. Then the functor\n$T_M=M\\otimes_A-:A\\text{-}\\mathbf{Mod}\\to\\mathbf{Ab}$ is additive, preserves\ncokernels (so it is right exact: every exact sequence\n$X\\xrightarrow fY\\xrightarrow gZ\\to0$ of left $A$-modules induces an exact\nsequence $M\\otimes_AX\\xrightarrow{1\\otimes f}M\\otimes_AY\\xrightarrow{1\\otimes g}M\\otimes_AZ\\to0$),\nand preserves arbitrary direct sums: the natural map\n$\\bigoplus_{i\\in I}(M\\otimes_AX_i)\\to M\\otimes_A(\\bigoplus_{i\\in I}X_i)$\ninduced by the coordinate inclusions is an isomorphism, including $I=\\varnothing$.\nIf $M$ is a $(B,A)$-bimodule then $T_M$ takes values in left $B$-modules and all\nthe displayed maps are $B$-linear. No commutativity of $A$ or $B$ is assumed and\nno choice is used.",
+            "locator": "Alphabeta Math, Statement section, lem-tensoring-with-a-right-module-is-additive-right-exact-and-preserves-direct-sums",
+            "url": "https://alphabetamath.cc/item/lem-tensoring-with-a-right-module-is-additive-right-exact-and-preserves-direct-sums"
+          },
+          "deps": [
+            "BimoduleTensorFunctoriality",
+            "ModuleProductsAndCoproducts"
+          ],
+          "external": []
+        },
+        {
+          "id": "TensorPreservesCokernels",
+          "title": "Tensoring preserves cokernels",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "If $M\\xrightarrow{f}N\\xrightarrow{q}Q\\to0$ is exact, then\n\n$$\nB\\otimes_R M\\xrightarrow{1\\otimes f}B\\otimes_R N\\xrightarrow{1\\otimes q}B\\otimes_R Q\\longrightarrow0\n$$\n\nis exact in $S\\text{-}\\mathrm{Mod}$. Equivalently, tensoring preserves cokernels. This property is called *right exactness*.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Theorem 6.7 [env-6-7], p. 20. For the bimodule of Proposition 6.3, right exactness puts its tensor functor in target Theorem 1.1 and carries the free-presentation comparison to all modules in Theorem 9.4.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=20"
+          },
+          "portal": {
+            "statement": "Let $A$ be a unital ring and $M$ a right $A$-module. Then the functor\n$T_M=M\\otimes_A-:A\\text{-}\\mathbf{Mod}\\to\\mathbf{Ab}$ is additive, preserves\ncokernels (so it is right exact: every exact sequence\n$X\\xrightarrow fY\\xrightarrow gZ\\to0$ of left $A$-modules induces an exact\nsequence $M\\otimes_AX\\xrightarrow{1\\otimes f}M\\otimes_AY\\xrightarrow{1\\otimes g}M\\otimes_AZ\\to0$),\nand preserves arbitrary direct sums: the natural map\n$\\bigoplus_{i\\in I}(M\\otimes_AX_i)\\to M\\otimes_A(\\bigoplus_{i\\in I}X_i)$\ninduced by the coordinate inclusions is an isomorphism, including $I=\\varnothing$.\nIf $M$ is a $(B,A)$-bimodule then $T_M$ takes values in left $B$-modules and all\nthe displayed maps are $B$-linear. No commutativity of $A$ or $B$ is assumed and\nno choice is used.",
+            "locator": "Alphabeta Math, Statement section, lem-tensoring-with-a-right-module-is-additive-right-exact-and-preserves-direct-sums",
+            "url": "https://alphabetamath.cc/item/lem-tensoring-with-a-right-module-is-additive-right-exact-and-preserves-direct-sums"
+          },
+          "deps": [
+            "BimoduleTensorFunctoriality",
+            "ModuleKernelsCokernelsAndImages",
+            "ModuleCategoriesAreAbelian",
+            "ExactPresentationsAreCokernels"
+          ],
+          "external": []
+        },
+        {
+          "id": "GroupAlgebraRingLaws",
+          "title": "All ring laws",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "This multiplication makes $k[G]$ an associative unital ring. The map $k\\to k[G]$, $a\\mapsto a[e]$, is an injective unital ring map whose image is central. Thus $k[G]$ is a *$k$-algebra*, meaning a ring equipped with such a central scalar map. Each $[g]$ is a unit, with inverse $[g^{-1}]$. Moreover, $k[G]$ is commutative exactly when $G$ is abelian.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Theorem 7.2 [env-7-2], p. 22. The unital ring structure, central scalars and group-basis multiplication supply the algebras and scalar actions throughout the target. The field and group conventions are on p. 21, and the multiplication is that of Definition 7.1, p. 22.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=22"
+          },
+          "portal": {
+            "statement": "Let $R$ be a commutative ring and let $G$ be a group. Write $[g] \\in R[G]$ for\nthe basis vector of [[def-group-ring]] indexed by $g \\in G$.\n\nThere is a unique $R$-bilinear multiplication on $R[G]$ satisfying\n$$[g][h]=[gh]\\qquad(g,h\\in G).$$\nWith this product, $R[G]$ is a unital $R$-algebra whose underlying\n$R$-module has basis $\\{[g]:g\\in G\\}$. Its identity is $[e]$, where $e$ is the\nidentity of $G$, and every basis element $[g]$ is a unit with inverse\n$[g^{-1}]$.",
+            "locator": "Alphabeta Math, Statement section, thm-group-ring-is-a-unital-algebra-with-basis-g",
+            "url": "https://alphabetamath.cc/item/thm-group-ring-is-a-unital-algebra-with-basis-g"
+          },
+          "deps": [],
+          "external": [
+            "GroupAlgebraRing",
+            "GroupAlgebraScalars",
+            "GroupAlgebraBasisMul",
+            "GroupAlgebraBasisInjective",
+            "GroupAlgebraScalarInjective",
+            "GroupAlgebraCommRing"
+          ]
+        },
+        {
+          "id": "RepresentationModuleCorrespondence",
+          "title": "The representation–module correspondence",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "There are inverse functors between $\\mathrm{Rep}_k(G)$ and $k[G]\\text{-}\\mathrm{Mod}$. The correspondence preserves the underlying abelian group and identifies intertwiners with module morphisms. It holds for arbitrary groups and arbitrary-dimensional representations.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Theorem 7.4 [env-7-4], pp. 22–23. The representation interpretation of Proposition 7.6 supplies the passage to induction and restriction of representations in target §§1.2 and 2.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=22"
+          },
+          "portal": {
+            "statement": "Let $R$ be a commutative ring, let $G$ be a group, and let $M$ be a left\n$R$-module. Then:\n\n1. every $R$-linear action of $G$ on $M$ extends uniquely to a left\n   $R[G]$-module structure on $M$ satisfying\n   $$(r[e]) \\cdot m=rm\\qquad(r \\in R,\\ m \\in M);$$\n2. every left $R[G]$-module structure on $M$ satisfying\n   $$(r[e]) \\cdot m=rm\\qquad(r \\in R,\\ m \\in M)$$\n   restricts to an $R$-linear action of $G$ on $M$;\n3. these two constructions are inverse to each other.\n\nMoreover, if $M$ and $N$ carry the corresponding structures, then an\n$R$-linear map $f:M \\to N$ is $G$-equivariant if and only if it is an\n$R[G]$-module homomorphism.",
+            "locator": "Alphabeta Math, Statement section, thm-group-actions-and-group-ring-modules-correspond",
+            "url": "https://alphabetamath.cc/item/thm-group-actions-and-group-ring-modules-correspond"
+          },
+          "deps": [
+            "GroupAlgebraRingLaws"
+          ],
+          "external": [
+            "RepresentationEquivalence"
+          ]
+        },
+        {
+          "id": "GroupAlgebraInductionAdjunction",
+          "title": "The induction bimodule",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "For a subgroup $H\\subseteq G$, extending finite-support functions by zero embeds $k[H]$ into $k[G]$ as a unital subring. Thus $k[G]$ is a $k[G]$-$k[H]$ bimodule by left and right multiplication. Define\n\n$$\n\\operatorname{Ind}_H^G(V)=k[G]\\otimes_{k[H]}V.\n$$\n\nThis is a $G$-representation by Theorem 7.4. If $W$ is a $G$-representation, let $\\operatorname{Res}_H^G(W)$ denote the same vector space with its action restricted to $H$. There is a natural bijection\n\n$$\n\\operatorname{Hom}_{k[G]}(\\operatorname{Ind}_H^G V,W)\\cong\\operatorname{Hom}_{k[H]}(V,\\operatorname{Res}_H^G W).\n$$",
+            "locator": "Ian X, Abelian Categories and Bimodules, Proposition 7.6 [env-7-6], p. 24. The subgroup inclusion case supplies the induction bimodule and ordinary adjunction in target §§1.2 and 2.1. For conjugation embeddings the subgroup inclusion is composed with transport to its image.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=24"
+          },
+          "portal": {
+            "statement": "For $H\\le G$, induction is left adjoint and coinduction is right adjoint to restriction.",
+            "locator": "Alphabeta Math, Statement section, thm-induction-is-left-adjoint-and-coinduction-right-adjoint-to-restriction",
+            "url": "https://alphabetamath.cc/item/thm-induction-is-left-adjoint-and-coinduction-right-adjoint-to-restriction"
+          },
+          "deps": [
+            "RepresentationModuleCorrespondence",
+            "BimoduleTensorFunctoriality"
+          ],
+          "external": [
+            "GroupAlgebraMap",
+            "GroupAlgebraMapInjective",
+            "RepresentationInductionAdjunction",
+            "RestrictionOfScalars"
+          ]
+        },
+        {
+          "id": "GeneratorHomExactnessAndDetection",
+          "title": "Exactness, detection, and coproducts",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "If $P$ is a small projective generator, then $H$ preserves kernels and cokernels, preserves set-indexed coproducts, is faithful, and reflects isomorphisms. Here **faithful** means that its maps on Hom sets are injective, and **reflects isomorphisms** means $H(u)$ invertible implies $u$ invertible.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Lemma 8.3 [env-8-3], p. 25. Exactness and coproduct preservation carry presentations through the Hom functor in Lemma 8.5 and Theorem 8.6. Reflection of isomorphisms yields the inverse comparison in Theorem 8.6. The chapter conventions and Hom action are on p. 25.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=25"
+          },
+          "portal": {
+            "statement": "Let $\\mathcal C$ be a locally small cocomplete abelian category and $P$ a small projective generator of $\\mathcal C$. Put $E=\\operatorname{End}_{\\mathcal C}(P)$, $A=E^{\\mathrm{op}}$, and $H=\\mathcal C(P,-):\\mathcal C\\to A\\text{-Mod}$, where $H(Y)$ carries the left $A$-action $(e^{\\mathrm{op}}\\cdot h)=h\\circ e$. Then:\n1. $H$ is an additive functor.\n2. $H$ is exact: it preserves kernels, cokernels, and every finite limit and colimit that exists in $\\mathcal C$.\n3. $H$ preserves every set-indexed coproduct.\n4. $H$ is faithful: for all $u\\neq v:X\\to Y$ there is $h:P\\to X$ with $uh\\neq vh$.\n5. If $H(Z)=0$ then $Z=0$.\nNo choice is used.",
+            "locator": "Alphabeta Math, Statement section, lem-generator-hom-functor-is-exact-coproduct-preserving-and-faithful",
+            "url": "https://alphabetamath.cc/item/lem-generator-hom-functor-is-exact-coproduct-preserving-and-faithful"
+          },
+          "deps": [
+            "CancellationAndZeroKernels",
+            "NormalMorphismsInAbelianCategories",
+            "ModuleProductsAndCoproducts"
+          ],
+          "external": [
+            "GeneratorCoyoneda",
+            "GeneratorCoyonedaLimits",
+            "GeneratorCoyonedaFiniteColimits",
+            "GeneratorCoyonedaFaithful"
+          ]
+        },
+        {
+          "id": "GeneratorCokernelPresentations",
+          "title": "Every object has a generator presentation",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "For every $X$, there are sets $I,J$ and a diagram\n\n$$\nP^{(J)}\\xrightarrow{d}P^{(I)}\\xrightarrow{q}X\\longrightarrow0\n$$\n\nin which $q$ is the cokernel of $d$. The notation $P^{(I)}$ means the coproduct of $I$ copies of $P$.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Lemma 8.4 [env-8-4], p. 26. The cokernel presentation by copies of the generator is the descent step in Lemma 8.5. The chapter hypotheses are in §8.1, p. 25.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=26"
+          },
+          "portal": null,
+          "deps": [
+            "NormalMorphismsInAbelianCategories"
+          ],
+          "external": [
+            "EpiCokernelOfKernel",
+            "CokernelAnnihilatorTransport"
+          ]
+        },
+        {
+          "id": "GeneratorHomFullyFaithful",
+          "title": "Morphisms are determined by module maps",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "For every $X,Y$, composition induces a bijection\n\n$$\n\\operatorname{Hom}_{\\mathcal A}(X,Y)\\longrightarrow\\operatorname{Hom}_R(H(X),H(Y)),\\qquad u\\longmapsto H(u).\n$$\n\nThus $H$ is **fully faithful**: its maps on Hom sets are bijections.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Lemma 8.5 [env-8-5], p. 26. The bijection lifts the maps between free modules and supplies the comparison at each object in Theorem 8.6. The chapter hypotheses are in §8.1, p. 25.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=26"
+          },
+          "portal": null,
+          "deps": [
+            "GeneratorCokernelPresentations",
+            "GeneratorHomExactnessAndDetection",
+            "FreeModulesAndPresentations",
+            "RegularModuleSmallProjectiveGenerator"
+          ],
+          "external": [
+            "ModuleEpiSurjective"
+          ]
+        },
+        {
+          "id": "ReconstructionFromSmallProjectiveGenerator",
+          "title": "Reconstruction from a small projective generator",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "With the hypotheses and chosen constructions of §8.1,\n\n$$\n\\boxed{\\mathcal A\\simeq R\\text{-Mod},\\qquad R=\\operatorname{End}_{\\mathcal A}(P)^{\\mathrm{op}}.}\n$$\n\nAn **equivalence** means functors $H:\\mathcal A\\to R\\text{-Mod}$, $L:R\\text{-Mod}\\to\\mathcal A$, and natural isomorphisms $HL\\cong1_{R\\text{-Mod}}$, $LH\\cong1_{\\mathcal A}$. The symbol $\\simeq$ does not assert equality or an isomorphism of categories.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Theorem 8.6 [env-8-6], p. 27. This is the reconstruction invoked in target §1.1 for both ambient abelian categories. Section 8.1, p. 25, uses supplied coproducts and cokernels or fixes them with global choice.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=27"
+          },
+          "portal": {
+            "statement": "Let $\\mathcal C$ be a locally small cocomplete abelian category and let $P$ be a small projective generator of $\\mathcal C$. Assume in addition that definable assignments of copowers of $P$ (including their injections) for every set, and of cokernels (including their quotient maps) for every morphism of $\\mathcal C$, are supplied. Cocompleteness alone asserts their existence individually, not such simultaneous choices. Put $E=\\operatorname{End}_{\\mathcal C}(P)$ and $A=E^{\\mathrm{op}}$, and let $H=\\mathcal C(P,-):\\mathcal C\\to A\\text{-Mod}$ and $L:A\\text{-Mod}\\to\\mathcal C$ be the functors of [[lem-copower-presentation-construction-is-left-adjoint-to-generator-hom]], so that $L\\dashv H$. Then the unit $\\eta:1_{A\\text{-}\\mathrm{Mod}}\\Rightarrow HL$ and the counit $\\varepsilon:LH\\Rightarrow1_{\\mathcal C}$ of this adjunction are natural isomorphisms. Consequently $H$ is an equivalence of categories with quasi-inverse $L$, and $\\mathcal C$ is equivalent to the module category $A\\text{-Mod}$ ([[def-equivalence-and-adjoint-equivalence-of-categories]]). No commutativity of rings is assumed and no choice is used.",
+            "locator": "Alphabeta Math, Statement section, thm-cocomplete-abelian-category-with-small-projective-generator-is-a-module-category",
+            "url": "https://alphabetamath.cc/item/thm-cocomplete-abelian-category-with-small-projective-generator-is-a-module-category"
+          },
+          "deps": [
+            "GeneratorHomFullyFaithful",
+            "GeneratorHomExactnessAndDetection",
+            "FreeModulesAndPresentations"
+          ],
+          "external": [
+            "GeneratorCoyoneda",
+            "CokernelComparisonIso",
+            "NaturalIsoComponents"
+          ]
+        },
+        {
+          "id": "RegularEvaluationRightAction",
+          "title": "The two actions on F(R)",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "For an additive functor $F$, the left $S$-module $B=F({}_R R)$ becomes an $S$-$R$ bimodule by\n\n$$\nb r=F(\\rho_r)(b),\\qquad \\rho_r:R\\to R,\\quad \\rho_r(x)=xr.\n$$\n\nHere $\\rho_r$ is a left $R$-module morphism, even when $R$ is noncommutative.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Lemma 9.2 [env-9-2], p. 29. This is the action formula of target Theorem 1.1 and supplies the balancing action for Lemma 9.3.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=29"
+          },
+          "portal": {
+            "statement": "Let $A$ and $B$ be unital rings and let\n$F:A\\text{-}\\mathbf{Mod}\\to B\\text{-}\\mathbf{Mod}$ be an additive functor\n([[def-additive-functor]]). On the left $B$-module $M=F(A)$ define, for\n$a\\in A$ and $m\\in M$,\n\n$$ma:=F(r_a)(m),$$\n\nwhere $r_a:A\\to A$, $r_a(x)=xa$, is right multiplication, a left $A$-linear\nendomorphism of $A$. Together with the given left $B$-action this makes $M$ a\n$(B,A)$-bimodule ([[def-bimodule]]): the right $A$-action satisfies the unit,\nassociativity and distributivity laws of [[def-left-and-right-modules]] and\ncommutes with the left $B$-action. No commutativity of the rings is assumed and\nno choice is used.",
+            "locator": "Alphabeta Math, Statement section, lem-evaluation-on-the-regular-module-has-a-commuting-right-action",
+            "url": "https://alphabetamath.cc/item/lem-evaluation-on-the-regular-module-has-a-commuting-right-action"
+          },
+          "deps": [
+            "RegularModuleSmallProjectiveGenerator"
+          ],
+          "external": []
+        },
+        {
+          "id": "CanonicalWattsNaturalTransformation",
+          "title": "The canonical natural transformation",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "For $m\\in M$, let $\\lambda_m:R\\to M$ be the left-module map $\\lambda_m(x)=xm$. There is an $S$-linear natural transformation\n\n$$\n\\tau^F_M:B\\otimes_R M\\longrightarrow F(M),\\qquad \\tau^F_M(b\\otimes m)=F(\\lambda_m)(b).\n$$",
+            "locator": "Ian X, Abelian Categories and Bimodules, Lemma 9.3 [env-9-3], p. 29. With the bimodule from Lemma 9.2, the comparison defines the natural map whose components Theorem 9.4 proves invertible and whose formula Theorem 9.5 uses on transformations.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=29"
+          },
+          "portal": {
+            "statement": "Let $A,B$ be unital rings, let\n$F:A\\text{-}\\mathbf{Mod}\\to B\\text{-}\\mathbf{Mod}$ be additive, and let $M=F(A)$\ncarry the $(B,A)$-bimodule structure of\n[[lem-evaluation-on-the-regular-module-has-a-commuting-right-action]]. For\n$x\\in X$ let $\\ell_x:A\\to X$, $\\ell_x(a)=ax$. Then\n\n$$\\beta_X:M\\times X\\to F(X),\\qquad \\beta_X(m,x)=F(\\ell_x)(m),$$\n\nis balanced ([[def-balanced-and-bilinear-maps]]) and $B$-linear in $m$, so it\ninduces a unique group homomorphism\n\n$$\\tau_X:M\\otimes_AX\\to F(X),\\qquad \\tau_X(m\\otimes x)=F(\\ell_x)(m),$$\n\nand each $\\tau_X$ is $B$-linear. Moreover\n$\\tau:M\\otimes_A-\\Rightarrow F$ is natural:\n$F(u)\\circ\\tau_X=\\tau_Y\\circ(1_M\\otimes u)$ for every left $A$-linear\n$u:X\\to Y$ ([[def-natural-transformation]]). The construction of $\\tau$ chooses\nno presentation of $X$ and no elements.",
+            "locator": "Alphabeta Math, Statement section, lem-canonical-eilenberg-watts-comparison-is-balanced-and-natural",
+            "url": "https://alphabetamath.cc/item/lem-canonical-eilenberg-watts-comparison-is-balanced-and-natural"
+          },
+          "deps": [
+            "RegularEvaluationRightAction",
+            "BimoduleTensorFunctoriality"
+          ],
+          "external": []
+        },
+        {
+          "id": "EilenbergWatts",
+          "title": "Eilenberg–Watts",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "Every additive, right-exact, coproduct-preserving functor $F:R\\text{-Mod}\\to S\\text{-Mod}$ is naturally isomorphic to $F(R)\\otimes_R-$, through $\\tau^F$. Every $S$-$R$ bimodule gives such a functor.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Theorem 9.4 [env-9-4], p. 30. The object correspondence in target Theorem 1.1 uses the regular, free and cokernel steps of this proof. The permitted functors are specified in Definition 9.1, p. 28.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=30"
+          },
+          "portal": {
+            "statement": "Let $A,B$ be unital rings.\n\n(i) For every $(B,A)$-bimodule $M$ ([[def-bimodule]]) the functor\n$T_M=M\\otimes_A-:A\\text{-}\\mathbf{Mod}\\to B\\text{-}\\mathbf{Mod}$ is additive,\nright exact, coproduct-preserving and therefore cocontinuous\n([[def-additive-cocontinuous-module-functor]]), and the assignment\n$M\\mapsto T_M$ is functorial: a bimodule map $f:M\\to M'$ gives the natural\ntransformation with components $f\\otimes1_X$.\n\n(ii) Conversely every additive cocontinuous functor\n$F:A\\text{-}\\mathbf{Mod}\\to B\\text{-}\\mathbf{Mod}$ is naturally isomorphic to\n$T_{F(A)}$, where $F(A)$ carries the $(B,A)$-bimodule structure\n$ma=F(r_a)(m)$ ([[lem-evaluation-on-the-regular-module-has-a-commuting-right-action]]).\n\nHence, up to natural isomorphism, the additive cocontinuous functors are exactly\nthe tensor functors with bimodule kernels: the quasi-inverse of $M\\mapsto T_M$\nis $F\\mapsto F({}_AA)$, with categorical language interpreted schematically\nas in [[def-additive-cocontinuous-module-functor]]. No commutativity of $A$ or $B$ is assumed and no choice\nis used.",
+            "locator": "Alphabeta Math, Statement section, thm-eilenberg-watts-for-arbitrary-unital-rings",
+            "url": "https://alphabetamath.cc/item/thm-eilenberg-watts-for-arbitrary-unital-rings"
+          },
+          "deps": [
+            "CanonicalWattsNaturalTransformation",
+            "RegularModuleTensorUnits",
+            "FreeModulesAndPresentations",
+            "TensorPreservesCoproducts",
+            "TensorPreservesCokernels"
+          ],
+          "external": [
+            "StacksCofanComparison",
+            "CokernelComparisonIso",
+            "NaturalIsoComponents"
+          ]
+        },
+        {
+          "id": "NaturalTransformationsByRegularEvaluation",
+          "title": "Evaluation at R classifies every transformation",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "For permitted functors $F,G$, the assignment $\\eta\\mapsto\\eta_R$ is a bijection\n\n$$\n\\operatorname{Nat}(F,G)\\cong\\operatorname{Hom}_{S\\text{-}R}(F(R),G(R)).\n$$\n\nIn particular, for bimodules $B,D$, every transformation $T_B\\Rightarrow T_D$ is uniquely $\\beta\\otimes1$ for an $S$-$R$ bimodule morphism $\\beta:B\\to D$.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Theorem 9.5 [env-9-5], p. 30. Target §§1.1 and 1.3 recover transformations and diagrammatic membership from the component at the regular module. The permitted-functor and size conventions are in Definition 9.1, p. 28.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=30"
+          },
+          "portal": {
+            "statement": "Let $A,B$ be unital rings and let $M,M'$ be $(B,A)$-bimodules\n([[def-bimodule]]), with tensor functors $T_M=M\\otimes_A-$ and\n$T_{M'}=M'\\otimes_A-$. Under the tensor-unit isomorphisms\n$\\rho_M:M\\otimes_AA\\to M$ and $\\rho_{M'}:M'\\otimes_AA\\to M'$ of\n[[thm-unit-isomorphisms-for-module-tensor-products]], every natural\ntransformation $\\eta:T_M\\Rightarrow T_{M'}$ corresponds to the $B$-linear map\n\n$$f=\\rho_{M'}\\circ\\eta_A\\circ\\rho_M^{-1}:M\\longrightarrow M',\\qquad f(m)=\\rho_{M'}\\bigl(\\eta_A(m\\otimes1)\\bigr),$$\n\nwhich satisfies $f(ma)=f(m)a$ for all $a\\in A$, i.e. is a $(B,A)$-bimodule\nmap, and then $\\eta_X=f\\otimes1_X$ for every left $A$-module $X$. Conversely\nevery bimodule map $f:M\\to M'$ yields a natural transformation with components\n$f\\otimes1_X$. The two assignments are inverse bijections\n$\\operatorname{Nat}(T_M,T_{M'})\\cong\\operatorname{Hom}_{B\\text{-}A}(M,M')$,\ncompatible with addition, identities, and vertical composition. No commutativity\nand no choice are used. Here $\\operatorname{Nat}(T_M,T_{M'})$ uses\nbimodule maps as set codes for the component families, not those\nproper-class families as elements of a set.",
+            "locator": "Alphabeta Math, Statement section, thm-natural-transformations-of-tensor-functors-are-bimodule-maps",
+            "url": "https://alphabetamath.cc/item/thm-natural-transformations-of-tensor-functors-are-bimodule-maps"
+          },
+          "deps": [
+            "EilenbergWatts",
+            "RegularModuleTensorUnits"
+          ],
+          "external": []
+        },
+        {
+          "id": "BimoduleFunctorHomEquivalence",
+          "title": "The equivalence of Hom categories",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "The assignment\n\n$$\n\\mathscr B(S,R)\\longrightarrow\\mathscr F(R,S),\\qquad B\\longmapsto T_B,\\qquad \\beta\\longmapsto\\beta\\otimes1,\n$$\n\nis fully faithful and essentially surjective. It has the explicit inverse assignment $F\\mapsto F(R)$, $\\eta\\mapsto\\eta_R$, with comparisons $T_{F(R)}\\cong F$ and $T_B(R)\\cong B$. Thus it is an equivalence in the componentwise size convention of Definition 9.1.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Corollary 9.6 [env-9-6], p. 31. This assembles the equivalence and its inverse in target Theorem 1.1, and is the module-category equivalence transported by Theorem 10.4. Definition 9.1, p. 28, supplies the componentwise size convention.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=31"
+          },
+          "portal": {
+            "statement": "Let $A,B$ be unital rings. The assignment $M\\mapsto T_M$ extends to an\nschematic equivalence between the category of $(B,A)$-bimodules with\nbimodule maps ([[def-bimodule]]) and the category of additive cocontinuous\nfunctors $A\\text{-}\\mathbf{Mod}\\to B\\text{-}\\mathbf{Mod}$ with natural\ntransformations\n([[lem-additive-cocontinuous-module-functors-form-a-category]]). It is full and\nfaithful with\n$\\operatorname{Nat}(T_M,T_{M'})\\cong\\operatorname{Hom}_{B\\text{-}A}(M,M')$,\nnaturally in $M$ and $M'$, and essentially surjective by\n[[thm-eilenberg-watts-for-arbitrary-unital-rings]]; a quasi-inverse is\n$F\\mapsto F({}_AA)$. In particular $T_M\\cong T_{M'}$ if and only if\n$M\\cong M'$ as $(B,A)$-bimodules. Categorical language has the schematic meaning of\n[[def-additive-cocontinuous-module-functor]]; no category with proper-class\nfunctors as set-coded objects is asserted. No commutativity and no choice are used.",
+            "locator": "Alphabeta Math, Statement section, cor-eilenberg-watts-is-an-equivalence-of-hom-categories",
+            "url": "https://alphabetamath.cc/item/cor-eilenberg-watts-is-an-equivalence-of-hom-categories"
+          },
+          "deps": [
+            "NaturalTransformationsByRegularEvaluation",
+            "EilenbergWatts",
+            "RegularModuleTensorUnits"
+          ],
+          "external": [
+            "EquivalenceOfFunctor",
+            "NaturalIsoComponents"
+          ]
+        },
+        {
+          "id": "TensorDictionaryCompositionAndIdentities",
+          "title": "The tensor dictionary preserves composition",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "Let ${}_S B_R$ and ${}_T C_S$ be bimodules. Their tensor product $C\\otimes_S B$ is a $T$-$R$ bimodule, with\n\n$$\nt(c\\otimes b)=(tc)\\otimes b,\\qquad(c\\otimes b)r=c\\otimes(br).\n$$\n\nThere are natural isomorphisms\n\n$$\nT_C\\circ T_B\\cong T_{C\\otimes_S B},\\qquad T_{{}_R R_R}\\cong1_{R\\text{-Mod}}.\n$$\n\nThey send $c\\otimes(b\\otimes m)$ to $(c\\otimes b)\\otimes m$, and $r\\otimes m$ to $rm$, respectively.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Theorem 10.1 [env-10-1], p. 32. This gives the composition and regular-identity clauses of target Theorem 1.1 and the reassociation used in target §7.5.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=32"
+          },
+          "portal": {
+            "statement": "Write $\\mathbf{RngMod}$ for the schematic strict 2-category with object labels the unital rings $A$, interpreted as the module categories $A\\text{-Mod}$, whose 1-cells are the additive cocontinuous functors $A\\text{-Mod}\\to B\\text{-Mod}$ ([[def-additive-cocontinuous-module-functor]]), and whose 2-cells are all natural transformations, with vertical and horizontal composition as in [[def-horizontal-composition-and-whiskering-of-natural-transformations]], so that $\\mathbf{RngMod}(A\\text{-Mod},B\\text{-Mod})$ is the functor category $\\mathrm{Fun}^{\\mathrm{coc}}_{\\mathrm{add}}(A\\text{-Mod},B\\text{-Mod})$ of [[lem-additive-cocontinuous-module-functors-form-a-category]]. Here the category and strict 2-category laws are interpreted componentwise for fixed definable functor schemas, as in [[def-additive-cocontinuous-module-functor]]: no category whose objects are proper-class functors is formed. The pseudofunctor terminology asserts the equations of [[def-bicategory-pseudofunctor-and-biequivalence]] in this schematic sense. Then the assignment\n$$\\Phi(A)=A\\text{-Mod},\\qquad \\Phi(M)=T_M=M\\otimes_A-,\\qquad \\Phi(f)=f\\otimes1,$$\nfor a unital ring $A$, a $(B,A)$-bimodule $M$, and a bimodule map $f$, is a pseudofunctor $\\Phi:\\mathbf{Bimod}\\to\\mathbf{RngMod}$ ([[def-bicategory-pseudofunctor-and-biequivalence]]): its composition comparison is the associativity isomorphism $T_N\\circ T_M\\cong T_{N\\otimes_BM}$ with components $N\\otimes_B(M\\otimes_AX)\\cong(N\\otimes_BM)\\otimes_AX$, its identity comparison is $X\\to A\\otimes_AX$, $x\\mapsto1_A\\otimes x$, and the pseudofunctor coherence equations hold. Moreover horizontal composition of 2-cells corresponds to tensoring bimodule maps, $\\phi_{N\\prime,M\\prime}\\,(\\Phi(g)*\\Phi(f))=\\Phi(g\\otimes f)\\,\\phi_{N,M}$, so vertical and horizontal composition satisfy the interchange law ([[thm-interchange-law-for-natural-transformations]]). No commutativity and no choice are used.",
+            "locator": "Alphabeta Math, Statement section, lem-tensoring-defines-a-pseudofunctor-with-interchange",
+            "url": "https://alphabetamath.cc/item/lem-tensoring-defines-a-pseudofunctor-with-interchange"
+          },
+          "deps": [
+            "BalancedTensorAssociativity",
+            "RegularModuleTensorUnits"
+          ],
+          "external": [
+            "NaturalIsoComponents"
+          ]
+        },
+        {
+          "id": "TensorPentagonAndTriangle",
+          "title": "Associativity pentagon and unit triangle",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "These comparisons are coherent: for four tensor factors, each route through repeated reassociation sends any pure tensor to the same rebracketing with the same four entries. Pure tensors generate every iterated tensor product, so the routes agree as maps. This verifies the associativity pentagon directly. Removing a middle regular-ring factor either by its action first or by reassociation first gives the same tensor by balancing; this verifies the unit triangle.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Theorem 10.1, unnumbered coherence assertion in its proof [env-10-1], p. 32. The associativity pentagon and unit triangle supply bicategory coherence for target Corollary 7.5.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=32"
+          },
+          "portal": {
+            "statement": "The data of [[def-morita-bicategory-of-rings-and-bimodules]] satisfy the bicategory axioms of [[def-bicategory-pseudofunctor-and-biequivalence]]. Explicitly: for a $(D,C)$-bimodule $H$, a $(C,B)$-bimodule $G$, and a $(B,A)$-bimodule $F$ the canonical associativity isomorphisms are natural isomorphisms of bimodules\n$$\\alpha_{H,G,F}:(H\\otimes_CG)\\otimes_BF\\longrightarrow H\\otimes_C(G\\otimes_BF);$$\nthe unitors $B\\otimes_BF\\cong F$ and $F\\otimes_AA\\cong F$ are natural isomorphisms; the pentagon and triangle identities hold; and horizontal composition of bimodule maps, $(g,f)\\mapsto g\\otimes f$, is a functor on hom-categories that preserves identities and composition. Consequently the composition functors, associator, and unitors make the Morita data a genuine bicategory: every tensor is a finite sum of elementary tensors, on which the coherence diagrams are checked, and the two sides of each diagram agree on all elements. No commutativity of the rings and no choice are used.",
+            "locator": "Alphabeta Math, Statement section, lem-bimodule-tensor-associators-and-unitors-satisfy-bicategory-coherence",
+            "url": "https://alphabetamath.cc/item/lem-bimodule-tensor-associators-and-unitors-satisfy-bicategory-coherence"
+          },
+          "deps": [
+            "TensorDictionaryCompositionAndIdentities",
+            "BalancedTensorUniversalProperty"
+          ],
+          "external": []
+        },
+        {
+          "id": "HorizontalCompositionOfTransformations",
+          "title": "Composition of transformations",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "For bimodule morphisms $\\beta:B\\to B'$, $\\gamma:C\\to C'$ with the same ring types, composition of their associated functor transformations is represented by\n\n$$\n\\gamma\\otimes\\beta:C\\otimes_SB\\to C'\\otimes_SB',\\qquad c\\otimes b\\longmapsto\\gamma(c)\\otimes\\beta(b).\n$$",
+            "locator": "Ian X, Abelian Categories and Bimodules, Proposition 10.2 [env-10-2], p. 32. This identifies horizontal diagram composition with horizontal composition of natural transformations in target §§1.2–1.3.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=32"
+          },
+          "portal": {
+            "statement": "Write $\\mathbf{RngMod}$ for the schematic strict 2-category with object labels the unital rings $A$, interpreted as the module categories $A\\text{-Mod}$, whose 1-cells are the additive cocontinuous functors $A\\text{-Mod}\\to B\\text{-Mod}$ ([[def-additive-cocontinuous-module-functor]]), and whose 2-cells are all natural transformations, with vertical and horizontal composition as in [[def-horizontal-composition-and-whiskering-of-natural-transformations]], so that $\\mathbf{RngMod}(A\\text{-Mod},B\\text{-Mod})$ is the functor category $\\mathrm{Fun}^{\\mathrm{coc}}_{\\mathrm{add}}(A\\text{-Mod},B\\text{-Mod})$ of [[lem-additive-cocontinuous-module-functors-form-a-category]]. Here the category and strict 2-category laws are interpreted componentwise for fixed definable functor schemas, as in [[def-additive-cocontinuous-module-functor]]: no category whose objects are proper-class functors is formed. The pseudofunctor terminology asserts the equations of [[def-bicategory-pseudofunctor-and-biequivalence]] in this schematic sense. Then the assignment\n$$\\Phi(A)=A\\text{-Mod},\\qquad \\Phi(M)=T_M=M\\otimes_A-,\\qquad \\Phi(f)=f\\otimes1,$$\nfor a unital ring $A$, a $(B,A)$-bimodule $M$, and a bimodule map $f$, is a pseudofunctor $\\Phi:\\mathbf{Bimod}\\to\\mathbf{RngMod}$ ([[def-bicategory-pseudofunctor-and-biequivalence]]): its composition comparison is the associativity isomorphism $T_N\\circ T_M\\cong T_{N\\otimes_BM}$ with components $N\\otimes_B(M\\otimes_AX)\\cong(N\\otimes_BM)\\otimes_AX$, its identity comparison is $X\\to A\\otimes_AX$, $x\\mapsto1_A\\otimes x$, and the pseudofunctor coherence equations hold. Moreover horizontal composition of 2-cells corresponds to tensoring bimodule maps, $\\phi_{N\\prime,M\\prime}\\,(\\Phi(g)*\\Phi(f))=\\Phi(g\\otimes f)\\,\\phi_{N,M}$, so vertical and horizontal composition satisfy the interchange law ([[thm-interchange-law-for-natural-transformations]]). No commutativity and no choice are used.",
+            "locator": "Alphabeta Math, Statement section, lem-tensoring-defines-a-pseudofunctor-with-interchange",
+            "url": "https://alphabetamath.cc/item/lem-tensoring-defines-a-pseudofunctor-with-interchange"
+          },
+          "deps": [
+            "TensorDictionaryCompositionAndIdentities",
+            "NaturalTransformationsByRegularEvaluation",
+            "BimoduleTensorFunctoriality"
+          ],
+          "external": []
+        },
+        {
+          "id": "AbelianEquivalencesPreserveFunctorHypotheses",
+          "title": "Equivalences preserve the hypotheses on functors",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "An equivalence between abelian categories is additive and preserves kernels, cokernels, and all existing set-indexed coproducts. In particular it is exact and carries small projective generators to small projective generators.",
+            "locator": "Ian X, Abelian Categories and Bimodules, Lemma 10.3 [env-10-3], p. 33. Theorem 10.4 needs preservation of additivity, right exactness and coproducts under transport in both directions.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=33"
+          },
+          "portal": {
+            "statement": "Every equivalence between abelian categories is exact.",
+            "locator": "Alphabeta Math, Statement section, thm-an-equivalence-between-abelian-categories-is-exact",
+            "url": "https://alphabetamath.cc/item/thm-an-equivalence-between-abelian-categories-is-exact"
+          },
+          "deps": [
+            "AdditiveFunctorsAndBiproducts"
+          ],
+          "external": [
+            "EquivalencePreservesLimits",
+            "EquivalencePreservesColimits",
+            "EquivalencePreservesProjectives",
+            "EquivalencePreservesSeparators"
+          ]
+        },
+        {
+          "id": "CategoricalBimoduleDictionary",
+          "title": "The complete dictionary",
+          "kind": "theorem",
+          "main": true,
+          "article": {
+            "statement": "Let $\\mathcal A,\\mathcal D$ be locally small abelian categories with all set-indexed coproducts and small projective generators $P,Q$. Supply the chosen constructions of Chapter 8. Put\n\n$$\nR=\\operatorname{End}_{\\mathcal A}(P)^{\\mathrm{op}},\\qquad S=\\operatorname{End}_{\\mathcal D}(Q)^{\\mathrm{op}}.\n$$\n\nThe category of additive, right-exact, coproduct-preserving functors $\\mathcal A\\to\\mathcal D$, with natural transformations, is equivalent to $\\mathscr B(S,R)$, in the size convention of Chapter 9. Explicitly, if $H_{\\mathcal A},L_{\\mathcal A}$ and $H_{\\mathcal D},L_{\\mathcal D}$ are the equivalences of Chapter 8, then a functor $F$ corresponds to\n\n$$\nB_F=H_{\\mathcal D}\\bigl(F(L_{\\mathcal A}(R))\\bigr),\n$$\n\nwith its right $R$-action obtained by applying $H_{\\mathcal D}F L_{\\mathcal A}$ to $\\rho_r$. A bimodule $B$ corresponds to\n\n$$\nL_{\\mathcal D}\\circ(B\\otimes_R-)\\circ H_{\\mathcal A}.\n$$",
+            "locator": "Ian X, Abelian Categories and Bimodules, Theorem 10.4 [env-10-4], p. 33. This transports the module correspondence to the abstract abelian categories of target §1.1. The image of the regular module under the inverse reconstruction is the chosen generator, giving the displayed formula there. The conventions are in §8.1, p. 25, and Definition 9.1, p. 28.",
+            "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=33"
+          },
+          "portal": null,
+          "deps": [
+            "ReconstructionFromSmallProjectiveGenerator",
+            "BimoduleFunctorHomEquivalence",
+            "AbelianEquivalencesPreserveFunctorHypotheses",
+            "TensorDictionaryCompositionAndIdentities"
+          ],
+          "external": [
+            "NaturalIsoComponents"
+          ]
+        }
+      ],
+      "external": [
+        {
+          "id": "BiconeTotal",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.Limits.isBilimitOfTotal",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Biproducts.lean#L88",
+          "usage": "Direct for a finite Bicone with the identity-sum equation. Supply Fintype locally for a finite indexing type. Import Mathlib.CategoryTheory.Preadditive.Biproducts. Checked signature: CategoryTheory.Limits.isBilimitOfTotal.{v, u, u_1} {C : Type u} [Category.{v, u} C] [Preadditive C] {J : Type u_1} [Fintype J] {f : J → C} (b : Bicone f) (total : ∑ j, b.π j ≫ b.ι j = 𝟙 b.pt) : b.IsBilimit"
+        },
+        {
+          "id": "BiconeFromProduct",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.Limits.biconeIsBilimitOfLimitConeOfIsLimit",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Biproducts.lean#L149",
+          "usage": "Direct for a limiting discrete cone with Fintype. Its canonical Bicone provides the injections and both universal properties. Import Mathlib.CategoryTheory.Preadditive.Biproducts. Checked signature: CategoryTheory.Limits.biconeIsBilimitOfLimitConeOfIsLimit.{v, u, u_1} {C : Type u} [Category.{v, u} C] [Preadditive C] {J : Type u_1} [Fintype J] {f : J → C} {t : Cone (Discrete.functor f)} (ht : IsLimit t) : (Bicone.ofLimitCone ht).IsBilimit"
+        },
+        {
+          "id": "BiconeFromCoproduct",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.Limits.biconeIsBilimitOfColimitCoconeOfIsColimit",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Biproducts.lean#L159",
+          "usage": "Direct for a colimiting discrete cocone with Fintype. Its canonical Bicone provides the projections and both universal properties. Import Mathlib.CategoryTheory.Preadditive.Biproducts. Checked signature: CategoryTheory.Limits.biconeIsBilimitOfColimitCoconeOfIsColimit.{v, u, u_1} {C : Type u} [Category.{v, u} C] [Preadditive C] {J : Type u_1} [Fintype J] {f : J → C} {t : Cocone (Discrete.functor f)} (ht : IsColimit t) : (Bicone.ofColimitCocone ht).IsBilimit"
+        },
+        {
+          "id": "BiproductTotal",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.Limits.biproduct.total",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Biproducts.lean#L204",
+          "usage": "Insert the finite identity sum on the source and target and distribute composition for reconstruction, and in the middle for matrix multiplication. Addition follows from preadditivity. Import Mathlib.CategoryTheory.Preadditive.Biproducts. Checked signature: CategoryTheory.Limits.biproduct.total.{v, u, u_1} {C : Type u} [Category.{v, u} C] [Preadditive C] {J : Type u_1} [Fintype J] {f : J → C} [HasBiproduct f] : ∑ j, biproduct.π f j ≫ biproduct.ι f j = 𝟙 (⨁ f)"
+        },
+        {
+          "id": "AdditivePreservesFiniteBiproducts",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.Functor.preservesFiniteBiproductsOfAdditive",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/AdditiveFunctor.lean#L197",
+          "usage": "Direct for additive functors between preadditive categories. Import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor. Checked signature: CategoryTheory.Functor.preservesFiniteBiproductsOfAdditive.{v₁, v₂, u₁, u₂} {C : Type u₁} {D : Type u₂} [Category.{v₁, u₁} C] [Category.{v₂, u₂} D] [Preadditive C] [Preadditive D] (F : C ⥤ D) [F.Additive] : PreservesFiniteBiproducts F"
+        },
+        {
+          "id": "AdditiveFromBinaryProducts",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.Functor.additive_of_preserves_binary_products",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/AdditiveFunctor.lean#L228",
+          "usage": "For the converse, specialize finite products to binary products. Obtain PreservesZeroMorphisms from preservation of the zero object by factoring zero arrows through it. Import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor. Checked signature: CategoryTheory.Functor.additive_of_preserves_binary_products.{v₁, v₂, u₁, u₂} {C : Type u₁} {D : Type u₂} [Category.{v₁, u₁} C] [Category.{v₂, u₂} D] [Preadditive C] [Preadditive D] (F : C ⥤ D) [HasBinaryProducts C] [PreservesLimitsOfShape (Discrete WalkingPair) F] [F.PreservesZeroMorphisms] : F.Additive"
+        },
+        {
+          "id": "MonoIffZeroKernel",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.Preadditive.mono_iff_isZero_kernel",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Basic.lean#L275",
+          "usage": "Direct for a preadditive category and an existing kernel. Import Mathlib.CategoryTheory.Preadditive.Basic. Checked signature: CategoryTheory.Preadditive.mono_iff_isZero_kernel.{v, u} {C : Type u} [Category.{v, u} C] [Preadditive C] {X Y : C} (f : X ⟶ Y) [HasKernel f] : Mono f ↔ IsZero (kernel f)"
+        },
+        {
+          "id": "EpiIffZeroCokernel",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.Preadditive.epi_iff_isZero_cokernel",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Basic.lean#L305",
+          "usage": "Direct for a preadditive category and an existing cokernel. Import Mathlib.CategoryTheory.Preadditive.Basic. Checked signature: CategoryTheory.Preadditive.epi_iff_isZero_cokernel.{v, u} {C : Type u} [Category.{v, u} C] [Preadditive C] {X Y : C} (f : X ⟶ Y) [HasCokernel f] : Epi f ↔ IsZero (cokernel f)"
+        },
+        {
+          "id": "EqualizerAsKernel",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.Preadditive.isLimitKernelForkOfFork",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Basic.lean#L379",
+          "usage": "Turns an equalizer fork into a kernel fork on the difference with the same arrow. Import Mathlib.CategoryTheory.Preadditive.Basic. Checked signature: CategoryTheory.Preadditive.isLimitKernelForkOfFork.{v, u} {C : Type u} [Category.{v, u} C] [Preadditive C] {X Y : C} {f g : X ⟶ Y} {c : Fork f g} (i : IsLimit c) : IsLimit (kernelForkOfFork c)"
+        },
+        {
+          "id": "CoequalizerAsCokernel",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.Preadditive.isColimitCokernelCoforkOfCofork",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Basic.lean#L438",
+          "usage": "Turns a coequalizer cofork into a cokernel cofork on the difference with the same arrow. Import Mathlib.CategoryTheory.Preadditive.Basic. Checked signature: CategoryTheory.Preadditive.isColimitCokernelCoforkOfCofork.{v, u} {C : Type u} [Category.{v, u} C] [Preadditive C] {X Y : C} {f g : X ⟶ Y} {c : Cofork f g} (i : IsColimit c) : IsColimit (cokernelCoforkOfCofork c)"
+        },
+        {
+          "id": "MonoKernelOfCokernel",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.Abelian.monoIsKernelOfCokernel",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Abelian/Basic.lean#L480",
+          "usage": "Direct in an abelian category given a mono and its chosen cokernel cofork. Import Mathlib.CategoryTheory.Abelian.Basic. Checked signature: CategoryTheory.Abelian.monoIsKernelOfCokernel.{v, u} {C : Type u} [Category.{v, u} C] [Abelian C] {X Y : C} {f : X ⟶ Y} [Mono f] (s : Cofork f 0) (h : IsColimit s) : IsLimit (KernelFork.ofι f ⋯)"
+        },
+        {
+          "id": "EpiCokernelOfKernel",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.Abelian.epiIsCokernelOfKernel",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Abelian/Basic.lean#L473",
+          "usage": "Direct in an abelian category given an epi and its chosen kernel fork. Apply also to the evaluation epi of the generator. Import Mathlib.CategoryTheory.Abelian.Basic. Checked signature: CategoryTheory.Abelian.epiIsCokernelOfKernel.{v, u} {C : Type u} [Category.{v, u} C] [Abelian C] {X Y : C} {f : X ⟶ Y} [Epi f] (s : Fork f 0) (h : IsLimit s) : IsColimit (CokernelCofork.ofπ f ⋯)"
+        },
+        {
+          "id": "MonoEpiIso",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.isIso_of_mono_of_epi",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Balanced.lean#L38",
+          "usage": "The abelian instance of Balanced supplies the hypothesis. Apply also after detecting that both kernel and cokernel vanish. Import Mathlib.CategoryTheory.Balanced. Checked signature: CategoryTheory.isIso_of_mono_of_epi.{v, u} {C : Type u} [Category.{v, u} C] [Balanced C] {X Y : C} (f : X ⟶ Y) [Mono f] [Epi f] : IsIso f"
+        },
+        {
+          "id": "ExactIffCokernel",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.ShortComplex.exact_and_epi_g_iff_g_is_cokernel",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Homology/ShortComplex/Exact.lean#L833",
+          "usage": "Use the bound sequence as a ShortComplex. The terminal zero in the notes encodes Epi on the second arrow. Abelian structure supplies homology and balancedness. Import Mathlib.Algebra.Homology.ShortComplex.Exact. Checked signature: CategoryTheory.ShortComplex.exact_and_epi_g_iff_g_is_cokernel.{v_1, u_1} {C : Type u_1} [Category.{v_1, u_1} C] [Preadditive C] (S : ShortComplex C) [Balanced C] [S.HasHomology] : S.Exact ∧ Epi S.g ↔ Nonempty (IsColimit (CokernelCofork.ofπ S.g ⋯))"
+        },
+        {
+          "id": "QuotientLift",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "Submodule.liftQ",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Quotient/Basic.lean#L115",
+          "usage": "Direct quotient lift for a linear map killing the submodule, with the ring homomorphism specialized to the identity. Import Mathlib.LinearAlgebra.Quotient.Basic. Checked signature: Submodule.liftQ.{u_1, u_2, u_3, u_4} {R : Type u_1} {M : Type u_2} [Ring R] [AddCommGroup M] [Module R M] (p : Submodule R M) {R₂ : Type u_3} {M₂ : Type u_4} [Ring R₂] [AddCommGroup M₂] [Module R₂ M₂] {τ₁₂ : R →+* R₂} (f : M →ₛₗ[τ₁₂] M₂) (h : p ≤ f.ker) : M ⧸ p →ₛₗ[τ₁₂] M₂"
+        },
+        {
+          "id": "QuotientLiftFactorization",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "Submodule.liftQ_mkQ",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Quotient/Basic.lean#L124",
+          "usage": "The factorization has the specified composite with the projection. Import Mathlib.LinearAlgebra.Quotient.Basic. Checked signature: Submodule.liftQ_mkQ.{u_1, u_2, u_3, u_4} {R : Type u_1} {M : Type u_2} [Ring R] [AddCommGroup M] [Module R M] (p : Submodule R M) {R₂ : Type u_3} {M₂ : Type u_4} [Ring R₂] [AddCommGroup M₂] [Module R₂ M₂] {τ₁₂ : R →+* R₂} (f : M →ₛₗ[τ₁₂] M₂) (h : p ≤ f.ker) : p.liftQ f h ∘ₛₗ p.mkQ = f"
+        },
+        {
+          "id": "QuotientProjectionSurjective",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "Submodule.mkQ_surjective",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Quotient/Defs.lean#L235",
+          "usage": "Direct surjectivity of the submodule projection. Use it for uniqueness of the lift. Import Mathlib.LinearAlgebra.Quotient.Defs. Checked signature: Submodule.mkQ_surjective.{u_1, u_2} {R : Type u_1} {M : Type u_2} [Ring R] [AddCommGroup M] [Module R M] (p : Submodule R M) : Function.Surjective ⇑p.mkQ"
+        },
+        {
+          "id": "QuotientKernelRange",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "LinearMap.quotKerEquivRange",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Isomorphisms.lean#L38",
+          "usage": "Direct first isomorphism for linear maps over arbitrary rings. The defining map sends a class to f of a representative. Import Mathlib.LinearAlgebra.Isomorphisms. Checked signature: LinearMap.quotKerEquivRange.{u_1, u_2, u_3} {R : Type u_1} {M : Type u_2} {M₂ : Type u_3} [Ring R] [AddCommGroup M] [AddCommGroup M₂] [Module R M] [Module R M₂] (f : M →ₗ[R] M₂) : (M ⧸ f.ker) ≃ₗ[R] ↥f.range"
+        },
+        {
+          "id": "ModuleKernelLimit",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "ModuleCat.kernelIsLimit",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/Kernels.lean#L39",
+          "usage": "Direct for the concrete submodule inclusion as a kernel. Import Mathlib.Algebra.Category.ModuleCat.Kernels. Checked signature: ModuleCat.kernelIsLimit.{u, v} {R : Type u} [Ring R] {M N : ModuleCat R} (f : M ⟶ N) : IsLimit (ModuleCat.kernelCone f)"
+        },
+        {
+          "id": "ModuleCokernelColimit",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "ModuleCat.cokernelIsColimit",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/Kernels.lean#L63",
+          "usage": "Direct for the concrete projection to the quotient by the range. Import Mathlib.Algebra.Category.ModuleCat.Kernels. Checked signature: ModuleCat.cokernelIsColimit.{u, v} {R : Type u} [Ring R] {M N : ModuleCat R} (f : M ⟶ N) : IsColimit (ModuleCat.cokernelCocone f)"
+        },
+        {
+          "id": "ModuleMonoInjective",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "ModuleCat.mono_iff_injective",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/EpiMono.lean#L46",
+          "usage": "Direct identification over an arbitrary ring. Import Mathlib.Algebra.Category.ModuleCat.EpiMono. Checked signature: ModuleCat.mono_iff_injective.{v, u} {R : Type u} [Ring R] {X Y : ModuleCat R} (f : X ⟶ Y) : Mono f ↔ Function.Injective ⇑(ConcreteCategory.hom f)"
+        },
+        {
+          "id": "ModuleEpiSurjective",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "ModuleCat.epi_iff_surjective",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/EpiMono.lean#L53",
+          "usage": "Direct identification over an arbitrary ring. Use for the Hom image factorization and the presentation-chase quotient maps as well. Import Mathlib.Algebra.Category.ModuleCat.EpiMono. Checked signature: ModuleCat.epi_iff_surjective.{v, u} {R : Type u} [Ring R] {X Y : ModuleCat R} (f : X ⟶ Y) : Epi f ↔ Function.Surjective ⇑(ConcreteCategory.hom f)"
+        },
+        {
+          "id": "ModuleAbelian",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "ModuleCat.abelian",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/Abelian.lean#L77",
+          "usage": "The actual Abelian instance for the pinned module category. Hom types are in the module-carrier universe. Import Mathlib.Algebra.Category.ModuleCat.Abelian. Checked signature: ModuleCat.abelian.{v, u} {R : Type u} [Ring R] : Abelian (ModuleCat R)"
+        },
+        {
+          "id": "ModuleProductLimit",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "ModuleCat.productConeIsLimit",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/Products.lean#L37",
+          "usage": "Concrete tuple product. The carrier universe must contain the index universe, as in ModuleCat.{max v w}. Import Mathlib.Algebra.Category.ModuleCat.Products. Checked signature: ModuleCat.productConeIsLimit.{u, v, w} {R : Type u} [Ring R] {ι : Type v} (Z : ι → ModuleCat R) : IsLimit (ModuleCat.productCone Z)"
+        },
+        {
+          "id": "ModuleCoproductColimit",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "ModuleCat.coproductCoconeIsColimit",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/Products.lean#L79",
+          "usage": "Concrete dependent finite-support direct sum, also for an infinite or empty index. Use classical DecidableEq and the carrier universe large enough for the index type. Import Mathlib.Algebra.Category.ModuleCat.Products. Checked signature: ModuleCat.coproductCoconeIsColimit.{u, v, w} {R : Type u} [Ring R] {ι : Type v} (Z : ι → ModuleCat R) [DecidableEq ι] : IsColimit (ModuleCat.coproductCocone Z)"
+        },
+        {
+          "id": "FreeModuleHomEquiv",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "ModuleCat.freeHomEquiv",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/Adjunctions.lean#L85",
+          "usage": "Exact for the common ring, carrier and index universe. For mixed universes use the Finsupp linear combination and extensionality declarations from the same pin. Import Mathlib.Algebra.Category.ModuleCat.Adjunctions. Checked signature: ModuleCat.freeHomEquiv.{u} {R : Type u} [Ring R] {X : Type u} {M : ModuleCat R} : ((ModuleCat.free R).obj X ⟶ M) ≃ (X ⟶ ↑M)"
+        },
+        {
+          "id": "FinsuppLinearCombination",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "Finsupp.linearCombination",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean#L54",
+          "usage": "Extend the underlying type of a module and then the underlying type of the first evaluation's kernel, without a choice of basis for either module. Import Mathlib.LinearAlgebra.Finsupp.LinearCombination. Checked signature: Finsupp.linearCombination.{u_1, u_2, u_3} {α : Type u_1} {M : Type u_2} (R : Type u_3) [Semiring R] [AddCommMonoid M] [Module R M] (v : α → M) : (α →₀ R) →ₗ[R] M"
+        },
+        {
+          "id": "FinsuppLinearCombinationSingle",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "Finsupp.linearCombination_single",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean#L68",
+          "usage": "Evaluate each free generator at coefficient one, to prove evaluation surjective and the relation image equal to the kernel. Import Mathlib.LinearAlgebra.Finsupp.LinearCombination. Checked signature: Finsupp.linearCombination_single.{u_1, u_2, u_3} {α : Type u_1} {M : Type u_2} (R : Type u_3) [Semiring R] [AddCommMonoid M] [Module R M] {v : α → M} (c : R) (a : α) : (Finsupp.linearCombination R v) (Finsupp.single a c) = c • v a"
+        },
+        {
+          "id": "FinsuppLinearExt",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "Finsupp.lhom_ext",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Finsupp/Defs.lean#L91",
+          "usage": "Uniqueness of a map on a free module follows by rescaling the generators with coefficient one. The extensionality lemma tests every singleton with arbitrary coefficient. Import Mathlib.LinearAlgebra.Finsupp.Defs. Checked signature: Finsupp.lhom_ext.{u_1, u_2, u_3, u_5, u_6} {α : Type u_1} {M : Type u_2} {N : Type u_3} {R : Type u_5} {R₂ : Type u_6} [Semiring R] [Semiring R₂] [AddCommMonoid M] [Module R M] [AddCommMonoid N] [Module R₂ N] {σ₁₂ : R →+* R₂} ⦃φ ψ : (α →₀ M) →ₛₗ[σ₁₂] N⦄ (h : ∀ (a : α) (b : M), φ (Finsupp.single a b) = ψ (Finsupp.single a b)) : φ = ψ"
+        },
+        {
+          "id": "RegularEvaluation",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "LinearMap.ringLmapEquivSelf",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Module/Equiv/Basic.lean#L364",
+          "usage": "Specialize the commuting scalar ring S to integers for the abelian-group isomorphism. Naturality follows from evaluation at one. The inverse sends a chosen element to its span-singleton linear map. Import Mathlib.Algebra.Module.Equiv.Basic. Checked signature: LinearMap.ringLmapEquivSelf.{u_1, u_4, u_5} (R : Type u_1) (S : Type u_4) (M : Type u_5) [Semiring R] [Semiring S] [AddCommMonoid M] [Module R M] [Module S M] [SMulCommClass R S M] : (R →ₗ[R] M) ≃ₗ[S] M"
+        },
+        {
+          "id": "RegularEndOpposite",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "RingEquiv.moduleEndSelf",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Module/LinearMap/End.lean#L289",
+          "usage": "The ring equivalence is oriented from the opposite regular ring to its linear endomorphism ring. Take its inverse and use ModuleCat.endRingEquiv for bundled endomorphisms when needed. Import Mathlib.Algebra.Module.LinearMap.End. Checked signature: RingEquiv.moduleEndSelf.{u_1} (R : Type u_1) [Semiring R] : Rᵐᵒᵖ ≃+* Module.End R R"
+        },
+        {
+          "id": "ModuleEndRing",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "ModuleCat.endRingEquiv",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/Basic.lean#L468",
+          "usage": "Identify bundled categorical endomorphisms with linear endomorphisms while preserving the composition convention. Import Mathlib.Algebra.Category.ModuleCat.Basic. Checked signature: ModuleCat.endRingEquiv.{v, u} {R : Type u} [Ring R] (M : ModuleCat R) : End M ≃+* (↑M →ₗ[R] ↑M)"
+        },
+        {
+          "id": "GroupAlgebraRing",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "MonoidAlgebra.ring",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/MonoidAlgebra/Defs.lean#L936",
+          "usage": "Provides the convolution ring for any ring and monoid without a finite group hypothesis. Import Mathlib.Algebra.MonoidAlgebra.Defs. Checked signature: MonoidAlgebra.ring.{u_1, u_4} {R : Type u_1} {M : Type u_4} [Ring R] [Monoid M] : Ring (MonoidAlgebra R M)"
+        },
+        {
+          "id": "GroupAlgebraScalars",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "MonoidAlgebra.algebra",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/MonoidAlgebra/Basic.lean#L83",
+          "usage": "Use A = R = k with the self-algebra structure for the central scalar map. Import Mathlib.Algebra.MonoidAlgebra.Basic. Checked signature: MonoidAlgebra.algebra.{u_1, u_4, u_7} {R : Type u_1} {A : Type u_4} {M : Type u_7} [CommSemiring R] [Semiring A] [Algebra R A] [Monoid M] : Algebra R (MonoidAlgebra A M)"
+        },
+        {
+          "id": "GroupAlgebraBasisMul",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "MonoidAlgebra.single_mul_single",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/MonoidAlgebra/Defs.lean#L545",
+          "usage": "Direct convolution basis multiplication, used for basis inverses and for detecting group commutativity. Import Mathlib.Algebra.MonoidAlgebra.Defs. Checked signature: MonoidAlgebra.single_mul_single.{u_1, u_4} {R : Type u_1} {M : Type u_4} [Semiring R] [Mul M] (m₁ m₂ : M) (r₁ r₂ : R) : MonoidAlgebra.single m₁ r₁ * MonoidAlgebra.single m₂ r₂ = MonoidAlgebra.single (m₁ * m₂) (r₁ * r₂)"
+        },
+        {
+          "id": "GroupAlgebraBasisInjective",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "MonoidAlgebra.single_left_injective",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/MonoidAlgebra/Defs.lean#L245",
+          "usage": "Use coefficient one and one_ne_zero over a field to distinguish the group basis symbols. Import Mathlib.Algebra.MonoidAlgebra.Defs. Checked signature: MonoidAlgebra.single_left_injective.{u_1, u_4} {R : Type u_1} {M : Type u_4} [Semiring R] {r : R} (hr : r ≠ 0) : Function.Injective fun m => MonoidAlgebra.single m r"
+        },
+        {
+          "id": "GroupAlgebraScalarInjective",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "MonoidAlgebra.single_right_injective",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/MonoidAlgebra/Defs.lean#L249",
+          "usage": "Use the identity basis index for the injectivity of the scalar map. Import Mathlib.Algebra.MonoidAlgebra.Defs. Checked signature: MonoidAlgebra.single_right_injective.{u_1, u_4} {R : Type u_1} {M : Type u_4} [Semiring R] {m : M} : Function.Injective (MonoidAlgebra.single m)"
+        },
+        {
+          "id": "GroupAlgebraCommRing",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "MonoidAlgebra.commRing",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/MonoidAlgebra/Defs.lean#L950",
+          "usage": "For the forward construction of commutativity from the commutative group and field structures. Import Mathlib.Algebra.MonoidAlgebra.Defs. Checked signature: MonoidAlgebra.commRing.{u_1, u_4} {R : Type u_1} {M : Type u_4} [CommRing R] [CommMonoid M] : CommRing (MonoidAlgebra R M)"
+        },
+        {
+          "id": "GroupAlgebraMap",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "MonoidAlgebra.mapDomainRingHom",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/MonoidAlgebra/MapDomain.lean#L278",
+          "usage": "Use the subgroup inclusion as a monoid homomorphism to package extension by zero as a ring map. Import Mathlib.Algebra.MonoidAlgebra.MapDomain. Checked signature: MonoidAlgebra.mapDomainRingHom.{u_3, u_6, u_7} (R : Type u_3) {M : Type u_6} {N : Type u_7} [Semiring R] [Monoid M] [Monoid N] (f : M →* N) : MonoidAlgebra R M →+* MonoidAlgebra R N"
+        },
+        {
+          "id": "GroupAlgebraMapInjective",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "MonoidAlgebra.mapDomain_injective",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/MonoidAlgebra/MapDomain.lean#L53",
+          "usage": "Use injectivity of the subgroup inclusion for injectivity of the underlying extension by zero. Import Mathlib.Algebra.MonoidAlgebra.MapDomain. Checked signature: MonoidAlgebra.mapDomain_injective.{u_3, u_6, u_7} {R : Type u_3} {M : Type u_6} {N : Type u_7} [Semiring R] {f : M → N} (hf : Function.Injective f) : Function.Injective (MonoidAlgebra.mapDomain f)"
+        },
+        {
+          "id": "RepresentationEquivalence",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "Rep.equivalenceModuleMonoidAlgebra",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/RepresentationTheory/Rep/Iso.lean#L157",
+          "usage": "Direct category equivalence for a commutative ring and monoid, hence the field and arbitrary group of the notes. The explicit functors in the same module use the same underlying groups. Import Mathlib.RepresentationTheory.Rep.Iso. Checked signature: Rep.equivalenceModuleMonoidAlgebra.{w, u, v} {k : Type u} {G : Type v} [CommRing k] [Monoid G] : Rep k G ≌ ModuleCat (MonoidAlgebra k G)"
+        },
+        {
+          "id": "RepresentationInductionAdjunction",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "Rep.indResAdjunction",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/RepresentationTheory/Induced.lean#L154",
+          "usage": "Direct for Mathlib's representation induction via coinvariants, for a group homomorphism over a commutative coefficient ring in the displayed common large universe. Identify its model with the source balanced quotient via the pure-pair universal property, or prove the source adjunction directly and use this for the representation bridge. Import Mathlib.RepresentationTheory.Induced. Checked signature: Rep.indResAdjunction.{w, u, v, v'} (k : Type u) {G : Type v} {H : Type v'} [CommRing k] [Group G] [Group H] (φ : G →* H) : Rep.indFunctor k φ ⊣ Rep.resFunctor φ"
+        },
+        {
+          "id": "RestrictionOfScalars",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "ModuleCat.restrictScalars",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/ChangeOfRings.lean#L85",
+          "usage": "Direct arbitrary-ring restriction along the subgroup algebra map. Its corresponding group action agrees on the basis elements. Import Mathlib.Algebra.Category.ModuleCat.ChangeOfRings. Checked signature: ModuleCat.restrictScalars.{v, u₁, u₂} {R : Type u₁} {S : Type u₂} [Ring R] [Ring S] (f : R →+* S) : ModuleCat S ⥤ ModuleCat R"
+        },
+        {
+          "id": "GeneratorCoyoneda",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.preadditiveCoyonedaObj",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Yoneda/Basic.lean#L69",
+          "usage": "Direct Hom functor to modules over the opposite endomorphism ring in the Hom universe. Its action is precomposition and its morphism map is postcomposition. Import Mathlib.CategoryTheory.Preadditive.Yoneda.Basic. Checked signature: CategoryTheory.preadditiveCoyonedaObj.{v, u} {C : Type u} [Category.{v, u} C] [Preadditive C] (X : C) : C ⥤ ModuleCat (End X)ᵐᵒᵖ"
+        },
+        {
+          "id": "GeneratorCoyonedaLimits",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.preservesLimits_preadditiveCoyonedaObj",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Yoneda/Limits.lean#L40",
+          "usage": "Use for kernels with the additive Hom functor and its zero-morphism instance. Import Mathlib.CategoryTheory.Preadditive.Yoneda.Limits. Checked signature: CategoryTheory.preservesLimits_preadditiveCoyonedaObj.{v, u} {C : Type u} [Category.{v, u} C] [Preadditive C] (X : C) : PreservesLimits (preadditiveCoyonedaObj X)"
+        },
+        {
+          "id": "GeneratorCoyonedaFiniteColimits",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.preservesFiniteColimits_preadditiveCoyonedaObj_of_projective",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Abelian/Projective/Basic.lean#L37",
+          "usage": "An abelian category and Projective P suffice. Apply to the finite parallel pair for each cokernel. Import Mathlib.CategoryTheory.Abelian.Projective.Basic. Checked signature: CategoryTheory.preservesFiniteColimits_preadditiveCoyonedaObj_of_projective.{v, u} {C : Type u} [Category.{v, u} C] [Abelian C] (P : C) [hP : Projective P] : PreservesFiniteColimits (preadditiveCoyonedaObj P)"
+        },
+        {
+          "id": "GeneratorCoyonedaFaithful",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.isSeparator_iff_faithful_preadditiveCoyonedaObj",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Generator/Preadditive.lean#L60",
+          "usage": "Direct faithfulness for the separator P and the opposite-ring-valued Hom functor. Import Mathlib.CategoryTheory.Generator.Preadditive. Checked signature: CategoryTheory.isSeparator_iff_faithful_preadditiveCoyonedaObj.{v, u} {C : Type u} [Category.{v, u} C] [Preadditive C] (G : C) : IsSeparator G ↔ (preadditiveCoyonedaObj G).Faithful"
+        },
+        {
+          "id": "CokernelAnnihilatorTransport",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.Limits.CokernelCofork.isColimitOfIsColimitOfIff",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Limits/Shapes/Kernels.lean#L699",
+          "usage": "Use with the identity on the target of the relation arrow. Precomposition by an epi preserves the same annihilators for the kernel arrow and the presentation relation arrow. Import Mathlib.CategoryTheory.Limits.Shapes.Kernels. Checked signature: CategoryTheory.Limits.CokernelCofork.isColimitOfIsColimitOfIff.{v, u} {C : Type u} [Category.{v, u} C] [HasZeroMorphisms C] {X Y : C} {f : X ⟶ Y} {c : CokernelCofork f} (hc : IsColimit c) {X' Y' : C} (f' : X' ⟶ Y') (e : Y' ≅ Y) (iff : ∀ ⦃W : C⦄ (φ : Y ⟶ W), f ≫ φ = 0 ↔ f' ≫ e.hom ≫ φ = 0) : IsColimit (CokernelCofork.ofπ (e.hom ≫ Cofork.π c) ⋯)"
+        },
+        {
+          "id": "EquivalencePreservesLimits",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.Adjunction.isEquivalencePreservesLimits",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Adjunction/Limits.lean#L210",
+          "usage": "Direct with the stated shape universes. Use for zero objects and products to obtain additivity, and then for kernels. Import Mathlib.CategoryTheory.Adjunction.Limits. Checked signature: CategoryTheory.Adjunction.isEquivalencePreservesLimits.{v, u, v₁, v₂, u₁, u₂} {C : Type u₁} [Category.{v₁, u₁} C] {D : Type u₂} [Category.{v₂, u₂} D] (E : D ⥤ C) [E.IsEquivalence] : PreservesLimitsOfSize.{v, u, v₂, v₁, u₂, u₁} E"
+        },
+        {
+          "id": "EquivalencePreservesColimits",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.Adjunction.isEquivalence_preservesColimits",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Adjunction/Limits.lean#L101",
+          "usage": "Direct with the stated shape universes. Use for cokernels and arbitrary coproducts in the selected index universe. Import Mathlib.CategoryTheory.Adjunction.Limits. Checked signature: CategoryTheory.Adjunction.isEquivalence_preservesColimits.{v, u, v₁, v₂, u₁, u₂} {C : Type u₁} [Category.{v₁, u₁} C] {D : Type u₂} [Category.{v₂, u₂} D] (E : C ⥤ D) [E.IsEquivalence] : PreservesColimitsOfSize.{v, u, v₁, v₂, u₁, u₂} E"
+        },
+        {
+          "id": "EquivalencePreservesProjectives",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.Functor.preservesProjectiveObjects_of_isEquivalence",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Projective/Preserves.lean#L54",
+          "usage": "Direct transfer of projectivity along an equivalence. Import Mathlib.CategoryTheory.Preadditive.Projective.Preserves. Checked signature: CategoryTheory.Functor.preservesProjectiveObjects_of_isEquivalence.{v₁, v₂, u₁, u₂} {C : Type u₁} [Category.{v₁, u₁} C] {D : Type u₂} [Category.{v₂, u₂} D] {F : C ⥤ D} [F.IsEquivalence] : F.PreservesProjectiveObjects"
+        },
+        {
+          "id": "EquivalencePreservesSeparators",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.IsSeparator.of_equivalence",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Generator/Basic.lean#L561",
+          "usage": "Direct transfer of the generator condition. Preserve smallness by transporting the Hom coproduct comparison through the equivalence. Import Mathlib.CategoryTheory.Generator.Basic. Checked signature: CategoryTheory.IsSeparator.of_equivalence.{v₁, v₂, u₁, u₂} {C : Type u₁} [Category.{v₁, u₁} C] {D : Type u₂} [Category.{v₂, u₂} D] {G : C} (h : IsSeparator G) (α : C ≌ D) : IsSeparator (α.functor.obj G)"
+        },
+        {
+          "id": "CokernelComparisonIso",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.Limits.CokernelCofork.mapIsoOfIsColimit",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Limits/Shapes/Kernels.lean#L750",
+          "usage": "Apply to the naturality square between the two free-term maps, with isomorphisms at both ends and both coforks colimiting. Identify the induced morphism with tau at the presented object by cokernel cancellation. Import Mathlib.CategoryTheory.Limits.Shapes.Kernels. Checked signature: CategoryTheory.Limits.CokernelCofork.mapIsoOfIsColimit.{v, u} {C : Type u} [Category.{v, u} C] [HasZeroMorphisms C] {X Y : C} {f : X ⟶ Y} {X' Y' : C} {f' : X' ⟶ Y'} {cc : CokernelCofork f} {cc' : CokernelCofork f'} (hf : IsColimit cc) (hf' : IsColimit cc') (φ : Arrow.mk f ≅ Arrow.mk f') : cc.pt ≅ cc'.pt"
+        },
+        {
+          "id": "EquivalenceOfFunctor",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.Functor.asEquivalence",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Equivalence.lean#L627",
+          "usage": "Package the actual functor after proving full, faithful and essentially surjective, or supply its explicitly constructed comparisons to retain their formulas. Import Mathlib.CategoryTheory.Equivalence. Checked signature: CategoryTheory.Functor.asEquivalence.{v₁, v₂, u₁, u₂} {C : Type u₁} [Category.{v₁, u₁} C] {D : Type u₂} [Category.{v₂, u₂} D] (F : C ⥤ D) [F.IsEquivalence] : C ≌ D"
+        },
+        {
+          "id": "NaturalIsoComponents",
+          "repository": "https://github.com/leanprover-community/mathlib4",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.NatIso.ofComponents",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/NatIso.lean#L178",
+          "usage": "Package component isomorphisms subject to naturality. Use for tensor natural isomorphisms and transport comparisons. Import Mathlib.CategoryTheory.NatIso. Checked signature: CategoryTheory.NatIso.ofComponents.{v₁, v₂, u₁, u₂} {C : Type u₁} [Category.{v₁, u₁} C] {D : Type u₂} [Category.{v₂, u₂} D] {F G : C ⥤ D} (app : (X : C) → F.obj X ≅ G.obj X) (naturality : ∀ {X Y : C} (f : X ⟶ Y), F.map f ≫ (app Y).hom = (app X).hom ≫ G.map f := by cat_disch) : F ≅ G"
+        },
+        {
+          "id": "StacksCofanComparison",
+          "repository": "https://github.com/AxiomMath/Stacks",
+          "revision": "f56a316ddf7a930906d88b78d6f9a2668cffd0cf",
+          "license": "Apache-2.0",
+          "declaration": "CategoryTheory.NatTrans.isIso_app_of_isColimit_cofan",
+          "url": "https://github.com/AxiomMath/Stacks/blob/f56a316ddf7a930906d88b78d6f9a2668cffd0cf/StacksFrontier/AlgebraicGeometry/TopDegreeBaseChange/EilenbergWatts.lean#L84",
+          "usage": "Use from the already compiled MackeyDiagrams.External.StacksEilenbergWatts at the free-module step. It requires a natural transformation of functors, a cofan, a colimit proof for each image cofan, and an isomorphism on each summand. These come from naturality, the free copower, coproduct preservation for both functors, and the regular-unit case. The helper has no ring or linearity hypotheses. Its imported axiom audit has propext, Classical.choice and Quot.sound. Import MackeyDiagrams.External.StacksEilenbergWatts. Checked signature: CategoryTheory.NatTrans.isIso_app_of_isColimit_cofan.{u_1, u_2, u_3, u_4, u_5} {C : Type u_1} [Category.{u_5, u_1} C] {D : Type u_2} [Category.{u_4, u_2} D] {G H : C ⥤ D} (τ : G ⟶ H) {ι : Type u_3} {f : ι → C} (c : Cofan f) (hG : IsColimit (G.mapCocone c)) (hH : IsColimit (H.mapCocone c)) (h : ∀ (i : ι), IsIso (τ.app (f i))) : IsIso (τ.app c.pt)"
+        }
+      ],
+      "investigation": "Sources and scope. I read the complete cached lecture-notes TeX (1,859 lines, Chapters 1–10 and bibliography) and checked the 36-page cached PDF and its rendered theorem headings against the inventory. The TeX SHA-256 is 20a60849d40da28561a5f9e5f6ea418c06887f6cb89998ff8c401dd9e39c4e92. The cached and downloaded Get Curious PDF both have SHA-256 dd34dd5f79638802f079363712368ed15fbf8e39ab81fe417558d18a0043d8c1. All 35 article objects, including their inventory locators and source text, are preserved verbatim. The public target PDF matches the existing project's article-revision/mackey-bimodules.pdf, SHA-256 e7712567f611d36713fb4dbf45f8b1aeefea022ea2e403462529850ebe290cc8. I used its revised TeX passages for §1.1, diagram composition and block sums, induction and restriction, the Mackey sum, and the finite-parabolic bicategory, cross-checked against the older source where relevant. The synthesized defect-report URL ending in .pdf/prerequisite-omissions-and-potential-defects returned HTTP 404. The requested cached and published primary sources were accessible. The checked foundational passages yield no counterexample to an inventoried mathematical statement. In Proposition 4.2 the zero-identity citation to Proposition 3.9 refers to an observation in its proof. For a proper-class reading of the target's §1.1 reconstruction paragraph, retain the cited notes' §8.1 convention of supplied constructions or global choice. In Lean fix compatible universes and use the supplied data or standard Classical.choice in the fixed universe.\n\nAlphabeta citations give the published Statement sections of their counterparts. Several cover one part of a combined notes result. In particular the cancellation counterpart assumes abelianity and omits the difference fork clauses, the normal-morphism counterpart omits the balanced consequence, and the coproduct, free-module, regular-endomorphism, and quotient-kernel entries describe individual clauses. The induction counterpart includes coinduction and is stated in its own group-ring convention. The transformation counterpart treats tensor functors. Some portal counterparts also claim choice-free constructions. All planned endpoints use their article conditions, including ordinary choice, the §8.1 choices, and the §9.1 componentwise size convention. ExactPresentationsAreCokernels, GeneratorCokernelPresentations, GeneratorHomFullyFaithful and CategoricalBimoduleDictionary have no standalone matching Alphabeta item located. No additional portal result was explicitly requested. The technical facts from notes 4.12, 4.13 and 4.14 are proved within the 8.3 and 8.4 routes, using the existing inventory and checked Mathlib. No additional assumptions such as an adjunction for reconstruction, preservation of all small colimits as an input to Watts, finite-dimensionality, or choice-freeness are needed as portal prerequisites.\n\nLean environment and reuse. I inspected both the target Mackey proof repository and the existing NotesProofs repository before choosing declarations. The target checkout is uncommitted, so its already compiled Proofs.* declarations are recorded here by import module, with no invented GitHub revision. Their source, compiled modules and declarations were inspected under leanprover/lean4:v4.36.0-rc2 and mathlib 65d730f7150f21fdfa32f3e73a3f549c1f96a0e9. All Lean checks were #check and relevant #print axioms through the required compile-with-slot.sh and lock, for small import files against the existing oleans. The ledger includes only declarations designated for use and gives their exact signatures plus import paths. This is a proof plan and compatibility check. It does not claim any new article endpoint or a new adapter has compiled.\n\nModule and tensor routes. For 5.8 use Finsupp.linearCombination on the underlying module and again on the kernel of its evaluation. Membership in the range is membership in that kernel, with the converse furnished by the singleton of a kernel element. Bundle the result as a cokernel. For 5.9, import Proofs.SmallProjectiveGenerator and use SmallProjectiveGenerator_regular for (B : Type v) [Ring B] in ModuleCat.{v} B, with Projective, IsSeparator and preservation of each Discrete I coproduct by the additive-group coyoneda for I : Type v. Evaluation at one and the opposite endomorphism ring are covered by the listed Mathlib declarations. Keep the indexing universe explicit and use ULift when interpreting a regular module in a larger module-carrier universe.\n\nFor 6.2 import Proofs.ModuleTensorUniversalProperty. ModuleTensorUniversalProperty is quantified over R : Type u [Ring R], M : Type v and N : Type w with AddCommGroup, Module Rᵐᵒᵖ M and Module R N, and arbitrary target A : Type z [AddCommGroup A]. It uses the additive quotient of (M × N) →₀ ℤ by the subgroup generated by the two additivity relations and balance. It proves balance, unique additive lifts and the required equivalence with balanced maps; recover pure-tensor generation from quotient representatives and absorb integer coefficients in the first factor. The proof uses propext, Classical.choice and Quot.sound. For 6.3–6.5 reuse Proofs.BimoduleTensorBicategoryCoherence and Proofs.BalancedTensorAssociativity. The former packages the tensor action, pure map, balanced lift, tensor maps, associator, unitors, naturality, pure generation, pentagon and triangle on arbitrary RingCat.{u} rings and AddCommGrpCat.{u} carriers equipped with both commuting actions via Bimodule. Its FreeAddGroup/addConGen quotient has the same universal property, which gives the comparison to the 6.2 quotient. It packages data under existentials. Its axiom audit has propext and Quot.sound. BalancedTensorAssociativity handles arbitrary R and S with the first right R-module, a middle left R/right S module with commuting actions, and a last left S-module. Its association and naturality apply to supplied inner quotient actions satisfying the stated pure-generator formulas. Use the 6.3 formulas to supply those actions. For outer linearity, use the separately stated endpoint data or pure-generator extensionality. Its audit has propext, Classical.choice and Quot.sound. In mixed universes use the explicitly typed quotient, supplying induced outer actions on pure generators, and use the packaged same-universe coherence once the chosen model is identified by the universal property. Separate additivity of tensor maps follows by the pure-tensor formula. For 6.6 use the finite support of a single direct-sum element to define the inverse for an arbitrary index type. For 6.7 descend the balanced pair map into the quotient by the range of the tensor of f, compare with the tensor of the range quotient, and use cokernel exactness.\n\nGroup-algebra and diagram bridges. Mathlib's representation-to-module equivalence has [CommRing k] [Monoid G] and unrestricted representation carrier universe. Rep.indResAdjunction has [CommRing k], groups and a monoid hom with induction given by the coinvariant model. Use the arbitrary-ring balanced lift to build the source module adjunction by evaluation at 1 ⊗ v and its inverse (x,v) ↦ x • f(v). When connecting to Mathlib induction, compare the left adjoints to restriction or compare the pure-pair maps, taking account of the inverse in the coinvariant group basis convention. Import Proofs.InductionRestrictionAdjunction for the already proved target bridge: for U : Type u [Group U], H G : Subgroup U, α : U, and ∀ h : H, α * h * α⁻¹ ∈ G, it gives the cap and cup formulas and the adjunction unit and counit formulas for ℂ group algebras along the conjugation embedding. This specializes to inclusion for α = 1 and has no Fintype assumption. It uses propext, Classical.choice and Quot.sound. Import MackeyDiagrams.Balanced to identify the existing free-biset horizontal composition with the general tensor product. MackeyDiagrams.Biset.liftBalanced_pairLinear and liftBalanced_unique require groups K,H,J, X : Biset K H, Y : Biset H J, [CommSemiring R], [AddCommMonoid M], [Module R M], an R-bilinear map on the two Finsupp modules, and its IsBalanced condition with the group-action convention. Match this condition with group-algebra balancing by expanding the finite-support middle coefficient and use generation for the inverse comparison. The local bridge to the complex-linear clause of target §1.1 checks equal scalar actions on F(R) by F's ℂ-linearity applied to scalar multiples of the identity, and the converse on pure tensors. Reuse the arbitrary-group free-biset and group-algebra declarations directly in that scope. Finite orbit-sum, finite-index reverse-adjunction and finite-parabolic results do not supply arbitrary-module foundations.\n\nReconstruction route. Use preadditiveCoyonedaObj P with coefficient ring (End P)ᵐᵒᵖ. For 8.3, its kernel comparison follows from preservation of limits. The pinned projective coyoneda finite-colimit instance supplies cokernel preservation. For the cokernel presentation map q, H(q) is epic by this preservation and is therefore surjective in modules. Smallness supplies the coproduct comparison on underlying additive groups, and the comparison already preserves the module action by postcomposition. Faithfulness is precisely separation. Detection of zero follows by comparing identity and zero, and the kernel/cokernel tests then reflect isomorphisms. For 8.4 make the evaluation cofan map indexed by all maps P ⟶ X and apply the separator condition. Repeat for the kernel and transport the cokernel along the equivalent annihilator test after an epi. For 8.5 use smallness on the free copower, the universal property of this copower and of a free module, and descend the lifted map along the generator presentation. For 8.6 use the canonical presentation on every module, lift its relation map by full faithfulness and take the chosen cokernel. The comparison from applying H identifies two cokernels. Either construct L on morphisms by transporting the free maps on generators, as in the notes, or use full faithfulness to transport morphisms through the explicit object comparisons. The comparison at objects of the source then follows by full faithfulness and reflection of isomorphisms. Keep the unit/counit data natural and preserve the identification H(P) ≅ R. Import NotesProofs.ClassicalReconstruction for the compiled root declaration ClassicalReconstruction. It factors through ReconstructionCheck.PointwiseReconstruction from NotesProofs.ReconstructionSupport. It assumes preadditivity, existence of all (v,v)-small colimits, finite products, kernels and cokernels, mono and epi normality, Projective P, IsSeparator P and preservation of v-indexed coproducts by the underlying additive Hom functor. It additionally takes chosen Type v copowers of P and cokernels with Hom equivalences and their component formulas, a functor L with a supplied adjunction unit and counit and both triangles, isomorphisms from the specified presentation cokernels to L(V), and the stated unit formula on each x. It can package those data as natural inverses after those hypotheses have been supplied. It does not supply the adjunction and must not be used as the full reconstruction theorem. Its axioms are propext, Classical.choice and Quot.sound.\n\nWatts and transport routes. Import Proofs.RegularModuleRightAction for RegularModuleRightAction with arbitrary rings A : Type u and B : Type v, additive F : ModuleCat.{max u z} A ⥤ ModuleCat.{w} B and regular object ULift.{z} A. It yields the right module action commuting with the unchanged left B-action, by conjugating right multiplication along ULift.moduleEquiv and applying F. It uses propext and Quot.sound. Import Proofs.CanonicalWattsComparison for CanonicalWattsComparison under the same hypotheses. It gives biadditivity, balance and outer linearity of F(λ_x)(m), a quotient tensor functor with pure action and map formulas, and a natural comparison to F composed with the codomain ULift functor in the common larger carrier universe, with uniqueness on pure generators. It uses propext, Classical.choice and Quot.sound and has no invertibility or preservation conclusion. For the existing comparison take a common carrier universe containing both rings and the domain carriers. In that universe identify the lifted codomain functor with F using the module equivalence between each lifted carrier and the original carrier. Identify the quotient models through their balanced universal properties. For 9.4 prove invertibility at the regular object with the unit, then at free copowers with the verified cofan helper and finally at the presentation cokernel via the naturality square and both cokernel universal properties. The project also has NotesProofs.presentation_comparison_of_cokernels in NotesProofs.PresentationCokernel as a checked module-level realization of the final chase. Its ring and six module carriers are fixed, the carriers share one universe, the two squares commute, the top composite vanishes, the bottom factorization and both cancellation hypotheses hold, the relations comparison is surjective, and the generators comparison is bijective. The result is bijectivity of the final comparison. It uses propext, Classical.choice and Quot.sound. These hypotheses must come from right exactness, naturality and the free cases.\n\nFor 9.5 import Proofs.NaturalTransformationsOfTensorFunctors. Its theorem assumes arbitrary rings A and B, bimodules presented with the existing left B-module structure and commuting right A-actions, and three supplied tensor functors with the pure map, the unique B-linear factorization of balanced pairings and the map formula at all modules. It gives the unit formulas and classification of natural graphs between tensor functors, including vertical composition. It uses propext and Quot.sound. For ordinary NatTrans use graph conversion or the same pure formulas and transport along the 9.4 natural isomorphisms for arbitrary permitted F and G. For 9.6 assemble the evaluation and tensor comparisons as natural in functors and bimodules. At 10.1–10.2 use the induced outer actions and compare natural isomorphisms or transformations on pure generators, using the checked coherence result for the pentagon and triangle. For 10.3 transport smallness by the explicit Hom and coproduct comparison, and use equivalence instances for the categorical preservation clauses. For 10.4 whisker the equivalences and their comparison maps and compose with 9.6. These routes provide the ingredients for checked importable connections to the target. They neither assert the historical choice-free reconstruction or Watts endpoints nor use any unproved paper conclusion.\n\nGitHub search and provenance. Mathlib4 is the Lean community's maintained standard library. The local checkout HEAD, its lean-toolchain and Apache-2.0 LICENSE were checked. Inspected its preadditive, abelian, module, monoid-algebra, representation and tensor APIs at the exact pin. The commutative-base TensorProduct and ModuleCat.extendScalars declarations alone do not supply a balanced tensor product over arbitrary rings. Freyd–Mitchell is an embedding theorem. Gabriel–Popescu uses a Grothendieck abelian category and supplies a fully faithful right adjoint under separation. The nearby Abelian.preadditiveCoyonedaObj_map_surjective requires an epi from the single projective separator G to the object in question. Chapter 8 only supplies epis from copowers of P, so neither declaration replaces its descent and reconstruction. Checked the community physics library leanprover-community/physlib (formerly PhysLean) at 31f35373ab937172abc689c128177c98405dc936. Its Apache-2.0 source and manifest use Lean 4.36.0 and Mathlib fc4f59e577feb1a4956671bc04ac18aaaf8cd842. Its tensor-species and tensor endomorphism files use specialized or commutative-base constructions. Also checked the similarly named meta-r0ze/physicslib at 85e4ccd4a3e448718839ad229fecb8e155887622, Apache-2.0, Lean 4.34.1 and Mathlib d13f23b723b8a846827a245b89c10fc7d3f11612. Its tensor-kernel declarations are finite complex-matrix identities. Neither provides a used declaration.\n\nAxiomMath/Stacks is an established Lean formalization of the Stacks Project. Inspected the Apache-2.0 source at f56a316ddf7a930906d88b78d6f9a2668cffd0cf, whose upstream toolchain and Mathlib tag are both 4.35.0. The locally vendored EilenbergWatts module matches upstream apart from an attribution comment and a trailing blank line. Its source and olean hashes match the existing receipt for the project's current pin, and the shared-slot import and axiom check accepted the generic cofan comparison. Stacks.EilenbergWatts.iso itself requires a single CommRing, an additive R-linear endofunctor, preservation of Type-u coproducts and preservation of finite colimits. The related Stacks bimodule TensorHom API also starts with a commutative ambient ring. Its mixed modules and presheaf base-change results do not supply the requested arbitrary-ring theorem. I checked the concrete two-ring leads in the historical Stacks fork optpku/stacks at e2299cf97f975b08e7b5b59202ed00adc80ff6b7. The general eilenbergWatts_tfae and the proposed tensorFunctorIsEquivalence both have literal sorry bodies. Repository searches for Eilenberg–Watts and Gabriel–Mitchell Lean projects yielded no additional verified exact supplier. Only the generic Stacks cofan comparison and the selected pinned Mathlib declarations enter the ledger.\n\nTarget coverage. The graph's terminal branches are BiproductMatrixCalculus for block evaluation and stacking in §1.2, GroupAlgebraInductionAdjunction for ordinary induction/restriction in §§1.2 and 2.1, HorizontalCompositionOfTransformations for the functor interpretation of juxtaposition in §§1.2–1.3, TensorPentagonAndTriangle for the associativity and unit checks in the finite-parabolic bicategory, and CategoricalBimoduleDictionary for §1.1. TensorPreservesCoproducts also supplies the direct-sum step used for the Mackey summands. Every inventory item is in one of these branches. The introductory examples, the modulo-two case, semisimplicity examples and the inverse-bimodule criterion for Morita equivalence are outside these dependencies. The workflow's checkPlan accepted the graph and exact article source objects.\n\nGraph audit: 35 main theorems, 58 directed prerequisite edges, 56 used external declarations, 31 verified Alphabeta counterpart citations, and zero portal-only intermediate items. Every referenced ID resolves and the prerequisite graph is acyclic."
+    },
+    "translations": {},
+    "translation": {
+      "type": "∀ {C : Type*} [CategoryTheory.Category.{_} C] [CategoryTheory.Preadditive C]\n  {J : Type*} [Finite J] (X : J → C),\n  letI : Fintype J := Fintype.ofFinite J\n  (∀ (B : CategoryTheory.Limits.Bicone X),\n    Finset.sum Finset.univ (fun j => CategoryTheory.CategoryStruct.comp (B.π j) (B.ι j)) =\n        CategoryTheory.CategoryStruct.id B.pt →\n    Nonempty (CategoryTheory.Limits.Bicone.IsBilimit B)) ∧\n  (∀ (P : CategoryTheory.Limits.Fan X) (hP : CategoryTheory.Limits.IsLimit P),\n    let B := CategoryTheory.Limits.Bicone.ofLimitCone hP\n    Finset.sum Finset.univ (fun j => CategoryTheory.CategoryStruct.comp (B.π j) (B.ι j)) =\n      CategoryTheory.CategoryStruct.id B.pt) ∧\n  (∀ (Q : CategoryTheory.Limits.Cofan X) (hQ : CategoryTheory.Limits.IsColimit Q),\n    let B := CategoryTheory.Limits.Bicone.ofColimitCocone hQ\n    Finset.sum Finset.univ (fun j => CategoryTheory.CategoryStruct.comp (B.π j) (B.ι j)) =\n      CategoryTheory.CategoryStruct.id B.pt)",
+      "value": null,
+      "source": "article",
+      "sourceReason": "The cached lecture-notes TeX and PDF agree on Proposition 3.5 (env-3-5, p. 8), with biproduct understood as in Definition 3.4. The defect-report URL returned HTTP 404, so no correction for this endpoint was available from it. The owner confirms the notes' ordinary-choice convention and permits standard Lean axioms, including Classical.choice. The finite indexing type may be empty.",
+      "artifacts": [
+        "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-4cbc0456-db85-43a9-a779-90b118e13b02/Check.lean",
+        "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-4cbc0456-db85-43a9-a779-90b118e13b02/proposal.json"
+      ]
+    }
+  },
+  "answer": {
+    "accept": true,
+    "reasons": "The translated statement elaborates as a Lean declaration and matches Proposition 3.5 and Definition 3.4 on page 8 of the cached lecture notes. For any finite family in a preadditive category, including the empty family, `Bicone` supplies the identity and zero component equations. The sum-to-identity equation completes the article’s biproduct hypothesis, and `IsBilimit` gives both universal properties for the same projections and injections. The converse clauses establish the sum equation for the canonical bicone on the given product or coproduct. The owner explicitly permits ordinary choice, consistent with the notes. The supplied defect-report URL returned HTTP 404, so no correction for this exact endpoint was available. The article statement governs.",
+    "artifacts": [
+      "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/reviewer-1-09ac3877-3c25-4c42-b6c6-8bcf9fb3f04f/EndpointCheck.lean"
+    ]
+  }
+}

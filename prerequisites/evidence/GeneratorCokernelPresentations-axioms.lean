@@ -1,0 +1,2 @@
+import NotesProofs.GeneratorCokernelPresentations
+#print axioms GeneratorCokernelPresentations

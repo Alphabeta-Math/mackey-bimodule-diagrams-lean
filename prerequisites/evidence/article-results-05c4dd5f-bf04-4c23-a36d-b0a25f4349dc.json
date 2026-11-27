@@ -1,0 +1,342 @@
+{
+  "role": "article-results",
+  "context": {
+    "title": "Categorical prerequisites for bimodule string diagrams",
+    "request": "Read the full lecture notes from the exact cached source /home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/lecture-notes-proof-strategy/lecture-notes.tex and PDF /home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/evidence/lecture-notes-proof-strategy/lecture-notes.pdf. Formalize only results actually necessary for the target string-diagram paper and their substantial proof chains. Notes sections 4.12–4.14, 5.4–5.9, 6.2–6.7, 7.2, 7.4, 7.6, 8.3–8.6, 9.2–9.6 and 10.1–10.4 are guidance, not permission to inventory irrelevant statements: exact dependencies decide. Prefer exact verified pinned Mathlib declarations where their hypotheses fit and prove missing steps. The notes explicitly assume ordinary choice, and Chapter 8 either supplies choices or assumes global choice: standard Lean axioms propext, Classical.choice and Quot.sound are permitted. Do not assert a choice-free claim from a different portal. Prove the necessary foundations from scratch, using Mathlib and previously checked generic foundational infrastructure where exact statements and hypotheses match; do not use unproved paper conclusions as premises. Record source statements, dependencies and exact Mathlib declarations. Provide checked importable bridges usable by the original project. Its historical choice-free auxiliary endpoints remain separate and must not be falsely marked as proved by an argument using choice. Alert the owner with evidence of any actual mathematical defect in either source.",
+    "article": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf",
+    "portal": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf",
+    "articleScope": {
+      "kind": "prerequisites",
+      "target": "https://getcurious.cc/downloads/mackey-bimodules.pdf"
+    },
+    "directory": "/home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean",
+    "github": "Alphabeta-Math/mackey-bimodule-diagrams-lean",
+    "visibility": "private",
+    "lean": "leanprover/lean4:v4.36.0-rc2",
+    "mathlib": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+    "existing": true,
+    "imports": [
+      "MackeyDiagrams"
+    ],
+    "moduleRoot": "NotesProofs",
+    "deferCloseout": true,
+    "defectReport": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf/prerequisite-omissions-and-potential-defects"
+  },
+  "answer": [
+    {
+      "id": "FiniteBiproductUniversalProperties",
+      "title": "The two universal properties",
+      "article": {
+        "statement": "A biproduct is both a product through $p_j$ and a coproduct through $i_j$. Conversely, any finite product in a preadditive category has canonical biproduct injections; any finite coproduct has canonical biproduct projections.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Proposition 3.5 [env-3-5], p. 8. The finite block maps in target §1.2 and the proof of Proposition 3.9 use the product and coproduct properties of the same object.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=8"
+      }
+    },
+    {
+      "id": "BiproductMatrixCalculus",
+      "title": "A morphism is its matrix",
+      "article": {
+        "statement": "For finite biproducts $X=\\bigoplus_jX_j$, $Y=\\bigoplus_kY_k$, every $f:X\\to Y$ is determined by entries $f_{kj}=p^Y_k f i^X_j$, and\n\n$$\nf=\\sum_{k,j}i^Y_k f_{kj}p^X_j.\n$$\n\nFor $g:Y\\to Z=\\bigoplus_\\ell Z_\\ell$, composition has entries $(gf)_{\\ell j}=\\sum_k g_{\\ell k}f_{kj}$. Addition is entrywise.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Proposition 3.7 [env-3-7], p. 9. Target §1.2 uses the entry formula to recover each evaluated block and identify stacking with block-matrix multiplication.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=9"
+      }
+    },
+    {
+      "id": "AdditiveFunctorsAndBiproducts",
+      "title": "Addition and finite biproducts",
+      "article": {
+        "statement": "An additive functor between additive categories preserves finite biproducts. Conversely, a functor between additive categories that preserves zero objects and finite products and coproducts is additive.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Proposition 3.9 [env-3-9], p. 9. The converse supplies additivity in Lemma 10.3, and the forward direction supplies the finite-sum correspondence in target §1.3.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=9"
+      }
+    },
+    {
+      "id": "CancellationAndZeroKernels",
+      "title": "Cancellation and zero kernels",
+      "article": {
+        "statement": "If kernels and cokernels exist, $f$ is monic exactly when its kernel is a zero object, and epic exactly when its cokernel is a zero object. Equalizers of $f,g$ are kernels of $f-g$; coequalizers are cokernels of $f-g$.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Proposition 4.2 [env-4-2], p. 10. Lemma 8.3 uses the zero-kernel and zero-cokernel criteria to turn detection by Hom into monicity and epicity. The ambient additive-category convention is in §4.1, p. 10.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=10"
+      }
+    },
+    {
+      "id": "NormalMorphismsInAbelianCategories",
+      "title": "Normal morphisms and cancellation in both directions",
+      "article": {
+        "statement": "In an abelian category every monomorphism is a kernel of its cokernel, and every epimorphism is a cokernel of its kernel. Consequently a morphism which is both monic and epic is an isomorphism.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Proposition 4.5 [env-4-5], p. 11. Lemma 8.4 presents objects using an epimorphism as the cokernel of its kernel, and Lemma 8.3 uses the monic-and-epic criterion for isomorphisms.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=11"
+      }
+    },
+    {
+      "id": "ExactPresentationsAreCokernels",
+      "title": "Presentations are cokernels",
+      "article": {
+        "statement": "A sequence $A\\xrightarrow{f}B\\xrightarrow{q}C\\to0$ is exact if and only if $q$ is a cokernel of $f$.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Proposition 4.9 [env-4-9], p. 12. In the abelian-category setting of §4.3, this identifies the sequence and cokernel formulations of right exactness used for the presentations in Theorems 5.8, 6.7 and 9.4.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=12"
+      }
+    },
+    {
+      "id": "ModuleQuotientUniversalProperty",
+      "title": "Quotients and their universal property",
+      "article": {
+        "statement": "A *submodule* $U\\subseteq M$ is an additive subgroup closed under the $R$-action. The cosets $M/U$ form a module with $(m+U)+(n+U)=m+n+U$ and $r(m+U)=rm+U$. The projection $q:M\\to M/U$ is surjective, and every module morphism $f:M\\to N$ with $f(U)=0$ factors uniquely through $q$.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Proposition 5.4 [env-5-4], p. 15. The quotient factorization constructs the tensor product in Theorem 6.2 and the concrete cokernels used in Theorems 5.8 and 6.7. Section 1.3, p. 4, and the Chapter 5 conventions, p. 14, use ordinary choice, arbitrary unital rings with unital maps, and unital modules.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=15"
+      }
+    },
+    {
+      "id": "ModuleKernelsCokernelsAndImages",
+      "title": "Kernels, cokernels, and images",
+      "article": {
+        "statement": "For $f:M\\to N$, the submodules $\\ker f=\\{m:f(m)=0\\}$ and $\\operatorname{im}f=\\{f(m):m\\in M\\}$ give the categorical kernel $\\ker f\\hookrightarrow M$ and cokernel $N\\twoheadrightarrow N/\\operatorname{im}f$. The canonical map\n\n$$\nM/\\ker f\\longrightarrow\\operatorname{im}f,\\qquad m+\\ker f\\longmapsto f(m)\n$$\n\nis an isomorphism. Moreover, monomorphisms are exactly injective module maps, and epimorphisms are exactly surjective module maps.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Proposition 5.5 [env-5-5], p. 15. These concrete descriptions justify the module-category abelian structure and the cokernel arguments in Lemma 8.3 and Theorem 6.7.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=15"
+      }
+    },
+    {
+      "id": "ModuleCategoriesAreAbelian",
+      "title": "Module categories are abelian",
+      "article": {
+        "statement": "$R\\text{-}\\mathrm{Mod}$ is a locally small abelian category.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Theorem 5.6 [env-5-6], p. 16. Target §1.1 uses the module categories as the abelian categories on the ring side of the reconstruction and right-exact functor correspondence.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=16"
+      }
+    },
+    {
+      "id": "ModuleProductsAndCoproducts",
+      "title": "Products and coproducts of modules",
+      "article": {
+        "statement": "For a set-indexed family $(M_i)_{i\\in I}$, the product is the set of all tuples $\\prod_i M_i$, with componentwise operations. The coproduct is the *direct sum* $\\bigoplus_i M_i\\subseteq\\prod_i M_i$, consisting of tuples with only finitely many nonzero coordinates. Their structural maps are coordinate projections and coordinate inclusions, respectively.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Proposition 5.7 [env-5-7], p. 16. The direct sum construction supplies the free copowers in Theorem 5.8, the tensor comparison in Theorem 6.6 and the Mackey sums in target §§2 and 7.4.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=16"
+      }
+    },
+    {
+      "id": "FreeModulesAndPresentations",
+      "title": "Free modules and presentations",
+      "article": {
+        "statement": "Write $R^{(I)}=\\bigoplus_{i\\in I}R$, and let $e_i$ be the tuple with $1$ at $i$ and $0$ elsewhere. Any family $(m_i)_{i\\in I}$ in $M$ determines a unique linear map $R^{(I)}\\to M$ taking $e_i$ to $m_i$. Every module has an exact sequence\n\n$$\nR^{(J)}\\xrightarrow{d}R^{(I)}\\xrightarrow{q}M\\longrightarrow0.\n$$\n\nExactness means $\\operatorname{im}d=\\ker q$ and $q$ is surjective; equivalently, $q$ is a cokernel of $d$. Such a sequence is a *free presentation*.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Theorem 5.8 [env-5-8], pp. 16–17. Free modules on all elements and then on all kernel elements supply the canonical presentations in Theorems 8.6 and 9.4. The free abelian group case supplies the generators in Theorem 6.2.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=16"
+      }
+    },
+    {
+      "id": "RegularModuleSmallProjectiveGenerator",
+      "title": "The regular module is a small projective generator",
+      "article": {
+        "statement": "Evaluation at $1$ gives a natural isomorphism of abelian groups $\\operatorname{Hom}_R(R,M)\\cong M$. Consequently, $R$ is projective, is a generator, and is small: the canonical map\n\n$$\n\\bigoplus_i\\operatorname{Hom}_R(R,M_i)\\longrightarrow\\operatorname{Hom}_R\\left(R,\\bigoplus_i M_i\\right)\n$$\n\nis an isomorphism. Here *projective* means every map from $R$ through the target of an epimorphism lifts through that epimorphism; *generator* means $\\operatorname{Hom}_R(R,-)$ distinguishes distinct morphisms; and *small* means the displayed preservation of coproducts. Also $\\operatorname{End}_R(R)\\cong R^{\\mathrm{op}}$ as rings, with endomorphism multiplication given by composition.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Theorem 5.9 [env-5-9], p. 17. Evaluation at 1 and the opposite endomorphism ring explain the maps used in Lemmas 9.2–9.3 and the identification of the regular module in target §1.1.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=17"
+      }
+    },
+    {
+      "id": "BalancedTensorUniversalProperty",
+      "title": "Construction and universal property",
+      "article": {
+        "statement": "There is an abelian group $B\\otimes_R M$, with a balanced map $(b,m)\\mapsto b\\otimes m$, such that for every abelian group $A$, composition with this map gives a bijection\n\n$$\n\\operatorname{Hom}_{\\mathbb Z}(B\\otimes_R M,A)\\cong\\{R\\text{-balanced maps }B\\times M\\to A\\}.\n$$\n\nEvery element of $B\\otimes_R M$ is a finite sum of elements $b\\otimes m$, called *pure tensors*. This universal property determines the tensor product up to a unique isomorphism preserving pure tensors.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Theorem 6.2 [env-6-2], p. 18. The universal property and generation by pure tensors supply the construction and equality tests for the balanced products in target §§1–2, 5–6 and 7.5. The right and left factor conventions are in Definition 6.1, p. 18.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=18"
+      }
+    },
+    {
+      "id": "BimoduleTensorFunctoriality",
+      "title": "Induced actions and functoriality",
+      "article": {
+        "statement": "If $B$ is an $S$-$R$ bimodule, then $B\\otimes_R M$ is a left $S$-module by $s(b\\otimes m)=(sb)\\otimes m$. Bimodule maps $u:B\\to B'$ and left-module maps $f:M\\to M'$ induce left $S$-module maps\n\n$$\nu\\otimes f:B\\otimes_R M\\longrightarrow B'\\otimes_R M',\\qquad b\\otimes m\\longmapsto u(b)\\otimes f(m).\n$$\n\nThese operations form a bifunctor $(S\\text{-}\\mathrm{Mod}\\text{-}R)\\times(R\\text{-}\\mathrm{Mod})\\to S\\text{-}\\mathrm{Mod}$, additive separately on morphisms. In particular, $B\\otimes_R-$ is an additive functor.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Proposition 6.3 [env-6-3], p. 19. The induced actions and tensor maps give horizontal composition in target §1.2 and the additive functors required by Theorem 9.4.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=19"
+      }
+    },
+    {
+      "id": "RegularModuleTensorUnits",
+      "title": "Tensoring with the regular module",
+      "article": {
+        "statement": "There are natural isomorphisms $R\\otimes_R M\\cong M$, $r\\otimes m\\mapsto rm$, and $B\\otimes_R R\\cong B$, $b\\otimes r\\mapsto br$. If $B$ is an $S$-$R$ bimodule, the latter is an isomorphism of $S$-$R$ bimodules.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Theorem 6.4 [env-6-4], p. 19. The units identify empty boundaries and regular-module components in target §§1.2–1.3, and identify the regular component of the comparison in Theorem 9.4.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=19"
+      }
+    },
+    {
+      "id": "BalancedTensorAssociativity",
+      "title": "Associativity with the correct sides",
+      "article": {
+        "statement": "Let $C$ be a $T$-$S$ bimodule, $B$ an $S$-$R$ bimodule, and $M$ a left $R$-module. Then $C\\otimes_S B$ is a $T$-$R$ bimodule, and there is a natural $T$-linear isomorphism\n\n$$\n(C\\otimes_S B)\\otimes_R M\\cong C\\otimes_S(B\\otimes_R M),\\qquad(c\\otimes b)\\otimes m\\longmapsto c\\otimes(b\\otimes m).\n$$",
+        "locator": "Ian X, Abelian Categories and Bimodules, Theorem 6.5 [env-6-5], p. 19. Reassociation supplies the evaluated maps for rebracketing in target §1.2 and composition in target §7.5.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=19"
+      }
+    },
+    {
+      "id": "TensorPreservesCoproducts",
+      "title": "Tensoring preserves arbitrary coproducts",
+      "article": {
+        "statement": "For every set-indexed family of left $R$-modules, the canonical $S$-linear map is an isomorphism:\n\n$$\n\\bigoplus_i(B\\otimes_R M_i)\\longrightarrow B\\otimes_R\\left(\\bigoplus_i M_i\\right),\\qquad b\\otimes m_i\\longmapsto b\\otimes\\iota_i(m_i).\n$$",
+        "locator": "Ian X, Abelian Categories and Bimodules, Theorem 6.6 [env-6-6], p. 20. For the bimodule of Proposition 6.3, distributivity is needed in the free-module step of Theorem 9.4, in passing from the bimodule Mackey sum to the functor sum in target §2.2 and in composing sums in §7.5.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=20"
+      }
+    },
+    {
+      "id": "TensorPreservesCokernels",
+      "title": "Tensoring preserves cokernels",
+      "article": {
+        "statement": "If $M\\xrightarrow{f}N\\xrightarrow{q}Q\\to0$ is exact, then\n\n$$\nB\\otimes_R M\\xrightarrow{1\\otimes f}B\\otimes_R N\\xrightarrow{1\\otimes q}B\\otimes_R Q\\longrightarrow0\n$$\n\nis exact in $S\\text{-}\\mathrm{Mod}$. Equivalently, tensoring preserves cokernels. This property is called *right exactness*.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Theorem 6.7 [env-6-7], p. 20. For the bimodule of Proposition 6.3, right exactness puts its tensor functor in target Theorem 1.1 and carries the free-presentation comparison to all modules in Theorem 9.4.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=20"
+      }
+    },
+    {
+      "id": "GroupAlgebraRingLaws",
+      "title": "All ring laws",
+      "article": {
+        "statement": "This multiplication makes $k[G]$ an associative unital ring. The map $k\\to k[G]$, $a\\mapsto a[e]$, is an injective unital ring map whose image is central. Thus $k[G]$ is a *$k$-algebra*, meaning a ring equipped with such a central scalar map. Each $[g]$ is a unit, with inverse $[g^{-1}]$. Moreover, $k[G]$ is commutative exactly when $G$ is abelian.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Theorem 7.2 [env-7-2], p. 22. The unital ring structure, central scalars and group-basis multiplication supply the algebras and scalar actions throughout the target. The field and group conventions are on p. 21, and the multiplication is that of Definition 7.1, p. 22.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=22"
+      }
+    },
+    {
+      "id": "RepresentationModuleCorrespondence",
+      "title": "The representation–module correspondence",
+      "article": {
+        "statement": "There are inverse functors between $\\mathrm{Rep}_k(G)$ and $k[G]\\text{-}\\mathrm{Mod}$. The correspondence preserves the underlying abelian group and identifies intertwiners with module morphisms. It holds for arbitrary groups and arbitrary-dimensional representations.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Theorem 7.4 [env-7-4], pp. 22–23. The representation interpretation of Proposition 7.6 supplies the passage to induction and restriction of representations in target §§1.2 and 2.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=22"
+      }
+    },
+    {
+      "id": "GroupAlgebraInductionAdjunction",
+      "title": "The induction bimodule",
+      "article": {
+        "statement": "For a subgroup $H\\subseteq G$, extending finite-support functions by zero embeds $k[H]$ into $k[G]$ as a unital subring. Thus $k[G]$ is a $k[G]$-$k[H]$ bimodule by left and right multiplication. Define\n\n$$\n\\operatorname{Ind}_H^G(V)=k[G]\\otimes_{k[H]}V.\n$$\n\nThis is a $G$-representation by Theorem 7.4. If $W$ is a $G$-representation, let $\\operatorname{Res}_H^G(W)$ denote the same vector space with its action restricted to $H$. There is a natural bijection\n\n$$\n\\operatorname{Hom}_{k[G]}(\\operatorname{Ind}_H^G V,W)\\cong\\operatorname{Hom}_{k[H]}(V,\\operatorname{Res}_H^G W).\n$$",
+        "locator": "Ian X, Abelian Categories and Bimodules, Proposition 7.6 [env-7-6], p. 24. The subgroup inclusion case supplies the induction bimodule and ordinary adjunction in target §§1.2 and 2.1. For conjugation embeddings the subgroup inclusion is composed with transport to its image.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=24"
+      }
+    },
+    {
+      "id": "GeneratorHomExactnessAndDetection",
+      "title": "Exactness, detection, and coproducts",
+      "article": {
+        "statement": "If $P$ is a small projective generator, then $H$ preserves kernels and cokernels, preserves set-indexed coproducts, is faithful, and reflects isomorphisms. Here **faithful** means that its maps on Hom sets are injective, and **reflects isomorphisms** means $H(u)$ invertible implies $u$ invertible.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Lemma 8.3 [env-8-3], p. 25. Exactness and coproduct preservation carry presentations through the Hom functor in Lemma 8.5 and Theorem 8.6. Reflection of isomorphisms yields the inverse comparison in Theorem 8.6. The chapter conventions and Hom action are on p. 25.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=25"
+      }
+    },
+    {
+      "id": "GeneratorCokernelPresentations",
+      "title": "Every object has a generator presentation",
+      "article": {
+        "statement": "For every $X$, there are sets $I,J$ and a diagram\n\n$$\nP^{(J)}\\xrightarrow{d}P^{(I)}\\xrightarrow{q}X\\longrightarrow0\n$$\n\nin which $q$ is the cokernel of $d$. The notation $P^{(I)}$ means the coproduct of $I$ copies of $P$.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Lemma 8.4 [env-8-4], p. 26. The cokernel presentation by copies of the generator is the descent step in Lemma 8.5. The chapter hypotheses are in §8.1, p. 25.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=26"
+      }
+    },
+    {
+      "id": "GeneratorHomFullyFaithful",
+      "title": "Morphisms are determined by module maps",
+      "article": {
+        "statement": "For every $X,Y$, composition induces a bijection\n\n$$\n\\operatorname{Hom}_{\\mathcal A}(X,Y)\\longrightarrow\\operatorname{Hom}_R(H(X),H(Y)),\\qquad u\\longmapsto H(u).\n$$\n\nThus $H$ is **fully faithful**: its maps on Hom sets are bijections.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Lemma 8.5 [env-8-5], p. 26. The bijection lifts the maps between free modules and supplies the comparison at each object in Theorem 8.6. The chapter hypotheses are in §8.1, p. 25.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=26"
+      }
+    },
+    {
+      "id": "ReconstructionFromSmallProjectiveGenerator",
+      "title": "Reconstruction from a small projective generator",
+      "article": {
+        "statement": "With the hypotheses and chosen constructions of §8.1,\n\n$$\n\\boxed{\\mathcal A\\simeq R\\text{-Mod},\\qquad R=\\operatorname{End}_{\\mathcal A}(P)^{\\mathrm{op}}.}\n$$\n\nAn **equivalence** means functors $H:\\mathcal A\\to R\\text{-Mod}$, $L:R\\text{-Mod}\\to\\mathcal A$, and natural isomorphisms $HL\\cong1_{R\\text{-Mod}}$, $LH\\cong1_{\\mathcal A}$. The symbol $\\simeq$ does not assert equality or an isomorphism of categories.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Theorem 8.6 [env-8-6], p. 27. This is the reconstruction invoked in target §1.1 for both ambient abelian categories. Section 8.1, p. 25, uses supplied coproducts and cokernels or fixes them with global choice.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=27"
+      }
+    },
+    {
+      "id": "RegularEvaluationRightAction",
+      "title": "The two actions on F(R)",
+      "article": {
+        "statement": "For an additive functor $F$, the left $S$-module $B=F({}_R R)$ becomes an $S$-$R$ bimodule by\n\n$$\nb r=F(\\rho_r)(b),\\qquad \\rho_r:R\\to R,\\quad \\rho_r(x)=xr.\n$$\n\nHere $\\rho_r$ is a left $R$-module morphism, even when $R$ is noncommutative.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Lemma 9.2 [env-9-2], p. 29. This is the action formula of target Theorem 1.1 and supplies the balancing action for Lemma 9.3.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=29"
+      }
+    },
+    {
+      "id": "CanonicalWattsNaturalTransformation",
+      "title": "The canonical natural transformation",
+      "article": {
+        "statement": "For $m\\in M$, let $\\lambda_m:R\\to M$ be the left-module map $\\lambda_m(x)=xm$. There is an $S$-linear natural transformation\n\n$$\n\\tau^F_M:B\\otimes_R M\\longrightarrow F(M),\\qquad \\tau^F_M(b\\otimes m)=F(\\lambda_m)(b).\n$$",
+        "locator": "Ian X, Abelian Categories and Bimodules, Lemma 9.3 [env-9-3], p. 29. With the bimodule from Lemma 9.2, the comparison defines the natural map whose components Theorem 9.4 proves invertible and whose formula Theorem 9.5 uses on transformations.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=29"
+      }
+    },
+    {
+      "id": "EilenbergWatts",
+      "title": "Eilenberg–Watts",
+      "article": {
+        "statement": "Every additive, right-exact, coproduct-preserving functor $F:R\\text{-Mod}\\to S\\text{-Mod}$ is naturally isomorphic to $F(R)\\otimes_R-$, through $\\tau^F$. Every $S$-$R$ bimodule gives such a functor.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Theorem 9.4 [env-9-4], p. 30. The object correspondence in target Theorem 1.1 uses the regular, free and cokernel steps of this proof. The permitted functors are specified in Definition 9.1, p. 28.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=30"
+      }
+    },
+    {
+      "id": "NaturalTransformationsByRegularEvaluation",
+      "title": "Evaluation at R classifies every transformation",
+      "article": {
+        "statement": "For permitted functors $F,G$, the assignment $\\eta\\mapsto\\eta_R$ is a bijection\n\n$$\n\\operatorname{Nat}(F,G)\\cong\\operatorname{Hom}_{S\\text{-}R}(F(R),G(R)).\n$$\n\nIn particular, for bimodules $B,D$, every transformation $T_B\\Rightarrow T_D$ is uniquely $\\beta\\otimes1$ for an $S$-$R$ bimodule morphism $\\beta:B\\to D$.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Theorem 9.5 [env-9-5], p. 30. Target §§1.1 and 1.3 recover transformations and diagrammatic membership from the component at the regular module. The permitted-functor and size conventions are in Definition 9.1, p. 28.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=30"
+      }
+    },
+    {
+      "id": "BimoduleFunctorHomEquivalence",
+      "title": "The equivalence of Hom categories",
+      "article": {
+        "statement": "The assignment\n\n$$\n\\mathscr B(S,R)\\longrightarrow\\mathscr F(R,S),\\qquad B\\longmapsto T_B,\\qquad \\beta\\longmapsto\\beta\\otimes1,\n$$\n\nis fully faithful and essentially surjective. It has the explicit inverse assignment $F\\mapsto F(R)$, $\\eta\\mapsto\\eta_R$, with comparisons $T_{F(R)}\\cong F$ and $T_B(R)\\cong B$. Thus it is an equivalence in the componentwise size convention of Definition 9.1.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Corollary 9.6 [env-9-6], p. 31. This assembles the equivalence and its inverse in target Theorem 1.1, and is the module-category equivalence transported by Theorem 10.4. Definition 9.1, p. 28, supplies the componentwise size convention.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=31"
+      }
+    },
+    {
+      "id": "TensorDictionaryCompositionAndIdentities",
+      "title": "The tensor dictionary preserves composition",
+      "article": {
+        "statement": "Let ${}_S B_R$ and ${}_T C_S$ be bimodules. Their tensor product $C\\otimes_S B$ is a $T$-$R$ bimodule, with\n\n$$\nt(c\\otimes b)=(tc)\\otimes b,\\qquad(c\\otimes b)r=c\\otimes(br).\n$$\n\nThere are natural isomorphisms\n\n$$\nT_C\\circ T_B\\cong T_{C\\otimes_S B},\\qquad T_{{}_R R_R}\\cong1_{R\\text{-Mod}}.\n$$\n\nThey send $c\\otimes(b\\otimes m)$ to $(c\\otimes b)\\otimes m$, and $r\\otimes m$ to $rm$, respectively.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Theorem 10.1 [env-10-1], p. 32. This gives the composition and regular-identity clauses of target Theorem 1.1 and the reassociation used in target §7.5.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=32"
+      }
+    },
+    {
+      "id": "TensorPentagonAndTriangle",
+      "title": "Associativity pentagon and unit triangle",
+      "article": {
+        "statement": "These comparisons are coherent: for four tensor factors, each route through repeated reassociation sends any pure tensor to the same rebracketing with the same four entries. Pure tensors generate every iterated tensor product, so the routes agree as maps. This verifies the associativity pentagon directly. Removing a middle regular-ring factor either by its action first or by reassociation first gives the same tensor by balancing; this verifies the unit triangle.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Theorem 10.1, unnumbered coherence assertion in its proof [env-10-1], p. 32. The associativity pentagon and unit triangle supply bicategory coherence for target Corollary 7.5.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=32"
+      }
+    },
+    {
+      "id": "HorizontalCompositionOfTransformations",
+      "title": "Composition of transformations",
+      "article": {
+        "statement": "For bimodule morphisms $\\beta:B\\to B'$, $\\gamma:C\\to C'$ with the same ring types, composition of their associated functor transformations is represented by\n\n$$\n\\gamma\\otimes\\beta:C\\otimes_SB\\to C'\\otimes_SB',\\qquad c\\otimes b\\longmapsto\\gamma(c)\\otimes\\beta(b).\n$$",
+        "locator": "Ian X, Abelian Categories and Bimodules, Proposition 10.2 [env-10-2], p. 32. This identifies horizontal diagram composition with horizontal composition of natural transformations in target §§1.2–1.3.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=32"
+      }
+    },
+    {
+      "id": "AbelianEquivalencesPreserveFunctorHypotheses",
+      "title": "Equivalences preserve the hypotheses on functors",
+      "article": {
+        "statement": "An equivalence between abelian categories is additive and preserves kernels, cokernels, and all existing set-indexed coproducts. In particular it is exact and carries small projective generators to small projective generators.",
+        "locator": "Ian X, Abelian Categories and Bimodules, Lemma 10.3 [env-10-3], p. 33. Theorem 10.4 needs preservation of additivity, right exactness and coproducts under transport in both directions.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=33"
+      }
+    },
+    {
+      "id": "CategoricalBimoduleDictionary",
+      "title": "The complete dictionary",
+      "article": {
+        "statement": "Let $\\mathcal A,\\mathcal D$ be locally small abelian categories with all set-indexed coproducts and small projective generators $P,Q$. Supply the chosen constructions of Chapter 8. Put\n\n$$\nR=\\operatorname{End}_{\\mathcal A}(P)^{\\mathrm{op}},\\qquad S=\\operatorname{End}_{\\mathcal D}(Q)^{\\mathrm{op}}.\n$$\n\nThe category of additive, right-exact, coproduct-preserving functors $\\mathcal A\\to\\mathcal D$, with natural transformations, is equivalent to $\\mathscr B(S,R)$, in the size convention of Chapter 9. Explicitly, if $H_{\\mathcal A},L_{\\mathcal A}$ and $H_{\\mathcal D},L_{\\mathcal D}$ are the equivalences of Chapter 8, then a functor $F$ corresponds to\n\n$$\nB_F=H_{\\mathcal D}\\bigl(F(L_{\\mathcal A}(R))\\bigr),\n$$\n\nwith its right $R$-action obtained by applying $H_{\\mathcal D}F L_{\\mathcal A}$ to $\\rho_r$. A bimodule $B$ corresponds to\n\n$$\nL_{\\mathcal D}\\circ(B\\otimes_R-)\\circ H_{\\mathcal A}.\n$$",
+        "locator": "Ian X, Abelian Categories and Bimodules, Theorem 10.4 [env-10-4], p. 33. This transports the module correspondence to the abstract abelian categories of target §1.1. The image of the regular module under the inverse reconstruction is the chosen generator, giving the displayed formula there. The conventions are in §8.1, p. 25, and Definition 9.1, p. 28.",
+        "url": "https://getcurious.cc/downloads/abelian-categories-and-bimodules-lecture-notes.pdf#page=33"
+      }
+    }
+  ]
+}

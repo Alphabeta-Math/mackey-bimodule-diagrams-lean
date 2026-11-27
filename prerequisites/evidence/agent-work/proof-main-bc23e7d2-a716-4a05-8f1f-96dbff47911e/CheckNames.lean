@@ -1,0 +1,29 @@
+import NotesProofs.BimoduleTensorFunctoriality
+import NotesProofs.RepresentationModuleCorrespondence
+import Mathlib.Algebra.Category.ModuleCat.ChangeOfRings
+open CategoryTheory
+#check BimoduleTensorFunctoriality
+#print axioms BimoduleTensorFunctoriality
+#check RepresentationModuleCorrespondence
+#print axioms RepresentationModuleCorrespondence
+#check AdditiveFunctor.mk
+#print Functor.Additive
+#check SingleObj.comp_as_mul
+#check ModuleCat.hom_ext
+#check ModuleCat.hom_ext_iff
+#check DistribSMul.toAddMonoidHom
+#check AddMonoidHom.mk'
+#check AddMonoidHom.ext
+#check AddMonoidHom.add_apply
+#check AddMonoidHom.mk'_apply
+#print CategoryTheory.Adjunction.CoreHomEquiv
+#check Finsupp.mapDomain_apply_of_injective
+#check Finsupp.mapDomain_of_notMem_range
+#check MonoidAlgebra.algebraMap_def
+#check MonoidAlgebra.singleOneRingHom
+#check Representation.ofModule
+#check Representation.ofModule_apply
+#check Subgroup.coe_subtype
+#check LinearMap.mulRight
+#check LinearMap.toAddMonoidHom
+#check AddCommGrpCat.of

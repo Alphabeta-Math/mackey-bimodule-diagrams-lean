@@ -1,0 +1,13 @@
+import NotesProofs.BimoduleTensorCategory
+import NotesProofs.ClassicalReconstruction
+
+#print axioms NotesProofs.ConcreteBimodule.eilenbergWattsEquivalence
+#print axioms NotesProofs.ConcreteBimodule.tensorRepresentation_full
+#print axioms NotesProofs.ConcreteBimodule.tensorRepresentation_faithful
+#print axioms NotesProofs.ConcreteBimodule.tensorRepresentation_essSurj
+#print axioms NotesProofs.bimoduleMapEquivNatTrans
+#print axioms NotesProofs.eilenbergWattsIso
+#print axioms NotesProofs.tensorFunctor_good
+#print axioms NotesProofs.concrete_tensor_preserves_cokernel
+#print axioms NotesProofs.concrete_tensor_direct_sum_iso
+#print axioms ClassicalReconstruction

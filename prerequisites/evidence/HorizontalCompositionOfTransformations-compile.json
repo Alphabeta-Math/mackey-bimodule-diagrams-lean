@@ -1,0 +1,34 @@
+{
+  "source_sha256": "dad73246d078072a2a99198fa1e18d18ca4295455334be168ced3e31139bfec4",
+  "commands": [
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "-o",
+      ".lake/build/lib/lean/NotesProofs/HorizontalCompositionOfTransformations.olean",
+      "NotesProofs/HorizontalCompositionOfTransformations.lean"
+    ],
+    [
+      "bash",
+      "/home/lazyinspirit/Projects/workflow-engines/tools/lean-workflow/compile-with-slot.sh",
+      "/run/user/1000/leanworkflow-0aa9ed909906d606.compile.lock",
+      "/home/lazyinspirit/.elan/toolchains/leanprover--lean4---v4.36.0-rc2/bin/lean",
+      "-j1",
+      "evidence/HorizontalCompositionOfTransformations-axioms.lean"
+    ]
+  ],
+  "build": {
+    "code": 0,
+    "output": ""
+  },
+  "axioms": {
+    "code": 0,
+    "output": "'HorizontalCompositionOfTransformations' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "ok": true,
+  "workspace_sha256": "9d1810ef9d904e18d8d9d05a543347df5b6e2e6ba4135f1aa12479dd4ba81c14",
+  "olean_sha256": "8cbc32b4eff12c3bfc2dbc804e539b46cca2897939d1c2599e1b9ace3074f552"
+}

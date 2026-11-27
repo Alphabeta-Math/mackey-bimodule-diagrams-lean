@@ -1,0 +1,14 @@
+import MackeyDiagrams
+import NotesProofs.ConcreteTensorBimoduleMap
+import NotesProofs.WattsMathlibReverse
+import NotesProofs.General.OriginalBimoduleAdapter
+import NotesProofs.ClassicalReconstruction
+import NotesProofs.ReconstructionFromSmallProjectiveGenerator
+import NotesProofs.BimoduleFunctorHomEquivalence
+import NotesProofs.AbelianEquivalencesPreserveFunctorHypotheses
+import NotesProofs.TensorDictionaryCompositionAndIdentities
+
+set_option pp.universes true
+#check @AbelianEquivalencesPreserveFunctorHypotheses
+#check @BimoduleFunctorHomEquivalence
+#check @CategoryTheory.Functor.preservesFiniteColimits_of_preservesCokernels

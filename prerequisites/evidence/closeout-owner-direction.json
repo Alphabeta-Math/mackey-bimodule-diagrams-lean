@@ -1,0 +1,8 @@
+{
+  "direction": "Complete steps 4 and 5 of the LEAN workflow, then commit and push",
+  "action": "Clear the coordinated closeout deferral after all 35 necessary prerequisite proofs and their final graph passed; publish this independent package on categorical-prerequisites branch of the shared repository.",
+  "mainArticleProofsRegistered": 143,
+  "status": "Superseded by the owner requirement to include all prerequisites in the same repository",
+  "supersededBy": "package-relocation.json",
+  "publication": "Same repository under prerequisites/; no separate branch was published"
+}

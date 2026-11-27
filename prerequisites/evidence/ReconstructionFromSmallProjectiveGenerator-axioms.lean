@@ -1,0 +1,2 @@
+import NotesProofs.ReconstructionFromSmallProjectiveGenerator
+#print axioms ReconstructionFromSmallProjectiveGenerator

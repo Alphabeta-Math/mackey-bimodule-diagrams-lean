@@ -1,0 +1,3 @@
+import NotesProofs.BalancedTensorAssociativity
+
+#print axioms BalancedTensorAssociativity

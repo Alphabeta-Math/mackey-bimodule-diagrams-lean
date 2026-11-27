@@ -1,0 +1,5 @@
+{
+  "id": "BimoduleFunctorHomEquivalence",
+  "reason": "The exact reviewed statement and this proof were independently Lean-compiled and axiom-audited; see evidence/reviewed-watts-category-connection-build.log and the corresponding NotesProofs/ReviewedWatts source. The controller must still verify every planned prerequisite and audit before granting proof credit.",
+  "proof": "by\n  intro R S _ _\n  dsimp only\n  refine ⟨inferInstance, inferInstance, inferInstance,\n    ⟨NotesProofs.General.ConcreteBimodule.eilenbergWattsCanonical.{u,v} R S, rfl, ?_, ?_, ?_, ?_⟩⟩\n  · intro F\n    rfl\n  · intro F G η\n    rfl\n  · intro F X\n    rfl\n  · intro B\n    exact NotesProofs.General.ConcreteBimodule.eilenbergWattsCanonical_unit_inv_unitor R S B\n"
+}

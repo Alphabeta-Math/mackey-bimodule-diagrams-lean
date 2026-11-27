@@ -1,0 +1,2 @@
+import NotesProofs.BimoduleFunctorHomEquivalence
+#print axioms BimoduleFunctorHomEquivalence

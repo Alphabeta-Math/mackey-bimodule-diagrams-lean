@@ -1,0 +1,541 @@
+⚠ [1668/1724] Replayed MackeyDiagrams.Embedding
+warning: MackeyDiagrams/Embedding.lean: imports `Mathlib.GroupTheory.Subgroup.Centralizer` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Embedding.lean: imports `Mathlib.Tactic.Group` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [1669/1724] Ran MackeyDiagrams.Embedding:irArts
+warning: MackeyDiagrams/Embedding.lean: imports `Mathlib.GroupTheory.Subgroup.Centralizer` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Embedding.lean: imports `Mathlib.Tactic.Group` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2384/2986] Replayed MackeyDiagrams.Linear
+warning: MackeyDiagrams/Linear.lean: imports `Mathlib.LinearAlgebra.BilinearMap` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Linear.lean: imports `Mathlib.LinearAlgebra.Finsupp.LSum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Linear.lean: imports `Mathlib.LinearAlgebra.Span.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2385/2986] Ran MackeyDiagrams.Linear:irArts
+warning: MackeyDiagrams/Linear.lean: imports `Mathlib.LinearAlgebra.BilinearMap` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Linear.lean: imports `Mathlib.LinearAlgebra.Finsupp.LSum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Linear.lean: imports `Mathlib.LinearAlgebra.Span.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2440/2986] Replayed MackeyDiagrams.Dot
+warning: MackeyDiagrams/Dot.lean: imports `Mathlib.Algebra.MonoidAlgebra.Module` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2441/2986] Ran MackeyDiagrams.Dot:irArts
+warning: MackeyDiagrams/Dot.lean: imports `Mathlib.Algebra.MonoidAlgebra.Module` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2444/2986] Replayed MackeyDiagrams.Trace
+warning: MackeyDiagrams/Trace.lean:27:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: MackeyDiagrams/Trace.lean:33:6: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [2576/2986] Replayed MackeyDiagrams.Transfer
+warning: MackeyDiagrams/Transfer.lean: imports `Mathlib.GroupTheory.Index` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/Transfer.lean:136:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: MackeyDiagrams/Transfer.lean:137:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: MackeyDiagrams/Transfer.lean:139:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [2577/2986] Ran MackeyDiagrams.Transfer:irArts
+warning: MackeyDiagrams/Transfer.lean: imports `Mathlib.GroupTheory.Index` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2594/2986] Replayed MackeyDiagrams.CupCapIdentities
+warning: MackeyDiagrams/CupCapIdentities.lean: imports `Mathlib.Data.Set.Card` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2595/2986] Ran MackeyDiagrams.CupCapIdentities:irArts
+warning: MackeyDiagrams/CupCapIdentities.lean: imports `Mathlib.Data.Set.Card` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2606/2986] Replayed MackeyDiagrams.ScopedCupFinite
+warning: MackeyDiagrams/ScopedCupFinite.lean:26:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [2618/2986] Replayed MackeyDiagrams.DotSlideObstruction
+warning: MackeyDiagrams/DotSlideObstruction.lean: imports `Mathlib.GroupTheory.Perm.Support` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/DotSlideObstruction.lean: imports `Mathlib.GroupTheory.GroupAction.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2619/2986] Ran MackeyDiagrams.DotSlideObstruction:irArts
+warning: MackeyDiagrams/DotSlideObstruction.lean: imports `Mathlib.GroupTheory.Perm.Support` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/DotSlideObstruction.lean: imports `Mathlib.GroupTheory.GroupAction.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2624/2986] Replayed MackeyDiagrams.ProjectionFiber
+warning: MackeyDiagrams/ProjectionFiber.lean:45:2: Unused tactic linter: `change
+  (Diagram.mixedProjectionTail (R := R) a b l r d).eval.toLinearMap (Finsupp.single _ 1) = _` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: MackeyDiagrams/ProjectionFiber.lean:61:2: Unused tactic linter: `change
+  (Diagram.mixedProjectionTail (R := R) a b l r d).eval.toLinearMap (Finsupp.single _ 1) = _` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: MackeyDiagrams/ProjectionFiber.lean:149:2: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp at hv
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [2702/2986] Replayed MackeyDiagrams.RightCurlLabels
+warning: MackeyDiagrams/RightCurlLabels.lean: imports `Mathlib.Algebra.MonoidAlgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2703/2986] Ran MackeyDiagrams.RightCurlLabels:irArts
+warning: MackeyDiagrams/RightCurlLabels.lean: imports `Mathlib.Algebra.MonoidAlgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2712/2986] Replayed MackeyDiagrams.ParallelComposition
+warning: MackeyDiagrams/ParallelComposition.lean: imports `Mathlib.Algebra.MonoidAlgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2713/2986] Ran MackeyDiagrams.ParallelComposition:irArts
+warning: MackeyDiagrams/ParallelComposition.lean: imports `Mathlib.Algebra.MonoidAlgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2718/2986] Replayed MackeyDiagrams.MackeyOrthogonality
+warning: MackeyDiagrams/MackeyOrthogonality.lean:104:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: MackeyDiagrams/MackeyOrthogonality.lean:111:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: MackeyDiagrams/MackeyOrthogonality.lean:118:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [2792/2986] Replayed MackeyDiagrams.MackeyDirectSum
+warning: MackeyDiagrams/MackeyDirectSum.lean: imports `Mathlib.LinearAlgebra.DFinsupp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2793/2986] Ran MackeyDiagrams.MackeyDirectSum:irArts
+warning: MackeyDiagrams/MackeyDirectSum.lean: imports `Mathlib.LinearAlgebra.DFinsupp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2802/2986] Replayed MackeyDiagrams.PointwiseIndexedDrawing
+warning: MackeyDiagrams/PointwiseIndexedDrawing.lean: imports `Mathlib.Algebra.BigOperators.Finprod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2803/2986] Ran MackeyDiagrams.PointwiseIndexedDrawing:irArts
+warning: MackeyDiagrams/PointwiseIndexedDrawing.lean: imports `Mathlib.Algebra.BigOperators.Finprod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2814/2986] Replayed MackeyDiagrams.DiagramVectorSpace
+warning: MackeyDiagrams/DiagramVectorSpace.lean: imports `Mathlib.LinearAlgebra.Isomorphisms` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2815/2986] Ran MackeyDiagrams.DiagramVectorSpace:irArts
+warning: MackeyDiagrams/DiagramVectorSpace.lean: imports `Mathlib.LinearAlgebra.Isomorphisms` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2846/2986] Replayed MackeyDiagrams.DiagramAlgebra
+warning: MackeyDiagrams/DiagramAlgebra.lean: imports `Mathlib.Algebra.Algebra.Subalgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/DiagramAlgebra.lean: imports `Mathlib.Algebra.Algebra.TransferInstance` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2847/2986] Ran MackeyDiagrams.DiagramAlgebra:irArts
+warning: MackeyDiagrams/DiagramAlgebra.lean: imports `Mathlib.Algebra.Algebra.Subalgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/DiagramAlgebra.lean: imports `Mathlib.Algebra.Algebra.TransferInstance` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2906/2986] Replayed MackeyDiagrams.BlockAlgebra
+warning: MackeyDiagrams/BlockAlgebra.lean: imports `Mathlib.Algebra.FreeAlgebra` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/BlockAlgebra.lean: imports `Mathlib.RingTheory.Congruence.Hom` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2907/2986] Ran MackeyDiagrams.BlockAlgebra:irArts
+warning: MackeyDiagrams/BlockAlgebra.lean: imports `Mathlib.Algebra.FreeAlgebra` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MackeyDiagrams/BlockAlgebra.lean: imports `Mathlib.RingTheory.Congruence.Hom` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3227/3584] Replayed Proofs.Bimodule
+warning: Proofs/Bimodule.lean: imports `Mathlib.Algebra.Module.Opposite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3228/3584] Ran Proofs.Bimodule:irArts
+warning: Proofs/Bimodule.lean: imports `Mathlib.Algebra.Module.Opposite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3229/3584] Replayed Proofs.RegularModuleRightAction
+warning: Proofs/RegularModuleRightAction.lean: imports `Mathlib.Algebra.Category.ModuleCat.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3230/3584] Ran Proofs.RegularModuleRightAction:irArts
+warning: Proofs/RegularModuleRightAction.lean: imports `Mathlib.Algebra.Category.ModuleCat.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3531/3584] Replayed NotesProofs.WattsSupport
+warning: NotesProofs/WattsSupport.lean: imports `Mathlib.Algebra.Category.ModuleCat.Ulift` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/WattsSupport.lean: imports `Mathlib.GroupTheory.FreeGroup.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: NotesProofs/WattsSupport.lean:762:0: 'ChoiceFreeWatts.comparison' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:763:0: 'ChoiceFreeWatts.comparison_regular_left' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:764:0: 'ChoiceFreeWatts.comparison_regular_right' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:766:0: 'ChoiceFreeWatts.tau' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:768:0: 'ChoiceFreeWatts.tensorFunctor' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:769:0: 'ChoiceFreeWatts.comparison_naturality' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:770:0: 'ChoiceFreeWatts.liftedF' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:772:0: 'ChoiceFreeWatts.sumLift' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:774:0: 'ChoiceFreeWatts.freeCoproduct' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:775:0: 'ChoiceFreeWatts.cover_cokernel' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:776:0: 'ChoiceFreeWatts.relations_zero' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:778:0: 'ChoiceFreeWatts.rightCommute' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsSupport.lean:780:0: 'ChoiceFreeWatts.comparison_surjective' depends on axioms: [propext, Quot.sound]
+⚠ [3532/3584] Ran NotesProofs.WattsSupport:irArts
+warning: NotesProofs/WattsSupport.lean: imports `Mathlib.Algebra.Category.ModuleCat.Ulift` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/WattsSupport.lean: imports `Mathlib.GroupTheory.FreeGroup.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3533/3584] Replayed NotesProofs.BalancedCokernelDescent
+warning: NotesProofs/BalancedCokernelDescent.lean: imports `Mathlib.Algebra.Module.LinearMap.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/BalancedCokernelDescent.lean: imports `Mathlib.Algebra.Module.Opposite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/BalancedCokernelDescent.lean:73:0: automatically included section variable(s) unused in theorem `NotesProofs.balanced_cokernel_descent_outer_linear`:
+  [Module Rᵐᵒᵖ M]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Module Rᵐᵒᵖ M] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: NotesProofs/BalancedCokernelDescent.lean:84:0: 'NotesProofs.balanced_cokernel_descent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/BalancedCokernelDescent.lean:85:0: 'NotesProofs.balanced_cokernel_descent_outer_linear' depends on axioms: [propext, Quot.sound]
+⚠ [3534/3584] Ran NotesProofs.BalancedCokernelDescent:irArts
+warning: NotesProofs/BalancedCokernelDescent.lean: imports `Mathlib.Algebra.Module.LinearMap.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/BalancedCokernelDescent.lean: imports `Mathlib.Algebra.Module.Opposite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [3535/3584] Replayed NotesProofs.NoncommutativeTensorCokernel
+info: NotesProofs/NoncommutativeTensorCokernel.lean:116:0: 'NotesProofs.balanced_tensor_cokernel_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/NoncommutativeTensorCokernel.lean:117:0: 'NotesProofs.balanced_tensor_preserves_cokernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3537/3584] Replayed NotesProofs.ConcreteTensorUniversal
+info: NotesProofs/ConcreteTensorUniversal.lean:108:0: 'NotesProofs.concretePure_isBalancedTensor' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/ConcreteTensorUniversal.lean:109:0: 'NotesProofs.concrete_tensor_preserves_cokernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3539/3584] Replayed NotesProofs.BalancedCoproductAssembly
+warning: NotesProofs/BalancedCoproductAssembly.lean: imports `Mathlib.Algebra.Module.LinearMap.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/BalancedCoproductAssembly.lean: imports `Mathlib.Algebra.Module.Opposite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: NotesProofs/BalancedCoproductAssembly.lean:75:0: 'NotesProofs.balanced_coproduct_assembly' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3540/3584] Ran NotesProofs.BalancedCoproductAssembly:irArts
+warning: NotesProofs/BalancedCoproductAssembly.lean: imports `Mathlib.Algebra.Module.LinearMap.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/BalancedCoproductAssembly.lean: imports `Mathlib.Algebra.Module.Opposite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [3541/3584] Replayed NotesProofs.NoncommutativeTensorCoproduct
+info: NotesProofs/NoncommutativeTensorCoproduct.lean:72:0: 'NotesProofs.balanced_tensor_preserves_coproduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3543/3584] Replayed NotesProofs.ConcreteTensorCoproduct
+info: NotesProofs/ConcreteTensorCoproduct.lean:100:0: 'NotesProofs.concrete_tensor_direct_sum_iso' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/ConcreteTensorCoproduct.lean:101:0: 'NotesProofs.concrete_sum_additive_coproduct' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/ConcreteTensorCoproduct.lean:102:0: 'NotesProofs.concrete_tensor_preserves_coproduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3545/3584] Replayed NotesProofs.General.ConcreteTensorFunctor
+warning: NotesProofs/General/ConcreteTensorFunctor.lean: imports `Mathlib.CategoryTheory.Preadditive.AdditiveFunctor` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: NotesProofs/General/ConcreteTensorFunctor.lean:63:0: 'NotesProofs.General.concreteTensorFunctor' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/General/ConcreteTensorFunctor.lean:64:0: 'NotesProofs.General.concreteTensorFunctor_additive' depends on axioms: [propext, Quot.sound]
+⚠ [3546/3584] Ran NotesProofs.General.ConcreteTensorFunctor:irArts
+warning: NotesProofs/General/ConcreteTensorFunctor.lean: imports `Mathlib.CategoryTheory.Preadditive.AdditiveFunctor` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [3547/3584] Replayed NotesProofs.General.ConcreteTensorUnitor
+info: NotesProofs/General/ConcreteTensorUnitor.lean:69:0: 'NotesProofs.General.concreteTensorRegularIso' depends on axioms: [propext, Quot.sound]
+ℹ [3549/3584] Replayed NotesProofs.General.ConcreteTensorBimoduleMap
+info: NotesProofs/General/ConcreteTensorBimoduleMap.lean:179:0: 'NotesProofs.General.bimoduleMapEquivNatTrans' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/ConcreteTensorBimoduleMap.lean:180:0: 'NotesProofs.General.tensorBimoduleMapNatTrans' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/ConcreteTensorBimoduleMap.lean:181:0: 'NotesProofs.General.tensorNatEvaluationMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/ConcreteTensorBimoduleMap.lean:182:0: 'NotesProofs.General.concreteTensor_fromRegular' depends on axioms: [propext, Quot.sound]
+ℹ [3551/3584] Replayed NotesProofs.WattsActions
+info: NotesProofs/WattsActions.lean:43:0: 'NotesProofs.wattsRight_commutes' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/WattsActions.lean:44:0: 'NotesProofs.wattsRight_apply' depends on axioms: [propext, Quot.sound]
+⚠ [3553/3584] Replayed NotesProofs.General.WattsFreeComparison
+warning: NotesProofs/General/WattsFreeComparison.lean:49:16: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: NotesProofs/General/WattsFreeComparison.lean:164:0: 'NotesProofs.General.wattsFreeLeg_coproduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/WattsFreeComparison.lean:165:0: 'NotesProofs.General.watts_comparison_free_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3555/3584] Replayed NotesProofs.PresentationFiveLemma
+warning: NotesProofs/PresentationFiveLemma.lean: imports `Mathlib.Algebra.Module.LinearMap.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: NotesProofs/PresentationFiveLemma.lean:48:0: 'NotesProofs.presentation_comparison_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3556/3584] Ran NotesProofs.PresentationFiveLemma:irArts
+warning: NotesProofs/PresentationFiveLemma.lean: imports `Mathlib.Algebra.Module.LinearMap.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3557/3584] Replayed NotesProofs.CokernelExact
+warning: NotesProofs/CokernelExact.lean: imports `Mathlib.LinearAlgebra.Quotient.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: NotesProofs/CokernelExact.lean:59:0: 'NotesProofs.cokernel_factorization_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/CokernelExact.lean:60:0: 'NotesProofs.cokernel_universal_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/CokernelExact.lean:61:0: 'NotesProofs.epi_universal_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3558/3584] Ran NotesProofs.CokernelExact:irArts
+warning: NotesProofs/CokernelExact.lean: imports `Mathlib.LinearAlgebra.Quotient.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [3559/3584] Replayed NotesProofs.General.WattsAllComparison
+info: NotesProofs/General/WattsAllComparison.lean:100:0: 'NotesProofs.General.watts_comparison_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3561/3584] Replayed NotesProofs.General.WattsNaturalIso
+warning: NotesProofs/General/WattsNaturalIso.lean: imports `Mathlib.CategoryTheory.ConcreteCategory.EpiMono` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/General/WattsNaturalIso.lean: imports `Mathlib.CategoryTheory.NatIso` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: NotesProofs/General/WattsNaturalIso.lean:57:0: 'NotesProofs.General.wattsComparisonNatTrans' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/WattsNaturalIso.lean:58:0: 'NotesProofs.General.wattsNaturalIso' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3562/3584] Ran NotesProofs.General.WattsNaturalIso:irArts
+warning: NotesProofs/General/WattsNaturalIso.lean: imports `Mathlib.CategoryTheory.ConcreteCategory.EpiMono` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/General/WattsNaturalIso.lean: imports `Mathlib.CategoryTheory.NatIso` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3563/3584] Replayed NotesProofs.General.WattsMathlibBridge
+warning: NotesProofs/General/WattsMathlibBridge.lean: imports `Mathlib.CategoryTheory.Abelian.Exact` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/General/WattsMathlibBridge.lean: imports `Mathlib.CategoryTheory.Limits.Preserves.Finite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/General/WattsMathlibBridge.lean: imports `Mathlib.CategoryTheory.Limits.Preserves.Shapes.Products` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/General/WattsMathlibBridge.lean:21:0: automatically included section variable(s) unused in theorem `NotesProofs.General.wattsCoproducts_of_mathlib`:
+  [F.Additive]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [F.Additive] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: NotesProofs/General/WattsMathlibBridge.lean:75:0: 'NotesProofs.General.wattsCoproducts_of_mathlib' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/WattsMathlibBridge.lean:76:0: 'NotesProofs.General.wattsCokernels_of_mathlib' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/WattsMathlibBridge.lean:77:0: 'NotesProofs.General.wattsNaturalIsoOfMathlib' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3564/3584] Ran NotesProofs.General.WattsMathlibBridge:irArts
+warning: NotesProofs/General/WattsMathlibBridge.lean: imports `Mathlib.CategoryTheory.Abelian.Exact` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/General/WattsMathlibBridge.lean: imports `Mathlib.CategoryTheory.Limits.Preserves.Finite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/General/WattsMathlibBridge.lean: imports `Mathlib.CategoryTheory.Limits.Preserves.Shapes.Products` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [3565/3584] Replayed NotesProofs.General.ConcreteTensorPreservation
+info: NotesProofs/General/ConcreteTensorPreservation.lean:120:0: 'NotesProofs.General.concreteTensorFunctor_preservesCoproducts' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: NotesProofs/General/ConcreteTensorPreservation.lean:121:0: 'NotesProofs.General.concreteTensorFunctor_preservesCokernels' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3567/3584] Replayed NotesProofs.General.WattsMathlibReverse
+warning: NotesProofs/General/WattsMathlibReverse.lean: imports `Mathlib.CategoryTheory.Preadditive.LeftExact` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/General/WattsMathlibReverse.lean: imports `Mathlib.CategoryTheory.Limits.Preserves.Shapes.Kernels` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/General/WattsMathlibReverse.lean: imports `Mathlib.Algebra.Category.ModuleCat.Abelian` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/General/WattsMathlibReverse.lean:48:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: NotesProofs/General/WattsMathlibReverse.lean:22:0: automatically included section variable(s) unused in theorem `NotesProofs.General.mathlibCoproducts_of_watts`:
+  [F.Additive]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [F.Additive] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: NotesProofs/General/WattsMathlibReverse.lean:58:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+info: NotesProofs/General/WattsMathlibReverse.lean:84:0: 'NotesProofs.General.mathlibCoproducts_of_watts' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/WattsMathlibReverse.lean:85:0: 'NotesProofs.General.mathlibFiniteColimits_of_watts' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3568/3584] Ran NotesProofs.General.WattsMathlibReverse:irArts
+warning: NotesProofs/General/WattsMathlibReverse.lean: imports `Mathlib.CategoryTheory.Preadditive.LeftExact` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/General/WattsMathlibReverse.lean: imports `Mathlib.CategoryTheory.Limits.Preserves.Shapes.Kernels` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/General/WattsMathlibReverse.lean: imports `Mathlib.Algebra.Category.ModuleCat.Abelian` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [3569/3584] Replayed NotesProofs.General.WattsTheorem
+info: NotesProofs/General/WattsTheorem.lean:35:0: 'NotesProofs.General.tensorFunctor_good' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/WattsTheorem.lean:36:0: 'NotesProofs.General.eilenbergWattsIso' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3571/3584] Replayed NotesProofs.General.BimoduleTensorCategory
+warning: NotesProofs/General/BimoduleTensorCategory.lean: imports `Mathlib.CategoryTheory.ObjectProperty.FullSubcategory` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/General/BimoduleTensorCategory.lean: imports `Mathlib.CategoryTheory.Equivalence` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/General/BimoduleTensorCategory.lean:117:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: NotesProofs/General/BimoduleTensorCategory.lean:118:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: NotesProofs/General/BimoduleTensorCategory.lean:127:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: NotesProofs/General/BimoduleTensorCategory.lean:128:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: NotesProofs/General/BimoduleTensorCategory.lean:129:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+info: NotesProofs/General/BimoduleTensorCategory.lean:141:0: 'NotesProofs.General.ConcreteBimodule.regularEvaluation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/BimoduleTensorCategory.lean:142:0: 'NotesProofs.General.ConcreteBimodule.wattsBimodule' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/General/BimoduleTensorCategory.lean:143:0: 'NotesProofs.General.ConcreteBimodule.wattsTensorFunctorIso' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/BimoduleTensorCategory.lean:144:0: 'NotesProofs.General.ConcreteBimodule.tensorRepresentation_full' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: NotesProofs/General/BimoduleTensorCategory.lean:145:0: 'NotesProofs.General.ConcreteBimodule.tensorRepresentation_faithful' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: NotesProofs/General/BimoduleTensorCategory.lean:146:0: 'NotesProofs.General.ConcreteBimodule.tensorRepresentation_essSurj' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: NotesProofs/General/BimoduleTensorCategory.lean:147:0: 'NotesProofs.General.ConcreteBimodule.eilenbergWattsEquivalence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3572/3584] Ran NotesProofs.General.BimoduleTensorCategory:irArts
+warning: NotesProofs/General/BimoduleTensorCategory.lean: imports `Mathlib.CategoryTheory.ObjectProperty.FullSubcategory` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/General/BimoduleTensorCategory.lean: imports `Mathlib.CategoryTheory.Equivalence` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3573/3584] Replayed NotesProofs.General.EquivalenceFromCounit
+warning: NotesProofs/General/EquivalenceFromCounit.lean: imports `Mathlib.CategoryTheory.Equivalence` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/General/EquivalenceFromCounit.lean: imports `Mathlib.CategoryTheory.Whiskering` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: NotesProofs/General/EquivalenceFromCounit.lean:34:0: 'NotesProofs.General.equivalenceFromFullyFaithfulCounit' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3574/3584] Ran NotesProofs.General.EquivalenceFromCounit:irArts
+warning: NotesProofs/General/EquivalenceFromCounit.lean: imports `Mathlib.CategoryTheory.Equivalence` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/General/EquivalenceFromCounit.lean: imports `Mathlib.CategoryTheory.Whiskering` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3575/3584] Replayed NotesProofs.General.RegularEvaluationEquivalence
+warning: NotesProofs/General/RegularEvaluationEquivalence.lean: imports `Mathlib.CategoryTheory.Whiskering` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/General/RegularEvaluationEquivalence.lean:33:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: NotesProofs/General/RegularEvaluationEquivalence.lean:34:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: NotesProofs/General/RegularEvaluationEquivalence.lean:35:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: NotesProofs/General/RegularEvaluationEquivalence.lean:45:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: NotesProofs/General/RegularEvaluationEquivalence.lean:46:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: NotesProofs/General/RegularEvaluationEquivalence.lean:47:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: NotesProofs/General/RegularEvaluationEquivalence.lean:48:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: NotesProofs/General/RegularEvaluationEquivalence.lean:49:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: NotesProofs/General/RegularEvaluationEquivalence.lean:50:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+info: NotesProofs/General/RegularEvaluationEquivalence.lean:144:0: 'NotesProofs.General.ConcreteBimodule.eilenbergWattsCanonical_unit_inv_unitor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: NotesProofs/General/RegularEvaluationEquivalence.lean:145:0: 'NotesProofs.General.ConcreteBimodule.eilenbergWattsCanonical_map_unit_inv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: NotesProofs/General/RegularEvaluationEquivalence.lean:146:0: 'NotesProofs.General.ConcreteBimodule.eilenbergWattsCanonical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: NotesProofs/General/RegularEvaluationEquivalence.lean:147:0: 'NotesProofs.General.ConcreteBimodule.eilenbergWattsCanonical_inverse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: NotesProofs/General/RegularEvaluationEquivalence.lean:148:0: 'NotesProofs.General.ConcreteBimodule.eilenbergWattsCanonical_counit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: NotesProofs/General/RegularEvaluationEquivalence.lean:149:0: 'NotesProofs.General.ConcreteBimodule.eilenbergWattsEquivalenceWithEvaluation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: NotesProofs/General/RegularEvaluationEquivalence.lean:150:0: 'NotesProofs.General.ConcreteBimodule.eilenbergWattsEquivalenceWithEvaluation_inverse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: NotesProofs/General/RegularEvaluationEquivalence.lean:151:0: 'NotesProofs.General.ConcreteBimodule.regularCounitComponent_pure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: NotesProofs/General/RegularEvaluationEquivalence.lean:152:0: 'NotesProofs.General.ConcreteBimodule.regularCounit' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3576/3584] Ran NotesProofs.General.RegularEvaluationEquivalence:irArts
+warning: NotesProofs/General/RegularEvaluationEquivalence.lean: imports `Mathlib.CategoryTheory.Whiskering` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3577/3584] Replayed NotesProofs.General.OriginalBimoduleAdapter
+warning: NotesProofs/General/OriginalBimoduleAdapter.lean:125:9: Variable name `M` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _M
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NotesProofs/General/OriginalBimoduleAdapter.lean:126:11: Variable name `f` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _f
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NotesProofs/General/OriginalBimoduleAdapter.lean:126:13: Variable name `g` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _g
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: NotesProofs/General/OriginalBimoduleAdapter.lean:153:0: 'NotesProofs.General.originalWatts_inverse_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/OriginalBimoduleAdapter.lean:154:0: 'NotesProofs.General.originalWattsWithEvaluation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/OriginalBimoduleAdapter.lean:155:0: 'NotesProofs.General.originalWatts_inverse_forget' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/OriginalBimoduleAdapter.lean:156:0: 'NotesProofs.General.concreteRepackCounit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/OriginalBimoduleAdapter.lean:157:0: 'NotesProofs.General.originalBimoduleEquivalenceWithInverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/OriginalBimoduleAdapter.lean:158:0: 'NotesProofs.General.originalToConcrete' depends on axioms: [propext, Quot.sound]
+info: NotesProofs/General/OriginalBimoduleAdapter.lean:159:0: 'NotesProofs.General.originalBimoduleEquivalence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/OriginalBimoduleAdapter.lean:160:0: 'NotesProofs.General.originalBimoduleWattsEquivalence' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3579/3584] Replayed NotesProofs.General.OriginalTensorFormulas
+warning: NotesProofs/General/OriginalTensorFormulas.lean:41:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: NotesProofs/General/OriginalTensorFormulas.lean:43:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+info: NotesProofs/General/OriginalTensorFormulas.lean:78:0: 'NotesProofs.General.originalTensorPure_universal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/OriginalTensorFormulas.lean:79:0: 'NotesProofs.General.originalTensorPure_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/OriginalTensorFormulas.lean:80:0: 'NotesProofs.General.originalTensorPure_bimoduleMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3581/3584] Replayed NotesProofs.General.OriginalTensorUnit
+info: NotesProofs/General/OriginalTensorUnit.lean:151:0: 'NotesProofs.General.originalRegularTensorNatIso' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/OriginalTensorUnit.lean:152:0: 'NotesProofs.General.originalRegularTensorNatIso_pure' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/OriginalTensorUnit.lean:153:0: 'NotesProofs.General.originalRegularTensorIso' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/OriginalTensorUnit.lean:154:0: 'NotesProofs.General.originalRegularTensorMap_pure' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3583/3584] Built NotesProofs.General.OriginalTensorComposite (1.3s)
+warning: NotesProofs/General/OriginalTensorComposite.lean:56:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: NotesProofs/General/OriginalTensorComposite.lean:57:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+info: NotesProofs/General/OriginalTensorComposite.lean:64:0: 'NotesProofs.General.originalCompositeBimodule' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/General/OriginalTensorComposite.lean:65:0: 'NotesProofs.General.originalCompositeBimodule_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3584 jobs).

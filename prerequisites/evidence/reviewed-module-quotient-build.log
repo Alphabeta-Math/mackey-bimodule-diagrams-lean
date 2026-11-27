@@ -1,0 +1,6 @@
+⚠ [2446/2447] Built NotesProofs.ReviewedModuleQuotientConnection (830ms)
+warning: NotesProofs/ReviewedModuleQuotientConnection.lean: imports `Mathlib.LinearAlgebra.Quotient.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: NotesProofs/ReviewedModuleQuotientConnection.lean:23:0: 'ReviewedModuleQuotientConnection' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2447/2447] Ran NotesProofs.ReviewedModuleQuotientConnection:irArts
+warning: NotesProofs/ReviewedModuleQuotientConnection.lean: imports `Mathlib.LinearAlgebra.Quotient.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+Build completed successfully (2447 jobs).

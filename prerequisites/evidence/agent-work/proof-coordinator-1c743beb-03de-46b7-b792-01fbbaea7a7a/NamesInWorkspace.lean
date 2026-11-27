@@ -1,0 +1,15 @@
+import NotesProofs.ConcreteTensorBimoduleMap
+import NotesProofs.WattsMathlibReverse
+import NotesProofs.General.OriginalBimoduleAdapter
+
+open CategoryTheory CategoryTheory.Limits
+
+#check PreservesFiniteColimits
+#check PreservesColimitsOfShape
+#check Discrete
+#check ObjectProperty.homMk
+#check NotesProofs.mathlibFiniteColimits_of_watts
+#check NotesProofs.mathlibCoproducts_of_watts
+#check NotesProofs.General.ConcreteBimodule.eilenbergWattsCanonical
+#check NotesProofs.tensorNatEvaluation_complete
+#check NotesProofs.tensorNatEvaluation_induced

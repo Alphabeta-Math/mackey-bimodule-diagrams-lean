@@ -1,0 +1,2 @@
+import NotesProofs.RegularEvaluationRightAction
+#print axioms RegularEvaluationRightAction

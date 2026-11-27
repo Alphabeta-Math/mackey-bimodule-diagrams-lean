@@ -1,0 +1,2 @@
+import NotesProofs.GroupAlgebraRingLaws
+#print axioms GroupAlgebraRingLaws

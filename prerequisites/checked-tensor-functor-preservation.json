@@ -1,0 +1,32 @@
+{
+  "source_files_sha256": {
+    "NotesProofs/ConcreteTensorFunctor.lean": "8a4d904635264056220c19131d6831ff123b0fac84cf9be84fbb8c7f0d5c7416",
+    "NotesProofs/ConcreteTensorPreservation.lean": "a5007382c9e39232bbe650283fa7b48e224ee2ebefc7113e96504136c21c0a78",
+    "NotesProofs/ConcreteTensorCoproduct.lean": "bbb30435bb6b333a1d88e07b870beca892ae1bdb8bfe96d70433e7765bd34f27",
+    "NotesProofs/ConcreteTensorUniversal.lean": "aecf1d070575a22dccee927ed65226b0011a4c1ed3badbb40a9c0c6a52ce1660",
+    "NotesProofs/WattsNaturalIso.lean": "314cfbc35ab418630851f598e3de10ad6354cf98caca90965892ba5273c2298b"
+  },
+  "build_command": "lake build NotesProofs.ConcreteTensorPreservation",
+  "build_log": "evidence/concrete-tensor-preservation-build.log",
+  "declarations": {
+    "NotesProofs.concreteTensorFunctor": [
+      "propext",
+      "Quot.sound"
+    ],
+    "NotesProofs.concreteTensorFunctor_additive": [
+      "propext",
+      "Quot.sound"
+    ],
+    "NotesProofs.concreteTensorFunctor_preservesCokernels": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NotesProofs.concreteTensorFunctor_preservesCoproducts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "limitations": "Arbitrary unital rings and commuting bimodule actions; source/target modules and index sets in one universe. Categorical preservation is stated by explicit universal properties. Connections to mathlib typeclasses and the original reviewed paper endpoint still need verified adapters."
+}

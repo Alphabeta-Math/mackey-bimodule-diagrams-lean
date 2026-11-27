@@ -1,0 +1,2 @@
+import NotesProofs.FiniteBiproductUniversalProperties
+#print axioms FiniteBiproductUniversalProperties

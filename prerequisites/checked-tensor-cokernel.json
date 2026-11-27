@@ -1,0 +1,19 @@
+{
+  "source": "NotesProofs/NoncommutativeTensorCokernel.lean",
+  "source_sha256": "955f183f9c74fba2f92df9d593999a34001424800700b8d0ae9e6da0f5cba473",
+  "build_command": "lake build NotesProofs.NoncommutativeTensorCokernel",
+  "build_log": "evidence/noncommutative-tensor-cokernel-build.log",
+  "results": {
+    "NotesProofs.balanced_tensor_cokernel_factorization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NotesProofs.balanced_tensor_preserves_cokernel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "limits": "Arbitrary rings; source and output modules and test targets in a fixed universe. Assumes three supplied tensor objects with the S-linear balanced-map universal property and induced maps satisfying their generator formulas. These hypotheses must be connected to the concrete tensor objects, and universe requirements verified, before crediting a notes or target theorem."
+}

@@ -1,0 +1,33 @@
+{
+  "source_files_sha256": {
+    "NotesProofs/BalancedCoproductAssembly.lean": "8e61bef960173633b11d9887463de69fb84a55d909674964f729cc70b65eede7",
+    "NotesProofs/NoncommutativeTensorCoproduct.lean": "102127e36d8ffce5bab109f4ab1b00248e744a2c23a33ade7ba1134677ba52ea",
+    "NotesProofs/ConcreteTensorCoproduct.lean": "bbb30435bb6b333a1d88e07b870beca892ae1bdb8bfe96d70433e7765bd34f27",
+    "NotesProofs/ConcreteTensorUniversal.lean": "aecf1d070575a22dccee927ed65226b0011a4c1ed3badbb40a9c0c6a52ce1660",
+    "NotesProofs/WattsSupport.lean": "853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967"
+  },
+  "build_command": "lake build NotesProofs.ConcreteTensorCoproduct",
+  "build_log": "evidence/concrete-tensor-coproduct-build.log",
+  "results": {
+    "NotesProofs.balanced_tensor_preserves_coproduct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NotesProofs.concrete_sum_additive_coproduct": [
+      "propext",
+      "Quot.sound"
+    ],
+    "NotesProofs.concrete_tensor_preserves_coproduct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NotesProofs.concrete_tensor_direct_sum_iso": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "limits": "Arbitrary rings and commuting left/right actions. Index set, all source modules, and target modules inhabit one fixed Lean universe. Uses the checked free-additive-group quotient models for both tensor and direct sum. A reviewed adapter may be needed for the notes translation or original paper\u2019s specific quotient model and universe conventions; this result is not yet registered as an accepted workflow endpoint."
+}

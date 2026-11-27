@@ -1,0 +1,2 @@
+import NotesProofs.BalancedTensorUniversalProperty
+#print axioms BalancedTensorUniversalProperty

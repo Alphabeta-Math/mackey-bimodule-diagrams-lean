@@ -1,0 +1,15 @@
+⚠ [2446/2451] Replayed NotesProofs.CokernelExact
+warning: NotesProofs/CokernelExact.lean: imports `Mathlib.LinearAlgebra.Quotient.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: NotesProofs/CokernelExact.lean:41:0: 'NotesProofs.cokernel_universal_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/CokernelExact.lean:42:0: 'NotesProofs.epi_universal_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2447/2451] Ran NotesProofs.CokernelExact:irArts
+warning: NotesProofs/CokernelExact.lean: imports `Mathlib.LinearAlgebra.Quotient.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2448/2451] Replayed NotesProofs.PresentationFiveLemma
+warning: NotesProofs/PresentationFiveLemma.lean: imports `Mathlib.Algebra.Module.LinearMap.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: NotesProofs/PresentationFiveLemma.lean:48:0: 'NotesProofs.presentation_comparison_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2449/2451] Ran NotesProofs.PresentationFiveLemma:irArts
+warning: NotesProofs/PresentationFiveLemma.lean: imports `Mathlib.Algebra.Module.LinearMap.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [2450/2451] Built NotesProofs.PresentationCokernel (837ms)
+info: NotesProofs/PresentationCokernel.lean:52:0: 'NotesProofs.presentation_comparison_of_cokernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/PresentationCokernel.lean:53:0: 'NotesProofs.presentation_comparison_of_cokernels' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (2451 jobs).

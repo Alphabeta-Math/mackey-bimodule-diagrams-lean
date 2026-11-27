@@ -1,0 +1,18 @@
+{
+  "source": "NotesProofs/BalancedCokernelDescent.lean",
+  "source_sha256": "c0ff0f7ab3122138f1a22d71c1569dc66f701f97f30a7a31f5d2420f5fc6b575",
+  "build_command": "lake build NotesProofs.BalancedCokernelDescent",
+  "build_log": "evidence/balanced-cokernel-build.log",
+  "results": {
+    "NotesProofs.balanced_cokernel_descent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NotesProofs.balanced_cokernel_descent_outer_linear": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "limits": "The descent of balanced biadditive maps through a surjective map with kernel contained in the image of the relation map. An additional outer action is preserved. Does not by itself construct tensor objects or prove the tensor functor preserves cokernels."
+}

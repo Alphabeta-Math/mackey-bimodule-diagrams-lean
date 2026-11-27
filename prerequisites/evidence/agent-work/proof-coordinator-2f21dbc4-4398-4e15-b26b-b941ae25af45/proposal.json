@@ -1,0 +1,129 @@
+{
+  "routes": [
+    {
+      "id": "CategoricalBimoduleDictionary",
+      "deps": [
+        "ReconstructionFromSmallProjectiveGenerator",
+        "BimoduleFunctorHomEquivalence",
+        "AbelianEquivalencesPreserveFunctorHypotheses",
+        "TensorDictionaryCompositionAndIdentities"
+      ],
+      "available": [
+        {
+          "module": "NotesProofs.ReconstructionFromSmallProjectiveGenerator",
+          "declaration": "ReconstructionFromSmallProjectiveGenerator",
+          "revision": "sha256:b8a9f7294af21ebc6b37f64a84fb12ddf65927b6a6ec16821e356d362f0fe424",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/ReconstructionFromSmallProjectiveGenerator.lean#L12",
+          "use": "With each category's separator, projectivity and stated smallness assumptions, supplies a quasi-inverse to preadditiveCoyonedaObj and both comparison isomorphisms. Use these choices for the existence conjunct."
+        },
+        {
+          "module": "NotesProofs.AbelianEquivalencesPreserveFunctorHypotheses",
+          "declaration": "AbelianEquivalencesPreserveFunctorHypotheses",
+          "revision": "sha256:eb1cb076b8a6731294356b612a13c1c36c4c7f7707ad272a35dd5447abd9aef2",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/AbelianEquivalencesPreserveFunctorHypotheses.lean#L67",
+          "use": "Apply to the left and right whiskering equivalences in both directions. The proof uses additivity, per-arrow cokernel preservation and preservation for each Type v discrete diagram."
+        },
+        {
+          "module": "NotesProofs.BimoduleFunctorHomEquivalence",
+          "declaration": "BimoduleFunctorHomEquivalence",
+          "revision": "sha256:3b13bd5db136cc5096f1d485ae1147c8b1b44e7d5b2c4a395adca140ee5ee938",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/BimoduleFunctorHomEquivalence.lean#L13",
+          "use": "At universes v,0, gives the equivalence with the ConcreteBimodule and GoodFunctors encodings in the endpoint. Its forward-functor equality identifies tensoring, and its inverse-object equality identifies wattsBimodule."
+        },
+        {
+          "module": "NotesProofs.General.BimoduleTensorCategory",
+          "declaration": "NotesProofs.General.ConcreteBimodule.wattsBimodule",
+          "revision": "sha256:4a5410c98fe0e5275c535842b894efe19963b30a59b7bf264a8a57b0322f5405",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/General/BimoduleTensorCategory.lean#L87",
+          "use": "The fields at v,0 are the value of the transported good functor on the lifted regular module and the induced right action. Use the inverse-object equality before reducing these fields."
+        },
+        {
+          "module": "NotesProofs.WattsActions",
+          "declaration": "NotesProofs.wattsRight_apply",
+          "revision": "sha256:aff94142f5443ca41e7f7f0f384740b4acfd1484f13b5f34afe83d5aa760c9f3",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsActions.lean#L40",
+          "use": "At universes v,v,0,v, identifies the induced scalar operation on each element. After identifying the carrier, function extensionality and heq_of_eq yield the specified heterogeneous equality."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Equivalence",
+          "declaration": "CategoryTheory.Equivalence.mk",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Equivalence.lean#L340",
+          "use": "Packages each supplied reconstruction pair and later the restricted transport while keeping the two functors literally as supplied."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Equivalence",
+          "declaration": "CategoryTheory.Equivalence.congrLeft",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Equivalence.lean#L404",
+          "use": "Precompose by the quasi-inverse LA forward and HA in reverse, with the chosen equivalence on the source category."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Equivalence",
+          "declaration": "CategoryTheory.Equivalence.congrRight",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Equivalence.lean#L418",
+          "use": "Postcompose by HD forward and LD in reverse. Combine with congrLeft to obtain the ambient transport."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Equivalence",
+          "declaration": "CategoryTheory.Equivalence.trans",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Equivalence.lean#L369",
+          "use": "Compose the whiskering equivalences, then compose the restricted transport with the symmetric module dictionary."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.ObjectProperty.FullSubcategory",
+          "declaration": "CategoryTheory.ObjectProperty.lift",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/ObjectProperty/FullSubcategory.lean#L158",
+          "use": "Restrict each whiskering functor as soon as its preservation proof supplies the destination object predicate."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.ObjectProperty.FullSubcategory",
+          "declaration": "CategoryTheory.ObjectProperty.isoMk",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/ObjectProperty/FullSubcategory.lean#L101",
+          "use": "Lift each component of an ambient comparison iso to the restricted full subcategory."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.ObjectProperty.FullSubcategory",
+          "declaration": "CategoryTheory.ObjectProperty.hom_ext",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/ObjectProperty/FullSubcategory.lean#L51",
+          "use": "Reduce naturality of the restricted comparisons to naturality of the ambient comparisons on the underlying maps."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.NatIso",
+          "declaration": "CategoryTheory.NatIso.ofComponents",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/NatIso.lean#L178",
+          "use": "Package the lifted components of the ambient unit and counit."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Limits.Shapes.Equalizers",
+          "declaration": "CategoryTheory.Limits.diagramIsoParallelPair",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Limits/Shapes/Equalizers.lean#L251",
+          "use": "Compare the whiskered parallel pair with the parallel pair of the mapped arrow and zero, using additivity for the mapped zero."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Limits.Preserves.Basic",
+          "declaration": "CategoryTheory.Limits.preservesColimit_of_iso_diagram",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Limits/Preserves/Basic.lean#L195",
+          "use": "Transfer the second functor's cokernel preservation to the whiskered diagram before composing. Generated by to_dual at the linked source."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.LeftExact",
+          "declaration": "CategoryTheory.Functor.preservesFiniteColimits_of_preservesCokernels",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/LeftExact.lean#L202",
+          "use": "For the additive functor after transport, converts the endpoint's per-arrow cokernel condition to the module full subcategory's finite-colimit condition. Abelianity supplies the needed finite coproducts, coequalizers and zero objects."
+        }
+      ],
+      "approach": "The engine registered this endpoint after the update snapshot. Its source contains the exact reviewed type and the source SHA-256 58d77f51ae1ad1d38241f0a9f9dd8424fa185f9eed0bd86b5cec7d2556b64d6d matches both the registered hash and the successful compile evidence. The axiom audit reports propext, Classical.choice and Quot.sound. Carry forward the checked restrictEquivalence, comp_preservesCokernels, whiskerGood and transport helpers. For the existence conjunct take LA and LD from Chapter 8 reconstruction. For the formula conjunct use the supplied LA and LD, with the reverse-direction comparisons inverted for the units of Equivalence.mk. Transport by LA and HD forward and by HA and LD in reverse. Use the mapped parallel-pair comparison to compose the cokernel witnesses and lift the two ambient natural isomorphisms to the full subcategories. Compose with the symmetric module equivalence at v,0. The checked proof uses its inverse-object equality and wattsRight_apply for the forward formula, and its forward-functor equality for the tensor formula on the inverse. The planned TensorDictionaryCompositionAndIdentities edge is an import-only edge in this proof. The inverse formula involves a single tensor functor, whose object is supplied by BimoduleFunctorHomEquivalence. Preserve the edge for this update. Source file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/CategoricalBimoduleDictionary.lean. Compile and axiom evidence file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/CategoricalBimoduleDictionary-compile.json."
+    }
+  ],
+  "repairs": []
+}

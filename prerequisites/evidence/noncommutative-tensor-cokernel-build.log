@@ -1,0 +1,18 @@
+⚠ [1426/1429] Replayed NotesProofs.BalancedCokernelDescent
+warning: NotesProofs/BalancedCokernelDescent.lean: imports `Mathlib.Algebra.Module.LinearMap.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/BalancedCokernelDescent.lean: imports `Mathlib.Algebra.Module.Opposite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/BalancedCokernelDescent.lean:73:0: automatically included section variable(s) unused in theorem `NotesProofs.balanced_cokernel_descent_outer_linear`:
+  [Module Rᵐᵒᵖ M]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Module Rᵐᵒᵖ M] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: NotesProofs/BalancedCokernelDescent.lean:84:0: 'NotesProofs.balanced_cokernel_descent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/BalancedCokernelDescent.lean:85:0: 'NotesProofs.balanced_cokernel_descent_outer_linear' depends on axioms: [propext, Quot.sound]
+⚠ [1427/1429] Ran NotesProofs.BalancedCokernelDescent:irArts
+warning: NotesProofs/BalancedCokernelDescent.lean: imports `Mathlib.Algebra.Module.LinearMap.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: NotesProofs/BalancedCokernelDescent.lean: imports `Mathlib.Algebra.Module.Opposite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [1428/1429] Built NotesProofs.NoncommutativeTensorCokernel (812ms)
+info: NotesProofs/NoncommutativeTensorCokernel.lean:116:0: 'NotesProofs.balanced_tensor_cokernel_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NotesProofs/NoncommutativeTensorCokernel.lean:117:0: 'NotesProofs.balanced_tensor_preserves_cokernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (1429 jobs).

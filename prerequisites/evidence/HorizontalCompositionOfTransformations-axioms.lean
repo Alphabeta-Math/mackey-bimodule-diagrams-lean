@@ -1,0 +1,2 @@
+import NotesProofs.HorizontalCompositionOfTransformations
+#print axioms HorizontalCompositionOfTransformations

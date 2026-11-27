@@ -1,0 +1,33 @@
+{
+  "source_files_sha256": {
+    "NotesProofs/General/RegularEvaluationEquivalence.lean": "58f5cb7d82415275afdd1e46698deab3e1bb627ad4018e275b7c06364dce4de7",
+    "NotesProofs/General/OriginalBimoduleAdapter.lean": "6aba7b7de771dcc5f3f00ea77fdee76812cf41c5b7312c394044797184fae97b",
+    "NotesProofs/General/OriginalTensorFormulas.lean": "872b2d925ac2118b16c60958d247c913f8eaf312cc1abf24ec75ab4559924b44",
+    "NotesProofs/General/OriginalTensorUnit.lean": "6e022ea0a9fac706d3935cb4fc17099cda85d07fa6bb8d6fc5b1ef5c105bdda2",
+    "NotesProofs/General/OriginalTensorComposite.lean": "48e31327aa018f3f157b978355d324b33f46df119cd71ded481768692076cb8e"
+  },
+  "declarations": [
+    "NotesProofs.General.originalWattsWithEvaluation",
+    "NotesProofs.General.originalWatts_inverse_forget",
+    "NotesProofs.General.originalWatts_inverse_right",
+    "NotesProofs.General.originalTensorPure_universal",
+    "NotesProofs.General.originalTensorPure_map",
+    "NotesProofs.General.originalTensorPure_bimoduleMap",
+    "NotesProofs.General.originalRegularTensorNatIso",
+    "NotesProofs.General.originalRegularTensorNatIso_pure",
+    "NotesProofs.General.originalCompositeBimodule",
+    "NotesProofs.General.originalCompositeBimodule_right"
+  ],
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "build_logs": [
+    "evidence/original-bimodule-adapter-build.log",
+    "evidence/original-tensor-formulas-build.log",
+    "evidence/original-tensor-unit-build.log",
+    "evidence/original-tensor-composite-build.log"
+  ],
+  "limits": "These are checked clauses and supporting constructions for the original EilenbergWatts endpoint. The tensor-composition natural isomorphism and its generator formula, a connection to the original exact inline endpoint, and native dependency/review checks remain outstanding. The original no-choice portal auxiliaries are separate."
+}

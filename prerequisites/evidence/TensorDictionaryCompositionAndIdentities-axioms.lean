@@ -1,0 +1,2 @@
+import NotesProofs.TensorDictionaryCompositionAndIdentities
+#print axioms TensorDictionaryCompositionAndIdentities

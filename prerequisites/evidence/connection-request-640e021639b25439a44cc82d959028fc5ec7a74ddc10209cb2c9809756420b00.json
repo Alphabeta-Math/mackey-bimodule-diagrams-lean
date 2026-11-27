@@ -1,0 +1,14 @@
+{
+  "accepted": true,
+  "request": {
+    "endpoint": "0c59c850306513c63e60977bda1b0029f57c7aecbb24a23cbd278a0124da1ebc",
+    "decision": {
+      "id": "ModuleQuotientUniversalProperty",
+      "reason": "Mathlib’s quotient-map and liftQ declarations prove the exact reviewed endpoint; independently compiled and axiom-audited in NotesProofs/ReviewedModuleQuotientConnection.lean, evidence/reviewed-module-quotient-build.log.",
+      "proof": "by\n  intro R _ M _ _ U\n  refine ⟨fun m n => (map_add U.mkQ m n).symm,\n    fun r m => (U.mkQ.map_smul r m).symm, U.mkQ_surjective, ?_⟩\n  intro N _ _ f hf\n  refine ⟨U.liftQ f hf, U.liftQ_mkQ f hf, ?_⟩\n  intro g hg\n  apply LinearMap.ext\n  intro q\n  obtain ⟨m, rfl⟩ := U.mkQ_surjective q\n  exact (DFunLike.congr_fun hg m).trans (DFunLike.congr_fun (U.liftQ_mkQ f hf) m).symm\n",
+      "mathlibImports": [
+        "Mathlib.LinearAlgebra.Quotient.Basic"
+      ]
+    }
+  }
+}

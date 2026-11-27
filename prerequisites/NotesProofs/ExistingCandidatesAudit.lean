@@ -1,0 +1,15 @@
+import Proofs.ModuleTensorUniversalProperty
+import Proofs.BalancedTensorAssociativity
+import Proofs.RegularModuleRightAction
+import Proofs.CanonicalWattsComparison
+import Proofs.NaturalTransformationsOfTensorFunctors
+import Proofs.SmallProjectiveGenerator
+import Proofs.BimoduleTensorBicategoryCoherence
+
+#print axioms ModuleTensorUniversalProperty
+#print axioms BalancedTensorAssociativity
+#print axioms RegularModuleRightAction
+#print axioms CanonicalWattsComparison
+#print axioms NaturalTransformationsOfTensorFunctors
+#print axioms SmallProjectiveGenerator
+#print axioms BimoduleTensorBicategoryCoherence

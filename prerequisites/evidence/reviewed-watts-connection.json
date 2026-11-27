@@ -1,0 +1,5 @@
+{
+  "id": "EilenbergWatts",
+  "reason": "The exact reviewed notes endpoint was independently compiled and axiom-audited in NotesProofs/ReviewedWattsConnection.lean against NotesProofs.WattsTheorem; its proof uses the constructed arbitrary-ring Eilenberg–Watts natural isomorphism and the tensor-functor preservation results. Ordinary choice is permitted by the lecture notes. The workflow must still compile and audit the endpoint with its required suppliers.",
+  "proof": "by\n  intro R S _ _\n  constructor\n  · intro F _ hc hp\n    exact (NotesProofs.wattsNaturalIso F hc hp).isIso_hom\n  · intro B _ _ _ _\n    exact ⟨inferInstance, NotesProofs.concreteTensorFunctor_preservesCokernels B,\n      NotesProofs.concreteTensorFunctor_preservesCoproducts B⟩"
+}

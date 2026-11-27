@@ -1,0 +1,1392 @@
+{
+  "routes": [
+    {
+      "id": "ModuleQuotientUniversalProperty",
+      "deps": [],
+      "available": [
+        {
+          "module": "Mathlib.LinearAlgebra.Quotient.Basic",
+          "declaration": "Submodule.liftQ",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Quotient/Basic.lean#L115",
+          "use": "Direct quotient lift for a linear map killing the submodule, with the ring homomorphism specialized to the identity. Import Mathlib.LinearAlgebra.Quotient.Basic."
+        },
+        {
+          "module": "Mathlib.LinearAlgebra.Quotient.Basic",
+          "declaration": "Submodule.liftQ_mkQ",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Quotient/Basic.lean#L124",
+          "use": "The factorization has the specified composite with the projection. Import Mathlib.LinearAlgebra.Quotient.Basic."
+        },
+        {
+          "module": "Mathlib.LinearAlgebra.Quotient.Defs",
+          "declaration": "Submodule.mkQ_surjective",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Quotient/Defs.lean#L235",
+          "use": "Direct surjectivity of the submodule projection. Use it for uniqueness of the lift. Import Mathlib.LinearAlgebra.Quotient.Defs."
+        }
+      ],
+      "approach": "Use liftQ at RingHom.id, with equality of the composite given by liftQ_mkQ. Show uniqueness by evaluating two candidates after the surjective mkQ. Retained check: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-54970acf-4e34-4673-90b1-df5dbb6a9e4c/ModuleQuotientUniversalPropertyCheck.lean."
+    },
+    {
+      "id": "ModuleProductsAndCoproducts",
+      "deps": [],
+      "available": [
+        {
+          "module": "Mathlib.Algebra.Category.ModuleCat.Products",
+          "declaration": "ModuleCat.productConeIsLimit",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/Products.lean#L37",
+          "use": "Concrete tuple product. The carrier universe must contain the index universe, as in ModuleCat.{max v w}. Import Mathlib.Algebra.Category.ModuleCat.Products."
+        },
+        {
+          "module": "Mathlib.Algebra.Category.ModuleCat.Products",
+          "declaration": "ModuleCat.coproductCoconeIsColimit",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/Products.lean#L79",
+          "use": "Concrete dependent finite-support direct sum, also for an infinite or empty index. Use classical DecidableEq and the carrier universe large enough for the index type. Import Mathlib.Algebra.Category.ModuleCat.Products."
+        },
+        {
+          "module": "Mathlib.Data.DFinsupp.Defs",
+          "declaration": "DFinsupp.finite_support",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Data/DFinsupp/Defs.lean#L393",
+          "use": "The nonzero-coordinate set of a dependent finitely supported function is finite."
+        }
+      ],
+      "approach": "Use the concrete product and coproduct witnesses at max v w, with the reviewed Classical.decEq. The embedding is injective by DFinsupp extensionality. For the range criterion, use finite_support forward and choose h.toFinset and DFinsupp.mk backward, treating indices inside and outside that support separately. Retained check: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-f5e60ff5-3e81-42d0-869b-780ce38fc5c0/Check.lean."
+    },
+    {
+      "id": "ExactPresentationsAreCokernels",
+      "deps": [],
+      "available": [
+        {
+          "module": "Mathlib.Algebra.Homology.ShortComplex.Exact",
+          "declaration": "CategoryTheory.ShortComplex.exact_and_epi_g_iff_g_is_cokernel",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Homology/ShortComplex/Exact.lean#L833",
+          "use": "Use the bound sequence as a ShortComplex. The terminal zero in the notes encodes Epi on the second arrow. Abelian structure supplies homology and balancedness. Import Mathlib.Algebra.Homology.ShortComplex.Exact."
+        }
+      ],
+      "approach": "In both directions retain the same zero-composite witness, form ShortComplex.mk and apply the pinned equivalence. Abelianity supplies the homology and normality assumptions. Retained check: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-f15d5323-a29e-4ffc-b642-0fe684d381a4/Check.lean."
+    },
+    {
+      "id": "ModuleCategoriesAreAbelian",
+      "deps": [],
+      "available": [
+        {
+          "module": "Mathlib.Algebra.Category.ModuleCat.Abelian",
+          "declaration": "ModuleCat.abelian",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/Abelian.lean#L77",
+          "use": "The actual Abelian instance for the pinned module category. Hom types are in the module-carrier universe. Import Mathlib.Algebra.Category.ModuleCat.Abelian."
+        }
+      ],
+      "approach": "Synthesize LocallySmall at the Hom universe v and wrap the pinned Abelian instance in Nonempty. Retained check: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-92b6a5e3-7dd7-4466-b7e9-73010d85ffc0/Check.lean."
+    },
+    {
+      "id": "NormalMorphismsInAbelianCategories",
+      "deps": [],
+      "available": [
+        {
+          "module": "Mathlib.CategoryTheory.Abelian.Basic",
+          "declaration": "CategoryTheory.Abelian.monoIsKernelOfCokernel",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Abelian/Basic.lean#L480",
+          "use": "Direct in an abelian category given a mono and its chosen cokernel cofork. Import Mathlib.CategoryTheory.Abelian.Basic."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Abelian.Basic",
+          "declaration": "CategoryTheory.Abelian.epiIsCokernelOfKernel",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Abelian/Basic.lean#L473",
+          "use": "Direct in an abelian category given an epi and its chosen kernel fork. Apply also to the evaluation epi of the generator. Import Mathlib.CategoryTheory.Abelian.Basic."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Balanced",
+          "declaration": "CategoryTheory.isIso_of_mono_of_epi",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Balanced.lean#L38",
+          "use": "The abelian instance of Balanced supplies the hypothesis. Apply also after detecting that both kernel and cokernel vanish. Import Mathlib.CategoryTheory.Balanced."
+        }
+      ],
+      "approach": "Use the witnesses on the supplied kernel fork and cokernel cofork, and wrap each universal property in Nonempty. The last conjunct follows from the abelian Balanced instance. Retained check: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-466a9f7b-b2e8-42a5-848b-f4bd742e00ef/NormalMorphismsInAbelianCategoriesCheck.lean."
+    },
+    {
+      "id": "CancellationAndZeroKernels",
+      "deps": [],
+      "available": [
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Basic",
+          "declaration": "CategoryTheory.Preadditive.mono_iff_isZero_kernel",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Basic.lean#L275",
+          "use": "Direct for a preadditive category and an existing kernel. Import Mathlib.CategoryTheory.Preadditive.Basic."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Basic",
+          "declaration": "CategoryTheory.Preadditive.epi_iff_isZero_cokernel",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Basic.lean#L305",
+          "use": "Direct for a preadditive category and an existing cokernel. Import Mathlib.CategoryTheory.Preadditive.Basic."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Basic",
+          "declaration": "CategoryTheory.Preadditive.isLimitKernelForkOfFork",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Basic.lean#L379",
+          "use": "Turns an equalizer fork into a kernel fork on the difference with the same arrow. Import Mathlib.CategoryTheory.Preadditive.Basic."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Basic",
+          "declaration": "CategoryTheory.Preadditive.isColimitCokernelCoforkOfCofork",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Basic.lean#L438",
+          "use": "Turns a coequalizer cofork into a cokernel cofork on the difference with the same arrow. Import Mathlib.CategoryTheory.Preadditive.Basic."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Basic",
+          "declaration": "CategoryTheory.Preadditive.isLimitForkOfKernelFork",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Basic.lean#L367",
+          "use": "Reverse the difference-kernel conversion for the same arrow."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Basic",
+          "declaration": "CategoryTheory.Preadditive.isColimitCoforkOfCokernelCofork",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Basic.lean#L424",
+          "use": "Reverse the difference-cokernel conversion for the same arrow."
+        }
+      ],
+      "approach": "Apply the pinned mono/epi criteria. For the difference fork and cofork, use both conversion directions and transport back to the reviewed ofι/ofπ expressions via extensionality on their identical structure arrows. Keep the witness of the zero composite under the existential. Retained check: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-48f3b8cb-08d3-4709-a754-876d22c5a956/CheckEndpoint.lean."
+    },
+    {
+      "id": "FiniteBiproductUniversalProperties",
+      "deps": [],
+      "available": [
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Biproducts",
+          "declaration": "CategoryTheory.Limits.isBilimitOfTotal",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Biproducts.lean#L88",
+          "use": "Direct for a finite Bicone with the identity-sum equation. Supply Fintype locally for a finite indexing type. Import Mathlib.CategoryTheory.Preadditive.Biproducts."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Biproducts",
+          "declaration": "CategoryTheory.Limits.biconeIsBilimitOfLimitConeOfIsLimit",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Biproducts.lean#L149",
+          "use": "Direct for a limiting discrete cone with Fintype. Its canonical Bicone provides the injections and both universal properties. Import Mathlib.CategoryTheory.Preadditive.Biproducts."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Biproducts",
+          "declaration": "CategoryTheory.Limits.biconeIsBilimitOfColimitCoconeOfIsColimit",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Biproducts.lean#L159",
+          "use": "Direct for a colimiting discrete cocone with Fintype. Its canonical Bicone provides the projections and both universal properties. Import Mathlib.CategoryTheory.Preadditive.Biproducts."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Biproducts",
+          "declaration": "CategoryTheory.Limits.IsBilimit.total",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Biproducts.lean#L121",
+          "use": "Return the identity sum for the exact bilimit bicone."
+        }
+      ],
+      "approach": "Use the endpoint's Fintype.ofFinite consistently. The first clause is isBilimitOfTotal. For Fan and Cofan use the canonical bicones from the two witnesses, then extract their total equations with IsBilimit.total. The retained check covers the empty type as well. Retained check: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-4cbc0456-db85-43a9-a779-90b118e13b02/Check.lean."
+    },
+    {
+      "id": "GroupAlgebraRingLaws",
+      "deps": [],
+      "available": [
+        {
+          "module": "Mathlib.Algebra.MonoidAlgebra.Defs",
+          "declaration": "MonoidAlgebra.ring",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/MonoidAlgebra/Defs.lean#L936",
+          "use": "Provides the convolution ring for any ring and monoid without a finite group hypothesis. Import Mathlib.Algebra.MonoidAlgebra.Defs."
+        },
+        {
+          "module": "Mathlib.Algebra.MonoidAlgebra.Basic",
+          "declaration": "MonoidAlgebra.algebra",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/MonoidAlgebra/Basic.lean#L83",
+          "use": "Use A = R = k with the self-algebra structure for the central scalar map. Import Mathlib.Algebra.MonoidAlgebra.Basic."
+        },
+        {
+          "module": "Mathlib.Algebra.MonoidAlgebra.Defs",
+          "declaration": "MonoidAlgebra.single_mul_single",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/MonoidAlgebra/Defs.lean#L545",
+          "use": "Direct convolution basis multiplication, used for basis inverses and for detecting group commutativity. Import Mathlib.Algebra.MonoidAlgebra.Defs."
+        },
+        {
+          "module": "Mathlib.Algebra.MonoidAlgebra.Defs",
+          "declaration": "MonoidAlgebra.single_left_injective",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/MonoidAlgebra/Defs.lean#L245",
+          "use": "Use coefficient one and one_ne_zero over a field to distinguish the group basis symbols. Import Mathlib.Algebra.MonoidAlgebra.Defs."
+        },
+        {
+          "module": "Mathlib.Algebra.MonoidAlgebra.Defs",
+          "declaration": "MonoidAlgebra.single_right_injective",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/MonoidAlgebra/Defs.lean#L249",
+          "use": "Use the identity basis index for the injectivity of the scalar map. Import Mathlib.Algebra.MonoidAlgebra.Defs."
+        },
+        {
+          "module": "Mathlib.Algebra.MonoidAlgebra.Defs",
+          "declaration": "MonoidAlgebra.commRing",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/MonoidAlgebra/Defs.lean#L950",
+          "use": "For the forward construction of commutativity from the commutative group and field structures. Import Mathlib.Algebra.MonoidAlgebra.Defs."
+        },
+        {
+          "module": "Mathlib.Algebra.MonoidAlgebra.Defs",
+          "declaration": "MonoidAlgebra.mul_def",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/MonoidAlgebra/Defs.lean#L500",
+          "use": "Match the double Finsupp sum and coefficient convention."
+        },
+        {
+          "module": "Mathlib.Algebra.MonoidAlgebra.Defs",
+          "declaration": "MonoidAlgebra.one_def",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/MonoidAlgebra/Defs.lean#L469",
+          "use": "Identify the ring unit with the coefficient-one basis at the group identity."
+        }
+      ],
+      "approach": "Use the pinned convolution and scalar formulas. Construct the unit on the g-basis with inverse on g⁻¹, using single multiplication. For commutativity of group elements identify their coefficient-one basis products using injectivity. Conversely, equip G with the supplied commutation law and use the commutative convolution structure, checking that its multiplication is the same one."
+    },
+    {
+      "id": "ModuleKernelsCokernelsAndImages",
+      "deps": [
+        "ModuleQuotientUniversalProperty"
+      ],
+      "available": [
+        {
+          "module": "Mathlib.Algebra.Category.ModuleCat.Kernels",
+          "declaration": "ModuleCat.kernelIsLimit",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/Kernels.lean#L39",
+          "use": "Direct for the concrete submodule inclusion as a kernel. Import Mathlib.Algebra.Category.ModuleCat.Kernels."
+        },
+        {
+          "module": "Mathlib.Algebra.Category.ModuleCat.Kernels",
+          "declaration": "ModuleCat.cokernelIsColimit",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/Kernels.lean#L63",
+          "use": "Direct for the concrete projection to the quotient by the range. Import Mathlib.Algebra.Category.ModuleCat.Kernels."
+        },
+        {
+          "module": "Mathlib.LinearAlgebra.Isomorphisms",
+          "declaration": "LinearMap.quotKerEquivRange",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Isomorphisms.lean#L38",
+          "use": "Direct first isomorphism for linear maps over arbitrary rings. The defining map sends a class to f of a representative. Import Mathlib.LinearAlgebra.Isomorphisms."
+        },
+        {
+          "module": "Mathlib.Algebra.Category.ModuleCat.EpiMono",
+          "declaration": "ModuleCat.mono_iff_injective",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/EpiMono.lean#L46",
+          "use": "Direct identification over an arbitrary ring. Import Mathlib.Algebra.Category.ModuleCat.EpiMono."
+        },
+        {
+          "module": "Mathlib.Algebra.Category.ModuleCat.EpiMono",
+          "declaration": "ModuleCat.epi_iff_surjective",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/EpiMono.lean#L53",
+          "use": "Direct identification over an arbitrary ring. Use for the Hom image factorization and the presentation-chase quotient maps as well. Import Mathlib.Algebra.Category.ModuleCat.EpiMono."
+        },
+        {
+          "module": "Mathlib.LinearAlgebra.Isomorphisms",
+          "declaration": "LinearMap.quotKerEquivRange_apply_mk",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Isomorphisms.lean#L51",
+          "use": "Identify the first isomorphism on each quotient representative."
+        }
+      ],
+      "approach": "Use the concrete kernel and cokernel with the exact reviewed inclusion and projection. Use quotKerEquivRange and its representative computation for the first isomorphism, and the mono/epi characterizations. The planned quotient edge can be imported for the local quotient proof, while the pinned cokernel theorem already packages it. Retained check: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-107531de-ead4-4999-b5f5-5c49ef5cdc80/Check.lean."
+    },
+    {
+      "id": "RegularModuleSmallProjectiveGenerator",
+      "deps": [
+        "ModuleProductsAndCoproducts"
+      ],
+      "available": [
+        {
+          "module": "Mathlib.Algebra.Module.Equiv.Basic",
+          "declaration": "LinearMap.ringLmapEquivSelf",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Module/Equiv/Basic.lean#L364",
+          "use": "Specialize the commuting scalar ring S to integers for the abelian-group isomorphism. Naturality follows from evaluation at one. The inverse sends a chosen element to its span-singleton linear map. Import Mathlib.Algebra.Module.Equiv.Basic."
+        },
+        {
+          "module": "Mathlib.Algebra.Module.LinearMap.End",
+          "declaration": "RingEquiv.moduleEndSelf",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Module/LinearMap/End.lean#L289",
+          "use": "The ring equivalence is oriented from the opposite regular ring to its linear endomorphism ring. Take its inverse and use ModuleCat.endRingEquiv for bundled endomorphisms when needed. Import Mathlib.Algebra.Module.LinearMap.End."
+        },
+        {
+          "module": "Mathlib.Algebra.Category.ModuleCat.Basic",
+          "declaration": "ModuleCat.endRingEquiv",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/Basic.lean#L468",
+          "use": "Identify bundled categorical endomorphisms with linear endomorphisms while preserving the composition convention. Import Mathlib.Algebra.Category.ModuleCat.Basic."
+        },
+        {
+          "module": "Mathlib.Algebra.Category.ModuleCat.EpiMono",
+          "declaration": "ModuleCat.epi_iff_surjective",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/EpiMono.lean#L53",
+          "use": "Direct identification over an arbitrary ring. Use for the Hom image factorization and the presentation-chase quotient maps as well. Import Mathlib.Algebra.Category.ModuleCat.EpiMono."
+        },
+        {
+          "module": "Proofs.SmallProjectiveGenerator",
+          "declaration": "SmallProjectiveGenerator_regular",
+          "revision": "sha256:984d5d9680bd9adeed15ef09cf5bbd8c0a0ffbcfb2a5474d0131e09d2ef5479c",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/SmallProjectiveGenerator.lean#L237",
+          "use": "Same-universe regular object is projective and a separator, and additive-group coyoneda preserves discrete colimits indexed in that universe."
+        }
+      ],
+      "approach": "Conjugate evaluation at one and the endomorphism ring equivalence along ULift.moduleEquiv. Prove projectivity by lifting the image of one through a surjective module map, separation by testing all named elements and smallness by applying evaluation on each summand and on the sum. Verify the canonical direct-sum map commutes with those evaluations on the inclusions. The historical SmallProjectiveGenerator_regular specializes to a single carrier/ring/index universe and by itself does not establish this mixed-universe evaluation formula. Retained check: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-cc21182a-261f-4a4e-b020-8807c88cb5ef/Check.lean."
+    },
+    {
+      "id": "GeneratorHomExactnessAndDetection",
+      "deps": [
+        "CancellationAndZeroKernels",
+        "NormalMorphismsInAbelianCategories",
+        "ModuleProductsAndCoproducts"
+      ],
+      "available": [
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Yoneda.Basic",
+          "declaration": "CategoryTheory.preadditiveCoyonedaObj",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Yoneda/Basic.lean#L69",
+          "use": "Direct Hom functor to modules over the opposite endomorphism ring in the Hom universe. Its action is precomposition and its morphism map is postcomposition. Import Mathlib.CategoryTheory.Preadditive.Yoneda.Basic."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Yoneda.Limits",
+          "declaration": "CategoryTheory.preservesLimits_preadditiveCoyonedaObj",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Yoneda/Limits.lean#L40",
+          "use": "Use for kernels with the additive Hom functor and its zero-morphism instance. Import Mathlib.CategoryTheory.Preadditive.Yoneda.Limits."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Abelian.Projective.Basic",
+          "declaration": "CategoryTheory.preservesFiniteColimits_preadditiveCoyonedaObj_of_projective",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Abelian/Projective/Basic.lean#L37",
+          "use": "An abelian category and Projective P suffice. Apply to the finite parallel pair for each cokernel. Import Mathlib.CategoryTheory.Abelian.Projective.Basic."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Generator.Preadditive",
+          "declaration": "CategoryTheory.isSeparator_iff_faithful_preadditiveCoyonedaObj",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Generator/Preadditive.lean#L60",
+          "use": "Direct faithfulness for the separator P and the opposite-ring-valued Hom functor. Import Mathlib.CategoryTheory.Generator.Preadditive."
+        },
+        {
+          "module": "Mathlib.Algebra.DirectSum.Module",
+          "declaration": "DirectSum.toModule",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/DirectSum/Module.lean#L106",
+          "use": "Extend a family of linear maps out of the summands. The index, summand and target universes are independent."
+        },
+        {
+          "module": "Mathlib.Algebra.DirectSum.Module",
+          "declaration": "DirectSum.toModule_lof",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/DirectSum/Module.lean#L119",
+          "use": "Compute the induced map on each summand."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Limits.Preserves.Shapes.Products",
+          "declaration": "CategoryTheory.Limits.isColimitMapCoconeCofanMkEquiv",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Limits/Preserves/Shapes/Products.lean#L115",
+          "use": "Translate the mapped cofan into the cofan with the displayed mapped legs."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Limits.Preserves.Basic",
+          "declaration": "CategoryTheory.Limits.preservesColimit_of_preserves_colimit_cocone",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Limits/Preserves/Basic.lean#L185",
+          "use": "Build preservation of a diagram from a chosen colimit and a colimit proof for its image."
+        }
+      ],
+      "approach": "Use the pinned limit and finite-colimit instances for kernels and cokernels and the separator criterion for faithfulness. For coproducts, form the direct-sum comparison linear over (End P)ᵐᵒᵖ by using postcomposition on each leg. Smallness is precisely bijectivity of this map on the underlying additive groups. For arbitrary w, obtain the image cofan's colimit by composing DirectSum.toModule with the inverse comparison, keeping the direct sum as a linear-map carrier in max v w while its colimit apex is H.obj of the source coproduct in universe v. For reflection of isomorphisms, faithfulness and additivity detect a zero object via its identity, preserve the kernel/cokernel forks and apply the planned zero criteria and abelian balancedness."
+    },
+    {
+      "id": "GeneratorCokernelPresentations",
+      "deps": [
+        "NormalMorphismsInAbelianCategories"
+      ],
+      "available": [
+        {
+          "module": "Mathlib.CategoryTheory.Generator.Basic",
+          "declaration": "CategoryTheory.IsSeparator.def",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Generator/Basic.lean#L635",
+          "use": "Test equality of arrows after all maps from P."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Abelian.Basic",
+          "declaration": "CategoryTheory.Abelian.epiIsCokernelOfKernel",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Abelian/Basic.lean#L473",
+          "use": "Direct in an abelian category given an epi and its chosen kernel fork. Apply also to the evaluation epi of the generator. Import Mathlib.CategoryTheory.Abelian.Basic."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Limits.Shapes.Kernels",
+          "declaration": "CategoryTheory.Limits.CokernelCofork.isColimitOfIsColimitOfIff'",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Limits/Shapes/Kernels.lean#L712",
+          "use": "Same-target version of the annihilator transport, with the output cofork using the same projection."
+        }
+      ],
+      "approach": "Use Shrink at w for the Hom index of the evaluation coproduct. Its leg on the index of a given map P ⟶ X is that map, so the separator property proves epi by cancellation. Repeat for its kernel, compose with the kernel inclusion and transport the cokernel witness along identical annihilators by cancelling the new epi. The construction uses separation and the chosen copowers. Projectivity and smallness are unused in this reviewed implication. Retained check: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-40618daa-a903-4d73-b77c-ea33043baa90/Check.lean."
+    },
+    {
+      "id": "AdditiveFunctorsAndBiproducts",
+      "deps": [
+        "FiniteBiproductUniversalProperties"
+      ],
+      "available": [
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.AdditiveFunctor",
+          "declaration": "CategoryTheory.Functor.preservesFiniteBiproductsOfAdditive",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/AdditiveFunctor.lean#L197",
+          "use": "Direct for additive functors between preadditive categories. Import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.AdditiveFunctor",
+          "declaration": "CategoryTheory.Functor.additive_of_preserves_binary_products",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/AdditiveFunctor.lean#L228",
+          "use": "For the converse, specialize finite products to binary products. Obtain PreservesZeroMorphisms from preservation of the zero object by factoring zero arrows through it. Import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Limits.Preserves.Shapes.Zero",
+          "declaration": "CategoryTheory.Functor.preservesZeroMorphisms_of_map_zero_object",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Limits/Preserves/Shapes/Zero.lean#L152",
+          "use": "The zero-object isomorphism supplies the zero-morphism preservation required by the binary-product criterion."
+        }
+      ],
+      "approach": "Use the additive instance for the forward implication. For the converse choose the isomorphism F.obj 0 ≅ 0 from the assumed IsZero image, get preservation of zero morphisms, and specialize preservation of finite products to the binary shape. The finite-coproduct input and the finite universal-properties endpoint can be unused in this branch because the binary product criterion already suffices. Retained check: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-08897b20-919d-4049-93a0-5c1458f926b7/Check.lean."
+    },
+    {
+      "id": "RepresentationModuleCorrespondence",
+      "deps": [
+        "GroupAlgebraRingLaws"
+      ],
+      "available": [
+        {
+          "module": "Mathlib.RepresentationTheory.Rep.Iso",
+          "declaration": "Rep.equivalenceModuleMonoidAlgebra",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/RepresentationTheory/Rep/Iso.lean#L157",
+          "use": "Direct category equivalence for a commutative ring and monoid, hence the field and arbitrary group of the notes. The explicit functors in the same module use the same underlying groups. Import Mathlib.RepresentationTheory.Rep.Iso."
+        }
+      ],
+      "approach": "Take the pinned equivalence's two functors. The reviewed statement requires equalities of composite functors. Use the retained object equalities using module and representation extensionality and the identity underlying linear maps of unit and counit, then use functor extensionality. The two forgetful identities use the same underlying additive-group objects and maps. Retained check: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-7e0ab6c7-e7c5-45a3-8645-186815b4208a/Check.lean."
+    },
+    {
+      "id": "BiproductMatrixCalculus",
+      "deps": [
+        "FiniteBiproductUniversalProperties"
+      ],
+      "available": [
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Basic",
+          "declaration": "CategoryTheory.Preadditive.comp_sum",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Basic.lean#L196",
+          "use": "Distribute composition over the finite sum on the right."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Basic",
+          "declaration": "CategoryTheory.Preadditive.sum_comp",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Basic.lean#L201",
+          "use": "Distribute composition over the finite sum on the left."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Basic",
+          "declaration": "CategoryTheory.Preadditive.add_comp",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Basic.lean#L64",
+          "use": "Distribute left-side addition for matrix entries."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Basic",
+          "declaration": "CategoryTheory.Preadditive.comp_add",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Basic.lean#L66",
+          "use": "Distribute right-side addition for matrix entries."
+        }
+      ],
+      "approach": "Work with the supplied BX, BY and BZ and their total equalities. Prove one lemma for inserting an identity sum into a composite and another for reconstructing f by inserting the source and target sums. Recover injectivity by equality of reconstructed double sums, use only the middle sum for composition and distribute addition. The retained check already closes these clauses. The planned finite universal-properties edge provides context, while this reviewed statement supplies its total equations directly. Retained check: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-a6990329-ff97-48cf-bfec-2c5be3f04858/Check.lean."
+    },
+    {
+      "id": "FreeModulesAndPresentations",
+      "deps": [
+        "ModuleProductsAndCoproducts",
+        "ModuleKernelsCokernelsAndImages",
+        "ModuleCategoriesAreAbelian",
+        "ExactPresentationsAreCokernels"
+      ],
+      "available": [
+        {
+          "module": "Mathlib.LinearAlgebra.Finsupp.LinearCombination",
+          "declaration": "Finsupp.linearCombination",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean#L54",
+          "use": "Extend the underlying type of a module and then the underlying type of the first evaluation's kernel, without a choice of basis for either module. Import Mathlib.LinearAlgebra.Finsupp.LinearCombination."
+        },
+        {
+          "module": "Mathlib.LinearAlgebra.Finsupp.LinearCombination",
+          "declaration": "Finsupp.linearCombination_single",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean#L68",
+          "use": "Evaluate each free generator at coefficient one, to prove evaluation surjective and the relation image equal to the kernel. Import Mathlib.LinearAlgebra.Finsupp.LinearCombination."
+        },
+        {
+          "module": "Mathlib.LinearAlgebra.Finsupp.Defs",
+          "declaration": "Finsupp.lhom_ext",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Finsupp/Defs.lean#L91",
+          "use": "Uniqueness of a map on a free module follows by rescaling the generators with coefficient one. The extensionality lemma tests every singleton with arbitrary coefficient. Import Mathlib.LinearAlgebra.Finsupp.Defs."
+        },
+        {
+          "module": "Mathlib.LinearAlgebra.Quotient.Basic",
+          "declaration": "Submodule.liftQ",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Quotient/Basic.lean#L115",
+          "use": "Direct quotient lift for a linear map killing the submodule, with the ring homomorphism specialized to the identity. Import Mathlib.LinearAlgebra.Quotient.Basic."
+        },
+        {
+          "module": "Mathlib.LinearAlgebra.Isomorphisms",
+          "declaration": "LinearMap.quotKerEquivRange",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Isomorphisms.lean#L38",
+          "use": "Direct first isomorphism for linear maps over arbitrary rings. The defining map sends a class to f of a representative. Import Mathlib.LinearAlgebra.Isomorphisms."
+        },
+        {
+          "module": "NotesProofs.CokernelExact",
+          "declaration": "NotesProofs.cokernel_universal_exact",
+          "revision": "sha256:9a78671e4b87b085d1a3c4685fb0c7b8a455ee9099fc9b8612b8e28d43ae63d9",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/CokernelExact.lean#L15",
+          "use": "Same-universe linear cokernel characterization. The retained check can use it after lifting carriers to a common universe."
+        }
+      ],
+      "approach": "Prove uniqueness on single i a by rescaling single i 1. Present a module by the free evaluation on all its elements, then the free evaluation on its kernel followed by inclusion. The third clause uses the stated large target universe: lift g through the quotient by ker q and use the quotient-to-range isomorphism and surjectivity to identify M. In reverse, test the universal property on the quotient by range d and on a universe-lifted quotient by range q to get ker q ⊆ range d and q surjective. The translated artifact separates these universe transports. One-universe freeHomEquiv alone does not cover this endpoint. Retained check: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-5eef6e6c-52e8-49f9-8245-feff7c1a8aaf/Check.lean."
+    },
+    {
+      "id": "RegularEvaluationRightAction",
+      "deps": [
+        "RegularModuleSmallProjectiveGenerator"
+      ],
+      "available": [
+        {
+          "module": "NotesProofs.WattsActions",
+          "declaration": "NotesProofs.wattsRightModule",
+          "revision": "sha256:aff94142f5443ca41e7f7f0f384740b4acfd1484f13b5f34afe83d5aa760c9f3",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsActions.lean#L30",
+          "use": "The actual Module (MulOpposite R) on F evaluated at ULift R."
+        },
+        {
+          "module": "NotesProofs.WattsActions",
+          "declaration": "NotesProofs.wattsRight_commutes",
+          "revision": "sha256:aff94142f5443ca41e7f7f0f384740b4acfd1484f13b5f34afe83d5aa760c9f3",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsActions.lean#L36",
+          "use": "Commutes with the given S-action."
+        },
+        {
+          "module": "NotesProofs.WattsActions",
+          "declaration": "NotesProofs.wattsRight_apply",
+          "revision": "sha256:aff94142f5443ca41e7f7f0f384740b4acfd1484f13b5f34afe83d5aa760c9f3",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsActions.lean#L40",
+          "use": "The right action is given by F applied to right multiplication."
+        }
+      ],
+      "approach": "Use wattsRightModule and wattsRight_commutes. Apply wattsRight_apply and check the two linear endomorphisms of ULift R defining rho agree on an arbitrary input using ULift.moduleEquiv. This preserves the actual left S-module structure, with independent target and source universes. Retained check: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-5865f90c-d172-4f04-ab84-a1f5f93ff20a/Check.lean."
+    },
+    {
+      "id": "AbelianEquivalencesPreserveFunctorHypotheses",
+      "deps": [
+        "AdditiveFunctorsAndBiproducts"
+      ],
+      "available": [
+        {
+          "module": "Mathlib.CategoryTheory.Adjunction.Limits",
+          "declaration": "CategoryTheory.Adjunction.isEquivalencePreservesLimits",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Adjunction/Limits.lean#L210",
+          "use": "Direct with the stated shape universes. Use for zero objects and products to obtain additivity, and then for kernels. Import Mathlib.CategoryTheory.Adjunction.Limits."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Adjunction.Limits",
+          "declaration": "CategoryTheory.Adjunction.isEquivalence_preservesColimits",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Adjunction/Limits.lean#L101",
+          "use": "Direct with the stated shape universes. Use for cokernels and arbitrary coproducts in the selected index universe. Import Mathlib.CategoryTheory.Adjunction.Limits."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Projective.Preserves",
+          "declaration": "CategoryTheory.Functor.preservesProjectiveObjects_of_isEquivalence",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Projective/Preserves.lean#L54",
+          "use": "Direct transfer of projectivity along an equivalence. Import Mathlib.CategoryTheory.Preadditive.Projective.Preserves."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Generator.Basic",
+          "declaration": "CategoryTheory.IsSeparator.of_equivalence",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Generator/Basic.lean#L561",
+          "use": "Direct transfer of the generator condition. Preserve smallness by transporting the Hom coproduct comparison through the equivalence. Import Mathlib.CategoryTheory.Generator.Basic."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Adjunction.Limits",
+          "declaration": "CategoryTheory.Adjunction.hasColimitsOfShape_of_equivalence",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Adjunction/Limits.lean#L146",
+          "use": "Transport existence of discrete colimits to D at the chosen index universe."
+        },
+        {
+          "module": "Mathlib.Algebra.Homology.ShortComplex.Exact",
+          "declaration": "CategoryTheory.ShortComplex.Exact.map",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Homology/ShortComplex/Exact.lean#L224",
+          "use": "Preservation of exactness under the functor's homology preservation, inferred from finite limit and colimit preservation."
+        }
+      ],
+      "approach": "Use equivalence preservation of limits and colimits at the required shapes. Use AdditiveFunctorsAndBiproducts with preservation of zero objects and finite (co)products, or the checked binary product criterion. Map each exact ShortComplex under the finite preservation instances. Transfer projectivity and the separator property. Transport smallness by applying the inverse equivalence to the Y-family, using the unit/counit and the coproduct comparison. On each summand verify that the additive Hom equivalences conjugate the canonical comparison maps. Extend equality by DirectSum extensionality, then transport bijectivity. Use a separate named lemma for this conjugacy, with I arbitrary at w."
+    },
+    {
+      "id": "BalancedTensorUniversalProperty",
+      "deps": [
+        "FreeModulesAndPresentations",
+        "ModuleQuotientUniversalProperty"
+      ],
+      "available": [
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.pureBalanced",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L91",
+          "use": "The two additive laws and the balance relation for the concrete quotient generator."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorLift",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L96",
+          "use": "Lift a map with two additivity laws and balance to the free additive quotient. Its target can have a different universe."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorLift_pure",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L106",
+          "use": "Evaluate the chosen additive lift at a pure pair."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorExt",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L111",
+          "use": "Equality of additive maps out of the specified quotient follows from equality on every pure pair, for arbitrary target universe."
+        },
+        {
+          "module": "Proofs.ModuleTensorUniversalProperty",
+          "declaration": "ModuleTensorUniversalProperty",
+          "revision": "sha256:0d247f5a690de5611eeb14b48e68d00da06b97747d8da8a88c7253a61a5a2ad7",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/ModuleTensorUniversalProperty.lean#L6",
+          "use": "Independent arbitrary-ring Finsupp quotient model with arbitrary target and balanced-map equivalence. Use only through a pure-preserving comparison or through the finite-generation and lifting argument in the retained exact check."
+        }
+      ],
+      "approach": "Use the quotient in ChoiceFreeWatts.Tensor, then lift its carrier by ULift to the exact target universe max v w t. Package restriction and the balanced lift as inverse maps. The retained tensorFiniteSum helper reduces a free-group representative to signed generators and absorbs a negative sign in the first coordinate. For uniqueness of the tensor isomorphism, apply both universal properties and compare the two composites on pure pairs. Retained check: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-4fec39b0-1a45-4b3f-ae85-35f4f54c5f7e/Check.lean."
+    },
+    {
+      "id": "GeneratorHomFullyFaithful",
+      "deps": [
+        "GeneratorCokernelPresentations",
+        "GeneratorHomExactnessAndDetection",
+        "FreeModulesAndPresentations",
+        "RegularModuleSmallProjectiveGenerator"
+      ],
+      "available": [
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Yoneda.Basic",
+          "declaration": "CategoryTheory.preadditiveCoyonedaObj",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Yoneda/Basic.lean#L69",
+          "use": "Direct Hom functor to modules over the opposite endomorphism ring in the Hom universe. Its action is precomposition and its morphism map is postcomposition. Import Mathlib.CategoryTheory.Preadditive.Yoneda.Basic."
+        },
+        {
+          "module": "Mathlib.LinearAlgebra.Finsupp.LinearCombination",
+          "declaration": "Finsupp.linearCombination",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean#L54",
+          "use": "Extend the underlying type of a module and then the underlying type of the first evaluation's kernel, without a choice of basis for either module. Import Mathlib.LinearAlgebra.Finsupp.LinearCombination."
+        },
+        {
+          "module": "Mathlib.LinearAlgebra.Finsupp.LinearCombination",
+          "declaration": "Finsupp.linearCombination_single",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean#L68",
+          "use": "Evaluate each free generator at coefficient one, to prove evaluation surjective and the relation image equal to the kernel. Import Mathlib.LinearAlgebra.Finsupp.LinearCombination."
+        },
+        {
+          "module": "Mathlib.LinearAlgebra.Finsupp.Defs",
+          "declaration": "Finsupp.lhom_ext",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/LinearAlgebra/Finsupp/Defs.lean#L91",
+          "use": "Uniqueness of a map on a free module follows by rescaling the generators with coefficient one. The extensionality lemma tests every singleton with arbitrary coefficient. Import Mathlib.LinearAlgebra.Finsupp.Defs."
+        },
+        {
+          "module": "Mathlib.Algebra.Category.ModuleCat.EpiMono",
+          "declaration": "ModuleCat.epi_iff_surjective",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/EpiMono.lean#L53",
+          "use": "Direct identification over an arbitrary ring. Use for the Hom image factorization and the presentation-chase quotient maps as well. Import Mathlib.Algebra.Category.ModuleCat.EpiMono."
+        }
+      ],
+      "approach": "Use the generator cokernel presentation of X and Hom exactness and faithfulness. Define the free comparison from Finsupp I (End P)ᵐᵒᵖ to H(∐ P) using basis vectors mapped to coproduct legs. Its bijectivity follows from smallness and the identification of H(P) with the coefficient ring sending 𝟙 P to 1, with the opposite multiplication convention. With general LocallySmall w, use the comparison as a linear map between different carrier universes. For a linear map H(X) ⟶ H(Y), define a map out of the generator copower by evaluating its composite with H(q) on each basis vector. Prove its H-image equals the composite by the free comparison, and it kills d by faithfulness. Descend through q, then use that H(q) is epi for equality with the original map. Injectivity is faithfulness."
+    },
+    {
+      "id": "BimoduleTensorFunctoriality",
+      "deps": [
+        "BalancedTensorUniversalProperty"
+      ],
+      "available": [
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.outerModule",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L133",
+          "use": "Descend the outer left action of the first factor when it commutes with the given right action. The carrier universe is the maximum of the two factor universes."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.scale_pure",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L128",
+          "use": "Compute the induced first-factor scalar action on a pure pair."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.pureBalanced",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L91",
+          "use": "The two additive laws and the balance relation for the concrete quotient generator."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorLift",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L96",
+          "use": "Lift a map with two additivity laws and balance to the free additive quotient. Its target can have a different universe."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorLift_pure",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L106",
+          "use": "Evaluate the chosen additive lift at a pure pair."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorLinearLift",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L160",
+          "use": "Lift an outer-linear balanced pairing to an outer-linear map for the quotient action supplied by outerModule. Requires the first-factor right action to commute with the outer left action."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorLinearLift_pure",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L175",
+          "use": "Evaluate the chosen outer-linear lift at a pure pair."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorExt",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L111",
+          "use": "Equality of additive maps out of the specified quotient follows from equality on every pure pair, for arbitrary target universe."
+        }
+      ],
+      "approach": "Convert the additive SingleObj Rᵐᵒᵖ functor at star into a right R-module. Check multiplication using the SingleObj composition order and use S-linearity for commuting actions. Build the tensor at each pair with the mixed-universe quotient and outerModule, lifting by ULift for t. Define the map on a pair of morphisms by lifting its pure formula. Prove map_id, map_comp and the two separate additive laws on pure pairs. The same-universe coherence package cannot substitute for this mixed-universe construction."
+    },
+    {
+      "id": "ReconstructionFromSmallProjectiveGenerator",
+      "deps": [
+        "GeneratorHomFullyFaithful",
+        "GeneratorHomExactnessAndDetection",
+        "FreeModulesAndPresentations"
+      ],
+      "available": [
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.Yoneda.Basic",
+          "declaration": "CategoryTheory.preadditiveCoyonedaObj",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/Yoneda/Basic.lean#L69",
+          "use": "Direct Hom functor to modules over the opposite endomorphism ring in the Hom universe. Its action is precomposition and its morphism map is postcomposition. Import Mathlib.CategoryTheory.Preadditive.Yoneda.Basic."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Limits.Shapes.Kernels",
+          "declaration": "CategoryTheory.Limits.CokernelCofork.mapIsoOfIsColimit",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Limits/Shapes/Kernels.lean#L750",
+          "use": "Apply to the naturality square between the two free-term maps, with isomorphisms at both ends and both coforks colimiting. Identify the induced morphism with tau at the presented object by cokernel cancellation. Import Mathlib.CategoryTheory.Limits.Shapes.Kernels."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.NatIso",
+          "declaration": "CategoryTheory.NatIso.ofComponents",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/NatIso.lean#L178",
+          "use": "Package component isomorphisms subject to naturality. Use for tensor natural isomorphisms and transport comparisons. Import Mathlib.CategoryTheory.NatIso."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Functor.FullyFaithful",
+          "declaration": "CategoryTheory.Functor.FullyFaithful.ofFullyFaithful",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Functor/FullyFaithful.lean#L142",
+          "use": "Package the Hom bijection once Full and Faithful have been supplied."
+        }
+      ],
+      "approach": "Construct an H-image isomorphism for each R-module V. Use the free-presentation endpoint at the Hom universe, compare each free module with H of a copower of P using the smallness comparison on basis vectors, and lift the linear relation arrow by fullness. Choose its cokernel in C, apply H preserving that cokernel, and identify the image with V using the presentation cokernel. Define L on a module map by lifting its conjugate through these object isomorphisms and use H faithfulness for the functor laws. Package the comparisons as natural isomorphisms. For H ⋙ L ≅ id, lift the components at H(X) and their inverses by full faithfulness. This route avoids constructing an adjunction as input to the local ClassicalReconstruction package. That package takes chosen copowers and cokernels, a supplied L with an adjunction, presentation isomorphisms and a unit formula."
+    },
+    {
+      "id": "RegularModuleTensorUnits",
+      "deps": [
+        "BimoduleTensorFunctoriality"
+      ],
+      "available": [
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.outerModule",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L133",
+          "use": "Descend the outer left action of the first factor when it commutes with the given right action. The carrier universe is the maximum of the two factor universes."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.scale_pure",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L128",
+          "use": "Compute the induced first-factor scalar action on a pure pair."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorLift",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L96",
+          "use": "Lift a map with two additivity laws and balance to the free additive quotient. Its target can have a different universe."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorLift_pure",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L106",
+          "use": "Evaluate the chosen additive lift at a pure pair."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorLinearLift",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L160",
+          "use": "Lift an outer-linear balanced pairing to an outer-linear map for the quotient action supplied by outerModule. Requires the first-factor right action to commute with the outer left action."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorLinearLift_pure",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L175",
+          "use": "Evaluate the chosen outer-linear lift at a pure pair."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorExt",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L111",
+          "use": "Equality of additive maps out of the specified quotient follows from equality on every pure pair, for arbitrary target universe."
+        },
+        {
+          "module": "NotesProofs.ConcreteTensorUnitor",
+          "declaration": "NotesProofs.concreteTensorUnitor",
+          "revision": "sha256:db70f3c4758e954eb6e3f0e92935ad5db95f49365e8e0fd09a6f8ed552937430",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/ConcreteTensorUnitor.lean#L25",
+          "use": "Checked right unitor in the common-universe model with a lifted regular module, useful for its pure formula after identifying the regular factors."
+        }
+      ],
+      "approach": "Build the left map by lifting (r,m) ↦ r • m and invert by m ↦ 1 ⊗ m. On the right lift (b,r) ↦ op r • b with inverse b ↦ b ⊗ 1. Transport the right action across that additive equivalence and derive its pure formula using the opposite multiplication convention. Induced morphisms, naturality, and commuting with an extra left S-action follow from the pure formulas and tensorExt. This handles the literal R on the right in the endpoint and its independent carrier universes."
+    },
+    {
+      "id": "TensorPreservesCoproducts",
+      "deps": [
+        "BimoduleTensorFunctoriality",
+        "ModuleProductsAndCoproducts"
+      ],
+      "available": [
+        {
+          "module": "Mathlib.Algebra.DirectSum.Module",
+          "declaration": "DirectSum.toModule",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/DirectSum/Module.lean#L106",
+          "use": "Extend a family of linear maps out of the summands. The index, summand and target universes are independent."
+        },
+        {
+          "module": "Mathlib.Algebra.DirectSum.Module",
+          "declaration": "DirectSum.toModule_lof",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/DirectSum/Module.lean#L119",
+          "use": "Compute the induced map on each summand."
+        },
+        {
+          "module": "NotesProofs.ConcreteTensorCoproduct",
+          "declaration": "NotesProofs.concrete_tensor_direct_sum_iso",
+          "revision": "sha256:bbb30435bb6b333a1d88e07b870beca892ae1bdb8bfe96d70433e7765bd34f27",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/ConcreteTensorCoproduct.lean#L63",
+          "use": "Concrete specialization for one common carrier universe. It gives the summand-generator computation and includes the empty family."
+        }
+      ],
+      "approach": "Use the universal properties of the supplied T, with the same symbolic DirectSum indexing on both sides. First derive S-linear lifts and pure-map extensionality by comparing additive maps after each scalar. Map each T(M j) into T(sum) using the j-th R-linear inclusion, and assemble with DirectSum.toModule. For the inverse, fix x in the bimodule and assemble the additive maps y ↦ lof j (pure j x y) on the input direct sum. Prove additivity in x, balance and S-linearity by testing each summand, then lift. Prove the two inverse equations by testing pure pairs in each summand and then direct-sum extensionality. The concrete common-universe helper is a model for the argument, while the reviewed T is arbitrary and the two carrier universes may differ."
+    },
+    {
+      "id": "TensorPreservesCokernels",
+      "deps": [
+        "BimoduleTensorFunctoriality",
+        "ModuleKernelsCokernelsAndImages",
+        "ModuleCategoriesAreAbelian",
+        "ExactPresentationsAreCokernels"
+      ],
+      "available": [
+        {
+          "module": "Mathlib.Algebra.Category.ModuleCat.EpiMono",
+          "declaration": "ModuleCat.epi_iff_surjective",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/EpiMono.lean#L53",
+          "use": "Direct identification over an arbitrary ring. Use for the Hom image factorization and the presentation-chase quotient maps as well. Import Mathlib.Algebra.Category.ModuleCat.EpiMono."
+        },
+        {
+          "module": "Mathlib.Algebra.Homology.ShortComplex.Exact",
+          "declaration": "CategoryTheory.ShortComplex.exact_and_epi_g_iff_g_is_cokernel",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Homology/ShortComplex/Exact.lean#L833",
+          "use": "Use the bound sequence as a ShortComplex. The terminal zero in the notes encodes Epi on the second arrow. Abelian structure supplies homology and balancedness. Import Mathlib.Algebra.Homology.ShortComplex.Exact."
+        },
+        {
+          "module": "Mathlib.Algebra.Homology.ShortComplex.ModuleCat",
+          "declaration": "CategoryTheory.ShortComplex.moduleCat_exact_iff_range_eq_ker",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Homology/ShortComplex/ModuleCat.lean#L54",
+          "use": "Obtain the range-kernel equality for the underlying module maps."
+        },
+        {
+          "module": "NotesProofs.NoncommutativeTensorCokernel",
+          "declaration": "NotesProofs.balanced_tensor_preserves_cokernel",
+          "revision": "sha256:955f183f9c74fba2f92df9d593999a34001424800700b8d0ae9e6da0f5cba473",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/NoncommutativeTensorCokernel.lean#L84",
+          "use": "Conditional factorization for arbitrary noncommutative rings, with one ring universe and one carrier universe. Requires a surjective presentation projection, its kernel lifting and zero composite, the balanced tensor presentations and the map formulas."
+        }
+      ],
+      "approach": "Extract surjectivity of q and the vanishing-kernel lifting property from exactness plus epi. From the arbitrary reviewed T, derive outer-linear lifts and extensionality from its additive lifts by comparing scalar composites on pure pairs. For an S-linear arrow killing T(f), descend the pairing (b,n) ↦ h(pure b n) through q for each b. Surjectivity proves both additivity in b and balance and outer linearity, then use the lift for T(Q). Use the T.map formulas and pure extensionality for composite-zero, factorization and uniqueness. Package the result as a colimiting cofork, and use exactness plus epi iff cokernel in both module universes. For mixed universes apply the descent argument in symbolic types, since the compiled helper shares ring and carrier universes within their groups."
+    },
+    {
+      "id": "CanonicalWattsNaturalTransformation",
+      "deps": [
+        "RegularEvaluationRightAction",
+        "BimoduleTensorFunctoriality"
+      ],
+      "available": [
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.beta_balanced",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L237",
+          "use": "Balance and additivity of the pairing for additive F on ModuleCat of ULift R with the indicated right-multiplication action."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.ell_comp",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L231",
+          "use": "Composition identity for the map from the regular object determined by m."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.comparison_pure",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L258",
+          "use": "Computes the unlifted target of the linear comparison on pure pairs."
+        },
+        {
+          "module": "Proofs.CanonicalWattsComparison",
+          "declaration": "CanonicalWattsComparison",
+          "revision": "sha256:8418e4ddd51fe272c33243d6597a21feab34ce85edeeb036080394624b5559eb",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/CanonicalWattsComparison.lean#L178",
+          "use": "The checked mixed-universe canonical pairing and comparison for a particular quotient tensor and lifted target, with no invertibility conclusion."
+        }
+      ],
+      "approach": "The reviewed T and pure map are supplied and need not be the tensor functor chosen in the earlier existence result. Construct each component by applying its balanced universal property to (b,m) ↦ ULift.up (F.map (λ_m) b). Verify balance from λ_(r • m) = rho_r ≫ λ_m, additive functoriality, and outer linearity. Compare composites with scalar actions on pure pairs to upgrade each additive lift to a module morphism. Use λ_m ≫ f = λ_(f m) and the supplied T.map formula for naturality. The imported canonical comparison is an independent checked construction for its own tensor and lifted target, and its formulas are reusable in this argument after identifying lambda and the lifted action."
+    },
+    {
+      "id": "BalancedTensorAssociativity",
+      "deps": [
+        "BimoduleTensorFunctoriality"
+      ],
+      "available": [
+        {
+          "module": "Proofs.BalancedTensorAssociativity",
+          "declaration": "BalancedTensorAssociativity",
+          "revision": "sha256:2069082f489690ee0a881df7f2f5ebad33d114cdd97398518f7d740ef23f279e",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/BalancedTensorAssociativity.lean#L490",
+          "use": "Mixed-universe Finsupp-quotient associator. Supplies admissible inner actions, reassociation on triples, the outer-left action and its equivariance, and naturality for the indicated linear maps. It still needs the AdditiveFunctor-to-action repacking and the extra commuting action on the intermediate CB."
+        }
+      ],
+      "approach": "Use named abbreviations for precisely the four Finsupp quotients in the reviewed type. Repack C, B, M into the supplier's Triple with base rings S and R. Take InnerActions for rightCB and leftBM, and take the supplier's outer T-actions and additive reassociation to package the required linear equivalence. Build the additional left action on CB by descending t • c on generators, and prove it commutes with rightCB by the Finsupp quotient extensionality. For naturality use the supplier's induced additive maps, and prove T-linearity by generator extensionality using the two outer-action formulas. Split these bridges before reducing the endpoint's large lets. The FreeAddGroup quotient in the functoriality route needs a pure-preserving comparison if reused here."
+    },
+    {
+      "id": "GroupAlgebraInductionAdjunction",
+      "deps": [
+        "RepresentationModuleCorrespondence",
+        "BimoduleTensorFunctoriality"
+      ],
+      "available": [
+        {
+          "module": "Mathlib.Algebra.MonoidAlgebra.MapDomain",
+          "declaration": "MonoidAlgebra.mapDomainRingHom",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/MonoidAlgebra/MapDomain.lean#L278",
+          "use": "Use the subgroup inclusion as a monoid homomorphism to package extension by zero as a ring map. Import Mathlib.Algebra.MonoidAlgebra.MapDomain."
+        },
+        {
+          "module": "Mathlib.Algebra.MonoidAlgebra.MapDomain",
+          "declaration": "MonoidAlgebra.mapDomain_injective",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/MonoidAlgebra/MapDomain.lean#L53",
+          "use": "Use injectivity of the subgroup inclusion for injectivity of the underlying extension by zero. Import Mathlib.Algebra.MonoidAlgebra.MapDomain."
+        },
+        {
+          "module": "Mathlib.Algebra.Category.ModuleCat.ChangeOfRings",
+          "declaration": "ModuleCat.restrictScalars",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Algebra/Category/ModuleCat/ChangeOfRings.lean#L85",
+          "use": "Direct arbitrary-ring restriction along the subgroup algebra map. Its corresponding group action agrees on the basis elements. Import Mathlib.Algebra.Category.ModuleCat.ChangeOfRings."
+        },
+        {
+          "module": "Mathlib.Data.Finsupp.Basic",
+          "declaration": "Finsupp.mapDomain_apply_of_injective",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Data/Finsupp/Basic.lean#L269",
+          "use": "Compute coefficients on a subgroup basis element after extension by zero."
+        },
+        {
+          "module": "Mathlib.Data.Finsupp.Basic",
+          "declaration": "Finsupp.mapDomain_of_notMem_range",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/Data/Finsupp/Basic.lean#L285",
+          "use": "Vanishing of coefficients outside the included subgroup."
+        },
+        {
+          "module": "Mathlib.RepresentationTheory.Rep.Iso",
+          "declaration": "Rep.ofModuleMonoidAlgebra_obj_ρ",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/RepresentationTheory/Rep/Iso.lean#L114",
+          "use": "The action is multiplication by the coefficient-one group basis, so its restriction agrees with the original basis action."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Adjunction.Basic",
+          "declaration": "CategoryTheory.Adjunction.mkOfHomEquiv",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Adjunction/Basic.lean#L433",
+          "use": "Package naturality of the explicit Hom equivalence in both variables."
+        }
+      ],
+      "approach": "Unfold extension by zero to Finsupp.mapDomain for the two coefficient tests. Compute restriction on scalar and group basis elements via RestrictScalars and the representation conversion. Take the fixed regular S–R bimodule in BimoduleTensorFunctoriality at the displayed ambient max universe, align its right action with x * i a, and curry the supplied pure map additively. For the adjunction, turn additive lifts into S-linear maps by the pure formulas. Give the Hom equivalence from evaluation at 1 ⊗ v and the lift of (x,v) ↦ x • f(v). Use balance and pure extensionality for the two inverse equations and pre/postcomposition naturality. The existing coinvariant and complex-only adjunctions can serve as later comparison targets, while the reviewed arbitrary field tensor adjunction follows from this Hom construction."
+    },
+    {
+      "id": "EilenbergWatts",
+      "deps": [
+        "CanonicalWattsNaturalTransformation",
+        "RegularModuleTensorUnits",
+        "FreeModulesAndPresentations",
+        "TensorPreservesCoproducts",
+        "TensorPreservesCokernels"
+      ],
+      "available": [
+        {
+          "module": "NotesProofs.ReviewedWattsConnection",
+          "declaration": "ReviewedWattsConnection",
+          "revision": "sha256:4db8af47244cb3af75713178bd781cb6b30ce31022308b776e13722d1ee32ab2",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/ReviewedWattsConnection.lean#L5",
+          "use": "Exact common-ambient-universe statement. It proves IsIso of the specified wattsComparisonNatTrans under explicit cokernel and discrete coproduct preservation, and proves additivity and both preservation properties for the concrete tensor functor. The submitted proof uses wattsNaturalIso.isIso_hom and concrete tensor preservation."
+        }
+      ],
+      "approach": "Use the accepted queued connection in the assigned workspace after its existing dependencies. A shared-slot type ascription of ReviewedWattsConnection against the reviewed type succeeded, with only propext, Classical.choice and Quot.sound. Reviewed type SHA-256 9f46652306ace1e1527f8131d63c9a247e08ff1f69bc52c86303f99ba7c72df5. The declaration's source SHA-256 is in its supplier record. The engine's endpoint compilation and axiom audit are the remaining checks. Build evidence: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/reviewed-watts-connection-build.log. Accepted connection: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/connection-request-16b548c9764ed54de4c7c40f98ae21b3719df1807c155aece5e8d22b8392cdc4.json."
+    },
+    {
+      "id": "TensorDictionaryCompositionAndIdentities",
+      "deps": [
+        "BalancedTensorAssociativity",
+        "RegularModuleTensorUnits"
+      ],
+      "available": [
+        {
+          "module": "NotesProofs.ConcreteTensorFunctor",
+          "declaration": "NotesProofs.concreteTensorFunctor",
+          "revision": "sha256:8a4d904635264056220c19131d6831ff123b0fac84cf9be84fbb8c7f0d5c7416",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/ConcreteTensorFunctor.lean#L25",
+          "use": "Common-universe tensor functor built using the same free additive quotient and its outer module action."
+        },
+        {
+          "module": "NotesProofs.ConcreteTensorUniversal",
+          "declaration": "NotesProofs.concretePure",
+          "revision": "sha256:aecf1d070575a22dccee927ed65226b0011a4c1ed3badbb40a9c0c6a52ce1660",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/ConcreteTensorUniversal.lean#L29",
+          "use": "Curried additive pure map of the concrete common-universe tensor model used in the reviewed endpoint."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorLift",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L96",
+          "use": "Lift a map with two additivity laws and balance to the free additive quotient. Its target can have a different universe."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorLift_pure",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L106",
+          "use": "Evaluate the chosen additive lift at a pure pair."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorLinearLift",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L160",
+          "use": "Lift an outer-linear balanced pairing to an outer-linear map for the quotient action supplied by outerModule. Requires the first-factor right action to commute with the outer left action."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorLinearLift_pure",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L175",
+          "use": "Evaluate the chosen outer-linear lift at a pure pair."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorExt",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L111",
+          "use": "Equality of additive maps out of the specified quotient follows from equality on every pure pair, for arbitrary target universe."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.NatIso",
+          "declaration": "CategoryTheory.NatIso.ofComponents",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/NatIso.lean#L178",
+          "use": "Package component isomorphisms subject to naturality. Use for tensor natural isomorphisms and transport comparisons. Import Mathlib.CategoryTheory.NatIso."
+        }
+      ],
+      "approach": "Use the same concrete quotient throughout. Descend right multiplication on B into rightCB on the fixed carrier TC.obj (ModuleCat.of S B), and prove it commutes with the existing T-action by pure extensionality. Define associator and inverse from their triple pure formulas, by two successive balanced lifts, proving the required balance at each level with the original module actions. Check both composites and naturality by two nested pure extensionality tests. The composition comparison points from C ⊗ (B ⊗ M) to (C ⊗ B) ⊗ M, the inverse direction of the associativity endpoint. For the identity comparison, evaluate r ⊗ m ↦ r • m with inverse m ↦ 1 ⊗ m. When invoking the planned associator or unitor, transport along the pure-preserving quotient comparison and match the actual outer actions on generators."
+    },
+    {
+      "id": "NaturalTransformationsByRegularEvaluation",
+      "deps": [
+        "EilenbergWatts",
+        "RegularModuleTensorUnits"
+      ],
+      "available": [
+        {
+          "module": "NotesProofs.ReviewedWattsMorphismsConnection",
+          "declaration": "ReviewedWattsMorphismsConnection",
+          "revision": "sha256:19237215a0480683469482d0947f3b0e0a8c27317adbf0bae9770b13f5487ada",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/ReviewedWattsMorphismsConnection.lean#L10",
+          "use": "Exact common-ambient-universe statement for two additive functors with both preservation hypotheses, and the concrete tensor functors subclause. It converts both preservation predicates to the Mathlib typeclasses, uses fully faithful regular evaluation, and uses tensorNatEvaluation_complete and tensorNatEvaluation_induced for the unique concrete tensor map."
+        }
+      ],
+      "approach": "Use the accepted queued connection in the assigned workspace after its existing dependencies. A shared-slot type ascription of ReviewedWattsMorphismsConnection against the reviewed type succeeded, with only propext, Classical.choice and Quot.sound. Reviewed type SHA-256 2e3d161fdaccae3b78b864078eff5c362b6b0b6840c2a711043d3de565d47cb9. The declaration's source SHA-256 is in its supplier record. The engine's endpoint compilation and axiom audit are the remaining checks. Build evidence: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/reviewed-watts-morphisms-connection-build.log. Accepted connection: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/connection-request-2be3bc797956adefc6bda29715e6bd38c41e377cce4514ba7386ba27558e3066.json."
+    },
+    {
+      "id": "TensorPentagonAndTriangle",
+      "deps": [
+        "TensorDictionaryCompositionAndIdentities",
+        "BalancedTensorUniversalProperty"
+      ],
+      "available": [
+        {
+          "module": "Proofs.BimoduleTensorBicategoryCoherence",
+          "declaration": "BimoduleTensorBicategoryCoherence",
+          "revision": "sha256:371b49e798fd904a1323667f853126fdb914a438c32add1e1ace7e3cec02955a",
+          "url": "file:///home/lazyinspirit/Projects/mackey-bimodule-diagrams-lean/Proofs/BimoduleTensorBicategoryCoherence.lean#L740",
+          "use": "Compiled same-universe construction on RingCat and MoritaCoherence.Bimod. Supplies universal property, action and map formulas, both unitors, the associator and coherence. Its tensor, pure map and comparison data are existentially packaged."
+        }
+      ],
+      "approach": "Use the exact RingCat and MoritaCoherence model of the supplier. Destructure its witnesses once, retaining the tensor/pure pair, action laws, tensorMap, associator and both unitors. Project its pentagon, triangle, and pure formulas to the reviewed existential. For each separate unitor formula the unused scalar in the supplier's joint formula can be set to zero. The checked proof uses the existing coherence supplier directly and does not require transporting the concrete tensor functor model. Retained check: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/agent-work/translator-ac90819a-701e-45cc-b6ee-e73c1fcdb8fa/Check.lean."
+    },
+    {
+      "id": "BimoduleFunctorHomEquivalence",
+      "deps": [
+        "NaturalTransformationsByRegularEvaluation",
+        "EilenbergWatts",
+        "RegularModuleTensorUnits"
+      ],
+      "available": [
+        {
+          "module": "NotesProofs.ReviewedWattsCategoryConnection",
+          "declaration": "ReviewedWattsCategoryConnection",
+          "revision": "sha256:c626bf9d9e12390999b6aedaf4104feb9c49d8ea715730f2bf8cee74b2a26f24",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/ReviewedWattsCategoryConnection.lean#L5",
+          "use": "Exact universe-polymorphic statement with ring universe u and ambient max u v. The connection uses eilenbergWattsCanonical for the forward and regular-evaluation inverse clauses, computes the specified counit, and uses eilenbergWattsCanonical_unit_inv_unitor for the heterogeneous inverse-unit equality."
+        }
+      ],
+      "approach": "Use the accepted queued connection in the assigned workspace after its existing dependencies. A shared-slot type ascription of ReviewedWattsCategoryConnection against the reviewed type succeeded, with only propext, Classical.choice and Quot.sound. Reviewed type SHA-256 5e6ad45ac121ad011bc8a6699eca550218be0271eaa93a9816f1c56d6e167950. The declaration's source SHA-256 is in its supplier record. The engine's endpoint compilation and axiom audit are the remaining checks. Build evidence: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/reviewed-watts-category-connection-build.log. Accepted connection: file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/evidence/connection-request-84c137b0d808baabdb9ea6c018eabc066bca1b370e9eb898cf0a5f8ae7dd69df.json."
+    },
+    {
+      "id": "HorizontalCompositionOfTransformations",
+      "deps": [
+        "TensorDictionaryCompositionAndIdentities",
+        "NaturalTransformationsByRegularEvaluation",
+        "BimoduleTensorFunctoriality"
+      ],
+      "available": [
+        {
+          "module": "NotesProofs.ConcreteTensorUniversal",
+          "declaration": "NotesProofs.concretePure",
+          "revision": "sha256:aecf1d070575a22dccee927ed65226b0011a4c1ed3badbb40a9c0c6a52ce1660",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/ConcreteTensorUniversal.lean#L29",
+          "use": "Curried additive pure map of the concrete common-universe tensor model used in the reviewed endpoint."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorLinearLift",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L160",
+          "use": "Lift an outer-linear balanced pairing to an outer-linear map for the quotient action supplied by outerModule. Requires the first-factor right action to commute with the outer left action."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorLinearLift_pure",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L175",
+          "use": "Evaluate the chosen outer-linear lift at a pure pair."
+        },
+        {
+          "module": "NotesProofs.WattsSupport",
+          "declaration": "ChoiceFreeWatts.tensorExt",
+          "revision": "sha256:853d1dd0016bf0735f7a84559e2f1cbbb701fc3cb0e00395a0e138ffecb1f967",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/WattsSupport.lean#L111",
+          "use": "Equality of additive maps out of the specified quotient follows from equality on every pure pair, for arbitrary target universe."
+        },
+        {
+          "module": "NotesProofs.ConcreteTensorBimoduleMap",
+          "declaration": "NotesProofs.tensorBimoduleMapComponent_pure",
+          "revision": "sha256:433973f70b29a9936cc26cce5d711fa53b42e7db223c7b7778c0e212d4123334",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/ConcreteTensorBimoduleMap.lean#L48",
+          "use": "Evaluates each associated tensor transformation on a pure tensor."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Functor.Category",
+          "declaration": "CategoryTheory.NatTrans.hcomp",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Functor/Category.lean#L125",
+          "use": "Horizontal composite of the supplied transformations."
+        }
+      ],
+      "approach": "Apply TensorDictionaryCompositionAndIdentities twice to obtain the two sets of existential witnesses for the right actions, commuting instances and reassociation comparisons. Construct δ on the fixed concrete CB by lifting (c,b) ↦ pureCB' (γ c) (β b). Show right-linearity by comparing additive maps on pure pairs, using β's right equivariance, and take its underlying T-linear map as the bimodule code. To prove the equation with NatTrans.hcomp, evaluate one component on c ⊗ (b ⊗ m), expand the horizontal composite and both supplied reassociations, and compare both codomain pure formulas. Then apply two nested pure extensionality tests. If the comparisons come from TensorDictionaryCompositionAndIdentities, use its existential data on both pairs before specializing the equation."
+    },
+    {
+      "id": "CategoricalBimoduleDictionary",
+      "deps": [
+        "ReconstructionFromSmallProjectiveGenerator",
+        "BimoduleFunctorHomEquivalence",
+        "AbelianEquivalencesPreserveFunctorHypotheses",
+        "TensorDictionaryCompositionAndIdentities"
+      ],
+      "available": [
+        {
+          "module": "Mathlib.CategoryTheory.Equivalence",
+          "declaration": "CategoryTheory.Equivalence.mk",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Equivalence.lean#L340",
+          "use": "Build an equivalence from the supplied functors and both natural isomorphisms without changing its functors."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Equivalence",
+          "declaration": "CategoryTheory.Equivalence.congrLeft",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Equivalence.lean#L404",
+          "use": "Whisker the source equivalence on the functor category."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Equivalence",
+          "declaration": "CategoryTheory.Equivalence.congrRight",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Equivalence.lean#L418",
+          "use": "Whisker the target equivalence on the functor category."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.ObjectProperty.FullSubcategory",
+          "declaration": "CategoryTheory.ObjectProperty.lift",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/ObjectProperty/FullSubcategory.lean#L158",
+          "use": "Restrict a functor to an object-property full subcategory once the object predicates are proved."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Preadditive.LeftExact",
+          "declaration": "CategoryTheory.Functor.preservesFiniteColimits_of_preservesCokernels",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Preadditive/LeftExact.lean#L202",
+          "use": "Convert the reviewed per-arrow cokernel preservation to the GoodFunctors finite-colimit condition for additive functors between module categories."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.Limits.Preserves.Shapes.Kernels",
+          "declaration": "CategoryTheory.Limits.isColimitMapCoconeCoforkEquiv'",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/Limits/Preserves/Shapes/Kernels.lean#L212",
+          "use": "Translate additive image coforks using preservation of zero morphisms."
+        },
+        {
+          "module": "Mathlib.CategoryTheory.NatIso",
+          "declaration": "CategoryTheory.NatIso.ofComponents",
+          "revision": "65d730f7150f21fdfa32f3e73a3f549c1f96a0e9",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/65d730f7150f21fdfa32f3e73a3f549c1f96a0e9/Mathlib/CategoryTheory/NatIso.lean#L178",
+          "use": "Package component isomorphisms subject to naturality. Use for tensor natural isomorphisms and transport comparisons. Import Mathlib.CategoryTheory.NatIso."
+        },
+        {
+          "module": "NotesProofs.General.RegularEvaluationEquivalence",
+          "declaration": "NotesProofs.General.ConcreteBimodule.eilenbergWattsCanonical",
+          "revision": "sha256:58f5cb7d82415275afdd1e46698deab3e1bb627ad4018e275b7c06364dce4de7",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/General/RegularEvaluationEquivalence.lean#L89",
+          "use": "Canonical equivalence for General.ConcreteBimodule with actual regular evaluation as inverse. Specialize to u=v_of_endpoint and second universe 0, then use the symmetric equivalence."
+        },
+        {
+          "module": "NotesProofs.General.OriginalBimoduleAdapter",
+          "declaration": "NotesProofs.General.originalWattsWithEvaluation",
+          "revision": "sha256:6aba7b7de771dcc5f3f00ea77fdee76812cf41c5b7312c394044797184fae97b",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/General/OriginalBimoduleAdapter.lean#L130",
+          "use": "Checked integration for the paper's Sigma/subtype bimodule encoding at max u v. Its regular-evaluation inverse provides an export comparison after repacking, while the reviewed formula clause uses the ConcreteBimodule encoding."
+        },
+        {
+          "module": "NotesProofs.General.WattsMathlibBridge",
+          "declaration": "NotesProofs.General.wattsCokernels_of_mathlib",
+          "revision": "sha256:d649e335d8214eaee9aa76952e0c3b0307a6024a83713a7bc460d5098dd06501",
+          "url": "file:///home/lazyinspirit/Projects/mackey-categorical-prerequisites-lean/NotesProofs/General/WattsMathlibBridge.lean#L43",
+          "use": "Convert finite colimits into the explicit Watts cokernel factorization predicate if that model is used while transporting."
+        }
+      ],
+      "approach": "Choose LA and LD using reconstruction for the first conjunct. For the formula conjunct use the supplied LA, LD and both natural comparisons. First make equivalences with HA and HD as the actual functors via Equivalence.mk. Whisker by LA and HD forward and by HA and LD backward, preserving the exact parenthesization in the statement. Restrict to the two full subcategories. Prove additivity and discrete preservation by composition, and handle cokernel preservation using the mapped parallel-pair comparison from additivity. On the module side convert cokernel preservation to finite colimits; convert it back before composing with HA and LD. Lift the unit and counit of the ambient functor-category equivalence to the full subcategories. Compose with the symmetric module dictionary using its explicit evaluation inverse at v,0. Keep the actual functors through packaging so the object and inverse formulas reduce, and prove the right-action HEq from wattsRight_apply or the definitional field formula after fixing the carrier. The original sigma-encoded adapter is a separate paper bridge; the reviewed endpoint uses General.ConcreteBimodule directly."
+    }
+  ],
+  "repairs": []
+}
