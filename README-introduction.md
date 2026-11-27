@@ -5,9 +5,9 @@ Regions are labelled by subgroups of an ambient group. Ordered strings carry ind
 For fixed boundary objects $X,Y$, let $V(X,Y)$ be the space of finite formal complex linear combinations of admissible diagrams. Evaluation is a linear map to bimodule homomorphisms. The diagrammatic hom-space is its kernel quotient:
 
 $$
-\operatorname{Hom}_{\mathrm{diag}}(X,Y)
-= V(X,Y)/\ker(\operatorname{ev}_{X,Y})
-\cong \operatorname{im}(\operatorname{ev}_{X,Y}).
+\mathrm{Hom}_{\mathrm{diag}}(X,Y)
+= V(X,Y)/\ker(\mathrm{ev}_{X,Y})
+\cong \mathrm{im}(\mathrm{ev}_{X,Y}).
 $$
 
 Thus two combinations represent the same quotient class exactly when their evaluated bimodule maps agree; their underlying drawings and shapes remain distinct data. Stacking descends to bilinear, associative composition with identity diagrams. For $X=Y$, it gives an **associative unital ℂ-algebra** of diagram-presented endomorphisms. For a finite family of boundary objects, the block-algebra construction also includes diagrams with different bottom and top objects: compatible blocks multiply by stacking, incompatible blocks multiply to zero, and the unit is the sum of the identity blocks. Diagrammatic equations are interpreted as equalities of evaluated maps; finite formal expressions can equivalently be compared by their quotient classes.
