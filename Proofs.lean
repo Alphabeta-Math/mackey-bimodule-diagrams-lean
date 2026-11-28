@@ -64,6 +64,7 @@ import Proofs.TrivalentBendIdentities
 import Proofs.StraightMixedTrivalentVertices
 import Proofs.RightDownReidemeisterCurl
 import Proofs.LeftUpReidemeisterCurl
+import Proofs.LeftUpCurlDotSlides
 import Proofs.ReidemeisterOne
 import Proofs.TransportToMackeyRepresentative
 import Proofs.MixedCrossingComposites
