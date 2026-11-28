@@ -42,3 +42,11 @@ The resulting 48-page PDF has no LaTeX warnings, undefined references,
 overfull boxes or underfull boxes. It is copied to article-revision/ and
 the author's Windows document directory. New web diagrams are rendered
 from this same PDF; their hashes are in evidence/cup-cap-extension-20261128/.
+
+AI disclosure relocation, 28 November 2026
+
+The disclosure is an unnumbered subsection of the introduction, immediately
+before subsection 1.1 (Eilenberg--Watts), on page 2. Its wording is unchanged.
+The latest warning-free 48-page build uses the command above with
+-outdir=.lake/disclosure-introduction-build. The PDF is copied to the Windows
+document directory and the website downloads directory.

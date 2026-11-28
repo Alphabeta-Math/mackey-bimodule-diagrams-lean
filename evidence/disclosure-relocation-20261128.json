@@ -1,0 +1,19 @@
+{
+  "change": "Move unchanged AI disclosure into Introduction, immediately before Eilenberg--Watts, and display the complete companion GitHub URL.",
+  "pdfSha256": "54902ce16b1645148f4cec9dd972ecb33cce6ef1a34e3cba382c00684499b148",
+  "sourceSha256": "40ee0dccefad132ea7d7d7d4cd7ce85b8c6e3476b1c870725ced0444a36719bc",
+  "pages": 48,
+  "disclosurePage": 2,
+  "latexWarnings": 0,
+  "windowsPdf": "C:/Users/lazyi/Documents/ChatGPT/mackey-bimodules.pdf",
+  "livePdfUrl": "https://getcurious.cc/downloads/mackey-bimodules.pdf",
+  "proofImpact": "Editorial relocation only; Lean statements and proofs unchanged.",
+  "preservedRevision": "Latest Windows source recovered from the existing 16:53 build directory; preserves expanded Introduction, Lean paragraph, roadmap, and merged Reidemeister sections.",
+  "previousPublishedPdfCommit": "bc344fe60bfad613591ed01a3c9522257301fb73",
+  "githubUrl": "https://github.com/Alphabeta-Math/mackey-bimodule-diagrams-lean",
+  "repositoryDescription": "The repository formalises and standardises the string-diagram language in Lean. Its definitions and verified results can be reused in future research projects.",
+  "siteCommit": "c70ed2b",
+  "cloudflarePagesCheck": "completed: success",
+  "liveHttpStatus": 200,
+  "livePdfSha256": "54902ce16b1645148f4cec9dd972ecb33cce6ef1a34e3cba382c00684499b148"
+}

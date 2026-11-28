@@ -14,7 +14,7 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{3pt plus 1pt}
 \numberwithin{equation}{section}
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{3}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -209,7 +209,7 @@
 \author{Ian Xiao}
 \date{}
 
-% Diagrams for the mixed orientations in Section 6.
+% Diagrams for mixed orientations in the Reidemeister III move.
 \newcommand{\mixedThreeWires}[3]{%
   \draw[#1] (0,0)--(0,.26)
     .. controls (0,.73) and (1.4,.91) .. (1.4,1.45)
@@ -278,16 +278,82 @@ commutative coefficient ring.
   \addvspace{.2em}%
   \@dottedtocline{1}{0em}{1.7em}{\bfseries #1}{\bfseries #2}}
 \renewcommand*{\l@subsection}{\@dottedtocline{2}{1.7em}{2.6em}}
+\renewcommand*{\l@subsubsection}{\@dottedtocline{3}{4.3em}{3.2em}}
 \tableofcontents
 \endgroup
 \makeatother
 
 \Needspace{7\baselineskip}
-\section{Bimodules and functors}
+\section{Introduction}\label{sec:introduction}
+
+This paper develops a graphical calculus for studying certain classes
+of bimodule bicategories. Via the Eilenberg--Watts correspondence, their
+hom-categories are mirrored by categories of tensor functors and natural
+transformations: tensor product of bimodules corresponds to composition
+of functors, and bimodule maps correspond to natural transformations.
+
+The calculus is inspired by Khovanov's graphical categorification of
+the Heisenberg algebra \cite[\S~3.3, Prop.~7]{khovanov}. Its action on
+the symmetric-group tower uses the standard inclusions
+\(S_n\hookrightarrow S_{n+1}\). For \(n\geq 2\), the nonidentity double
+coset in \(S_n\backslash S_{n+1}/S_n\) has representative
+\(s=(n,n+1)\). In the Mackey decomposition of the
+\(S_n\)-\(S_n\) bimodule \(\C[S_{n+1}]\), the summand indexed by \(s\)
+comes from the intersection \(S_n\cap sS_ns^{-1}=S_{n-1}\).
+The transposition \(s\) centralizes this subgroup, so the two embeddings
+of \(S_{n-1}\) into \(S_n\) agree, as do their composites into
+\(S_{n+1}\). For other embeddings there can be more double cosets, and
+conjugation by a representative need not act trivially on the relevant
+intersection. We therefore keep the two embeddings explicit in the
+diagrams for induction and restriction and their Mackey decompositions.
 
 We define the strands and generating maps as group-algebra bimodules
 and use Eilenberg--Watts to identify the corresponding functors and
 natural transformations.
+
+The main contribution is a standard language for string diagrams and
+the bimodule maps they evaluate to. The ambient group is arbitrary:
+the calculus records conjugation embeddings explicitly and imposes
+finiteness only where the relevant construction requires it. By
+separating a diagram's shape and labels from its evaluated map, the
+framework gives researchers a common setting in which to formulate,
+compare, and prove new diagrammatic identities. The aim is to design a
+system of LEGO bricks rather than build a single model: the language
+specifies the pieces and how they fit, while the finite-parabolic
+identities in Section~\ref{sec:parabolic-moves} are one construction
+that illustrates what can be built with them.
+
+The diagrammatic framework and all 145 mathematical statements
+inventoried from the article have been formalized in Lean. The
+companion GitHub repository,
+\url{https://github.com/Alphabeta-Math/mackey-bimodule-diagrams-lean},
+contains the definitions, proofs, and verification records, with a
+statement-by-statement index linking the article to the Lean declarations.
+The repository formalises and standardises the string-diagram language
+in Lean. Its definitions and verified results can be reused in future
+research projects.
+
+Section~\ref{sec:introduction} sets up the diagrammatic bimodule
+category and its functor interpretation via Eilenberg--Watts.
+Section~\ref{sec:mackey} constructs the Mackey decomposition for
+conjugate embeddings using explicit inclusions and projections.
+Section~\ref{sec:local-moves} proves local identities for cups, caps,
+dots, curls, and trivalent vertices and describes admissible labellings.
+Section~\ref{sec:reidemeister-identities} evaluates the Reidemeister I
+and II moves and determines when Reidemeister III diagrams admit
+replacements with the same boundary.
+Section~\ref{sec:finite-parabolic} uses block combinatorics to compute
+double cosets and Mackey summands and construct the finite-parabolic
+bimodule bicategory.
+Section~\ref{sec:parabolic-moves} specializes the Reidemeister identities
+to finite parabolics, computing curl coefficients and shared regions
+and identifying stabilizer-index constraints on three-crossing replacements.
+
+\subsection*{AI usage disclosure}
+Codex was used to test conjectures proposed by myself and verify the
+correctness of my own handwritten proofs. The new results and
+constructions are my own.
+
 \Needspace{11\baselineskip}
 \subsection{The Eilenberg--Watts correspondence}
 
@@ -920,7 +986,7 @@ right gives the stated functor isomorphism.
 \end{proof}
 
 \Needspace{12\baselineskip}
-\section{Right curls, trivalent moves, and admissible labellings}
+\section{Right curls, trivalent moves, and admissible labellings}\label{sec:local-moves}
 \label{sec:curl-relations}
 
 We establish local rules for comparing diagrams, including how
@@ -1741,7 +1807,9 @@ The equations let us draw the vertices with three straight segments.
 \end{center}
 
 \Needspace{12\baselineskip}
-\section{Reidemeister I move}\label{sec:reidemeister-one}
+\section{Reidemeister Identities}\label{sec:reidemeister-identities}
+
+\subsection{Reidemeister I move}\label{sec:reidemeister-one}
 
 We evaluate each of the four oriented curls and identify the two
 that multiply the identity by a subgroup index.
@@ -1838,14 +1906,14 @@ Over \(\C\), dividing either \(K\)-loop by its finite index
 
 
 \Needspace{12\baselineskip}
-\section{Reidemeister II move}\label{sec:reidemeister-two}
+\subsection{Reidemeister II move}\label{sec:reidemeister-two}
 
 We evaluate pairs of crossings. For strands pointing in opposite
 directions, the identities come from Mackey decomposition. For
 parallel strands, merging reduces the composite to multiplication
 by a single element of the group algebra.
 
-\subsection{Mixed orientations and Mackey decomposition}
+\subsubsection{Mixed orientations and Mackey decomposition}
 Use \(J,\sigma_j,L_j,M,M_j\) from Section~\ref{sec:generalized}.
 The two boundary strands of \(M\) point in opposite directions,
 with \(G\) between them. To allow a different middle group, take
@@ -2097,7 +2165,7 @@ use the full Mackey intersection, with the same convention for
 infinite index as above.
 
 \Needspace{18\baselineskip}
-\subsection{Strands pointing the same way}
+\subsubsection{Strands pointing the same way}
 The bottom, middle, and top chains through \(H,B,H'\) have
 composite conjugators \(u=\alpha\beta\), \(v=\gamma\delta\),
 and \(w=\alpha'\beta'\).
@@ -2201,14 +2269,14 @@ The product label is again \(de\), including for linear labels by
 expansion in group elements.
 
 \Needspace{26\baselineskip}
-\section{Reidemeister III move}\label{sec:reidemeister-three}
+\subsection{Reidemeister III move}\label{sec:reidemeister-three}
 
 With the boundary fixed, we determine when one three-crossing shape
 can replace the other. We treat three induction strands and the six
 directions of replacement with one restriction strand, including
 cases that require a sum or admit no replacement.
 
-\subsection{Three induction strands}
+\subsubsection{Three induction strands}
 
 For the standard inclusions \(S_n\subset S_{n+1}\), Khovanov obtains
 the three-upward-strand braid relation from the relation for adjacent
@@ -2477,7 +2545,7 @@ centralizes \(B'\), so \(y_2=p\) gives the original multiplier.
 
 
 \Needspace{9\baselineskip}
-\subsection{One restriction strand on the outside}\label{sec:outside-restriction}
+\subsubsection{One restriction strand on the outside}\label{sec:outside-restriction}
 
 Number the three positions from left to right at the bottom.
 Read the diagrams from bottom to top. The crossing \(s_1\) exchanges
@@ -2522,7 +2590,7 @@ would have infinite index. In a composite with linear labels,
 each projection must have finite fibers for every term used.
 
 \Needspace{19\baselineskip}
-\subsubsection{Cases 1 and 2. Both mixed crossings are projections}
+\paragraph{Cases 1 and 2. Both mixed crossings are projections}\mbox{}\par
 
 \begin{center}
 \begin{tikzpicture}
@@ -2682,7 +2750,7 @@ corresponding intersections are \(G\) and \(1\). The crossing element in
 \end{example}
 
 \Needspace{19\baselineskip}
-\subsubsection{Cases 3 and 4. Both mixed crossings are multiplications}
+\paragraph{Cases 3 and 4. Both mixed crossings are multiplications}\mbox{}\par
 
 \begin{center}
 \begin{tikzpicture}
@@ -2748,7 +2816,7 @@ and the same map.
 \end{example}
 
 \Needspace{19\baselineskip}
-\subsection{One restriction strand in the middle}
+\subsubsection{One restriction strand in the middle}
 
 \begin{center}
 \begin{tikzpicture}
@@ -2813,7 +2881,7 @@ to \(ga(\alpha)t\), and the upper multiplication sends the second
 to \(s f(h)\).
 \end{proof}
 
-\subsubsection{Case 5. Replacement by sums of right diagrams}
+\paragraph{Case 5. Replacement by sums of right diagrams}\mbox{}\par
 
 \begin{theorem}[Expansion into right diagrams]\label{thm:three-orbits}
 With this boundary, every bimodule map is a sum of right diagrams
@@ -3102,7 +3170,7 @@ The term indexed by \(x\) selects second coordinate \(x\) and sends
 \end{example}
 
 
-\subsubsection{Case 6. A right diagram can have no left replacement}
+\paragraph{Case 6. A right diagram can have no left replacement}\mbox{}\par
 
 
 \begin{example}[A Case 6 projection with no left replacement]\label{ex:case-six-involution}
@@ -3577,7 +3645,7 @@ general coefficient rings.
 We work in the bicategory of Section~\ref{sec:parabolic-bicategory},
 with \(U=S_\infty\) and all region groups finite parabolic. We use the
 diagrams and labels of
-Sections~\ref{sec:reidemeister-one}--\ref{sec:reidemeister-three}.
+Section~\ref{sec:reidemeister-identities}.
 
 \subsection{Reidemeister I}
 
@@ -3936,7 +4004,7 @@ respectively.
 
 \begin{proposition}[Largest common region for mixed crossings]\label{prop:parabolic-common-mixed-two}
 Fix a nonempty set \(J_0\) of Mackey summands in
-Section~\ref{sec:reidemeister-two} and keep their representatives
+Subsection~\ref{sec:reidemeister-two} and keep their representatives
 \(\sigma_j\) fixed. Use the internal strand labels
 \(\overline{\alpha^{-1}}\) and \(\overline{\beta^{-1}\sigma_j^{-1}}\)
 on a common group \(L\). Choose any \(j_0\in J_0\) and set
@@ -4470,7 +4538,7 @@ single-diagram replacements can use \(B'=A\) and \(B=E\).
 The following choices give sharper bounds for group-element dots.
 
 \begin{proposition}[Extremal regions for three induction strands]\label{prop:parabolic-three-induction}
-Use the boundary labels of Section~\ref{sec:reidemeister-three}.
+Use the boundary labels of Subsection~\ref{sec:reidemeister-three}.
 Write \(a=\boxed{GA}\), \(d=\boxed{AD}\), \(c=\boxed{GC}\), and
 \(e=\boxed{CE}\). For an admissible group-element multiplier
 \(p\in G\) and diagrams with group-element dots, the least
@@ -5191,11 +5259,6 @@ and middle dot \(r^{-1}s\).
 \end{center}
 \end{example}
 
-
-\section*{AI usage disclosure}
-Codex was used to test conjectures proposed by myself and verify the
-correctness of my own handwritten proofs. The new results and
-constructions are my own.
 
 \begin{thebibliography}{9}
 \bibitem{watts}
