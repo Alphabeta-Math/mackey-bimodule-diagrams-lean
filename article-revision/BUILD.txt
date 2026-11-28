@@ -50,3 +50,9 @@ before subsection 1.1 (Eilenberg--Watts), on page 2. Its wording is unchanged.
 The latest warning-free 48-page build uses the command above with
 -outdir=.lake/disclosure-introduction-build. The PDF is copied to the Windows
 document directory and the website downloads directory.
+
+Originality and AI usage disclosure, 28 November 2026
+
+Updated the heading and paragraph to the author's supplied wording, with
+linked references to Theorems 1.1 and 2.1. The latest build uses
+.lake/disclosure-introduction-build and has no warnings or layout errors.

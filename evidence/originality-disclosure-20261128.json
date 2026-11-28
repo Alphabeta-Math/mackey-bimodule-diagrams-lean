@@ -1,0 +1,17 @@
+{
+  "change": "Owner-supplied originality and AI usage disclosure wording.",
+  "heading": "Originality and AI usage disclosure",
+  "text": "Codex was used to test conjectures proposed by myself and verify the correctness of my own handwritten proofs. All constructions and results are my own with the exception of Theorems 1.1 and 2.1.",
+  "pdfSha256": "7f7752e34ccbcfbdd1818a40d3ff2fea6595d41e2ab99dab01d9dc22650e6b5e",
+  "sourceSha256": "d43a7a15d6db66059a2db0d1f9f4ac6c78c20e84eccbfe09fa8ef10eebef65ec",
+  "pages": 48,
+  "disclosurePage": 2,
+  "latexWarnings": 0,
+  "windowsPdf": "C:/Users/lazyi/Documents/ChatGPT/mackey-bimodules.pdf",
+  "livePdfUrl": "https://getcurious.cc/downloads/mackey-bimodules.pdf",
+  "proofImpact": "Disclosure wording only; mathematical statements and Lean proofs unchanged.",
+  "siteCommit": "233db89",
+  "cloudflarePagesCheck": "completed: success",
+  "liveHttpStatus": 200,
+  "livePdfSha256": "7f7752e34ccbcfbdd1818a40d3ff2fea6595d41e2ab99dab01d9dc22650e6b5e"
+}
