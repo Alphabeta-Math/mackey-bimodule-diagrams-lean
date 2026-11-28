@@ -1238,113 +1238,16 @@ basis element. Linearity gives the assertion on the whole bimodule.
 \end{proof}
 
 
-\subsection{Right curls and dots}
-
-The right curl on \(\I_{\bar\alpha}^{G,H}\) uses the
-reverse cup and multiplication cap for the embedding by \(\delta\)
-of \(K\) into \(H\). It requires \([H:\cg{\delta}{K}]<\infty\).
-For the inclusion this index is \([H:K]\).
-
-\begin{proposition}[Right curl and dot slide]\label{prop:curl}
-The curl multiplies by \([H:\cg{\delta}{K}]\).
-For \(d=\alpha\beta^{-1}\in G\), the dot \(r_d(x)=xd\) changes
-\(\bar\alpha\) to \(\bar\beta\). Using the same embedding of \(K\)
-into \(H\), the dot below, inside, or above the curl gives
-\(x\mapsto[H:\cg{\delta}{K}]xd\).
-
-For the four identities below take \(\gamma,\gamma'\) for embeddings
-of \(H\) into \(G\) and \(\alpha,\beta\) for embeddings of \(K\) into \(H\).
-Set \(d=\gamma(\gamma')^{-1}\in G\) and \(e=\alpha\beta^{-1}\in H\).
-Write \(m_{\gamma,\alpha}\) and \(m^\downarrow_{\gamma,\alpha}\) for the
-induction and restriction merges and \(\ell_a(x)=ax\).
-The identities are in order for the induction merge, induction split,
-restriction merge, and restriction split.
-\begin{align}
- m_{\gamma',\beta}\circ(r_d\otimes r_e)
-  &=r_{d\gamma'e(\gamma')^{-1}}\circ m_{\gamma,\alpha},
-       \label{eq:two-leg-slide}\\
- (r_d\otimes r_e)\circ m_{\gamma,\alpha}^{-1}
-  &=m_{\gamma',\beta}^{-1}\circ r_{d\gamma'e(\gamma')^{-1}},\\
- m^\downarrow_{\gamma',\beta}\circ(\ell_{e^{-1}}\otimes\ell_{d^{-1}})
-  &=\ell_{\gamma'e^{-1}(\gamma')^{-1}d^{-1}}\circ
-        m^\downarrow_{\gamma,\alpha},\\
- (\ell_{e^{-1}}\otimes\ell_{d^{-1}})\circ(m^\downarrow_{\gamma,\alpha})^{-1}
-  &=(m^\downarrow_{\gamma',\beta})^{-1}\circ
-        \ell_{\gamma'e^{-1}(\gamma')^{-1}d^{-1}} .
-\end{align}
-\end{proposition}
-
-\begin{proof}[Proof of the induction merge identity]
-Since \(m_{\gamma,\alpha}(x\otimes y)=x\gamma_*(y)\) and
-\(d\gamma'_*(y)=\gamma_*(y)d\), we have
-\[
- m_{\gamma',\beta}(xd\otimes ye)
-   =xd\,\gamma'_*(ye)
-   =x\gamma_*(y)\,d\gamma'_*(e).
-\]
-This gives \eqref{eq:two-leg-slide}.
-\end{proof}
-
-
-\begin{center}
-\begin{minipage}{.98\linewidth}
-\centering
-\begin{tikzpicture}[x=1cm,y=1cm,baseline=(current bounding box.center)]
- \foreach \shift/\height in {0/-.75,4.7/0,9.4/.75} {
-  \begin{scope}[xshift=\shift cm]
-   \draw[arrowatend] (0,-1.52)--(0,1.52);
-   \draw[oriented] (0,{\height+.26})
-     .. controls (.28,{\height+.37}) and (.63,{\height+.63}) .. (.79,{\height+.46})
-     .. controls (.98,{\height+.27}) and (.95,{\height-.25}) .. (.81,{\height-.38})
-     .. controls (.60,{\height-.59}) and (.20,{\height-.34}) .. (0,{\height-.26});
-   \fill (0,0) circle (2pt);
-   \node[strandlabel,anchor=east] at (-.12,0) {$d$};
-   \node[strandlabel] at (0,-1.79) {$\bar\alpha$};
-   \node[strandlabel] at (0,1.80) {$\bar\beta$};
-   \node[region] at (-.76,{\height+.39}) {$G$};
-   \node[region] at (.49,\height) {$K$};
-   \node[region] at (1.53,{\height-.12}) {$H$};
-   \node[strandlabel] at (1.13,{\height+.44}) {$\bar\delta$};
-  \end{scope}
- }
- \node at (2.91,0) {$=$};
- \node at (7.61,0) {$=$};
-\end{tikzpicture}
-\end{minipage}
-\end{center}
-
-\begin{proof}[Proof of the curl identity]
-Choose \(T\) with \(H=\bigsqcup_{t\in T}(\cg{\delta}{K})t\).
-The cup gives \(\sum_t x\alpha_*(t^{-1})\otimes t\) in
-\(\C[G]\otimes_{\C[K]}\C[H]\). The cap gives
-\(\sum_t x\alpha_*(t^{-1})\alpha_*(t)=[H:\cg{\delta}{K}]x\).
-A dot inside the curl inserts \(d\) in the first factor and changes
-the cap to use \(\beta_*\). Since
-\(\alpha_*(t^{-1})d\,\beta_*(t)=d\), the result is
-\([H:\cg{\delta}{K}]xd\). This also equals composition with the
-scalar curl on either side.
-\end{proof}
-
-More generally, in the full bimodule category, insert on the induction
-factor the endomorphism given by right multiplication by
-\(a\in\C[H]\) commuting with \(\C[\cg{\delta}{K}]\).
-It is an eligible single dot under our convention when each supported
-group element centralizes \(\cg{\delta}{K}\); commuting only after
-addition suffices for the endomorphism in this calculation.
-The resulting curl acts by right multiplication by
-\[
- \alpha_*\!\left(\sum_{t\in T}t^{-1}at\right).
-\]
-This follows by inserting \(a\) between \(t^{-1}\) and \(t\).
-Replacing \(t\) by \(\ell t\), \(\ell\in\cg{\delta}{K}\), leaves
-the summand unchanged. Right multiplication permutes the cosets,
-so the sum is central in \(\C[H]\). A dot between the \(\alpha_*\)
-and \(\beta_*\) strands intertwines their images of this sum.
-
 \subsection{Moving dots across a merge or split}
 
-The diagrams below show the case \(d=1\) of the four identities in
-Proposition~\ref{prop:curl}. Read from bottom to top.
+\begin{proposition}[Right-leg dot slides]\label{prop:right-leg-dot-slides}
+Let \(\gamma\) represent an embedding of \(H\) into \(G\), and let
+\(\alpha,\beta\) represent embeddings of \(K\) into \(H\) with
+\(e=\alpha\beta^{-1}\in H\). Moving the dot on the leg for the embedding of \(K\) into \(H\) across an
+induction merge or split gives the dot \(\gamma e\gamma^{-1}\) on
+the merged strand. For the corresponding restriction merge or split,
+the labels are \(e^{-1}\) and \(\gamma e^{-1}\gamma^{-1}\). The four
+identities are shown below, with diagrams read from bottom to top.
 
 \begin{center}
 \tikzset{
@@ -1419,11 +1322,25 @@ Proposition~\ref{prop:curl}. Read from bottom to top.
  \slideequation{-1}{-1}{forwards}{e^{-1}}
 \end{minipage}
 \end{center}
+\end{proposition}
+
+\begin{proof}
+Put \(E=\gamma_*(e)=\gamma e\gamma^{-1}\). For the induction merge,
+a pure tensor \(x\otimes y\) maps to
+\(x\gamma_*(ye)=x\gamma_*(y)E\) when the dot is applied before merging,
+which is the same as multiplying by \(E\) on the right after merging.
+For the restriction merge, \(y\otimes x\) maps to
+\(\gamma_*(e^{-1}y)x=E^{-1}\gamma_*(y)x\), which is multiplication
+by \(E^{-1}\) on the left after merging. Pure tensors span the
+respective tensor products, so these computations prove both merge
+identities. Composing each identity with the inverse merge on either
+side gives the corresponding split identity.
+\end{proof}
 
 \paragraph{Moving a dot back to a branch.}
 Fix the incoming labels of a merge. A dot \(D\in G\) on its merged
 strand can move to the right input exactly when \(D\in\cg{\gamma}{H}\).
-Necessity follows from \eqref{eq:two-leg-slide} with \(d=1\).
+Necessity follows from Proposition~\ref{prop:right-leg-dot-slides}.
 For sufficiency take \(e=\gamma^{-1}D\gamma\in H\) and
 \(\beta=e^{-1}\alpha\). This embeds \(K\) into \(H\) and gives the
 same output embedding, since both conjugate \((\gamma\alpha)_*\)
@@ -1436,6 +1353,124 @@ left output, factor the given input representative \(b\) as
 \((b\gamma^{-1})\gamma\). Since
 \(D=b(\alpha\gamma)^{-1}\), the left representative
 \(b\gamma^{-1}=D\alpha\) embeds \(H\) into \(G\).
+
+\subsection{Right curls and dots}
+
+The right curl on \(\I_{\bar\alpha}^{G,H}\) uses the
+reverse cup and multiplication cap for the embedding by \(\delta\)
+of \(K\) into \(H\). It requires \([H:\cg{\delta}{K}]<\infty\).
+For the inclusion this index is \([H:K]\).
+
+The four slides in Proposition~\ref{prop:right-leg-dot-slides} are the
+\(d=1\) cases of the merge and split identities below. They do not,
+by themselves, imply the following proposition: they neither account
+for a simultaneous dot on the other leg nor determine the scalar
+of a closed curl. The curl calculation uses the reverse cup and
+multiplication cap, with one contribution per coset.
+
+\begin{proposition}[Right curl and dot slide]\label{prop:curl}
+The curl multiplies by \([H:\cg{\delta}{K}]\).
+For \(d=\alpha\beta^{-1}\in G\), the dot \(r_d(x)=xd\) changes
+\(\bar\alpha\) to \(\bar\beta\). Using the same embedding of \(K\)
+into \(H\), the dot below, inside, or above the curl gives
+\(x\mapsto[H:\cg{\delta}{K}]xd\).
+
+For the four identities below take \(\gamma,\gamma'\) for embeddings
+of \(H\) into \(G\) and \(\alpha,\beta\) for embeddings of \(K\) into \(H\).
+Set \(d=\gamma(\gamma')^{-1}\in G\) and \(e=\alpha\beta^{-1}\in H\).
+Write \(m_{\gamma,\alpha}\) and \(m^\downarrow_{\gamma,\alpha}\) for the
+induction and restriction merges and \(\ell_a(x)=ax\).
+The identities are in order for the induction merge, induction split,
+restriction merge, and restriction split.
+\begin{align}
+ m_{\gamma',\beta}\circ(r_d\otimes r_e)
+  &=r_{d\gamma'e(\gamma')^{-1}}\circ m_{\gamma,\alpha},
+       \label{eq:two-leg-slide}\\
+ (r_d\otimes r_e)\circ m_{\gamma,\alpha}^{-1}
+  &=m_{\gamma',\beta}^{-1}\circ r_{d\gamma'e(\gamma')^{-1}},\\
+ m^\downarrow_{\gamma',\beta}\circ(\ell_{e^{-1}}\otimes\ell_{d^{-1}})
+  &=\ell_{\gamma'e^{-1}(\gamma')^{-1}d^{-1}}\circ
+        m^\downarrow_{\gamma,\alpha},\\
+ (\ell_{e^{-1}}\otimes\ell_{d^{-1}})\circ(m^\downarrow_{\gamma,\alpha})^{-1}
+  &=(m^\downarrow_{\gamma',\beta})^{-1}\circ
+        \ell_{\gamma'e^{-1}(\gamma')^{-1}d^{-1}} .
+\end{align}
+\end{proposition}
+
+\begin{proof}
+For the induction merge, use \(m_{\gamma,\alpha}(x\otimes y)=x\gamma_*(y)\)
+and \(d\gamma'_*(y)=\gamma_*(y)d\). On a pure tensor,
+\[
+ m_{\gamma',\beta}(xd\otimes ye)
+   =xd\,\gamma'_*(ye)
+   =x\gamma_*(y)\,d\gamma'_*(e).
+\]
+For the restriction merge, \(m^\downarrow_{\gamma,\alpha}(y\otimes x)
+=\gamma_*(y)x\), so
+\[
+ m^\downarrow_{\gamma',\beta}(e^{-1}y\otimes d^{-1}x)
+   =\gamma'_*(e^{-1})\gamma'_*(y)d^{-1}x
+   =\gamma'_*(e^{-1})d^{-1}\gamma_*(y)x .
+\]
+These calculations prove both merge identities by linearity. Composing
+each merge identity on the left with the inverse of the target merge and
+on the right with the inverse of the source merge gives the corresponding
+split identity.
+
+For the curl, choose \(T\) with \(H=\bigsqcup_{t\in T}(\cg{\delta}{K})t\).
+The cup gives \(\sum_t x\alpha_*(t^{-1})\otimes t\) in
+\(\C[G]\otimes_{\C[K]}\C[H]\). The cap gives
+\(\sum_t x\alpha_*(t^{-1})\alpha_*(t)=[H:\cg{\delta}{K}]x\).
+A dot inside the curl inserts \(d\) in the first factor and changes
+the cap to use \(\beta_*\). Since
+\(\alpha_*(t^{-1})d\,\beta_*(t)=d\), the result is
+\([H:\cg{\delta}{K}]xd\). This also equals composition with the
+scalar curl on either side.
+\end{proof}
+
+
+\begin{center}
+\begin{minipage}{.98\linewidth}
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,baseline=(current bounding box.center)]
+ \foreach \shift/\height in {0/-.75,4.7/0,9.4/.75} {
+  \begin{scope}[xshift=\shift cm]
+   \draw[arrowatend] (0,-1.52)--(0,1.52);
+   \draw[oriented] (0,{\height+.26})
+     .. controls (.28,{\height+.37}) and (.63,{\height+.63}) .. (.79,{\height+.46})
+     .. controls (.98,{\height+.27}) and (.95,{\height-.25}) .. (.81,{\height-.38})
+     .. controls (.60,{\height-.59}) and (.20,{\height-.34}) .. (0,{\height-.26});
+   \fill (0,0) circle (2pt);
+   \node[strandlabel,anchor=east] at (-.12,0) {$d$};
+   \node[strandlabel] at (0,-1.79) {$\bar\alpha$};
+   \node[strandlabel] at (0,1.80) {$\bar\beta$};
+   \node[region] at (-.76,{\height+.39}) {$G$};
+   \node[region] at (.49,\height) {$K$};
+   \node[region] at (1.53,{\height-.12}) {$H$};
+   \node[strandlabel] at (1.13,{\height+.44}) {$\bar\delta$};
+  \end{scope}
+ }
+ \node at (2.91,0) {$=$};
+ \node at (7.61,0) {$=$};
+\end{tikzpicture}
+\end{minipage}
+\end{center}
+
+More generally, in the full bimodule category, insert on the induction
+factor the endomorphism given by right multiplication by
+\(a\in\C[H]\) commuting with \(\C[\cg{\delta}{K}]\).
+It is an eligible single dot under our convention when each supported
+group element centralizes \(\cg{\delta}{K}\); commuting only after
+addition suffices for the endomorphism in this calculation.
+The resulting curl acts by right multiplication by
+\[
+ \alpha_*\!\left(\sum_{t\in T}t^{-1}at\right).
+\]
+This follows by inserting \(a\) between \(t^{-1}\) and \(t\).
+Replacing \(t\) by \(\ell t\), \(\ell\in\cg{\delta}{K}\), leaves
+the summand unchanged. Right multiplication permutes the cosets,
+so the sum is central in \(\C[H]\). A dot between the \(\alpha_*\)
+and \(\beta_*\) strands intertwines their images of this sum.
 
 \paragraph{Moving a curl across a vertex.}
 A right curl with no dot multiplies by its index. It can move
