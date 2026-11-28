@@ -1456,7 +1456,65 @@ scalar curl on either side.
 \end{minipage}
 \end{center}
 
-More generally, in the full bimodule category, insert on the induction
+\Needspace{23\baselineskip}
+\begin{proposition}[Dot slide through a left curl on an up-strand]
+\label{prop:left-curl-dot-slide-up}
+Let \(K\xrightarrow{\delta_*}H\xrightarrow{\alpha_*}G\) be
+conjugation embeddings and \(e\in H\) an eligible dot changing the
+up-strand label from \(\bar\delta\) to \(\bar\epsilon\). Keep the
+loop embedding \(\alpha_*\) fixed. Placing the dot below the left
+curl, inside it on the composite strand with label \(\alpha_*(e)\),
+or above it gives the same map \(x\mapsto xe\). No finite-index
+hypothesis is required.
+\end{proposition}
+
+\begin{center}
+\begin{minipage}{.98\linewidth}
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,baseline=(current bounding box.center)]
+ \foreach \pos/\dotheight/\dotlabel in {0/-.61/e,3.65/0/{\alpha_*(e)},7.3/.61/e} {
+  \begin{scope}[xshift=\pos cm]
+   \draw[arrowatend] (0,-.85)--(0,.85);
+   \begin{scope}[xscale=-1]
+    \draw[oriented] (0,.29)
+      .. controls (.34,.36) and (.71,.62) .. (.95,.45)
+      .. controls (1.20,.27) and (1.17,-.24) .. (.98,-.42)
+      .. controls (.71,-.67) and (.30,-.36) .. (0,-.29);
+    \node[region] at (.53,0) {$G$};
+    \node[strandlabel] at (1.17,-.56) {$\bar\alpha$};
+   \end{scope}
+   \fill (0,\dotheight) circle (2pt);
+   \node[anchor=west,inner sep=2pt] at (0,\dotheight) {$\dotlabel$};
+   \node[region] at (-1.48,0) {$H$};
+   \node[region] at (.91,-.43) {$K$};
+   \node[strandlabel] at (0,-1.03) {$\bar\delta$};
+   \node[strandlabel] at (0,1.03) {$\bar\epsilon$};
+  \end{scope}
+ }
+ \node at (1.63,0) {$=$};
+ \node at (5.28,0) {$=$};
+\end{tikzpicture}
+\end{minipage}
+\end{center}
+
+\begin{proof}
+With either strand label, the undotted curl evaluates to
+\(E_\alpha(\alpha_*(x))=x\): the ordinary cup and merge lift \(x\)
+along \(\alpha_*\), and the trace cap projects back. A dot below or
+above the curl therefore gives \(x\mapsto xe\). For the inside placement, the ordinary cup
+inserts \(1\otimes1\), the merge lifts \(x\) to \(\alpha_*(x)\),
+and the composite-strand dot multiplies it on the right by
+\(\alpha_*(e)\). The dot is eligible because applying \(\alpha_*\)
+to \(\delta_*(k)e=e\epsilon_*(k)\) gives the intertwining relation
+for the composite embeddings. The trace cap gives
+\[
+ E_\alpha\bigl(\alpha_*(x)\alpha_*(e)\bigr)
+    =E_\alpha\bigl(\alpha_*(xe)\bigr)=xe.
+\]
+\end{proof}
+
+
+More generally, for a right curl on an up-strand, insert on the induction
 factor the endomorphism given by right multiplication by
 \(a\in\C[H]\) commuting with \(\C[\cg{\delta}{K}]\).
 It is an eligible single dot under our convention when each supported
@@ -1938,33 +1996,6 @@ identities.
 
 Over \(\C\), dividing either \(K\)-loop by its finite index
 \([H:\cg{\delta}{K}]\) gives the identity.
-
-
-\begin{proposition}[Dot slide through a left curl on an up-strand]
-\label{prop:left-curl-dot-slide-up}
-Let \(K\xrightarrow{\delta_*}H\xrightarrow{\alpha_*}G\) be
-conjugation embeddings and \(e\in H\) an eligible dot changing the
-up-strand label from \(\bar\delta\) to \(\bar\epsilon\). Keep the
-loop embedding \(\alpha_*\) fixed. Placing the dot below the left
-curl, inside it on the composite strand with label \(\alpha_*(e)\),
-or above it gives the same map \(x\mapsto xe\). No finite-index
-hypothesis is required.
-\end{proposition}
-
-\begin{proof}
-By \eqref{eq:curl-left-up}, the undotted left curl is the identity
-for either strand label. A dot below or above it therefore gives
-\(x\mapsto xe\). For the inside placement, the ordinary cup
-inserts \(1\otimes1\), the merge lifts \(x\) to \(\alpha_*(x)\),
-and the composite-strand dot multiplies it on the right by
-\(\alpha_*(e)\). The dot is eligible because applying \(\alpha_*\)
-to \(\delta_*(k)e=e\epsilon_*(k)\) gives the intertwining relation
-for the composite embeddings. The trace cap gives
-\[
- E_\alpha\bigl(\alpha_*(x)\alpha_*(e)\bigr)
-    =E_\alpha\bigl(\alpha_*(xe)\bigr)=xe.
-\]
-\end{proof}
 
 
 
